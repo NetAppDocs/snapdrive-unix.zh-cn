@@ -2,7 +2,7 @@
 permalink: aix/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html 
 sidebar: sidebar 
 keywords: snap, snapdrive, error, iscsi, hba 
-summary: 在 Linux 主机上运行的 SnapDrive for UNIX 返回错误消息 "HBA assistant not found" 。 
+summary: '在 Linux 主机上运行的 SnapDrive for UNIX 返回错误消息 "HBA assistant not found" 。' 
 ---
 = 如果 iSCSI 未运行，则 SnapDrive for UNIX 报告错误
 :icons: font

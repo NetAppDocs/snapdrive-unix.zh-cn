@@ -127,7 +127,7 @@ summary: 了解在使用 SnapDrive for UNIX 时可能会看到的一些更常见
  a| 
 如果在 SLES10 SP2 中设备上的 SCSI 查询失败，则会发生此问题。lvm2-2.02.17-7.27.8 和 ` filter_` 设置在 SLES10 SP2 的 `lvm.conf` 文件中分配为 ` =[A]/dev/mapper/.\*" ， "a">/dev/cciss/.*" ， "r/.*/"]` 。
 
-在 `lvm.conf` 文件中，将 ` filter_` 设置为 ` ["r|/dev/.\*/by-path/.*|" ， "r//dev/.\*/by-id/.*"" ， "r|/dev/cciss/.\*"" ， "a/.*/"]` 。
+在 `lvm.conf` 文件中，将 ` filter_` 设置为 `["r\|/dev/.\*/by-path/.*\|", "r\|/dev/.\*/by-id/.*\|", "r\|/dev/cciss/.\*\|", "a/.*/"]` 。
 
 
 
