@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_volume_based_snaprestore.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, snaprestore 
+summary: SnapDrive 4.0 for UNIX 及更高版本可在卷级别提供 Snapshot 还原功能。本节介绍了可使用基于卷的 Snapshot 还原执行的各种存储操作。 
+---
+= 基于卷的 SnapRestore
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive 4.0 for UNIX 及更高版本可在卷级别提供 Snapshot 还原功能。本节介绍了可使用基于卷的 Snapshot 还原执行的各种存储操作。

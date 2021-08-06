@@ -1,0 +1,42 @@
+---
+permalink: linux-administration/reference_product_overview.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, product, overview, unix, data, management, snapshot 
+summary: SnapDrive for UNIX 是一种基于主机的存储和数据管理解决方案，适用于 UNIX 环境。SnapDrive for UNIX 可简化数据管理，提高数据可用性，并通过简化的存储配置和文件系统一致的 Snapshot 副本提高应用程序数据的可靠性。 
+---
+= 产品概述
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 是一种基于主机的存储和数据管理解决方案，适用于 UNIX 环境。SnapDrive for UNIX 可简化数据管理，提高数据可用性，并通过简化的存储配置和文件系统一致的 Snapshot 副本提高应用程序数据的可靠性。
+
+您可以将 SnapDrive for UNIX 用作独立产品，也可以与在 UNIX 上运行的其他 SnapManager 产品结合使用。通过与 SnapManager 一起部署的 SnapDrive for UNIX ，您可以创建应用程序一致的数据备份。
+
+
+
+== SnapDrive 亮点
+
+通过适用于 UNIX 的 SnapDrive ，您可以简化存储管理任务。使用 SnapDrive for UNIX 可以执行的部分任务包括：
+
+* 使用集群模式 Data ONTAPNetApp Snapshot 技术创建 Snapshot 副本。
++
+通过 SnapDrive for UNIX ，您可以创建和删除文件系统，卷组，主机卷或 LUN 的 Snapshot 副本，并从 Snapshot 副本克隆存储实体。
+
+* 在应用程序或主机停机时间极少或根本不需要停机的情况下配置和管理存储。
++
+通过 SnapDrive for UNIX ，您可以在主机集群环境中创建和删除存储组件，包括磁盘组，主机卷，文件系统和 LUN 。此外，您还可以通过 SnapDrive for UNIX 扩展存储，将存储连接到主机以及断开存储与主机的连接。
+
+* 提供基于角色的访问控制，存储管理员可以根据分配的角色限制 SnapDrive 用户可以执行的操作。
+
+
+除了这些主要功能之外， SnapDrive 还具有以下优势：
+
+* 增强的克隆拆分操作
+* 基于卷的 SnapRestore （ VBSR ）
+* 命令行界面（ CLI ）选项
+* 数据收集实用程序
+* 支持存储系统重命名
+* 支持在 Linux 子操作系统中使用光纤通道 RDM LUN
+

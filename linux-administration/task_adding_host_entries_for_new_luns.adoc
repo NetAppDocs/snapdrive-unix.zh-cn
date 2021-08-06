@@ -1,0 +1,33 @@
+---
+permalink: linux-administration/task_adding_host_entries_for_new_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, entries, lun, command 
+summary: 您可以使用适用于 UNIX 的 SnapDrive 创建特定数量的新 LUN 。SnapDrive for UNIX 为此提供了特定的命令。 
+---
+= 为新 LUN 添加主机条目
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于 UNIX 的 SnapDrive 创建特定数量的新 LUN 。SnapDrive for UNIX 为此提供了特定的命令。
+
+确保主机已准备好创建特定数量的新 LUN 。这些 LUN 位于映射到主机的存储系统上。
+
+.步骤
+. SnapDrive 配置准备 LUN -count 计数`
++
+` -count` 是要为主机准备的新 LUN 的数量。
+
++
+在 Linux 上，此命令会为当前没有设备文件的每个潜在 LUN 添加一个新的 ` /dev/sg` 设备文件。
+
++
+[NOTE]
+====
+如果您已手动编辑 ` /kernel/drv/lpfc.conf` 文件以获取永久性绑定，请确保 FC-bind-WWPN 条目位于之后
+
+` # bEGIN ： lput-managed Persistent Bindings` 。
+
+====
+

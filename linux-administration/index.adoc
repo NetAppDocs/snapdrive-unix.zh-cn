@@ -1,0 +1,15 @@
+---
+permalink: linux-administration/index.html 
+sidebar: sidebar 
+keywords: index, snap, snapdrive, administration, guide 
+summary: 本指南介绍部署完成后如何在 Linux 环境中管理 SnapDrive for UNIX 。 
+---
+= 《 Linux ® 管理指南》
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本指南介绍部署完成后如何在 Linux 环境中管理适用于 UNIX 的 SnapDrive 5.3.2 。
+
+主题包括如何配置产品，如何创建和克隆 Snapshot 副本，如何升级和卸载产品以及 CLI 命令说明。

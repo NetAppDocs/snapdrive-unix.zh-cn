@@ -1,0 +1,32 @@
+---
+permalink: solaris/concept_considerations_forstorage_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, operation 
+summary: 您必须牢记与各种存储命令相关的一些注意事项。 
+---
+= 存储操作注意事项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须牢记与各种存储命令相关的一些注意事项。
+
+* 仅支持跨多个存储系统卷或多个存储系统的卷组。您不能使用 SnapDrive storage create` 命令创建跨存储系统的卷组。
++
+在这种情况下， SnapDrive for UNIX 支持以下关键命令：
+
++
+** SnapDrive snap create`
+** SnapDrive snap restore`
+** SnapDrive snap connect`
+** SnapDrive snap disconnect`
+
+
+* SnapDrive storage resize` 命令不适用于直接映射到主机的 LUN 或 LUN 所包含的文件系统。
+* SnapDrive for UNIX 不提供任何选项来控制其创建的主机卷的格式化。SnapDrive for UNIX 仅创建串联的主机卷。它可以在使用其他应用程序创建的其他格式的主机卷（例如条带化卷）上正常运行。
+* 您不能还原磁盘组的一部分。SnapDrive for UNIX 仅备份和还原整个磁盘组。
+
+
+
+NOTE: 在除 Red Hat Enterprise Linux 6 之前的所有版本中，即使使用 ` -mntets` 命令对 NFS 从非 Linux 操作系统执行的 SnapDrive 操作也会失败。

@@ -1,0 +1,51 @@
+---
+permalink: linux-administration/concept_limitations_of_rdm_luns_managed_by_snapdrive.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, limitations, rdm, lun, limits 
+summary: SnapDrive 在配置 RDM LUN 方面有一些限制。您必须了解可能影响环境的限制。 
+---
+= 由 SnapDrive 管理的 RDM LUN 的限制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive 在配置 RDM LUN 方面有一些限制。您必须了解可能影响环境的限制。
+
+* RDM LUN 不能用作启动磁盘或系统磁盘。
+* SnapDrive 在 Internet 小型计算机系统接口（ iSCSI ）环境中不支持 RDM LUN 。
+* SnapDrive 不支持在子操作系统中使用 MPIO ，但 VMware ESX 服务器支持 MPIO 。
+* 如果传输协议为 ` FC_` ，则 SnapDrive 会忽略在 CLI 命令中指定的 igroup ，而 igroup 会由虚拟接口自动创建。
+* 您可以重命名，移动或删除作为 `sg3_utils` 一部分捆绑的 ` /usr/bin/resscan-scsi-bus.sh` 脚本，以避免将 RDM LUN 的数量限制为八个。
++
+
+NOTE: 如果要在 `sg3_utils` 中保留 ` /usr/bin/resscan-scsi-bus.sh` 并避免将 RDM LUN 的数量限制为 8 个，则必须创建一个包装程序脚本 ` /root/dynamic-lun-rescan` ，然后从此脚本运行 ` /usr/bin/rescan scsi-bus.sh` ，并使用选项 ` -w ，` ` 和` assign ` 。`
+
+
+
+以下是已修改的 ` /root/dynamic-lun-rescan.sh` 内容的示例：
+
+[listing]
+----
+#cat /root/dynamic-lun-rescan.sh
+#Wrapper script used to call the actual rescan script.
+/usr/bin/rescan-scsi-bus.sh -w -c -r
+----
+* 与 VMware ESX 服务器相关的限制 *
+
+* 每个子操作系统可以配置四个 SCSI 控制器，每个 SCSI 控制器可以映射到 16 个设备。
++
+但是，每个控制器会保留一个设备，因此总共可以将 60 个（ 16 个 * ， 4 个 - 4 个） RDM LUN 映射到子操作系统。
+
+* 每个 ESX 服务器最多可映射到 256 个 RDM LUN 。
+
+
+* 相关信息 *
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[SnapDrive for UNIX 中支持 VMware VMotion]
+
+xref:task_configuring_virtual_storage_console_in_snapdrive_for_unix.adoc[配置适用于 UNIX 的 SnapDrive 的虚拟存储控制台]
+
+xref:task_considerations_for_provisioning_rdm_luns.adoc[配置 RDM LUN 的注意事项]
+
+http://www.vmware.com/pdf/vsphere4/r40/vsp_40_config_max.pdf["www.vmware.com/pdf/vsphere4/r40/vsp_40_config_max.pdf"]

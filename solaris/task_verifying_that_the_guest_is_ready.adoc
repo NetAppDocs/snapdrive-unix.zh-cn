@@ -1,0 +1,27 @@
+---
+permalink: solaris/task_verifying_that_the_guest_is_ready.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verify, guest 
+summary: SnapDrive for UNIX 必须确保子系统已准备好与存储系统进行通信。 
+---
+= 验证子系统是否已准备就绪
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 必须确保子系统已准备好与存储系统进行通信。
+
+确保适用于 VMware vSphere 的 NetApp Virtual Storage Console 的备份和恢复功能已安装在 Windows 系统中并已注册到 vCenter 中。
+
+只有 RDM FC LUN 才需要 NetApp Virtual Storage Console 配置。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置集 -viadmin 用户 viadmin_name*`
+
++
+命令完成后，您可以运行 SnapDrive storage show -all` 命令来确认子系统是否可以与存储系统进行通信。
+
+

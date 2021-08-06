@@ -1,0 +1,74 @@
+---
+permalink: solaris/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, snapshot, copy, shared, storage, lun 
+summary: 您可以使用 SnapDrive snap connect 命令连接到 LUN 以外的共享存储实体的 Snapshot 副本。 
+---
+= 连接到 LUN 以外的共享存储实体的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap connect` 命令连接到 LUN 以外的共享存储实体的 Snapshot 副本。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive snap connect _fspec_set_ [_fspec_set..._] -snapname _long_snap_name_ [-DeviceType shared] [-spared]*`
+
++
+在此语法中， ` fspec_set_` 为： ` ｛ -dg _ -fs ｝ _src_file_spec_ [_dest_file_spec_ ] （ -destdg _dgname_ ）`
+
+
+
+以下示例将连接到一个 Snapshot 副本，该副本包含发起主机集群上的共享存储实体。此操作从非集群主节点执行，但此命令会发送到主节点并执行：
+
+[listing]
+----
+# snapdrive snap connect -fs /mnt/sfortesting /mnt/sfortesting2 -
+snapname f270-
+197-109:/vol/vol2:testsfarcsnap -devicetype shared -autorename
+Execution started on cluster master: sfrac-57
+connecting sfortesting_SdDg:
+LUN copy sfortesting_SdLun_0 ... created
+(original: f270-197-109:/vol/vol2/sfortesting_SdLun)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Connecting cluster node: sfrac-58 mapping lun\(s\) ... done
+discovering lun(s) ... done
+LUN f270-197-109:/vol/vol2/sfortesting_SdLun_0 connected
+- device filename(s): /dev/vx/dmp/c3t0d22s2
+Importing sfortesting_SdDg_0
+Activating hostvol sfracvxfstestfs_SdHv_0
+Successfully connected to snapshot f270-197-
+109:/vol/vol2:testsfarcsnap
+disk group sfortesting_SdDg_0 containing host volumes
+sfortesting_SdHv_0 (filesystem: /mnt/sfortesting2)
+----
+以下示例将连接到一个 Snapshot 副本，该副本包含非发起主机集群上的共享存储实体。此操作从非集群主节点执行，但此命令会发送到主节点并执行：
+
+[listing]
+----
+# snapdrive snap connect -fs /mnt/sfortesting -snapname f270-197-
+109:/vol/vol2:testsfarcsnap -devicetype shared
+Execution started on cluster master: sfrac-57
+connecting sfortesting_SdDg:
+LUN copy sfortesting_SdLun_0 ... created
+(original: f270-197-109:/vol/vol2/sfortesting_SdLun)
+Step Action
+184 Connecting to a Snapshot copy
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Connecting cluster node: sfrac-58
+mapping lun(s) ... done
+discovering lun(s) ... done
+LUN f270-197-109:/vol/vol2/sfortesting_SdLun_0 connected
+- device filename(s): /dev/vx/dmp/c3t0d1s2
+Importing sfortesting_SdDg
+Activating hostvol sfortesting_SdHv
+Successfully connected to snapshot f270-197-
+109:/vol/vol2:testsfarcsnap
+disk group sfortesting_SdDg containing host volumes
+sfortesting_SdHv (filesystem: /mnt/sfortesting)
+----

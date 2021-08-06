@@ -1,0 +1,116 @@
+---
+permalink: aix/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, delete, command, required 
+summary: 在使用 SnapDrive storage delete 命令之前，您需要提供一些信息。此信息有助于您正确使用命令。 
+---
+= 使用 SnapDrive storage delete 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 SnapDrive storage delete` 命令之前，您需要提供一些信息。此信息有助于您正确使用命令。
+
+|===
+| 要求 | 参数 
+
+
+ a| 
+根据您输入的命令，您可以删除以下任何类型的存储：
+
+* LUN
++
+指定要从存储系统中删除的一个或多个 LUN 。
+
++
+如果删除一个或多个 LUN ，则第一个参数必须使用长形式的 LUN 名称，此名称用于指定存储系统名称，卷名称以及卷中 LUN 的名称。
+
++
+要指定其他 LUN ，如果新 LUN 与上一个 LUN 位于同一存储系统和卷上，则可以单独使用 LUN 名称。否则，您可以指定新的存储系统名称和卷名称（或仅指定卷名称）来替换先前的值。
+
+* 直接在 LUN 上创建的文件系统
+* 磁盘或卷组
+* 磁盘或卷组上的文件系统
+* 主机或逻辑卷
+
+
+为 file_spec. 参数输入的值必须标识要删除的存储实体。
+
+
+
+ a| 
+LUN （` -lun` ）
+ a| 
+` lun_name_`
+
+
+
+ a| 
+其他 LUN
+ a| 
+` lun_name_` （长或短格式）
+
+
+
+ a| 
+磁盘组（` -dg _file_spec_` ）或卷组（` - vg _file_spec_` ）
+ a| 
+磁盘组或卷组的名称
+
+
+
+ a| 
+文件系统（` -fs _file_spec_` ）
+ a| 
+` 文件系统名称 _`
+
+
+
+ a| 
+主机卷（` -hostvol _file_spec_` ）或逻辑卷（` -lvol _file_spec_` ）
+ a| 
+主机卷或逻辑卷的名称
+
+
+NOTE: 您必须同时提供请求的卷及其所在的磁盘组；例如， ` - hostvol dg3/Acct_volume` 。
+
+
+
+ a| 
+如果您希望 SnapDrive for UNIX 删除您指定的存储，即使您在命令提示符处包含具有其他实体（例如具有一个或多个主机卷的磁盘组）的主机端实体，也可以在命令提示符处包含 ` -full` 选项。
+
+如果不包含此选项，则只能指定空的主机端实体。
+
+
+
+ a| 
+` 全满`
+ a| 
+~
+
+
+
+ a| 
+指定要删除存储的共享主机实体。
+
+
+
+ a| 
+` - fstype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+` -vmtype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+* 可选： * 指定用于 SnapDrive for UNIX 操作的文件系统和卷管理器的类型。
+
+|===

@@ -1,0 +1,40 @@
+---
+permalink: solaris/task_adding_host_entries_for_new_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, add, host, lun, entry 
+summary: 您可以使用适用于 UNIX 的 SnapDrive 创建特定数量的新 LUN 。SnapDrive for UNIX 为此提供了特定的命令。 
+---
+= 为新 LUN 添加主机条目
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于 UNIX 的 SnapDrive 创建特定数量的新 LUN 。SnapDrive for UNIX 为此提供了特定的命令。
+
+确保主机已准备好创建特定数量的新 LUN 。这些 LUN 位于映射到主机的存储系统上。
+
+.步骤
+. SnapDrive 配置准备 LUN -count 数（ -DeviceType Shared ）`
++
+` -count` 是要为主机准备的新 LUN 的数量。在使用 SFRAC 的 Solaris 平台上支持 ` 设备类型` 共享选项。
+
++
+` 设备类型` 是用于 SnapDrive for UNIX 操作的设备类型。如果指定为 ` -DeviceType shared` ，则 SnapDrive config prepare lun` 命令将在主机集群中的所有节点上运行。
+
++
+
+NOTE: 在 SFRAC 环境中，此命令会在主机集群中的所有节点上运行。
+
++
+在 Solaris 上，如果需要，此命令会将没有条目的每个潜在新 LUN 的条目添加到文件 ` /kernel/drv/sd.conf` 中。它还会为存储系统映射到的每个 SCSI 目标生成一个条目。在 Solaris 8 上，您必须在添加 `s .d.conf` 条目后重新启动主机。此命令会在需要重新启动时显示警告。
+
++
+[NOTE]
+====
+如果您已手动编辑 ` /kernel/drv/lpfc.conf` 文件以获取永久性绑定，请确保 FC-bind-WWPN 条目位于之后
+
+` # bEGIN ： lput-managed Persistent Bindings 。`
+
+====
+

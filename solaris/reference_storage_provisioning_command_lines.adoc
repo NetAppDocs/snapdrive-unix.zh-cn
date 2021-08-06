@@ -1,0 +1,162 @@
+---
+permalink: solaris/reference_storage_provisioning_command_lines.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, command, line, provisioning 
+summary: 某些 SnapDrive for UNIX 命令用于存储配置。 
+---
+= 存储配置命令行
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+某些 SnapDrive for UNIX 命令用于存储配置。
+
+以下命令行选项用于存储配置操作：
+
+|===
+| 操作 | 命令行选项 
+
+
+ a| 
+创建
+ a| 
+SnapDrive storage create-lun _long_lun_name_ [_lun_name ..._] -lunsize _size_ [ ｛ -dg _ -vg ｝ _dg_name_] （ -igroup _ig_name _ ） ] （ ｛ -reserve _ noreserve ｝ ））【 -fstype _type_vm_type_]`
+
+
+
+ a| 
+SnapDrive storage create ｛ -lvol _ -hostvol ｝ _file_spec_ ｛ -dg _ -vg ｝ dg_name ｝ ｛ -dgsize _ -vgsize ｝ _size_-filervol _long_filer_path_ ｛ shared _ dedicated ｝ ] ｛ ｛ -noreserve _ -reserve ｝ ] ｛ -fstype _type _v_path_ ｝`
+
+
+
+ a| 
+SnapDrive storage create -fs _file_spec_ -nolvm （ -fsopts options ） "-mntopts options] （ -noperassis] ） ｛ -lun _long_lun_name_ _ - -filervol _long_filer_path_ ｝ -lunsize _size_ （ -igroup _vm_name _ ）（ _ig_name ..._edicated _ ）` _ ｛ -type_ ） ｝ _edeverve
+
+
+
+ a| 
+SnapDrive storage create _host_lvm_fspec_ -filervol _long_filer_path_ -dgsize _size_ "-igroup _ig_name_ [_ig_name ..._]] [ ｛ -reserve _ -noreserve ｝ ] （ -DeviceType ｛ shared _ dedicated ｝ ）`
+
+
+
+ a| 
+SnapDrive storage create _host_lvm_fspec_ -lun _long_lun_name_ [_lun_name ..._] -lunsize _size_ [-igroup _ig_name_ [_ig_name ..._]] [ ｛ -reserve | -noreserve ｝ ]`
+
+[NOTE]
+====
+您可以根据要创建的存储类型对 ` -file_specs` 参数使用任意格式。（请记住， ` -DG` 是 ` -vg` 的同义词， ` -hostvol` 是 ` -lvol` 的同义词。）
+
+要直接在 LUN 上创建文件系统，请使用以下格式： ` -fs _file_spec_ （ -nolvm -fs _type_） "-fsops _options_] （ -mntopts _options_） （ -vmtype _type_）`
+
+要创建使用磁盘组或主机卷的文件系统，请使用以下格式： ` -fs _file_spec_ （ -fstype _type_） [-fsopts _options_] （ -mntops _options_） [-hostvol _file_spec_] （ -dg _dg_name_） ] （ -vmtype _type_）`
+
+要创建逻辑卷或主机卷，请使用以下格式： ` [-hostvol _file_spec_] [-dg _dg_name_] [-fstype _type_] [-vmtype _type_]`
+
+要创建磁盘组，请使用以下格式： ` -dg _dg_name_ [-fstype _type_] [-vmtype _type_]`
+
+====
+
+
+ a| 
+连接
+ a| 
+SnapDrive storage connect -fs _file_spec-nolvm_ -lun _lun_name_ "-igroup _ig_name_ [_ig_name ..._]] （ -noperassis] ）（ -mntopts 选项）（ -DeviceType ｛ shared | dedicated ｝ ）））） ]-fstype _type_] （ -vmtype _type_`
+
+
+
+ a| 
+SnapDrive 存储连接 -fs _file_spec_ -hostvol _file_spec_ -lun _lun_name_ [_lun_name ..._] [-igroup _ig_name_ [_ig_name ..._]]]-noperassis] [-mntopts options] [-DeviceType ｛ shared | dedicated ｝ ]]_fstype _type_type_`
+
+
+
+ a| 
+SnapDrive 存储连接 -lun _lun_name_ [_lun_name ..._]-igroup _ig_name_ [_ig_name ..._]-vmtype _type_]`
+
+
+
+ a| 
+SnapDrive 存储连接 -lun _long_lun_name_ _lun_name ..._]-DeviceType ｛ shared | dedicated ｝ ]-vmtype _type_]`
+
+
+
+ a| 
+SnapDrive 存储连接 -fs _file_spec_ ｛ -hostvol _ -lvol ｝ _file_spec_ -lun _long_lun_name_ [_lun_name..._] [-DeviceType ｛ shared _ dedicated ｝ ] [-noperassis] [-mntopts options] [-fstype _type_] [-vmtype type_]`
+
+
+
+ a| 
+断开连接
+ a| 
+SnapDrive storage disconnect -lun _long_lun_name_ [_lun_name..._] [-DeviceType ｛ shared | dedicated ｝ ][-vmtype _type_]`
+
+
+
+ a| 
+SnapDrive 存储断开连接 ｛ -vg _ -dg _ -fs _ -lvol _ -hostvol ｝ _file_spec_ [_file_spec__]] ｛ -vg _ -dg _ -fs _ lvol _ -hostvol ｝ _file_spec_ … ] …… ] 【 -full】 【 -DeviceType ｛ shared | dedicated ｝ 】【 -fstype _type_】 【 -vmtype _type_] 】`
+
+
+
+ a| 
+调整大小
+ a| 
+SnapDrive 存储调整大小 ｛ -dg _ -vg ｝ _file_spec_ [_file_spec_..._] ｛ -growby _ - -growto ｝ _size_ [_addlun_ [-igroup _ig_name_ [_vmig_name ..._]] ] ｛ -reseserve _ -noreserve ｝ ]] 【 -fstype _type _type____type_______type___________type__<_________`
+
+
+
+ a| 
+显示 / 列表
+ a| 
+SnapDrive 存储 ｛ show | list ｝ -filer _filername_ [_filername ..._] [-verbose ] [-quiet ] [-capabilities ]`
+
+
+
+ a| 
+SnapDrive 存储 ｛ show | list ｝ -filervol _lor_filer_path_ [_filer_path..._] 【 -verbose 】【 -quiet 】【 -capabilities 】`
+
+
+
+ a| 
+SnapDrive storage ｛ show | list ｝ ｛ -all | device ｝ ｛ -DeviceType ｛ shared | dedicated ｝ ] ｛ -capabilities ｝`
+
+
+
+ a| 
+SnapDrive storage show [-verbose ] ｛ -filer _filername_ __filername..._] | -filervol _volname_ [_volname..._] ｝ ｛ -DeviceType ｛ shared ： dedicated ｝ ] ｛ -capabilities ｝`
+
+
+
+ a| 
+SnapDrive 存储 ｛ show| list ｝ -lun _long_lun_name_ [_lun_name ..._] [-verbose ] [-quiet ] [-status] [-capitalies]`
+
+
+
+ a| 
+SnapDrive 存储 ｛ show` list ｝ ｛ -vg | -dg | -fs | -lvol _hostvol ｝ _file_spec_ [_file_spec_..._] ｛ -vg _ -dg _ -fs _ -lvol _ -hostvol ｝ _file_spec_ [_file_spec___]] vm-verbes] 【 -verby__type_status_<__sttype_<__status____________capabilities 】
+
+
+
+ a| 
+SnapDrive 存储 ｛ show | list ｝ ｛ -filer _filer_name_ _filer_name ..._] ； -filervol _long_filer_path_ [_filer_path ..._] ｝ ｛ -verbose ｝ ｛ -DeviceType ｛ shared | dedicated ｝ ] ｛ -capabilities ｝ 【 -quiet 】`
+
+
+
+ a| 
+SnapDrive 存储 ｛ show | list ｝ -lun _lon_name_ [_lun_name ..._] 【详细信息】【 -status] 【 -fstype _type_】 【 -vmtype _type_】 【功能】【静默】`
+
+
+
+ a| 
+删除
+ a| 
+SnapDrive storage delete （ -lun ） _long_lun_name_ （ _lun_name ） ..._] （ -DeviceType ｛ shared | dedicated ｝ ） ] （ -fstype _type_] ）（ -vmtype _type_]`
+
+
+
+ a| 
+SnapDrive 存储删除项（ -vg _ -dg _ -fs _ -lvol _ -hostvol] _file_spec_ [_file_spec_..._] ）（ ｛ -vg _ -dg _ -fs _ lvol _ -hostvol ｝ _file_spec_ [_file_..._]...] 【 -full】 【 -DeviceType ｛ shared | dedicated ｝ 】【 -fstype _type_】 【 -vmtype _type_] 】`
+
+|===
+* 相关信息 *
+
+xref:reference_command_line_arguments.adoc[命令行参数]

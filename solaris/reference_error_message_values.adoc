@@ -1,0 +1,1781 @@
+---
+permalink: solaris/reference_error_message_values.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, message, value 
+summary: 了解在使用 SnapDrive for UNIX 时可能会看到的一些更常见的错误消息并了解如何解决这些错误消息，这对您很有帮助。 
+---
+= 错误消息值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解在使用 SnapDrive for UNIX 时可能会看到的一些更常见的错误消息并了解如何解决这些错误消息，这对您很有帮助。
+
+下表详细介绍了使用 SnapDrive for UNIX 时可能遇到的最常见错误：
+
+[cols="15,20,15,25,40"]
+|===
+| 错误代码 | 返回代码 | Type | message | 解决方案 
+
+
+ a| 
+`0000-001`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+已为存储系统 <storage-system-name> 配置 `datapath 。请使用 SnapDrive config delete -mgmtpath 命令将其删除，然后重试。`
+ a| 
+在删除存储系统之前，请使用 SnapDrive config delete -mgmtpath` 命令删除为存储系统配置的管理路径。
+
+
+
+ a| 
+`0001-242`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法使用 https 连接到存储系统： 10.72.197.213 。确保 10.72.197.213 是有效的存储系统名称 / 地址， 如果您配置的存储系统正在 7- 模式 Data ONTAP 上运行，请将主机添加到可信主机（选项 trusted.hosts ）并在存储系统 10.72.197.213 上启用 SSL ，或者修改 SnapDrive.conf 以使用 http 进行通信并重新启动 SnapDrive 守护进程。如果您配置的存储系统正在集群模式 Data ONTAP 上运行，请确保 Vserver 名称已映射到 Vserver 管理 LIF 的 IP 地址。`
+ a| 
+检查以下条件：
+
+* 确保所连接的存储系统是有效的存储系统。
+* 如果您尝试配置的存储系统正在 7- 模式 Data ONTAP 上运行，请将相同的添加到可信主机，并在存储系统上启用 SSL ，或者修改 `snapdrive.conf` 文件以使用 HTTP 进行通信；然后重新启动 SnapDrive 守护进程。
+* 如果您尝试配置的存储系统正在集群模式 Data ONTAP 上运行，请确保 Vserver 名称已映射到 Vserver 的管理逻辑接口（ LIF ）的 IP 地址。
+
+
+
+
+ a| 
+`0003- 004`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法将存储系统 <storage-system-name> 上的 LUN <lun-name> 从子操作系统中逐出。原因：未从 CoreOS` 填充任何映射设备信息
+ a| 
+在子操作系统中执行 SnapDrive snap disconnect` 操作时会发生这种情况。
+
+检查 ESX 服务器中是否存在任何 RDM LUN 映射，或者 ESX 服务器中是否存在陈旧的 RDM 条目。
+
+在 ESX 服务器以及子操作系统中手动删除 RDM 映射。
+
+
+
+ a| 
+`0001- 019`
+ a| 
+3.
+ a| 
+命令
+ a| 
+`命令行无效 - 文件名重复： <dg1/vol2 和 dg1/vol2 >`
+ a| 
+如果执行的命令在同一主机卷上具有多个主机实体，则会发生这种情况。
+
+例如，命令会明确指定同一主机卷上的主机卷和文件系统。
+
+完成以下步骤：
+
+. 删除主机实体的所有重复实例。
+. 再次执行命令。
+
+
+
+
+ a| 
+`0001-023`
+ a| 
+11.
+ a| 
+管理员
+ a| 
+`无法发现磁盘组 dg1 中的所有 LUN 。设备无响应： dg1 请检查存储系统上的 LUN 状态并根据需要使 LUN 联机，或者将主机添加到可信主机（选项 trusted.hosts ）并在存储系统上启用 SSL ，或者在将 SnapDrive.conf 更改为使用（ http/https ）进行存储系统通信并重新启动 SnapDrive 守护进程后重试。`
+ a| 
+如果设备上的 SCSI 查询失败，则会发生这种情况。由于多种原因，对设备执行 SCSI 查询可能会失败。
+
+执行以下步骤：
+
+. 将 device-retries 配置变量设置为更高的值。
++
+例如，将其设置为 10 （默认值为 3 ），然后重新执行命令。
+
+. 使用带有 ` -all` 选项的 SnapDrive storage show 命令` 来获取有关设备的信息。
+. 检查存储系统上的 FC 或 iSCSI 服务是否已启动且正在运行。
++
+如果不是，请联系存储管理员以使存储系统联机。
+
+. 检查主机上的 FC 或 iSCSI 服务是否已启动。
+
+
+如果上述解决方案无法解决问题描述问题，请联系技术支持。
+
+
+
+ a| 
+`0001-218`
+ a| 
+ a| 
+管理员
+ a| 
+`device /dev/mapper — SCSI 查询失败。LUN 无响应。请检查存储系统上的 LUN 状态，并根据需要使 LUN 联机。`
+ a| 
+如果在 SLES10 SP2 中设备上的 SCSI 查询失败，则会发生此问题。lvm2-2.02.17-7.27.8 和 ` filter_` 设置在 SLES10 SP2 的 `lvm.conf` 文件中分配为 ` =[A]/dev/mapper/.\*" ， "a">/dev/cciss/.*" ， "r/.*/"]` 。
+
+在 `lvm.conf` 文件中，将 ` filter_` 设置为 ` ["r|/dev/.\*/by-path/.*|" ， "r//dev/.\*/by-id/.*"" ， "r|/dev/cciss/.\*"" ， "a/.*/"]` 。
+
+
+
+ a| 
+`0001-395`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`此主机上无 HBA ！`
+ a| 
+如果将大量 LUN 连接到主机系统，则会发生这种情况。
+
+检查` `snapdrive.conf` 文件中的变量 ` enable-fcp-cache_s 是否设置为 on 。
+
+
+
+ a| 
+`0001-389`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法获取 HBA 助手 solarisfcp 的 HBA 类型`
+ a| 
+如果将大量 LUN 连接到主机系统，则会发生这种情况。
+
+检查` `snapdrive.conf` 文件中的变量 ` enable-fcp-cache_s 是否设置为 on 。
+
+
+
+ a| 
+`0001-389`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法获取 HBA 助手 vmwarefcp 的 HBA 类型`
+ a| 
+必须检查以下条件：
+
+* 在创建存储之前，请确保您是否已使用命令配置虚拟接口：
++
+` * SnapDrive 配置集 _-viadmin <user> <virtual_interface_IP or name>_*`
+
+* 检查虚拟接口的存储系统是否存在，但您仍会遇到相同的错误消息，然后重新启动 SnapDrive for UNIX 以成功执行存储创建操作。
+* 检查是否满足 Virtual Storage Console 的配置要求，如中所述 link:https://www.netapp.com/pdf.html?item=/media/7350-ds-3057.pdf["适用于 VMware vSphere 的 NetApp Virtual Storage Console"]
+
+
+
+
+ a| 
+`0001-682`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`主机准备新 LUN 失败：不支持此功能检查控制器。`
+ a| 
+要成功执行 SnapDrive 操作，请再次执行命令。
+
+
+
+ a| 
+`0001-859`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`主机的接口均无 NFS 权限访问存储系统 <storage system name>` 上的目录 <directory name>
+ a| 
+在 `snapdrive.conf` 文件中，确保 ` _check-export-permission-nfs-clone_s` 配置变量设置为 `off` 。
+
+
+
+ a| 
+`0002-253`
+ a| 
+ a| 
+管理员
+ a| 
+`Flex 克隆创建失败`
+ a| 
+这是存储系统端错误。请收集 sd-trace.log 和存储系统日志以进行故障排除。
+
+
+
+ a| 
+`0002-264`
+ a| 
+ a| 
+管理员
+ a| 
+`存储器 < 存储器名称 >` 不支持 FlexClone
+ a| 
+当前 Data ONTAP 版本的存储系统不支持 FlexClone 。将存储系统的 Data ONTAP 版本升级到 7.0 或更高版本，然后重试此命令。
+
+
+
+ a| 
+`0002-265`
+ a| 
+ a| 
+管理员
+ a| 
+`无法在 filer <filername>` 上检查 flex_clone 许可证
+ a| 
+这是存储系统端错误。收集 sd-trace.log 和存储系统日志以进行故障排除。
+
+
+
+ a| 
+`0002-266`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`FlexClone 在 filer <filername>` 上未获得许可
+ a| 
+FlexClone 未在存储系统上获得许可。在存储系统上添加 FlexClone 许可证后重试此命令。
+
+
+
+ a| 
+`0002-267`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`根卷 <volume-name> 不支持 FlexClone`
+ a| 
+无法为根卷创建 FlexClones 。
+
+
+
+ a| 
+`0002-270`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`聚合 <aggregate-name> 上的可用空间小于磁盘组 /FlexClone 元数据所需的 <size>MB （ MB ）`
+ a| 
+. 要使用 FlexClones 连接到原始 LUN ，聚合上需要 2 MB 的可用空间。
+. 按照步骤 1 和 2 释放聚合上的一些空间，然后重试此命令。
+
+
+
+
+ a| 
+`0002-332`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+对于用户 lnx197-142\john` ， qtree storage_array1 ： /vol/vol1/qtree1 上的 `s .d snapshot.Restore 访问被拒绝
+ a| 
+请联系 Operations Manager 管理员以向用户授予所需功能。
+
+
+
+ a| 
+`0002-364`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法联系 DFM ： lnx197-146 ，请更改用户名和 / 或密码。`
+ a| 
+验证并更正 SD-admin 用户的用户名和密码。
+
+
+
+ a| 
+0002-268
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+` < 卷名称 > 不是灵活卷`
+ a| 
+无法为传统卷创建 FlexClones 。
+
+
+
+ a| 
+`0003-003`
+ a| 
+ a| 
+管理员
+ a| 
+. `无法将存储系统 <storage_name> 上的 LUN <LUN_name> 导出到子操作系统。`
+
+
+或
+ a| 
+* 检查 ESX 服务器（或） ESX 服务器中陈旧的 RDM 条目中是否存在任何 RDM LUN 映射。
+* 在 ESX 服务器以及子操作系统中手动删除 RDM 映射。
+
+
+
+
+ a| 
+`0003-012`
+ a| 
+ a| 
+管理员
+ a| 
+`无法访问虚拟接口服务器 win2k3-225-238 。`
+ a| 
+未在上为主机 / 子操作系统配置 NIS 。
+
+您必须在位于 ` /etc/hosts` 的文件中提供名称和 IP 映射
+
+例如： ` # cat /etc/hosts10.72.225.238 win2k3-225-238.eng.org.com win2k3-225-238`
+
+
+
+ a| 
+`0001-552`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`不是有效的卷克隆或 lun-clone`
+ a| 
+无法为传统卷创建克隆拆分。
+
+
+
+ a| 
+`0001-553`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`由于 <Filer- Name>` 中的存储空间不足，无法拆分 "`FS-Name` "
+ a| 
+克隆拆分会继续拆分过程，但由于存储系统中没有足够的可用存储空间，克隆拆分会突然停止。
+
+
+
+ a| 
+`0003-002`
+ a| 
+ a| 
+命令
+ a| 
+`无法将更多 LUN 导出到子操作系统。`
+ a| 
+由于 ESX 服务器为控制器支持的设备数量已达到最大限制，您必须为子操作系统添加更多控制器。
+
+* 注： * ESX 服务器将每个子操作系统的最大控制器数限制为 4 。
+
+
+
+ a| 
+`9000-023`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`关键字 -lun 无参数`
+ a| 
+如果带有 ` -lun` 关键字的命令没有 ` lun_name_` 参数，则会发生此错误。
+
+操作：执行以下任一操作；
+
+. 使用 ` -lun` 关键字为命令指定 ` lun_name_` 参数。
+. 检查 SnapDrive for UNIX 帮助消息
+
+
+
+
+ a| 
+`0001-028`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`文件系统 </mnt/qa/dg4/vol1> 的类型（ HFS ）不受 SnapDrive 管理。请重新提交您的请求，而不显示文件系统 <mnt/qa/dg4/vol1>`
+ a| 
+如果某个命令包含不受支持的文件系统类型，则会发生此错误。
+
+操作：排除或更新文件系统类型，然后再次使用命令。
+
+有关最新的软件兼容性信息，请参见互操作性表。
+
+
+
+ a| 
+`9000-030`
+ a| 
+1.
+ a| 
+命令
+ a| 
+` LUN 不能与其他关键字` 结合使用
+ a| 
+如果将 ` -lun` 关键字与 ` -fs` 或 ` -dg` 关键字组合使用，则会发生此错误。这是一个语法错误，表示命令使用无效。
+
+操作：仅使用 ` -lun` 关键字重新执行命令。
+
+
+
+ a| 
+`0001-034`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`m挂载失败：挂载： < 设备名称 > 不是有效的块设备 "`
+ a| 
+只有当克隆的 LUN 已连接到 Snapshot 副本中存在的相同文件规范，然后您尝试执行 SnapDrive snap restore` 命令时，才会发生此错误。
+
+命令失败，因为在删除克隆的 LUN 时， iSCSI 守护进程会重新映射已还原的 LUN 的设备条目。
+
+操作：执行以下任一操作：
+
+. 再次执行 SnapDrive snap restore` 命令。
+. 在尝试还原原始 LUN 的 Snapshot 副本之前，请删除已连接的 LUN （如果它挂载在 Snapshot 副本中的同一文件规范上）。
+
+
+
+
+ a| 
+`0001-046` 和 `0001-047`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`Snapshot 名称无效： </vol/vol1/no_filer_pre fix> 或 Snapshot 名称无效： no_long_FILERname - 存储器卷名称缺失`
+ a| 
+这是一个语法错误，表示命令使用无效，尝试使用无效的 Snapshot 名称执行 Snapshot 操作。
+
+操作：完成以下步骤：
+
+. 使用 SnapDrive snap list - filer <filer-volume-name> 命令获取 Snapshot 副本列表。
+. 使用 long_snap_name 参数执行命令。
+
+
+
+
+ a| 
+`9000-047`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`m提供了一个 -snapname 参数`
+ a| 
+SnapDrive for UNIX 不能在命令行中接受多个 Snapshot 名称来执行任何 Snapshot 操作。
+
+操作：使用一个 Snapshot 名称重新执行命令。
+
+
+
+ a| 
+`9000-049`
+ a| 
+1.
+ a| 
+命令
+ a| 
+` -dg 和 -v 不能组合使用`
+ a| 
+将 ` -DG` 和 ` -vg` 关键字组合使用时会发生此错误。这是一个语法错误，表示命令使用无效。
+
+操作：使用 ` -dg` 或 ` -vg` 关键字执行命令。
+
+
+
+ a| 
+`9000-1050`
+ a| 
+1.
+ a| 
+命令
+ a| 
+` lvol 和 -hostvo 不能组合使用`
+ a| 
+将 ` lvol` 和 ` -hostvol` 关键字组合使用时会发生此错误。这是一个语法错误，表示命令使用无效。操作：完成以下步骤：
+
+. 在命令行中将 ` lvol` 选项更改为 ` - hostvol` 选项，反之亦然。
+. 执行命令。
+
+
+
+
+ a| 
+`9000-057`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`m使用所需的 -snapname 参数`
+ a| 
+这是一个语法错误，表示命令使用无效，在该命令中，尝试执行 Snapshot 操作时不提供 snap_name 参数。
+
+操作：使用适当的 Snapshot 名称执行命令。
+
+
+
+ a| 
+`0001-067`
+ a| 
+6.
+ a| 
+命令
+ a| 
+`snapshot hourly.0 不是由 SnapDrive 创建的。`
+ a| 
+这些 Snapshot 副本是由 Data ONTAP 创建的每小时自动 Snapshot 副本。
+
+
+
+ a| 
+`0001-092`
+ a| 
+6.
+ a| 
+命令
+ a| 
+`snapshot <non_existent_24965> doeservol Exocet 上不存在： </vol/vol1>`
+ a| 
+在存储系统上未找到指定的 Snapshot 副本。操作：使用 SnapDrive snap list` 命令查找存储系统中的 Snapshot 副本。
+
+
+
+ a| 
+`0001- 099`
+ a| 
+10
+ a| 
+管理员
+ a| 
+`Snapshot 名称无效： <Exocet ： /vol2/dbvol ： New SnapName> 与存储器卷名称 <Exocet ： /vol/vol1>` 不匹配
+ a| 
+这是一个语法错误，表示命令使用无效，尝试使用无效的 Snapshot 名称执行 Snapshot 操作。
+
+操作：完成以下步骤：
+
+. 使用 SnapDrive snap list - filer _<filer-volume-name>_` 命令获取 副本列表。
+. 使用 SnapDrive for UNIX 限定的 Snapshot 名称的正确格式执行命令。限定格式为： ` lor_snap_name_` 和 ` Short_snap_name_` 。
+
+
+
+
+ a| 
+`0001-122`
+ a| 
+6.
+ a| 
+管理员
+ a| 
+`无法在存储器 <Exocet> 上获取快照列表：指定的卷不存在。`
+ a| 
+如果指定的存储系统（存储系统）卷不存在，则会发生此错误。
+
+操作：完成以下步骤：
+
+. 请联系存储管理员以获取有效存储系统卷的列表。
+. 使用有效的存储系统卷名称执行命令。
+
+
+
+
+ a| 
+`0001-124`
+ a| 
+111.
+ a| 
+管理员
+ a| 
+`无法在存储器 <Exocet> 上删除 <snap_delete_m多云 _inuse_2437> ： lun clone`
+ a| 
+对指定 Snapshot 副本执行 `Snapshot delete` 操作失败，因为存在 LUN 克隆。
+
+操作：完成以下步骤：
+
+. 使用带有 ` -all` 选项的 lun storage show 命令查找 SnapDrive 副本的 lun 克隆（作为后备 副本输出的一部分）。
+. 请联系存储管理员将 LUN 从克隆中拆分。
+. 再次执行命令。
+
+
+
+
+ a| 
+`0001-155`
+ a| 
+4.
+ a| 
+命令
+ a| 
+`snapshot <dup_snapname23980> 已位于 <Exocet ： /vol/vol1> 上。请使用 -f （强制）标志覆盖现有快照`
+ a| 
+如果命令中使用的 Snapshot 副本名称已存在，则会发生此错误。
+
+操作：执行以下任一操作：
+
+. 使用其他 Snapshot 名称重新执行此命令。
+. 使用 ` -f` （ force ）标志再次执行命令以覆盖现有 Snapshot 副本。
+
+
+
+
+ a| 
+`0001-158`
+ a| 
+84.
+ a| 
+命令
+ a| 
+自 `d<snapshotexocet ： /vol/vo L1 ： overwrite_noforce_25 078> 以来， iskgroup 配置已更改。已删除 hostvol /dev/dg3/vol4 > 请使用 "-f" （强制）标志覆盖警告并完成还原`
+ a| 
+磁盘组可以包含多个 LUN ，当磁盘组配置发生更改时，您会遇到此错误。例如，创建 Snapshot 副本时，磁盘组包含 X 个 LUN ，创建副本后，磁盘组可以包含 X+Y 个 LUN 。
+
+操作：再次使用带有 ` -f` （ force ）标志的命令。
+
+
+
+ a| 
+`0001-185`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`storage show failed ：没有 NetApp 设备可在存储器上显示或启用 SSL ，或者在更改 SnapDrive.conf 以使用 http 进行存储器通信后重试。`
+ a| 
+出现此问题的原因可能如下：如果主机上的 iSCSI 守护进程或 FC 服务已停止或出现故障，则即使主机上已配置 LUN ， SnapDrive storage show -all` 命令也会失败。
+
+操作：解决发生故障的 iSCSI 或 FC 服务。配置了 LUN 的存储系统已关闭或正在重新启动。
+
+操作：等待 LUN 启动。为 ` usehttps- to -filer_` 配置变量设置的值可能不受支持。
+
+操作：完成以下步骤：
+
+. 使用 `sanlun lun show all` 命令检查是否有任何 LUN 映射到主机。
+. 如果有任何 LUN 映射到主机，请按照错误消息中所述的说明进行操作。
+
+
+将 ` _usehttps-` filter_`配置变量的值（如果值为 "`off` " ，则更改为 "` off` " ；如果值为 "`on` " ，则更改为 "`off " ）。
+
+
+
+ a| 
+`0001-226`
+ a| 
+3.
+ a| 
+命令
+ a| 
+`"snap creation" 要求所有文件专用系统均可访问请验证以下不可访问的文件专用系统：文件系统： </mnt/qa/dg1/vol3>`
+ a| 
+如果指定的主机实体不存在，则会发生此错误。
+
+操作：再次使用带有 ` -all` 选项的 SnapDrive storage show` 命令查找主机上存在的主机实体。
+
+
+
+ a| 
+`0001- 242`
+ a| 
+18
+ a| 
+管理员
+ a| 
+`无法连接到存储器： <filername>`
+ a| 
+SnapDrive for UNIX 会尝试通过安全 HTTP 协议连接到存储系统。如果主机无法连接到存储系统，则可能会发生此错误。操作：完成以下步骤：
+
+. 网络问题：
++
+.. 使用 nslookup 命令检查通过主机运行的存储系统的 DNS 名称解析。
+.. 如果存储系统不存在，请将其添加到 DNS 服务器。
+
+
+
+
+您也可以使用 IP 地址而不是主机名来连接到存储系统。
+
+. 存储系统配置：
++
+.. 要使 SnapDrive for UNIX 正常工作，您必须具有用于安全 HTTP 访问的许可证密钥。
+.. 设置许可证密钥后，请检查您是否可以通过 Web 浏览器访问存储系统。
+
+
+. 执行步骤 1 或步骤 2 或两者后执行命令。
+
+
+
+
+ a| 
+`0001- 243`
+ a| 
+10
+ a| 
+命令
+ a| 
+`DG 名称无效： <SDU_dg1>`
+ a| 
+如果主机中不存在磁盘组，则会发生此错误，进而导致命令失败。例如，主机中不存在 ` _SDU_dg1_` 。
+
+操作：完成以下步骤：
+
+. 使用 SnapDrive storage show -all` 命令获取所有磁盘组名称。
+. 使用正确的磁盘组名称重新执行命令。
+
+
+
+
+ a| 
+`0001- 246`
+ a| 
+10
+ a| 
+命令
+ a| 
+`无效的主机卷名称： /mnt/qa/dg2/bADFS> ，有效格式为 <vgname/hostvolname> ，即 <MyGroup/vol2>`
+ a| 
+操作：使用以下适用于主机卷名称的格式重新执行命令： `vgname/hostvolname`
+
+
+
+ a| 
+`0001- 360`
+ a| 
+34
+ a| 
+管理员
+ a| 
+`无法在存储器 <Exocet> 上创建 LUN </vol/badvol1/naneHP13_ unnewDg_fv_SdLun> ：无此卷`
+ a| 
+如果指定路径包含不存在的存储系统卷，则会发生此错误。
+
+操作：请与存储管理员联系以获取可供使用的存储系统卷列表。
+
+
+
+ a| 
+`0001- 372`
+ a| 
+58
+ a| 
+命令
+ a| 
+`LUN 名称错误`` ：：`` </vol/vol1/SCE_lun2a> - 无法识别格式`
+ a| 
+如果在命令中指定的 LUN 名称不符合 SnapDrive for UNIX 支持的预定义格式，则会发生此错误。SnapDrive for UNIX 要求按以下预定义格式指定 LUN 名称： ` <filer-name ： /vol/<volname>/<lun-name>`
+
+操作：完成以下步骤：
+
+. 使用 SnapDrive help` 命令了解 SnapDrive for UNIX 支持的 LUN 名称的预定义格式。
+. 再次执行命令。
+
+
+
+
+ a| 
+`0001-`
+ a| 
+6.
+ a| 
+命令
+ a| 
+`未找到以下所需的 1 个 LUN ： Exocet ： </vol/vol1/NotRealLun>`
+ a| 
+如果在存储系统上未找到指定的 LUN ，则会发生此错误。
+
+操作：执行以下任一操作：
+
+. 要查看连接到主机的 LUN ，请使用 SnapDrive storage show -dev` 命令或 SnapDrive storage show -all` 命令。
+. 要查看存储系统上的完整 LUN 列表，请与存储管理员联系，以从存储系统获取 lun show 命令的输出。
+
+
+
+
+ a| 
+`0001-`
+ a| 
+43
+ a| 
+命令
+ a| 
+`d磁盘组名称 <name> 已在使用中或与其他实体冲突。`
+ a| 
+如果磁盘组名称已在使用中或与其他实体冲突，则会发生此错误。操作：
+
+执行以下任一操作：
+
+使用 ` - autorename` 选项执行命令
+
+使用带有 ` -all` 选项的 SnapDrive storage show` 命令查找主机正在使用的名称。执行命令以指定主机未使用的其他名称。
+
+
+
+ a| 
+`0001- 380`
+ a| 
+43
+ a| 
+命令
+ a| 
+`主机卷名称 <dg3/vol1> 已在使用中或与其他实体冲突。`
+ a| 
+如果主机卷名称已在使用中或与其他实体冲突，则会发生此错误
+
+操作：执行以下任一操作：
+
+. 使用 ` - autorename` 选项执行命令。
+. 使用带有 ` -all` 选项的 SnapDrive storage show` 命令查找主机正在使用的名称。执行命令以指定主机未使用的其他名称。
+
+
+
+
+ a| 
+`0001- 417`
+ a| 
+51
+ a| 
+命令
+ a| 
+`以下名称已在使用中： <mydg1> 。请指定其他名称。`
+ a| 
+操作：执行以下任一操作：
+
+. 使用 ` -autorename` 选项重新执行命令。
+. 使用 SnapDrive storage show - all` 命令查找主机上的名称。再次执行命令以明确指定主机未使用的其他名称。
+
+
+
+
+ a| 
+`0001-422`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`LVM 初始化 LUN 失败： c2t500A09818667B9DAD0 VxVM vxdisksetup 错误 V-5-2-5241 无法标记为无法获取磁盘几何结构。`
+ a| 
+操作：确保已安装适用于 Solaris 可扩展处理器架构（ SPARC ）的最新修补程序 146019-02 。
+
+
+
+ a| 
+`0001- 430`
+ a| 
+51
+ a| 
+命令
+ a| 
+`您不能同时指定 -dG/vg dg 和 - lvol/hostvol dG/vol`
+ a| 
+这是一个语法错误，表示命令使用无效。命令行可以接受 ` -dg/vg` 关键字或 ` -lvol/hostvol` 关键字，但不能同时接受这两者。
+
+操作：仅使用 ` -dg/vg` 或 ` - lvol/hostvol` 关键字执行命令。
+
+
+
+ a| 
+`0001-`
+ a| 
+6.
+ a| 
+命令
+ a| 
+`snapshot Exocet ： /vol/vol1 ： not_E IST 不在存储卷 Exocet ： /vol/vol1` 上
+ a| 
+如果在存储系统上未找到指定的 Snapshot 副本，则会发生此错误。
+
+操作：使用 SnapDrive snap list` 命令查找存储系统中的 Snapshot 副本。
+
+
+
+ a| 
+`0001- 435`
+ a| 
+3.
+ a| 
+命令
+ a| 
+`您必须在命令行上指定所有主机卷和 / 或所有文件系统，或者提供 -AutoExpand 选项。`
+
+`以下名称在命令行中缺失，但在 Snapshot <snap2_5VG_SINGLELUN _remote> 中找到： Host Volumes ： <dg3/vol2> File Systems ： </mnt/qa/dg3/vol2>`
+ a| 
+指定的磁盘组具有多个主机卷或文件系统，但命令中不会提及完整的设置。
+
+操作：执行以下任一操作：
+
+. 使用 ` - AutoExpand` 选项重新发出命令。
+. 使用 SnapDrive snap show` 命令查找主机卷和文件系统的完整列表。执行命令以指定所有主机卷或文件系统。
+
+
+
+
+ a| 
+`0001- 440`
+ a| 
+6.
+ a| 
+命令
+ a| 
+`snapshot snap2_5vg_SINGLELUN_ remote 不包含磁盘组 "gBAD"`
+ a| 
+如果指定的磁盘组不属于指定的 Snapshot 副本，则会发生此错误。
+
+操作：要确定指定磁盘组是否存在任何 Snapshot 副本，请执行以下任一操作：
+
+. 使用 SnapDrive snap list` 命令查找存储系统中的 Snapshot 副本。
+. 使用 snapshot show` 命令查找 SnapDrive 副本中的磁盘组，主机卷，文件系统或 LUN 。
+. 如果磁盘组存在 Snapshot 副本，请使用 Snapshot 名称执行命令。
+
+
+
+
+ a| 
+`0001- 442`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`m多个目标 - 为单个 Snap 连接源 <src> 指定 <dis> 和 <dis1> 。请使用单独的命令重试。`
+ a| 
+操作：执行单独的 SnapDrive snap connect` 命令，以使新的目标磁盘组名称（属于 `snap connect` 命令的一部分）与同一个 SnapDrive snap connect` 命令中已属于其他磁盘组单元的名称不同。
+
+
+
+ a| 
+`0001-`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`以下文件名不存在且无法删除： disk Group ： <naneHP13_ dg1>`
+ a| 
+主机上不存在指定的磁盘组，因此对指定磁盘组执行的删除操作失败。
+
+操作：使用带有 `all` 选项的 SnapDrive storage show` 命令查看主机上的实体列表。
+
+
+
+ a| 
+`0001- 476`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法发现与 < 长 LUN 名称 > 关联的设备如果正在使用多路径，可能会出现多路径配置错误。请验证配置，然后重试。`
+ a| 
+失败的原因可能有很多。
+
+* 主机配置无效：
++
+未正确设置 iSCSI ， FC 或多路径解决方案。
+
+* 网络或交换机配置无效：
++
+未为 IP 网络设置适当的 iSCSI 流量转发规则或筛选器，或者 FC 交换机未配置建议的分区配置。
+
+
+
+上述问题很难按算法或顺序进行诊断。
+
+操作： NetApp 建议在使用适用于 UNIX 的 SnapDrive 之前，按照《主机实用程序设置指南》（适用于特定操作系统）中建议的步骤手动发现 LUN 。
+
+发现 LUN 后，请使用 SnapDrive for UNIX 命令。
+
+
+
+ a| 
+`0001- 486`
+ a| 
+12
+ a| 
+管理员
+ a| 
+`LUN 正在使用中，无法删除。请注意，在删除由卷管理器控制的 LUN 时，如果不先将其从卷管理器控制中正确删除，则会很危险。`
+ a| 
+SnapDrive for UNIX 无法删除属于卷组的 LUN 。
+
+操作：完成以下步骤：
+
+. 使用命令 SnapDrive storage delete -dg <dgname>` 删除磁盘组。
+. 删除 LUN 。
+
+
+
+
+ a| 
+`0001- 494`
+ a| 
+12
+ a| 
+命令
+ a| 
+SnapDrive 无法删除 <mydg1> ，因为其中仍保留 1 个主机卷。使用 -full 标志删除与 <mydg1>` 关联的所有文件系统和主机卷
+ a| 
+除非明确请求删除磁盘组上的所有主机卷，否则 SnapDrive for UNIX 无法删除该磁盘组。
+
+操作：执行以下任一操作：
+
+. 在命令中指定 ` 完整` 标志。
+. 完成以下步骤：
++
+.. 使用 SnapDrive storage show -all` 命令获取磁盘组上的主机卷列表。
+.. 在 SnapDrive for UNIX 命令中明确提及其中的每一项。
+
+
+
+
+
+
+ a| 
+`0001- 541`
+ a| 
+65
+ a| 
+命令
+ a| 
+`访问权限不足，无法在存储器 <Exocet>.` 上创建 LUN
+ a| 
+SnapDrive for UNIX 使用根存储系统（存储器）卷上的 `sdhostname.prbac` 或 `sdgenic.prbac` 文件作为其伪访问控制机制。
+
+操作：执行以下任一操作：
+
+. 修改存储系统中的 `sd-hostname.prbac` 或 `sdgeneric.prbac` 文件，以包括以下必需权限（可以是一个或多个）：
++
+.. 无
+.. snap create
+.. 快照使用
+.. 捕获所有
+.. 存储创建删除
+.. 存储使用情况
+.. 全部存储
+.. 所有访问
++
+* 注： *
+
++
+====
+*** 如果您没有 `sd-hostname.prbac` 文件，请修改存储系统中的 `sdgenic.prbac` 文件。
+*** 如果您同时具有 `sd-hostname.prbac` 和 `sdgenergic.prbac` 文件，则只能修改存储系统中 `sdhostname.prbac` 文件中的设置。
+
+
+====
+
+
+. 在 `snapdrive.conf` 文件中，确保 ` _all-access-if-rbacunspecified _` 配置变量设置为 "`on` " 。
+
+
+
+
+ a| 
+`0001-559`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`d快照时已设定 I/O 。请暂停应用程序。请参见 SnapDrive 管理员有关详细信息，请参见指南。`
+ a| 
+如果您尝试创建 Snapshot 副本，而对文件规范执行并行输入 / 输出操作，并且将 ` _snapcreate-cg-timeout_` 的值设置为紧急，则会发生此错误。
+
+操作：将 `snapcreate-cg-timeout` 的值设置为宽松，以增加一致性组超时的值。
+
+
+
+ a| 
+`0001- 570`
+ a| 
+6.
+ a| 
+命令
+ a| 
+`d磁盘组 <dg1> 不存在，因此无法调整大小`
+ a| 
+如果主机中不存在磁盘组，则会发生此错误，进而导致命令失败。
+
+操作：完成以下步骤：
+
+. 使用 SnapDrive storage show -all` 命令获取所有磁盘组名称。
+. 使用正确的磁盘组名称执行命令。
+
+
+
+
+ a| 
+`0001- 574`
+ a| 
+1.
+ a| 
+命令
+ a| 
+` <VmAssistant>lvm 不支持调整磁盘组中 LUN 的大小`
+ a| 
+如果用于执行此任务的卷管理器不支持调整 LUN 大小，则会发生此错误。
+
+如果 LUN 属于磁盘组，则 SnapDrive for UNIX 将依靠卷管理器解决方案来支持调整 LUN 大小。
+
+操作：检查所使用的卷管理器是否支持 LUN 大小调整。
+
+
+
+ a| 
+`0001- 616`
+ a| 
+6.
+ a| 
+命令
+ a| 
+在存储器上未找到 `1 个快照： Exocet ： /vol/vol1 ： MySnapName>`
+ a| 
+SnapDrive for UNIX 不能在命令行中接受多个 Snapshot 名称来执行任何 Snapshot 操作。要更正此错误，请使用一个 Snapshot 名称重新发出命令。
+
+这是一个语法错误，表示命令使用无效，尝试使用无效的 Snapshot 名称执行 Snapshot 操作。要更正此错误，请完成以下步骤：
+
+. 使用 SnapDrive snap list - filer <filer-volume-name>` 命令获取 副本列表。
+. 使用 ` * long_snap_name*` 参数执行命令。
+
+
+
+
+ a| 
+`0001- 640`
+ a| 
+1.
+ a| 
+命令
+ a| 
+`根文件系统 / 不受 SnapDrive` 管理
+ a| 
+如果 SnapDrive for UNIX 不支持主机上的根文件系统，则会发生此错误。这是对 SnapDrive for UNIX 的无效请求。
+
+
+
+ a| 
+`0001- 684`
+ a| 
+45
+ a| 
+管理员
+ a| 
+`m挂载表` 中已存在挂载点 <fs_spec>
+ a| 
+操作：执行以下任一操作：
+
+. 使用其他挂载点执行 SnapDrive for UNIX 命令。
+. 检查挂载点是否未在使用中，然后手动（使用任何编辑器）从以下文件中删除该条目：
+
+
+Solaris ： /etc/vfstab
+
+
+
+ a| 
+`0001- 796` 和 `0001- 767`
+ a| 
+3.
+ a| 
+命令
+ a| 
+`0001-796 和 0001-767`
+ a| 
+SnapDrive for UNIX 在使用 ` -nolvm` 选项的同一命令中不支持多个 LUN 。
+
+操作：执行以下任一操作：
+
+. 再次使用命令仅使用 ` -nolvm` 选项指定一个 LUN 。
+. 使用不带 ` - nolvm` 选项的命令。这将使用主机中支持的卷管理器（如果有）。
+
+
+
+
+ a| 
+`2715`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`卷还原 Zephyr 不可用于存储器 <filename> 请继续执行 LUN 还原`
+ a| 
+对于较旧的 Data ONTAP 版本，卷还原 ZAPI 不可用。使用 SFSR 重新发出命令。
+
+
+
+ a| 
+`2278`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`s在 <snapname> 无卷克隆后创建的快照 ... 失败`
+ a| 
+拆分或删除克隆
+
+
+
+ a| 
+`2280`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`LUN 已映射且未处于活动状态或 Snapshot <fildedicate-name> 出现故障`
+ a| 
+取消映射 / 存储会断开主机实体的连接
+
+
+
+ a| 
+`2282`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`不存在 SnapMirror 关系 ... 失败`
+ a| 
+. 删除关系，或
+. 如果已配置 SnapDrive for UNIX RBAC 和 Operations Manager ，请要求 Operations Manager 管理员向用户授予 `s …… .DisruptionBaseline` 功能。
+
+
+
+
+ a| 
+`2286`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`不属于 <fsname> 的 LUN 在快照卷中的应用程序一致 ... 失败。Snapshot LUN 不属于 <fsname> ，可能是应用程序不一致`
+ a| 
+验证检查结果中提及的 LUN 是否未在使用中。` 之后，请使用` -force 选项。
+
+
+
+ a| 
+`2286`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`Snapshot <snapname> 之后未创建新的 LUN ... 失败`
+ a| 
+验证检查结果中提及的 LUN 是否未在使用中。` 之后，请使用` -force 选项。
+
+
+
+ a| 
+`2290`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`无法执行不一致且较新的 LUN 检查。Snapshot 版本早于 SDU 4.0`
+ a| 
+与 -vbsr 结合使用时，适用于 UNIX 快照的 SnapDrive 3.0 会发生这种情况。手动检查创建的任何较新的 LUN 是否不再使用，然后继续执行 ` -force` 选项。
+
+
+
+ a| 
+`2292`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`不存在新快照 ... 失败。创建的快照将丢失。`
+ a| 
+检查检查检查结果中提到的快照是否将不再使用。如果是，请继续执行 ` -force` 选项。
+
+
+
+ a| 
+`2297`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`正常文件和 LUN 都存在 ... 失败`
+ a| 
+确保检查结果中提及的文件和 LUN 不再使用。如果是，请继续执行 ` -force` 选项。
+
+
+
+ a| 
+`2302`
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`NFS 导出列表没有外部主机 ... 失败`
+ a| 
+请联系存储管理员，从导出列表中删除外部主机，或者确保外部主机未通过 NFS 使用卷。
+
+
+
+ a| 
+`9000-305`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`无法检测实体 /mnt/my_fs 的类型。如果您知道实体的类型` ，请提供一个特定选项（ -lun ， -dg ， -fs 或 -lvol ）
+ a| 
+验证此实体是否已存在于主机中。如果您知道实体的类型，请提供 file-spec.
+
+
+
+ a| 
+`9000-303`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`m主机上存在多个同名实体 - /mnt/my_fs 。为您指定的实体提供特定选项（ -lun ， -dg ， -fs 或 -lvol ）。`
+ a| 
+用户具有多个同名实体。在这种情况下，用户必须明确提供 file-spec. 类型。
+
+
+
+ a| 
+`9000-304`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+检测到 ` /mnt/my_fs 为文件系统类型的关键字，此命令不支持此关键字。`
+ a| 
+此命令不支持对自动检测到的 file_Spec 执行操作。使用相应的帮助验证此操作。
+
+
+
+ a| 
+`9000-301`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`自动转引内部错误`
+ a| 
+自动检测引擎错误。提供跟踪和守护进程日志以供进一步分析。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`snapdrive.dc 工具无法在 RHEL 5Ux 环境中压缩数据`
+ a| 
+默认情况下不会安装压缩实用程序。您必须安装压缩实用程序 `ncompress` ，例如 `ncompress-4.2.4-47.i386.rpm` 。
+
+要安装压缩实用程序，请输入以下命令： `rpm -ivh ncomprest-4.2.4-47.i386.rpm`
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`文件规范无效`
+ a| 
+如果指定的主机实体不存在或不可访问，则会发生此错误。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`作业 ID 无效`
+ a| 
+如果指定作业 ID 无效或已查询作业结果，则会针对克隆拆分状态，结果或停止操作显示此消息。您必须指定有效或可用的作业 ID ，然后重试此操作。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`s已在执行中`
+ a| 
+在以下情况下会显示此消息：
+
+* 给定卷克隆或 LUN 克隆的克隆拆分已在进行中。
+* 克隆拆分已完成，但未删除作业。
+
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`不是有效的卷克隆或 LUN 克隆`
+ a| 
+指定的文件规范或 LUN 路径名不是有效的卷克隆或 LUN 克隆。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`没有可拆分卷的空间`
+ a| 
+此错误消息是由于无法使用所需的存储空间拆分卷而导致的。在聚合中释放足够的空间以拆分卷克隆。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`filer-data ： junction_dbsw 信息不可用— LUN 可能已脱机`
+ a| 
+如果 ` /etc/fstab` 文件配置不正确，则可能会发生此错误。在这种情况下，虽然挂载路径为 NFS ，但 SnapDrive for UNIX 将其视为 LUN 。
+
+操作：在存储器名称和接合路径之间添加 "/" 。
+
+
+
+ a| 
+`0003-013`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`虚拟接口服务器发生连接错误。请检查虚拟接口服务器是否已启动且正在运行。`
+ a| 
+如果 ESX 服务器中的许可证到期且 VSC 服务未运行，则可能会发生此错误。
+
+操作：安装 ESX Server 许可证并重新启动 VSC 服务。
+
+
+
+ a| 
+`0002-137`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`无法从 Snapshot 10.231.72.21 ： /vol/ips_vol3 获取 10.231.72.21 的 fstype 和 mntOpts ： /vol/ips_vol3 ： T5120-206-66_nfssnap 。`
+ a| 
+操作：执行以下任一操作
+
+. 将数据路径接口的 IP 地址或特定 IP 地址作为主机名添加到 ` /etc/hosts` 文件中。
+. 在 DNS 中为数据路径接口或主机名 IP 地址创建一个条目。
+. 配置 SVM 的数据 LIF 以支持 SVM 管理（使用 firewall-policy=mgmt ）
++
+` * 网络 int modify _-vserver vserver_name LIF_name-firewall -policy_mgmt_*`
+
+. 将主机的管理 IP 地址添加到 SVM 的导出规则中。
+
+
+
+
+ a| 
+`13003`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`权限不足：用户无权读取此资源。`
+ a| 
+问题描述 for UNIX 5.2.2 中显示了此 SnapDrive 。在 SnapDrive for UNIX 5.2.2 之前，在 SnapDrive for UNIX 中配置的 vsadmin 用户需要具有 vsadmin_volume 角色。在 SnapDrive for UNIX 5.2.2 中， vsadmin 用户需要提升访问角色，否则 snapmirror-get-iter ZAPI 将失败。
+
+操作：创建角色 vsadmin 而不是 vsadmin_volume 并分配给 vsadmin 用户。
+
+
+
+ a| 
+`0001-016`
+ a| 
+不适用
+ a| 
+命令
+ a| 
+`无法在存储系统上获取锁定文件。`
+ a| 
+由于卷中的空间不足， Snapshot 创建失败。或由于存储系统中存在 ` .SnapDrive_lock` 文件。
+
+操作：执行以下任一操作：
+
+. 删除存储系统上的文件 ` /vol/<volname>/.SnapDrive_lock` ，然后重试 snap create 操作。要删除此文件，请登录到存储系统，进入高级权限模式，然后在存储系统提示符处执行命令 `rm /vol/<volname>/.SnapDrive_lock` 。
+. 在创建快照之前，请确保卷中有足够的可用空间。
+
+
+
+
+ a| 
+`0003-003`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法将存储系统 < 控制器名称 > 上的 LUN 导出到子操作系统。原因： flow-11019 ： MapStorage 故障：没有为存储系统配置接口。`
+ a| 
+出现此错误的原因是缺少 ESX 服务器中配置的存储控制器。
+
+操作：在 ESX 服务器中添加存储控制器和凭据。
+
+
+
+ a| 
+`0001-493`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`创建挂载点时出错： mkdir 发出意外错误： mkdir ：无法创建目录：权限被拒绝检查挂载点是否位于自动挂载路径下。`
+ a| 
+如果目标文件规范位于自动挂载路径下，则克隆操作将失败。
+
+操作：确保目标文件规范 / 挂载点不在自动挂载路径下。
+
+
+
+ a| 
+`0009-049`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法从存储系统上的快照还原：无法从 SVM 上卷的 Snapshot 副本还原文件。`
+ a| 
+如果卷已满或超过自动删除阈值，则会发生此错误。
+
+操作：增加卷大小并确保卷的阈值保持在自动删除值以下。
+
+
+
+ a| 
+`0001-682`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`主机准备新 LUN 失败：不支持此功能。`
+ a| 
+如果创建新的 LUN ID 失败，则会发生此错误。
+
+操作：增加要使用创建的 LUN 的数量
+
+` * SnapDrive 配置准备 -_count count_value_*`
+
+命令：
+
+
+
+ a| 
+`0001-060`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法获取有关磁盘组的信息： volume Manager linuxlvm 返回的 vgdisplay 命令失败。`
+ a| 
+如果在 RHEL 5 及更高版本上使用 SnapDrive for UNIX 4.1.1 及更低版本，则会发生此错误。
+
+操作：升级 SnapDrive 版本并重试，因为 RHEL5 及更高版本不支持适用于 UNIX 的 SnapDrive 4.1.1 及更低版本。
+
+
+
+ a| 
+`0009-045`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法在存储系统上创建快照：由于由快照备份的克隆，不允许执行快照操作。请稍后重试。`
+ a| 
+在执行单文件快照还原（ SFSR ）操作后立即创建快照期间会发生此错误。
+
+操作：稍后重试 Snapshot 创建操作。
+
+
+
+ a| 
+`0001-304`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`创建磁盘 / 卷组时出错：卷管理器失败，并显示： metainit ：无此类文件或目录。`
+ a| 
+在 Sun 集群环境中执行 SnapDrive storage create dg ， hostvol 和 fs solaris 时会发生此错误。
+
+操作：卸载 Sun Cluster 软件并重试此操作。
+
+
+
+ a| 
+`0001-122`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法在存储器上获取快照列表指定的卷 <volname> 不存在。`
+ a| 
+如果 SnapDrive for UNIX 尝试使用卷的导出活动文件系统路径（实际路径）创建 Snapshot ，而不使用虚拟导出的卷路径创建 Snapshot ，则会发生此错误。
+
+操作：使用具有导出的活动文件系统路径的卷。
+
+
+
+ a| 
+`0001-476`
+ a| 
+不适用
+ a| 
+管理员
+ a| 
+`无法发现设备。如果正在使用多路径，可能会出现多路径配置错误。请验证配置，然后重试。`
+ a| 
+出现此错误的原因有多种。
+
+要检查的条件如下：在创建存储之前，请确保分区正确。
+
+检查 `snapdrive.conf` 文件中的传输协议和多路径类型，并确保设置了正确的值。
+
+如果 multipathing-type 设置为 nativempio start multipathd 并重新启动 snapdrived 守护进程，请检查多路径守护进程状态。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+由于 LV` 不可用，重新启动后无法挂载 `FS
+ a| 
+如果重新启动后 LV 不可用，则会发生这种情况。因此，未挂载文件系统。
+
+操作：重新启动后，执行 vgchange 以启动 LV ，然后挂载文件系统。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`s对 SDU 守护进程的状态调用失败。`
+ a| 
+出现此错误的原因有多种。此错误表示与特定操作相关的 SnapDrive for UNIX 作业突然失败（子守护进程已结束），然后操作才能完成。
+
+如果存储创建或删除失败，并显示 "Status call to SnapDrive for UNIX daemon failed" ，则可能是因为调用 ONTAP 以获取卷信息失败。volume-get-iter ZAPI 可能失败。请稍后重试 SnapDrive 操作。
+
+由于 `multipath.conf` 值不适当，在创建分区或其他操作系统命令时执行 "kpartx -l" 时， SnapDrive for UNIX 操作可能会失败。确保设置了正确的值，并且 `multipath.conf` 文件中不存在重复的关键字。
+
+在执行 SFSR 时， SnapDrive for UNIX 会创建临时 Snapshot ，如果已达到最大 Snapshot 值数，此 Snapshot 可能会失败。删除旧快照并重试还原操作。
+
+
+
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+`m正在使用中；无法刷新`
+ a| 
+如果在存储删除或断开连接操作期间尝试刷新多路径设备时遗留了任何陈旧设备，则会发生此错误。
+
+操作：执行命令以检查是否存在任何陈旧设备
+
+` * 多路径 *`
+
+` -l egrep -i fail_` 并确保在 `multipath.conf` 文件中将 ` _flush_on_last_del_` 设置为 "yes" 。
+
+|===
+* 相关信息 *
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp 互操作性"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148981["《 Solaris Host Utilities 6.1 安装和设置指南》"]

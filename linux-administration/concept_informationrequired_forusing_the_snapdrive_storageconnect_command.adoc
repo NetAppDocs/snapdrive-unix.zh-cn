@@ -1,0 +1,149 @@
+---
+permalink: linux-administration/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, command 
+summary: 使用 SnapDrive storage connect 命令时，您需要提供一些信息。此信息有助于您正确使用命令。 
+---
+= 使用 SnapDrive storage connect 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive storage connect` 命令时，您需要提供一些信息。此信息有助于您正确使用命令。
+
+|===
+| 要求 | 参数 
+
+
+ a| 
+指定 LUN ，直接在 LUN 上创建的文件系统或要连接到主机的 LVM 实体。
+
+* 如果连接一个或多个 LUN ，则第一个参数必须使用长形式的 LUN 名称，此名称用于指定存储系统名称，卷名称以及卷中 LUN 的名称。
++
+要指定其他 LUN ，如果新 LUN 与上一个 LUN 位于同一存储系统和卷上，则可以单独使用 LUN 名称。否则，您可以指定新的存储系统名称和卷名称（或仅指定卷名称）来替换先前的值。
+
+* 如果您连接的是直接在 LUN 上创建的文件系统，则必须包含 LUN 名称的长格式以及 ` -nolvm` 选项。
+* 如果将 LUN 连接到磁盘组，主机卷和文件系统，则必须使用 ` -FS` 和 ` -hostvol` 选项指定文件系统和主机卷。主机卷必须包含磁盘组的名称。
+
+
+
+
+ a| 
+LUN （` -lun` ）
+ a| 
+` lun_name_`
+
+
+
+ a| 
+为 ` -lun` 选项提供的第一个值必须包括存储系统名称，卷和 LUN 名称。要连接同一卷上的多个 LUN ，您可以在第一个路径名称中提供完整信息后，对 ` -LUN` 选项使用相对路径名称。当 SnapDrive for UNIX 遇到相对路径名称时，它会查找与上一个 LUN 位于同一卷上的 LUN 。要连接不在同一卷上的其他 LUN ，请输入每个 LUN 的完整路径名称。
+
+
+
+ a| 
+其他 LUN
+ a| 
+` lun_name_` （长或短格式）
+
+
+
+ a| 
+为 ` -FS` 指定的 `file_spect` 是连接直接在 LUN 上创建的文件系统时文件系统挂载点的名称。
+
+
+
+ a| 
+文件系统（` -fs file-specs` ）
+ a| 
+` 文件系统名称 _`
+
+
+
+ a| 
+在不激活主机 LVM 的情况下连接在 LUN 上创建的文件系统。
+
+
+
+ a| 
+` -nolvm`
+ a| 
+
+
+
+ a| 
+要连接主机卷上的文件系统： ` -fs _file_spec_` 和 ` -hostvol _file_spec_` 您提供的标识要连接到新主机的 LVM 文件系统，磁盘组和主机卷。
+
+您连接的存储层次结构必须包含磁盘组，主机卷和文件系统。您必须为 ` -fs` 和 ` -hostvol` 指定一个值。` -hostvol` 值必须包含磁盘组的名称。
+
+
+
+ a| 
+主机卷（` -hostvol file-spect` ）
+ a| 
+` _disk_group_name_` 和 ` 主机 _volume_name_`
+
+
+
+ a| 
+可选：使用 ` -nd操作` 选项将存储连接到新位置，而不在主机文件系统表（例如， Linux 上的 fstab ）中创建条目。默认情况下， storage connect 命令会创建永久性挂载。这意味着，在 Linux 主机上创建 LVM 存储实体时， SnapDrive for UNIX 会自动创建存储，挂载文件系统，然后在主机文件系统表中为文件系统放置一个条目。
+
+
+
+ a| 
+` - noperit`
+ a| 
+~
+
+
+
+ a| 
+* 可选： * 建议对主机使用默认 igroup ，而不是提供 igroup 名称。
+
+
+
+ a| 
+igroup 名称（` -igroup` ）
+ a| 
+` ig_name_`
+
+
+
+ a| 
+` - fstype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+`vmtype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+* 可选： * 指定用于 SnapDrive for UNIX 操作的文件系统和卷管理器的类型。
+
+
+
+ a| 
+` - mntopts`
+ a| 
+~
+
+
+
+ a| 
+* 可选： * 如果要创建文件系统，可以指定以下选项：
+
+* 使用 ` -mntopts` 指定要传递到主机挂载命令的选项（例如，指定主机系统日志记录行为）。指定的选项存储在主机文件系统表文件中。允许的选项取决于主机文件系统类型。
+* ` -mntopts_` 参数是一个文件系统 ` 类型` 选项，使用 `mount` command ` -o` 标志指定。请勿在 ` -mntopts` 参数中包含 ` -o` 标志。例如，序列 -mntopts tmplog 会将字符串 ` -otmplog` 传递到 `mount` 命令，并在新命令行中插入文本 tmplog 。
++
+
+NOTE: 如果为存储和快照操作传递任何无效的 ` _-mntopts_` 选项，则 SnapDrive for UNIX 不会验证这些无效的挂载选项。
+
+
+
+|===

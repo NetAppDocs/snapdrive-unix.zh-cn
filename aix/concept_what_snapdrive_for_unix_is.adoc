@@ -1,0 +1,20 @@
+---
+permalink: aix/concept_what_snapdrive_for_unix_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, management, provisioning 
+summary: SnapDrive for UNIX 可简化您的存储管理任务。SnapDrive for UNIX 使用 Snapshot 技术为共享或非共享存储系统上存储的数据创建映像。SnapDrive 还可以帮助您配置存储。 
+---
+= SnapDrive for UNIX 的功能
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 可简化您的存储管理任务。SnapDrive for UNIX 使用 Snapshot 技术为共享或非共享存储系统上存储的数据创建映像。SnapDrive 还可以帮助您配置存储。
+
+您可以使用 SnapDrive for UNIX 执行以下任务：
+
+* * 备份和还原数据： * 使用 SnapDrive for UNIX ，您可以使用 Snapshot 技术为存储系统上存储的主机数据创建映像（ Snapshot 副本）。此 Snapshot 副本可为您提供一份数据副本，您可以稍后还原这些数据。Snapshot 副本中的数据可以位于一个存储系统上，也可以跨越多个存储系统及其卷。这些存储系统可以位于 HA 对或节点本地文件系统或磁盘组中，也可以位于主机集群环境中的 LUN 中。
+* * 管理存储： * 您可以在主机集群和非集群环境中创建和删除存储组件，包括磁盘组，主机卷，文件系统和 LUN 。通过 SnapDrive for UNIX ，您可以通过扩展此存储，将其连接到主机并断开其连接来管理此存储。
+* "** 基于角色的访问控制： "SnapDrive for UNIX" 提供基于角色的访问控制（ RBAC ）。RBAC 允许 SnapDrive 管理员在执行各种 SnapDrive 操作时限制对存储系统的访问。此存储操作访问权限取决于分配给用户的角色。RBAC 允许存储管理员根据分配的角色限制 SnapDrive 用户可以执行的操作。
+

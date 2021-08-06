@@ -1,0 +1,19 @@
+---
+permalink: solaris/reference_snapdrive_for_unix_does_not_accept_environment_variables_set_using_command_shells.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, fail, shell, variable 
+summary: 您无法执行 SnapDrive for UNIX 命令，因为 SnapDrive for UNIX 不接受通过命令 Shell 设置的环境变量，并且 $LD_library_path 和 snapcreate-check-nonpersistent-nfs 参数设置为 off 。 
+---
+= 使用命令 Shell 设置环境变量时， SnapDrive for UNIX 命令失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您无法执行 SnapDrive for UNIX 命令，因为 SnapDrive for UNIX 不接受通过命令 Shell 设置的环境变量，并且当 ` * $LD_library_path*` 和 ` * snapcreate-check-nonpersistent-nfs*` 参数设置为 off 时。
+
+
+
+== 临时解决策
+
+对 SnapDrive for UNIX 二进制文件使用包装程序脚本，并将环境变量设置为对二进制文件可见。

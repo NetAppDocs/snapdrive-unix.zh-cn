@@ -1,0 +1,22 @@
+---
+permalink: linux-administration/task_checking_the_status_of_the_daemon.html 
+sidebar: sidebar 
+keywords: daemon, status, snap, snapdrive 
+summary: 您可以检查守护进程的状态以查看守护进程是否正在运行。如果守护进程已在运行，则在更新 SnapDrive for UNIX 配置文件之前，无需重新启动它。 
+---
+= 正在检查守护进程的状态
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以检查守护进程的状态以查看守护进程是否正在运行。如果守护进程已在运行，则在更新 SnapDrive for UNIX 配置文件之前，无需重新启动它。
+
+您必须以 root 用户身份登录。
+
+.步骤
+. 检查守护进程的状态：
++
+` * 快照状态 *`
+
+

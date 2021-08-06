@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_command_reference.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, reference 
+summary: SnapDrive for UNIX 支持各种命令。这些命令参考有助于您了解命令，其选项，关键字和参数。 
+---
+= 命令参考
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持各种命令。这些命令参考有助于您了解命令，其选项，关键字和参数。

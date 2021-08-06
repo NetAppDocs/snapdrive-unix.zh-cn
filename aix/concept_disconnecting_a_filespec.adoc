@@ -1,0 +1,44 @@
+---
+permalink: aix/concept_disconnecting_a_filespec.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, file, specification, filespec 
+summary: 您可以断开文件规范的连接。以下示例介绍了如何完成此操作。 
+---
+= 正在断开文件规范的连接
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以断开文件规范的连接。以下示例介绍了如何完成此操作。
+
+` /mnt/fs1_0` 的布局如下所示。
+
+[listing]
+----
+# snapdrive storage show -fs /mnt/fs_1_0 -capabilities
+raw device: /dev/sde1   mount point: /mnt/fs_1_0 (persistent) fstype jfs2
+allowed operations: all
+
+device filename    adapter  path    size    proto   state   clone         lun path                                                         backing snapshot
+----------------   -------  ----    ----    -----   -----   -----         --------                                                         ----------------
+/dev/sde              -      P      100m    iscsi   online  flex-clone    homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot/lun1    vol1:snap2
+----
+以下输出显示了如何断开文件系统 ` /mnt/fs_1_0` 的连接：
+
+[listing]
+----
+#snapdrive snap disconnect -fs /mnt/fs_1_0
+ delete file system /mnt/fs_1_0
+- fs /mnt/fs_1_0 ... deleted
+         - LUN homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot/lun1 ... disconnected
+         - deleting volume clone ... homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot  done
+----
+断开文件系统 ` /mnt/fs_1_0` 后，如果满足以下条件， SnapDrive for UNIX 还会删除克隆的卷 `Snapdrive_vol1_0_volume_clone_from_snap2_snapshot` ：
+
+* 卷中不存在映射的 LUN
+* 不存在新 LUN
+* 不存在新的 Snapshot 副本
+
+
+* 删除 SnapDrive for UNIX* 未创建的 FlexClone ： SnapDrive for UNIX 不允许删除不由其创建的 FlexClone 。

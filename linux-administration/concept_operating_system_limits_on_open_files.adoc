@@ -1,0 +1,22 @@
+---
+permalink: linux-administration/concept_operating_system_limits_on_open_files.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, operating, limits, open, files, system 
+summary: SnapDrive for UNIX 会检查同时打开的文件数。如果超过此限制， SnapDrive for UNIX 将引发错误。 
+---
+= 操作系统对打开的文件的限制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 会检查同时打开的文件数。如果超过此限制， SnapDrive for UNIX 将引发错误。
+
+SnapDrive for UNIX 会检查操作系统对进程打开的文件数的限制。
+
+
+NOTE: 一个进程同时打开的文件句柄数量的默认限制因操作系统而异。请查看操作系统文档以确定限制。
+
+如果一个操作的打开 LUN 数量超过操作系统对一个进程同时打开的文件句柄数量的限制，则 SnapDrive for UNIX 将退出，并显示以下错误消息：
+
+`0001-001 管理员错误：无法打开设备到设备的路径`

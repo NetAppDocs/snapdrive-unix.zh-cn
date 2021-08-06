@@ -1,0 +1,30 @@
+---
+permalink: aix/task_migrating_from_old_host_name_to_new_host_name.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, migrate, old, storage, system, new 
+summary: 您可以使用 SnapDrive config migrate set 命令从旧存储系统迁移到新存储系统。迁移完成后，您可以使用新的存储系统在主机系统中执行所有 SnapDrive 操作。 
+---
+= 从旧存储系统迁移到新存储系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive config migrate set` 命令从旧存储系统迁移到新存储系统。迁移完成后，您可以使用新的存储系统在主机系统中执行所有 SnapDrive 操作。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive config migrate set _old_storage_system_name new_storage_system_name_*`
+
+
+
+以下示例显示了可以从旧存储系统 "tuffleskt" 迁移到新存储系统 "roaster" 。
+
+[listing]
+----
+snapdrive config migrate set tuffleskin roaster
+----
+* 相关信息 *
+
+xref:concept_migrating_to_new_vserver_name.adoc[迁移到新的 SVM 名称]

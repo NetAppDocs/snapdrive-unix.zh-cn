@@ -1,0 +1,15 @@
+---
+permalink: aix/concept_data_collection_utility.html 
+sidebar: sidebar 
+keywords: snap, snapshot, data, collection, utility, troubleshoot 
+summary: SnapDrive 数据收集实用程序是一个故障排除工具，用于收集信息以诊断问题。 
+---
+= 数据收集实用程序
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive 数据收集实用程序是一个故障排除工具，用于收集信息以诊断问题。
+
+SnapDrive for UNIX 提供了一个数据收集实用程序（ SnapDrive.dc ），用于收集有关 SnapDrive for UNIX ， SnapDrive 配置检查程序和系统设置的诊断信息。

@@ -1,0 +1,35 @@
+---
+permalink: linux-administration/concept_support_for_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, vserver, storage, lif, data 
+summary: SnapDrive for UNIX 支持 SVM 。Vserver 是一种安全的虚拟存储服务器，支持多种协议和统一存储。SVM 包含数据卷和一个或多个 LIF ，用于向客户端提供数据。 
+---
+= 支持 SVM
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持 SVM 。Vserver 是一种安全的虚拟存储服务器，支持多种协议和统一存储。SVM 包含数据卷和一个或多个 LIF ，用于向客户端提供数据。
+
+Vserver 可以安全地隔离共享虚拟化数据存储和网络，并显示为客户端的一个专用服务器。每个 Vserver 都有一个单独的管理员身份验证域，可由 Vserver 管理员独立管理。
+
+每个 SVM 的卷都通过接合关联起来，并挂载在接合路径上。每个卷的文件系统似乎已挂载在接合处。Vserver 的根卷位于命名空间层次结构的顶层；其他卷将挂载到 Vserver 的根卷以扩展全局命名空间。SVM 的数据卷包含文件和 LUN 。
+
+* 您可以使用 SnapDrive for UNIX 在 SVM 上执行存储配置， Snapshot 副本操作和配置操作。
+* 应用程序数据不会存储在 SVM 的根卷中。
+* 如果 SVM 的根目录为 qtree ，则不支持 Snapshot 副本操作。
+* 在 SVM 上创建的每个卷都必须挂载在一个接合路径上。
+
+
+* 相关信息 *
+
+link:concept_configuration_information_for_vserver_environment.adoc["SVM 的配置信息"]
+
+link:task_verifying_login_information_for_vserver.adoc["验证 SVM 的登录信息"]
+
+link:task_specifying_login_information_for_vserver.adoc["指定 SVM 的登录信息"]
+
+link:task_deleting_a_user_for_a_vserver.adoc["从 SVM 中删除用户"]
+
+link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-ssg/home.html["《 ONTAP 9 软件设置指南》"]

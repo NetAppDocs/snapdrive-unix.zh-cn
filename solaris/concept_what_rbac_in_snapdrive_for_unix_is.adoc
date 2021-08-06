@@ -1,0 +1,25 @@
+---
+permalink: solaris/concept_what_rbac_in_snapdrive_for_unix_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rbac, access, control 
+summary: RBAC 允许 SnapDrive 管理员在执行各种 SnapDrive 操作时限制对存储系统的访问。存储操作的这种有限或完全访问权限取决于分配给用户的角色。 
+---
+= 什么是 SnapDrive for UNIX 中基于角色的访问控制（ RBAC ）
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+RBAC 允许 SnapDrive 管理员在执行各种 SnapDrive 操作时限制对存储系统的访问。存储操作的这种有限或完全访问权限取决于分配给用户的角色。
+
+SnapDrive 4.0 for UNIX 及更高版本要求对所有 SnapDrive for UNIX 操作执行 RBAC 访问检查。此行为允许存储管理员根据分配的角色限制 SnapDrive 用户可以执行的操作。RBAC 是使用 Operations Manager 基础架构实施的。在 SnapDrive 4.0 for UNIX 之前的版本中，访问控制受限，只有 root 用户可以执行 SnapDrive for UNIX 操作。SnapDrive 4.0 for UNIX 及更高版本可使用 Operations Manager 控制台的 RBAC 基础架构为非 root 本地用户和网络信息系统（ Network Information System ， NIS ）用户提供支持。SnapDrive for UNIX 不需要存储系统的根密码；它使用 SD-<hostname> 用户与存储系统进行通信。
+
+默认情况下，不使用 Operations Manager 控制台 RBAC 功能。您必须通过在 `snapdrive.conf` 文件中设置变量 ` _rbac 方法 =dfm_` 来启用 RBAC 功能，然后重新启动 SnapDrive for UNIX 守护进程。
+
+要使用此功能，必须满足以下要求：
+
+* Operations Manager 控制台 3.7 或更高版本。
+* Operations Manager 控制台服务器必须位于包含 SnapDrive 主机和存储系统的 IP 网络中并进行配置。
+* 必须在 SnapDrive 安装期间配置 Operations Manager 控制台通信设置。
+* SnapDrive for UNIX 守护进程应正在运行。
+

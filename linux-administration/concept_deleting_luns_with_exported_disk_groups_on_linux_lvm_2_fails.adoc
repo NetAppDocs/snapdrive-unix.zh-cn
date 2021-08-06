@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_deleting_luns_with_exported_disk_groups_on_linux_lvm_2_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, exported, disk, group, lvm2, fail, lun 
+summary: SnapDrive for UNIX 不会删除 Linux LVM2 上具有导出磁盘组的 LUN 。 
+---
+= 在 Linux LVM2 上删除具有导出磁盘组的 LUN 失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 不会删除 Linux LVM2 上具有导出磁盘组的 LUN 。
+
+如果您在 Linux LVM2 上导出磁盘组（ DG ）并尝试删除 LUN ，则删除操作将失败。
+
+
+
+== 临时解决策
+
+您必须使用 `vgimport <dgname> 导入磁盘组，然后使用以下命令删除磁盘组和 LUN ： # SnapDrive lun storage delete - dg <dgname> [-full]`

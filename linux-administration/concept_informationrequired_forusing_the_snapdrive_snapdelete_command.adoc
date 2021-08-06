@@ -1,0 +1,71 @@
+---
+permalink: linux-administration/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, command, copy, requirements 
+summary: 要删除 Snapshot 副本，请指定要删除的 Snapshot 副本的名称。使用 SnapDrive snap delete 命令，您可以查看已删除的 Snapshot 副本列表。 
+---
+= 使用 SnapDrive snap delete 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要删除 Snapshot 副本，请指定要删除的 Snapshot 副本的名称。使用 SnapDrive snap delete` 命令，您可以查看已删除的 Snapshot 副本列表。
+
+下表提供了有关 SnapDrive snap delete` 命令的信息。
+
+|===
+| 要求 / 选项 | 参数 
+
+
+ a| 
+指定 Snapshot 副本的名称。请使用 Snapshot 副本名称的长格式，在其中输入存储系统名称，卷和 Snapshot 副本名称。以下是一个长 Snapshot 副本名称示例： `BIG_filer ： /vol/account_vol ： snap_20031115`
+
+如果要指定其他 Snapshot 副本，则可以使用名称的简短形式，前提是这些副本与第一个 Snapshot 副本位于同一存储系统和卷上。否则，请再次使用名称的长格式。
+
+
+
+ a| 
+Snapshot 副本名称（` -snapname` ）
+ a| 
+` lor_Snapshot copy_name_`
+
+
+
+ a| 
+其他 Snapshot 副本
+ a| 
+` _Snapshot copy_name_` （长格式或短格式）
+
+
+
+ a| 
+` - 详细`
+ a| 
+~
+
+
+
+ a| 
+要显示已删除的 Snapshot 副本的列表，请包括 -verbose 选项。如果您使用的是 Snapshot 副本名称的简短格式，则此选项将填充缺失的存储系统和卷信息。
+
+
+
+ a| 
+` 强制`
+ a| 
+~
+
+
+
+ a| 
+` -noprop`
+ a| 
+~
+
+
+
+ a| 
+可选：确定是否要覆盖现有 Snapshot 副本。如果没有此选项，则如果您提供现有 Snapshot 副本的名称，此操作将暂停。提供此选项并指定现有 Snapshot 副本的名称时，系统会提示您确认是否要覆盖此 Snapshot 副本。要防止 SnapDrive for UNIX 显示提示符，请同时包含 ` -noprop` 选项。（如果要使用 ` -noprop` 选项，则必须始终包含 ` -force` 选项。）
+
+|===

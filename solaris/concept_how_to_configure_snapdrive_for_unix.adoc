@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_how_to_configure_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configure 
+summary: 您可以编辑 SnapDrive.conf 文件，该文件包含 SnapDrive for UNIX 中使用的所有配置变量和选项，以便根据您的要求启用或禁用选项。您还可以添加变量以创建特定于主机的使用情况。 
+---
+= 配置适用于 UNIX 的 SnapDrive
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以根据需要编辑 `snapdrive.conf` 文件，该文件包含 SnapDrive for UNIX 中使用的所有配置变量和选项，以启用或禁用选项。您还可以添加变量以创建特定于主机的使用情况。

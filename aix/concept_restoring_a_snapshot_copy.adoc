@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_restoring_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy 
+summary: 您可以还原单个存储实体或多个存储实体的 Snapshot 副本。 
+---
+= 还原 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以还原单个存储实体或多个存储实体的 Snapshot 副本。

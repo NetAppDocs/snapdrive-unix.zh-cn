@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_managing_storage_using_a_wizard.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, wizard 
+summary: 您可以使用适用于 UNIX 的 SnapDrive 向导以交互方式高效地创建存储。该向导将引导您完成一系列问题，以帮助您创建存储。 
+---
+= 使用向导管理存储
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于 UNIX 的 SnapDrive 向导以交互方式高效地创建存储。该向导将引导您完成一系列问题，以帮助您创建存储。
+
+您可以使用 SnapDrive storage wizard create` 命令启动此向导。
+
+可以执行以下存储管理操作：
+
+* 创建 LUN
+* 创建磁盘组并自动设置 LUN
+* 创建磁盘组并指定 LUN 。
+* 创建主机卷并自动设置 LUN
+* 创建主机卷并指定 LUN
+* 在 LUN 上创建文件系统并自动设置 LUN
+* 在 LUN 上创建文件系统并指定 LUN 。
+* 在 LUN 上创建文件系统，并使用指定的逻辑卷管理器（ LVM ）和磁盘组自动设置 LUN
+* 在 LUN 上创建文件系统，并使用指定的 LVM 和磁盘组指定 LUN
+* 在 LUN 上创建文件系统，并使用指定的 LVM 和主机卷自动设置 LUN
+* 在 LUN 上创建文件系统，并使用指定的 LVM 和主机卷指定 LUN
+

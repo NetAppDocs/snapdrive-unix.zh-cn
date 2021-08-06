@@ -1,0 +1,22 @@
+---
+permalink: aix/concept_the_storageconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, connect, command 
+summary: SnapDrive storage connect 命令可将存储实体连接到主机。使用此命令可以将 LUN 和存储实体连接到主机 
+---
+= storage connect 命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive storage connect` 命令可将存储实体连接到主机。使用此命令可以将 LUN 和存储实体连接到主机
+
+使用 SnapDrive storage connect` 命令连接到：
+
+* LUN
+* 直接在 LUN 上创建的文件系统
+* 在 LUN 上创建的磁盘组，主机卷和文件系统
+
+
+输入 SnapDrive storage connect` 命令将 LUN 连接到主机时， SnapDrive for UNIX 将执行必要的发现和映射。它不会修改 LUN 内容。

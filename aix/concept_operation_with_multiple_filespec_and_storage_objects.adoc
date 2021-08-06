@@ -1,0 +1,21 @@
+---
+permalink: aix/concept_operation_with_multiple_filespec_and_storage_objects.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, operation, multiple, filespec, storage, object 
+summary: 以下示例显示了当您不是执行特定操作的授权用户时可能会收到的错误消息。 
+---
+= 对多个文件规范和存储对象执行的操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下示例显示了当您不是执行特定操作的授权用户时可能会收到的错误消息。
+
+[listing]
+----
+[marc]$ snapdrive storage create -lun storage_array1:/vol/vol1/lun5 lun6 -lun storage_array1:/vol/vol2/lun2 -lunsize 100m
+0002-332 Admin error:SD.Storage.Write access denied on volume storage_array1:/vol/vol1 for user nis_domain\marc on Operations Manager server ops_mngr_server
+SD.Storage.Write access denied on volume storage_array1:/vol/vol2 for user nis_domain\marc on Operations Manager server ops_mngr_server
+----
+在此示例中，三个 LUN 位于两个存储系统卷 vol1 和 vol2 上。用户 mc 属于 nis_domain ，无权在 vol1 和 vol2 上创建文件规范。SnapDrive for UNIX 在上一示例中显示了两条错误消息。错误消息显示用户必须对 vol1 和 vol2 具有 `s .D Storage.Write` 访问权限。

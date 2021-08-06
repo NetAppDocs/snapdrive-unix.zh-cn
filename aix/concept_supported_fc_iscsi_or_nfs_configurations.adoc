@@ -1,0 +1,25 @@
+---
+permalink: aix/concept_supported_fc_iscsi_or_nfs_configurations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fc, iscsi, nfs, configuration 
+summary: SnapDrive for UNIX 支持主机集群和 HA 对拓扑。FC 或 iSCSI 配置支持与 FC Host Utilities 或 iSCSI Host Utilities 支持的相同主机集群和 HA 对配置。 
+---
+= 支持的 FC ， iSCSI 或 NFS 配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持主机集群和 HA 对拓扑。FC 或 iSCSI 配置支持与 FC Host Utilities 或 iSCSI Host Utilities 支持的相同主机集群和 HA 对配置。
+
+SnapDrive for UNIX 支持以下主机集群和 HA 对拓扑：
+
+* 一种独立配置，其中一个主机连接到一个存储系统
+* 涉及存储系统 HA 对故障转移的任何拓扑
+* 包含 NetApp 支持的主机集群的任何拓扑
+
+
+有关为您的主机和所使用的存储系统建议配置的详细信息，请参见 AIX Host Utilities 文档。
+
+
+NOTE: 如果您需要实用程序文档中未提及的适用于 UNIX 的 SnapDrive 配置，请联系技术支持。

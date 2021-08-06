@@ -1,0 +1,39 @@
+---
+permalink: aix/task_configuring_management_and_data_interfaces_for_a_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configure, data, interface, storage, system 
+summary: 您可以在 NFS 环境中为单个管理接口配置多个数据接口，以便将管理流量与存储系统上的数据流量分开。 
+---
+= 为存储系统配置管理和数据接口
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在 NFS 环境中为单个管理接口配置多个数据接口，以便将管理流量与存储系统上的数据流量分开。
+
+.步骤
+. 设置新管理接口的配置：
++
+` * SnapDrive 配置集 root*`
+
++
+[listing]
+----
+# snapdrive config set root f3050-197-91
+Password for root:
+Retype password:
+----
+. 为新管理接口配置数据接口：
++
+` * SnapDrive 配置集 *`
+
++
+[listing]
+----
+# snapdrive config set -mgmtpath f3050-197-91 f3050-220-91#
+----
++
+在上述命令中， `f3050-197-191` 是管理接口， `f3050-220-91` 是数据接口。
+
+

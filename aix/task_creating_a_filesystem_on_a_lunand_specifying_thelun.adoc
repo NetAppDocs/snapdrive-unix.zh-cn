@@ -1,0 +1,42 @@
+---
+permalink: aix/task_creating_a_filesystem_on_a_lunand_specifying_thelun.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, create, specify, file, system 
+summary: 您可以在 LUN 上创建文件系统，并指定在其中创建的 LUN 。 
+---
+= 在 LUN 上创建文件系统并指定 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在 LUN 上创建文件系统，并指定在其中创建的 LUN 。
+
+.步骤
+. 请使用以下命令格式完成此操作：
++
+` * SnapDrive storage create -fs _file_spec_ -nolvm "-fstype _type_] （ -vmtype _type_] ）（ -fsopts _options_） （ -mntopts _options_） （ -noperess） -lun _long_lun_name_ -lunsize _size ig_name_ （ _ig_name_ ）（ _norig_name_reserve ）`
+
++
+SnapDrive for UNIX 会在您指定的存储系统，卷和 LUN 上创建文件系统。它会执行与 LUN 的主机准备和发现以及 LUN 与主机实体的映射和连接相关的所有任务。
+
+
+
+
+
+== 示例：在 Acctfiler ： /vol/vol1 中的 luna 上创建 100 MB 的文件系统
+
+` # SnapDrive lunsize 100m -nolvm`
+
+* 示例： * 此示例将在原始 LUN 上的 AIX 主机上创建一个 JFS2 文件系统： ` # SnapDrive storage create -fs /mnt/jfs1 -fstype JFS2 -lun snoop ： /vol/vol1/lunlvm1 -lunsize 100m -nolvm`
+
+[listing]
+----
+LUN snoopy:/vol/vol1/lunLvm1 ... created
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+LUN to device file mappings:
+- snoopy:/vol/vol1/lunLvm1 => /dev/hdisk2
+172 Creating storage
+file system /mnt/jfs1 created
+----

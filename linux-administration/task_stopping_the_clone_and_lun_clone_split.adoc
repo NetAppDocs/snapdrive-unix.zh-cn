@@ -1,0 +1,55 @@
+---
+permalink: linux-administration/task_stopping_the_clone_and_lun_clone_split.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, clone, split, lun, volume, specification 
+summary: 您可以使用作业 ID 或文件规范停止卷克隆或 LUN 克隆的克隆拆分。 
+---
+= 停止卷克隆或 LUN 克隆拆分操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用作业 ID 或文件规范停止卷克隆或 LUN 克隆的克隆拆分。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 克隆拆分停止符（ -lun ） _lun_name_ （ _lon_lun_name..._） _[ ｛ -dg _ -vg _ -fs _ hostvol _ -lvol ｝ _file_spec_ 【 file_spec...]] 我们提供了一个或` 一个或一个或一个或一个或一个或一个或一个或两个
+
++
+SnapDrive for UNIX 将停止正在进行的克隆拆分停止操作。
+
+
+
+以下示例显示了使用文件规范停止的克隆拆分操作。
+
+[listing]
+----
+# snapdrive clone split stop -fs /mnt/my_mnt4 /mnt/my_mnt3
+Clone-Split for "/mnt/my_mnt4" is 0% Completed and Stopped.
+Clone-Split for "/mnt/my_mnt3" is 0% Completed and Stopped.
+----
+以下示例显示了使用作业 ID 停止的克隆拆分操作。
+
+[listing]
+----
+# snapdrive clone split stop -job B265Dbv8gh
+Clone-Split for "/mnt/my_mnt3" is 14% Completed and Stopped.
+Clone-Split for "/mnt/my_mnt4" is 17% Completed and Stopped.
+----
+以下示例是一个典型输出，其中显示了已停止的文件规范的克隆拆分停止操作。
+
+[listing]
+----
+# snapdrive clone split stop -fs /mnt/my_mnt4 /mnt/my_mnt3
+Clone-Split for "/mnt/my_mnt3" is not stopped : No split is in progress for this resource
+Clone-Split for "/mnt/my_mnt4" is not stopped : No split is in progress for this resource
+----
+[NOTE]
+====
+* 如果由于作业 ID 中的特定文件规范而停止克隆拆分，并且克隆拆分停止成功，则会从作业中删除文件规范。
+* 如果作业的克隆拆分停止，而作业中所有文件规范的克隆拆分停止成功，则该作业将从作业集中删除。
+
+
+====

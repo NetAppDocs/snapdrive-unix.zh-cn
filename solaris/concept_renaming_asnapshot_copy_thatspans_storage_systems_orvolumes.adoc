@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rename, snapshot, copy, storage, volume 
+summary: 对于跨多个存储系统或存储系统卷的 Snapshot 副本，请重命名所有相关的 Snapshot 副本。 
+---
+= 重命名跨存储系统或卷的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+对于跨多个存储系统或存储系统卷的 Snapshot 副本，请重命名所有相关的 Snapshot 副本。
+
+您也可以使用此命令重命名跨多个存储系统或多个存储系统卷的 Snapshot 副本。
+
+如果重命名其中一个 Snapshot 副本，则还必须使用相同名称重命名所有相关的 Snapshot 副本。这是因为 SnapDrive for UNIX 在创建 Snapshot 副本时会使用短名称，即使它跨越多个存储系统或卷也是如此。rename 命令会更改当前 Snapshot 副本的名称，但不会更改其他位置的相关 Snapshot 副本的名称。

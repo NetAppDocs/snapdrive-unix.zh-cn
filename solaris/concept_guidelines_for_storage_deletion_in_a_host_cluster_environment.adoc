@@ -1,0 +1,37 @@
+---
+permalink: solaris/concept_guidelines_for_storage_deletion_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, delete, host, cluster 
+summary: 您必须了解在主机集群环境中使用 snapdrive storage delete 命令的一些准则。 
+---
+= 在主机集群环境中删除存储的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须了解在主机集群环境中使用 SnapDrive storage delete` 命令的一些准则。
+
+* 如果您从主机集群中的任何非主节点使用 ` -DeviceType` shared 选项启动 SnapDrive storage delete` 命令，则该命令将发送到主节点并执行。要做到这一点，您必须确保所有主机集群节点上都允许使用 rsh 或 ssh `access-without password-Prompt` 。
+* 可以从主机集群中的任何节点执行 SnapDrive storage delete` 命令。
+* 要成功执行存储删除操作，两者都不应为 false ：
++
+** 必须共享存储实体。
+** LUN 应映射到主机集群中的所有节点。
+
+
+* 您可以通过使用 ` -DeviceType dedicated` 选项或在命令行语法中省略 ` -DeviceType` 选项来删除特定节点上的存储实体，因为默认值为 dedicated 。
+* 如果使用 ` 设备类型专用` 选项删除共享存储实体或 LUN ，或者使用共享选项删除专用存储实体或 LUN ，则 SnapDrive storage delete` 命令将显示一条错误消息。
+* 如果发生以下情况之一，存储删除操作将失败：
++
+** 删除存储实体期间发生任何错误。
++
+SnapDrive for UNIX 将删除存储实体，断开 LUN 与所有非主节点的连接，然后断开 LUN 与主机集群中主节点的连接并将其删除。
+
+** 如果主机集群中的节点在执行 SnapDrive storage delete` 命令之前关闭并重新启动，
++
+发生这种情况的原因是， LUN 仍映射到非现有节点。要避免这种情况，请使用 ` -force` 选项。
+
+
+
+

@@ -1,0 +1,15 @@
+---
+permalink: solaris/concept_snapdrive_for_unix_and_raw_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, raw, entity 
+summary: SnapDrive for UNIX 可为 LUN 等原始实体或可直接在 LUN 上创建的文件系统启用存储操作，并在不使用主机系统 VxVM 的情况下执行存储操作。 
+---
+= 适用于 UNIX 和原始实体的 SnapDrive
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 可为 LUN 等原始实体或可直接在 LUN 上创建的文件系统启用存储操作，并在不使用主机系统 VxVM 的情况下执行存储操作。
+
+SnapDrive for UNIX 存储命令用于管理 LUN 等原始实体，而无需激活 Vxp.SnapDrive for UNIX ，您可以在不激活 VxVM 的情况下创建，删除，连接和断开 LUN 及其包含的文件系统。

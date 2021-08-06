@@ -1,0 +1,117 @@
+---
+permalink: linux-administration/reference_some_configuration_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, configuration, config 
+summary: 有几个命令可以帮助您配置适用于 UNIX 的 SnapDrive 。 
+---
+= 一些配置命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+有几个命令可以帮助您配置适用于 UNIX 的 SnapDrive 。
+
+下表总结了有助于配置 SnapDrive for UNIX 的其他命令：
+
+|===
+| 命令或操作 | Description 
+
+
+ a| 
+配置和验证 SnapDrive for UNIX 软件的版本
+
+
+
+ a| 
+` * SnapDrive 配置显示 *`
+ a| 
+检查 `snapdrive.conf` 文件中的值。
+
+
+
+ a| 
+` * SnapDrive 版本 *``
+ a| 
+检查适用于 UNIX 的 SnapDrive 版本。
+
+
+
+ a| 
+` * 快照启动 *`
+ a| 
+启动 SnapDrive for UNIX 守护进程。
+
+
+
+ a| 
+` * SnapDrive 配置准备 -count count_value*`
+ a| 
+准备主机以创建特定数量的 LUN ，并确定可以创建的 LUN 数量。
+
+
+
+ a| 
+` * SnapDrive 配置集 -viadmin <user> <vadmin_name>*`
+ a| 
+准备子系统以在 Linux 子操作系统上创建 RDM LUN 。
+
+
+NOTE: 通过在不使用主机实用程序的情况下使用 FCP 协议，您只能在 Linux 主机上使用这些命令。
+
+
+
+ a| 
+` * SnapDrive clone split *``
+ a| 
+估算，启动，停止和查询卷克隆或 LUN 克隆的拆分状态。
+
+
+
+ a| 
+编辑 `snapdrive.conf` 文件中的变量。
+ a| 
+更改日志文件的路径名称和选项。SnapDrive for UNIX 会将信息记录到三个文件中：
+
+* 审核文件
+* 恢复文件
+* 跟踪文件
+
+
+
+
+ a| 
+设置和显示主机与存储系统之间的访问控制权限。
+
+
+
+ a| 
+编辑与该主机关联的存储系统上的访问控制权限文件（ SD ` _hostname_` .prbac ）。
+ a| 
+指定主机对存储系统的访问控制权限。您可以为存储系统上的主机设置以下访问级别：
+
+* 无—无访问权限。
+* snap create —创建 Snapshot 副本。
+* snap use--Delete 和 rename Snapshot 副本。
+* Snap All- 创建，还原，删除和重命名 Snapshot 副本。
+* storage create delete-create ， resize 和 delete 存储。
+* 存储使用—连接和断开存储连接。
+* 存储全部—创建，删除，连接和断开存储连接。
+* 所有访问—所有操作。
+
+
+
+
+ a| 
+` * SnapDrive 配置访问 show <filer_name>*`
+ a| 
+显示有关主机对存储系统的访问控制权限的信息。
+
+
+
+ a| 
+` * SnapDrive 配置删除 < 文件名 ><< 文件名 > 。。.]*`
+ a| 
+从 SnapDrive for UNIX 中删除指定的用户名密码对。
+
+|===

@@ -1,0 +1,32 @@
+---
+permalink: solaris/task_verifying_virtual_storage_console.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verify, login, information, virtual, storage, console 
+summary: 您可以使用 SnapDrive config list 命令验证是否已在适用于 UNIX 的 SnapDrive 中配置虚拟接口。 
+---
+= 验证 Virtual Storage Console 的登录信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive config list` 命令验证是否已在适用于 UNIX 的 SnapDrive 中配置虚拟接口。
+
+.步骤
+. 输入以下命令： SnapDrive config list`
++
+此命令显示 SnapDrive for UNIX 中指定的用户名或虚拟接口。此操作不会显示虚拟接口系统的密码。
+
++
+以下示例显示了与名为 ruffleskin 的虚拟接口对应的用户。
+
++
+[listing]
+----
+# snapdrive config list
+user name    appliance name   appliance type
+------------------------------------------------
+root       rumplestiltskins   StorageSystem
+sdadmin    ruffleskin	     VirtualInterface
+----
+

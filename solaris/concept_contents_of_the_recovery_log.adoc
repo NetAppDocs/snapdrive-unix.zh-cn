@@ -1,0 +1,19 @@
+---
+permalink: solaris/concept_contents_of_the_recovery_log.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, recovery, log 
+summary: 恢复日志可帮助您跟踪系统状态不一致的原因。当某些操作停止工作时， SnapDrive for UNIX 将生成此文件。 
+---
+= 恢复日志的内容
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+恢复日志可帮助您跟踪系统状态不一致的原因。当某些操作停止工作时， SnapDrive for UNIX 将生成此文件。
+
+如果按 Ctrl-C 暂停 SnapDrive for UNIX ，或者主机或存储系统在操作期间出现故障，则系统可能无法自动恢复。
+
+如果任何操作中断，可能会使系统处于不一致状态，则 SnapDrive for UNIX 会将信息写入恢复日志文件。如果出现问题，您可以将此文件发送给 NetApp 技术支持，以便他们可以帮助您恢复系统状态。
+
+恢复日志实用程序会保留操作期间发出的命令的记录。每个命令都会标记一个 operation_index （一个数字，用于唯一标识正在执行的操作），后跟日期 / 时间戳和消息文本。

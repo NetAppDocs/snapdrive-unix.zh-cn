@@ -1,0 +1,25 @@
+---
+permalink: aix/concept_nfs_configuration_checks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, nfs, configuration, check 
+summary: 对于使用网络文件系统（ NFS\ ）的配置，在设置主机和存储系统之前，您必须检查 NFS 客户端是否运行正常。 
+---
+= NFS 配置检查
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+对于使用网络文件系统（ NFS ）的配置，在设置主机和存储系统之前，您必须检查 NFS 客户端是否运行正常。
+
+如果您的配置使用 NFS ，则必须完成以下任务：
+
+* 确保 NFS 客户端正常运行。
++
+有关管理 NFS 协议的详细信息，请参见 link:https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["《 7- 模式文件访问和协议管理指南》"] 如果您使用的是 Data ONTAP 7- 模式；请参见  如果使用的是集群模式 Data ONTAP 。
+
+* 设置主机和存储系统。
++
+要在存储系统上将 SnapDrive for UNIX 与 NFS 挂载的目录结合使用，必须确保将存储系统目录正确导出到主机。如果主机具有多个 Internet 协议（ IP ）接口以及存储系统的数据和管理接口，则必须确保将目录正确导出到数据和管理接口。SnapDrive for UNIX 会发出警告，除非所有此类接口都具有读取或写入权限，或者如果使用带有 -readonly 选项的 SnapDrive snap connect 命令，则至少具有只读权限。如果这些接口均无权访问目录，则 SnapDrive snap restore 和 SnapDrive snap connect 命令将失败。
+
+

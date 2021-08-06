@@ -1,0 +1,55 @@
+---
+permalink: aix/reference_limitations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, limitation, aix, 
+summary: 使用 SnapDrive for UNIX 时，您必须了解可能会影响您环境的某些限制。 
+---
+= 限制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive for UNIX 时，您必须了解可能会影响您环境的某些限制。
+
+
+
+== 一般限制
+
+* SnapDrive for UNIX 要求 VM 在启动期间使用 BIOS ，以获得 SnapManager for Virtual Infrastructure （ SMVI ）支持。不支持使用统一可扩展固件接口（ Unified Extensible Firmware Interface ， UEFI ）。
+* SnapDrive for UNIX 不支持子操作系统中 RDM （原始设备映射）环境中的 MetroCluster 配置，因为虚拟存储控制台（ VSC ）不支持 MetroCluster 配置。
+* 如果使用 Kerberos 安全身份验证类型 krb5 ， krb5i 或 krb5p 导出卷，则 SnapDrive for UNIX 不支持在 NFS 挂载点上执行 Snapshot 操作。
+* 如果在挂载点执行快照还原操作时挂载的实体与在 Snapshot 副本中创建的实体不同，则快照操作可能不一致。
+* 如果文件规范或 LUN 位于 7- 模式 Data ONTAP 和集群模式 Data ONTAP 存储系统中，则 SnapDrive for UNIX 不支持对这些规范或 LUN 执行操作。
+* 如果您使用集群模式 Data ONTAP 为 Storage Virtual Machine （ SVM ）配置 SnapDrive for UNIX ，请检查 SVM 的 LIF 的 IP 地址是否已映射到 DNS 或 ` /etc/hosts` 文件中的 SVM 名称。
++
+您还必须使用 SnapDrive config set _vsadmin vserver name_` 命令检查是否已在适用于 UNIX 的 SnapDrive 中配置 SVM 名称。
+
+* 在执行 VBSR 操作后， SnapDrive for UNIX 会将 qtree 的挂载点权限从非 root 用户修改为 root 用户。
+* SnapDrive for UNIX 不支持非英语环境。
+* 如果从 LUN 移动到另一个卷之前创建的 Snapshot 副本还原快照还原，则快照还原操作将失败。
+* 如果您使用的是 ONTAP 8.2 或更高版本，则如果正在进行的克隆操作使用同一个 Snapshot 副本，则对 Snapshot 副本执行的 Snapshot 操作可能会失败。
++
+您必须稍后重试此操作。
+
+* OnCommand Unified Manager 6.0 或更高版本在集群模式 Data ONTAP 上不支持 Protection Manager 。因此，不支持 OnCommand Unified Manager 6.0 或更高版本与 SnapDrive for UNIX 之间的集成，也不支持以下 SnapDrive for UNIX 功能：
++
+** 基于角色的访问控制（ Role-Based Access Control ， RBAC ）与 ONTAP 上的 OnCommand Unified Manager 6.0 或更高版本集成
+** Protection Manager 与 ONTAP 上的 OnCommand Unified Manager 6.0 或更高版本集成
+
+
+* 您必须将包含 SVM 卷的聚合分配给 SVM 的聚合列表，以配置 SVM 并执行 SnapDrive for UNIX 操作。
+* SnapDrive for UNIX 不支持自动挂载，使用任何类型的自动挂载可能会导致发生原因 SnapDrive for UNIX 操作失败。
+
+
+
+
+== AIX 上的限制
+
+* 如果一个或多个 FC 端口链路关闭或不可用，则 SnapDrive for UNIX 守护进程需要较长时间才能重新启动。
++
+但是，无论 FC 端口的状态如何， SnapDrive for UNIX 守护进程都可以启动。
+
+* 默认情况下， SnapDrive for UNIX 会使用非并发设置创建磁盘组；您必须手动更改或提供存储配置操作。
+* SnapDrive for UNIX 在 AIX 上不支持 iSCSI 传输协议。
+

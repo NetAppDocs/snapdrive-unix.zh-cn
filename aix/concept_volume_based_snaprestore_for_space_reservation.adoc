@@ -1,0 +1,73 @@
+---
+permalink: aix/concept_volume_based_snaprestore_for_space_reservation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snaprestore, space, reservation, volume 
+summary: 对于使用基于卷的快照预留空间的空间预留，您需要在 SnapDrive.conf 文件中设置 space-reservations-volume-enabled 选项。 
+---
+= 用于空间预留的基于卷的 SnapRestore
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要使用基于卷的快照预留预留空间，您需要在` `snapdrive.conf` 文件中设置 ` _space-reservations-volume-enabled_sn 选项。
+
+` _space-reservations volume-enabled_sn` 选项用于在卷上设置空间保证策略，并且可以采用以下三个值。
+
+* * 快照 * ：这是默认值。卷上的空间保证不变。
+* * 卷 * ：卷上的空间保证处于卷级别。
+* * 无 * ：空间保证设置为无。
+
+
+下表介绍了基于卷的快照预留在空间预留中的行为。
+
+|===
+| 未使用空间预留 CLI 选项；指定了 ` -vbsr execute` | space-reservations-volume-enable= | 结果 
+
+
+ a| 
+无
+ a| 
+Snapshot
+ a| 
+卷上的空间保证不变。
+
+
+
+ a| 
+无
+ a| 
+无
+ a| 
+尝试将卷的空间保证设置为 "`none` " 。
+
+
+
+ a| 
+` 预留`
+ a| 
+配置值已被覆盖
+ a| 
+尝试将卷的空间保证设置为 " 卷 "
+
+
+
+ a| 
+` -noreserve`
+ a| 
+配置值已被覆盖
+ a| 
+尝试将卷的空间保证设置为 " 无 "
+
+
+
+ a| 
+无
+ a| 
+volume
+ a| 
+尝试将卷的空间保证设置为 " 卷 "
+
+|===
+
+NOTE: ` -vbsr preview` 不会检查任何空间预留选项。

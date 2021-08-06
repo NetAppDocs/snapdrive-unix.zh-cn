@@ -1,0 +1,15 @@
+---
+permalink: linux-administration/concept_troubleshooting.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, troubleshooting, problem, solve 
+summary: SnapDrive for UNIX 中的故障排除工具不仅可以帮助您解决问题，还可以帮助您查找相关信息。 
+---
+= 故障排除
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 中的故障排除工具不仅可以帮助您解决问题，还可以帮助您查找相关信息。
+
+在本版本发布时， SnapDrive for UNIX 中存在一些已知问题和限制。虽然某些问题会影响所有适用于 UNIX 的 SnapDrive 主机平台，但其他问题仅会影响特定主机平台。有关已知问题和故障排除提示的信息，请参见 _UNIX SnapDrive 发行说明 _

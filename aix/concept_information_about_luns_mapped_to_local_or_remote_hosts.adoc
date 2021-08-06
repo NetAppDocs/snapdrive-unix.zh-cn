@@ -1,0 +1,15 @@
+---
+permalink: aix/concept_information_about_luns_mapped_to_local_or_remote_hosts.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, mapped, local, remote, hosts 
+summary: 在基于卷的 SnapRestore 期间，从卷到 SnapDrive for UNIX 的唯一映射信息是 LUN 的启动程序组信息。如果您使用的启动程序组始终由适用于 UNIX 的 SnapDrive 创建，则主机的完全限定域名属于启动程序组名称。 
+---
+= 有关映射到本地或远程主机的 LUN 的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在基于卷的 SnapRestore 期间，从卷到 SnapDrive for UNIX 的唯一映射信息是 LUN 的启动程序组信息。如果您使用的启动程序组始终由适用于 UNIX 的 SnapDrive 创建，则主机的完全限定域名属于启动程序组名称。
+
+如果 SnapDrive for UNIX 管理员指定了 ` -igroup` CLI 选项，或者您使用手动创建的启动程序组，则 `igroup` name 不一定需要主机名。由于上述所有原因， SnapDrive for UNIX 无法可靠地检测 LUN 的本地或远程绑定。因此， SnapDrive for UNIX 会在基于卷的 SnapRestore 中显示完整的 LUN 启动程序组和启动程序信息。

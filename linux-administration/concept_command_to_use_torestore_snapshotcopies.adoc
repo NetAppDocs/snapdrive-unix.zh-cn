@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/concept_command_to_use_torestore_snapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, snapshot, copy, restore 
+summary: 使用命令 SnapDrive snap restore 还原 Snapshot 副本。 
+---
+= 用于还原 Snapshot 副本的命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用命令 SnapDrive snap restore` 还原 Snapshot 副本。
+
+SnapDrive snap restore` 命令可将您在命令提示符处指定的 Snapshot 副本中的数据还原到存储系统。此操作会将您在 SnapDrive snap restore` 命令中指定的 `file_specs` 参数（例如，磁盘组， NFS 文件， NFS 目录树，直接在 LUN 上创建的文件系统）的内容替换为指定 Snapshot 副本中的 `file_specs` 参数的内容。
+
+您还可以为不存在的 `file_specs` 参数还原 Snapshot 副本。如果指定的值不再存在于主机上，而是在创建 Snapshot 副本时存在，则会发生这种情况。例如，可能是您现在已卸载的文件系统或已删除的磁盘组。
+
+通常，您可以从创建 Snapshot 副本的主机（即发起主机）还原 Snapshot 副本。
+
+[NOTE]
+====
+* 在 NFS 实体中，如果同一个卷挂载到两个不同的 IP 上，则一次只能对这些卷的一个文件规范执行快照还原操作。
+* 如果您不是 root 用户，则在适用于 UNIX 的 SnapDrive 4.1 中，除了使用 GlobalSDSnapshot 功能可以执行 Snapshot 还原之外，您还应具有全局存储写入功能。
+
+
+====

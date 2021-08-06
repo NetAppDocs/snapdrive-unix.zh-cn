@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_snapdrive_for_unix_configuration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration 
+summary: 您必须了解适用于 UNIX 的 SnapDrive 配置选项并了解如何使用适用于 UNIX 的 SnapDrive 。 
+---
+= 适用于 UNIX 的 SnapDrive 配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须了解适用于 UNIX 的 SnapDrive 配置选项并了解如何使用适用于 UNIX 的 SnapDrive 。

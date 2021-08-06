@@ -1,0 +1,58 @@
+---
+permalink: linux-installation-cmode/reference_linux_host_requirements.html 
+sidebar: sidebar 
+keywords: snapdrive, snap, linux, host, requirements 
+summary: 必须先准备 Linux 主机，然后才能安装适用于 UNIX 的 SnapDrive 。 
+---
+= Linux 主机要求
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+必须先准备 Linux 主机，然后才能安装适用于 UNIX 的 SnapDrive 。
+
+* 如果您使用的是 FC 或 iSCSI 协议，则必须从 NetApp 支持站点下载并安装 Linux Host Utilities 。
++
+http://mysupport.netapp.com/NOW/cgi-bin/software["NetApp 下载：软件"]
+
++
+您必须使用 `sanlun version` 命令验证是否已成功安装 Linux Host Utilities 。
+
+* 您必须在所有 Linux 系统中安装 `sg3_utils` 软件包，以使 SnapDrive for UNIX 命令正常运行。
++
+
+NOTE: 您必须确保 `sg3_utils` 和 `sg3_utils-libs` 库可用于 Red Hat Enterprise Linux （ RHEL ）和 Oracle Enterprise Linux （ OEL ）。在适用于 SUSE Linux Enterprise Server （ SLES ） 10 及更早版本的 `sCSI *` 软件包以及适用于 SLES 11 及更高版本的 `sG3_utils*` 软件包中提供了 `sg3_utils` 库。
+
+* 如果您的主机是 64 位 Linux 操作系统，并且您正在尝试安装 32 位 SnapDrive for UNIX ，则必须下载并安装这些库或二进制软件包。
++
+** 32 位版本的 `glibc` ， `libnl` ， `libhba` ， `libgcc` 来自 _Red Hat Enterprise Linux site_ 的软件包。
++
+http://www.redhat.com["Red Hat Enterprise Linux 站点"]
+
++
+如果主机系统中缺少 32 位版本的``glibc`` 软件包，则 SnapDrive for UNIX 安装将失败。
+
+** QLogic site_ 中 `QConvergeConsoleCLI` 软件包的 32 位二进制文件。如果您的主机是 64 位 Linux 操作系统，并且安装适用于 Emulex HBA 的 Emulex OnCommand Manager 软件包的 32 位二进制文件，则还必须在 QLogic HBA 的 ` etc/HBA.conf` 文件中将 `qla2xxx64 /usr/lib64/libqlsdm.so` 更改为 `qla2xxx /usr/lib/libqlsdm.so` 。
++
+http://support.qlogic.com/["QLogic 站点"]
+
+** 如果传输协议为 FC ，则必须安装 `libHBAAPI` 软件包或供应商专用的软件包，以便 SnapDrive for UNIX 能够在主机上运行。
+
+
+* 在安装 SnapDrive for UNIX 之前，必须在主机上安装受支持的主机服务包。
++
+互操作性表工具 _ 提供了有关受支持服务包的详细信息。
+
++
+http://mysupport.netapp.com/matrix["NetApp 互操作性表工具"]
+
+
+
+* 相关信息 *
+
+http://mysupport.netapp.com/matrix["NetApp 互操作性表工具"]
+
+http://mysupport.netapp.com["NetApp 支持"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["《 Linux Unified Host Utilities 7.1 安装指南》"]

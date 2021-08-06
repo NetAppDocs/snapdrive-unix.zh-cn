@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_what_autosupport_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, autosupport 
+summary: AutoSupport 允许 SnapDrive for UNIX 将因 SnapDrive 被发送到 /etc/log/EMS 文件中存储系统的 EMS 日志视图而发生的任何操作故障发送到该存储系统的 EMS 日志视图。 
+---
+= 什么是 AutoSupport
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 允许 SnapDrive for UNIX 将因 SnapDrive 发送到存储系统的 EMS 日志视图中的 ` /etc/log/EMS` 文件而发生的任何操作故障发送到 EMS 日志视图。

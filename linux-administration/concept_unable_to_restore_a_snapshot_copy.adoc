@@ -1,0 +1,43 @@
+---
+permalink: linux-administration/concept_unable_to_restore_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, restore, command, issuelun, scsi 
+summary: 影响 SnapDrive snap restore 命令还原 Snapshot 副本的功能的条件很少。 
+---
+= 无法还原 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+影响 SnapDrive snap restore` 命令还原 Snapshot 副本的功能的条件很少。
+
+* SnapDrive snap restore` 命令必须能够执行以下任务：
++
+** 查询所有磁盘组以获取 LUN 列表。
+** 通过 SCSI 命令查询所有 LUN 。要使 SnapDrive snap restore` 命令成功，无需使用和挂载主机卷和文件系统。
+
+
+* 访问权限必须允许主机在该存储系统上创建和还原信息的 Snapshot 副本。
+* 必须将 NFS 挂载的目录正确导出到主机，以便可以挂载该目录。
+
+
+
+NOTE: 在向磁盘组添加 LUN 或从磁盘组中删除 LUN 之后，应始终创建另一个 Snapshot 副本。
+
+* 如果在创建 Snapshot 副本后将主机卷或文件系统添加到磁盘组，然后尝试还原 Snapshot 副本，则会收到错误消息。要在这种情况下成功执行还原操作，您必须在命令行中包含 `force` 选项（` -f` ）。
++
+
+NOTE: 创建和还原 Snapshot 副本后添加的主机卷和文件系统将无法再访问。
+
+* 如果在创建 Snapshot 副本后重命名主机卷或文件系统或更改挂载点，然后尝试还原它，还原操作将失败。要在这种情况下成功执行还原操作，您必须在命令行中包含 `force` 选项（` -f` ）。
++
+
+NOTE: 请务必使用 ` -f` 选项，以确保不会意外覆盖不打算覆盖的内容。
+
+* 如果在创建 Snapshot 副本后重命名 LUN ，然后尝试还原该 Snapshot 副本，则还原操作将失败。重命名 LUN 后，应创建新的 Snapshot 副本。
++
+
+NOTE: 启动 Snapshot 还原操作后，请勿暂停该操作。暂停此操作可能会使系统处于不一致状态。然后，您可能需要执行手动恢复。
+
+

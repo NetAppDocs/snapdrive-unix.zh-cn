@@ -1,0 +1,21 @@
+---
+permalink: aix/concept_ghost_device_handles_in_aix_cause_longer_return_time_on_iscsi_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, ghost, device, aix, handle, iscsi, command, return 
+summary: 通过 iSCSI 或 FC 查询具有虚影设备句柄的 AIX 设备（处于已定义或故障状态的设备句柄）可以使用发生原因 SCSI 命令等待 AIX 默认超时时间，即大约 30 秒。 
+---
+= AIX 发生原因中的虚影设备句柄在 iSCSI 命令上的返回时间较长
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 iSCSI 或 FC 查询具有虚影设备句柄的 AIX 设备（处于定义或故障状态的设备句柄）可以使用发生原因 SCSI 命令等待大约 30 秒的 AIX 默认超时。
+
+如果未清理 FC 子设备句柄或 FC HBA 未连接到交换机，则在将 AIX 系统从使用 FC 切换到使用 iSCSI 后，您可以看到此问题描述。
+
+* 临时解决策： *
+
+* 如果光纤通道 HBA 未连接到交换机，请在未连接到光纤通道交换机的所有光纤通道启动程序中安装光纤通道 IOA 包装插头。
+* 如果光纤通道 HBA 已连接到交换机，但出现故障或将设备句柄定义为子设备，请使用 `rmdev` 命令删除陈旧的虚影设备句柄。
+

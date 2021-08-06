@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/concept_snapdrive_errors_out_if_libgcc_s_so_1_is_not_properly_installed.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, install, red, enterprise, oracle 
+summary: 如果 64 位 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机上未安装 /lib/libgcc_s.so.1 路径，则 SnapDrive for UNIX 将出错。 
+---
+= 如果未安装 libgcc_s.so.1 ，则 SnapDrive 会出错
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 64 位 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机上未安装 ` /lib/libgcc_s.so.1 path` ，则 SnapDrive for UNIX 将出错。
+
+如果 64 位 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机上未安装路径 ` /lib/libgcc_s.so.1` ，则 SnapDrive for UNIX 将显示以下错误消息：
+
+[listing]
+----
+libgcc_s.so.1 must be installed for pthread_cancel to work
+----

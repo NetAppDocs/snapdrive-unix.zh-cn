@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_storage_creation_for_lvm_vxvm_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, creat, vxvm 
+summary: 如果使用 SnapDrive for UNIX 使用 VxVM 创建逻辑卷或文件系统，则 SnapDrive for UNIX 会自动创建所需的磁盘组。SnapDrive for UNIX 会根据主机卷管理器支持的类型创建文件系统。对于 Solaris ，它包括 VxFS 和 UFS 。 
+---
+= 为 VxVM 实体创建存储
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果使用 SnapDrive for UNIX 使用 VxVM 创建逻辑卷或文件系统，则 SnapDrive for UNIX 会自动创建所需的磁盘组。SnapDrive for UNIX 会根据主机卷管理器支持的类型创建文件系统。对于 Solaris ，它包括 VxFS 和 UFS 。

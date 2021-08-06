@@ -1,0 +1,146 @@
+---
+permalink: solaris/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, snapshot, copy, lun, storage, entities 
+summary: 您可以使用 SnapDrive snap connect 命令连接到包含 LUN 以外存储实体的 Snapshot 副本。如果您提供的目标名称当前正在使用中，或者存在用作挂载点的文件系统名称，则无法使用此命令。 
+---
+= 连接到 LUN 以外存储实体的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap connect` 命令连接到包含 LUN 以外存储实体的 Snapshot 副本。如果您提供的目标名称当前正在使用中，或者存在用作挂载点的文件系统名称，则无法使用此命令。
+
+从非源主机连接到包含使用默认挂载 `QIO` 选项挂载的 VxFS 文件系统的 Snapshot 副本时，您应安装 Veritas File Device Driver （ VxFDD ）许可证。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive snap connect -snapname fspec_set [_fspec_set..._] -snapname _lor_snap_name_ "-igroup _ig_name_ [_ig_name..._]] （ -AutoExpand] （ -autumename] ）【 ｛ -reserve | -noreserve ｝ 】（仅限 readsparate* ）`
+
++
+在上述用法中， ` fspec_set_` 的格式如下：
+
++
+` * ｛ -dg _ -fs _ -hostvol ｝ _src_file_spec_ _dest_file_spec] （ ｛ -destdg _ -destvg ｝ _dgname_] （ ｛ -destlv _ -desthv ｝ lvname） *`
+
++
+此命令必须始终以要连接的存储实体的名称开头（例如， ` -dg` ， ` -hostvol` 或 ` -fs` ）。如果指定 NFS 挂载点，则不能在同一命令行上指定非 NFS 实体（` -vg` ， ` -DG` ， ` -FS` ， ` -lvol` 或 ` -hostvol` ）。
+
+
+
+SnapDrive for UNIX 会克隆您指定的 LUN 并将其连接到新位置。
+
+以下命令行将连接一个磁盘组，并使用默认名称作为目标名称（即，从源名称创建这些名称）：
+
+[listing]
+----
+# snapdrive snap connect -vg vg1 -snapname
+filer1:/vol/vol1:vg1snapshot
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1
+----
+以下命令行将磁盘组与单个主机卷连接起来。它还会指定目标主机卷和磁盘组的名称：
+
+[listing]
+----
+# snapdrive snap connect -lvol vg1/vol1 vg1copy/vol1copy -snapname
+filer1:/vol/vol1:vg1snapshot
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1copy
+----
+以下命令行会将一个磁盘组连接到两个 LUN 和两个文件系统。它指定每个文件系统的目标名称，其中一个文件系统的主机卷以及两个文件系统的磁盘组：
+
+[listing]
+----
+# snapdrive snap connect -fs mnt/fs1 /mnt/fs1copy -destvg vg1copy \
+-fs /mnt/fs2 /mnt/fs2copy -destlv vg1copy/vol2copy -destvg vg1copy
+\ -snapname filer1:/vol/vol1:vg1snapshot
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+LUN copy vg1_lun2_0 ... created
+(original: filer1:/vol/vol1/vg1_lun2)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1copy
+----
+以下命令行包含 ` -AutoExpand` 选项，因为它会将磁盘组连接到两个文件系统。它使用默认名称作为目标名称（即，从源名称创建目标名称）：
+
+[listing]
+----
+# snapdrive snap connect -lvol mnt/fs1 -snapname
+filer1:/vol/vol1:vg1snapshot \
+-autoexpand
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+LUN copy vg1_lun2_0 ... created
+(original: filer1:/vol/vol1/vg1_lun2)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1
+----
+以下命令行包含 -autorename 选项，因为它会将一个磁盘组连接到两个文件系统和两个 LUN ：
+
+[listing]
+----
+# snapdrive snap connect -fs mnt/fs1 -snapname
+filer1:/vol/vol1:vg1snapshot \
+-autorename
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+LUN copy vg1_lun2_0 ... created
+(original: filer1:/vol/vol1/vg1_lun2)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1_0
+----
+以下示例将连接到文件系统 Snapshot 副本，即在 Veritas 堆栈上创建的磁盘组：
+
+[listing]
+----
+# snapdrive snap connect -fs /mnt/vxfs1 /mnt/vxfs1_clone -snapname
+snoopy:/vol/vol1:snapVxvm -autorename
+connecting vxvm1:
+LUN copy lunVxvm1_0 ... created
+(original: snoopy:/vol/vol1/lunVxvm1)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vxvm1_0
+Successfully connected to snapshot snoopy:/vol/vol1:snapVxvm
+disk group vxvm1_0 containing host volumes
+vxfs1_SdHv_0 (filesystem: /mnt/vxfs1_clone)
+----
+在以下示例中，文件系统 1 （ fs1 ）位于存储系统 1 上，文件系统 2 （ fs2 ）位于存储系统 1 上，同时也位于存储系统 2 上，该存储系统是配对存储系统。文件系统 3 （ FS3 ）位于存储系统 1 ，配对存储系统 2 和存储系统 3 上，这不是 HA 对的一部分。另一个文件系统 FS4 完全驻留在存储系统 4 上。
+
+以下命令将创建 fs1 ， fs2 ， FS3 和 FS4 的 Snapshot 副本：
+
+[listing]
+----
+snapdrive snap create -fs /mnt/fs1 /mnt/fs2 /mnt/fs3 /mnt/fs4
+-snapname fs_all_snap
+----
+下一个命令用于连接目标存储系统上的 fs1 和 fs2 。fs1 和 fs2 都驻留在 HA 对上，因此您可以使用一个命令还原它们：
+
+[listing]
+----
+snapdrive snap connect -fs /mnt/fs1 /mt/fs2 -snapname fs_all_snap
+----
+以下命令将还原 FS4 ：
+
+[listing]
+----
+snapdrive snap connect -fs /mnt/fs4 -snapname fs_all_snap
+----
+SnapDrive for UNIX 无法在目标存储系统上连接 FS3 ，因为此文件系统位于存储系统 1 ，存储系统 2 和存储系统 3 上。

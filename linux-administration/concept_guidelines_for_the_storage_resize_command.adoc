@@ -1,0 +1,19 @@
+---
+permalink: linux-administration/concept_guidelines_for_the_storage_resize_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, command, resize, guidelines 
+summary: 使用 SnapDrive storage resize 命令时，需要遵循一些准则。 
+---
+= storage resize 命令的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive storage resize` 命令时，需要遵循一些准则。
+
+* 存储调整大小操作只能增加存储大小。您不能使用它来减小实体的大小。
+* 所有 LUN 都必须位于同一个存储系统卷中。
+* 调整大小操作不支持直接对逻辑主机卷执行，也不支持对逻辑主机卷或 LUN 上的文件系统执行。在这种情况下，必须使用 LVM 命令调整存储大小。
+* 您不能调整 LUN 的大小；您必须使用 ` -addlun` 选项添加新的 LUN 。
+

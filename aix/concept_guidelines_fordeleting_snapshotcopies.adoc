@@ -1,0 +1,19 @@
+---
+permalink: aix/concept_guidelines_fordeleting_snapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guidelines, delete, snapshot, copy 
+summary: 如果 Snapshot 副本位于多个存储系统卷上，则不能删除正在使用的 Snapshot 副本。 
+---
+= 删除 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 Snapshot 副本位于多个存储系统卷上，则不能删除正在使用的 Snapshot 副本。
+
+使用 SnapDrive snap delete` 命令时，请遵循以下准则：
+
+* 如果要删除的任何 Snapshot 副本正在使用中或未由 SnapDrive for UNIX 创建，则 Snapshot 删除操作将失败。您可以通过将 ` -force` 选项与 SnapDrive snap delete` 命令结合使用来覆盖此行为。
+* 如果您的 Snapshot 副本跨越多个存储系统卷，则必须手动删除每个卷上的 Snapshot 副本。
+

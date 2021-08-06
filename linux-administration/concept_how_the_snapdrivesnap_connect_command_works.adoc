@@ -1,0 +1,25 @@
+---
+permalink: linux-administration/concept_how_the_snapdrivesnap_connect_command_works.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, command, import, host 
+summary: 使用 SnapDrive snap connect 命令时，它会克隆指定实体的存储并将其导入到主机中。 
+---
+= SnapDrive snap connect 命令的工作原理
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive snap connect` 命令时，它会克隆指定实体的存储并将其导入到主机：
+
+* 如果您指定的 Snapshot 副本包含 LUN （` -lun` ），则 SnapDrive for UNIX 会将 LUN 的新副本映射到主机。您不能使用 SnapDrive snap connect` 命令在与其他存储实体（` -vg` ， ` -DG` ， ` -FS` ， ` -lvol` 或 ` -hostvol` ）相同的命令行上指定 LUN 。
+* 如果您指定的文件系统直接驻留在 LUN 上，则 SnapDrive for UNIX 会将 LUN 映射到主机并挂载文件系统。
+* 如果在 `snap connect` 命令中将源挂载点指定为相对路径名，则 SnapDrive for UNIX 将忽略在命令行界面中指定的目标挂载点，并使用格式为 `ssource_mount_point_<N>` 的内部命名约定来命名目标挂载点。
+* 如果您指定的 Snapshot 副本包含磁盘组，或者主机卷或文件系统属于磁盘组，则 SnapDrive snap connect` 命令会连接整个目标磁盘组。为了建立连接， SnapDrive for UNIX 会重新激活目标磁盘组的所有逻辑卷，并将所有文件系统挂载到逻辑卷上。
+* 如果使用 `snap connect` 命令指定 `autorename` 选项，则主机卷和文件系统始终会重命名。只有当磁盘组已位于主机上时，才会对其进行重命名。
+* 如果您指定的 Snapshot 副本包含 NFS 目录树，则 SnapDrive for UNIX 将为包含 NFS 目录树的 FlexVol 卷创建一个克隆。然后， SnapDrive for UNIX 会将卷连接到主机并挂载 NFS 文件系统。在目录树中， SnapDrive for UNIX 会删除您在创建 Snapshot 副本后创建的任何新 NFS 文件或目录。如果将 `snapconnect-nfs-removedirectories` 配置选项设置为 on ，则 SnapDrive for UNIX 将从 FlexVol 卷中删除您连接的 NFS 目录以外的任何文件或目录。
+* 如果您使用 `readonly` 选项连接包含 NFS 目录树的 Snapshot 副本，则 SnapDrive for UNIX 将直接挂载该目录的 Snapshot 副本，而不创建克隆。您不能使用 SnapDrive snap connect` 命令在与非 NFS 实体相同的命令行上指定 NFS 挂载点，即使用选项 ` -vg` ， ` -DG` ， ` -FS ， ` -lvol 或 ` - hostvol` 。
+
+
+
+NOTE: Data ONTAP 7.3 及更高版本支持在 vFiler 环境中使用 ` -split` 选项执行 `snap connect` 操作。

@@ -1,0 +1,29 @@
+---
+permalink: solaris/task_adding_igroup.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, add, igroup 
+summary: 通过 SnapDrive for UNIX ，您可以将存储系统的特定 igroup 添加到主机中，并使用配置的 igroup 执行 SnapDrive 操作。您必须确保 igroup 在存储系统中可用。 
+---
+= 添加 igroup
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以将存储系统的特定 igroup 添加到主机中，并使用配置的 igroup 执行 SnapDrive 操作。您必须确保 igroup 在存储系统中可用。
+
+.步骤
+. 在主机上输入以下命令：
++
+` * SnapDrive igroup add _igroup_name filer_name_ [_filer_name..._]*`
+
++
+[listing]
+----
+snapdrive igroup add ig toaster
+Added igroup configuration for appliance: toaster
+----
++
+已成功为存储系统面包机添加 `igroup` 。
+
+

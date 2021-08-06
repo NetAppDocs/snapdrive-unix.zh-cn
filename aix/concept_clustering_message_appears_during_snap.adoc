@@ -1,0 +1,25 @@
+---
+permalink: aix/concept_clustering_message_appears_during_snap.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, cluster, message, snaprestore, restore 
+summary: 出现一条通用消息，指出适用场景 any SnapDrive for UNIX 主机操作系统具有主机集群监控功能。即使您的系统不提供主机集群监控或您已关闭此功能，也会显示此消息。 
+---
+= 在 SnapRestore 期间会显示集群消息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+出现一条通用消息，指出适用场景 any SnapDrive for UNIX 主机操作系统具有主机集群监控功能。即使您的系统不提供主机集群监控或您已关闭此功能，也会显示此消息。
+
+执行 snap restore 命令 ` # SnapDrive snap restore -vg clusstervg -snapname mysnap` 时，将显示以下消息
+
+`您似乎正在使用高可用性主机集群软件。为了避免可能发生的集群故障转移，请在还原之前对要还原的资源禁用集群监控。是否要继续？（ y/n ）` ：出现此问题的原因是 SnapDrive snap restore` 命令临时关闭卷组。如果此时正在运行集群监控过程，则执行 SnapDrive SnapRestore 操作可能会对集群故障转移执行发生原因。
+
+
+
+== 临时解决策
+
+在运行 HACMP 的 AIX 主机上，此问题不应出现，因为 HACMP 不会为卷组和应用程序提供默认资源监控。
+
+如果您自定义了一个应用程序以在 HACMP 下提供存储监控，则必须先禁用该应用程序和监控，然后再执行 SnapDrive snap restore` 命令

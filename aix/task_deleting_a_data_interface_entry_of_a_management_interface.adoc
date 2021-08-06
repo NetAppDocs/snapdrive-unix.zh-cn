@@ -1,0 +1,25 @@
+---
+permalink: aix/task_deleting_a_data_interface_entry_of_a_management_interface.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, data, interface, management 
+summary: 您可以使用 nfs config delete -mgmtpath 命令删除与 SnapDrive 环境中特定管理接口关联的数据接口条目。 
+---
+= 删除管理接口的数据接口条目
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 nfs config delete -mgmtpath` 命令删除与 SnapDrive 环境中特定管理接口关联的数据接口条目。
+
+. 在 CLI 中，输入以下命令：
++
+` * SnapDrive config delete -mgmtpath _data_interface_*`
+
++
+[listing]
+----
+#snapdrive config delete –mgmtpath f3050-197-91
+Deleted configuration for appliance: f3050-197-91
+----
+

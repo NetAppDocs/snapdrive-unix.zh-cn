@@ -1,0 +1,31 @@
+---
+permalink: linux-administration/concept_unable_to_start_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, daemon, start, problem, stale, entry 
+summary: 如果守护进程在 SnapDrive 进程中发现少量陈旧条目，则无法启动此守护进程。 
+---
+= 无法启动守护进程
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果守护进程在 SnapDrive 进程中发现少量陈旧条目，则无法启动此守护进程。
+
+启动或重新启动守护进程时，将显示以下错误消息。
+
+[listing]
+----
+Starting snapdrive daemon: snapdrive daemon port 4094 is in use ...
+snapdrive daemon port 4094 is in use ...
+snapdrive daemon port 4094 is in use ...
+snapdrive daemon port 4094 is in use ...
+Unable to start daemon...check daemon log file for more details
+----
+在守护进程重新启动 / 启动操作期间，您可能会遇到已处理的 SnapDrive 进程条目，从而导致守护进程失败。
+
+此问题的临时解决策将执行以下操作：
+
+* 手动删除 SnapDrive 进程中陈旧的条目。
+* 查找主机中可用的端口。然后，在 SnapDrive.conf 文件中，在选项 contact-http-port-sdU-daemon 中指定端口。
+

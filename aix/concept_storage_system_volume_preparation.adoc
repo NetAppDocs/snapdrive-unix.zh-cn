@@ -1,0 +1,31 @@
+---
+permalink: aix/concept_storage_system_volume_preparation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, system, volume, preparation 
+summary: 您可以在存储系统上使用命令提示符，也可以使用 FilerView 选项创建存储系统卷以专用于 SnapDrive for UNIX 。 
+---
+= 存储系统卷准备
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在存储系统上使用命令提示符，也可以使用 FilerView 选项创建存储系统卷以专用于 SnapDrive for UNIX 。
+
+您必须在存储系统上完成以下任务，才能创建一个卷，该卷可容纳连接到单个主机的 SnapDrive for UNIX 逻辑单元号（ LUN ）或网络文件系统（ NFS ）实体：
+
+* 创建存储系统卷。
+* 如果您使用的是光纤通道或 Internet 小型计算机系统接口（ iSCSI ）环境，请将存储系统卷上的 SnapDrive snap reserve` 选项重置为 0% ，以优化卷。
+
+
+在存储系统上创建卷以存放 LUN 或 NFS 目录树时，应注意以下事项：
+
+* 您可以在一个存储系统卷上创建多个 LUN 或 NFS 目录树。
+* 不应将用户数据存储在存储系统或 vFiler 单元上的根卷中。
+
+
+* 相关信息 *
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html["《 ONTAP 9 NFS 参考》"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["《 Data ONTAP 8.2 7- 模式文件访问和协议管理指南》"]

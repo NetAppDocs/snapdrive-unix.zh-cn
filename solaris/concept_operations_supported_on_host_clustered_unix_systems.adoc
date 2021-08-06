@@ -1,0 +1,18 @@
+---
+permalink: solaris/concept_operations_supported_on_host_clustered_unix_systems.html 
+sidebar: sidebar 
+keywords: snap, snpadrive, support, host, cluster 
+summary: 通过主机集群模式 UNIX 系统上的 SnapDrive for UNIX ，您可以在主机集群范围的共享存储上创建存储并执行 Snapshot 操作。 
+---
+= 主机集群模式 UNIX 系统支持的操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过主机集群模式 UNIX 系统上的 SnapDrive for UNIX ，您可以在主机集群范围的共享存储上创建存储并执行 Snapshot 操作。
+
+快照操作在包含磁盘组，文件系统和 LUN 的存储系统上执行。您可以执行 Snapshot 操作，例如创建，重命名，还原，连接，断开连接， 显示和删除。
+
+
+NOTE: 只有 Solaris 主机上的 Veritas SFRAC 才能对主机集群系统执行操作。

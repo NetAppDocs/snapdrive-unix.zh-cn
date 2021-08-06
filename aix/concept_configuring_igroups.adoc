@@ -1,0 +1,16 @@
+---
+permalink: aix/concept_configuring_igroups.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configure, igroup 
+summary: 通过适用于 UNIX 的 SnapDrive ，您可以配置存储系统上的 igroup 。配置的 igroup 用于映射存储系统上的 LUN 。您必须为存储系统配置 igroup ，以便在虚拟化环境中无缝迁移。 
+---
+= 配置 igroup
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过适用于 UNIX 的 SnapDrive ，您可以配置存储系统上的 igroup 。配置的 igroup 用于映射存储系统上的 LUN 。您必须为存储系统配置 igroup ，以便在虚拟化环境中无缝迁移。
+
+
+NOTE: igroup 必须包含源启动程序和目标启动程序。

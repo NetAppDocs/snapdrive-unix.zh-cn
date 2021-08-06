@@ -1,0 +1,97 @@
+---
+permalink: linux-administration/concept_informationrequired_forusing_the_snapdrive_snapdisconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, disconnect, lun, disk, file 
+summary: 要断开 Snapshot 副本的连接，请指定要使用的存储实体类型，例如 LUN ，磁盘组，文件系统， 或主机卷。 
+---
+= 使用 SnapDrive snap disconnect 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要断开 Snapshot 副本的连接，请指定要使用的存储实体类型，例如 LUN ，磁盘组，文件系统， 或主机卷。
+
+下表提供了使用 SnapDrive snap disconnect` 命令时需要提供的信息。
+
+|===
+| 要求 / 选项 | 参数 
+
+
+ a| 
+LUN （` -lun _file_spec_` ）
+ a| 
+LUN 的名称。包括存储器，卷和 LUN_ 的名称
+
+
+
+ a| 
+磁盘组（` -dg _file_spec_` ）或卷组（` -vg _file_spec_` ）
+ a| 
+磁盘或卷组的名称 _
+
+
+
+ a| 
+文件系统（` -fs _file_spec_` ）
+ a| 
+` 文件系统名称 _`
+
+
+
+ a| 
+主机卷（` -hostvol _file_spec_` ）或逻辑卷（` -lvol _file_spec_` ）
+ a| 
+主机或逻辑卷的名称 _
+
+
+
+ a| 
+指定要用于断开 Snapshot 副本连接的存储实体的类型，并使用适当的参数提供该实体的名称。
+
+这是 ` _file_spec_` 参数的值。
+
+
+
+ a| 
+` 全满`
+ a| 
+~
+
+
+
+ a| 
+如果您希望 SnapDrive for UNIX 从 Snapshot 副本断开对象连接，即使命令行上的主机端实体包含其他实体（例如具有一个或多个主机卷的磁盘组），也可以在命令行中包含 -full 选项。如果不包含此选项，则只能指定空的主机端实体。
+
+
+
+ a| 
+` - fstype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+` -vmtype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+可选：指定要使用的文件系统和卷管理器的类型。
+
+
+
+ a| 
+` 拆分`
+ a| 
+~
+
+
+
+ a| 
+用于在 Snapshot 连接和 Snapshot 断开操作期间拆分克隆的卷或 LUN 。
+
+|===

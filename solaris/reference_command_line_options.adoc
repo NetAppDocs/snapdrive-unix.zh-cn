@@ -1,0 +1,280 @@
+---
+permalink: solaris/reference_command_line_options.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, line, options 
+summary: SnapDrive for UNIX 命令可使用多种选项。 
+---
+= 命令行选项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 命令可使用多种选项。
+
+通过 SnapDrive for UNIX ，您可以根据需要在其命令中包括以下选项。在某些情况下，您可以使用这些选项的缩写形式。例如，您可以使用 ` -h` ，而不是 ` -help` 。
+
+|===
+| 选项 | Description 
+
+
+ a| 
+` -addlun`
+ a| 
+指示 SnapDrive for UNIX 将内部生成的新 LUN 添加到存储实体以增加其大小。
+
+
+
+ a| 
+` 所有`
+ a| 
+与 SnapDrive storage ` ｛ show | list ｝` 命令结合使用，可显示主机已知的所有设备和 LVM 实体。
+
+
+
+ a| 
+` 自动扩展`
+ a| 
+与 SnapDrive snap connect` 命令结合使用，用于在您提供磁盘组中一部分逻辑卷或文件系统时请求连接磁盘组。
+
+
+
+ a| 
+` 自动名称`
+ a| 
+与 SnapDrive snap connect` 命令结合使用，可通过命令重命名已使用默认名称的任何新连接的 LVM 实体。
+
+
+
+ a| 
+` 克隆类型`
+ a| 
+在 `snap connect` 操作期间使用的克隆方法。此处的类型是指 lunclone （创建 LUN 克隆）， optimal （ SnapDrive 会根据存储配置自动在受限 FlexClone 和 LUN 克隆之间进行选择）和 Unrestricted （创建 FlexClone ，可用于配置和 Snapshot 操作，就像普通灵活卷一样）。
+
+
+
+ a| 
+-`apabilities`
+ a| 
+与 SnapDrive storage show` 命令结合使用，可了解允许对主机文件规格执行的操作。
+
+
+
+ a| 
+` 设备` 或 ` 开发`
+ a| 
+与 storage ` ｛ show | list ｝` 命令结合使用，可显示主机已知的所有设备。
+
+
+
+ a| 
+` 设备类型`
+ a| 
+指定用于 SnapDrive for UNIX 操作的设备类型。以下是此选项的值：
+
+* `shared` - 将 LUN ，磁盘组和文件系统的范围指定为主机集群。
+* 已 `d的` 指定 LUN ，磁盘组和文件系统的范围为 local 。这是默认值。
+
+
+如果未在 SnapDrive for UNIX 命令中指定支持此选项的 ` -DeviceType` 选项，则相当于指定 ` -DeviceType dedicated` 。
+
+
+
+ a| 
+` -dgsize` 或 ` -vgsize`
+ a| 
+与 SnapDrive storage create` 命令结合使用以指定要创建的磁盘组的大小（以字节为单位）。
+
+
+
+ a| 
+` 强制` （或 ` f` ）
+ a| 
+导致尝试 SnapDrive for UNIX 不会正常执行的操作。SnapDrive for UNIX 会提示您在执行操作之前请求确认。
+
+
+
+ a| 
+` -fsopts`
+ a| 
+要传递给创建新文件系统的主机操作的选项。根据主机操作系统的不同，此主机操作可能是一个命令，例如 `mKFS` 命令。
+
+此选项提供的参数通常需要指定为带引号的字符串，并且必须包含要传递到命令的确切文本。
+
+例如，您可以输入 ` -o largefiles` 作为要传递给主机操作的选项。
+
+
+
+ a| 
+` - fstype`
+ a| 
+要用于 SnapDrive for UNIX 操作的文件系统类型。文件系统类型必须为 SnapDrive for UNIX 操作系统支持的类型。可以为此变量设置的当前值为
+
+您也可以使用 ` -fstype` 配置变量指定要使用的文件系统类型。
+
+
+
+ a| 
+` 全满`
+ a| 
+允许对指定主机端实体执行操作，即使该实体不为空（例如，该实体可能是包含一个或多个逻辑卷的卷组）也是如此。
+
+
+
+ a| 
+` - 增长`
+ a| 
+要增加 LUN 或磁盘组大小，要添加到 LUN 或磁盘组的字节数。
+
+
+
+ a| 
+` - 增长`
+ a| 
+LUN ，磁盘组或卷组的目标大小（以字节为单位）。SnapDrive for UNIX 会自动计算达到目标大小所需的字节数，并将对象大小增加该字节数。
+
+
+
+ a| 
+` —帮助`
+ a| 
+输出命令和操作的使用情况消息。输入此选项本身，而不使用其他选项。下面是可能的命令行示例。
+
+
+
+ a| 
+` - lunsize`
+ a| 
+要通过给定命令创建的 LUN 的大小（以字节为单位）。
+
+
+
+ a| 
+` - mntopts`
+ a| 
+指定要传递到 host mount 命令的选项（例如，指定文件系统日志记录行为）。选项也存储在主机文件系统表文件中。允许的选项取决于主机文件系统类型。
+
+您提供的 ` -mntopts` 参数是一个文件系统类型选项，使用 `mount` command `` "` - o` " 标志指定。请勿在 ` -mntopts` 参数中包含 ` "` - o` "` 标志。例如，序列 ` -mntopts _tmplog_` 会将字符串 ` -o _tmplog_` 传递到挂载命令行，并在新命令行中插入文本 ` "`tmplog` "` 。
+
+
+
+ a| 
+` -nodfilerfence`
+ a| 
+禁止在创建跨多个存储器卷的 Data ONTAP 副本时使用 Snapshot 一致性组功能。
+
+在 Data ONTAP 7.2 或更高版本中，您可以暂停对整个存储器卷的访问。通过使用 ` -nodfilerfence` 选项，您可以冻结对单个 LUN 的访问。
+
+
+
+ a| 
+` -nolvm`
+ a| 
+直接在 LUN 上连接或创建文件系统，而不涉及主机 LVM 。
+
+使用此选项直接在 LUN 上连接或创建文件系统的所有命令都不接受主机集群或共享资源使用此选项。只有本地资源才允许使用此选项。如果已启用 ` -DeviceType` shared 选项，则无法使用此选项，因为 ` -nolvm` 选项仅对本地资源有效，而对共享资源无效。
+
+
+
+ a| 
+` - noperit`
+ a| 
+连接或创建文件系统或具有文件系统的 Snapshot 副本，而无需在主机的持久挂载条目文件中添加条目。
+
+
+
+ a| 
+` -prefixfv`
+ a| 
+生成克隆卷名称时要使用的前缀。新卷的名称格式为 ` <pre-fix>_<original_volume_name>` 。
+
+
+
+ a| 
+` 预留 - noreserve`
+ a| 
+与 SnapDrive storage create` ， SnapDrive snap connect` 或 SnapDrive snap restore` 命令结合使用，用于指定 SnapDrive for UNIX 是否创建空间预留。默认情况下， SnapDrive for UNIX 会为存储创建，调整大小和 Snapshot 创建操作创建预留，而不会为 Snapshot 连接操作创建预留。
+
+
+
+ a| 
+` -noprop`
+ a| 
+禁止执行命令期间出现提示。默认情况下，任何可能会产生危险或不直观的副作用的操作都会提示您确认应尝试使用 SnapDrive for UNIX 。此选项将覆盖此提示；如果与 ` -force` 选项结合使用，则 SnapDrive for UNIX 将执行此操作，而不要求确认。
+
+
+
+ a| 
+` - 静默` （或 ` - q` ）
+ a| 
+禁止报告错误和警告，无论它们是正常还是诊断。它将返回零（成功）或非零状态。` -quiet` 选项会覆盖 ` -verbose` 选项。
+
+对于 SnapDrive storage show` ， SnapDrive snap show` 和 SnapDrive config show` 命令，将忽略此选项。
+
+
+
+ a| 
+` 只读`
+ a| 
+对于使用 Data ONTAP 7.1 的配置或任何使用传统卷的配置来说是必需的。连接具有只读访问权限的 NFS 文件或目录。
+
+对于使用 FlexVol 7.0 且使用 Data ONTAP 卷的配置，可选。连接具有只读访问权限的 NFS 文件或目录树。（默认值为读 / 写）。
+
+
+
+ a| 
+` 拆分`
+ a| 
+用于在 Snapshot 连接和 Snapshot 断开操作期间拆分克隆的卷或 LUN 。
+
+您也可以使用 ` _enable-split-clone_s` 配置变量拆分克隆的卷或 LUN 。
+
+
+
+ a| 
+` 状态`
+ a| 
+与 SnapDrive storage show` 命令结合使用以了解卷或 LUN 是否已克隆。
+
+
+
+ a| 
+` 无关`
+ a| 
+创建 Snapshot 副本时，为无相关写入的 ` file_spec_` 实体创建 Snapshot 副本。由于这些实体没有依赖写入，因此 SnapDrive for UNIX 会为各个存储实体创建崩溃状态一致的 Snapshot 副本，但不会采取措施使这些实体彼此保持一致。
+
+
+
+ a| 
+` - 详细` （或 ` - v` ）
+ a| 
+在适当的情况下显示详细输出。所有命令和操作都接受此选项，但有些命令和操作可能会忽略此选项。
+
+
+
+ a| 
+` -vgsize` 或 ` -dgsize`
+ a| 
+与 `storage create` 命令结合使用以指定要创建的卷组的大小（以字节为单位）。
+
+
+
+ a| 
+` -vmtype`
+ a| 
+要用于 SnapDrive for UNIX 操作的卷管理器的类型。
+
+如果用户在命令行中明确指定了 ` -vmtype` 选项，则 SnapDrive for UNIX 将使用选项中指定的值，而不管在 `vmtype` 配置变量中指定的值如何。如果未在命令行选项中指定 ` -vmtype` 选项，则 SnapDrive for UNIX 将使用配置文件中的卷管理器。
+
+卷管理器必须是 SnapDrive for UNIX 支持您的操作系统的类型。可以为此变量设置的当前值为 VxVM 。
+
+您还可以使用 vmtype 配置变量指定要使用的卷管理器类型。
+
+
+
+ a| 
+` -vbsr ｛ preview ； execute ｝`
+ a| 
+`preview` 选项可为给定主机文件规范启动基于卷的 SnapRestore 预览机制。使用 `execute` 选项， SnapDrive for UNIX 将继续为指定的文件规范使用基于卷的 SnapRestore 。
+
+|===

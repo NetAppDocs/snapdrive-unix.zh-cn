@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/concept_command_to_use_todisplay_availablestorage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, display, storage, directory, file 
+summary: SnapDrive storage show 或 SnapDrive NFS 存储列表显示了一个或多个存储实体的底层 LUN 或 NFS 目录树。您可以使用 SnapDrive storage show 命令了解并了解磁盘组，主机卷，文件系统或 NFS 目录树的 Snapshot 副本中的内容。 
+---
+= 用于显示可用存储的命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive storage show` 或 SnapDrive storage list` 显示一个或多个存储实体的底层 LUN 或 NFS 目录树。您可以使用 SnapDrive storage show` 命令了解并了解磁盘组，主机卷，文件系统或 NFS 目录树的 Snapshot 副本中的内容。
+
+您可以使用这些命令显示以下信息：
+
+* 可用于特定存储系统或存储系统卷的 LUN
+* 与文件系统，主机卷或磁盘组关联的 LUN
+* NFS 挂载点和目录树
+* 特定主机已知的 LUN 以及这些 LUN 包括的任何 LVM 实体
+* 特定主机已知的设备
+* 共享主机和专用主机上的资源
+
+
+
+NOTE: 您可以在命令行中使用 SnapDrive storage show` 或 SnapDrive storage list` 。

@@ -1,0 +1,976 @@
+---
+permalink: aix/concept_configuration_options_and_their_default_values.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, option, default, value 
+summary: 您可以运行 SnapDrive config show 命令来确定当前可配置的变量及其设置。 
+---
+= 配置选项及其默认值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以运行 SnapDrive config show` 命令来确定当前可配置的变量及其设置。
+
+支持的可配置项及其默认设置可能因主机操作系统和不同版本的 SnapDrive for UNIX 而异。例如，在 AIX 上，默认路径为 ` /var/log/` ……
+
+下表介绍了 `snapdrive.conf` 文件中的参数：
+
+|===
+| 变量 | Description 
+
+
+ a| 
+`lunpath-monitor-frequency`
+ a| 
+用于指定 SnapDrive for UNIX 自动修复 LUN 路径的频率。默认值为 24 小时。
+
+
+
+ a| 
+`黑名单接口`
+ a| 
+用于在有多个以太网接口时指定不想使用的接口，以缩短操作时间。如果配置有多个以太网接口，则 SnapDrive for UNIX 有时会搜索接口列表以确定接口是否可以 ping 。如果接口无法 ping ，则会先尝试五次，然后再检查下一个接口。因此，该操作需要额外的时间来执行。
+
+如果您希望 SnapDrive 忽略某些接口，可以在 `blacklist-interfaces` 参数中指定这些接口。这样可以缩短操作时间。
+
+
+
+ a| 
+`all-access-if-rbac unspecified = on`
+ a| 
+通过在访问控制文件中输入权限字符串，为运行 SnapDrive for UNIX 的每个主机指定访问控制权限。您指定的字符串用于控制主机可能在存储系统上执行的 SnapDrive for UNIX Snapshot 副本和其他存储操作。（这些访问权限不会影响显示或列表操作。）
+
+将此值设置为 `on` 或 `off` ，其中：
+
+* `on` 指定 SnapDrive for UNIX 在存储系统上不存在访问控制权限文件时启用所有访问权限。默认值为 `on` 。
+* `off` 指定存储系统仅允许主机使用访问控制权限文件中提及的权限。
+
+
+如果您提供了访问控制文件，则此选项不起作用。
+
+
+
+ a| 
+`allow-partial-clone-connect=on`
+ a| 
+通过 SnapDrive for UNIX ，您可以连接到部分文件系统或仅连接到克隆磁盘组的主机卷。
+
+将此值设置为 `on` 或 `off` ：
+
+* `on` 指定 SnapDrive for UNIX 允许您连接到一部分文件系统或仅连接到克隆磁盘组的主机卷。
+* `off` 确定 SnapDrive for UNIX 不能连接到文件系统的子集，也不能仅连接到克隆磁盘组的主机卷。
+
+
+
+
+ a| 
+`audit-log-file="/var/log/sd-audit.log"`
+ a| 
+指定 SnapDrive for UNIX 写入审核日志文件的位置。
+
+默认值取决于主机操作系统。此示例中显示的路径是 AIX 主机的默认路径。
+
+
+
+ a| 
+`audit-log-max-size=20480`
+ a| 
+指定审核日志文件的最大大小（以字节为单位）。当文件达到此大小时， SnapDrive for UNIX 将重命名该文件并启动新的审核日志。默认值为 `20480` 字节。由于 SnapDrive for UNIX 在操作期间不会启动新的日志文件，因此正确的文件大小可能与此处指定的值稍有不同。
+
+
+NOTE: 您应使用默认值。如果决定更改默认值，请记住，过多的日志文件可能会占用磁盘上的空间，最终可能会影响性能。
+
+
+
+ a| 
+`audit-log-save=2`
+ a| 
+确定 SnapDrive for UNIX 应保存的旧审核日志文件数。达到此限制后， SnapDrive for UNIX 将丢弃最旧的文件并创建一个新文件。
+
+SnapDrive for UNIX 会根据您在 `audit-log-save` 变量中指定的值轮换此文件。默认值为 `2` 。
+
+
+NOTE: 您应使用默认值。如果决定更改默认值，请记住，过多的日志文件可能会占用磁盘上的空间，最终可能会影响性能。
+
+
+
+ a| 
+`autosupport-enabled`
+ a| 
+确定默认情况下选项 `autosupport-enabled` 为 `on` 。
+
+默认情况下，此选项处于启用状态，用于将 AutoSupport 信息存储在存储系统的事件管理系统（ EMS ）日志中。
+
+
+NOTE: SnapDrive 4.2 for UNIX 及更高版本没有选项 `autosupport-filer` 。
+
+
+
+ a| 
+`available-lun-reserve=8`
+ a| 
+指定当前 SnapDrive for UNIX 操作完成时主机必须准备好创建的 LUN 数量。如果可用于创建指定数量的 LUN 的操作系统资源很少，则 SnapDrive for UNIX 会根据 ` enable-implicate-host-preparation_m` 变量中提供的值请求更多资源。
+
+默认值为 `8` 。
+
+[NOTE]
+====
+此变量仅适用于需要在创建 LUN 之前进行主机准备的系统。主机需要进行此准备。
+
+此变量用于包含 LUN 的配置。
+
+====
+
+
+ a| 
+`bypass-SnapDrive-clone-genered-check`
+ a| 
+指定删除 SnapDrive 生成的 FlexClone 或非 SnapDrive 生成的 FlexClone 。
+
+将此值设置为 `on` 或 `off` ，其中：
+
+* `on` - 指定 SnapDrive for UNIX 允许删除 SnapDrive 生成的和非 SnapDrive 生成的 FlexClone 的 FlexClone 卷。
+* `off` —指定 SnapDrive for UNIX 仅允许删除 SnapDrive 生成的 FlexClone 卷。默认值为 `off` 。
+
+
+
+
+ a| 
+`check-export-permission-nfs-clone`
+ a| 
+确定设置 NFS 导出权限允许 / 禁用在二级主机（对父卷没有导出权限的主机）或存储系统中创建克隆。
+
+* `on` - SnapDrive for UNIX 将检查二级主机卷上的适当导出权限。默认值为 on 。
+* `off` — SnapDrive for UNIX 不会检查二级主机在卷上的适当导出权限。
+
+
+如果 NFS 实体中的卷没有导出权限，则 SnapDrive for UNIX 不允许克隆。要克服这种情况，请在 `snapdrive.conf` 文件中禁用此变量。克隆操作会导致 SnapDrive 对克隆的卷提供适当的访问权限。
+
+如果将此值设置为 off ，则可以在集群模式 Data ONTAP 中使用二级保护。
+
+
+
+ a| 
+`cluster-operation-timeout-secs=600`
+ a| 
+指定主机集群操作超时（以秒为单位）。在使用远程节点和 HA 对操作时，应设置此值，以确定 SnapDrive for UNIX 操作何时应超时。默认值为 `600` 秒。
+
+如果从非主节点启动 SnapDrive for UNIX 操作，则主机集群主节点也可以是远程节点。
+
+如果主机集群中任何节点上的 SnapDrive for UNIX 操作超过您设置的值或默认值 `600` 秒（如果未设置值），则此操作将超时，并显示以下消息：
+
+[listing]
+----
+Remote Execution of command on slave node sfrac-57 timed out. Possible reason could be that timeout is too less for that system. You can increase the cluster connect timeout in snapdrive.conf file. Please do the necessary cleanup manually. Also, please check the operation can be restricted to lesser jobs to be done so that time required is reduced.
+----
+
+
+ a| 
+`contact-http-port=80`
+ a| 
+指定用于与存储系统通信的 HTTP 端口。默认值为 `80` 。
+
+
+
+ a| 
+`contact-ssl-port=443`
+ a| 
+指定用于与存储系统通信的 SSL 端口。默认值为 `443` 。
+
+
+
+ a| 
+`contact-http-port-sdU-daemon = 4094`
+ a| 
+指定用于与 SnapDrive for UNIX 守护进程通信的 HTTP 端口。默认值为 `4094` 。
+
+
+
+ a| 
+`contact-http-dfm_port=8088`
+ a| 
+指定用于与 Operations Manager 服务器通信的 HTTP 端口。默认值为 `8088` 。
+
+
+
+ a| 
+`contact-ssl-dft-port=8488`
+ a| 
+指定用于与 Operations Manager 服务器通信的 SSL 端口。默认值为 `8488` 。
+
+
+
+ a| 
+`datamotion-cutover-wait = 120`
+ a| 
+指定 SnapDrive for UNIX 等待 DataMotion for vFiler （转换阶段）操作完成并重试 SnapDrive for UNIX 命令的秒数。默认值为 `120` 秒。
+
+
+
+ a| 
+`dft-api-timeout=180`
+ a| 
+指定 SnapDrive for UNIX 等待 DFM API 返回的秒数。默认值为 `180` 秒。
+
+
+
+ a| 
+`dft-rbac 重试次数 =12`
+ a| 
+指定 SnapDrive for UNIX 在 Operations Manager 刷新时检查访问重试次数。默认值为 `12` 。
+
+
+
+ a| 
+`dft-rbac - retry-sept-secs=15`
+ a| 
+指定 SnapDrive for UNIX 在重试访问检查以刷新 Operations Manager 之前等待的秒数。默认值为 `15` 。
+
+
+
+ a| 
+`default-noprompt=off`
+ a| 
+指定是否要使用 ` -noprop` 选项。默认值为 `off` （不可用）。
+
+如果将此选项更改为 onSnapDrive for UNIX ，则不会提示您确认 ` 强制` 请求的操作。
+
+
+
+ a| 
+`device-retries=3`
+ a| 
+指定 SnapDrive for UNIX 可以对 LUN 所在的设备进行的查询数。默认值为 `3` 。
+
+在正常情况下，默认值应足以满足要求。在其他情况下，对快照创建操作的 LUN 查询可能会失败，因为存储系统异常繁忙。
+
+如果即使 LUN 处于联机状态且配置正确， LUN 查询仍会失败，则您可能需要增加重试次数。
+
+此变量用于包含 LUN 的配置。
+
+
+NOTE: 您应在主机集群中的所有节点上为 `device-retries` 变量配置相同的值。否则，涉及多个主机集群节点的设备发现可能会在某些节点上失败，而在其他节点上成功。
+
+
+
+ a| 
+`device-retry-page-secs=1`
+ a| 
+指定 SnapDrive for UNIX 在查询 LUN 所在设备之间等待的秒数。默认值为 `1` 秒。
+
+在正常情况下，默认值应足以满足要求。在其他情况下，对快照创建操作的 LUN 查询可能会失败，因为存储系统异常繁忙。
+
+如果即使 LUN 已联机并配置正确， LUN 查询仍会失败，则您可能需要增加两次重试之间的秒数。
+
+此变量用于包含 LUN 的配置。
+
+
+NOTE: 您应在主机集群中的所有节点上为 `device-retry-host-secs` 选项配置相同的值。否则，涉及多个主机集群节点的设备发现可能会在某些节点上失败，而在其他节点上成功。
+
+
+
+ a| 
+`default-transport=iscsi`
+ a| 
+指定 SnapDrive for UNIX 在创建存储时用作传输类型的协议（如果需要做出决定）。可接受的值为 `iSCSI` 或 `FCP` 。
+
+
+NOTE: 如果主机仅配置了一种传输类型，并且 SnapDrive for UNIX 支持该类型，则 SnapDrive for UNIX 将使用该传输类型，而不管在 `snapdrive.conf` 文件中指定的类型如何。
+
+在 AIX 主机上，确保 `multipathing-type` 选项设置正确。如果指定 FCP ，则必须将 `multipathing-type` 设置为以下值之一：
+
+* `NativeMPIO`
+* `dMP`
+
+
+
+
+ a| 
+`enable-alua=on`
+ a| 
+确定 igroup 上的多路径支持 ALUA 。存储系统必须为 HA 对，且 HA 对在 ` _single 映像 _` 模式下的故障转移状态。
+
+* 默认值为 `on` ，以支持 igroup 的 ALUA
+* 您可以通过设置选项 `off` 来禁用 ALUA 支持
+
+
+
+
+ a| 
+`enable-fcp-cache=on`
+ a| 
+指定是启用还是禁用缓存。SnapDrive 会保留可用活动端口和端口名称（ WWPN ）信息的缓存，以便更快地发送响应。
+
+在极少数情况下，如果没有连接到端口的 FC 缆线或在端口中使用了换行插头，则 SnapDrive for UNIX 可能会在提取有关 FC 接口及其相应 WWPN 的信息时出现长时间延迟。缓存有助于解决 / 提高此类环境中 SnapDrive 操作的性能。
+
+默认值为 `on` 。
+
+
+
+ a| 
+`enable-implicate-host-prepare=on`
+ a| 
+确定 SnapDrive for UNIX 是否隐式请求主机准备 LUN 或通知您 LUN 是必需的并退出。
+
+* `on` —如果可用资源不足，无法创建所需数量的 LUN ，则 SnapDrive for UNIX 会隐式请求主机创建更多资源。创建的 LUN 数量在 ` _available-lun-reserve_` 变量中指定。默认值为 `on` 。
+* `off` —如果创建 LUN 需要进行额外的主机准备，则 SnapDrive for UNIX 将向您发出通知， SnapDrive 将退出此操作。然后，您可以执行必要的操作以释放创建 LUN 所需的资源。例如，您可以执行 SnapDrive config prepare lun` 命令。准备完毕后，您可以重新输入当前的 SnapDrive for UNIX 命令。
+
+
+
+NOTE: 此变量仅适用于需要进行主机准备的系统，然后才能为需要进行准备的主机创建 LUN 。此变量仅用于包含 LUN 的配置。
+
+
+
+ a| 
+`enable-migrate-nfs-version`
+ a| 
+允许使用较高版本的 NFS 克隆 / 还原。
+
+在纯 NFSv4 环境中，如果在 NFSv3 上创建 Snapshot 副本时尝试执行克隆和还原等快照管理操作，则快照管理操作将失败。
+
+默认值为 `off` 。在此迁移期间， SnapDrive for UNIX 仅会考虑协议版本，而不会考虑 `RW` 和 `largefiles` 等其他选项。
+
+因此，在 ` /etc/fstab` 文件中仅添加对应 NFS 文件规范的 NFS 版本。使用 ` -o vers=3` （对于 NFSv3 ）和 ` -o vers=4` （对于 NFSv4 ），确保使用适当的 NFS 版本来挂载文件规范。如果要迁移包含所有挂载选项的 NFS 文件规范，建议在快照管理操作中使用 ` -mntopts` 。在集群模式 Data ONTAP 中迁移期间，必须在父卷的导出策略规则中的访问协议属性值中使用 `NFS` 。
+
+
+NOTE: 请确保仅使用 `nfsvers` 或 `veRS` 命令作为挂载选项来检查 NFS 版本。
+
+
+
+ a| 
+`enable-mountguard — support`
+ a| 
+启用 SnapDrive for UNIX 对 AIX 的挂载防护功能的支持，以防止同时挂载或并发挂载。如果在一个节点上挂载了文件系统并启用了变量，则 AIX 会阻止在另一个节点上挂载同一文件系统。默认情况下， ` _enable-mountGuard 支持 _` 变量设置为 `off` 。
+
+
+
+ a| 
+`enable-ping-on-check-filer-reachability`
+ a| 
+如果在部署了 SnapDrive for UNIX 的主机和存储系统网络之间禁用了 ICMP 协议访问或丢弃了 ICMP 数据包，则必须将此变量设置为 `off` ，以便 SnapDrive for UNIX 不会通过 ping 命令来检查存储系统是否可访问。如果将此变量设置为 on ，则由于 ping 失败， SnapDrive snap 连接操作将不起作用。默认情况下，此变量设置为 `on`
+
+
+
+ a| 
+`enable-split-clone=off`
+ a| 
+如果将此变量设置为 `on` 或 `sync` ，则可以在 Snapshot 连接和 Snapshot 断开操作期间拆分克隆的卷或 LUN 。您可以为此变量设置以下值：
+
+* `on` —启用克隆卷或 LUN 的异步拆分。
+* `sync` —对克隆的卷或 LUN 进行同步拆分。
+* `off` —禁用克隆卷或 LUN 的拆分。默认值为 `off` 。
+
+
+如果在 Snapshot 连接操作期间将此值设置为 `on` 或 `sync` ，在 Snapshot 断开操作期间将此值设置为 `off` ，则 SnapDrive for UNIX 不会删除 Snapshot 副本中的原始卷或 LUN 。
+
+您也可以使用 ` 拆分` 选项拆分克隆的卷或 LUN 。
+
+
+
+ a| 
+`enfy-Strong-ciphers=off`
+ a| 
+将此变量设置为 `on` ，以便 SnapDrive 守护进程强制 TLSv1 与客户端进行通信。
+
+它通过更好的加密功能增强了客户端与 SnapDrive 守护进程之间通信的安全性。
+
+默认情况下，此选项设置为 `off` 。
+
+
+
+ a| 
+`filer-restore-retries=140`
+ a| 
+指定在还原期间发生故障时 SnapDrive for UNIX 尝试在存储系统上还原 Snapshot 副本的次数。默认值为 `140` 。
+
+在正常情况下，默认值应足以满足要求。在其他情况下，此操作可能会失败，因为存储系统异常繁忙。如果即使 LUN 处于联机状态并已正确配置，它仍会失败，则您可能需要增加重试次数。
+
+
+
+ a| 
+`filer-restore-retry-page-secs=15`
+ a| 
+指定 SnapDrive for UNIX 在尝试还原 Snapshot 副本之间等待的秒数。默认值为 `15` 秒。
+
+在正常情况下，默认值应足以满足要求。在其他情况下，此操作可能会失败，因为存储系统异常繁忙。如果即使 LUN 已联机并配置正确，它仍会失败，则您可能需要增加两次重试之间的秒数。
+
+
+
+ a| 
+`filesystem-free-timeout-secs=300`
+ a| 
+指定 SnapDrive for UNIX 在两次尝试访问文件系统之间等待的秒数。默认值为 `300` 秒。
+
+此变量仅用于包含 LUN 的配置。
+
+
+
+ a| 
+`flexclone-writeerserve-enabled" = 启用`
+ a| 
+它可以采用以下任一值：
+
+* `在` 上
+* `关闭`
+
+
+确定所创建的 FlexClone 卷的空间预留。根据以下规则，可接受的值为 `on` 和 `off` 。
+
+* Reservation ：启用
+* optimal ： file
+* unrestricted ： volume
+* Reservation ：关闭
+* optimal ： file
+* unrestricted ：无
+
+
+
+
+ a| 
+`fsttype=JFS2`
+ a| 
+指定要用于 SnapDrive for UNIX 操作的文件系统类型。文件系统类型必须为 SnapDrive for UNIX 操作系统支持的类型。
+
+AIX ： `jfs` ， `jfs3` 或 `VxFS`
+
+默认值为 `JFS2` 。
+
+
+NOTE: JFS 文件系统类型仅支持 Snapshot 操作，而不支持存储操作。
+
+您也可以通过命令行界面使用 ` -fstype` 选项指定要使用的文件系统类型。
+
+
+
+ a| 
+`lun-onlining-in-progress-page-secs=3`
+ a| 
+指定在基于卷的 SnapRestore 操作后尝试将 LUN 恢复联机期间两次重试的秒数。默认值为 `3` 。
+
+
+
+ a| 
+`lun-on-onlining-in-progress-retries=40`
+ a| 
+指定在执行基于卷的 SnapRestore 操作后尝试将 LUN 恢复联机期间的重试次数。默认值为 `40` 。
+
+
+
+ a| 
+`mGMT-retry-sept-secs=2`
+ a| 
+指定 SnapDrive for UNIX 在重试管理 ONTAP 控制通道上的操作之前等待的秒数。默认值为 `2` 秒。
+
+
+
+ a| 
+`mGMT-retry-seption-long-secs=90`
+ a| 
+指定发生故障转移错误消息后 SnapDrive for UNIX 在管理 ONTAP 控制通道上重试操作之前等待的秒数。默认值为 `90` 秒。
+
+
+
+ a| 
+`m多路径类型 = NativeMPIO`
+ a| 
+指定要使用的多路径软件。默认值取决于主机操作系统。只有在以下陈述之一为 true 时，此变量才适用：
+
+* 有多个多路径解决方案可用。
+* 这些配置包括 LUN 。
++
+可接受的值为 `none` 或 `nativempio` 。
+
+
+
+您可以为此变量设置以下值：
+
+AIX ：您为 AIX 设置的值取决于您使用的协议。
+
+* 如果使用的是 FCP ，请将其设置为以下任一值：
++
+** NativeMPIO 的默认值为 `none` 。
+
+
+* 此外，将 `default-transport` 选项设置为 fcp 。
+* 如果使用的是 iSCSI ，请将此值设置为 `none` 。此外，将 ` default-transport_` 选项设置为 `iscsi` 。
+
+
+
+
+ a| 
+`override-vbsr-snapmirror-check`
+ a| 
+在基于卷的 SnapRestore （ VBSR ）期间，如果要还原的 Snapshot 副本早于 SnapMirror 基线 Snapshot 副本，则可以将 ` override-vbsr-snapmirror-check_` 变量的值设置为 `on` 以覆盖 SnapMirror 关系。只有在未配置 OnCommand 数据网络结构管理器（ DFM ）的情况下，才能使用此变量。
+
+默认情况下，此值设置为 `off` 。此变量不适用于集群模式 Data ONTAP 8.2 或更高版本。
+
+
+
+ a| 
+`path="/sbin ： /usr/sbin ： /bin ： /usr/lib/vxvm/ bin ： /usr/bin ： /opt/NTAPontap/SANToolkit/bin ： /opt/NTAPsanlun/bin ： /opt/vrt/bin ： /etc/vx/bi n"`
+ a| 
+指定系统用于查找工具的搜索路径。
+
+您应验证此设置是否适用于您的系统。如果不正确，请将其更改为正确的路径。
+
+默认值可能因操作系统而异。此路径是的默认路径
+
+AIX 主机不使用此变量，因为它们以不同方式处理命令。
+
+
+
+ a| 
+` /opt/NetApp/SnapDrive/.pwfile`
+ a| 
+指定用于存储系统用户登录的密码文件的位置。
+
+默认值可能因操作系统而异。
+
+Linux 的默认路径为 ` /opt/NetApp/SnapDrive/.pwfile/opt/ontap/SnapDrive/.pwfile`
+
+
+
+ a| 
+`ping-interface-with -same-octet`
+ a| 
+避免通过主机中可能配置了不同子网 IP 的所有可用接口执行不必要的 ping 操作。如果此变量设置为 `on` ，则 SnapDrive for UNIX 仅会考虑存储系统的相同子网 IP ，并对存储系统执行 Ping 操作以验证地址响应。如果将此变量设置为 `off` ，则 SnapDrive 将获取主机系统中的所有可用 IP ，并对存储系统执行 ping 操作，以验证每个子网的地址解析，而这可能会在本地检测到 ping 攻击。
+
+
+
+ a| 
+`prefix-filer-lun`
+ a| 
+指定 SnapDrive for UNIX 适用场景在内部生成的所有 LUN 名称的前缀。此前缀的默认值为空字符串。
+
+此变量允许从当前主机创建但未在 SnapDrive for UNIX 命令行上明确命名的所有 LUN 的名称共享初始字符串。
+
+
+NOTE: 此变量仅用于包含 LUN 的配置。
+
+
+
+ a| 
+`prefix-clone-name`
+ a| 
+给定的字符串将附加原始存储系统卷名称，以便为 FlexClone 卷创建一个名称。
+
+
+
+ a| 
+`prepare-lun-count=16`
+ a| 
+指定 SnapDrive for UNIX 应准备创建的 LUN 数。当 SnapDrive for UNIX 收到准备主机创建其他 LUN 的请求时，它会检查此值。
+
+默认值为 `16` ，这意味着系统能够在准备完成后再创建 16 个 LUN 。
+
+
+NOTE: 此变量仅适用于需要在创建 LUN 之前进行主机准备的系统。此变量仅用于包含 LUN 的配置。主机需要进行这种准备。
+
+
+
+ a| 
+`rbac 方法 =dfm`
+ a| 
+指定访问控制方法。可能值为 `原生` 和 `dFM` 。
+
+如果将变量设置为 `原生` ，则访问检查将使用存储在 ` /vol/vol0/sdprbac/sdhost-name.prbac` 或 ` /vol/vol0/sdprbac/sdgenergic-name.prbac` 中的访问控制文件。
+
+如果将此变量设置为 `dFM` ，则前提条件是 Operations Manager 。在这种情况下， SnapDrive for UNIX 会向 Operations Manager 发出访问检查。
+
+
+
+ a| 
+`rbac 缓存 = 关闭`
+ a| 
+指定是启用还是禁用缓存。SnapDrive for UNIX 会保留一个访问检查查询以及相应结果的缓存。只有当所有已配置的 Operations Manager 服务器均已关闭时， SnapDrive for UNIX 才会使用此缓存。
+
+您可以将变量的值设置为 `on` 以启用缓存，也可以设置为 `off` 以禁用缓存。默认值为 off ，用于将 SnapDrive for UNIX 配置为使用 Operations Manager ，并将 ` _rbac 方法 _` 配置变量设置为 `dFM` 。
+
+
+
+ a| 
+`rbac 缓存超时`
+ a| 
+指定 RBAC 缓存超时期限，仅当启用了 ` RBAC 缓存 _` 时才适用。默认值为 `24` 小时。只有当所有已配置的 Operations Manager 服务器均已关闭时， SnapDrive for UNIX 才会使用此缓存。
+
+
+
+ a| 
+`recovery-log-file=/var/log/sdrecovery.log`
+ a| 
+指定 SnapDrive for UNIX 写入恢复日志文件的位置。
+
+默认值取决于主机操作系统。此示例中显示的路径是 AIX 主机的默认路径。
+
+
+
+ a| 
+`recovery-log-save=20`
+ a| 
+指定 SnapDrive for UNIX 应保存的旧恢复日志文件数。达到此限制后， SnapDrive for UNIX 将在创建新文件时丢弃最旧的文件。
+
+SnapDrive for UNIX 会在每次启动新操作时轮换此日志文件。默认值为 `20` 。
+
+
+NOTE: 您应使用默认值。如果决定更改默认值，请记住，如果日志文件过多，可能会占用磁盘空间，最终可能会影响性能。
+
+
+
+ a| 
+`san-clone-method`
+ a| 
+指定可以创建的克隆类型。
+
+它可以采用以下值：
+
+* `lunclone`
++
+通过在同一存储系统卷中创建 LUN 的克隆来允许连接。默认值为 `lunclone` 。
+
+* `最佳`
++
+通过为存储系统卷创建受限的 FlexClone 卷来允许连接。
+
+* `无限制`
++
+通过为存储系统卷创建不受限制的 FlexClone 卷来允许连接。
+
+
+
+
+
+ a| 
+`secure-communication-amongst clusternodes=on`
+ a| 
+指定主机集群节点内的安全通信，以便远程执行 SnapDrive for UNIX 命令。
+
+您可以通过更改此配置变量的值来指示 SnapDrive for UNIX 使用 RSH 或 SSH 。SnapDrive for UNIX 在远程执行时采用的 RSH 或 SSH 方法仅由以下两个组件的 `snapdrive.conf` 文件的安装目录中设置的值决定：
+
+* 执行 SnapDrive for UNIX 操作的主机，用于获取远程节点的主机 WWPN 信息和设备路径信息。
++
+例如，在主主机集群节点上执行的 SnapDrive storage create` 仅使用本地 `snapdrive.conf` 文件中的 RSH 或 SSH 配置变量执行以下任一操作：
+
++
+** 确定远程通信通道。
+** 在远程节点上执行 `devfsadm` 命令。
+
+
+* 如果要在主主机集群节点上远程执行 SnapDrive for UNIX 命令，则为非主主机集群节点。
++
+要将 SnapDrive for UNIX 命令发送到主主机集群节点，需要查看本地 `snapdrive.conf` 文件中的 RSH 或 SSH 配置变量，以确定用于远程执行命令的 RSH 或 SSH 机制。
+
+
+
+默认值 `on` 表示使用 SSH 执行远程命令。值 `off` 表示使用 RSH 执行。
+
+
+
+ a| 
+`snapcreate-cg-timeout= 宽松`
+ a| 
+指定 SnapDrive snap create` 命令允许存储系统完成隔离的时间间隔。此变量的值如下：
+
+* `Urgent` —指定一个短间隔。
+* `medium` —指定紧急和宽松之间的间隔。
+* `relaxed` —指定最长间隔。此值为默认值。
+
+
+如果存储系统未在允许的时间内完成隔离，则 SnapDrive for UNIX 将使用适用于 7.2 之前的 Data ONTAP 版本的方法创建 Snapshot 副本。
+
+
+
+ a| 
+`snapcreate-check-nonpersistent-nfs=on`
+ a| 
+启用和禁用 Snapshot 创建操作以使用非持久 NFS 文件系统。此变量的值如下：
+
+* `on` - SnapDrive for UNIX 会检查在 SnapDrive snap create` 命令中指定的 NFS 实体是否存在于文件系统挂载表中。如果 NFS 实体未通过文件系统挂载表持久挂载，则 Snapshot 创建操作将失败。这是默认值。
+* `off` — SnapDrive for UNIX 将为文件系统挂载表中没有挂载条目的 NFS 实体创建 Snapshot 副本。
++
+Snapshot 还原操作会自动还原和挂载您指定的 NFS 文件或目录树。
+
+
+
+您可以在 SnapDrive snap connect` 命令中使用 ` -noperit` 选项来防止 NFS 文件系统在文件系统挂载表中添加挂载条目。
+
+
+
+ a| 
+`snapcreate-consistency retry-休眠 =1`
+ a| 
+指定尽力而为的 Snapshot 副本一致性两次重试之间的秒数。默认值为 `1` 秒。
+
+
+
+ a| 
+`snapconnect-nfs-removedirectories=off`
+ a| 
+确定 SnapDrive for UNIX 在 Snapshot 连接操作期间是否从 FlexClone 卷中删除或保留不需要的 NFS 目录。
+
+* `on` —在 Snapshot 连接操作期间从 FlexClone 卷中删除不需要的 NFS 目录（ SnapDrive snap connect` 命令中未提及的存储系统目录）。
++
+如果在 Snapshot 断开连接操作期间此 FlexClone 卷为空，则此卷将被销毁。
+
+* `off` —在 Snapshot 连接操作期间保留不需要的 NFS 存储系统目录。默认值为 `off` 。
++
+在 Snapshot 断开连接操作期间，只会从主机卸载指定的存储系统目录。如果主机上的 FlexClone 卷未挂载任何内容，则在 Snapshot 断开操作期间， FlexClone 卷将被销毁。
+
+
+
+如果在连接操作期间将此变量设置为 `off` 或在断开操作期间将其设置为 on ，则不会销毁 FlexClone 卷，即使该卷包含不需要的存储系统目录且不为空。
+
+
+
+ a| 
+`snapcreate-must make-snapinfo-on-qtree=off`
+ a| 
+将此变量设置为 `on` ，以启用 Snapshot 创建操作来创建有关 qtree 的 Snapshot 副本信息。默认值为 `off` （禁用）。
+
+如果 LUN 仍为 snapped 且位于 qtree 上，则 SnapDrive for UNIX 始终会尝试在 qtree 的根目录下写入 snapinfo 。如果将此变量设置为 `on` ，则 SnapDrive for UNIX 将在无法写入此数据时失败 Snapshot 创建操作。只有在使用 qtree SnapMirror 复制 Snapshot 副本时，才应将此变量设置为 on 。
+
+
+NOTE: qtree 的 Snapshot 副本的工作方式与卷的 Snapshot 副本相同。
+
+
+
+ a| 
+`snapcreate-consistency retries=3`
+ a| 
+指定 SnapDrive for UNIX 在收到一致性检查失败的消息后尝试对 Snapshot 副本执行一致性检查的次数。
+
+此变量在不包含冻结功能的主机平台上尤其有用。此变量仅用于包含 LUN 的配置。
+
+默认值为 `3` 。
+
+
+
+ a| 
+`snapdelete-delete-rollback-withsnap=off`
+ a| 
+将此值设置为 `on` 可删除与 Snapshot 副本相关的所有回滚 Snapshot 副本。将其设置为 `off` 可禁用此功能。默认值为 `off` 。
+
+此变量仅在 Snapshot 删除操作期间生效，如果您遇到操作问题，此变量将由恢复日志文件使用。
+
+最好接受默认设置。
+
+
+
+ a| 
+`snapmirror-dest-Multiple filervolumesenabled=off`
+ a| 
+将此变量设置为 `on` 可还原跨多个存储系统或（镜像）目标存储系统上的卷的 Snapshot 副本。将其设置为 `off` 可禁用此功能。默认值为 `off` 。
+
+
+
+ a| 
+`snaprestore-delete-rollback-afterrestore=off`
+ a| 
+将此变量设置为 `on` ，以便在成功执行 Snapshot 还原操作后删除所有回滚 Snapshot 副本。将其设置为 `off` 可禁用此功能。默认值为 `off` （已启用）。
+
+如果您遇到操作问题，恢复日志文件将使用此选项。
+
+最好接受默认值。
+
+
+
+ a| 
+`snaprestore-make-rollback=on`
+ a| 
+将此值设置为 `on` 以创建回滚 Snapshot 副本，或设置 `off` 以禁用此功能。默认值为 `on` 。
+
+回滚是 SnapDrive 在开始 Snapshot 还原操作之前在存储系统上创建的数据的副本。如果在 Snapshot 还原操作期间发生问题，您可以使用回滚 Snapshot 副本将数据还原到操作开始之前的状态。
+
+如果您不希望在还原时回滚 Snapshot 副本提供额外的安全性，请将此选项设置为 `off` 。如果您希望回滚，但如果无法执行回滚，则无法使 Snapshot 还原操作失败，请将变量 `snaprestore-mode-makerollback` 设置为 `off` 。
+
+此变量由恢复日志文件使用，如果遇到问题，您可以将该文件发送给 NetApp 技术支持。
+
+最好接受默认值。
+
+
+
+ a| 
+`snaprestore-must make-rollback=on`
+ a| 
+将此变量设置为 `on` ，以便在回滚创建失败时对 Snapshot 还原操作执行发生原因操作失败。将其设置为 `off` 可禁用此功能。默认值为 `on` 。
+
+* `on` - SnapDrive for UNIX 会在开始 Snapshot 还原操作之前尝试为存储系统上的数据创建回滚副本。如果无法为数据创建回滚副本， SnapDrive for UNIX 将暂停 Snapshot 还原操作。
+* `off` —如果您希望在还原时为回滚 Snapshot 副本提供额外的安全性，但如果无法执行 Snapshot 还原操作，则此值不足以使此还原操作失败。
+
+
+如果您遇到操作问题，恢复日志文件将使用此变量。
+
+最好接受默认值。
+
+
+
+ a| 
+`snaprestore-snapmirror-check=on`
+ a| 
+将此变量设置为 `on` ，以启用 SnapDrive snap restore` 命令来检查 SnapMirror 目标卷。如果设置为 `off` ，则 SnapDrive snap restore` 命令无法检查目标卷。默认值为 `on` 。
+
+如果此配置变量的值为 `on` ，而 SnapMirror 关系状态为 `broken-off` ，则还原仍可继续。
+
+
+
+ a| 
+`spage-reservation-enabled" = 启用`
+ a| 
+创建 LUN 时启用空间预留。默认情况下，此变量设置为 `on` ；因此， SnapDrive for UNIX 创建的 LUN 具有空间预留。
+
+您可以使用此变量为 SnapDrive snap connect` 命令和 SnapDrive storage create` 命令创建的 LUN 禁用空间预留。最好使用 ` -reserve` 和 ` -noreserve` 命令行选项在 SnapDrive storage create` ， SnapDrive snap connect` 和 SnapDrive snap restore` 命令中启用或禁用 LUN 空间预留。
+
+SnapDrive for UNIX 可创建 LUN ，调整存储大小，创建 Snapshot 副本，并根据此变量中指定的空间预留权限或由 ` -reserve` 或 ` -noreserve` 命令行选项指定的空间预留权限连接或还原 Snapshot 副本。在执行上述任务之前，它不会考虑存储系统端精简配置选项。
+
+
+
+ a| 
+`trace-enabled" = 启用`
+ a| 
+将此变量设置为 `on` 以启用跟踪日志文件，或将其设置为 `off` 以禁用它。默认值为 `on` 。启用此文件不会影响性能。
+
+
+
+ a| 
+`trace-level=7`
+ a| 
+指定 SnapDrive for UNIX 写入跟踪日志文件的消息类型。此变量接受以下值：
+
+* `1` —记录致命错误
+* `2` —记录管理员错误
+* `3` —记录命令错误
+* `4` —记录警告
+* `5` —记录信息消息
+* `6` —详细模式下录制
+* `7` —完整诊断输出
+
+
+默认值为 `7` 。
+
+
+NOTE: 最好不要更改默认值。如果将此值设置为 `7` 以外的值，则无法收集足够的信息来成功进行诊断。
+
+
+
+ a| 
+`trace-log-file=/var/log/sd-trace.log`
+ a| 
+指定 SnapDrive for UNIX 写入跟踪日志文件的位置。
+
+默认值因主机操作系统而异。
+
+此示例中显示的路径是 AIX 主机的默认路径。
+
+
+
+ a| 
+`trace-log-max-size=0`
+ a| 
+指定日志文件的最大大小（以字节为单位）。当日志文件达到此大小时， SnapDrive for UNIX 将重命名它并启动新的日志文件。
+
+
+NOTE: 但是，当跟踪日志文件达到最大大小时，不会创建新的跟踪日志文件。对于守护进程跟踪日志文件，在日志文件达到最大大小时会创建新的日志文件。
+
+默认值为 `0` 。SnapDrive for UNIX 在操作期间不会启动新的日志文件。文件的实际大小可能与此处指定的值稍有不同。
+
+
+NOTE: 最好使用默认值。如果更改默认值，请记住，太多的大型日志文件可能会占用磁盘上的空间，最终可能会影响性能。
+
+
+
+ a| 
+`trace-log-save=100`
+ a| 
+指定 SnapDrive for UNIX 应保存的旧跟踪日志文件数。达到此限制后， SnapDrive for UNIX 将在创建新文件时丢弃最旧的文件。此变量与 ` _tracelog-max-size_` 变量配合使用。默认情况下， ` trace-logmax-size=0_` 会在每个文件中保存一个命令，而 ` trace-log-save=100_` 会保留最后的 `100` 日志文件。
+
+
+
+ a| 
+`use-https-to-dfm=on`
+ a| 
+指定是否希望 SnapDrive for UNIX 使用 SSL 加密（ HTTPS ）与 Operations Manager 进行通信。
+
+默认值为 `on` 。
+
+
+
+ a| 
+`use-https-to-filer=on`
+ a| 
+指定是否希望 SnapDrive for UNIX 在与存储系统通信时使用 SSL 加密（ HTTPS ）。
+
+默认值为 `on` 。
+
+
+NOTE: 如果您使用的 Data ONTAP 版本低于 7.0 ，则启用 HTTPS 后，性能可能会降低。如果您运行的是 Data ONTAP 7.0 或更高版本，则性能较慢不是问题描述。
+
+
+
+ a| 
+`vmtype=lvm`
+ a| 
+指定要用于 SnapDrive for UNIX 操作的卷管理器类型。卷管理器必须是 SnapDrive for UNIX 支持您的操作系统的类型。以下是可为此变量设置的值，默认值因主机操作系统而异：
+
+* AIX ： `vxVM` 或 `lvm`
++
+默认值为 `lvm`
+
+
+
+您也可以使用 ` -vmtype` 选项指定要使用的卷管理器类型。
+
+
+
+ a| 
+`vol-restore`
+ a| 
+确定 SnapDrive for UNIX 应执行基于卷的快照还原（ vbsr ）还是单文件快照还原（ SFSR ）。
+
+以下是可能的值。
+
+* `preview` —指定 SnapDrive for UNIX 为给定的主机文件规范启动基于卷的 SnapRestore 预览机制。
+* `execute` —指定 SnapDrive for UNIX 继续对指定文件规范使用基于卷的 SnapRestore 。
+* `off` —禁用 vbsr 选项并启用 SFSR 选项。默认值为 `off` 。
++
+
+NOTE: 如果将变量设置为预览 / 执行，则不能使用 CLI 执行 SFSR 操作来覆盖此设置。
+
+
+
+
+
+ a| 
+`volmove-cutover-retry=3`
+ a| 
+指定 SnapDrive for UNIX 在卷迁移转换阶段重试此操作的次数。
+
+默认值为 `3` 。
+
+
+
+ a| 
+`volmove-cutover-retry-leep=3`
+ a| 
+指定 SnapDrive for UNIX 在 volume-move-cutover-retry 操作之间等待的秒数。
+
+默认值为 `3` 。
+
+
+
+ a| 
+`volume-clone-retry=3`
+ a| 
+指定 SnapDrive for UNIX 在创建 FlexClone 期间重试此操作的次数。
+
+默认值为 `3` 。
+
+
+
+ a| 
+`volume-clone-retry-leep=3`
+ a| 
+指定在创建 FlexClone 期间 SnapDrive for UNIX 在两次重试之间等待的秒数。
+
+默认值为 `3` 。
+
+|===

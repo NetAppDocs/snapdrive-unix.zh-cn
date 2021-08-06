@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_using_consistency_group_snapshots_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, group, consistency 
+summary: 一致性组 Snapshot 是一组卷的 Snapshot 副本，该卷跨越集群中的不同 Vserver 或节点，并作为一个实体进行管理。 
+---
+= SnapDrive for UNIX 中的一致性组 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一致性组 Snapshot 是一组卷的 Snapshot 副本，该卷跨越集群中的不同 Vserver 或节点，并作为一个实体进行管理。
+
+SnapDrive for UNIX 可捕获跨集群中不同 SVM 或节点的所有卷的崩溃状态一致的 Snapshot 副本。您还可以配置捕获 Snapshot 副本的时间段。
+
+默认情况下， SnapDrive for UNIX 会捕获一致性组 Snapshot 副本。您可以禁用此功能并还原为在尽力服务模式下捕获 Snapshot 副本。
+
+
+NOTE: SnapDrive for UNIX 5.2 仅在 Data ONTAP 8.2 或更高版本中支持集群模式 Data ONTAP 的一致性组 Snapshot 副本。
+
+* 相关信息 *
+
+xref:task_capturing_a_consistency_group_snapshot.adoc[创建一致性组 Snapshot 副本]
+
+xref:task_disabling_consistency_group_snapshots.adoc[禁用一致性组 Snapshot 副本]

@@ -1,0 +1,23 @@
+---
+permalink: linux-administration/concept_considerations_for_supporting_vfiler_unit.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, vfiler, support, issues, unit 
+summary: SnapDrive for UNIX 支持对在 FlexVol 卷上创建的 vFiler 单元执行 SnapDrive 操作。但是，如果您使用的是光纤通道 \ （ FC\ ），则 SnapDrive for UNIX 不支持 vFiler 单元。 
+---
+= vFiler 单元支持问题
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持对在 FlexVol 卷上创建的 vFiler 单元执行 SnapDrive 操作。但是，如果您使用的是光纤通道（ FC ），则 SnapDrive for UNIX 不支持 vFiler 单元。
+
+您必须了解与支持 vFiler 单元的 SnapDrive for UNIX 相关的一些注意事项：
+
+* 在 qtree 上创建的 vFiler 单元不支持 SnapDrive 操作。
++
+如果 vFiler 单元拥有整个存储卷，则允许执行这些操作。
+
+* 在配置 SnapDrive 以支持 vFiler 单元时，必须确保未为 vFiler0 上的接口配置管理路径和数据路径。
+* 在以 7- 模式运行的 Data ONTAP 中，您必须确保将 Data ONTAP 配置变量 `vfiler.vol_clone_zapi_allow` 设置为 `on` ，以连接到 vFiler 单元中卷或 LUN 的 Snapshot 副本。
+

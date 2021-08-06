@@ -1,0 +1,13 @@
+---
+permalink: linux-administration/concept_snap_management_operation_fails_in_rhel_or_oel_5.x_due_to_an_issue_with_umount_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fail, rhel, oel, umount, nfs, command 
+summary: 由于使用了 umount 命令的问题描述， RHEL/OEL 5.x 中的快照管理操作失败。要解决此问题，请确保在命令行界面中使用 -o vers=3 挂载 NFS 实体。 
+---
+= 由于使用了 umount 命令的问题描述， RHEL/OEL 5.x 中的快照管理操作失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+由于问题描述使用 `umount` 命令， RHEL/OEL 5.x 中的快照管理操作失败。要克服此问题，请确保在命令行界面中使用 ` -o vers=3` 挂载 NFS 实体。

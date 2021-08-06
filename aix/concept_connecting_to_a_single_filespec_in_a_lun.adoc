@@ -1,0 +1,65 @@
+---
+permalink: aix/concept_connecting_to_a_single_filespec_in_a_lun.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, single, filespec, lun 
+summary: 您可以连接到 LUN 中的单个文件规范。以下示例介绍了如何完成此操作。 
+---
+= 连接到 LUN 中的单个文件规范
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以连接到 LUN 中的单个文件规范。以下示例介绍了如何完成此操作。
+
+
+NOTE: 文件规范可以是文件系统，主机卷，磁盘组或 LUN 的任意一个。
+
+要创建受限的 FlexClone ，您需要在 `snapdrive.conf` file 中设置选项 `san-clone-method =optimal` 或提供 ` -clone optimal` ，然后才能连接文件规范。此示例显示了要连接 LUN `homer ： /vol/vol1/lun1` 中的文件规范 ` /mnt/fs1` 时的结果
+
+源文件系统 ` /mnt/fs1` 的布局如下所示：
+
+[listing]
+----
+# snapdrive storage show -fs /mnt/fs_1 -capabilities
+raw device: /dev/sdc1 mount point: /mnt/fs_1 (persistent) fstype jfs2
+
+allowed operations: all
+
+device filename adapter path size proto state clone lun path backing snapshot
+-------------- ------- ---- ---- ----- ----- ----- -------- ----------------
+/dev/sdc -  P 100m iscsi online No homer:/vol/vol1/lun1  -
+----
+[listing]
+----
+# snapdrive snap connect -fs /mnt/fs_1 -snapname homer:/vol/vol1:snap1 -autorename
+
+ connecting /mnt/fs_1:
+        creating restricted volume clone homer:/vol/Snapdrive_vol1_volume_clone_from_snap1_snapshot ... success
+
+        mapping new lun(s) ... done
+        discovering new lun(s) ... done
+Successfully connected to snapshot homer:/vol/vol1:snap1
+        file system: /mnt/fs_1_0
+----
+在这种情况下， SnapDrive for UNIX 会自动选择从 snapshot snap1 创建受限的 FlexClone `Snapdrive_vol1_0_volume_clone_from_snap1_snapshot` 并将其连接到此 FlexClone 中的 LUN testlun1 以创建克隆主机文件系统 /mnt/fs_1_0 。
+
+[listing]
+----
+# snapdrive storage show -fs /mnt/fs_1_0 -capabilities
+
+raw device: /dev/sde1   mount point: /mnt/fs_1_0 (persistent) fstype jfs2
+allowed operations: snap disconnect; snap list; snap show; storage show; storage list
+
+device filename adapter path size  proto  state  clone  lun path backing snapshot
+--------------- ------- ---- ----- ------ ------ ------ -------- ----------------
+/dev/sde  -  P  100m iscsi online flex-clone homer:/vol/Snapdrive_vol1_volume_clone_from_snap1_snapshot/lun1 vol1:snap1
+----
+SnapDrive for UNIX 使用命令行界面中提及的前缀为目标 FlexClone 命名。
+
+如果生成的 FlexClone 名称（带前缀）已在使用中，则 SnapDrive for UNIX 将显示一条错误消息。在这种情况下，您可以使用 ` -autorename` 选项以及 ` -prefixfv` 来自动生成克隆卷名称。
+
+` -prefixfv` CLI 选项仅适用于基于 SAN 的文件系统。在 FlexClone 操作期间， SnapDrive for UNIX 对于基于 SAN 的文件系统会忽略 ` -destfv` CLI 选项。
+
+
+NOTE: 当 Snapshot 副本因 LUN 克隆而被锁定时， SnapDrive for UNIX 将显示警告。但是， SnapDrive for UNIX 会继续执行 `snap connect` 操作。

@@ -1,0 +1,24 @@
+---
+permalink: solaris/task_resetting_the_snap_reserve_option_on_the_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, reset, reserve, option, storage, system 
+summary: 在光纤通道或 Internet 小型计算机系统接口 \ （ iSCSI\ ）环境中使用 Data ONTAP 时，应将存储系统上的快照预留选项重置为 0% ，以便进行卷优化。 
+---
+= 在存储系统上重置 snap reserve 选项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在光纤通道或互联网小型计算机系统接口（ iSCSI ）环境中使用 Data ONTAP 时，应将存储系统上的 `snap reserve` 选项重置为零，以实现卷优化。
+
+.步骤
+. 通过从主机或存储系统控制台运行 `telnet` 命令来访问存储系统。
+. 输入以下命令：
++
+` * snap reserve _vol_name 0_*`
+
++
+` vol_name_` 是要设置 `snap reserve` 选项的卷的名称。
+
+

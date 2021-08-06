@@ -1,0 +1,35 @@
+---
+permalink: linux-administration/reference_configuration_command_lines.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, command, line, operations, config 
+summary: SnapDrive for UNIX 命令用于配置操作。 
+---
+= 配置命令行
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 命令用于配置操作。
+
+以下命令行选项用于配置操作。
+
+* SnapDrive 配置访问 ｛ show | list ｝ _filername_`
+* SnapDrive 配置检查 LUN`
+* SnapDrive 配置 delete _appliage_name [appliage_name ...]_`
+* SnapDrive 配置列表`
+* SnapDrive 配置集（ -dfm ） _user_name_ appliage_name [appliation_name ...]`
+* SnapDrive 配置集 [-viadmin] _user_name vadmin_name_`
+* SnapDrive 配置显示 [_host_file_name_]`
+* SnapDrive 配置检查集群`
+* SnapDrive 配置准备 LUN -count 计数`
+* SnapDrive config migrate set _storage_system_name new_storage_system_Nam_`
+* SnapDrive 配置迁移 delete _new_storage_system_name [new_storage_system_name …… ]_`
+* SnapDrive 配置迁移列表`
+* SnapDrive portset add portset_name filername [filername ...]`
+* SnapDrive 端口集删除文件名 [filername ...]``
+* SnapDrive 端口集列表`
+* SnapDrive igroup add igroup_name filername [filername ...]``
+* SnapDrive igroup delete filername [filername ...]``
+* SnapDrive igroup list`
+

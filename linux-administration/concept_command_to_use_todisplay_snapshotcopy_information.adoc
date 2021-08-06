@@ -1,0 +1,24 @@
+---
+permalink: linux-administration/concept_command_to_use_todisplay_snapshotcopy_information.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, snapshot, copy, list 
+summary: 使用 SnapDrive snap show \ （或 list\ ）命令显示有关 Snapshot 副本的信息。 
+---
+= 用于显示 Snapshot 副本信息的命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive snap show` （或 `list` ）命令显示有关 Snapshot 副本的信息。
+
+您可以使用 SnapDrive snap show` （或 `list` ）命令显示有关 SnapDrive for UNIX 创建的每个 Snapshot 副本的信息。您可以使用此命令显示有关以下内容的信息：
+
+* 存储系统
+* 存储系统上的卷
+* 存储实体，例如 NFS 文件和目录树，卷组，磁盘组，文件系统，逻辑卷， 和主机卷
+* Snapshot 副本
+
+
+
+NOTE: 此命令的 `show` 和 `list` 形式是同义词。对于适用于 UNIX 的 SnapDrive 2.0 及更高版本，在显示有关 Snapshot 副本的信息时，必须使用 Snapshot 副本名称的长格式。

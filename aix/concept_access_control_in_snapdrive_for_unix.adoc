@@ -1,0 +1,15 @@
+---
+permalink: aix/concept_access_control_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control 
+summary: 通过 SnapDrive for UNIX ，您可以控制每个主机对主机所连接的每个存储系统的访问级别。 
+---
+= SnapDrive for UNIX 中的访问控制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以控制每个主机对主机所连接的每个存储系统的访问级别。
+
+SnapDrive for UNIX 中的访问级别指示当主机面向给定存储系统时允许执行的操作。除了 show 和 list 操作之外，访问控制权限可能会影响所有 Snapshot 和存储操作。

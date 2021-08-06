@@ -1,0 +1,29 @@
+---
+permalink: solaris/task_deleting_igroup.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, igroup, command 
+summary: 您可以删除为存储系统配置但不再需要的任何 igroup 。 
+---
+= 删除 igroup
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以删除为存储系统配置但不再需要的任何 igroup 。
+
+.步骤
+. 在主机上输入以下命令：
++
+` * SnapDrive igroup delete _filer_name_*`
+
++
+[listing]
+----
+snapdrive igroup delete toaster
+Deleted igroup configuration for appliance: toaster
+----
++
+已成功删除为存储系统面包机配置的 igroup `igg` 。
+
+

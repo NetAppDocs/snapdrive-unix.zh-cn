@@ -1,0 +1,55 @@
+---
+permalink: linux-installation-cmode/task_provisioning_rdm_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, provision, rdm, lun, create, fc 
+summary: 通过 SnapDrive for UNIX ，您可以在 VMware 虚拟环境中的子操作系统上使用启用的 FC 协议创建和配置 RDM LUN 。您也可以使用 ONTAP 配置 RDM LUN 。 
+---
+= 配置 RDM LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以在 VMware 虚拟环境中的子操作系统上使用启用的 FC 协议创建和配置 RDM LUN 。您也可以使用 ONTAP 配置 RDM LUN 。
+
+* 必须安装 NetApp Virtual Storage Console （ VSC ）并使用 VMware vCenter ® 进行配置。
+* 必须在已向 vCenter ® 注册的 Windows 操作系统中安装适用于 VMware vSphere TM 的 NetApp Virtual Storage Console 的备份和恢复功能。
+* 在 `snapdrive.conf` 文件中，必须将 `default-transport` 设置为 `fcp` ，并且必须重新启动 SnapDrive for UNIX 守护进程。
+
+
+.步骤
+. 配置子操作系统以创建 RDM LUN ：
++
+` * SnapDrive 配置集 -viadmin _user viadmin_name_*`
+
++
+** ` _user_` 是虚拟接口系统的名称。
+** ` _viadmin_name_` 是虚拟接口系统的 IP 地址名称。
+
+
+. 验证 Virtual Storage Console 的登录信息：
++
+` * SnapDrive 配置列表 *`
+
++
+此命令显示在 SnapDrive for UNIX 中指定的用户名或虚拟接口。
+
+. 验证子操作系统是否可以与存储系统通信：
++
+` * storage show-all _command_*`
+
+. 在存储系统上创建 RDM LUN ：
++
+` * SnapDrive storage create -lun _long_lun_name_ -lunsize _size_of_the_lun_*`
+
+. 将 RDM LUN 连接到主机：
++
+` * SnapDrive storage connect-lun _long_lun_name_*`
+
+
+
+* 相关信息 *
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2843698["适用于 VMware vSphere 的 Virtual Storage Console ， VASA Provider 和 Storage Replication Adapter 7.2 版管理指南"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1368859["《 Data ONTAP 8.2 7- 模式存储管理指南》"]

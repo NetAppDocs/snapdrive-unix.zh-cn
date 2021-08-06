@@ -1,0 +1,114 @@
+---
+permalink: aix/concept_snapshot_create_and_delete_operation_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, delete, operation, fail 
+summary: 由于 LUN 繁忙， Snapshot 创建和删除操作无法删除存储系统上的 Snapshot 副本。 
+---
+= Snapshot 创建和删除操作失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+由于 LUN 繁忙， Snapshot 创建和删除操作无法删除存储系统上的 Snapshot 副本。
+
+此时将显示以下错误消息：
+
+[listing]
+----
+0001-124 Admin error: Failed to remove snapshot <snap-name> on
+filer <filer-name>: LUN clone
+----
+如果满足以下条件，您可能会遇到此错误，并且可能无法直接删除 Snapshot 副本：
+
+* 一个磁盘组跨越多个存储系统。
+* 以下 SnapDrive 命令会循环执行 50 次以上的迭代（迭代次数取决于主机操作系统）：
++
+** SnapDrive storage create`
+** SnapDrive snap create`
+** SnapDrive storage delete`
+** SnapDrive snap restore`
+** SnapDrive snap connect`
+** SnapDrive storage delete`
+** SnapDrive snap delete`
+
+
+
+
+此时，存储系统上的 Snapshot 副本状态将显示 ` * luns-busy*` ，此状态将持续几小时。
+
+
+
+== 临时解决策
+
+|===
+| * 如果 ...* | * 然后 ...* 
+
+
+ a| 
+Snapshot 副本中存在未连接到主机的克隆 LUN 。
+ a| 
+您可以执行以下操作之一来删除 Snapshot 副本：
+
+* 使用 `filer split clone` 命令将克隆的 LUN 从存储系统中拆分。
+* 删除克隆的 LUN 。
+
+
+
+
+ a| 
+Snapshot 副本中存在未连接到主机的克隆 LUN 。
+ a| 
+执行以下步骤：
+
+. 使用 SnapDrive snap disconnect` 命令断开克隆的 LUN 与主机的连接。
+. 删除克隆的 LUN 。
+. 删除 Snapshot 副本。
+
+
+
+
+ a| 
+存在以下任何一种情况：
+
+* Snapshot 副本中的克隆 LUN 也存在于其他 Snapshot 副本中
+* 备份克隆的 LUN
+
+ a| 
+完成以下步骤：
+
+. 在存储系统命令提示符下运行以下命令： `lun snap usage -s <VolumeName>< snap-name>`
++
+此列表列出了包含克隆 LUN 的 Snapshot 副本的 Snapshot 副本的名称，如以下示例所示：
+
++
+[listing]
+----
+tonic*> lun snap usage vol1
+james_lun (filer view)
+mpiotest2:
+LUN:
+/vol/vol1/.snapshot/mpiotest2/d
+hilip_0
+Backed By:
+/vol/vol1/.snapshot/dhilip_lun/
+james
+----
+. 按照 LUN snap usage 命令输出中列出的顺序从存储系统中删除 Snapshot 副本，如以下示例所示。
++
+`snap delete vol1 mpiotest2`
+
++
+
+NOTE: 确保要删除的 Snapshot 副本未被任何其他主机使用。如果正在访问，则无法删除。
+
+
+
+
+
+ a| 
+没有克隆的 LUN
+ a| 
+请稍候，直到存储系统上 Snapshot 副本的 `luns-busy` 状态消失。
+
+|===

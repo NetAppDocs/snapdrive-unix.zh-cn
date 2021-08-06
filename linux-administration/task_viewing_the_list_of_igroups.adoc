@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/task_viewing_the_list_of_igroups.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, igroups, configure, host 
+summary: 您可以查看主机上配置的所有 igroup 。 
+---
+= 查看 igroup 列表
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看主机上配置的所有 igroup 。
+
+. 在主机系统上输入以下命令：
++
+` * SnapDrive igroup list*`
+
++
+[listing]
+----
+snapdrive igroup list
+appliance name   igroup name
+-----------------------------
+toaster        ig
+----
+

@@ -1,0 +1,35 @@
+---
+permalink: solaris/task_capturing_a_consistency_group_snapshot.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, snapshot, copy, group, consistency 
+summary: 您可以将 SnapDrive for UNIX 配置为创建一致性组 Snapshot 副本。 
+---
+= 创建一致性组 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将 SnapDrive for UNIX 配置为创建一致性组 Snapshot 副本。
+
+.步骤
+. 在主机上输入以下命令：
++
+` * SnapDrive snap create -fs /mnt/test -snapname _snapshotName_ -f -noprompts*`
+
++
+` _SnapshotName_` 是为一致性组 Snapshot 副本指定的名称。
+
+
+
+
+
+== 示例
+
+以下是命令示例：
+
+[listing]
+----
+snapdrive snap create -fs /mnt/test -snapname snap_123 -f -noprompt
+----
+已成功创建一致性组 Snapshot 副本。

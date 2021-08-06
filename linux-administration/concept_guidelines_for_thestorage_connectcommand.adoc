@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/concept_guidelines_for_thestorage_connectcommand.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, connect, command, guidelines, lvm 
+summary: 要使用 SnapDrive storage connect 命令，您需要遵循一些准则。 
+---
+= storage connect 命令的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要使用 SnapDrive storage connect` 命令，您需要遵循一些准则。
+
+包含 LVM 实体的存储具有特殊要求。要使用 SnapDrive storage connect` 命令连接 LVM 实体，必须创建存储，以便存储层次结构中的每个实体都只有一个下一个实体的实例。例如，您可以使用 SnapDrive storage connect` 命令连接一个存储层次结构，该存储层次结构包含一个磁盘组（ dg1 ），一个主机卷（ hostvol1 ）和一个文件系统（ fs1 ）。但是，您不能使用 SnapDrive storage connect` 命令连接一个层次结构，其中一个磁盘组（ dg1 ）包含两个主机卷（ hostvol1 和 hostvol2 ）和两个文件系统（ fs1 和 fs2 ）。
+
+在 Linux 主机上，只有在对底层 LUN 进行分区后， SnapDrive storage connect` 命令才会连接直接在 LUN 上创建的文件系统。
+
+
+NOTE: 使用 SLES10 Update 2 ， SnapDrive for UNIX SnapDrive storage connect` 和 SnapDrive storage create` 命令可直接在 LUN 上创建文件系统。SnapDrive for UNIX 会在原始设备上创建一个文件系统，然后挂载该文件系统。

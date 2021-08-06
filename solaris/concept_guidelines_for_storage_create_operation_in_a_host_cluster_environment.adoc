@@ -1,0 +1,31 @@
+---
+permalink: solaris/concept_guidelines_for_storage_create_operation_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapshot, storage, create, host cluster 
+summary: 在主机集群环境中创建存储时，应遵循特定准则。 
+---
+= 在主机集群环境中执行存储创建操作的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在主机集群环境中创建存储时，应遵循特定准则。
+
+* 您可以从主机集群中的任何节点执行 SnapDrive storage create` 命令。
+* 要使存储创建操作成功，两者均不应为 true ：
++
+** 存储实体不应位于主机集群中的任何节点上。
+** LUN 不应映射到主机集群中的任何节点。
+
+
+* 您可以使用 ` 设备类型` 专用或 ` 设备类型共享` 选项在特定节点上创建存储实体。如果您要创建的存储实体处于专用模式，则可以省略 ` 设备类型` 选项，因为默认值为 `d已设置` 。
+* 在使用 Veritas 卷管理器和 Veritas 文件系统（ VxFS ）的磁盘组上，支持在集群范围内创建文件系统的主机存储。此操作不支持原始 LUN ； ` -nolvm` 选项也不支持。
+* 存储创建操作不支持 ` -igroup` 选项。
+* 如果发生以下情况之一，则存储创建操作将失败：
++
+** 创建存储实体期间是否出现任何错误消息。SnapDrive for UNIX 从主机集群中的主节点执行存储创建操作。在创建共享存储实体之前， SnapDrive for UNIX 会创建 LUN ，将 LUN 映射到主节点，然后将 LUN 映射到所有非主节点。SnapDrive for UNIX 在内部为所有节点创建和管理 igroup 。
+** 如果在启动主机集群卷管理器（ CVM ）之前主机集群中的某个节点关闭并重新启动，则应在该节点上发现 LUN 使用的共享磁盘组。默认情况下，如果 FC 端口地址未更改，则会显示这些 LUN ；否则，您必须使用 SnapDrive storage connect` 命令映射这些 LUN 。
+
+
+

@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_configuration_information_for_vserver_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, vserver 
+summary: 要执行 SnapDrive 操作，您必须在 SnapDrive for UNIX 中配置 Vserver 。 
+---
+= SVM 的配置信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要执行 SnapDrive 操作，您必须在 SnapDrive for UNIX 中配置 Vserver 。
+
+要使用适用于 UNIX 的 SnapDrive 配置 SVM ，请在集群模式 Data ONTAP 中，确保 SVM 的管理逻辑接口（ LIF ）的 IP 地址已与 SVM 名称映射，可以在域名服务（ DNS ）或 ` /etc/hosts` 文件中进行映射。此外，还必须使用以下命令确保已在适用于 UNIX 的 SnapDrive 中配置 Vserver 名称：
+
+` * SnapDrive 配置集 <vsadmin> <vserver name>*`
+
+* 相关信息 *
+
+link:concept_support_for_vserver.adoc["支持 SVM"]

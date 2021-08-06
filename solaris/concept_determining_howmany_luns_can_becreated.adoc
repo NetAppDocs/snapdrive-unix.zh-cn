@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_determining_howmany_luns_can_becreated.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, create 
+summary: 通过 SnapDrive for UNIX ，您可以在不超过限制的情况下确定可以在主机上创建多少个 LUN 。 
+---
+= 确定可以创建的 LUN 数量
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以在不超过限制的情况下确定可以在主机上创建多少个 LUN 。
+
+您可以使用 SnapDrive config check lun` 命令来确定此值。
+
+在 Solaris 主机上，此命令会扫描 ` /kernel/drv/sd.conf` 以确定哪些未使用的条目适合 LUN 。

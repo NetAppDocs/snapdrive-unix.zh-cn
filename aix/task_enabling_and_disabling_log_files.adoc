@@ -1,0 +1,52 @@
+---
+permalink: aix/task_enabling_and_disabling_log_files.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, enable, disable, log, file 
+summary: 如果要启用日志文件，请在要启用的日志文件的名称 - 值对中指定一个文件名作为值。如果要禁用某个文件，请勿为日志文件名参数输入一个值。 
+---
+= 启用和禁用日志文件
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果要启用日志文件，请在要启用的日志文件的名称 - 值对中指定一个文件名作为值。如果要禁用某个文件，请勿为日志文件名参数输入一个值。
+
+您必须已以 root 用户身份登录。
+
+.步骤
+. 在文本编辑器中打开 `snapdrive.conf` 文件。
+. 选择相应的选项以启用或禁用日志文件。
++
+|===
+| 如果您要 ... | 那么 ... 
+
+
+ a| 
+* 启用日志文件 *
+ a| 
+在要启用的日志文件的名称 - 值对中指定一个文件名作为值。只有当 SnapDrive for UNIX 具有要写入的文件的名称时，它才会写入日志文件。日志文件的默认名称如下：
+
+** 审核日志： `sd-audit.log`
+** 恢复日志： `sd-recovery.log`
+** 跟踪日志： `sd-trace.log`
+
+
+
+NOTE: 这些文件的路径可能因主机操作系统而异。
+
+
+
+ a| 
+* 禁用日志文件 *
+ a| 
+请勿为日志文件名参数输入值。如果不提供值，则 SnapDrive for UNIX 不会向其写入日志信息。
+
+* 示例 * 此示例将禁用审核日志文件。`audit-log-file=""`
+
+|===
+. 进行所有更改后，请保存 `snapdrive.conf` 文件。
++
+SnapDrive for UNIX 会在每次启动此文件时自动对其进行检查。要使更改生效，必须重新启动 SnapDrive for UNIX 守护进程。
+
+

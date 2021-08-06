@@ -1,0 +1,45 @@
+---
+permalink: linux-administration/task_restoring_asnapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, command 
+summary: 您可以使用 SnapDrive snap restore 命令还原 Snapshot 副本。还原操作可能需要几分钟时间，具体取决于还原的类型和数据量。 
+---
+= 还原 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap restore` 命令还原 Snapshot 副本。还原操作可能需要几分钟时间，具体取决于还原的类型和数据量。
+
+.步骤
+. 输入以下命令以还原 Snapshot 副本：
++
+` * SnapDrive snap restore -snapname _snap_name_ ｛ -lun _dg _-fs | - hostvol _-file ｝ _file_spec_ [_file_spec..._] （ ｛ -lun | -dg _ -fs _hostvol _-file ｝ _file_spec_ [_file_spec_...] （ -force [-noprompt]_opts_options]_netts_options]_options_ ）`
+
+
+
+SnapDrive for UNIX 会将您在 SnapDrive snap restore` 命令行中指定的 LUN 内容替换为您指定的 Snapshot 副本中的 LUN 内容。此操作可能需要几分钟时间。操作完成后， SnapDrive for UNIX 将显示一条类似以下内容的消息： `snap restore <fil显示器 列表 > succeeded`
+
+在以下示例中，文件系统 1 （ fs1 ）位于存储系统 1 上，文件系统 2 （ fs2 ）位于存储系统 1 上，同时也位于存储系统 2 上，该存储系统是配对存储系统。文件系统 3 （ FS3 ）位于存储系统 1 ，配对存储系统 2 和存储系统 3 上，这不是 HA 对的一部分。另一个文件系统 FS4 完全驻留在存储系统 4 上。
+
+以下命令将创建 `fs1` ， `fs2` ， `FS3` 和 `FS4` 的 Snapshot 副本：
+
+[listing]
+----
+# snapdrive snap create -fs /mnt/fs1 /mnt/fs2 /mnt/fs3 /mnt/fs4
+-snapname fs_all_snap
+----
+下一个命令将还原目标存储系统上的 fs1 和 fs2 。fs1 和 fs2 都驻留在 HA 对上，因此您可以使用一个命令还原它们：
+
+[listing]
+----
+# snapdrive snap restore -fs /mnt/fs1 /mt/fs2 -snapname fs_all_snap
+----
+以下命令将还原 FS4 ：
+
+[listing]
+----
+snapdrive snap restore -fs /mnt/fs4 -snapname fs_all_snap
+----
+SnapDrive for UNIX 无法在目标存储系统上还原 FS3 ，因为此文件系统位于存储系统 1 ，存储系统 2 和存储系统 3 上。

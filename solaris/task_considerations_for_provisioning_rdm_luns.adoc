@@ -1,0 +1,30 @@
+---
+permalink: solaris/task_considerations_for_provisioning_rdm_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rdm, lun, provisioning 
+summary: SnapDrive for UNIX 在配置 RDM LUN 时有一些注意事项。 
+---
+= 配置 RDM LUN 的注意事项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 在配置 RDM LUN 时有一些注意事项。
+
+* 验证子操作系统的 `snapdrive.conf` 文件中的配置变量 ` default-transport_` 变量是否设置为 ` fcp_` 。
+* 配置适用于 UNIX 的 SnapDrive 以访问适用于 VMware vSphere 的 NetApp 虚拟存储控制台。
+* 确保在 `snapdrive.conf` 文件中使用了 RDM LUN 支持的配置变量。RDM LUN 支持使用 ` contact-viadmin-port_` ， ` use-https-to_viadmin_` ， ` _vif-password-file 和 virtual-operation-timeoutsecs=600_` 等变量。
+
+
+* 相关信息 *
+
+xref:concept_limitations_of_rdm_luns_managed_by_snapdrive.adoc[由 SnapDrive 管理的 RDM LUN 的限制]
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[SnapDrive for UNIX 中支持 VMware VMotion]
+
+xref:task_configuring_virtual_storage_console_in_snapdrive_for_unix.adoc[配置适用于 UNIX 的 SnapDrive 的虚拟存储控制台]
+
+xref:concept_configuration_options_and_their_default_values.adoc[配置选项及其默认值]
+
+xref:concept_guest_os_preparation_for_installing_sdu.adoc[安装 SnapDrive for UNIX 的子操作系统准备工作]

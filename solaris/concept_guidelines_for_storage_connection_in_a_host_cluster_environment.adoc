@@ -1,0 +1,33 @@
+---
+permalink: solaris/concept_guidelines_for_storage_connection_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, connect, host, cluster 
+summary: 在主机集群环境中使用 SnapDrive storage connect 命令之前，必须遵循一些准则。 
+---
+= 主机集群环境中的存储连接准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在主机集群环境中使用 SnapDrive storage connect` 命令之前，必须遵循一些准则。
+
+* 如果向使用共享磁盘组或文件系统的主机集群配置添加了新节点，请使用 SnapDrive storage connect -DeviceType shared` 命令。您可以从主机集群中的任何节点执行 SnapDrive 存储连接操作。
+* 要成功执行存储连接操作，不应发生以下情况：
++
+** 存储实体不应位于主机集群中的任何节点上。
+** LUN 不应映射到主机集群中的任何节点。
+
+
+* 您可以使用 ` -DeviceType dedicated` 选项或在命令行语法中省略 ` -DeviceType` 选项来连接到特定节点上的存储实体，因为默认值为 dedicated 。
+* 在使用 Veritas 卷管理器和 Veritas 文件系统（ VxFS ）的磁盘组上，可以在主机集群范围内连接文件系统。此操作不支持对原始 LUN 执行；也就是说，不支持 ` -nolvm` 选项。
+* SnapDrive storage connect` 命令不支持 ` -igroup` 选项。
+* 如果满足以下任一条件，则存储连接操作将失败：
++
+** 在连接存储实体的过程中发生任何错误。SnapDrive for UNIX 从主机集群中的主节点执行此操作。在创建共享存储实体之前，它会创建 LUN ，将 LUN 映射到主节点，然后将 LUN 映射到所有非主节点。SnapDrive for UNIX 在内部为所有节点创建和管理 igroup 。
+** 如果在启动集群卷管理器（ CVM ）之前主机集群中的某个节点关闭并重新启动，则应在此节点上发现 LUN 使用的共享磁盘组。默认情况下，如果 FC 端口地址未更改，则 LUN 可见；否则，必须使用 SnapDrive storage connect` 命令映射 LUN 。
+
+
+* 只有当存储实体不在任何主机集群节点上时，您才能对使用专用存储实体数据创建并随后断开连接的 LUN 上的存储实体执行共享存储连接操作。
+* 只有当当前节点不是主机集群的一部分或存储实体不在主机集群上时，您才能对具有共享存储实体元数据的 LUN 上的存储实体执行专用存储连接操作。
+

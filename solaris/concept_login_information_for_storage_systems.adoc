@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_login_information_for_storage_systems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, storage, system 
+summary: 通过用户名或密码， SnapDrive for UNIX 可以访问每个存储系统。它还提供了安全性，因为除了以 root 身份登录之外，运行 SnapDrive for UNIX 的用户还必须在系统提示时提供正确的用户名或密码。如果登录受到影响，您可以将其删除并设置新的用户登录。 
+---
+= 存储系统的登录信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过用户名或密码， SnapDrive for UNIX 可以访问每个存储系统。它还提供了安全性，因为除了以 root 身份登录之外，运行 SnapDrive for UNIX 的用户还必须在系统提示时提供正确的用户名或密码。如果登录受到影响，您可以将其删除并设置新的用户登录。
+
+您在设置每个存储系统时为其创建了用户登录名。要使 SnapDrive for UNIX 能够与存储系统配合使用，您必须为其提供此登录信息。根据您在设置存储系统时指定的内容，每个存储系统可以使用相同的登录名或唯一的登录名。
+
+SnapDrive for UNIX 会将这些登录和密码以加密形式存储在每个主机上。您可以通过设置 ` _SnapDrive.conf_` 配置变量 ` _use-https-to_filer=on_` 来指定 SnapDrive for UNIX 在与存储系统通信时对此信息进行加密。

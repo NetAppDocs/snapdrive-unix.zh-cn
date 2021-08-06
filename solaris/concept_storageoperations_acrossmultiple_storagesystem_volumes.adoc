@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_storageoperations_acrossmultiple_storagesystem_volumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, volume, operation, multiple 
+summary: SnapDrive for UNIX 允许您在多个存储系统卷上执行许多存储操作，前提是这些操作不会操控逻辑卷管理器（ LVM ）。这样，您就可以使用多个存储系统卷中的 LUN 列表。 
+---
+= 跨多个存储系统卷的存储操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 允许您在多个存储系统卷上执行许多存储操作，前提是这些操作不会操控逻辑卷管理器（ LVM ）。这样，您就可以使用多个存储系统卷中的 LUN 列表。

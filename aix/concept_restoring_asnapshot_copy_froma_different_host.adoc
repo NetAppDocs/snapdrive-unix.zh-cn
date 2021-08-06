@@ -1,0 +1,15 @@
+---
+permalink: aix/concept_restoring_asnapshot_copy_froma_different_host.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy, different, host 
+summary: 使用 SnapDrive snap restore 命令从其他主机还原 Snapshot 副本。 
+---
+= 从其他主机还原 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive snap restore` 命令从其他主机还原 Snapshot 副本。
+
+通常，您可以从创建 Snapshot 副本的主机还原 Snapshot 副本。有时，您可能需要使用其他主机或非源主机还原 Snapshot 副本。要使用非源主机还原 Snapshot 副本，请使用通常使用的相同 SnapDrive snap restore` 命令。如果您还原的 Snapshot 副本包含 NFS 实体，则非源主机必须具有访问 NFS 目录的权限。

@@ -1,0 +1,29 @@
+---
+permalink: aix/concept_considerations_for_network_file_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guidelines, nfs, configuration 
+summary: 在安装 SnapDrive for UNIX 之前，您应考虑网络文件系统（ NFS\ ）服务的运行位置以及存储系统目录的导出位置。您应检查 NFS 客户端权限和接口读写权限。 
+---
+= NFS 配置准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装 SnapDrive for UNIX 之前，您应考虑网络文件系统（ NFS ）服务的运行位置以及存储系统目录的导出位置。您应检查 NFS 客户端权限和接口读写权限。
+
+使用 SnapDrive for UNIX 还原或连接到 NFS 挂载的目录时，必须确保将存储系统目录正确导出到主机。如果主机具有多个可访问存储系统的 IP 接口，则必须确保已将目录正确导出到其中每个接口。
+
+SnapDrive for UNIX 会发出警告，除非所有此类接口都具有读写权限，或者在使用 SnapDrive snap connect` 时具有 ` -readonly` 选项或至少具有只读权限。如果这些接口均无权访问目录，则 SnapDrive snap restore` 和 SnapDrive snap connect` 命令将失败。
+
+以 root 用户身份执行单文件系统（ Single File SnapRestore ， SFSR ）时，必须确保存储系统目录在主机上以读写权限导出，并且必须设置以下导出规则：
+
+* 在 7- 模式 Data ONTAP 中， `rw=< 主机名 > ， root=< 主机名 >`
+* 在集群模式 Data ONTAP 中， `rwrule = sys ， rorule=sys ， superuster= sys`
+
+
+* 相关信息 *
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html["《 ONTAP 9 NFS 参考》"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["《 Data ONTAP 8.2 7- 模式文件访问和协议管理指南》"]

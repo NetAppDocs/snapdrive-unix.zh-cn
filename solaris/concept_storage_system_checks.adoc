@@ -1,0 +1,24 @@
+---
+permalink: solaris/concept_storage_system_checks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, prepare 
+summary: 在安装 SnapDrive for UNIX 之前，您必须通过确保存储系统满足某些要求来准备存储系统。 
+---
+= 正在准备存储系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装 SnapDrive for UNIX 之前，您必须通过确保存储系统满足某些要求来准备存储系统。
+
+您必须通过检查以下条件来准备存储系统：
+
+* 存储系统就绪
+* 系统要求
+* 存储系统配对节点 IP 地址
+* NFS 环境中的 SnapDrive for UNIX 配置
+* UNIX LUN 和 NFS 实体的卷准备
+* `snap reserve` 选项设置为 `0`
+* 在以 7- 模式运行的 Data ONTAP 中， `vfiler.vol_clone_zapi_allow` 配置变量设置为 `on` ，以连接到 vFiler 单元中卷或 LUN 的 Snapshot 副本。
+

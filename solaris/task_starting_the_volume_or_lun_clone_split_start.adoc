@@ -1,0 +1,81 @@
+---
+permalink: solaris/task_starting_the_volume_or_lun_clone_split_start.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, clone, lun, split, start 
+summary: 您可以启动卷克隆或 LUN 克隆拆分操作。 
+---
+= 启动卷克隆或 LUN 克隆拆分
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以启动卷克隆或 LUN 克隆拆分操作。
+
+.步骤
+. 输入以下命令以启动卷克隆或 LUN 克隆拆分。
++
+` * # SnapDrive 克隆拆分起始项为： "-LUN] _lun_name_ __lun_name___] ； [ ｛ -DG _ -vg _ -FS _ -hostvol _ -lvol ｝ _file_spec_ [_file_spec____]] 【 -force][-noprompt] 【 -dump > -dumpall]*`
+
++
+当存储状态显示为不可用时，可以使用以下选项。
+
++
+** 您可以使用 ` -force` 选项强制启动克隆拆分操作，并收到确认消息，指出操作已启动。
+** 您可以使用 ` -noprop` 以及 ` -force` 选项启动克隆拆分启动操作，而不会收到任何确认消息。
++
+
+NOTE: 如果在停止正在进行的克隆拆分操作后不久再启动另一个克隆拆分操作，则该操作可能会失败。如果启动和停止克隆拆分操作之间的延迟不足以使存储系统同步停止操作，则可能会出现此问题描述。
+
+
+
+
+
+以下示例显示了如何拆分卷克隆：
+
+[listing]
+----
+# snapdrive clone split start -fs /mnt/my_mnt4_0 /mnt/my_mnt3_0
+Resource    Container  Required Available Storage
+                       Space(MB)Space(MB) Status
+--------------------------------------------------
+/mnt/my_mnt4_0 f3050-220 3295   66033 AVAILABLE
+             -111:aggr0
+/mnt/my_mnt3_0 f3050-220  293   37707 AVAILABLE
+             -112:aggr1
+
+Job ID: B265Dbv8gh
+Clone-Split for "/mnt/my_mnt4_0" is started
+Clone-Split for "/mnt/my_mnt3_0" is started
+----
+以下示例显示了如何使用 -force 选项拆分克隆：
+
+[listing]
+----
+# snapdrive clone split start -fs /mnt/my_mnt5 /mnt/my_mnt6 -force
+Resource    Container Required  Available Storage
+                      Space(MB) Space(MB) Status
+----------------------------------------------------
+/mnt/my_mnt5 f3050-220 1198   20033   AVAILABLE
+             -111:aggr0
+/mnt/my_mnt6 f3050-220  3294  2196  NOT AVAILABLE
+             -112:aggr1
+Not enough space available for Clone-Split.  Do you want to continue (y/n)?y
+Clone-Split for "/mnt/my_mnt5" is started
+Clone-Split for "/mnt/my_mnt6" is started
+----
+以下示例显示了如何使用 ` _-noprop` 选项直接启动克隆，这意味着没有确认消息：
+
+[listing]
+----
+# snapdrive clone split start -fs /mnt/my_mnt5 /mnt/my_mnt6 -force -noprompt
+Resource    Container  Required  Available Storage
+                       Space(MB) Space(MB) Status
+-----------------------------------------------------
+/mnt/my_mnt5 f3050-220  1198     20033   AVAILABLE
+             -111:aggr0
+/mnt/my_mnt6 f3050-220  3294     2196  NOT AVAILABLE
+             -112:aggr1
+Clone-Split for "/mnt/my_mnt5" is started
+Clone-Split for "/mnt/my_mnt6" is started
+----

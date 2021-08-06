@@ -1,0 +1,27 @@
+---
+permalink: solaris/task_identifying_the_installed_components.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, install, components, identify 
+summary: 您可以使用 SnapDrive for UNIX 配置检查程序工具来确定主机平台上安装的组件。 
+---
+= 确定已安装的组件
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive for UNIX 配置检查程序工具来确定主机平台上安装的组件。
+
+.步骤
+. 确定已安装的组件：
++
+` * sdconfcheck detect"`
+
++
+`sdconfcheck.out` 日志文件用于标识 ` /var/log` 文件中已安装的组件。日志文件将逐渐重命名为 `sdconfcheck.out` ， `sdconfcheck.out 2` 等。
+
++
+在 Red Hat Enterprise Linux 6 环境中， SnapDrive for UNIX 配置检查程序工具不会检测 Ext3 文件系统。您应运行 `modprobe -v ext3` 命令来加载 Ext3 文件系统。
+
+. 运行 `sdconfcheck detect` 命令后，您可能需要安装或配置列出的组件。
+

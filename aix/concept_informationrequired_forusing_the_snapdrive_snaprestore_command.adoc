@@ -1,0 +1,148 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, command, information, required 
+summary: 要还原 Snapshot 副本，请确定要还原的存储实体，指定 Snapshot 副本的名称等。 
+---
+= 使用 SnapDrive snap restore 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要还原 Snapshot 副本，请确定要还原的存储实体，指定 Snapshot 副本的名称等。
+
+下表提供了使用 SnapDrive snap restore` 命令时需要提供的信息。
+
+|===
+| 要求 / 选项 | 参数 
+
+
+ a| 
+确定要还原的存储实体的类型，并使用相应的参数输入此实体的名称。
+
+* 如果指定要还原的主机卷或文件系统，则所提供的参数将转换为包含该卷或文件系统的磁盘组。然后，适用于 UNIX 的 SnapDrive 将还原整个磁盘组。SnapDrive for UNIX 会冻结这些磁盘组中主机卷中的任何文件系统，并为这些磁盘组中包含 LUN 的所有存储系统卷创建一个 Snapshot 副本。
+* 如果指定的文件规范是 NFS 挂载点，则参数将转换为目录树。SnapDrive for UNIX 仅还原 NFS 目录树或文件。在目录树中， SnapDrive for UNIX 会删除在创建 Snapshot 副本之后创建的任何新 NFS 文件或目录。这样可以确保已还原目录树的状态与创建该树的 Snapshot 副本时相同。
+* 如果还原 LUN ， SnapDrive for UNIX 将还原您指定的 LUN 。
+* 如果还原直接在 LUN 上创建的文件系统，则 SnapDrive for UNIX 将还原 LUN 和文件系统。
+* 如果 Snapshot 副本包含跨越多个存储系统卷的存储实体，则可以还原该 Snapshot 副本中的任何实体。
+
+
+
+
+ a| 
+LUN （` -lun _file_spec_` ）
+ a| 
+LUN 的名称。您必须包含存储系统，卷和 LUN_ 的名称
+
+
+
+ a| 
+磁盘组（` -dg _file_spec_ c` ）或卷组（` -vg _file_spec_` ）
+ a| 
+磁盘或卷组的名称 _
+
+
+
+ a| 
+文件系统（` -fs _file_spec_` ）
+ a| 
+文件系统的名称
+
+
+
+ a| 
+文件（` -file _file_spec_` ）
+ a| 
+NFS 文件的名称
+
+
+
+ a| 
+主机卷（` -hostvol _file_spec_` ）或逻辑卷（` -lvol _file_spec_` ）
+ a| 
+主机或逻辑卷的名称。您必须同时提供请求的卷及其所在的磁盘组；例如 - hostvol dg3/Acct_volume_
+
+
+
+ a| 
+指定 Snapshot 副本的名称。如果您在命令提示符处提供的任何 ` file_spec_` 参数当前位于本地主机上，则可以使用简短形式的 Snapshot 副本名称。
+
+如果主机上不存在 ` file_spec_` 参数，则必须使用一个长形式的 Snapshot 副本名称，在此输入存储系统名称，卷和 Snapshot 副本名称。如果在命令提示符处为 Snapshot 副本使用较长名称，并且路径名称与存储系统和 / 或存储卷信息不匹配，则 SnapDrive for UNIX 将失败。以下是一个长 Snapshot 副本名称示例： `BIG_filer ： /vol/account_vol ： snap_20031115`
+
+有时，随 ` file_spec_` 参数提供的值可能在主机上不存在。例如，如果您已卸载文件系统或通过导出，删除或销毁操作删除了磁盘组，则该文件系统或磁盘组仍可作为 ` file_spec_` 参数的值。但是，该值将被视为不存在的值。SnapDrive for UNIX 可以还原此类不存在的 Snapshot 副本 ` _file_spec_` ，但您必须使用较长的 Snapshot 副本名称。
+
+当您还原跨越多个存储系统和卷且包含不存在的 ` file_spec_` 参数的 Snapshot 副本时， SnapDrive for UNIX 会允许命令行出现不一致。它不允许使用现有的 ` _file_spec_` 参数。如果您只想从多个存储系统 Snapshot 副本还原一个存储实体，则您指定的 Snapshot 副本不必与包含该存储实体的存储系统位于同一个存储系统上。
+
+相同 Snapshot 副本名称的简短格式将省略存储系统和存储系统卷名称，因此其显示为： ` Snap_20031415_`
+
+
+
+ a| 
+Snapshot 副本名称（` -snapname` ）
+ a| 
+` snap_name_`
+
+
+
+ a| 
+它可以是一个短名称，例如 ` mysnap1_` ，也可以是一个包含存储系统名称，卷和 Snapshot 副本名称的长名称。
+
+通常， NetApp 建议您使用短名称。如果 ` _file_spec_` 参数不存在：即，它不再存在于主机上；请参见 ` file_spec_` 参数的说明。然后，必须使用 Snapshot 副本的长名称。
+
+
+
+ a| 
+` 预留 | -noreserve`
+ a| 
+
+
+
+ a| 
+可选：希望 SnapDrive for UNIX 在还原 Snapshot 副本时创建空间预留。
+
+
+
+ a| 
+` 强制`
+ a| 
+~
+
+
+
+ a| 
+` -noprop`
+ a| 
+~
+
+
+
+ a| 
+可选：确定是否要覆盖现有 Snapshot 副本。如果没有此选项，则如果您提供现有 Snapshot 副本的名称，此操作将暂停。提供此选项并指定现有 Snapshot 副本的名称时，系统会提示您确认是否要覆盖此 Snapshot 副本。要防止 SnapDrive for UNIX 显示提示符，请同时包含 ` -noprop` 选项。（如果要使用 -noprop 选项，则必须始终包含 ` -force` 选项。）
+
+如果您尝试还原自上次 Snapshot 副本以来配置发生更改的磁盘组，则必须在命令提示符处包含 ` -force` 选项。例如，如果在创建 Snapshot 副本后更改了磁盘上数据的条带化方式，则需要包含 ` -force` 选项。如果没有 ` -force` 选项，此操作将失败。此选项会要求您确认要继续此操作，除非您在其中包含 ` -noprop` 选项。
+
+
+NOTE: 如果添加或删除了 LUN ，则还原操作将失败，即使包含 ` -force` 选项也是如此。
+
+
+
+ a| 
+`mntopts`
+ a| 
+~
+
+
+
+ a| 
+* 可选： * 如果要创建文件系统，可以指定以下选项：
+
+* 使用 ` -mntopts` 指定要传递到主机挂载命令的选项（例如，指定主机系统日志记录行为）。指定的选项存储在主机文件系统表文件中。允许的选项取决于主机文件系统类型。
+* ` -mntopts_` 参数是使用 mount 命令 ` -o` 标志指定的文件系统 ` 类型` 选项。请勿在 ` _-mntopts_` 参数中包含 -o 标志。例如，序列 -mntopts tmplog 会将字符串 ` -o tmplog` 传递到 `mount` 命令，并在新命令行中插入文本 tmplog 。
++
+
+NOTE: 如果为存储和快照操作传递任何无效的 ` _-mntopts_` 选项，则 SnapDrive for UNIX 不会验证这些无效的挂载选项。
+
+
+
+|===

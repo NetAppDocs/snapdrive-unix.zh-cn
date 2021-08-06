@@ -1,0 +1,39 @@
+---
+permalink: aix/concept_hostvolumes_and_filesystem_resize_operation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, volume, file, resize, operation, system 
+summary: SnapDrive storage resize 命令仅适用于存储系统磁盘组和卷组。如果要增加主机卷或文件系统的大小，必须使用 LVM 命令。 
+---
+= 主机卷和文件系统大小调整操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive storage resize` 命令仅适用于存储系统磁盘组和卷组。如果要增加主机卷或文件系统的大小，必须使用 LVM 命令。
+
+下表总结了可在不同平台上使用的 LVM 命令。有关这些命令的详细信息，请参见其手册页。
+
+|===
+| * 主机 * | * 卷管理器 * | * 主机卷 * | * 文件系统 * 
+
+
+ a| 
+AIX
+ a| 
+LVM
+ a| 
+`extendlv`
+ a| 
+`chfs`
+
+
+
+ a| 
+VxVM
+ a| 
+`vxassist`
+ a| 
+`fsadm`
+
+|===

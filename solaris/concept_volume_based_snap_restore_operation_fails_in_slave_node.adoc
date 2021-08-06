@@ -1,0 +1,25 @@
+---
+permalink: solaris/concept_volume_based_snap_restore_operation_fails_in_slave_node.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, snaprestore, fail, slave, mode 
+summary: 在 Solaris 上使用 SFRAC 时，从节点上基于卷的快照还原 \ （ vbsr ）操作失败。 
+---
+= 从节点中基于卷的快照还原操作失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 Solaris 上使用 SFRAC 时，从节点上基于卷的快照还原（ vbsr ）操作失败。
+
+SnapDrive for UNIX 显示以下错误消息。
+
+[listing]
+----
+Status call to SDU daemon failed
+----
+
+
+== 临时解决策
+
+在使用 ` -vbsr` 选项运行 `snap restore` 命令时，您必须确保在从节点上使用 ` -force` 以及 ` -noprop` 选项。

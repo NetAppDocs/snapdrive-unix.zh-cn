@@ -1,0 +1,32 @@
+---
+permalink: solaris/task_deleting_a_user_login_for_a_virtual_storage_console.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, user, login, virtual, storage, console 
+summary: 您可以通过执行 SnapDrive config delete 命令来删除虚拟接口的用户登录名。 
+---
+= 删除 Virtual Storage Console 的用户登录名
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过执行 SnapDrive config delete` 命令来删除虚拟接口的用户登录名。
+
+确保已在 vCenter 中配置 Virtual Storage Console 。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置 delete _appliation_name_*`
+
++
+` 设备名称 _` 是虚拟接口系统的名称或 IP 地址。
+
++
+SnapDrive for UNIX 会删除您指定的虚拟接口的用户名或密码登录信息。
+
++
+
+NOTE: 要使 SnapDrive for UNIX 能够访问虚拟接口，必须指定新的用户登录名。
+
+

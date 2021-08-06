@@ -1,0 +1,19 @@
+---
+permalink: solaris/concept_volume_optimization_in_an_fc_or_iscsi_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, colume, fc, iscsi, optimization 
+summary: 您可以在 FC 和 Internet 小型计算机系统接口 \ （ iSCSI\ ）环境中优化卷的使用情况，方法是在同一个卷上放置主机专用逻辑单元号 \ （ lun\ ）。 
+---
+= 在 FC 或 iSCSI 环境中进行卷优化
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在 FC 和 Internet 小型计算机系统接口（ iSCSI ）环境中通过在同一个卷上放置主机专用逻辑单元号（ Logical Unit Number ， LUN ）来优化卷的使用情况。
+
+此外，您还可以通过执行其他一些任务来优化卷：
+
+* 如果多个主机共享同一个存储系统，则每个主机都应具有自己的专用存储系统卷，以容纳连接到该主机的所有 LUN 。
+* 如果存储系统卷上存在多个 LUN ，则最好在 LUN 所在的专用卷上仅包含单个主机的 LUN 。不能包含任何其他文件或目录。
+

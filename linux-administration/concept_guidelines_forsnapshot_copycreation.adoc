@@ -1,0 +1,35 @@
+---
+permalink: linux-administration/concept_guidelines_forsnapshot_copycreation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, create 
+summary: 使用 SnapDrive for UNIX 创建 Snapshot 副本时，请考虑以下事项。每个卷最多可以保留 255 个 Snapshot 副本， SnapDrive for UNIX 仅支持其创建的 Snapshot 副本，无法创建根磁盘组的 Snapshot 副本以及启动设备或交换设备， SnapDrive for UNIX 需要执行冻结操作以保持崩溃一致性。 
+---
+= 创建 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive for UNIX 创建 Snapshot 副本时，请考虑以下事项： 每个卷最多可以保留 255 个 Snapshot 副本， SnapDrive for UNIX 仅支持其创建的 Snapshot 副本，无法创建根磁盘组的 Snapshot 副本以及启动设备或交换设备， SnapDrive for UNIX 需要执行冻结操作以保持崩溃一致性。
+
+输入用于创建 Snapshot 副本的命令时，请遵循以下准则：
+
+* 每个存储系统卷最多可以保留 255 个 Snapshot 副本。此限制由存储系统设置。总数可能因其他工具是否使用这些 Snapshot 副本而异。
++
+当 Snapshot 副本数量达到最大限制时， Snapshot 创建操作将失败。您必须先删除一些旧的 Snapshot 副本，然后才能使用 SnapDrive for UNIX 再使用。
+
+* SnapDrive for UNIX 不支持不创建的 Snapshot 副本。例如，它不支持从存储系统控制台创建的 Snapshot 副本，因为这种做法可能会导致文件系统内部不一致。
+* 不能使用 SnapDrive for UNIX 创建以下 Snapshot 副本：
++
+** 根磁盘组
++
+当您尝试为 LVM 创建根磁盘组的 Snapshot 副本时， Snapshot 创建操作将失败。
+
+** 启动设备或交换设备
++
+SnapDrive for UNIX 不会为系统启动设备或系统交换设备创建 Snapshot 副本。
+
+
+
+* 当 Snapshot 副本跨越多个存储系统或存储系统卷时， SnapDrive for UNIX 需要执行冻结操作以确保崩溃一致性。有关在未提供冻结操作的配置上创建 Snapshot 副本的信息。
+

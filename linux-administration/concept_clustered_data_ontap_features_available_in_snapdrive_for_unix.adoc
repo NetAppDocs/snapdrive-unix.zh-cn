@@ -1,0 +1,71 @@
+---
+permalink: linux-administration/concept_clustered_data_ontap_features_available_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, ontap, clustered 
+summary: SnapDrive for UNIX 5.0 及更高版本支持集群模式 Data ONTAP 的某些功能。 
+---
+= SnapDrive for UNIX 中提供的集群模式 Data ONTAP 功能
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 5.0 及更高版本支持集群模式 Data ONTAP 的某些功能。
+
+支持以下功能：
+
+* 端口集
+* vserver
+* 使用适当的配置变量处理因卷迁移而导致的错误
+* 崩溃状态一致的（一致性组） Snapshot 副本
+* AutoSupport
+* SVM 的原始设备映射（ Raw Device Mapping ， RDM ）逻辑单元号（ Logical Unit Number ， LUN ）
+* 使用 Operations Manager 控制台进行基于角色的访问控制（ Role-Based Access Control ， RBAC ）
+* 负载共享镜像（ LSM ）
++
+负载共享镜像可通过为客户端提供额外的只读访问来减少 FlexVol 卷的网络流量。您可以创建和管理负载共享镜像，以便将只读流量分发到 FlexVol 卷之外。负载共享镜像不支持无限卷。一组负载共享镜像由一个源卷组成，该源卷可以与一个或多个目标卷连接。该集中的每个负载共享镜像必须与该集中的源卷属于同一个 Storage Virtual Machine （ SVM ）。此外，还应在不同聚合上创建负载共享镜像，并由集群中的不同节点进行访问，以便对客户端请求进行适当的负载平衡。有关详细信息，请参见 link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["《集群模式 Data ONTAP 逻辑存储管理指南》"]。
+
++
+[NOTE]
+====
+** 集群模式 Data ONTAP 8.2 及更高版本的 ONTAP 支持 LSM 。但是，如果您使用的是集群模式 Data ONTAP 8.2.2 及更低版本，则必须使用 SnapDrive config set-cserver` 命令配置集群管理员。
+** 即使已配置集群管理员， ONTAP 8.2 之前的任何版本也不支持 LSM 。
+
+
+====
+* IP 空间
++
+IP 空间定义了一个不同的 IP 地址空间，可在其中创建 Storage Virtual Machine （ SVM ）。系统会为 IP 空间中的每个 SVM 维护一个路由表；不会发生跨 SVM 或跨 IP 空间的流量路由。有关详细信息，请参见 link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/home.html["《集群模式 Data ONTAP 网络管理指南》"]。
+
++
+
+NOTE: 只有在使用集群模式 Data ONTAP 8.3 时，才支持此功能。
+
+* MetroCluster 设置
++
+只有在使用集群模式 Data ONTAP 8.3 时，才支持此功能。有关 MetroCluster 设置的信息，请参见 link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-inst-cnfg-fabric/home.html["《集群模式 Data ONTAP MetroCluster 安装和配置指南》"]。
+
+* 用于在节点上预留空间以创建 FlexClone 文件和 FlexClone LUN 的令牌
++
+如果要使用此功能，您必须拥有 FlexClone 许可证。有关详细信息，请参见 link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["《集群模式 Data ONTAP 逻辑存储管理指南》"]。
+
+* 自定义 qtree 导出
++
+qtree 可以具有与父卷不同的 Exportfs 策略。
+
++
+
+NOTE: 只有在使用集群模式 Data ONTAP 8.2.1 及更高版本时，才支持此功能。
+
+* 联邦信息处理标准（ FIPS ）合规性
+
+
+* 相关信息 *
+
+link:concept_support_for_storage_system_rename.adoc["支持存储系统重命名"]
+
+link:concept_using_port_set_in_snapdrive_for_unix.adoc["使用 SnapDrive for UNIX 中的端口集"]
+
+link:concept_managing_volume_migration_using_snapdrive_for_unix.adoc["SnapDrive for UNIX 中的卷迁移"]
+
+link:concept_support_for_vserver.adoc["支持 SVM"]

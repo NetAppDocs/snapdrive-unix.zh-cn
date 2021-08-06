@@ -1,0 +1,15 @@
+---
+permalink: linux-installation-7mode/task_verifying_the_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verify, copy 
+summary: 您可以通过还原数据来验证 Snapshot 副本。 
+---
+= 验证 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过还原数据来验证 Snapshot 副本。
+
+有关详细信息，请参见 https://library.netapp.com/ecm/ecm_download_file/ECMLP2849340["《适用于 Linux 的 SnapDrive 5.3.2 for UNIX 管理指南》"]。

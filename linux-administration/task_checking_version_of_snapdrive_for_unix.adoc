@@ -1,0 +1,29 @@
+---
+permalink: linux-administration/task_checking_version_of_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, version, unix, command 
+summary: 您可以输入 SnapDrive version 命令来验证 SnapDrive for UNIX 的版本。 
+---
+= 检查适用于 UNIX 的 SnapDrive 版本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以输入 SnapDrive version 命令来验证 SnapDrive for UNIX 的版本。
+
+. 在 CLI 提示符处，输入以下命令：
++
+` * SnapDrive 版本 *`
+
++
+[listing]
+----
+# snapdrive version
+snapdrive Version 5.2
+snapdrive Daemon Version 5.2
+----
+
+
+
+NOTE: 此命令接受的唯一参数是 ` -v` ，它可显示其他版本详细信息。如果包括其他参数，则 SnapDrive for UNIX 将显示警告，然后显示版本号。

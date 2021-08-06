@@ -1,0 +1,172 @@
+---
+permalink: linux-administration/reference_stack_requirements.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, stack, host, nfs, manager, ontap, multistore, utilities, iscsi, fc 
+summary: SnapDrive for UNIX 需要主机操作系统，主机文件系统， NFS ，卷管理器， FC 或 iSCSI 主机实用程序，存储系统许可证， ONTAP 软件， MultiStore 软件和 Internet 协议 \ （ IP\ ）访问。SnapDrive for UNIX 还具有某些堆栈要求，必须满足这些要求。 
+---
+= 堆栈要求
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 需要主机操作系统，主机文件系统， NFS ，卷管理器， FC 或 iSCSI 主机实用程序，存储系统许可证， ONTAP 软件， MultiStore 软件和 Internet 协议（ IP ）访问。SnapDrive for UNIX 还具有某些堆栈要求，必须满足这些要求。
+
+
+
+== 主机端实体
+
+下面列出了主机端实体：
+
+* 主机操作系统
+* 卷管理器
+* 文件系统
+* Linux Host Utilities
+
+
+
+
+== 用于支持 RDM LUN 的子系统端实体
+
+下面列出了子系统端实体：
+
+* 子操作系统
+* 卷管理器
+* 文件系统
+* 如果协议为 iSCSI ，则仅使用 Linux iSCSI 主机实用程序即可满足要求
+
+
+
+
+== 适用于 UNIX 的 SnapDrive 堆栈
+
+您必须在` napdrive.conf `s文件中为 ` napdrive.conf` ， ` fsttype_` ， ` default-transport_` 和 ` vmtype_` 变量输入可接受的值。您必须验证输入的值是否已安装并在主机系统中运行。
+
+|===
+| 主机平台 | 默认传输类型 | 多路径类型 | FSType | vmtype 
+
+
+ a| 
+Linux
+ a| 
+FCP
+ a| 
+无
+ a| 
+ext4
+ a| 
+LVM
+
+
+
+ a| 
+iSCSI
+ a| 
+无
+ a| 
+ext4
+ a| 
+LVM
+
+
+
+ a| 
+FCP
+ a| 
+nativempio
+ a| 
+ext4
+ a| 
+LVM
+
+
+
+ a| 
+iSCSI
+ a| 
+nativempio
+ a| 
+ext4
+ a| 
+LVM
+
+
+
+ a| 
+FCP
+ a| 
+无
+ a| 
+ext3
+ a| 
+LVM
+
+
+
+ a| 
+iSCSI
+ a| 
+无
+ a| 
+ext3
+ a| 
+LVM
+
+
+
+ a| 
+FCP
+ a| 
+nativempio
+ a| 
+ext3
+ a| 
+LVM
+
+
+
+ a| 
+iSCSI
+ a| 
+nativempio
+ a| 
+ext3
+ a| 
+LVM
+
+|===
+
+NOTE: SnapDrive for UNIX 不支持 Ext2 文件系统。
+
+* 如果您使用的是 FCP 和 iSCSI 存储堆栈，则 SnapDrive 将仅支持 FCP 存储堆栈。
++
+对于 AIX ， SnapDrive 不支持 iSCSI 存储堆栈。
+
+* 已安装主机操作系统以及适用于 Linux 的相应修补程序。
+* 适用于 Linux 的卷管理器为 LVM2 。
+* Host Utilities 安装在 Linux 中
+* 存储系统上已安装 ONTAP 软件。
+* 存储系统上安装了 MultiStore 软件，用于安装 vFiler 单元。
+* 主机和存储系统之间可以使用 Internet 协议（ IP ）访问。
+
+
+NetApp 会不断修改主机实用程序和组件。您可以使用互操作性表跟踪此更改，其中包含在 SAN 环境中使用 NetApp 产品的最新信息。
+
+存储系统许可证和 MultiStore 许可证构成存储系统实体。
+
+
+
+== 存储系统许可要求
+
+* FC ， iSCSI 或 NFS 许可证，具体取决于您的配置
+* FlexClone 许可证
+* 存储系统上的 SnapRestore 许可证
+
+
+* 相关信息 *
+
+xref:concept_unable_to_select_a_storage_stack.adoc[无法选择存储堆栈]
+
+xref:concept_when_to_use_the_snapdrive_configuration_wizard.adoc[SnapDrive 配置向导]
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp 互操作性"]

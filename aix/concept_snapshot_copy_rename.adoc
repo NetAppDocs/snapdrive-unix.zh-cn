@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_snapshot_copy_rename.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, copy, rename, snapshot 
+summary: 您可以使用 snapshot snap rename 命令更改 Snapshot 副本的名称。跨多个存储系统或存储系统卷的 Snapshot 副本也可以重命名。 
+---
+= Snapshot 副本重命名
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 `snapshot snap rename` 命令更改 Snapshot 副本的名称。跨多个存储系统或存储系统卷的 Snapshot 副本也可以重命名。

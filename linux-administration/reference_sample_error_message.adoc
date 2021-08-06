@@ -1,0 +1,23 @@
+---
+permalink: linux-administration/reference_sample_error_message.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, message, unix 
+summary: 这是 SnapDrive for UNIX 中的一条错误消息。 
+---
+= 错误消息示例
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+这是 SnapDrive for UNIX 中的一条错误消息。
+
+以下消息指示命令提示符出现问题。消息 ID 为 0001-3777 。
+
+[listing]
+----
+Return Code: 43
+
+0001-377 Command error: Disk group name dg2 is already in use or
+conflicts with another entity.
+----

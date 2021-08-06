@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_methods_fordisplaying_storageinformation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, information, display 
+summary: 为了便于显示有关存储的信息， SnapDrive for UNIX 为 SnapDrive storage show 命令提供了多种格式。 
+---
+= 显示存储信息的方法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+为了便于显示有关存储的信息， SnapDrive for UNIX 为 SnapDrive storage show` 命令提供了多种格式。
+
+storage show 操作分为以下几类：
+
+* 显示有关特定 LUN 的信息。
+* 列出有关可用于特定存储系统或存储系统卷的 LUN 的信息。
+* 显示与指定参数关联的 LUN 的信息。
++
+这些参数可以包括 NFS 实体，文件系统，主机卷或磁盘组。如果在命令提示符处使用 ` 详细` 选项，则 SnapDrive for UNIX 将提供详细输出，例如显示存储层次结构，包括备用 LUN 。
+
+* 显示主机已知设备的相关信息。
+* 显示主机已知的所有设备和 LVM 实体的信息。
+* 将资源的状态显示为共享或专用。
+

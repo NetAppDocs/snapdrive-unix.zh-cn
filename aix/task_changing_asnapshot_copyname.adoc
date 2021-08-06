@@ -1,0 +1,33 @@
+---
+permalink: aix/task_changing_asnapshot_copyname.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, name, change 
+summary: 您可以使用 SnapDrive snap rename 命令更改 Snapshot 副本的名称。Snapshot 重命名操作会将源 Snapshot 副本的名称更改为目标参数指定的名称。 
+---
+= 更改 Snapshot 副本名称
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap rename` 命令更改 Snapshot 副本的名称。Snapshot 重命名操作会将源 Snapshot 副本的名称更改为目标参数指定的名称。
+
+在执行此语法之前，您必须了解此命令中提及的选项，关键字和参数。
+
+.步骤
+. 输入以下命令以更改 Snapshot 副本名称：
++
+` * SnapDrive snap rename （ -snapname] _old_long_snap_name_ _new_snap_name_ （ -force （ -noprompt]） *`
+
+
+
+以下是 SnapDrive snap rename` 命令的示例。第一个命令行包含 ` -force` 选项，因为名为 `new snapshot` copy 的 Snapshot 副本已存在。在第二个示例中，两个 Snapshot 副本名称都使用较长的名称形式，但它们都将解析为同一个存储系统卷。
+
+[listing]
+----
+snapdrive snap rename -force filer1:/vol/vol1:oldsnap new snapshot
+----
+[listing]
+----
+snapdrive snap rename filer1:/vol/vol1:FridaySnap filer1:/vol/vol1:Snap040130
+----

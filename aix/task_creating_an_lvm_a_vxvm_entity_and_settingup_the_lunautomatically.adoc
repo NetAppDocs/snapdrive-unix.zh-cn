@@ -1,0 +1,43 @@
+---
+permalink: aix/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lv, lun, create, automatically 
+summary: 您可以在主机上创建文件系统，逻辑卷或磁盘组等实体，并让 SnapDrive for UNIX 自动创建关联的 LUN 。 
+---
+= 创建 LVM 实体并自动设置 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在主机上创建文件系统，逻辑卷或磁盘组等实体，并让 SnapDrive for UNIX 自动创建关联的 LUN 。
+
+* 使用 `host_lvm_fSpec` 参数，您可以指定是要创建文件系统，逻辑卷还是磁盘组。此参数具有三种常规格式。使用的格式取决于要创建的实体。
++
+要创建文件系统，请使用以下格式： ` -fs file_spec. -fstype type] [-fsopts options] [-mntopts options] [-noperatest] [ -hostvol file_spec] [ -dg_name]`
+
++
+要创建逻辑卷或主机卷，请使用以下格式：
+
++
+` * （ -hostvol file_spec） _file_spec_ （ -dg _dg_name_） *`
+
++
+要创建磁盘或卷组，请使用以下格式：
+
++
+` * — dg_dg_name__*`
+
+* 如果创建文件系统，还可以包括主机卷规格，磁盘组规格或这两种规格，以指示文件系统所在的主机卷和磁盘组。如果不包括这些规范，则 SnapDrive for UNIX 会自动为主机卷和磁盘组生成名称，或者同时为这两者生成名称。
+* 指定主机卷时， SnapDrive for UNIX 将创建一个串联主机卷。虽然这是 SnapDrive for UNIX 在创建主机卷时支持的唯一格式，但它确实允许您操作现有的条带化主机卷。
+
+
+.步骤
+. 在命令行中，输入以下命令：
++
+` * SnapDrive storage create _host_vxvm_fspec_ -filervol _lor_filer_path_ -dgsize "-igroup _ig_name [ig_name ...]__ [ ｛ -reserve _ -noreserve ｝ ]*`
+
++
+SnapDrive for UNIX 将创建您指定的主机实体，并在您指定的存储系统上为其创建 LUN 。它会执行与每个 LUN 的主机准备和发现以及 LUN 与主机实体的映射和连接相关的所有任务。
+
+

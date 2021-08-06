@@ -1,0 +1,178 @@
+---
+permalink: solaris/task_enabling_multipathing.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, enable, multipathing 
+summary: 要在 SnapDrive for UNIX 中使用多路径，必须完成包括安装和启动 HBA 在内的步骤。如果您使用的是非 NetApp 多路径解决方案，则必须从 HBA 供应商的网站下载软件和应用程序包。 
+---
+= 启用多路径
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要在 SnapDrive for UNIX 中使用多路径，必须完成包括安装和启动 HBA 在内的步骤。如果您使用的是非 NetApp 多路径解决方案，则必须从 HBA 供应商的网站下载软件和应用程序包。
+
+您的系统必须运行当前版本的 FC 和 iSCSI 系统组件。
+
+http://mysupport.netapp.com/matrix["NetApp 互操作性表工具"]
+
+.步骤
+. 在安装相应的 Host Utilities 软件之前，请先安装支持的 HBA 。
++
+
+NOTE: 适用于 UNIX 的 SnapDrive 支持多供应商 HBA 。
+
+. 启动 HBA 服务。
++
+如果 HBA 服务未运行，则在运行 SnapDrive for UNIX 命令时会显示以下错误消息，例如 SnapDrive storage create` 和 SnapDrive config prepare LUNs` ：
+
++
+[listing]
+----
+0001-876 Admin error: HBA assistant not found
+----
++
+您必须验证所需数量的路径是否已启动且正在运行。您可以使用 Host Utilities 软件附带的 `sanlun` 实用程序验证路径。例如，在 FC 多路径配置中，您可以使用 `sanlun fcp show adapter -v` 命令。
+
++
+在以下示例中，有两个 HBA 端口（ fcd0 和 fcd1 ）连接到运行正常的主机（端口状态）。您只能有一个 HBA 或 iSCSI 启动程序，并且必须通过为目标 LUN 提供多个路径来配置多路径。
+
++
+[listing]
+----
+# sanlun fcp show adapter -v
+adapter name: fcd0
+WWPN: 50060b000038c428
+WWNN: 50060b000038c429
+driver name: fcd
+model: A6826A
+model description: Fibre Channel Mass Storage Adapter
+(PCI/PCI-X)
+serial number: Not Available
+hardware version: 3
+driver version: @(#) libfcd.a HP Fibre Channel
+ISP 23xx & 24xx Driver B.11.23.04
+/ux/core/isu/FCD/kern/src/common/wsio/fcd_init.c:Oct 18
+2005,08:19:50
+firmware version: 3.3.18
+Number of ports: 1 of 2
+port type: Fabric
+port state: Operational
+supported speed: 2 GBit/sec
+negotiated speed: 2 GBit/sec
+OS device name: /dev/fcd0
+adapter name: fcd1
+WWPN: 50060b000038c42a
+WWNN: 50060b000038c42b
+driver name: fcd
+model: A6826A
+model description: Fibre Channel Mass Storage Adapter
+(PCI/PCI-X)
+serial number: Not Available
+hardware version: 3
+driver version: @(#) libfcd.a HP Fibre Channel
+ISP 23xx & 24xx Driver B.11.23.04
+/ux/core/isu/FCD/kern/src/common/wsio/fcd_init.c:Oct 18
+2005,08:19:50
+firmware version: 3.3.18
+Number of ports: 2 of 2 port type: Fabric
+port state: Operational
+supported speed: 2 GBit/sec
+negotiated speed: 2 GBit/sec
+OS device name: /dev/fcd1
+----
++
+如果在主机上启用了多路径，则可以为同一 LUN 显示多个路径。您可以使用 `sanlun lun show all` 命令验证路径。在以下示例中，您可以找到指向同一 LUN 的多个路径（`鱼： /vol/vol1/lun` ）：
+
++
+[listing]
+----
+# sanlun lun show all
+filer: lun-pathname device filename adapter protocol lun size      lun state
+fish: /vol/vol1/lun /dev/rdsk/c15t0d0 fcd0 FCP       10m (10485760) GOOD
+fish: /vol/vol1/lun /dev/rdsk/c14t0d0 fcd1 FCP       10m (10485760) GOOD
+----
+. 在 FC 配置中，使用交换机分区配置对主机 HBA 端口和目标端口进行分区。
+. 安装并设置相应的 FC 或 iSCSI 交换机。
+. 检查 SnapDrive for UNIX 堆栈要求。
+. 安装或升级适用于 UNIX 的 SnapDrive 。
+. 验证 SnapDrive for UNIX 安装。
+. 找到 `snapdrive.conf` 文件路径。
+. 在 `snapdrive.conf` 文件中配置以下配置变量：
++
+** ` 多路径类型 _`
+** `` default-transport_
+** ` fsttype_`
+** ` vmtype_`
++
+对于每台主机，多路径类型，传输类型，文件系统和卷管理器类型彼此相关。下表介绍了所有可能的组合：
+
+
+
++
+|===
+| 主机平台 | 默认传输类型 | 多路径类型 | FSType | vmtype 
+
+
+ a| 
+Solaris
+ a| 
+iSCSI （硬件）
+ a| 
+无
+ a| 
+UFS
+ a| 
+无
+
+
+
+ a| 
+iSCSI （软件）
+ a| 
+MPxIO
+ a| 
+UFS
+ a| 
+无
+
+
+
+ a| 
+无
+ a| 
+UFS
+ a| 
+Svm
+ a| 
+FCP
+
+
+
+ a| 
+DMP
+ a| 
+VxFS
+ a| 
+VxVM
+ a| 
+FCP
+
+|===
++
+上表提供了 ` multipathing-type_` ， ` default-transport_` ， ` fsttype_` 和 ` vmtype_` 配置变量支持的值。
+
+. 对于 SFRAC 环境，运行 SnapDrive config check cluster` 命令。
+. 保存 `snapdrive.conf` 文件。
++
+SnapDrive for UNIX 会在每次启动此文件时自动对其进行检查。要使更改生效，必须重新启动 SnapDrive for UNIX 守护进程。
+
+
+
+* 相关信息 *
+
+http://mysupport.netapp.com["NetApp 支持"]
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp 互操作性"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148981["《 Solaris Host Utilities 6.1 安装和设置指南》"]

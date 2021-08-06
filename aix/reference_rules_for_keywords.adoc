@@ -1,0 +1,20 @@
+---
+permalink: aix/reference_rules_for_keywords.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rule, keyword 
+summary: SnapDrive for UNIX 使用关键字指定 SnapDrive for UNIX 操作的目标。 
+---
+= 关键字规则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 使用关键字指定 SnapDrive for UNIX 操作的目标。
+
+SnapDrive for UNIX 使用关键字来指定与要使用的主机和存储系统对象对应的字符串序列。以下规则适用于 SnapDrive for UNIX 关键字：
+
+* 在每个关键字前面添加一个连字符（ - ）。
+* 请勿将关键字串联在一起。
+* 输入整个关键字和连字符，而不是缩写。
+

@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/task_viewing_the_list_of_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, list, config, storage, command 
+summary: 您可以在主机系统中使用 SnapDrive config list 命令查看所有存储系统。 
+---
+= 查看存储系统列表
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在主机系统中使用 SnapDrive config list` 命令查看所有存储系统。
+
+. 输入以下命令：
++
+` * SnapDrive 配置列表 *`
+
++
+[listing]
+----
+snapdrive config list
+username appliance name appliance type
+-----------------------------------------------------
+root      roaster     StorageSystem
+----
+

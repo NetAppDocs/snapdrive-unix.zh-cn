@@ -1,0 +1,168 @@
+---
+permalink: linux-administration/concept_automatic_detection_of_host_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, detection, host, automatic 
+summary: SnapDrive for UNIX 会自动检测某些命令的主机实体配置。一些 snap storage 命令只需要主机实体的名称。在这些情况下，您无需指定主机实体的类型。 
+---
+= 自动检测主机实体
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 会自动检测某些命令的主机实体配置。一些 `snap storage` 命令只需要主机实体的名称。在这些情况下，您无需指定主机实体的类型。
+
+以下命令已启用自动检测：
+
+* `s存储删除`
+* `s存储调整大小`
+* `snap create`
+* `snap restore`
+* `snap connect`
+* `snap list`
+
+
+存在主机实体时， SnapDrive for UNIX 会自动检测主机实体的类型。在这种情况下，您只需要提供主机实体的名称，而不必指定类型。SnapDrive `snap` 命令和某些 `storage` 命令也只需要主机实体的名称；您不必指定类型。
+
+对于 SnapDrive 4.1 及更高版本，自动检测命令需要额外的时间，因为它会收集所有存储资源的详细信息。如果要加快响应速度，请使用 SnapDrive for UNIX 命令指定文件规范。
+
+您可以通过运行 SnapDrive storage delete` 命令为存储删除操作启用自动检测。
+
+* 示例 1 ： *
+
+[listing]
+----
+snapdrive storage delete host_dg my_fs -full
+----
+在此示例中，系统会自动检测到 `host_dg` 和 `my_fs` 。
+
+* 示例 2 ： *
+
+[listing]
+----
+snapdrive storage delete mydg -fs myfs -full
+----
+在此示例中，系统会自动检测到 `mydg` 磁盘组。
+
+您可以通过运行 SnapDrive storage resize` 命令为存储调整大小操作启用自动检测。
+
+* 例如 * ：
+
+[listing]
+----
+[root@lnx197-132 ~]# snapdrive storage resize mydg23 -addlun -growby 10m
+Auto detecting the type of filespec 'mydg23' in progress ... detected as disk group
+        discovering filer LUNs in disk group mydg23...done
+        LUN bart:/vol/voldm/mydg23-1_SdLun ... created
+
+        mapping new lun(s) ... done
+        discovering new lun(s) ... done.
+        initializing LUN(s) and adding to disk group mydg23...done
+Disk group mydg23 has been resized
+----
+您可以通过运行 SnapDrive snap create` 命令来为 snap create 操作启用自动检测。
+
+* 例如 * ：
+
+[listing]
+----
+root@lnx197-132 ~]# snapdrive snap create mydg22 mydg23 /mnt/mnt12 -snapname new_snap
+Auto detecting the type of filespec 'mydg22' in progress ... detected as disk group
+Auto detecting the type of filespec 'mydg23' in progress ... detected as disk group
+Auto detecting the type of filespec '/mnt/mnt12 ' in progress ... detected as file system
+
+Starting snap create /dev/mapper/mydg22, /dev/mapper/mydg23, /mnt/mnt12
+  WARNING:  DO NOT CONTROL-C!
+            If snap create is interrupted, incomplete snapdrive
+                 generated data may remain on the filer volume(s)
+                 which may interfere with other snap operations.
+Successfully created snapshot new_snap on bart:/vol/voldm
+
+        snapshot new_snap contains:
+        disk group mydg22
+        disk group mydg23
+        disk group dg121 containing host volumes
+                lv121 (filesystem: /mnt/mnt12)
+----
+您可以通过运行 SnapDrive snap connect` 命令为 snap connect 操作启用自动检测。
+
+* 例如 * ：
+
+[listing]
+----
+[root@lnx197-132 ~]# snapdrive snap connect mydg22 xxx mydg23 yyy -snapname bart:/vol/voldm:snap_1
+Auto detecting the type of filespec 'mydg22' in progress ... detected as disk group
+Auto detecting the type of filespec 'xxx' in progress ...
+        xxx does not exist - Taking xxx as a destination to fspec mydg22Auto detecting the type of filespec 'mydg23' in progress ... detected as disk group
+Auto detecting the type of filespec 'yyy' in progress ...
+        yyy does not exist - Taking yyy as a destination to fspec mydg23
+ connecting mydg22:
+        LUN copy mydg22_SdLun_0 ... created
+                 (original: bart:/vol/voldm/mydg22_SdLun)
+
+        mapping new lun(s) ... done
+
+ connecting mydg23:
+        LUN copy mydg23_SdLun_1 ... created
+                 (original: bart:/vol/voldm/mydg23_SdLun)
+
+        mapping new lun(s) ... done
+        discovering new lun(s) ... done
+        Importing xxx, yyy
+Successfully connected to snapshot bart:/vol/voldm:snap_1
+        disk group xxx
+        disk group yyy
+----
+您可以通过运行 SnapDrive snap restore` 命令来为快照还原操作启用自动检测。
+
+* 例如 * ：
+
+[listing]
+----
+snapdrive snap restore bart:/vol/voldm/lun44 /mnt/fs3 fs5_SdDg/fs5_SdHv fs4_SdDg -snapname bart:/vol/voldm:toi_snap
+
+        Auto detection of file_spec(s) in progress ...
+               - 'bart:/vol/voldm/lun44' detected as LUN.
+               - '/mnt/fs3' detected as file system.
+               - 'fs5_SdDg/fs5_SdHv' detected as logical volume.
+               - 'fs4_SdDg' detected as disk group.
+        Starting to restore /dev/mapper/fs4_SdDg, /mnt/fs3, /dev/mapper/fs5_SdDg-fs5_SdHv, bart:/vol/voldm/lun44
+         WARNING:  This can take several minutes.
+           DO NOT CONTROL-C!
+           If snap restore is interrupted, the filespecs
+           being restored may have inconsistent or corrupted
+           data.
+       For detailed progress information, see the log file /var/log/sd-recovery.log
+           Importing fs4_SdDg, fs3_SdDg, fs5_SdDg
+           Successfully restored snapshot toi_snap on bart:/vol/voldm
+       disk group fs4_SdDg containing host volumes
+               fs4_SdHv (filesystem: /mnt/fs4)
+       disk group fs3_SdDg containing host volumes
+               fs3_SdHv (filesystem: /mnt/fs3)
+       disk group fs5_SdDg containing host volumes
+               fs5_SdHv (filesystem: /mnt/fs5)
+       raw LUN: bart:/vol/voldm/lun44
+----
+对于不正确的文件规范， SnapDrive 不支持自动检测 Snap 连接和 Snap 还原操作。
+
+您可以通过运行 SnapDrive snap list` 命令来为快照列表操作启用自动检测。
+
+* 例如 * ：
+
+[listing]
+----
+root@lnx197-132 ~]# snapdrive snap list -snapname bart:/vol/voldm:snap_1
+
+snap name                            host                   date         snapped
+--------------------------------------------------------------------------------
+bart:/vol/voldm:snap_1           lnx197-132.xyz.com Apr  9 06:04 mydg22 mydg23 dg121
+[root@lnx197-132 ~]# snapdrive snap list mydg23
+Auto detecting the type of filespec 'mydg23' in progress ... detected as disk group
+
+snap name                            host                   date         snapped
+--------------------------------------------------------------------------------
+bart:/vol/voldm:snap_1           lnx197-132.xyz.com Apr  9 06:04 mydg22 mydg23 dg121
+bart:/vol/voldm:all                  lnx197-132.xyz.com Apr  9 00:16 mydg22 mydg23 fs1_SdDg
+bart:/vol/voldm:you                  lnx197-132.xyz.com Apr  8 21:03 mydg22 mydg23
+bart:/vol/voldm:snap_2                  lnx197-132.xyz.com Apr  8 18:05 mydg22 mydg23
+----

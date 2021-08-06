@@ -1,0 +1,21 @@
+---
+permalink: solaris/concept_support_for_datamotion_for_vfiler.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, vfiler, netappdatamotion 
+summary: SnapDrive for UNIX 支持 DataMotion for vFiler 。在执行 DataMotion for vFiler 时，转换阶段 SnapDrive for UNIX 操作可能会失败的情况很少。 
+---
+= 支持 NetAppDataMotion for vFiler
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持 DataMotion for vFiler 。在执行 DataMotion for vFiler 时，转换阶段 SnapDrive for UNIX 操作可能会失败的情况很少。
+
+
+NOTE: 如果 SnapDrive for UNIX 操作在 vFiler 迁移的转换阶段失败，则必须在完成 DataMotion for vFiler 操作后执行 SnapDrive for UNIX 操作。
+
+您必须在 `snapdrive.conf` 文件中设置 ` _datamotion-cutover-wait _` 变量，才能执行 SnapDrive for UNIX 操作。
+
+
+NOTE: 如果在 vFiler 迁移的转换阶段运行基于卷的 `snap restore` 命令，则快照还原操作可能会失败。迁移完成后，如果 vFiler 在目标上可用，则运行基于卷的快照还原操作会使 LUN 脱机。您必须手动将 LUN 重新联机。

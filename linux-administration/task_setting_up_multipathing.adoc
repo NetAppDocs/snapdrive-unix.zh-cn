@@ -1,0 +1,116 @@
+---
+permalink: linux-administration/task_setting_up_multipathing.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, multipathing, configure 
+summary: 您可以通过设置多路径在主机和存储系统之间配置多个网络路径。SnapDrive for UNIX 支持在多路径环境中使用别名。您需要确保在 /etc/multipath.conf 文件中为映射器设备配置了正确的别名。 
+---
+= 设置多路径
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过设置多路径在主机和存储系统之间配置多个网络路径。SnapDrive for UNIX 支持在多路径环境中使用别名。您需要确保在 ` /etc/multipath.conf` 文件中为映射器设备配置了正确的别名。
+
+.步骤
+. 主机重新启动后，多路径守护进程应运行，如以下示例所示：
++
+[listing]
+----
+root@lnx197-123 ~]# ps -ef | grep multipathd
+root      5713     1  0 22:44 ?        00:00:00 /sbin/multipathd
+root      5739  1783  0 22:44 pts/1    00:00:00 grep multipathd
+----
++
+如果多路径守护进程未运行，请确保在重新启动后重新启动该守护进程。您可以运行以下命令来启动多路径守护进程：
+
++
+[listing]
+----
+[root@lnx197-123 ~]# chkconfig --level 345 multipathd on
+----
++
+
+NOTE: 下表列出了一些支持在多路径环境中使用别名的 SnapDrive 操作。
+
++
+|===
+| 操作 | 别名支持 | 设备类型 
+
+
+ a| 
+从主主机上的主主机进行 Snap Create 和 Restore （ SFSR 和 VBSR ）
+ a| 
+是的。
+ a| 
+别名设备
+
+
+
+ a| 
+从主卷或二级卷克隆
+ a| 
+是的。
+ a| 
+未别名的设备
+
+
+
+ a| 
+还原到备用
+ a| 
+是的。
+ a| 
+未别名的设备
+
+
+
+ a| 
+从二级卷还原
+ a| 
+是的。
+ a| 
+未别名的设备
+
+|===
++
+** 如果您使用的是 Red Hat Enterprise Linux （ RHEL ） 6.4 或更高版本或 Oracle Linux 6.4 或更高版本，则无需在 ` /etc/multipath.conf` 文件中设置任何值。
++
+但是，您仍必须维护一个虚拟的 ` /etc/multipath.conf` 文件，该文件可以为空，也可以包含列入黑名单的信息和别名（如果需要）。
+
+** 如果您使用的是 SUSE Linux Enterprise Server （ SLES ） 11 SP3 或更高版本，则无需维护 ` /etc/multipath.conf` 文件。
++
+但是，如果需要，您可以使用 ` /etc/multipath.conf` 文件来包含黑名单信息和别名。
+
+
+
+. 将字符串 `Hitachi HUS103073FL3800_V3WTLS7XIA` 替换为命令 `sCSI - id -Gus /block/<LD>` 的输出，其中 `LD` 是本地块设备名称。
++
+
+NOTE: 对于某些本地块设备， `scsis_id` 命令可能不会返回任何字符串。在这种情况下，必须使用 devnode 指令将本地块设备列入黑名单。
+
+. 通过在 ` /etc/security/limits.conf` 文件中附加以下行，增加进程可在主机中打开的文件描述符的数量：
++
+[listing]
+----
+soft nofile 4096
+       hard nofile 4096
+----
+. 输入以下命令，确保在系统重新启动后始终加载 Linux SG 驱动程序：
++
+[listing]
+----
+echo "modprobe sg" >> /etc/rc.local
+----
+. 重新启动主机以确保设置处于活动状态。
++
+
+NOTE: lvm2-2.02.17-7.27.8 和 ` filter_` 设置必须分配为 = ` <"r=/dev/.\*/by-path/.*"` ， ` "r//dev/.\*/by-id/.*"` ， ` "r=/dev/cciss/.\*"` ， "lvm `……` …
+
+
+
+* 相关信息 *
+
+http://mysupport.netapp.com["NetApp 支持"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["《 Linux Unified Host Utilities 7.1 安装指南》"]

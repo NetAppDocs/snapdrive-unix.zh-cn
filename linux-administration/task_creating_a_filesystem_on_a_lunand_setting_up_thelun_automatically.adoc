@@ -1,0 +1,60 @@
+---
+permalink: linux-administration/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, create, file 
+summary: 您可以使用适用于 UNIX 的 SnapDrive 在 LUN 上创建文件系统。SnapDrive for UNIX 会自动创建关联的 LUN 。 
+---
+= 在 LUN 上创建文件系统并自动设置 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于 UNIX 的 SnapDrive 在 LUN 上创建文件系统。SnapDrive for UNIX 会自动创建关联的 LUN 。
+
+.步骤
+. 在命令行中，输入以下命令：
++
+` * SnapDrive storage create -fs _file_spec_ -nolvm （ -fstype 类型）【 -fsopts options】 【 -mntets options】 【 -noperatest] -filervol _llong_filer_path_ -lunsize <-igroup _name[ig_name ...]_ ｛ -reserve _eserve _ves* ｝`
+
++
+SnapDrive for UNIX 将创建您指定的文件系统，并在您指定的存储系统上为其创建 LUN 。它会执行与 LUN 的主机准备和发现以及 LUN 与主机实体的映射和连接相关的所有任务。
+
+
+
+
+
+== 示例
+
+* 直接在 LUN 上创建 100 MB 文件系统： *
+
+[listing]
+----
+# snapdrive storage create -fs /mnt/acct1 -filervol acctfiler:/vol/vol1 -lunsize 100m -nolvm
+----
+* 在不使用任何卷管理器的原始 LUN 上创建文件系统： *
+
+[listing]
+----
+# snapdrive storage create -fs /mnt/vxfs2 -fstype vxfs -lun
+snoopy:/vol/vol1/lunVxvm2 -lunsize 50m -nolvm
+LUN snoopy:/vol/vol1/lunVxvm2 ... created
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+LUN to device file mappings:
+- snoopy:/vol/vol1/lunVxvm2 => /dev/vx/dmp/Disk_1
+file system /mnt/vxfs2 created
+----
+* 在不使用任何卷管理器的 RDM LUN 上创建文件系统： *
+
+[listing]
+----
+# snapdrive storage create -fs /mnt/fs -fstype ext3 -lun
+lech:/vol/vol_1/lun1 -lunsize 50m -nolvm
+LUN lech:/vol/vol1/lun1 ... created
+exporting new lun(s) to Guest OS ... done
+discovering new lun(s) ... done
+LUN to device file mappings:
+- lech:/vol/vol1/lun1 => /dev/sdb
+file system /mnt/fs created
+----

@@ -1,0 +1,24 @@
+---
+permalink: linux-administration/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, limitations, lun 
+summary: 使用 SnapDrive 时，您必须了解与 LUN 相关的限制。 
+---
+= 由 SnapDrive 管理的 LUN 的限制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive 时，您必须了解与 LUN 相关的限制。
+
+* 由 SnapDrive 管理的 LUN 不能用作启动磁盘或系统磁盘。
+* Linux 主机对可创建的 LUN 数量有操作系统限制。
++
+在这些主机上创建 SnapDrive 配置检查 lun` 命令时，您可以运行 lun config check lun 命令。使用此命令可以确定可以创建的 LUN 数量。
+
+* SnapDrive 不支持在 LUN 和 Snapshot 副本名称的长格式中使用冒号（：）。
++
+可以在长 Snapshot 副本名称的组件之间或 LUN 的存储系统名称和存储系统卷名称之间使用冒号。例如， `Toaster/vol/vol1 ： snap1` 是典型的长 Snapshot 名称，而 `Toaster/vol/vol1/luna` 是典型的长 LUN 名称。
+
+

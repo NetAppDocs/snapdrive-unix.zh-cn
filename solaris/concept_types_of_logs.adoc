@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_types_of_logs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, log, type 
+summary: SnapDrive for UNIX 支持各种类型的日志文件，这些日志文件有助于您在 SnapDrive for UNIX 未按预期工作时进行故障排除。 
+---
+= 日志类型
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持各种类型的日志文件，这些日志文件有助于您在 SnapDrive for UNIX 未按预期工作时进行故障排除。
+
+* 审核日志
++
+SnapDrive for UNIX 会将所有命令及其返回代码记录在审核日志中。SnapDrive for UNIX 会在您启动命令时创建一个条目，并在命令完成后创建另一个条目。后面的条目既包括命令的状态，也包括完成时间。
+
+* 恢复日志
++
+如果中断，某些 SnapDrive for UNIX 操作可能会使系统处于不一致或不可用的状态。如果用户终止程序，或者主机在操作期间崩溃，则可能会发生这种情况。恢复日志包含 Snap 还原操作的步骤。本文档将记录所采取的步骤和所取得的进展，以便技术支持能够帮助您完成手动恢复过程。
+
+* 跟踪日志
++
+SnapDrive for UNIX 会报告有助于诊断问题的信息。如果您遇到问题， NetApp 技术支持可能会请求此日志文件。
+
++
+SnapDrive 4.0 for UNIX 引入了 SnapDrive for UNIX 守护进程服务。要运行 SnapDrive for UNIX 命令，必须运行守护进程。必须对每个命令执行守护进程跟踪，即使命令并行运行也是如此。日志文件的位置和名称是 ` /var/log/sd-trace.log` 。这些跟踪文件只有命令专用的跟踪条目。用于执行守护进程的跟踪日志记录在另一个跟踪文件 ` /var/log/sd-daemon-trace.log` 中。
+
+

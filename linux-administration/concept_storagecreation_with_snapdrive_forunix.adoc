@@ -1,0 +1,17 @@
+---
+permalink: linux-administration/concept_storagecreation_with_snapdrive_forunix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, create, lun, host, volume, file 
+summary: 您可以使用适用于 UNIX 的 SnapDrive 创建 LUN ， LUN 上直接创建的文件系统，磁盘组，主机卷以及 LUN 上创建的文件系统。 
+---
+= 使用 SnapDrive for UNIX 创建存储
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用适用于 UNIX 的 SnapDrive 创建 LUN ， LUN 上直接创建的文件系统，磁盘组，主机卷以及 LUN 上创建的文件系统。
+
+SnapDrive for UNIX 会自动处理设置与这些实体关联的 LUN 所需的所有任务，包括准备主机，执行发现映射，创建实体以及连接到您创建的实体。您还可以指定 SnapDrive for UNIX 使用哪些 LUN 为您请求的实体提供存储。
+
+您无需同时创建 LUN 和存储实体。如果单独创建 LUN ，则可以稍后使用现有 LUN 创建存储实体。

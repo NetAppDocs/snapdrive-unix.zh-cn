@@ -1,0 +1,86 @@
+---
+permalink: solaris/concept_volume_based_snaprestore_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, snaprestore, command 
+summary: 本节介绍使用基于卷的 SnapRestore 的命令和选项。 
+---
+= 基于卷的 SnapRestore 命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本节介绍使用基于卷的 SnapRestore 的命令和选项。
+
+在 snap restore 命令行界面中添加了 ` -vbsr` 选项，用于选择基于卷的 SnapRestore 。使用以下命令语法使用基于卷的 SnapRestore 执行还原：
+
+[listing]
+----
+snapdrive snap restore {-lun | -dg | -vg | -hostvol |
+-lvol | -fs |-file} file_spec [file_spec ...] [{-lun | -dg |
+-vg | -hostvol | -lvol | -fs -file} file_spec [file_spec ...]
+...] -snapname snap_name [-force [-noprompt]][{-reserve |
+-noreserve}] \[-devicetype \{shared \| dedicated\}\]
+[-vbsr [execute | preview]]
+----
+如果在 ` -vbsr` 中未提供任何参数，则默认输出为预览选项的输出。使用 ` -verbose` 选项，可以详细输出用户可能会覆盖的所有必需检查。未提供 -verbose 选项时的默认输出将显示失败的检查的结果。
+
+` -DeviceType Shared` 在 ` -vbsr` 中提供专用 选项支持。这样，可以通过基于卷的 SnapRestore 支持主机集群范围的共享主机文件规范。这与支持单个文件快照还原相同。
+
+如果您不希望在执行基于卷的 SnapRestore 时出现任何确认消息，则可以在执行 `snap restore -vbsr execute` 命令时使用 ` -noprop` 和 ` -force` 选项。下表根据您提供的选项介绍了 SnapDrive for UNIX 的行为。
+
+|===
+| 序列号 | -vbsr execute | 【强制】 | -noproPrompt | 结果 
+
+
+ a| 
+1.
+ a| 
+否
+ a| 
+不适用
+ a| 
+不适用
+ a| 
+预览模式为默认模式。完成所有检查，并为每个检查生成报告。
+
+
+
+ a| 
+2.
+ a| 
+是的。
+ a| 
+否
+ a| 
+否
+ a| 
+所有检查均已完成。如果用户可以覆盖的任何强制检查失败， SnapDrive for UNIX 将显示一条错误消息。
+
+
+
+ a| 
+3.
+ a| 
+是的。
+ a| 
+是的。
+ a| 
+否
+ a| 
+所有检查均已完成。如果任何强制检查失败， SnapDrive for UNIX 将显示一条错误消息。如果用户可以覆盖的任何检查失败， SnapDrive for UNIX 将提示您。
+
+
+
+ a| 
+4.
+ a| 
+是的。
+ a| 
+是的。
+ a| 
+是的。
+ a| 
+所有检查均已完成。如果任何强制检查失败， SnapDrive for UNIX 将显示一条错误消息。如果用户可以覆盖的任何检查失败， SnapDrive for UNIX 不会提示您。
+
+|===

@@ -1,0 +1,25 @@
+---
+permalink: solaris/concept_guidelines_for_using_the_disconnect_command_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, command, host, cluster 
+summary: 以下是在主机集群环境中使用 SnapDrive storage disconnect 命令的准则。 
+---
+= 在主机集群环境中使用 disconnect 命令的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是在主机集群环境中使用 SnapDrive storage disconnect` 命令的准则：
+
+* 可以从主机集群中的任何节点执行 SnapDrive storage disconnect` 命令。
+* 要成功执行存储断开连接操作，以下任一项均应为 true ：
++
+** 存储实体应在主机集群中的所有节点之间共享。
+** LUN 应映射到主机集群中的所有节点。
+
+
+* 您可以使用 ` -DeviceType dedicated` 选项或在命令中完全省略 ` -DeviceType` 选项将存储实体与特定节点断开连接，因为默认值为 dedicated 。
+* 如果共享存储实体或 LUN 已使用 `d指定` 选项断开连接，或者专用存储实体或 LUN 已使用 `s共享` 选项断开连接，则 SnapDrive storage disconnect` 命令将显示错误。
+* SnapDrive for UNIX 会在主节点上执行 SnapDrive storage disconnect` 命令。它会销毁存储实体，断开所有非主节点上的 LUN ，然后断开 LUN 与主机集群中主节点的连接。如果在此过程中出现任何错误消息，则存储断开操作将失败。
+

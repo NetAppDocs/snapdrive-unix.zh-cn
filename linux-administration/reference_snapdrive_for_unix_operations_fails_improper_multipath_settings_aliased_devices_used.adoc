@@ -1,0 +1,39 @@
+---
+permalink: linux-administration/reference_snapdrive_for_unix_operations_fails_improper_multipath_settings_aliased_devices_used.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, unix, fail, multipath, settings, device, error, sdu, rhel, command 
+summary: 在 RHEL 5.11 中运行 storage show 或 snap create 命令时，该命令会显示以下错误消息。对 SDU 守护进程的状态调用失败，并且在 SLES11SP3 主机中使用– nolvm 选项调用，而不涉及主机 LVM 。 
+---
+= 由于使用别名设备时多路径设置不正确， SnapDrive for UNIX 操作失败。
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 RHEL 5.11 中运行 `storage show` 或 `snap create` 命令时，该命令将显示以下错误消息：
+
+`s对 SDU 守护进程的状态调用失败，并且在 SLES11SP3 主机中使用 -nolvm 选项调用，而不涉及主机 LVM 。`
+
+* * SnapDrive storage show -all` 命令无法显示正确的别名 *
++
+SnapDrive for UNIX 不会为映射器设备显示正确的别名。如果在 `multipath.conf` 文件中的 multipaths ｛ ｝ 部分不正确，则会发生此问题描述。
+
+* * 临时解决策 *
++
+您必须确保在多路径设置中输入右括号。
+
+* 为映射器设备 * 设置了别名后， * SnapDrive 操作失败，并显示以下错误
++
+[listing]
+----
+Snapdrive could not import /dev/mapper/lvm_fs_SdDg:   device-mapper: resume ioctl failed: Invalid argument
+  Unable to resume lvm_fs_SdDg-lvm_fs_SdHv (252:4)   1 logical volume(s) in volume group "lvm_fs_SdDg" now active”
+----
++
+如果与设备的别名映射不正确，则会出现此问题描述。
+
+* * 临时解决策 *
++
+执行 `multipath-ll` 并确保与设备的别名映射正确无误，然后执行 SnapDrive for UNIX 操作。
+
+

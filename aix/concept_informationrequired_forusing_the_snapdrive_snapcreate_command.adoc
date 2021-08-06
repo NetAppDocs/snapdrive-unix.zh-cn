@@ -1,0 +1,133 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snap, create, command, information, required 
+summary: 创建 Snapshot 副本时，应确定要捕获的存储实体并指定 Snapshot 副本的名称。 
+---
+= 使用 SnapDrive snap create 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+创建 Snapshot 副本时，应确定要捕获的存储实体并指定 Snapshot 副本的名称。
+
+下表提供了使用 SnapDrive snap create` 命令时所需的信息：
+
+|===
+| 要求 / 选项 | 参数 
+
+
+ a| 
+确定要在 Snapshot 副本中捕获的存储实体的类型。您可以通过一个命令行指定直接在 LUN 上创建的 NFS 实体， LUN ，文件系统以及 LVM 实体。
+
+请使用相应的参数提供该实体的名称。这是 `file_specs` 参数的值。
+
+* 如果您指定的磁盘组具有主机卷或文件规范，则参数将转换为存储系统上的一组磁盘组。SnapDrive for UNIX 会创建包含此实体的整个磁盘组，即使此实体是主机卷或文件系统也是如此。
+* 如果指定的文件规范是 NFS 挂载点，则参数将转换为存储系统卷上的目录树。
+* 如果指定 LUN 或具有文件系统的 LUN ，则参数将转换为 LUN 或具有文件系统的 LUN 。
++
+
+NOTE: 您不能使用存储实体指定特殊字符，例如 ` -vg` ， ` -DG` ， ` -FS` ， ` -lvol` 和 ` -hostvol` 。但是， ` -FS` ， ` -lvol` 和 ` -hostvol` 等存储实体允许使用斜线（ / ）。
+
+
+
+
+
+ a| 
+LUN （` -lun file_specs` ）
+ a| 
+LUN 的名称
+
+您必须包含存储系统，卷和 LUN 的名称。
+
+
+
+ a| 
+磁盘组（` -dg file_specs` ）或卷组（` -vg file_specs` ）
+ a| 
+磁盘或卷组的名称
+
+
+
+ a| 
+文件系统（` -fs file_specs` ）
+ a| 
+文件系统名称
+
+
+
+ a| 
+主机卷（` -hostvol file_specs` ）或逻辑卷（` -lvol file_specs` ）
+ a| 
+主机或逻辑卷的名称
+
+
+NOTE: 您必须同时提供请求的卷及其所在的磁盘组；例如， ` -hostvol dg3/Acct_volume` 。
+
+
+
+ a| 
+Snapshot 副本名称（` -snapname snap_name` ）
+ a| 
+Snapshot copy_name
+
+
+
+ a| 
+指定 Snapshot 副本的名称。此名称可以是名称的较长版本，其中包含具有 Snapshot 副本名称的存储系统和卷，也可以是 Snapshot 副本名称的较短版本。
+
+
+NOTE: 您必须确保为 `snapname` 指定的值不超过 200 个字符。
+
+
+
+ a| 
+` 无关`
+ a| 
+~
+
+
+
+ a| 
+可选：要在创建 Snapshot 副本时为不具有依赖写入的存储实体创建 Snapshot 副本， SnapDrive for UNIX 会为各个存储实体创建崩溃状态一致的 Snapshot 副本，但不会尝试使这些实体彼此保持一致。
+
+
+
+ a| 
+` 强制`
+ a| 
+~
+
+
+
+ a| 
+` -noprop`
+ a| 
+~
+
+
+
+ a| 
+可选：确定是否要覆盖现有 Snapshot 副本。如果没有此选项，则如果您提供现有 Snapshot 副本的名称，此操作将暂停。提供此选项并指定现有 Snapshot 副本的名称时，此命令将提示您确认是否要覆盖此 Snapshot 副本。要防止 SnapDrive for UNIX 显示提示符，请同时包含 ` -noprop` 选项。（如果要使用 ` -noprop` 选项，则必须始终包含 ` -force` 选项。）
+
+
+
+ a| 
+` - fstype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+` -vmtype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+可选：指定用于 SnapDrive for UNIX 操作的文件系统和卷管理器的类型。
+
+|===

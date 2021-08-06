@@ -1,0 +1,21 @@
+---
+permalink: solaris/task_resetting_the_snap_reserve_option_by_using_filerview.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, reset, snap, reserve, option, filerview 
+summary: 在 FC 或 iSCSI 环境中使用 Data ONTAP 时，应使用 FilerView 将快照预留选项重置为 0% 。 
+---
+= 使用 FilerView 重置快照预留选项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 FC 或 iSCSI 环境中使用 Data ONTAP 时，应使用 FilerView 将 `snap reserve` 选项重置为 0% 。
+
+.步骤
+. 打开一个 FilerView 会话，该会话将连接到存储系统，其中包含要更改其 `snap reserve` 设置的卷。
+. 在 FilerView 主菜单中，导航到 * 卷 * > * 快照 * > * 配置 * 。
+. 在 * 卷 * 字段中，选择要更改其 `snap reserve` 设置的卷。
+. 在 * Snapshot Reserve* 字段中，输入 0 。
+. 单击 * 应用 * 。
+

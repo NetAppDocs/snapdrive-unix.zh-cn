@@ -1,0 +1,20 @@
+---
+permalink: solaris/concept_configuring_sd_admin_in_operations_manager.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configure, operations, console, manager, sd 
+summary: Operations Manager 控制台管理员可以创建 SD-admin 用户。 
+---
+= 在 Operations Manager 控制台中配置 SD-admin
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Operations Manager 控制台管理员可以创建 SD-admin 用户。
+
+Operations Manager 控制台管理员创建一个名为 sd-admin 的用户，该用户能够对全局组（全局 `Dfm.core.AccessCheck` ）执行核心访问检查。在 Operations Manager 控制台管理员配置了 SD-admin 用户后，您必须手动将凭据信息发送给 SnapDrive for UNIX 管理员。有关使用 Operations Manager 控制台配置用户和角色的详细信息，请参见 _Operations Manager 控制台管理指南和联机帮助。
+
+
+NOTE: 您可以使用任何名称来代替 SD-admin ；但是，最好使用 SD-admin 。
+
+要在 Operations Manager 控制台中创建角色，请选择 * 设置 * > * 角色 * 。在 SD-admin 配置页面中， Operations Manager 控制台管理员必须将全局组上的 `Dfm.Database.Write` 功能分配给 sd-admin-role ，以便 SnapDrive for UNIX 可以在 Operations Manager 控制台中刷新存储实体。

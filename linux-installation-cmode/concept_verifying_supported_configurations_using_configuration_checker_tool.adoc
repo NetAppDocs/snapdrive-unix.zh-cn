@@ -1,0 +1,13 @@
+---
+permalink: linux-installation-cmode/concept_verifying_supported_configurations_using_configuration_checker_tool.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verfiy, host, configuration, checker, tool 
+summary: 使用 SnapDrive for UNIX 之前，配置检查程序工具可帮助您确认 Linux 主机中是否提供了所有必要的组件和正确的版本。 
+---
+= 使用配置检查程序工具验证 Linux 主机配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive for UNIX 之前，配置检查程序工具可帮助您确认 Linux 主机中是否提供了所有必要的组件和正确的版本。

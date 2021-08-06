@@ -1,0 +1,23 @@
+---
+permalink: aix/concept_secure_daemon_communication_using_https.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, secure, daemon, https 
+summary: 您可以使用 HTTPS 进行安全的 Web 服务和守护进程通信。可以通过在 SnapDrive.conf 文件中设置一些配置变量，并生成和安装自签名证书或 CA 签名证书来启用安全通信。 
+---
+= 使用 HTTPS 安全守护进程通信
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 HTTPS 进行安全的 Web 服务和守护进程通信。通过在 `snapdrive.conf` 文件中设置一些配置变量，并生成和安装自签名证书或 CA 签名证书，可以启用安全通信。
+
+您必须在 `snapdrive.conf` 文件中指定的路径处提供自签名或 CA 签名证书。要使用 HTTPS 进行通信，必须在 `snapdrive.conf` 文件中设置以下参数：
+
+* `use-https-to-sdU-daemon=on`
+* `contact-https-port-sdU-daemon = 4095`
+* `sdu-daemon-certificate-path=/opt/NetApp/SnapDrive/SnapDrive.pem`
+
+
+
+NOTE: SnapDrive 5.0 for UNIX 及更高版本支持 HTTPS 用于守护进程通信。默认情况下，此选项设置为 `off` 。

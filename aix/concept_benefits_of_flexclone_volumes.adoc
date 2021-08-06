@@ -1,0 +1,21 @@
+---
+permalink: aix/concept_benefits_of_flexclone_volumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, benefits, flexcone, volumes 
+summary: FlexClone 卷可提供数据管理和性能优势。 
+---
+= FlexClone 卷的优势
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FlexClone 卷可提供数据管理和性能优势。
+
+* 简化数据管理并降低风险。
+* 灵活性和更高的利用率。
++
+您可以使用 FlexClone 卷为其他用户创建多个数据副本，而无需授予他们对原始数据的访问权限。
+
+* 比 LUN 克隆速度更快。
+

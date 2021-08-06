@@ -1,0 +1,58 @@
+---
+permalink: linux-administration/concept_volume_managers_on_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, manager, native, lvm2 
+summary: 在 Linux 上，卷管理器为原生 LVM2 。 
+---
+= SnapDrive for UNIX 上的卷管理器
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 Linux 上，卷管理器为原生 LVM2 。
+
+下表介绍了主机平台上的卷管理器：
+
+|===
+| 主机 | 卷管理器 | 卷或磁盘组 | 逻辑卷的位置 | 多路径设备的位置 
+
+
+ a| 
+RHEL 4 和 RHEL 5
+ a| 
+原生 LVM2
+ a| 
+卷组 ` _vg_`
+ a| 
+` /dev/mapper/dgname-lvolname`
+ a| 
+` /dev/mpath /dev/mapper /dev/dm`
+
+
+
+ a| 
+RHEL 6
+ a| 
+原生 LVM2
+ a| 
+卷组 `vg`
+ a| 
+` /dev/mapper/dgname-lvolname`
+ a| 
+` /dev/mapper /dev/dm`
+
+
+
+ a| 
+SLES 10 和 SLES 11
+ a| 
+原生 LVM2
+ a| 
+卷组 `vg`
+ a| 
+` /dev/mapper/dgname-volname`
+ a| 
+` /dev/mapper /dev/dm`
+
+|===

@@ -1,0 +1,34 @@
+---
+permalink: solaris/concept_changing_the_defaults_for_the_audit_logs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, audit, log, default 
+summary: 您可以使用 SnapDrive.conf 文件更改审核日志文件的日志记录参数，例如审核日志文件的最大大小和旧审核文件的最大数量。 
+---
+= 更改审核日志的默认值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 `snapdrive.conf` file 更改审核日志文件的日志记录参数，例如审核日志文件的最大大小和旧审核文件的最大数量。
+
+使用 `snapdrive.conf` 文件可以为审核日志记录设置以下值：
+
+* 审核日志文件的最大大小。默认大小为 20K 。在文件大小达到 `snapdrive.conf` 文件中指定的值后， SnapDrive for UNIX 将通过在名称中添加任意数字来重命名当前审核日志文件。然后，使用 `audit-log-file` 值指定的名称启动新的审核文件。
+* SnapDrive for UNIX 保存的最大旧审核文件数。默认值为 2. 。
+
+
+* 审核日志文件示例： *
+
+[listing]
+----
+2501: Begin uid=0 gid=1 15:35:02 03/12/04 snapdrv snap create -dg
+rdg -snapname snap_rdg1
+2501: Status=0 15:35:07 03/12/04
+2562: Begin uid=0 gid=1 15:35:16 03/12/04 snapdrv snap create -dg
+rdg -snapname snap_rdg1
+2562: FAILED Status=4 15:35:19 03/12/04
+----
+此示例中的第一对行显示了一个成功的操作，如 "Status=0" 行所示。
+
+第二对线表示操作失败。返回代码 "4" 表示 "`已存在。` 查看这两个命令行，您可以看到第一个创建了名为 `snap_rdg1` 的 Snapshot 副本。第二行尝试执行相同操作，但名称已存在，因此操作失败。

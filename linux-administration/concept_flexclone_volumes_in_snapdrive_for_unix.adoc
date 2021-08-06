@@ -1,0 +1,13 @@
+---
+permalink: linux-administration/concept_flexclone_volumes_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, flexicone, volumes, ontap, lun 
+summary: SnapDrive for UNIX 支持基于 Data ONTAP FlexClone 技术的 FlexClone 卷。FlexClone 卷是父灵活卷的时间点副本。FlexClone 卷比 LUN 克隆速度更快，它们可以让您灵活地创建多个数据副本。 
+---
+= SnapDrive for UNIX 中的 FlexClone 卷
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持基于 Data ONTAP FlexClone 技术的 FlexClone 卷。FlexClone 卷是父灵活卷的时间点副本。FlexClone 卷比 LUN 克隆速度更快，它们可以让您灵活地创建多个数据副本。

@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_command_to_use_torename_a_snapshotcopy.html 
+sidebar: sidebar 
+keywords: snap, snapshot, command, rename, snapshot, copy 
+summary: 使用 snapshot snap rename 命令重命名 Snapshot 副本。 
+---
+= 用于重命名 Snapshot 副本的命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 `snapshot snap rename` 命令重命名 Snapshot 副本。

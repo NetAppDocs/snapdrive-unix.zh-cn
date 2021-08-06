@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_snapshot_copies_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, copy, snapshot 
+summary: 通过 SnapDrive for UNIX ，您可以为主机数据创建 Snapshot 副本。 
+---
+= 在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以为主机数据创建 Snapshot 副本。

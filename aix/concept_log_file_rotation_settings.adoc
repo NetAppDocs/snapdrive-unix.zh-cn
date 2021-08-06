@@ -1,0 +1,47 @@
+---
+permalink: aix/concept_log_file_rotation_settings.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, file, log, rotation, setting 
+summary: 为 SnapDrive.conf 文件中的变量指定的值会影响日志文件的轮换。 
+---
+= 日志文件轮换设置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您在 `snapdrive.conf` 文件中为变量指定的值会影响日志文件的轮换。
+
+您在 `snapdrive.conf` 文件中指定的值可启用日志文件自动轮换。如有必要，您可以通过编辑 `snapdrive.conf` 变量来更改这些值。以下选项会影响日志文件的轮换：
+
+* `audit-log-max-size`
+* `audit-log-save`
+* `trace-max-size`
+* `trace-log-max-save`
+* `recovery-log-save`
+
+
+通过自动日志轮换， SnapDrive for UNIX 会保留旧的日志文件，直到达到 `audit-log-save` ， `trace-log-save` 和 `recovery-log-save` 变量中指定的限制为止。然后，它将删除最旧的日志文件。
+
+SnapDrive for UNIX 通过在创建文件时为文件分配数字 "0" 来跟踪最旧的文件。每次创建新文件时，它都会将分配给每个现有日志文件的数量增加 1 。当日志文件的编号达到保存值时， SnapDrive for UNIX 将删除该文件。
+
+* 示例： * 此示例使用 `1s` 命令显示有关系统上日志文件的信息。
+
+根据这些设置，您将在日志文件中看到以下信息。
+
+[listing]
+----
+# ls -l /var/log/sd*
+-rw-r--r-- 1 root other 12247 Mar 13 13:09 /var/log/sd-audit.log
+-rw-r--r-- 1 root other 20489 Mar 12 16:57 /var/log/sd-audit.log.0
+-rw-r--r-- 1 root other 20536 Mar 12 03:13 /var/log/sd-audit.log.1
+-rw-r--r-- 1 root other 3250 Mar 12 18:38 /var/log/sd-recovery.log.1
+-rw-r--r-- 1 root other 6250 Mar 12 18:36 /var/log/sd-recovery.log.2
+-rw-r--r-- 1 root other 6238 Mar 12 18:33 /var/log/sd-recovery.log.3
+-rw-r--r-- 1 root other 191704 Mar 13 13:09 /var/log/sd-trace.log
+-rw-r--r-- 1 root other 227929 Mar 12 16:57 /var/log/sd-trace.log.0
+-rw-r--r-- 1 root other 213970 Mar 12 15:14 /var/log/sd-trace.log.1
+-rw-r--r-- 1 root other 261697 Mar 12 14:16 /var/log/sd-trace.log.2
+-rw-r--r-- 1 root other 232904 Mar 12 14:15 /var/log/sd-trace.log.3
+-rw-r--r-- 1 root other 206905 Mar 12 14:14 /var/log/sd-trace.log.4
+----

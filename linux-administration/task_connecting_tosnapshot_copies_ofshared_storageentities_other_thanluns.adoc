@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, storage, lun, command, connect 
+summary: 您可以使用 SnapDrive snap connect 命令连接到 LUN 以外的共享存储实体的 Snapshot 副本。 
+---
+= 连接到 LUN 以外的共享存储实体的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap connect` 命令连接到 LUN 以外的共享存储实体的 Snapshot 副本。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive snap connect _fspec_set_ [_fspec_set..._] -snapname _long_snap_name_*`
+
++
+` * _fspec_set_ [_fspec_set..._] -snapname _long_snap_name_ [-DeviceType shared] [-sparate]*`
+
++
+在此语法中， ` fspec_set_` 为： ` ｛ -dg _ -fs ｝ _src_file_spect [dest_file_spec_ ] [-destdg _dgename_]``
+
+

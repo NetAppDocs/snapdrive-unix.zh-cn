@@ -1,0 +1,43 @@
+---
+permalink: aix/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, mount, unmount, modify, file, system 
+summary: 某些 SnapDrive for UNIX 命令可以挂载或卸载发生原因文件系统。当命令执行挂载文件系统的操作时， SnapDrive for UNIX 会将文件系统的名称添加到主机平台的标准系统文件中。如果卸载文件系统的操作， SnapDrive for UNIX 将从系统文件中删除此名称。这不会造成问题；但是，了解系统文件何时修改会很有用。 
+---
+= SnapDrive 命令有时会导致挂载或卸载文件系统以及修改系统文件
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+某些 SnapDrive for UNIX 命令可以挂载或卸载发生原因文件系统。当命令执行挂载文件系统的操作时， SnapDrive for UNIX 会将文件系统的名称添加到主机平台的标准系统文件中。如果卸载文件系统的操作， SnapDrive for UNIX 将从系统文件中删除此名称。这不会造成问题；但是，了解系统文件何时修改会很有用。
+
+系统文件的名称因主机平台而异。下表列出了主机平台及其系统文件。
+
+|===
+| * 主机 * | * 系统文件 * 
+
+
+ a| 
+AIX
+ a| 
+`etc/filesystems`
+
+|===
+以下任一命令均可挂载文件系统：
+
+* SnapDrive snap restore`
+* SnapDrive snap connect`
+* SnapDrive storage create`
+* SnapDrive 主机连接`
+* SnapDrive 存储连接`
+
+
+以下命令执行可卸载文件系统的操作：
+
+* SnapDrive snap restore`
+* SnapDrive snap disconnect`
+* SnapDrive storage disconnect`
+* SnapDrive storage delete`
+* SnapDrive 主机断开连接`
+

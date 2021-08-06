@@ -1,0 +1,35 @@
+---
+permalink: linux-administration/concept_snapdrive_for_unix_command_displays_could_not_check_access_error.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, display, access, error, object 
+summary: 如果 SnapDrive for UNIX 对存储对象具有正确的写入访问权限，则它可能会显示错误。 
+---
+= SnapDrive for UNIX 命令显示 Could not check access error
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 SnapDrive for UNIX 对存储对象具有正确的写入访问权限，则它可能会显示错误。
+
+它会显示以下错误消息：
+
+[listing]
+----
+0002-332 Admin error: Could not check SD.Storage.Write access on LUN storage_array1:/vol/vol1/lun1for user unix-host\root
+ on Operations Manager server(s) ops-mngr-server1 reason: Invalid resource specified.  Unable to find its Id on Operations Manager server ops-mngr-server1
+----
+此问题的解决方案是：
+
+. 验证是否已在 Operations Manager 上刷新存储资源。如果未在 Operations Manager 上刷新存储资源，则
++
+** 手动执行 `dFM host discover <storage-system>` 。
+** 将 ｛ Global ， dfm.Database.Write ｝ 功能分配给 `sd-admin`
++
+在这种情况下， SnapDrive for UNIX 会自动刷新 Operations Manager 并重新发出访问检查。
+
+
+
+
+
+SnapDrive for UNIX 使用的默认刷新间隔为 15 秒（` _dft-rbac - retry-休眠 - 秒 _` ）， SnapDrive for UNIX 使用的默认重试次数为 12 （` _dfm - rbac - 重试次数 _` ）。如果您仍收到上述错误消息，请将 ` dft-rbac -retries _` 配置变量的值增加到 14 ， 16 ， 18... 等，以匹配您的环境。Operations Manager 所需的刷新间隔取决于存储系统中的 LUN 和卷数量。

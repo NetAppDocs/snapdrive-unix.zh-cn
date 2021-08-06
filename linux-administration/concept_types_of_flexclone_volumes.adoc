@@ -1,0 +1,17 @@
+---
+permalink: linux-administration/concept_types_of_flexclone_volumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, flexcone, volume, temporary, restricted, unrestricted 
+summary: 根据 SnapDrive for UNIX 使用 FlexClone 卷的方式， FlexClone 卷可以分为临时卷或通用卷。 
+---
+= FlexClone 卷的类型
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根据 SnapDrive for UNIX 使用 FlexClone 卷的方式， FlexClone 卷可以分为临时卷或通用卷。
+
+* * 受限或临时 FlexClone 卷 * ：此 FlexClone 卷（在 `snap connect` 期间创建）主要用于验证数据。不允许在此 FlexClone 卷上通过 SnapDrive for UNIX 执行配置和 Snapshot 操作（除 `snap disconnect` 之外）。
+* * 无限制或通用 FlexClone 卷 * ：此 FlexClone 卷（在 `snap connect` 期间创建）也可用作配置和 Snapshot 操作的后端，就像普通灵活卷一样。您可以对此 FlexClone 卷执行所有常规 SnapDrive 操作。
+

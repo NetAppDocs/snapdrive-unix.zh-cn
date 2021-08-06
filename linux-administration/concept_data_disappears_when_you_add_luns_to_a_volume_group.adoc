@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/concept_data_disappears_when_you_add_luns_to_a_volume_group.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, lun, volume, group, disappear 
+summary: 将现有 LUN 添加到卷组时， LUN 上的数据将消失。 
+---
+= 将 LUN 添加到卷组时，数据将消失
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+将现有 LUN 添加到卷组时， LUN 上的数据将消失。
+
+如果将现有 LUN 添加到由 LVM 管理的卷组，然后执行 `pvcreate` 命令，则数据将被覆盖。
+
+
+
+== 临时解决策
+
+如果需要现有 LUN 上的数据，则必须将该数据迁移到使用 LVM 创建的 LUN 。完成以下步骤。
+
+. 创建新 LUN 。
+. 使用 `pvcreate` ， `vgcreate` 和 `lvcreate` 命令将 LUN 置于 LVM 控制之下。
+. 将数据从现有 LUN 复制到您创建并置于 LVM 控制之下的 LUN 。
+

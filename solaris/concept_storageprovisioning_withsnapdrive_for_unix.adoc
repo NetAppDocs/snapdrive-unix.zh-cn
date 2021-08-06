@@ -1,0 +1,37 @@
+---
+permalink: solaris/concept_storageprovisioning_withsnapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, operation 
+summary: SnapDrive for UNIX 可提供端到端存储管理。您可以使用主机逻辑卷管理器（ Logical Volume Manager ， LVM ）或不使用主机逻辑卷管理器（ Logical Volume Manager ， LVM ）来配置主机到存储系统的存储，并对该存储进行管理。 
+---
+= SnapDrive for UNIX 中的存储操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 可提供端到端存储管理。您可以使用主机逻辑卷管理器（ LVM ）配置主机到存储系统的存储，并管理该存储，无论是否使用主机逻辑卷管理器（ Logical Volume Manager ， LVM ）。
+
+SnapDrive for UNIX 可用于执行以下存储操作：
+
+* 通过创建 LUN ，文件系统，逻辑卷和磁盘组来创建存储。
+* 显示有关存储的信息。
+* 连接到存储。
+* 调整存储大小。
+* 断开与存储的连接。
+* 删除存储。
+
+
+使用 SnapDrive storage create` 命令创建存储时， SnapDrive for UNIX 会自动执行设置 LUN 所需的所有任务，包括准备主机，执行发现映射以及连接到您创建的每个 LUN 。您可以使用 SnapDrive storage show` 命令显示有关您创建的 LUN ，磁盘组，主机卷，文件系统或 NFS 目录树的信息。
+
+您可以使用 SnapDrive storage connect` 命令将存储映射到新位置。使用此命令，您可以从与创建现有存储时使用的主机不同的主机访问现有存储。使用 SnapDrive storage connect` 命令可以使现有 LUN ，文件系统，磁盘组和逻辑卷可在新主机上访问。如果要将存储实体从新主机备份到另一主机，则此操作可能会很有用。
+
+使用 SnapDrive storage resize` 命令，您可以通过以下方式增加存储大小：
+
+* 指定希望主机实体达到的目标大小
+* 输入要用于增加存储的设置字节数
+
+
+如果您不再希望存储映射到其当前位置，可以使用 SnapDrive storage disconnect` 命令。此命令将删除从一个或多个主机位置到为该位置创建存储的 LUN 的映射。
+
+如果要删除存储，可以使用 SnapDrive storage delete` 命令。SnapDrive for UNIX 将删除您指定的所有主机端实体及其所有底层实体以及与其关联的 LUN 。

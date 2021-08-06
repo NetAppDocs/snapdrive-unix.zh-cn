@@ -1,0 +1,23 @@
+---
+permalink: linux-administration/task_disabling_consistency_group_snapshots.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disable, group, snapshot, consistency, configure 
+summary: 您可以将 SnapDrive for UNIX 配置为禁用一致性组 Snapshot 副本。 
+---
+= 禁用一致性组 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将 SnapDrive for UNIX 配置为禁用一致性组 Snapshot 副本。
+
+.步骤
+. 输入 ...
++
+` * SnapDrive snap create _-FS_ /mnt/fs3 _-snapname_ nfs_snap _-nodfilerfence_*`
+
++
+已成功禁用一致性组 Snapshot 副本。
+
+

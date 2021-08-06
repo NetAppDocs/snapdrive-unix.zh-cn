@@ -1,0 +1,29 @@
+---
+permalink: aix/concept_fc_or_iscsi_configuration_checks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fc, iscsi, configuration, check 
+summary: 虽然光纤通道协议（ FCP ）和 Internet 小型计算机系统接口（ iSCSI ）曾经作为单独的实用程序分发，但您可以在 AIX Host Utilities 中找到 FCP 和 iSCSI 配置支持。 
+---
+= FC 或 iSCSI 配置检查
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+虽然光纤通道协议（ FCP ）和 Internet 小型计算机系统接口（ iSCSI ）曾作为单独的实用程序分发，但您可以在 AIX Host Utilities 中找到 FCP 和 iSCSI 配置支持。
+
+如果您的配置使用 FC 或 iSCSI ，则必须在安装 SnapDrive for UNIX 之前完成以下任务：
+
+* 确保已在主机系统上安装 AIX Host Utilities 。
+* 设置主机和存储系统。
++
+要使用此主机，请按照存储系统的主机实用程序随附的文档中的说明进行操作。包含多路径或卷管理器软件的配置必须使用 AIX Host Utilities 和 SnapDrive for UNIX 支持的软件。
+
+
+
+
+NOTE: 有关 SnapDrive for UNIX 及其要求的最新信息，请参见互操作性表。
+
+* 相关信息 *
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp 互操作性"]

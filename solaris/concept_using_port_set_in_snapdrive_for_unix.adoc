@@ -1,0 +1,15 @@
+---
+permalink: solaris/concept_using_port_set_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, port, set 
+summary: 端口集是一组 SAN 数据端口或接口，用于通过对 SAN 数据端口或接口集进行分组来控制可供主机使用的路径。 
+---
+= 使用 SnapDrive for UNIX 中的端口集
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+端口集是一组 SAN 数据端口或接口，用于通过对 SAN 数据端口或接口集进行分组来控制可供主机使用的路径。
+
+端口集配置由存储系统上的存储管理员创建，这是一项可选任务。如果主机上未配置端口集，则主机可以查看所有路径，具体取决于主机 SCSI 配置限制。SnapDrive for UNIX 允许存储管理员为每个 SVM 指定一个端口集。因此，主机可以通过 Vserver 查看的路径数存在限制。

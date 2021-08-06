@@ -1,0 +1,24 @@
+---
+permalink: aix/concept_increase_in_storage_size_using_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, size, increase 
+summary: 通过适用于 UNIX 的 SnapDrive ，您可以增加存储系统卷组或磁盘组的大小。您可以使用 SnapDrive storage resize 命令执行此操作。 
+---
+= 使用 SnapDrive for UNIX 增加存储大小
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过适用于 UNIX 的 SnapDrive ，您可以增加存储系统卷组或磁盘组的大小。您可以使用 SnapDrive storage resize` 命令执行此操作。
+
+
+NOTE: 此命令不允许调整主机卷或文件系统的大小。例如，不能使用 resize 命令更改 LUN 上文件系统的大小。调整底层磁盘组的大小后，您需要使用 LVM 命令调整主机卷和文件系统的大小。
+
+您可以将存储调整大小操作分为以下常规类别：
+
+* 设置要将存储增加到的目标大小（以字节为单位）
+* 指定要增加存储的字节数
+
+
+SnapDrive for UNIX 将添加系统生成的 LUN 。如果指定要增加存储的容量（例如 50 MB ），则会使 LUN 达到 50 MB 。如果指定存储的目标大小，则会计算当前大小与目标大小之间的差值。此差异将成为随后创建的 LUN 的大小。

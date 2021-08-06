@@ -1,0 +1,50 @@
+---
+permalink: solaris/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, dollar, sign 
+summary: 如果在配置值中指定了特殊字符，则 SnapDrive for UNIX 会错误地对美元符号（ $\ ）和所有特殊字符进行不同的解释。 
+---
+= SnapDrive for UNIX 对美元符号的解释不正确
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果在配置值中指定了特殊字符，则 SnapDrive for UNIX 会错误地对美元符号（ $ ）和所有特殊字符进行不同的解释。
+
+所有指定的配置值均应为数字。如果在配置值中指定 $ 或任何其他特殊字符，则 SnapDrive for UNIX 将接受此值，但会以不同的方式解释在特殊字符之后提及的数值。
+
+
+
+== 示例
+
+下面是如何解释 $ 的示例：
+
+[listing]
+----
+#a=$123
+#echo $a
+23
+
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_set volume-clone-retry-sleep=$129
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_show |grep volume-clone-retry-sleep
+volume-clone-retry-sleep:Number of seconds between retries during flex-clone create:'3':'29':1:0:'^[0-9]+$':filer
+----
+在此示例中， SnapDrive for UNIX 会将配置值（ $123 ）解释为 23 。
+
+
+
+== 临时解决策
+
+在 $ 之前指定反斜杠（ \ ）。按如下所示修改上一个示例：
+
+[listing]
+----
+#a=\$123
+#echo $a
+23
+
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_set volume-clone-retry-sleep=$129
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_show |grep volume-clone-retry-sleep
+volume-clone-retry-sleep:Number of seconds between retries during flex-clone create:'3':'29':1:0:'^[0-9]+$':filer
+----

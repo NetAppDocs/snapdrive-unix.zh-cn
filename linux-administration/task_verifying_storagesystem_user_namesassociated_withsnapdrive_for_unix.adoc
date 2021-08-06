@@ -1,0 +1,37 @@
+---
+permalink: linux-administration/task_verifying_storagesystem_user_namesassociated_withsnapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verfiy, user, name, config, command 
+summary: 您可以执行 SnapDrive config list 命令来验证哪个用户名 SnapDrive for UNIX 与存储系统相关联。 
+---
+= 验证与 SnapDrive for UNIX 关联的存储系统用户名
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过执行 SnapDrive config list` 命令来验证哪个用户名 SnapDrive for UNIX 与存储系统关联。
+
+您必须已以 root 用户身份登录。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置列表 *`
+
++
+此命令显示在 SnapDrive for UNIX 中指定了用户的所有系统的用户名或存储系统对。它不会显示存储系统的密码。
+
++
+此示例显示了与名为 Rapidel 的存储系统和中型存储系统关联的用户：
+
++
+[listing]
+----
+# snapdrive config list
+user name           storage system name
+-----------------------------
+rumplestiltskins    rapunzel
+longuser            mediumstoragesystem
+----
+

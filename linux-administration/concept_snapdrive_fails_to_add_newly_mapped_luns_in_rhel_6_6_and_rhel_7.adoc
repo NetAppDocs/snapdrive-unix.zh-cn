@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_snapdrive_fails_to_add_newly_mapped_luns_in_rhel_6_6_and_rhel_7.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fails, lun, rhel, rescan, red, hat, enterprise 
+summary: 与 SG3_utils 软件包捆绑的重新扫描脚本 /usr/bin/rescan-scsi-bus.sh 无法在运行 Red Hat Enterprise Linux 6.6 及更高版本的 SnapDrive for UNIX 中添加新映射的 LUN 。 
+---
+= SnapDrive 无法在 RHEL 6.6 及更高版本中添加新映射的 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+与 SG3_utils 软件包捆绑的重新扫描脚本 ` /usr/bin/rescan scsi-bus.sh` 无法在运行 Red Hat Enterprise Linux 6.6 及更高版本的 SnapDrive for UNIX 中添加新映射的 LUN 。
+
+
+
+== 临时解决策
+
+. 在 ` /root` 目录中创建一个名为 `dvory-lun-rescan .sh` 的文件，并为该文件提供完全权限。
+. 将命令 ` /usr/bin/rescan-scsi-bus.sh -a -r` 添加到 `dvory-lun-rescan.sh` 文件中。
+

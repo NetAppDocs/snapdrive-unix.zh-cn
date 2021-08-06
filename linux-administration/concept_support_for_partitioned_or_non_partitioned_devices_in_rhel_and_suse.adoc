@@ -1,0 +1,15 @@
+---
+permalink: linux-administration/concept_support_for_partitioned_or_non_partitioned_devices_in_rhel_and_suse.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, suse, server, sles, partitioning, scheme, rhel, red, enterprise 
+summary: 在 RHEL 上， SnapDrive for UNIX 会对磁盘进行分区，以配置主机存储实体。但是， SnapDrive for UNIX 允许为 SLES 11 上的分区和非分区设备以及仅为 SLES 10 上的非分区设备配置和管理 SnapDrive 操作。 
+---
+= Red Hat Enterprise Linux （ RHEL ）和 SUSE Linux Enterprise Server （ SLES ）中的存储分区方案
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 RHEL 上， SnapDrive for UNIX 会对磁盘进行分区，以配置主机存储实体。但是， SnapDrive for UNIX 允许为 SLES 11 上的分区和非分区设备以及仅为 SLES 10 上的非分区设备配置和管理 SnapDrive 操作。
+
+Linux 2.2 和 2.4 内核版本不能使用原始磁盘创建文件系统，因为以往所有 Microsoft x86 系统架构都使用 Windows 操作系统，并且始终对硬盘进行分区。由于初始内核是在 Windows 操作系统上写入的，因此，内核的写入方式也会使硬盘上存在分区。为了在原始设备上创建文件系统，始终会进行进一步的分区。对于磁盘组中的 LUN 和 / 或原始 LUN ，绝不会进行分区。因此，分区方案的任何更改仅限于在原始设备上的文件系统情况下的行为。

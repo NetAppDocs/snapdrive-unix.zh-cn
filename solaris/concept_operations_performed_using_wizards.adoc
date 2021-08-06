@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_operations_performed_using_wizards.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, wizards, operations 
+summary: 您可以使用不同的向导高效地创建存储实体并操作 SnapDrive for UNIX 。 
+---
+= 使用向导执行的操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用不同的向导高效地创建存储实体并操作 SnapDrive for UNIX 。
+
+以下 SnapDrive for UNIX 命令具有一个等效的向导来执行操作：
+
+* `s存储创建`
+* `s存储删除`
+* `snap restore`
+* `snap connect`
+* `snap disconnect`
+

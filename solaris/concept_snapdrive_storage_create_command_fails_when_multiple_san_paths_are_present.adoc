@@ -1,0 +1,38 @@
+---
+permalink: solaris/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, create, command, fail, san, multipathing, disable 
+summary: 如果存在多个 SnapDrive 路径，但禁用了多路径，则 storage create 命令将失败。 
+---
+= 如果存在多个 SAN 路径，但禁用了多路径，则 SnapDrive storage create 命令将失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果存在多个 SnapDrive 路径，但禁用了多路径，则 storage `create` 命令将失败。
+
+例如，对于 SVM 的两个 iSCSI LIF ：
+
+[listing]
+----
+[root@scspr0189449001 etc]# iscsiadm --mode session --rescan
+Rescanning session [sid: 1, target: iqn.1992-08.com.netapp:sn.f7335762b23e11e695360050569c153a:vs.3, portal: 10.224.70.253,3260]
+Rescanning session [sid: 2, target: iqn.1992-08.com.netapp:sn.f7335762b23e11e695360050569c153a:vs.3, portal: 10.224.70.254,3260]
+----
+如果在 SnapDrive.conf 文件中将 `multipathing-type` 设置为 `none` 且禁用了多路径服务，则尝试使用 LVM 创建存储时，将返回以下错误：
+
+[listing]
+----
+root@scspr0189449001 etc]# snapdrive storage create -fs /mnt/test -lun rgvsim:/vol/asmvol/test -lunsize 500m
+        LUN rgvsim:/vol/asmvol/test ... created
+        mapping new lun(s) ... done
+        discovering new lun(s) ... *failed*
+        Cleaning up ...
+         - LUN rgvsim:/vol/asmvol/test ... deleted
+         0001-422 Admin error: LVM initialization of luns failed:
+        Device /dev/sdb,/dev/sdc not found (or ignored by filtering).
+----
+之所以出现这种情况，是因为 `pvcreate` 命令会使用以逗号分隔的设备作为单个设备 `pvcreate /dev/sdb ， /dev/sdc` 和一个名为 ` /dev/sdb ， /dev/sdc` 的设备，而该设备不存在。
+
+如果要使用多个存储路径，并且需要使用 LVM ，则必须启用多路径。

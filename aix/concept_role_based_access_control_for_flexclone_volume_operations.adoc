@@ -1,0 +1,29 @@
+---
+permalink: aix/concept_role_based_access_control_for_flexclone_volume_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rbac, flexcone, volume, operation, role, access, control 
+summary: 如果为 Operations Manager 配置了系统，则 Operations Manager 管理员必须授予您在 FlexClone 卷上执行存储操作所需的权限。 
+---
+= 对 FlexClone 卷操作进行基于角色的访问控制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果为 Operations Manager 配置了系统，则 Operations Manager 管理员必须授予您在 FlexClone 卷上执行存储操作所需的权限。
+
+* 不受限制的 FlexClone 卷 * ：要在不受限制的 FlexClone 卷上执行存储操作，您必须具有以下功能：
+
+* 对于 `snap connect` ，您必须在父卷上具有 `s .D.snapshot.UnrestrictedClone` 功能。
+* 对于 `snap disconnect` ，您必须在 FlexClone 卷上具有 `s .D.snapshot.DestroyUnrestrictedClone` 功能。
+
+
+* 受限 FlexClone 卷 * ：在受限 FlexClone 卷上执行存储操作时，必须具有以下功能：
+
+* 对于 `snap connect` ，您必须在父卷上具有 `s .D.snapshot.Clone` 功能。
+* 对于 `snap disconnect` ，您必须在父卷上具有 `s .D.snapshot.Clone` 功能。
+
+
+要在 `snap connect` 操作期间拆分 FlexClone 卷，请在父卷上使用 `s D Storage.Write` 访问功能。
+
+要在 `snap disconnect` 期间对拆分的 FlexClone 卷执行存储操作，对于拆分的 FlexClone 卷，您必须对拆分的卷克隆具有 `s .d 存储 .Delete` 功能。

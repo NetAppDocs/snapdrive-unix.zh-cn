@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_operation_with_a_single_filespec_on_a_single_storage_object.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, single, filespec, storage, object 
+summary: 如果您不是在指定卷上创建文件规范的授权用户，则 SnapDrive for UNIX 将显示一条错误消息。 
+---
+= 对单个存储对象执行单个文件规范操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不是在指定卷上创建文件规范的授权用户，则 SnapDrive for UNIX 将显示一条错误消息。
+
+_filesSpec ： filesSpec 可以是文件系统，主机卷，磁盘组或 LUN_
+
+[listing]
+----
+[john]$ snapdrive storage create -fs /mnt/testfs -filervol storage_array1:/vol/vol1 -dgsize 100m
+0002-332 Admin error:SD.Storage.Write access denied on volume storage_array1:/vol/vol1 for user unix_host\john on Operations Manager server ops_mngr_server
+----
+在此示例中， John 是非 root 用户，无权在指定卷上创建文件规范。John 必须要求 Operations Manager 控制台管理员对卷 `storage_array1 ： /vol/vol1` 授予 `s .D.Storage.Write` 访问权限。

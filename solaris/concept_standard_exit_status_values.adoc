@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_standard_exit_status_values.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, standard, exit, status, value 
+summary: SnapDrive for UNIX 中的错误消息 ID 具有关联的退出状态值。您可以使用退出状态值来确定 SnapDrive for UNIX 命令的成功或失败。 
+---
+= 标准退出状态值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 中的错误消息 ID 具有关联的退出状态值。您可以使用退出状态值来确定 SnapDrive for UNIX 命令的成功或失败。

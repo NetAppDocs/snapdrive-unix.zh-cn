@@ -1,0 +1,34 @@
+---
+permalink: solaris/task_mounting_a_flexvol_volume_fails_in_nfs_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, mount, flexvol, fail, nfs, volume 
+summary: 挂载 FlexVol 卷时， /etc/exports 文件中会添加一个条目。在 NFS 环境中， SnapDrive for UNIX 失败，并生成错误消息。 
+---
+= 在 NFS 环境中挂载 FlexVol 卷失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+挂载 FlexVol 卷时，会在 ` /` /etc/exports file` 中添加一个条目。在 NFS 环境中， SnapDrive for UNIX 失败，并生成错误消息。
+
+此错误消息为
+
+[listing]
+----
+0001-034 Command error: mount failed: nfs mount:
+dub12137:/vol/vn_dub12137_testprisredo_0: Permission denied.
+----
+由于选项 `nfs.export.auto-update` 设置为 `off` ， SnapDrive for UNIX 可能会遇到此错误消息。选项 `nfs.export.auto-update` 用于控制是否对 ` /etc/exports` 文件执行自动更新。
+
+
+NOTE: 如果 NFS 环境中的 FlexVol 卷发生故障，则 AutoSupport 不会向存储系统发送此消息。
+
+.步骤
+. 将 `nfs.export.auto-update` 选项 `设置为 on` ，以便自动更新 /etc/exports 文件。
++
+SnapDrive for UNIX 现在可以挂载 FlexVol 卷。
+
+
+
+在 HA 对主动 / 主动配置中，确保为两个存储系统设置 NFS 导出选项。

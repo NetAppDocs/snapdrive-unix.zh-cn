@@ -1,0 +1,41 @@
+---
+permalink: linux-administration/task_creating_asnapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, create, command 
+summary: 要创建 Snapshot 副本，请运行 SnapDrive snap create 命令。 
+---
+= 创建 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要创建 Snapshot 副本，请运行 SnapDrive snap create` 命令。
+
+在执行此语法之前，您必须了解此命令中提及的选项，关键字和参数。
+
+.步骤
+. 输入以下命令语法以创建 Snapshot 副本：
++
+` * SnapDrive snap create ｛ -lun _ -dg _ -fs | -hostvol ｝ _file_spec[file_spec...]_ （ ｛ -lun _dg _ -fs _ -hostvol ｝ file_spec[file_spec...]] -snapname _snap_name_ [ -force [-noprompt]]-unrelated ] [-nodfilerfencet] [-fstype _type_][-vmtype _type_]*`
+
+
+
+`file_specs` 参数表示一个或多个存储系统上的一组存储实体。Snapshot 创建操作会为包含这些实体的存储系统卷创建一个 Snapshot 副本，并为其提供在 `snap_name` 参数中指定的名称。
+
+此示例将为 Linux 主机创建多卷 Snapshot 副本。Snapshot 副本包含磁盘组 vgmultivol ，其中包括主机卷 lvol1 和 lvol2 ：
+
+[listing]
+----
+# snapdrive snap create -vg vgmultivol -snapname snapmultivol
+Successfully created snapshot snapmultivol on 2 filer volumes:
+toaster:/vol/vol1
+toaster:/vol/vol2
+snapshot snapmultivol contains:
+disk group vgmultivol containing host volumes
+lvol1
+lvol2
+----
+* 相关信息 *
+
+xref:concept_creating_snapshotcopies_of_unrelatedentities.adoc[创建不相关实体的 Snapshot 副本]

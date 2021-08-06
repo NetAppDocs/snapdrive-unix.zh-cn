@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/concept_checks_that_can_be_overridden_by_the_user.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, override, check 
+summary: 在执行基于卷的 SnapRestore 之前， SnapDrive for UNIX 会执行一些检查，用户可以使用 -force 选项覆盖这些检查。要安全地使用基于卷的 SnapRestore ，必须执行这些检查。 
+---
+= 可由用户覆盖的检查
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在执行基于卷的 SnapRestore 之前， SnapDrive for UNIX 会执行一些检查，用户可以使用 ` -force` 选项覆盖这些检查。要安全地使用基于卷的 SnapRestore ，必须执行这些检查。
+
+建议您按照系统执行的各种检查进行操作，但您可以使用 ` -force` 选项来覆盖这些检查。
+
+对于基于卷的 SnapRestore 检查，您可以覆盖以下 SnapDrive for UNIX ：
+
+* SnapDrive for UNIX 会检查 Snapshot 副本中的 LUN 是否崩溃不一致。如果它在 Snapshot 副本中发现应用程序不一致的 LUN ，则会向您发出警告。
+* SnapDrive for UNIX 会检查活动卷中是否存在在创建 Snapshot 副本后创建的其他 LUN 。如果 SnapDrive for UNIX 发现其他 LUN ，则会警告您活动卷中的这些额外 LUN 将丢失。
+* SnapDrive for UNIX 会检查是否存在新的 Snapshot 副本。这些新 Snapshot 副本不会还原，并且会丢失。
+* SnapDrive for UNIX 会检查卷中的普通文件（可从本地主机查看的文件）。
+* SnapDrive for UNIX 会检查 NFS 导出。
+* SnapDrive for UNIX 会检查 CIFS 共享。
+
+
+如果 Snapshot 副本是使用适用于 UNIX 的 SnapDrive 3.0 或更早版本创建的，则基于卷的 SnapRestore 预览将无法执行上述列表中的前两项检查。如果您提供了 ` -force` 选项，则在基于卷的 SnapRestore 执行期间，将显示一条提示消息，以覆盖这些检查并继续操作。

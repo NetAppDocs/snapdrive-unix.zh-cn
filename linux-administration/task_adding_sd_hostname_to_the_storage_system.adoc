@@ -1,0 +1,23 @@
+---
+permalink: linux-administration/task_adding_sd_hostname_to_the_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, sd, hostname, storage, manager, operations, administrator 
+summary: Operations Manager 控制台管理员可以使用 Operations Manager 控制台在存储系统上创建 SD 主机名用户。完成这些步骤后， Operations Manager 控制台管理员必须手动将凭据发送给 SnapDrive for UNIX 管理员。您可以使用任何名称来替代 sd-hostname ；但最好使用 sd-hostname 。 
+---
+= 将 SD 主机名添加到存储系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Operations Manager 控制台管理员可以使用 Operations Manager 控制台在存储系统上创建 SD 主机名用户。完成这些步骤后， Operations Manager 控制台管理员必须手动将凭据发送给 SnapDrive for UNIX 管理员。您可以使用任何名称来替代 sd-hostname ；但最好使用 sd-hostname 。
+
+. 获取存储系统的根密码并存储该密码。
++
+要添加存储系统的密码，请选择 * 管理 * > * 存储系统 * 。
+
+. 为每个 UNIX 系统创建一个 SD 主机名用户。
+. 将功能 `API-*` 和 `login-*` 分配给某个角色，例如 SD-role 。
+. 将此角色（ sd-role ）包括在新用户组中，例如 sd-usergroup 。
+. 将此用户组（ sd-usergroup ）与存储系统上的 sd-hostname 用户关联。
+

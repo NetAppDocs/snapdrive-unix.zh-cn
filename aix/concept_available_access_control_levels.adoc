@@ -1,0 +1,27 @@
+---
+permalink: aix/concept_available_access_control_levels.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, levels, available 
+summary: SnapDrive for UNIX 可为用户提供各种访问控制级别。这些访问级别与 Snapshot 副本和存储系统操作相关。 
+---
+= 可用的访问控制级别
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 可为用户提供各种访问控制级别。这些访问级别与 Snapshot 副本和存储系统操作相关。
+
+您可以设置以下访问级别：
+
+* 无—主机无法访问存储系统。
+* snap create —主机可以创建 Snapshot 副本。
+* snap use —主机可以删除和重命名 Snapshot 副本。
+* snap all —主机可以创建，还原，删除和重命名 Snapshot 副本。
+* storage create delete —主机可以创建存储，调整存储大小和删除存储。
+* 存储使用—主机可以连接和断开存储连接，还可以在存储上执行克隆拆分估计和克隆拆分开始。
+* 存储全部—主机可以创建，删除，连接和断开存储连接，还可以在存储上执行克隆拆分估计和克隆拆分启动。
+* 所有访问—主机可以访问上述所有 SnapDrive for UNIX 操作。
+
+
+每个级别都是不同的。如果您仅为某些操作指定权限，则 SnapDrive for UNIX 只能执行这些操作。例如，如果指定了存储使用，则主机可以使用适用于 UNIX 的 SnapDrive 连接和断开存储连接，但它无法执行受访问控制权限管理的任何其他操作。

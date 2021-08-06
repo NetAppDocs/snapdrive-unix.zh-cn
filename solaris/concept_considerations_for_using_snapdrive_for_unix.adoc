@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_considerations_for_using_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, unix, considerations 
+summary: 您必须了解使用 SnapDrive for UNIX 的各种注意事项。 
+---
+= 使用 SnapDrive for UNIX 的注意事项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须了解使用 SnapDrive for UNIX 的各种注意事项。
+
+* 对于由 SnapDrive for UNIX 管理的任何 LUN ，必须使用默认空间预留设置值。
+* 在 FC 和 iSCSI 配置中，存储系统上的 `set snap reserve` 对于每个卷均设置为 0% 。
+* 将连接到同一主机的所有 LUN 置于只有该主机才能访问的专用存储系统卷上。
+* 如果使用 Snapshot 副本，则不能使用存储系统卷上的整个空间来存储 LUN 。
++
+托管 LUN 的存储系统卷应至少是存储系统卷上所有 LUN 的总大小的两倍。
+
+* Data ONTAP 使用 ` /vol/vol0` （根卷）管理存储系统。
++
+请勿使用此卷存储数据。如果您已将 ` 卷（非` 卷 /vol/vol0 ）配置为根卷来管理存储系统，请勿使用它来存储数据。
+
+

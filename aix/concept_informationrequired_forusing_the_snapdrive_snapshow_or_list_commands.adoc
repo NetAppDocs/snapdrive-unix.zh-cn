@@ -1,0 +1,103 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_snapshow_or_list_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, show, list, command, information, required 
+summary: 您可以使用命令 SnapDrive snap show 或 list 显示有关存储系统，存储系统卷，磁盘或卷组，文件系统， Snapshot 副本等。 
+---
+= 使用 SnapDrive snap show 或 list 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用命令 SnapDrive snap show` 或 `list` 显示有关存储系统，存储系统卷，磁盘或卷组，文件系统， Snapshot 副本等。
+
+下表提供了使用 SnapDrive snap show | list` 命令时需要提供的信息。
+
+
+NOTE: 无论输入 SnapDrive snap show` 还是 SnapDrive snap list` 作为命令，都可以使用相同的参数。这些命令是同义词。
+
+|===
+| 要求 / 选项 | 参数 
+
+
+ a| 
+根据您输入的命令，您可以显示有关以下任一项的信息：
+
+* 存储系统
+* 存储系统卷
+* 磁盘或卷组
+* 文件系统
+* 主机或逻辑卷
+* Snapshot 副本
+
+
+为 `file_specs` 参数输入的值必须标识要显示其信息的存储实体。此命令假定实体位于当前主机上。
+
+
+
+ a| 
+存储系统（` 存储器` ）
+ a| 
+` 文件名 _`
+
+
+
+ a| 
+存储系统上的卷（` -filervol` ）
+ a| 
+` filervol_`
+
+
+
+ a| 
+磁盘组（` -dg _file_spec_` ）或卷组（` -vg _file_spec_` ）
+ a| 
+磁盘或卷组的 ` 名称 _`
+
+
+
+ a| 
+文件系统（` -fs _file_spec_` ）
+ a| 
+` 文件系统名称 _`
+
+
+
+ a| 
+主机卷（` -hostvol _file_spec_` ）或逻辑卷（` -lvol _file_spec_` ）
+ a| 
+主机或逻辑卷的 ` 名称 _`
+
+
+
+ a| 
+Snapshot 副本名称（` -snapname _lor_snap_name_` ）
+ a| 
+` lor_snap_name_`
+
+
+
+ a| 
+其他 Snapshot 副本名称
+ a| 
+` Snap_name_` （长版或短版）
+
+
+
+ a| 
+如果要显示有关 Snapshot 副本的信息，请指定 Snapshot 副本的名称。对于第一个 Snapshot 副本 ` lor_snap_name_` ，请输入此名称的长版本，其中包括存储系统名称，卷和 Snapshot 副本名称。如果 Snapshot 副本名称位于同一个存储系统和卷上，则可以使用该名称的简短版本。
+
+
+
+ a| 
+` - 详细`
+ a| 
+~
+
+
+
+ a| 
+要显示追加信息，请包含 ` -verbose` 选项。
+
+|===

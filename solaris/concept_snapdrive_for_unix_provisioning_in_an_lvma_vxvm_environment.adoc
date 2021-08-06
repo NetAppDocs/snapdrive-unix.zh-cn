@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_snapdrive_for_unix_provisioning_in_an_lvma_vxvm_environment.html 
+sidebar: sidebar 
+keywords: snapdrive, unix, storage, commands, provision, provisioning, vxvm, entities, objects 
+summary: SnapDrive for UNIX 存储命令通过创建 VxVM 对象来配置 VxVM 实体。 
+---
+= VxVM 环境中的 SnapDrive for UNIX 配置
+:icons: font
+:imagesdir: ../media/
+
+
+SnapDrive for UNIX 存储命令通过创建 VxVM 对象来配置 VxVM 实体。
+
+如果您请求用于 UNIX 存储的 SnapDrive 操作来配置 VxVM 实体，例如包含主机卷或文件系统的磁盘组，则 SnapDrive storage` 命令可与 VxVM 配合使用，以创建使用该存储的 VxVM 对象和文件系统。
+
+在存储配置操作期间，将执行以下操作：
+
+* 主机 VxVM 将存储系统中的 LUN 组合成磁盘或卷组。
++
+然后，存储将划分为逻辑卷，这些逻辑卷将用作原始磁盘设备来存放文件系统或原始数据。
+
+* SnapDrive for UNIX 与主机 VxVM 集成在一起，以确定为 Snapshot 副本请求的每个磁盘组，主机卷和文件系统由哪些 NetApp LUN 构成。
++
+由于任何指定主机卷中的数据都可以分布在磁盘组中的所有磁盘上，因此只能为整个磁盘组创建和还原 Snapshot 副本。
+
+

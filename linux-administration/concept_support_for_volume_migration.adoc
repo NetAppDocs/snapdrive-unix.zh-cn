@@ -1,0 +1,19 @@
+---
+permalink: linux-administration/concept_support_for_volume_migration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, volume, migration, san, flexvol, lun 
+summary: SnapDrive for UNIX 支持卷迁移，通过此迁移，您可以无中断地将卷从同一控制器中的一个聚合移动到另一个聚合，以提高容量利用率，提高性能并满足服务级别协议的要求。在 SAN 环境中， FlexVol 卷和卷中的 LUN 会无中断地从一个聚合移动到另一个聚合。 
+---
+= 支持卷迁移
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持卷迁移，通过此迁移，您可以无中断地将卷从同一控制器中的一个聚合移动到另一个聚合，以提高容量利用率，提高性能并满足服务级别协议的要求。在 SAN 环境中， FlexVol 卷和卷中的 LUN 会无中断地从一个聚合移动到另一个聚合。
+
+要执行 SnapDrive 操作，您必须在 `snapdrive.conf` 文件中设置 ` _volmove-cutover-retry-re尝试 _` 和 ` _volmove-cutover-retry-leep_` 变量。
+
+* 相关信息 *
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["《 ONTAP 9 逻辑存储管理指南》"]

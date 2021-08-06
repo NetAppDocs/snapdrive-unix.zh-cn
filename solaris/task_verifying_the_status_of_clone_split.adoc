@@ -1,0 +1,96 @@
+---
+permalink: solaris/task_verifying_the_status_of_clone_split.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, lun, clone, split, view, status 
+summary: 您可以使用作业 ID 或文件规范查询克隆拆分状态。SnapDrive for UNIX 将克隆拆分的当前状态指示为 in-progress ， failed 或 complete 。 
+---
+= 查看卷克隆或 LUN 克隆拆分的状态
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用作业 ID 或文件规范查询克隆拆分状态。SnapDrive for UNIX 将克隆拆分的当前状态指示为 in-progress ， failed 或 complete 。
+
+.步骤
+. 输入以下命令，使用作业 ID 或文件规范查询克隆拆分状态。
++
+` * SnapDrive 克隆拆分状态 "-LUN] _long_lun_name_ [_long_lun_name..._] （ ｛ -dg _ -vg _ -fs _ -hostvol _ -lvol ｝ _file_spec_ [file_spec...]]-job _<jobid>_] 【 -all]*`
+
+
+
+以下示例显示了使用作业 ID 的克隆拆分状态。
+
+[listing]
+----
+# snapdrive clone split status -job SVE2oxKXzH
+Clone-Split-Status for /fs1-1_3 is 1% Complete
+Clone-Split-Status for /fs1_0 is 73% Complete
+Clone-Split-Status for /fs1_1 is 73% Complete
+Clone-Split-Status for /fs1_2 is 74% Complete
+Clone-Split-Status for /fs1_3 is 1% Complete
+----
+[NOTE]
+====
+您可以通过以下任一方式检查克隆拆分进度的状态：
+
+* 您可以使用验证克隆
++
+` * SnapDrive storage show -fs /mnt/my_mn*`
+
++
+或
+
++
+` * SnapDrive storage show -lun _long_lun_pathname_*`
+
++
+命令无论哪种情况，如果未完成拆分，克隆类型都会显示为 FlexClone 或 LUN 克隆。
+
+* 您可以通过登录到存储系统并在存储系统命令行界面中使用以下命令来验证克隆拆分进度状态：
++
+` * 卷克隆拆分状态 _vol_name_*`
+
++
+` * LUN 克隆拆分状态 _lun_name_*`
+
+
+
+====
+以下示例显示了使用文件规范进行的克隆拆分状态查询：
+
+[listing]
+----
+# snapdrive clone split status -fs /mnt/my_mnt3 -fs /mnt/my_mnt4
+Clone-Split-Status for /mnt/my_mnt3 is 14% Complete
+Clone-Split-Status for /mnt/my_mnt4 is 17% Complete
+----
+以下示例显示了正在运行的克隆拆分状态查询：
+
+[listing]
+----
+# snapdrive clone split status -all
+Job ID: SVE2oxKXzH:
+Clone-Split-Status for /fs1-1_3 is 100% Complete
+Clone-Split-Status for /fs1_0 is 100% Complete
+Clone-Split-Status for /fs1_1 is 100% Complete
+Clone-Split-Status for /fs1_2 is 100% Complete
+Clone-Split-Status for /fs1_3 is 100% Complete
+----
+* 从作业集中删除作业后，如果您使用文件规范查询克隆拆分状态，则 SnapDrive for UNIX 将错误消息显示为
++
+`当前未对给定资源执行拆分`
+
+* 从作业集中删除作业后，如果您使用作业 ID 查询克隆拆分的状态，则 SnapDrive for UNIX 会将错误消息显示为
++
+`作业 ID 无效`
+
+* 从作业中删除所有文件规范后，如果您使用作业 ID 查询克隆拆分的状态，则 SnapDrive for UNIX 将显示为
++
+`作业 ID 无效`
+
++
+因为作业已从作业集中删除。
+
+* 如果由于存储系统中的空间不足而导致任何文件规范失败，则作业仍会继续拆分以满足其余文件规范。这意味着不会从作业队列中删除作业，并且作业状态会一直保留，直到您查询整个作业结果为止。
+

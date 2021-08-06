@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, operations 
+summary: 通过 SnapDrive for UNIX ，您可以使用 Data ONTAP Snapshot 技术为存储系统上存储的主机数据创建映像（ Snapshot 副本）。 
+---
+= SnapDrive for UNIX 中的 Snapshot 操作是什么
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以使用 Data ONTAP Snapshot 技术为存储系统上存储的主机数据创建映像（ Snapshot 副本）。
+
+此 Snapshot 副本可为您提供一份数据副本，您可以稍后还原这些数据。Snapshot 副本中的数据可以位于一个存储系统上，也可以跨越多个存储系统及其卷。这些存储系统可以位于 HA 对或节点本地文件系统中，也可以位于主机集群环境中的磁盘组或 LUN 中。在安装了 SnapDrive for UNIX 的非集群模式 UNIX 主机上，您可以为存储系统上的一个或多个卷组创建 Snapshot 副本。
+
+Snapshot 副本可以包含文件系统，逻辑卷，磁盘组， LUN 和 NFS 目录树。创建 Snapshot 副本后，您可以对其进行重命名，还原或删除。您也可以连接到同一主机上的其他位置或其他主机。连接后，您可以查看和修改 Snapshot 副本的内容，也可以断开 Snapshot 副本的连接。此外，您还可以通过 SnapDrive for UNIX 显示有关已创建的 Snapshot 副本的信息。在安装了 SnapDrive for UNIX 的集群模式 UNIX 主机上，您可以对包含磁盘组和文件系统的主机集群节点执行 Snapshot 操作。Snapshot 操作包括创建，重命名，还原，连接，断开连接， 显示和删除。

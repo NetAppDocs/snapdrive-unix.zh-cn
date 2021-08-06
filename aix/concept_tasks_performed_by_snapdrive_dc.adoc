@@ -1,0 +1,36 @@
+---
+permalink: aix/concept_tasks_performed_by_snapdrive_dc.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, collection, utility 
+summary: 数据收集实用程序可运行 NetApp 诊断实用程序，复制 SnapDrive for UNIX 日志文件，并创建一个用于分析的压缩文件。 
+---
+= 由 SnapDrive.dc 执行的任务
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+数据收集实用程序可运行 NetApp 诊断实用程序，复制 SnapDrive for UNIX 日志文件，并创建一个用于分析的压缩文件。
+
+`snapdrive.dc` 实用程序可执行以下任务：
+
+* 运行 `host_info` 和 `filer_info` 实用程序，以收集有关主机以及连接到主机的存储系统的信息，并将此信息保存在一个压缩文件中。`host_info` 实用程序和 `filer_info` 实用程序随 SnapDrive for UNIX 安装包一起提供。
++
+例如， onAIX 是 ` _aix_info_` 实用程序。
+
+* 创建名为 /tmp/netapp/ntap_SnapDrive_name 的目录。该工具会将以下文件的副本放置在目录中：
++
+** SnapDrive for UNIX 版本，如运行 SnapDrive version 命令所示
+** `snapdrive.conf` 文件
+** 审核日志文件
+** 跟踪日志文件
+** 恢复日志文件
+** host_info 实用程序创建的文件
+
+
+* 创建一个包含目录内容的压缩文件，并显示一条消息，指出您已将此文件发送给 NetApp 技术支持。
+
+
+* 相关信息 *
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1119223["《 AIX Host Utilities 6.0 安装和设置指南》"]

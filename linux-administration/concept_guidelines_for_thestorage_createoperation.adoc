@@ -1,0 +1,40 @@
+---
+permalink: linux-administration/concept_guidelines_for_thestorage_createoperation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, create, operation, lun, guidelines 
+summary: 在使用 SnapDrive storage create 命令执行存储创建操作时，应遵循特定准则。 
+---
+= 存储创建操作的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 SnapDrive storage create` 命令执行存储创建操作时，应遵循特定准则。
+
+* 如果使用 -lun 选项列出不同存储系统卷中的 LUN ，则不能在命令提示符处包含 ` -dg` ， ` -hostvol` 或 ` -fs` 选项。
+* ` -nolvm` 选项直接在 LUN 上创建文件系统，而不激活主机 LVM 。
++
+使用此选项时，无法指定主机卷或磁盘组。
+
+* 不能对 NFS 文件或目录树使用 SnapDrive for UNIX 存储配置命令。
+* 如果使用 lun storage create` 命令直接在 SnapDrive 上创建文件系统，则不能指定多个 lun 。
++
+使用此形式的命令时， SnapDrive for UNIX 始终会创建新的 LUN 。
+
+* 某些操作系统会限制您可以创建的 LUN 数量。
++
+如果主机运行的是其中一个操作系统，则可能需要运行 SnapDrive config check lun` 命令。
+
+* 支持在具有 DMP 多路径的原始 LUN 上创建文件系统。
+* 使用 `enable-mount-with -netdev` 参数，您可以在 ` /etc/fstab` 文件中包含 ` netdev` file system 选项。
++
+如果此值设置为 off （默认值），则必须在 SnapDrive storage create` 命令中手动指定 ` -mntopts _netdev` 。但是，如果将此值更改为 on ，则在运行 SnapDrive storage create` 命令时会自动执行 ` -mntopts _netdev` 。
+
+
+
+* 相关信息 *
+
+xref:concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.adoc[发现某些映射设备时， SnapDrive for UNIX storage create 命令失败]
+
+xref:concept_configuration_options_and_their_default_values.adoc[配置选项及其默认值]

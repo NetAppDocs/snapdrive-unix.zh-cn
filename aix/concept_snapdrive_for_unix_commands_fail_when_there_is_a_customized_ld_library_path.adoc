@@ -1,0 +1,19 @@
+---
+permalink: aix/concept_snapdrive_for_unix_commands_fail_when_there_is_a_customized_ld_library_path.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fail, ld, library, path, command 
+summary: 如果存在自定义的 LD_library_path 以及 snapcreate-check-nonpersistent-nfs 设置为 off ，则 SnapDrive for UNIX 命令将失败。 
+---
+= 使用自定义的 LD_library_path 时， SnapDrive for UNIX 命令失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果存在自定义的 `LD_library_path` 以及 `snapcreate-check-nonpersistent-nfs` 设置为 off ，则 SnapDrive for UNIX 命令将失败。
+
+
+
+== 临时解决策
+
+在 wrapper 脚本中设置 `env` 变量，以确保此变量仅对 SnapDrive 二进制文件可见。

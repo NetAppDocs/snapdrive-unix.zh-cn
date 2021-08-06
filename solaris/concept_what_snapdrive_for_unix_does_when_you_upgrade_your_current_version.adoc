@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_what_snapdrive_for_unix_does_when_you_upgrade_your_current_version.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, upgrade, current, version 
+summary: 您可以轻松地将 SnapDrive for UNIX 升级到最新版本。在升级过程中， SnapDrive.conf 文件中的几个变量会发生变化。要确保 SnapDrive for UNIX 正常运行，请检查 SnapDrive.conf 文件中的各种默认值。 
+---
+= 将适用于 UNIX 的 SnapDrive 升级到最新版本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以轻松地将 SnapDrive for UNIX 升级到最新版本。在升级过程中， `snapdrive.conf` 文件中的变量很少。要确保 SnapDrive for UNIX 正常运行，请检查 `snapdrive.conf` 文件中的各种默认值。
+
+要升级当前版本的 SnapDrive for UNIX ，您无需卸载它。而是应在当前版本之上安装最新版本的软件。
+
+安装新版本时， SnapDrive for UNIX 会检查您是否已安装某个版本。否则，它会保留当前的 `snapdrive.conf` 文件，并将所安装文件的版本重命名为 `snapdrive.conf.x` 。这样可以避免覆盖 `snapdrive.conf` 文件，因此您不会丢失该文件中的任何自定义设置。
+
+默认情况下， SnapDrive for UNIX 会将 `snapdrive.conf` 文件中的变量注释掉。这意味着它会自动对所有变量使用默认值，但您自定义的变量除外。如果要更改这些值，必须将变量添加到当前的 `snapdrive.conf` 文件中并指定所需的值。
+
+
+NOTE: 执行修补程序升级时， `snapdrive.conf` 文件中的 SnapDrive 版本不会更改。但是， SnapDrive version` 命令会提供相应的版本。

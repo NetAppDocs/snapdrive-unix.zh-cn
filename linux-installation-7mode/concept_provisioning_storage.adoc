@@ -1,0 +1,13 @@
+---
+permalink: linux-installation-7mode/concept_provisioning_storage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, provision, connect 
+summary: 通过 SnapDrive for UNIX ，您可以使用主机中的命令行选项配置存储并连接到现有存储系统。您也可以使用 Data ONTAP 配置存储。 
+---
+= 配置存储
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以使用主机中的命令行选项配置存储并连接到现有存储系统。您也可以使用 Data ONTAP 配置存储。

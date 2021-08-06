@@ -1,0 +1,85 @@
+---
+permalink: linux-administration/task_generating_self_signed_certificates.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, certificate, self, signed, daemon, cli 
+summary: SnapDrive for UNIX 守护进程服务要求您生成用于身份验证的自签名证书。与命令行界面通信时需要进行此身份验证。 
+---
+= 生成自签名证书
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 守护进程服务要求您生成用于身份验证的自签名证书。与命令行界面通信时需要进行此身份验证。
+
+.步骤
+. 生成 RSA 密钥：
++
+` * $ openssl genrsa 1024 > host.key $ chmod 400 host.key*`
+
++
+[listing]
+----
+# openssl genrsa 1024 > host.key Generating
+RSA private key, 1024 bit long modulus
+...............................++++++ ...++++++ e is 65537(0x10001)
+# chmod 400 host.key
+----
+. 创建证书：
++
+` * $ openssl req -new -x509 -nodes -SHA1 -days 365 -key host.key > host.cert*`
+
++
+使用 ` -new` ， ` -x509` 和 ` -nodes` 选项创建未加密证书。` - 天` 选项指定证书保持有效的天数。
+
+. 当系统要求您填写证书的 x509 数据时，请输入您的本地数据：
++
+[listing]
+----
+# openssl req -new -x509 -nodes -sha1 -days 365 -key host.key > host.cert
+You are about to be asked to enter information that will be incorporated into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN. There are quite a few fields
+but you can leave some blank For some fields there will be a default value, If you enter '.', the field will be left blank.
+
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:California
+Locality Name (eg, city) []:Sunnyvale
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:abc.com
+Organizational Unit Name (eg, section) []:
+Common Name (eg, YOUR name) []:localhost
+Email Address []:postmaster@example.org
+----
++
+
+NOTE: `Common Name` 值必须为 _localhost_ 。
+
+. 提取元数据（可选）。
++
+....
+$ openssl x509 -noout -fingerprint -text < host.cert > host.info
+....
++
+您可以保存证书元数据以供日后快速参考。
+
+. 将密钥和证书数据结合使用。
++
+SnapDrive for UNIX 要求密钥和证书数据位于同一文件中。组合文件必须作为密钥文件进行保护。
+
++
+` * $ cat host.cert host.key > host.pem \*`
+
++
+` * 和 rm host.key*`
+
++
+` * $ chmod 400 host.pem*`
+
++
+[listing]
+----
+# cat host.cert host.key >  /opt/NetApp/snapdrive.pem
+# rm host.key rm: remove regular file `host.key'? y
+# chmod 400 /opt/NetApp/snapdrive.pem
+----
+. 将守护进程证书的完整路径添加到 `snapdrive.conf` 文件的 ` _sdU-daemon-certificate-path_` 变量。
+

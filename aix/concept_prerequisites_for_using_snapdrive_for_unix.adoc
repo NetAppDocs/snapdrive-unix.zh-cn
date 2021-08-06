@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_prerequisites_for_using_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, hardware, software, configuration 
+summary: 根据您的存储系统，您可以配置光纤通道 \ （ FC\ ）， Internet 小型计算机系统接口 \ （ iSCSI\ ）或使用 NFS 目录树的网络文件系统 \ （ nfs\ ）配置。 
+---
+= 硬件和软件配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根据您的存储系统，您可以配置光纤通道（ Fibre Channel ， FC ）， Internet 小型计算机系统接口（ Internet Small Computer System Interface ， iSCSI ）或使用 NFS 目录树的网络文件系统（ Network File System ， NFS ）配置。

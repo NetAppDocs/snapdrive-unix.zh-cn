@@ -1,0 +1,17 @@
+---
+permalink: aix/reference_using_exit_status_values.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, exit, status, value 
+summary: 在脚本中使用退出状态值来确定 SnapDrive for UNIX 命令是否成功。 
+---
+= 使用退出状态值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在脚本中使用退出状态值来确定 SnapDrive for UNIX 命令是否成功。
+
+* 值为零表示命令已成功完成。
+* 如果值不为零，则表示命令未完成，并提供有关发生原因和错误情况严重性的信息。
+

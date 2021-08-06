@@ -1,0 +1,25 @@
+---
+permalink: aix/concept_reasons_to_deletesnapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, snapshot, copy, reason 
+summary: 删除旧的 Snapshot 副本以释放存储系统卷上的空间，或者保留较少的 Snapshot 副本。 
+---
+= 删除 Snapshot 副本的原因
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+删除旧的 Snapshot 副本以释放存储系统卷上的空间，或者保留较少的 Snapshot 副本。
+
+由于以下原因，您可能会删除较早的 Snapshot 副本：
+
+* 在存储系统卷上保留的已存储 Snapshot 副本数少于硬限制 255 。达到限制后，创建新 Snapshot 副本的尝试将失败。
+* 以释放存储系统卷上的空间。即使在 Snapshot 副本达到限制之前，如果磁盘没有足够的预留空间， Snapshot 副本也会失败。
+* 您也可以在 Snapshot 副本名称中使用通配符（ * ）。使用 Snapshot show 操作可以使用通配符显示与特定模式匹配的所有 Snapshot 副本名称。以下规则适用于在 Snapshot 副本名称中使用通配符：
++
+** 您只能在名称末尾使用通配符。不能在 Snapshot 副本名称的开头或中间使用通配符。
+** 您不能在 Snapshot 副本名称的存储系统或存储系统卷字段中使用通配符。
+
+
+

@@ -1,0 +1,15 @@
+---
+permalink: linux-administration/concept_volume_based_snaprestore_check_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, snaprestore, check, fail, nfs, vbsr, host, export 
+summary: 基于卷的 SnapRestore \ （ Vbsr\ ）检查失败， \ （当 NFS 尝试导出没有外部主机的列表时 \ ）位于客户端计算机 \ （ SLES 11\ ）中，该客户端计算机在 /etc/hosts 文件中具有两个不同的主机名 IP 。 
+---
+= 基于卷的 SnapRestore 检查失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在客户端计算机（ SLES 11 ）中，基于卷的 SnapRestore （ Vbsr ）检查失败（当 NFS 尝试导出没有外部主机的列表时），该客户端计算机在 ` /etc/hosts` 文件中具有两个不同的主机名 IP 。
+
+要解决此问题，您必须确保在 ` /etc/hosts` 文件中的主机名只有一个 IP 。

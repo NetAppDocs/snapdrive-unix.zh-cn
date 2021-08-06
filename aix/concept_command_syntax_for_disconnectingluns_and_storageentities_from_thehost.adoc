@@ -1,0 +1,15 @@
+---
+permalink: aix/concept_command_syntax_for_disconnectingluns_and_storageentities_from_thehost.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, syntax, disconnect, lun, storage, host, entity 
+summary: 要使用 SnapDrive storage disconnect 命令删除具有存储实体的 LUN 的映射，请使用以下语法。 
+---
+= 用于从主机断开 LUN 和存储实体连接的命令语法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要使用 SnapDrive storage disconnect` 命令删除具有存储实体的 LUN 的映射，请使用以下语法：
+
+` * SnapDrive storage disconnect ｛ -dg | -fs | -hostvol ｝ _file_spec_ [_file_spec_...] [ ｛ -dg | -fs | -hostvol ｝ _file_spec_ [_file_spec_...] …… ] 【 -full】 【 -fstype _type_】 【 -vmtype _type_】 *`

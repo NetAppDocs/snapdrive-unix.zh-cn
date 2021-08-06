@@ -1,0 +1,32 @@
+---
+permalink: solaris/concept_storage_system_partner_ip_address_or_interface_name_confirmation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, partner, ip, address, interface, name 
+summary: 在存储系统上运行设置程序时，系统会提示您提供配对存储系统的 IP 地址或接口名称，以便在发生故障转移时使用。如果不提供此信息，则 SnapDrive for UNIX 将无法在接管的存储系统上搜索存储实体。 
+---
+= 确认存储系统配对节点 IP 地址或接口名称
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在存储系统上运行设置程序时，系统会提示您提供配对存储系统的 IP 地址或接口名称，以便在发生故障转移时使用。如果不提供此信息，则 SnapDrive for UNIX 将无法在接管的存储系统上搜索存储实体。
+
+配对 IP 地址或接口名称是 HA 对设置中配对存储系统的 IP 地址或接口名称。如果主存储系统发生故障，配对存储系统将接管主存储系统的运行。
+
+
+
+== 示例：存储系统设置脚本
+
+以下存储系统设置脚本输出示例将请求 IP 地址：
+
+[listing]
+----
+storage_system_A> setup...
+Should interface e0 take over a partner IP address during failover?
+[n]: y
+Please enter the IP address or interface name to be taken over by e0
+[]: 10.2.21.35
+storage_system_A> reboot -t 0
+----
+此示例使用 IP 地址 10.2.2.21.35 。

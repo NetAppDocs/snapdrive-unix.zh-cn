@@ -1,0 +1,22 @@
+---
+permalink: aix/concept_the_storagedisconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, disconnect, command 
+summary: 存储断开操作会使用 lun SnapDrive storage create 或 lun SnapDrive storage connect 命令删除已映射到主机的 LUN 或存储实体。 
+---
+= storage disconnect 命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+执行 `storage disconnect` 操作会删除 LUN ，或者使用 SnapDrive storage create` 或 SnapDrive storage connect` 命令映射到主机的 LUN 和存储实体。
+
+使用 SnapDrive storage disconnect` 命令断开连接：
+
+* LUN
+* 直接在 LUN 上创建的文件系统
+* 在 LUN 上创建的磁盘组，主机卷和文件系统
+
+
+当 SnapDrive for UNIX 删除 LUN 映射时，它会导出 LUN 包含的磁盘组或文件系统。此操作会将磁盘和文件系统标记为已导出，这是断开映射对 LUN 内容的唯一更改。

@@ -1,0 +1,36 @@
+---
+permalink: solaris/task_enabling_thin_provisioning_for_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, enable, thin, provisioning, lun 
+summary: 您可以使用 SnapDrive for UNIX 在存储系统上执行精简配置。精简配置也称为空间预留。 
+---
+= 为 LUN 启用精简配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive for UNIX 在存储系统上执行精简配置。精简配置也称为空间预留。
+
+.步骤
+. 将 ` _space-reservations enabled_m` 配置变量值设置为 ` _on_` 。
++
+您也可以使用 ` -reserve` 和 ` -noreserve` 参数启用精简配置。
+
++
+参数将覆盖 -space-reservations enabled 变量中提及的值。
+
++
+您可以使用 -reserve 和 -noreserve 和以下命令来启用或禁用 LUN 预留：
+
++
+** SnapDrive storage create`
+** SnapDrive 存储调整大小`
+** SnapDrive snap connect`
+** SnapDrive snap restore`
+
+
++
+默认情况下， SnapDrive for UNIX 会为全新或新的存储创建操作启用空间预留。对于快照还原和快照连接操作，如果命令行未指定 ` _-reserve_` 或 ` _-noreserver_` 参数，或者配置文件中的值未被注释，则会使用 Snapshot 副本中的空间预留。
+
+

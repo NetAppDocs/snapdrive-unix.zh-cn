@@ -1,0 +1,29 @@
+---
+permalink: linux-administration/concept_unable_to_create_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, create, command 
+summary: 影响 SnapDrive snap create 命令创建 Snapshot 副本的功能的条件很少。 
+---
+= 无法创建 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+影响 SnapDrive snap create` 命令创建 Snapshot 副本的功能的条件很少。
+
+* SnapDrive snap create` 命令必须能够执行以下任务：
++
+** 查询所有磁盘组以获取 LUN 列表。
+** 通过 SCSI 命令查询所有 LUN 。
+
+
+* 在创建 Snapshot 副本之前，磁盘组中的 LUN 必须处于联机状态并映射到磁盘组。如果任何 LUN 脱机或未映射，则创建操作将失败。
++
+在尝试创建 Snapshot 副本之前，请确保所有 LUN 均已联机并映射到主机。
+
+* 访问权限不允许主机为该存储系统上的信息创建 Snapshot 副本。
++
+此外，由于它可与 LVM 条目结合使用，因此您必须以足够的权限登录到主机以使其能够操作 LVM 条目。
+
+

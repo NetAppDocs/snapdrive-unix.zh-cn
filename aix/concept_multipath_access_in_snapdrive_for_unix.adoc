@@ -1,0 +1,29 @@
+---
+permalink: aix/concept_multipath_access_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, multipath, access 
+summary: SnapDrive for UNIX 支持使用标准多路径软件解决方案对存储系统进行 FC 多路径访问。通过使用多路径，您可以在主机和存储系统之间配置多个网络路径。 
+---
+= 在 SnapDrive for UNIX 中支持多路径访问
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持使用标准多路径软件解决方案对存储系统进行 FC 多路径访问。通过使用多路径，您可以在主机和存储系统之间配置多个网络路径。
+
+|===
+| 平台 | 多路径解决方案 
+
+
+ a| 
+AIX
+ a| 
+对于 FC
+
+* NativeMPIO
+* DMP
+
+
+|===
+如果一个路径发生故障，则 FC 流量将继续在其余路径上传输。如果主机具有多个 LUN 路径，则需要多路径，并且它可以使底层路径对用户透明。如果配置并支持 SnapDrive for UNIX 操作配置文件中指定的多路径解决方案，则 SnapDrive for UNIX 将使用指定的多路径解决方案。

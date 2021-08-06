@@ -1,0 +1,46 @@
+---
+permalink: solaris/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, autosupport, message 
+summary: AutoSupport 消息包含以下信息。 
+---
+= AutoSupport 消息的内容
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 消息包含以下信息。
+
+* 事件源
+* 事件 ID
+* 适用于 UNIX 的 SnapDrive 版本
+* 消息状态：日志级别消息，例如 1 表示警报， 2 表示严重， 3 表示错误， 4 表示警告， 5 表示通知， 6 表示信息， 7 表示调试
+* 主机名
+* 主机操作系统
+* 主机操作系统的版本
+* 存储系统的名称
+* 使用 Protection Manager/ 基于角色的访问控制
+* 错误类别
+* AutoSupport 将消息条目标记为 false
+* 主机多路径类型：将记录在 `snapdrive.conf` file 中配置的值。如果由于配置值不正确而未加载此助手，则不会记录任何主机多路径类型。
+* 主机虚拟化已启用：此功能仅适用于 VMware 子操作系统。
+* protocol ：在 `snapdrive.conf` 文件中为 ` 默认传输 _` 配置的值。
+* 保护已启用：如果 OnCommand Data Fabric Manager （ DFM ）配置了 SnapDrive for UNIX ，则会记录值 ` _Yes_` 。
++
+
+NOTE: SnapDrive for UNIX 不会验证是否正在使用 OnCommand DFM 。
+
+
+
+运行 SnapDrive storage show -all` 命令时，可以使用以下追加信息：
+
+* 协议类型（ FCP/iSCSI ）：用于创建 LUN 的协议（如果有）。
+* 已连接的 LUN 数量
+* 磁盘或卷组的数量
+* 文件规范的数量
+* 主机卷的数量
+
+
+
+NOTE: 如果在 SnapDrive for UNIX 中启用了 AutoSupport ，则在发生任何操作失败时，事件管理系统（ Event Management System ， VM ）存储系统中会记录错误消息。如果错误消息包含任何特殊字符，例如（ < ， > ， & ， ' ， " ， \r ），在存储系统的 EMS 日志视图中会显示格式错误的值。

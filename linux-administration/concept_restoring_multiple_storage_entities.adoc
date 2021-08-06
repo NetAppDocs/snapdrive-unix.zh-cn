@@ -1,0 +1,22 @@
+---
+permalink: linux-administration/concept_restoring_multiple_storage_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, storage, snapshot, multiple 
+summary: 您可以还原包含多个存储实体的 Snapshot 副本。 
+---
+= 还原多个存储实体
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以还原包含多个存储实体的 Snapshot 副本。
+
+要还原包含驻留在多个目标存储系统上的存储实体的 Snapshot 副本，必须满足以下要求：
+
+* 在命令提示符处指定的存储实体必须位于单个存储系统或 HA 对上。
+* 源存储系统的卷名称必须与目标存储系统的卷名称匹配。
+* 您必须将 `snapdrive.conf` 文件中的 `snapmirror-dest-multily-filervolums-enabled` 参数设置为 on 。
+
+
+您可以使用一个命令还原驻留在单个存储系统或 HA 对上的存储实体。

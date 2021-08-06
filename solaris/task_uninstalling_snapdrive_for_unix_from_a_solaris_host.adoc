@@ -1,0 +1,41 @@
+---
+permalink: solaris/task_uninstalling_snapdrive_for_unix_from_a_solaris_host.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, solaris, host, uninstall 
+summary: 要从 Solaris 系统卸载 SnapDrive for UNIX ，必须使用 uninstall 命令。 
+---
+= 从 Solaris 主机卸载 SnapDrive for UNIX
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要从 Solaris 系统卸载 SnapDrive for UNIX ，必须使用 `uninstall` 命令。
+
+确保以 root 用户身份登录。
+
+在稀疏根区域中卸载 SnapDrive for UNIX 时，卸载过程不会删除 ` /usr/bin` 和 ` /usr/sbin` 中 SnapDrive for UNIX 的符号链接，因为这些符号链接在稀疏根区域中挂载为只读文件系统。您必须从全局区域中删除这些符号链接。在删除符号链接之前，请确保没有其他稀疏根分区正在使用 SnapDrive for UNIX 。
+
+`rm /usr/sbin/SnapDrive`
+
+`rm /usr/sbin/snapdrived`
+
+`rm /usr/bin/SnapDrive`
+
+.步骤
+. 使用以下命令删除软件：
++
+` * 卸载 *`
+
+. 命令询问您是否确实要删除此连接套件时，请选择问题解答 y （或 yes ）。
++
+如果您问题解答 n （或 no ），则此命令不会卸载连接套件。
+
++
+要避免获取确认查询，请使用 ` -f` 选项输入 ` 。 /uninstall` 命令，以防止卸载脚本在交互模式下运行。
+
++
+
+NOTE: 要确保停止所有 SnapDrive for UNIX 服务，请使用 SnapDrive for UNIX 卸载脚本；请勿使用 `pkgrm` 等操作系统工具。
+
+

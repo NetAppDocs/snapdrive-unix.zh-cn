@@ -1,0 +1,19 @@
+---
+permalink: linux-administration/concept_guidelines_fordisconnectingsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, copy, lun, storage, nfs 
+summary: 以下是断开 LUN ，存储实体或 NFS 目录的 Snapshot 副本连接的准则。 
+---
+= 断开 Snapshot 副本连接的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是断开 LUN ，存储实体或 NFS 目录的 Snapshot 副本连接的准则。
+
+* 断开文件系统连接时， SnapDrive for UNIX 始终会删除挂载点。
+* 通过 Linux 主机，您可以将多个文件系统连接到一个挂载点。但是， SnapDrive for UNIX 要求每个文件系统都有一个唯一的挂载点。如果使用 SnapDrive snap disconnect` 命令断开连接到单个挂载点的文件系统，则该命令将失败。
+* 要撤消 Snapshot 连接操作的影响，请使用 Snapshot disconnect 命令。
+* 如果在 Snapshot 连接操作期间将 `enable-split -clone` 配置变量值设置为 `on` 或 `sync` ，并在 Snapshot 断开操作期间将其设置为 `off` ，则 SnapDrive for UNIX 不会删除 Snapshot 副本中的原始卷或 LUN 。
+

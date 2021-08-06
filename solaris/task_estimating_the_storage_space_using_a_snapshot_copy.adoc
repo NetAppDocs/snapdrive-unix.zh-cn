@@ -1,0 +1,69 @@
+---
+permalink: solaris/task_estimating_the_storage_space_using_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, space, snapshot, copy, estimate 
+summary: 如果存储系统中没有可用于 Snapshot 副本的克隆，则克隆拆分估计有助于使用 Snapshot 副本估算所需存储空间 \ （以 MB 为单位）。 
+---
+= 使用 Snapshot 副本估算存储空间
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果存储系统中没有可用于 Snapshot 副本的克隆，则克隆拆分估计有助于使用 Snapshot 副本估计所需的存储空间（以 MB 为单位）。
+
+.步骤
+. 输入以下命令以估计所需的存储空间。
++
+` * SnapDrive 克隆拆分估计值 -snapname [_long_snap_name_] ｛ -volclone]-v` -verbose *
+
+
+
+以下示例估计了使用 Snapshot 副本拆分 LUN 克隆所需的存储空间。
+
+[listing]
+----
+snapdrive clone split estimate -snapname f3050-220-112:/vol/vol_1:snap_1 -lunclone
+Resource       Container  Required Available Storage
+                          Space(MB)Space(MB) Status
+f3050-220-112: f3050-220 	5120	   14078    AVAILABLE
+/vol/vol_1:snap_1 -112:/vol/vol_1
+----
+以下示例使用带有 ` -FS` 选项的 Snapshot 副本估算用于拆分 LUN 克隆的存储空间。
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/my_mnt1 -snapname f3050-220-112:/vol/vol_1:snap_1 -lunclone
+Resource         Container Required Available Storage
+                            Space(MB)Space(MB) Status
+f3050-220-112:   f3050-220  4120     14078  AVAILABLE
+/vol/vol_1:snap_1 -112:/vol/vol_1
+----
+以下示例使用带有 ` -FS` 选项的 Snapshot 副本估算用于拆分卷克隆的存储空间。
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/fs1 -snapname f3050-220-112:/vol/vol_1:snap_1 -volclone
+Resource      Container   Required Available Storage
+                          Space(MB)Space(MB) Status
+f3050-220-112:  f3050-220 54019   54517  AVAILABLE
+/vol/vol0:snap_1 112:aggr0
+----
+以下示例估计了使用 Snapshot 副本拆分卷克隆所需的存储空间。
+
+[listing]
+----
+# snapdrive clone split estimate -snapname f3050-220-112:/vol/vol_1:snap_1 -volclone
+Resource      Container   Required Available Storage
+                          Space(MB)Space(MB) Status
+f3050-220-112:  f3050-220 54019    54517    AVAILABLE
+/vol/vol0:snap_1 112:aggr0
+----
+[NOTE]
+====
+* 如果对 Snapshot 副本执行克隆拆分估计，则 "Resource" 字段包含 Snapshot 副本名称。
+* 如果您提供任何失效文件规范以及带有 ` -lunclone` 选项的 Snapshot 副本，则 " 所需空间 " 将显示为 0 。
+* 只有从适用于 UNIX 的 SnapDrive 4.2 及更高版本创建的 Snapshot 副本才可以使用 Snapshot 进行 LUN 克隆拆分评估。
+
+
+====

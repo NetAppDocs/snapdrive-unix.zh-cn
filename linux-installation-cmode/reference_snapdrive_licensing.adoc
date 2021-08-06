@@ -1,0 +1,46 @@
+---
+permalink: linux-installation-cmode/reference_snapdrive_licensing.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, license, requirements, unix 
+summary: 在安装 SnapDrive for UNIX 之前，您必须确保已为所需软件和协议获得适当的许可证。 
+---
+= SnapDrive for UNIX 许可证要求
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装 SnapDrive for UNIX 之前，您必须确保已为所需软件和协议获得适当的许可证。
+
+SnapDrive for UNIX 许可证要求如下：
+
+|===
+| 许可证 | Description | 安装位置 
+
+
+ a| 
+SnapRestore
+ a| 
+SnapDrive for UNIX 还原 Snapshot 副本所需的许可证。
+ a| 
+在 NetApp 存储系统上
+
+
+
+ a| 
+FlexClone
+ a| 
+用于克隆 Snapshot 副本的可选许可证。
+ a| 
+在 NetApp 存储系统上
+
+
+
+ a| 
+协议
+ a| 
+LUN 需要 iSCSI 或 FC 许可证。
+ a| 
+在 NetApp 存储系统上
+
+|===

@@ -1,0 +1,18 @@
+---
+permalink: linux-administration/concept_other_ways_to_getsnapshot_copynames.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, list, command, snapshot, copy, name 
+summary: 使用 SnapDrive snap list 命令显示 Snapshot 副本名称。 
+---
+= 获取 Snapshot 副本名称的其他方法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive snap list` 命令显示 Snapshot 副本名称。
+
+另一种获取 Snapshot 副本名称的方法是，登录到存储系统并在其中使用 SnapDrive snap list` 命令。此命令显示 Snapshot 副本的名称。
+
+
+NOTE: SnapDrive snap show` 命令相当于 storage system SnapDrive snap list` 命令。

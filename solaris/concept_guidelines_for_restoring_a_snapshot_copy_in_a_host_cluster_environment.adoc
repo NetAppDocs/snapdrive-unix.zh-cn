@@ -1,0 +1,29 @@
+---
+permalink: solaris/concept_guidelines_for_restoring_a_snapshot_copy_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, host, restore 
+summary: 还原 Snapshot 副本时，请遵循相关准则。 
+---
+= 在主机集群环境中还原 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+还原 Snapshot 副本时，请遵循相关准则。
+
+* 可以从主机集群中的任何节点执行 SnapDrive snapshot restore` 命令。
+* 如果文件系统或磁盘组处于活动状态，则必须在主机集群中的所有节点之间共享这些文件系统或磁盘组。
+* 如果任何 LUN 映射到主机集群以外的节点，则对共享文件系统或磁盘组执行 Snapshot 还原操作将失败。确保所有共享 LUN 均未映射到主机集群以外的节点。
+* Snapshot 创建操作可以在专用文件系统或磁盘组上执行，但要在共享模式下还原 Snapshot 副本，您必须确保文件系统或磁盘组不会在主机集群中的任何节点上处于专用模式。否则， SnapDrive for UNIX 将出现错误。
+* 如果主机集群中不存在文件系统或磁盘组，则 SnapDrive for UNIX 将从 Snapshot 副本创建 LUN ，并将其映射到主机集群中的所有节点，然后激活磁盘组和文件系统。将 LUN 映射到主机集群中的所有节点后， Veritas 集群卷管理器将刷新主机集群中所有节点之间的 LUN 信息。如果在刷新集群节点中 CVM 实例的 LUN 信息之前尝试激活磁盘组，则 Snapshot 还原操作可能会失败。要刷新 CVM ，必须重新发出 SnapDrive snap restore` 命令。
+* 只有在满足以下条件时，才能在主机集群以外的节点上创建 Snapshot 副本并在集群中进行还原和共享：
++
+** 文件系统或磁盘组在主机集群中的任何节点上均不处于专用模式。
+** LUN 对主机集群以外的节点不可见。
+
+
+* 您不能通过一次 Snapshot 还原操作在共享系统和专用系统上还原 Snapshot 副本。
+* 如果在发出 SnapDrive snap restore` 命令时使用了 ` -DeviceType` dedicated 选项，或者在共享磁盘组或文件系统上未指定 ` -DeviceType` 选项，则 SnapDrive for UNIX 会提醒您连接到多个节点的 LUN 已还原。
+* 如果在创建 Snapshot 副本和还原 Snapshot 副本之间更改了磁盘组配置，则 SnapDrive for UNIX 会提醒您配置已更改。
+

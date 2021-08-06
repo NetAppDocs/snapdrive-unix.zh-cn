@@ -1,0 +1,28 @@
+---
+permalink: solaris/concept_storage_connect_operation_fails_lun_created_on_storage_system_using_lun_create.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, storage, fail, lun, create, command 
+summary: 如果 LUN 是在存储系统上使用 lun create 命令或 System Manager 创建的，则 SnapDrive storage connect 命令无法连接到该 LUN 。 
+---
+= 存储连接操作无法连接到使用 lun create 命令在存储系统上创建的 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 LUN 是在存储系统上使用 `lun create` 命令或 System Manager 创建的，则 SnapDrive storage connect` 命令无法连接到该 LUN 。
+
+出现以下错误消息的原因是， LUN 未格式化， Solaris 无法识别它，而 LUN 已被发现并映射到主机。
+
+
+
+== 临时解决策
+
+请勿手动创建 LUN 。使用带有 ` -lun` 选项的 lun storage create` 命令创建 SnapDrive 。如果在执行 SnapDrive storage connect` 命令后必须使用现有 LUN ，请完成以下步骤。
+
+. 手动格式化 LUN 。
+. 使用原生卷管理器和操作系统命令在其中创建文件系统。
++
+创建文件系统后，您可以对此 LUN 使用 SnapDrive for UNIX 操作。
+
+

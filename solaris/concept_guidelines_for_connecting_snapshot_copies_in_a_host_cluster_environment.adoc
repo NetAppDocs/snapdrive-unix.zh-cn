@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_guidelines_for_connecting_snapshot_copies_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guideline, connect, copy, host, cluster, snapshot 
+summary: 您可以从主机集群中的任何节点连接 Snapshot 副本。连接到 Snapshot 副本时，请遵循相关准则。 
+---
+= 在主机集群环境中连接 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从主机集群中的任何节点连接 Snapshot 副本。连接到 Snapshot 副本时，请遵循相关准则。
+
+* 可以从主机集群中的任何节点执行 SnapDrive snapshot connect` 命令。如果使用 ` -DeviceType shared` 选项从主机集群中的任何非主节点启动 SnapDrive snap connect` 命令，则该命令将发送到主节点并执行。要做到这一点，请确保所有主机集群节点上都允许使用 `rsh` 或 `ssh` access-without 密码提示符。
+* 在此操作中指定的多个文件系统和磁盘组应具有相同的设备类型范围；也就是说，所有文件系统和磁盘组都应共享，或者所有文件系统和磁盘组都应专用。
+* 不支持对原始 LUN 上的 NFS 或存储实体使用 SnapDrive snap connect` 命令。
+* 在 SnapDrive snap connect` 命令中， ` -DeviceType` dedicated 选项支持 ` -igroup` 选项，而不支持 ` -DeviceType` shared 选项。
+* SnapDrive for UNIX 会在主节点上执行 SnapDrive snap connect` 命令。在创建共享存储实体之前，它会在主节点上创建并映射 LUN ，然后映射所有非主节点上的 LUN 。还会为主机集群中的所有节点创建和管理 igroup 。如果在此过程中出现任何错误消息，则 Snapshot 连接操作将失败。
+* 可以使用 SnapDrive snap connect` 命令连接以下存储实体：
++
+** 主机集群中已处于共享或专用模式的共享文件系统或磁盘组。
+** 主机集群中单个节点的专用文件系统或磁盘组，即使主机集群中的文件系统或磁盘组已处于共享模式也是如此。
+** 在主机集群以外的节点上创建的文件系统或磁盘组的 Snapshot 副本。
+
+
+* 如果没有针对磁盘组的 ` -destdg` 选项和针对文件系统的 ` -auturename` 选项，则非主节点中已存在的专用文件系统或磁盘组无法在主机集群的共享模式下重新连接。
+
+
+也就是说，如果主机集群中的一个非主节点中已存在专用模式的文件系统，则必须使用 ` -destdg` 和 ` -auturename` 选项指定 SnapDrive snap connect` 命令，或者在命令中明确指定目标文件系统。

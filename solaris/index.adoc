@@ -1,0 +1,13 @@
+---
+permalink: solaris/index.html 
+sidebar: sidebar 
+keywords: documentation, guide, installation, administration, solaris 
+summary: 介绍如何在 Solaris 平台上安装，配置和使用适用于 UNIX 的 SnapDrive 。 
+---
+= 《适用于 Solaris 的安装和管理指南》
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本指南介绍如何在 Solaris 平台上安装，配置和使用适用于 UNIX 的 SnapDrive 5.3.2 。

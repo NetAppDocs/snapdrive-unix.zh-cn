@@ -1,0 +1,15 @@
+---
+permalink: linux-administration/concept_configuration_information_in_snapdrive_for_unix_for_guest_os.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, guest, lun, operating 
+summary: 您必须在子操作系统中配置存储系统和 Virtual Storage Console 以配置 RDM LUN 。 
+---
+= 子操作系统的 SnapDrive for UNIX 中的配置信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须在子操作系统中配置存储系统和 Virtual Storage Console 以配置 RDM LUN 。
+
+要与 Virtual Storage Console 进行通信以配置 RDM LUN ，需要登录信息。配置完成后， SnapDrive for UNIX 允许您在子操作系统中创建 RDM LUN 。

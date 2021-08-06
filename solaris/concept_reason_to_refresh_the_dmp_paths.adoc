@@ -1,0 +1,35 @@
+---
+permalink: solaris/concept_reason_to_refresh_the_dmp_paths.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, refresh, dmp, path 
+summary: 在具有 FC 和 DMP 配置的主机上， SnapDrive storage delete - lun 命令可能会挂起。 
+---
+= 刷新 DMP 路径的原因
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在具有 FC 和 DMP 配置的主机上， SnapDrive storage delete - lun` 命令可能会挂起。
+
+命令可能会因以下组件安装或配置不当而挂起：
+
+* NTAPI
+* Veritas 堆栈（存储基础）
+* 多路径许可证
+
+
+启用，禁用或添加任何 FC 路径后，您必须正确刷新 DMP 路径信息。要刷新 DMP 路径，请按顺序执行以下命令，如下所示。
+
+|===
+| * 平台 * | * 命令 * 
+
+
+ a| 
+Solaris
+ a| 
+* `devfsadm -CV`
+* `vxdisk scandisk`
+
+
+|===

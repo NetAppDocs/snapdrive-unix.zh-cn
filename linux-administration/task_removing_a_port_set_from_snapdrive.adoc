@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/task_removing_a_port_set_from_snapdrive.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, remove, portset, delete, command, port, set 
+summary: 您可以使用 SnapDrive portset delete 命令删除在 SnapDrive 中配置的端口集。 
+---
+= 从 SnapDrive 中删除端口集
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive portset delete` 命令删除在 SnapDrive 中配置的端口集。
+
+.步骤
+. 在主机系统上输入以下命令：
++
+` * SnapDrive 端口集 delete _filername_ [_filername..._]*`
+
++
+` _filername_` 是配置端口集的 Vserver 名称。
+
++
+[listing]
+----
+snapdrive portset delete vs91
+Deleted portset configuration for appliance: vs91
+----
++
+已成功删除为 SnapDrive 配置的端口集。
+
+

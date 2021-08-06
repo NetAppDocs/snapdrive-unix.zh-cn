@@ -1,0 +1,19 @@
+---
+permalink: aix/concept_splitting_the_flexclone_volume.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, flexclone, splitting, volume 
+summary: 您可以使用 SnapDrive for UNIX 命令拆分现有的 FlexClone 卷。 
+---
+= 拆分 FlexClone 卷
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive for UNIX 命令拆分现有的 FlexClone 卷。
+
+要拆分 FlexClone 卷，还需要使用 `snap connect` 命令指定 ` 拆分` CLI 选项。要断开连接，应使用 `disconnect` 命令提供 ` -split` 选项以断开拆分的 FlexClone 卷。此处有效的是启动 ` 拆分` 操作的阻止和非阻止模式。
+
+* 相关信息 *
+
+xref:concept_splitting_the_volume_or_lun_clone_operations.adoc[拆分卷克隆或 LUN 克隆]

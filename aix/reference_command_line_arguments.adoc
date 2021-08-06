@@ -1,0 +1,207 @@
+---
+permalink: aix/reference_command_line_arguments.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, line, argument 
+summary: 适用于 UNIX 的 SnapDrive 采用特定格式进行参数设置。 
+---
+= 命令行参数
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+适用于 UNIX 的 SnapDrive 采用特定格式进行参数设置。
+
+下表介绍了可使用关键字指定的参数。
+
+使用格式 SnapDrive type_name operation_name [_<keyword/option> <switches>_]` ；例如，如果要从主机文件系统 ` /mnt/dir` 创建名为 ` snap_hr_` 的 Snapshot 副本，则应输入以下命令行：
+
+` * SnapDrive snap create -fs /mnt/dir -snapname _snap_hr_.*`
+
+|===
+| 参数 | Description 
+
+
+ a| 
+dest_fspec
+ a| 
+目标实体在连接其磁盘组或 LUN 后可访问的名称。
+
+
+
+ a| 
+域名
+ a| 
+磁盘组或卷组的名称。
+
+
+
+ a| 
+d_lun_name
+ a| 
+用于指定 SnapDrive for UNIX 用于使 LUN 在新连接的 Snapshot 副本中可用的目标名称。
+
+
+
+ a| 
+文件名
+ a| 
+存储系统的名称。
+
+
+
+ a| 
+filer_path
+ a| 
+存储系统对象的路径名称。此名称可以包含存储系统名称和卷，但 SnapDrive for UNIX 不必根据先前参数中提供的值对缺少的组件使用默认值。以下是路径名称示例：
+
+* `test_filer ： /vol/vol3/qtree_2`
+* ` /vol/vol3/qtree_2`
+* `qtree_2`
+
+
+
+
+ a| 
+file_spec
+ a| 
+存储实体的名称，例如主机卷， LUN ，磁盘或卷组，文件系统或 NFS 目录树。
+
+通常，您可以使用 file_Spec 参数作为以下参数之一：
+
+* 希望 SnapDrive for UNIX 创建 Snapshot 副本或从 Snapshot 副本还原的对象
+* 要在配置存储时创建或使用的对象
+
+
+这些对象不必都是相同类型的对象。如果您提供多个主机卷，它们都必须属于同一个卷管理器。
+
+如果为此参数提供的值用于解析为冗余磁盘组或主机卷，则此命令将失败。
+
+错误用法示例：此示例假设 dg1 包含主机卷 HV1 和 hv2 ，文件系统为 fs1 和 fs2 。因此，以下参数可能会失败，因为它们涉及冗余磁盘组或主机卷。
+
+` -dg _dg1_ -hostvol dg1/HV1`
+
+` -dg _dg1_`
+
+` FS/fs1`
+
+` -hostvol dg1/HV1 -fs/fs1`
+
+正确用法示例：此示例显示了此参数的正确用法。
+
+` -hostvoldg1/hv1dg1/hv2`
+
+` FS/fs1/fs2`
+
+` -hostvoldg1/HV1 -fs/fs2`
+
+
+
+ a| 
+fspec_set
+ a| 
+与 snap connect 命令结合使用以确定：
+
+* 主机 LVM 实体
+* LUN 上包含的文件系统
+
+
+此外，您还可以使用参数指定 SnapDrive for UNIX 在 Snapshot 副本的新连接副本中提供实体时所使用的一组目标名称。
+
+fspec_set 的格式为： ` ｛ -vg _ -dg _ -fs _ -lvol _ -hostvol ｝ _src_fspec_ [_dest_fspec_] [ ｛ -destdg _ destvg ｝ _dg_name_] [ ｛ - destlv _ -desthv ｝ _lv_name_]`
+
+
+
+ a| 
+host_lvm_fspec
+ a| 
+用于指定在执行 storage create 命令时是要创建文件系统，逻辑卷还是磁盘组。此参数可能采用以下三种格式中的任何一种。使用的格式取决于要创建的实体。
+
+
+NOTE: ` -dg` 和 ` -vg` 选项是同义词，反映了以下事实：某些操作系统引用磁盘组，而其他操作系统引用卷组。此外， ` lvol` 和 ` -hostvol` 也是同义词。本指南使用 ` -DG` 来指代磁盘组和卷组，使用 ` -hostvol` 来指代逻辑卷和主机卷。
+
+
+
+ a| 
+要创建文件系统，请使用以下格式： ` -fs file_spec. （ -fstype _type_） "-ffsopts _options_] （ -hostvol _file_spec_） （ -dg _dG_name_） 要创建逻辑卷或主机卷，请使用以下格式： "-hostdg _file_spec_] （ -dg ）` _vol_file_name_s_ ``
+
+您必须为要创建的顶级实体命名。您无需提供任何底层实体的名称。如果不提供底层实体的名称，则 SnapDrive for UNIX 将使用内部生成的名称创建这些实体。
+
+如果指定 SnapDrive for UNIX 创建文件系统，则必须指定 SnapDrive for UNIX 在主机 LVM 中支持的类型。这些类型包括 `JFS2` 或 `VxFS` 。
+
+选项 ` -fsopts` 用于指定要传递给创建新文件系统的主机操作的选项；例如， `mKFS` 。
+
+
+
+ a| 
+IG_name
+ a| 
+启动程序组的名称。
+
+
+
+ a| 
+lor_filer_path
+ a| 
+一种路径名称，其中包括存储系统名称，卷名称以及该卷中可能包含的其他目录和文件元素。以下是长路径名称的示例：
+
+`test_filer ： /vol/vol3/qtree_2`
+
+`10.10.10.1 ： /vol/vol4/lun_21`
+
+
+
+ a| 
+lun_name
+ a| 
+包含存储系统名称，卷和 LUN 名称的名称。以下是长 LUN 名称的示例：
+
+`test_filer ： /vol/vol1/luna`
+
+
+
+ a| 
+Long_snap_name
+ a| 
+包含存储系统名称，卷和 Snapshot 副本名称的名称。以下是一个长 Snapshot 副本名称示例： `test_filer ： /vol/account_vol ： snap_20040202`
+
+使用 SnapDrive snap show` 和 SnapDrive snap delete` 命令，您可以使用星号（ * ）字符作为通配符，以匹配 Snapshot 副本名称的任何部分。如果使用通配符，则必须将其放在 Snapshot 副本名称的末尾。如果您在名称中的任何其他点使用通配符，则 SnapDrive for UNIX 将显示一条错误消息。
+
+示例：此示例将通配符与 `snap show` 命令和 `snap delete` 命令结合使用： `snap show myfiler ： /vol/vol2 ： mysnap*`
+
+`myfiler ： /vol/vol2 ： /yoursnap* snap show myfiler ： /vol/vol1/qtree1 ： qtree_snap* snap delete 10.10.10.10 ： /vol/vol2 ： mysnap* 10.10.10.11 ： /vol/vol3 ： yoursnap* hersnap`
+
+通配符限制：不能在 Snapshot 副本名称中间输入通配符。例如，以下命令行会生成一条错误消息，因为通配符位于 Snapshot 副本名称的中间： `Banana ： /vol/vol1 ： my* snap`
+
+
+
+ a| 
+lun_name
+ a| 
+LUN 的名称。此名称不包括 LUN 所在的存储系统和卷。以下是 LUN 名称的示例： luna
+
+
+
+ a| 
+path
+ a| 
+任何路径名称。
+
+
+
+ a| 
+prefix_string
+ a| 
+卷克隆名称生成中使用的前缀
+
+
+
+ a| 
+S_LUN_name
+ a| 
+表示在由 ` lor_snap_name_` 指定的 Snapshot 副本中捕获的 LUN 实体。
+
+|===
+* 相关信息 *
+
+xref:reference_storage_provisioning_command_lines.adoc[存储配置命令行]

@@ -1,0 +1,22 @@
+---
+permalink: solaris/task_starting_the_snapdrive_for_unix_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, start, daemon 
+summary: 您必须先启动并运行 SnapDrive for UNIX 守护进程，然后才能使用任何 SnapDrive for UNIX 命令。 
+---
+= 启动 SnapDrive for UNIX 守护进程
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须先启动并运行 SnapDrive for UNIX 守护进程，然后才能使用任何 SnapDrive for UNIX 命令。
+
+您必须以 root 用户身份登录。
+
+.步骤
+. 启动守护进程：
++
+` * 快照启动 *`
+
+

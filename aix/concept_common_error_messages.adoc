@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_common_error_messages.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, common, error, message 
+summary: SnapDrive for UNIX 具有一些常见错误消息。查看常见错误消息列表。 
+---
+= 常见错误消息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 具有一些常见错误消息。查看常见错误消息列表。

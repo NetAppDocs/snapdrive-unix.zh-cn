@@ -1,0 +1,17 @@
+---
+permalink: linux-installation-cmode/reference_supported_configurations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configurations, supported, interoperability, tool 
+summary: 在安装 SnapDrive for SnapDrive 之前，您应使用 NetApp 互操作性表工具 \ （ UNIX\ ）验证 IMT 是否支持您的配置。 
+---
+= 支持的配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装 SnapDrive for UNIX 之前，您应使用 NetApp 互操作性表工具（ IMT ）验证对您的配置的 SnapDrive 支持。
+
+* 相关信息 *
+
+http://mysupport.netapp.com/matrix["NetApp 互操作性表工具"]

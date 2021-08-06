@@ -1,0 +1,155 @@
+---
+permalink: linux-administration/task_steps_to_cleanup_the_mapped_rdm_luns_in_the_guest_os_or_esx_server.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rdm, lun, esx, server, clean 
+summary: 您必须清理子操作系统以及 ESX 服务器中的 RDM LUN 。 
+---
+= 清理子操作系统和 ESX 服务器中映射的 RDM LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须清理子操作系统以及 ESX 服务器中的 RDM LUN 。
+
+
+
+== 清理子操作系统中映射的 RDM LUN
+
+[role="lead"]
+必须在子操作系统中执行以下步骤。
+
+.步骤
+. 从 * vCenter * 导航窗格中，选择执行 RDM 映射的虚拟机。
+. 右键单击虚拟机并关闭子操作系统。
+. 右键单击虚拟机并选择 * 编辑设置 * 。
++
+此时将显示 * 虚拟机属性 * 对话框。
+
+. 在 * 虚拟机属性 * 对话框中，选择 * 硬件 * 选项卡。
++
+对于每个 RDM 条目，您会发现整个 RDM 映射条目均为映射的原始 LUN 。
+
+. 选择 RDM 映射条目，然后单击 * 删除 * 。
++
+右窗格中将显示 * 删除选项 * 。
+
+. 在 * 删除选项 * 中，选择 * 从虚拟机中删除并从磁盘中删除文件 * 。
+. 单击 * 确定 * 。
++
+所有 RDM 映射条目都会从子操作系统中删除。
+
++
+从子操作系统中删除 RDM LUN 条目后，您需要从 ESX 服务器中删除这些条目。
+
+
+
+
+
+== 清理 ESX 服务器中映射的 RDM LUN
+
+[role="lead"]
+要彻底清理 ESX 服务器中的所有 RDM LUN 条目，必须由 ESX 服务器管理员执行以下步骤。
+
+在处理虚拟机目录之前，请关闭虚拟机。
+
+.步骤
+. 转到虚拟机目录。
+. 切换到目录 `cd /vmfs/volumes/Data store path` 。
++
+[listing]
+----
+# ls -l
+total 1024
+drwxr-xr-t 1 root root 1540 Apr 19 23:54 4bc702de-fa7ec190-992b-001a6496f353
+lrwxr-xr-x 1 root root   35 May 11 07:56 local_storage (1) -> 4bc702de-fa7ec190-992b-001a6496f353
+----
++
+此处列出了所有文件和目录。
+
+. 选择虚拟机所在的相应数据存储库。
+. 将目录更改为数据存储。
++
+此时将显示虚拟机目录。
+
+. 将目录更改为要清理 RDM LUN 映射的虚拟机。
++
+所有文件都会列在虚拟机目录中。
+
+. 删除所有嵌入了 SMVI 字符串的 `vmdk` 文件。或者，您也可以使用 LUN 名称来标识 `vmdk` 文件。
++
+或者，您也可以使用 LUN 名称来标识 `vmdk` 文件。
+
++
+如果您的 `vmdk` 文件名称为 ` _rdm1_` ，请仅删除 ` _rhel4u8-141-232_smvi_vol_esx3u5_rdm1-rdmp.vmvmvmdk` 和 ` rhel4u8-141-232_smvi_vol_esx3u5_mvmvm_` 文件。
+
++
+删除 ` _vlnx5U4-197-23_smvi_10.72.197.93_C4koV4XzK2HT_22-rdmp.vmdk_` 和 ` _vlnx5U4-197-23_SMVI_10.72.197.93_C4koV4XzK2HT_22.93.vmdk_VM_v4_v_v4.5_v_v4.5_v_v4.5_v4.5_v4.5_v4.5_v_v4.9_v4.5cv_v_4.9_v4.5cv_v4.9_4.c4_v_v4.v_4.`
+
+. 同时，从虚拟机配置文件（`vmx` ）中删除 `vmdk` 文件条目。
++
+以下是从 `vmx` 文件中删除 `vmdk` 文件条目的示例。
+
++
+|===
+| * 名称 * | * 问题描述 * 
+
+
+ a| 
+` rhel4u8-141-232_`
+ a| 
+虚拟机的名称
+
+
+
+ a| 
+` _smvi_`
+ a| 
+指示此 vmdk 文件由 SnapManager 为虚拟基础架构服务器创建
+
+
+
+ a| 
+` vol_esx3u5_`
+ a| 
+创建 LUN 的卷的名称
+
+
+
+ a| 
+` _ rdm1_`
+ a| 
+LUN 的名称
+
+
+
+ a| 
+` _rdmp_`
+ a| 
+表示此 LUN 在物理上兼容
+
+
+
+ a| 
+` _vmdk_`
+ a| 
+虚拟机磁盘文件
+
+|===
++
+[listing]
+----
+[root@ rhel4u8-141-232]# vi rhel4u8-141-232.vmx
+		:
+		:
+scsi3:1.fileName = "rhel4u8-141-232_SMVI__vol_esx3u5_rdm1.vmdk"
+scsi3:1.mode = "independent-persistent"
+scsi3:1.ctkEnabled = "FALSE"
+scsi3:1.deviceType = "scsi-hardDisk"
+scsi3:1.present = "TRUE"
+scsi3:1.redo = ""
+----
+. 删除上例中指定的条目，包括引号和逗号，但 ` _scsi3 ： 1.present_` 条目除外，您应将该条目从 ` _true_m` 更改为 ` _false_` 。
+. 保存并退出文件。
+. 打开虚拟机。
+

@@ -1,0 +1,41 @@
+---
+permalink: aix/concept_discrepancy_in_the_error_code_message.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, discrepancy, error, code, message 
+summary: 如果在 FC 和 iSCSI 服务均已启动或关闭时执行 SnapDrive storage delete 命令，则 SnapDrive for UNIX 将显示错误消息。 
+---
+= 错误代码消息存在差异
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果在 FC 和 iSCSI 服务均已启动或关闭时执行 SnapDrive storage delete` 命令，则 SnapDrive for UNIX 将显示错误消息。
+
+|===
+| * 传输协议 * | * 显示的消息（不正确的消息） * | * 应改为显示的消息（正确的消息） * 
+
+
+ a| 
+已配置 FC 和 iSCSI
+ a| 
+[listing]
+----
+0002-181 Command error: Could not select appropriate File System. Please check the value of fstype in config file, and ensure proper file system is configured in the system.
+---- a| 
+`0002-143 管理员错误：不支持 Linuxiscsi linuxfcp 驱动程序共存。`
+
+`确保主机中仅加载了一个驱动程序，然后重试。`
+
+
+
+ a| 
+未配置 FC 和 iSCSI
+ a| 
+[listing]
+----
+0001-465 Command error: The following filespecs do not exist and cannot be deleted.
+---- a| 
+`0001-877 管理员错误：未找到 HBA 助手。涉及 LUN 的命令应失败。`
+
+|===

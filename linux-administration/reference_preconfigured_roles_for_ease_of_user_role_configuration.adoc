@@ -1,0 +1,48 @@
+---
+permalink: linux-administration/reference_preconfigured_roles_for_ease_of_user_role_configuration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, roles, user, configuration, config, assign 
+summary: 预配置的角色可简化向用户分配角色的任务。 
+---
+= 预配置的角色，便于配置用户角色
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+预配置的角色可简化向用户分配角色的任务。
+
+下表列出了预定义的角色：
+
+|===
+| Role name | Description 
+
+
+ a| 
+GlobalSDStorage
+ a| 
+使用 SnapDrive for UNIX 管理存储
+
+
+
+ a| 
+GlobalSDConfig
+ a| 
+使用 SnapDrive for UNIX 管理配置
+
+
+
+ a| 
+GlobalSDSnapshot
+ a| 
+使用 SnapDrive for UNIX 管理 Snapshot 副本
+
+
+
+ a| 
+GlobalSDFullControl
+ a| 
+充分利用适用于 UNIX 的 SnapDrive
+
+|===
+在上表中， Global 是指由 Operations Manager 控制台管理的所有存储系统。

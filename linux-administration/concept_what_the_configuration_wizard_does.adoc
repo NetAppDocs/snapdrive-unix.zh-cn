@@ -1,0 +1,13 @@
+---
+permalink: linux-administration/concept_what_the_configuration_wizard_does.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, wizard, nfs, san, configuration 
+summary: 通过 SnapDrive 配置向导，您可以根据环境配置适用于 UNIX 的 SnapDrive 以及 NFS 或 SAN 设置。或者，您也可以打开 SnapDrive.conf 文件并编辑配置变量。 
+---
+= SnapDrive 配置向导的功能
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive 配置向导，您可以根据环境配置适用于 UNIX 的 SnapDrive 以及 NFS 或 SAN 设置。或者，您也可以打开 `snapdrive.conf` 文件并编辑配置变量。

@@ -1,0 +1,244 @@
+---
+permalink: solaris/concept_snapdrive_commands_and_capabilities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, rbac 
+summary: 在基于角色的访问控制 \ （ RBAC ）中，要成功执行每个操作，需要具有特定的功能。用户必须具有一组正确的功能来执行存储操作。 
+---
+= SnapDrive 命令和功能
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在基于角色的访问控制（ Role-Based Access Control ， RBAC ）中，要成功执行每个操作，都需要特定的功能。用户必须具有一组正确的功能来执行存储操作。
+
+下表列出了所需的命令和相应功能：
+
+|===
+| 命令 | 功能 
+
+
+ a| 
+`s存储显示`
+ a| 
+在卷上执行 sd.story.read
+
+
+
+ a| 
+`s存储列表`
+ a| 
+在卷上执行 sd.story.read
+
+
+
+ a| 
+`s存储创建`
+ a| 
+* 对于卷内的 LUN ： `s D.Storage.Write` on Volume
+* 对于 qtree 内的 LUN ： `s D.Storage.Write` on qtree
+
+
+
+
+ a| 
+`s存储调整大小`
+ a| 
+`s D 存储写入` 在 LUN 上
+
+
+
+ a| 
+`s存储删除`
+ a| 
+`s D 存储。删除 LUN 上的`
+
+
+
+ a| 
+`snap show`
+ a| 
+卷上 `s .D.snapshot.read`
+
+
+
+ a| 
+`snap list`
+ a| 
+卷上 `s .D.snapshot.read`
+
+
+
+ a| 
+`snap delete`
+ a| 
+`s D 存储。删除卷上的`
+
+
+
+ a| 
+`snap rename`
+ a| 
+`s D 存储写入` 卷
+
+
+
+ a| 
+`snap connect`
+ a| 
+* 对于卷中的 LUN 克隆：卷上的 `s .D.snapshot.Clone`
+* 对于 qtree 中的 LUN 克隆： `s .D.snapshot.Clone` on qtree
+* 对于传统卷克隆： `s .snapshot.Clone` on storage system
+* 对于 FlexClone 卷： `s 父卷上的` .snapshot.Clone
+* 对于不受限制的 FlexClone 卷： `s 父卷上的` dsnapshot.UnrestrictedClone
+
+
+
+
+ a| 
+`snap connect-split`
+ a| 
+* 对于 LUN 克隆（ LUN 在卷中克隆和拆分）：卷上为 `s .d snapshot.Clone` ，卷上为 `s .d Storage.Write`
+* 对于 LUN 克隆（在 qtree 中克隆和拆分 LUN ）：在 qtree 上为 `s .d snapshot.Clone` ，在 qtree 上为 `s .d Storage.Write`
+* 对于拆分的传统卷克隆：存储系统上为 `s .D.snapshot.Clone` ，存储系统上为 `s .D.Storage.Write`
+* 对于拆分的 Flex 卷克隆： `s 父卷上的 .D.snapshot.Clone` 。
+
+
+
+
+ a| 
+`clone split start`
+ a| 
+* 对于 LUN 驻留在卷或 qtree 中的 LUN 克隆： `s ontsnapshot.Clone` containing volume or qtree
+* 对于卷克隆： `s 父卷上的` .snapshot.Clone
+
+
+
+
+ a| 
+`snap disconnect`
+ a| 
+* 对于 LUN 驻留在卷或 qtree 中的 LUN 克隆： `s ontsnapshot.Clone` containing volume or qtree
+* 对于卷克隆： `s 父卷上的` .snapshot.Clone
+* 要删除不受限制的卷克隆，请执行以下操作：卷上的 `s .D.snapshot.DestroyUnrestrictedClone`
+
+
+
+
+ a| 
+`snap disconnect — split`
+ a| 
+* 对于 LUN 驻留在卷或 qtree 中的 LUN 克隆： `s 包含卷或 qtree 上的` ontsnapshot.Clone
+* 对于卷克隆： `s 父卷上的 .D.Storage.Delete`
+* 要删除不受限制的卷克隆，请执行以下操作：卷上的 `s .D.snapshot.DestroyUnrestrictedClone`
+
+
+
+
+ a| 
+`snap restore`
+ a| 
+* 对于卷中的 LUN ：卷上为 `s .D.snapshot.Restore` ， LUN 上为 `s .D.Storage.Write`
+* 对于 qtree 中的 LUN ： `s .d snapshot.Restore` 在 qtree 上， `s .d Storage.Write` 在 LUN 上
+* 对于不在卷中的 LUN ：卷上为 `s .d snapshot.Restore` ，卷上为 `s .d Storage.Write`
+* 对于不在 qtree 中的 LUN ： qtree 上为 `s .d snapshot.Restore` ， qtree 上为 `s .d Storage.Write`
+* 对于卷：在存储系统上为 `s .snapshot.Restore` （对于传统卷）或在聚合上为 `s .snapshot.Restore` （对于灵活卷）
+* 对于卷中的单文件快照还原：卷上的 `s .D.snapshot.Restore`
+* 对于 qtree 中的单文件快照还原： `s D.snapshot.Restore` qtree
+* 要覆盖基线 Snapshot 副本，请执行以下操作：卷上的 `s .Dt.DisruptionBaseline`
+
+
+
+
+ a| 
+`host connect` ， `host disconnect`
+ a| 
+`s LUN 上的` 配置写入
+
+
+
+ a| 
+`配置访问`
+ a| 
+`s 存储系统上的` .D.Config.Read
+
+
+
+ a| 
+`配置准备`
+ a| 
+`s 配置写入` 至少在一个存储系统上
+
+
+
+ a| 
+`配置检查`
+ a| 
+`s` 配置读取 至少在一个存储系统上
+
+
+
+ a| 
+`config show`
+ a| 
+`s` 配置读取 至少在一个存储系统上
+
+
+
+ a| 
+`配置集`
+ a| 
+`s 存储系统上的` 配置写入
+
+
+
+ a| 
+`config set -dfm` ， `config set -mgmtpath` ，
+ a| 
+`s 配置写入` 至少在一个存储系统上
+
+
+
+ a| 
+`config delete`
+ a| 
+`s 存储系统上的` 配置删除
+
+
+
+ a| 
+`config delete dfm_appliance` ， `config delete -mgmtpath`
+ a| 
+`s` 配置删除 至少在一个存储系统上
+
+
+
+ a| 
+`配置列表`
+ a| 
+`s` 配置读取 至少在一个存储系统上
+
+
+
+ a| 
+`配置迁移集`
+ a| 
+`s 配置写入` 至少在一个存储系统上
+
+
+
+ a| 
+`config migrate delete`
+ a| 
+`s` 配置删除 至少在一个存储系统上
+
+
+
+ a| 
+`配置迁移列表`
+ a| 
+`s` 配置读取 至少在一个存储系统上
+
+|===
+
+NOTE: SnapDrive for UNIX 不会检查管理员（ root ）的任何功能。

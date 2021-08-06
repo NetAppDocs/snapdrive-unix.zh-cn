@@ -1,0 +1,22 @@
+---
+permalink: aix/concept_about_the_data_collection_utility.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, collection, utility 
+summary: SnapDrive for UNIX 提供了一个数据收集实用程序（ SnapDrive.dc\ ），用于收集有关 SnapDrive for UNIX ， SnapDrive 配置检查程序和系统设置的诊断信息。 
+---
+= 关于数据收集实用程序
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 提供了一个数据收集实用程序（ `snapdrive.dc` ），用于收集有关 SnapDrive for UNIX ， SnapDrive 配置检查程序和系统设置的诊断信息。
+
+为此，它会运行 NetApp 诊断实用程序并将 SnapDrive for UNIX 日志文件复制到一个特殊目录。然后，它会创建一个包含此信息的压缩文件，您可以将此信息发送给 NetApp 技术支持进行分析。
+
+在适用于 UNIX 的 SnapDrive 5.0 中，会实施 ` -dump` 和 ` -dumpall` 选项。` dump` 选项收集 SnapDrive 命令的第一个日志，而 ` -dumpall` 选项收集 SnapDrive 命令的所有日志。使用 ` -dump` 或 ` -dumpall` 选项执行 SnapDrive 操作时，将生成 `snapdrive.dc` 并列出压缩后的文件位置。该 tar 文件收集 SnapDrive 命令的所有日志信息，您可以对该文件进行解压缩，并从相应位置检索该文件。
+
+已为 SnapDrive 命令实施 ` -dump` 或 ` -dumpall` 选项，例如 SnapDrive storage show` ， SnapDrive storage create` ， SnapDrive storage delete` ， SnapDrive snap create` ， SnapDrive snap connect` ， SnapDrive snap disconnect` ， SnapDrive snap restore` ， SnapDrive 克隆拆分估计值` 和 SnapDrive 克隆拆分开始` 操作。
+
+
+NOTE: 它不会复制包含存储系统登录信息的文件。它也不会对配置进行任何更改。

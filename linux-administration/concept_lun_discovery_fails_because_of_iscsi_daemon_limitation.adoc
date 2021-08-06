@@ -1,0 +1,88 @@
+---
+permalink: linux-administration/concept_lun_discovery_fails_because_of_iscsi_daemon_limitation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, discovery, fail, iscsi, daemon, limitation 
+summary: 连续多次迭代后， SnapDrive for UNIX 命令无法发现 LUN 。 
+---
+= 由于 iSCSI 守护进程限制， LUN 发现失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+连续多次迭代后， SnapDrive for UNIX 命令无法发现 LUN 。
+
+您可能会看到以下错误消息。
+
+[listing]
+----
+0000-001 Admin error: iscsi transport protocol has dropped sessions in the host. Please ensure the connection and the service in the storage system.
+----
+发生这种情况的原因是以下主机中存在 iSCSI 守护进程限制：
+
+* Red Hat Enterprise Linux 4.0
+* Oracle Enterprise Linux 4.0
+
+
+
+
+== 临时解决策
+
+[listing]
+----
+Before modifying the following system parameters, contact the OS vendor.
+----
+. 将 ` * fs.file-max*` 参数添加到 ` /etc/sysctl.conf` 文件中。
++
+以下是命令行中的一个示例。
+
++
+[listing]
+----
+# sysctl -w fs.file-max=65536
+----
++
+
+NOTE: 建议将参数值设置为 `65536` ，但也可以根据主机上的应用程序设置此值。
+
+. 将 `65536` 分配给 ` * fs.file-max*` 参数。
+. 更新 root 用户 UNIX 帐户的默认 Shell `sToot-up` 文件。
++
+** 对于 Bourne ， Bash 或 Korn shell ，运行以下命令，将以下行添加到 ` /etc/profile` 文件中：
++
+[listing]
+----
+cat >> /etc/profile <<EOF
+if [ \$USER = "root" ]; then
+if [ \$SHELL = "/bin/ksh" ]; then
+ulimit -p 16384
+ulimit -n 65536
+else
+ulimit -u 16384 -n 65536
+fi
+umask 022
+fi
+EOF
+----
+** 对于 C shell （ csh 或 tcsh ），运行以下命令将以下行添加到 ` /etc/csh.login` 文件中：
++
+[listing]
+----
+cat >> /etc/csh.login <<EOF
+if ( \$USER == "root" ) then
+limit maxproc 16384
+limit descriptors 65536
+endif
+EOF
+----
+
+
+. 运行以下命令，将以下参数添加到 ` /etc/security/limits.conf` 文件中：
++
+[listing]
+----
+root soft nofile 65536
+root hard nofile 65536
+----
+. 执行以下命令，激活系统的所有内核参数： `sysctl -p`
+

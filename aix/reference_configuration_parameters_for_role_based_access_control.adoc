@@ -1,0 +1,67 @@
+---
+permalink: aix/reference_configuration_parameters_for_role_based_access_control.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, variable, rbac, access, control 
+summary: 您必须在 SnapDrive.conf 文件中设置与基于角色的访问控制相关的各种配置变量。 
+---
+= 基于角色的访问控制的配置变量
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须在 `snapdrive.conf` 文件中设置与基于角色的访问控制相关的各种配置变量。
+
+|===
+| 变量 | Description 
+
+
+ a| 
+` contact-http-dfm_port = 8088_`
+ a| 
+指定用于与 Operations Manager 控制台服务器通信的 HTTP 端口。默认值为 8088. 。
+
+
+
+ a| 
+` contact-ssl-dfm_port = 8488_`
+ a| 
+指定用于与 Operations Manager 控制台服务器通信的 SSL 端口。默认值为 8488. 。
+
+
+
+ a| 
+` rbac 方法 =dfm_`
+ a| 
+指定访问控制方法。可能值为 `原生` 和 `dFM` 。
+
+如果值为 `原生` ，则访问检查将使用存储在 ` /vol/vol0/sdprbac/sdhost-name.prbac` 中的访问控制文件。
+
+如果将此值设置为 `dFM` ，则前提条件是 Operations Manager 控制台。在这种情况下， SnapDrive for UNIX 会将访问检查发送到 Operations Manager 控制台。
+
+
+
+ a| 
+` rbac - cache=on_`
+ a| 
+SnapDrive for UNIX 会保留一个访问检查查询以及相应结果的缓存。只有当所有已配置的 Operations Manager 控制台服务器均已关闭时， SnapDrive for UNIX 才会使用此缓存。
+
+您可以将此值设置为 `on` 来启用缓存，也可以将其设置为 `off` 来禁用。默认值为 off ，因此您可以将 SnapDrive for UNIX 配置为使用 Operations Manager 控制台，并将 `RBAC 方法` 配置变量设置为 `dFM` 。
+
+
+
+ a| 
+` RBAC 缓存超时 _`
+ a| 
+指定 RBAC 缓存超时期限，并且仅在启用 ` RBAC 缓存 _` 时才适用。默认值为 `24` 小时。
+
+只有当所有已配置的 Operations Manager 控制台服务器均已关闭时， SnapDrive for UNIX 才会使用此缓存。
+
+
+
+ a| 
+` 使用 https 到 dfm=on_`
+ a| 
+通过此变量，您可以将适用于 UNIX 的 SnapDrive 设置为在与 Operations Manager 控制台通信时使用 SSL 加密（ HTTPS ）。默认值为 `on` 。
+
+|===

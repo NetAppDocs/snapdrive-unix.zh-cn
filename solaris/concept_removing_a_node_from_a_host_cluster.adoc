@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_removing_a_node_from_a_host_cluster.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, remove, node, host, cluster 
+summary: 要从主机集群中删除新节点，请按照适用于 Solaris 的 Veritas Cluster Server 安装指南中的说明进行操作。配置 LLT 和 GAB 后，必须使用 SnapDrive storage disconnect 命令取消映射主机集群中所有共享存储实体的所有 LUN 。 
+---
+= 从主机集群中删除节点
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要从主机集群中删除新节点，请按照适用于 Solaris 的 _Veritas 集群服务器安装指南中的说明进行操作。配置 LLT 和 GAB 后，必须使用 SnapDrive storage disconnect` 命令取消映射主机集群中所有共享存储实体的所有 LUN 。

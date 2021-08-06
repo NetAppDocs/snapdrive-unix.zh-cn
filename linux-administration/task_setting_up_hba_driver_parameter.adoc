@@ -1,0 +1,30 @@
+---
+permalink: linux-administration/task_setting_up_hba_driver_parameter.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, hba, driver, parameter, mpio 
+summary: 要为 Linux MPIO 设置 HBA 驱动程序，所需步骤的确切顺序取决于所使用的操作系统。设置还取决于使用的 HBA 卡。 
+---
+= 设置 HBA 驱动程序参数
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要为 Linux MPIO 设置 HBA 驱动程序，所需步骤的确切顺序取决于所使用的操作系统。设置还取决于使用的 HBA 卡。
+
+要为 Linux MPIO 设置 HBA 驱动程序参数，需要执行以下步骤：
+
+.步骤
+. 卸载内置驱动程序。
+. 从供应商网站安装最新驱动程序。
+. 使用供应商的 CLI 配置工具设置驱动程序参数。
+. 编辑 ` /etc/modprobe.conf` 文件以设置 HBA 驱动程序的默认参数。
+. 使用 HBA 驱动程序参数重新生成 initrd （ RAM 磁盘映像）。
+. 重新启动主机以使新的 HBA 驱动程序设置生效。
+
+
+* 相关信息 *
+
+http://mysupport.netapp.com["NetApp 支持"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["《 Linux Unified Host Utilities 7.1 安装指南》"]

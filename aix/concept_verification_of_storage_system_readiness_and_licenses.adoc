@@ -1,0 +1,35 @@
+---
+permalink: aix/concept_verification_of_storage_system_readiness_and_licenses.html 
+sidebar: sidebar 
+keywords: snap, snapshot, verification, storage, license, system, readiness 
+summary: 在安装 SnapDrive for UNIX 之前，您必须验证存储系统是否已准备就绪并检查某些软件的许可证。 
+---
+= 验证存储系统就绪情况和许可证
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安装 SnapDrive for UNIX 之前，您必须验证存储系统是否已准备就绪并检查某些软件的许可证。
+
+您必须确保满足以下条件：
+
+* 存储系统已联机。
+* 存储系统满足 SnapDrive for UNIX 的最低系统要求。
+* 存储系统中的 HBA 或网络接口卡（ NIC ）可满足主机操作系统的要求。
++
+有关 HBA 卡的详细信息，请参见互操作性表。
+
+* 主机和存储系统可以使用 Internet 协议（ IP ）进行通信。
+* 以下许可证有效：
++
+** SnapRestore
+** MultiStore 软件
+** 对存储系统的安全 HTTP 访问
+
+
+
+
+* 相关信息 *
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp 互操作性"]

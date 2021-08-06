@@ -1,0 +1,18 @@
+---
+permalink: aix/concept_access_permissions_on_a_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, permissions, storage, system 
+summary: 访问权限用于指示主机是否可以执行某些 Snapshot 副本和存储操作。访问权限不会影响任何 SnapDrive storage show 或 storage list 操作。通过 SnapDrive ，您可以为存储系统上的文件中的每个主机指定访问权限。 
+---
+= 对存储系统的访问权限
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+访问权限用于指示主机是否可以执行某些 Snapshot 副本和存储操作。访问权限不会影响任何 SnapDrive storage show 或 storage list 操作。通过 SnapDrive ，您可以为存储系统上的文件中的每个主机指定访问权限。
+
+您还可以指定 SnapDrive 在找不到指定主机的权限文件时必须执行的操作。您可以通过在 `snapdrive.conf` 配置文件中为 ` all-access-if-rbac-unspecified _` 设置值来指定操作。您还可以通过修改访问权限来启用或禁用对存储系统的访问。
+
+
+NOTE: 在适用于 UNIX 的 SnapDrive 4.0 及更高版本中，您可以根据基于角色的访问控制功能执行存储操作。

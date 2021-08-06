@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_snapdrive_for_unix_overview.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, unix 
+summary: SnapDrive for UNIX 可简化数据管理，并通过简化的存储配置和文件系统一致的 Snapshot 副本提高应用程序数据的可用性和可靠性。 
+---
+= SnapDrive for UNIX 概述
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 可简化数据管理，并通过简化的存储配置和文件系统一致的 Snapshot 副本提高应用程序数据的可用性和可靠性。
+
+SnapDrive for UNIX 可简化数据备份，因此即使删除或修改了数据，您也可以恢复数据。SnapDrive for UNIX 使用 Snapshot 技术在连接到 UNIX 主机的共享或非共享存储系统上创建数据映像。还原 Snapshot 副本时，它会将存储系统上的当前数据替换为 Snapshot 副本中的数据。
+
+通过 SnapDrive for UNIX ，您可以在存储系统上自动配置存储，以便在 Veritas Storage Foundation for Oracle Real Application Clusters （ SFRAC ）环境中管理本地节点和集群范围的共享文件系统。SnapDrive for UNIX 提供了一些存储功能，可用于管理整个存储层次结构，例如主机端应用程序可见文件，卷管理器和存储系统端逻辑单元号（ LUN ）。
+
+SnapDrive for UNIX 支持基于角色的访问控制。存储管理员使用 RBAC 根据用户执行的角色和任务限制用户对存储系统的访问。
+
+
+NOTE: 要使用 RBAC ，必须使用 Operations Manager 控制台 3.7 或更高版本。

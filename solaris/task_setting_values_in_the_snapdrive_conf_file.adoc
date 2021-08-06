@@ -1,0 +1,67 @@
+---
+permalink: solaris/task_setting_values_in_the_snapdrive_conf_file.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, value, file 
+summary: 您可以更改 SnapDrive.conf 文件中的值或添加新的名称 - 值对。 
+---
+= 设置 SnapDrive.conf 文件中的值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以更改 `snapdrive.conf` 文件中的值或添加新的名称 - 值对。
+
+您必须以 root 用户身份登录。
+
+.步骤
+. 备份 `snapdrive.conf` 文件。
+. 在文本编辑器中打开 `snapdrive.conf` 文件。
+. 要添加名称 - 值对，请使用以下格式：
++
+` * config-option-name= 值 _value_ # 可选注释 *`
+
++
+` config-option-name_` 是要配置的变量的名称；例如， audit-log-file 。` 值 _` 是要分配给此选项的值。
+
++
+如果要在名称 - 值对中包含注释，请在注释前面添加一个数字符号（ # ）。
+
++
+每行只能输入一个名称 - 值对。
+
++
+如果名称或值使用字符串，请将该字符串用单引号（ '` ）或双引号括起来。您可以将引号放在整个名称 - 值对周围，也可以仅放在值周围。以下示例显示了如何对名称 - 值对使用引号和注释：
+
++
+` *"config-option-one=string with white space" # 双引号 *`
+
++
+` * config-option-tw="string with white space" # 双引号将值 *` 括起来
+
++
+` * config-option-2b=`'tring with white space` ' # single quito*`
+
+. 要修改名称 - 值对，请将当前值替换为新值。
++
+按照以下步骤操作，确保默认值记录在文件中。
+
++
+.. 将符号（ # ）添加到要修改的行。
+.. 复制此行。
+.. 删除数字符号（ # ）以激活复制的文本。
+.. 修改此值。
+
+
++
+如果要指定空值（例如，禁用审核日志文件），请输入一对双引号（ "" ）。
+
+. 更改后保存文件。
++
+SnapDrive for UNIX 会在每次启动此文件时自动对其进行检查。所做的更改将在下次启动时生效。
+
+. 使用 `snapdrived restart` 命令重新启动 SnapDrive for UNIX 守护进程。
++
+要使 `snapdrive.conf` 文件更改生效，必须重新启动守护进程。
+
+

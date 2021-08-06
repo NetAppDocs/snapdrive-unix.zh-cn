@@ -1,0 +1,17 @@
+---
+permalink: linux-administration/task_hosts_preparation_for_adding_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, preparation, lun, add 
+summary: 您需要准备主机以添加 LUN 。 
+---
+= 主机准备添加 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您需要准备主机以添加 LUN 。
+
+* 相关信息 *
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[SnapDrive for UNIX 中支持 VMware VMotion]

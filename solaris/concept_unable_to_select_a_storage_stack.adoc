@@ -1,0 +1,27 @@
+---
+permalink: solaris/concept_unable_to_select_a_storage_stack.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, select, storage, stack 
+summary: 由于 SnapDrive.conf 文件中指定的值不适当，您无法选择存储堆栈。 
+---
+= 无法选择存储堆栈
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+由于在 `snapdrive.conf` 文件中指定的值不适当，您无法选择存储堆栈。
+
+此时将显示以下警告消息。
+
+[listing]
+----
+WARNING!!! Unable to find a SAN storage stack. Please verify that the appropriate transport protocol, volume manager, file system and multipathing type are installed and configured in the system. If NFS is being used, this warning message can be ignored.
+----
+* 如果您使用的是 NFS 环境，请忽略此警告消息并继续在主机系统上使用 SnapDrive 操作。
+* 如果您使用的是 SAN 环境，请确保在 Solaris 矩阵堆栈中提供的 `snapdrive.conf` 文件中指定适当的可接受值。然后，重新启动守护进程。
+
+
+* 相关信息 *
+
+xref:reference_stack_requirements.adoc[堆栈要求]

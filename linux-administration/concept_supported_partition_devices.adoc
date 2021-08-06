@@ -1,0 +1,180 @@
+---
+permalink: linux-administration/concept_supported_partition_devices.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, storage, partitioning, multipathing 
+summary: SnapDrive for UNIX 5.0 或更高版本可在 Linux 中为多路径和非多路径环境提供存储分区功能。 
+---
+= 支持的分区设备
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 5.0 或更高版本可在 Linux 中为多路径和非多路径环境提供存储分区功能。
+
+您必须按照准则使用适用于 UNIX 的 SnapDrive 对存储设备进行分区。
+
+在 Linux 中使用逻辑卷管理器时，必须使用未分区的 LUN 。
+
+下表提供了分区信息以及如何为不同的操作系统启用分区信息：
+
+|===
+| 操作系统 | 单个分区 | 多个分区 | 非分区设备 | 文件系统或原始设备 
+
+
+ a| 
+Red Hat Enterprise Linux 5 倍
+
+或
+
+Oracle Enterprise Linux 5 倍
+ a| 
+是的。
+ a| 
+否
+ a| 
+否
+ a| 
+ext3*
+
+
+
+ a| 
+Red Hat Enterprise Linux 6x
+
+或
+
+Oracle Enterprise Linux 6 倍
+ a| 
+是的。
+ a| 
+否
+ a| 
+否
+ a| 
+ext3 或 ext4*
+
+
+
+ a| 
+SUSE Linux Enterprise Server 11
+ a| 
+是的。
+ a| 
+否
+ a| 
+否
+ a| 
+ext3*
+
+
+
+ a| 
+SUSE Linux Enterprise Server 10
+ a| 
+否
+ a| 
+否
+ a| 
+是的。
+ a| 
+ext3***
+
+
+
+ a| 
+Red Hat Enterprise Linux 5x 或更高版本
+
+或
+
+Oracle Enterprise Linux 5x 或更高版本
+ a| 
+是的。
+ a| 
+否
+ a| 
+是的。
+ a| 
+使用 ASMlib* 的 ASM
+
+
+
+ a| 
+SUSE Linux Enterprise Server 10 SP4
+
+或
+
+SUSE Linux Enterprise Server 11
+ a| 
+是的。
+ a| 
+否
+ a| 
+是的。
+ a| 
+使用 ASMlib* 的 ASM
+
+
+
+ a| 
+SUSE Linux Enterprise Server 10 SP4 或更高版本
+
+或
+
+SUSE Linux Enterprise Server 11
+ a| 
+是的。
+ a| 
+否
+ a| 
+否
+ a| 
+不使用 ASMlib'%'* 的 ASM
+
+
+
+ a| 
+*
+
+对于非 MPIO 环境，请输入以下命令： ` * sfdisk -us -f -L -q /dev/_device_name_*`
+
+对于 MPIO 环境，输入以下命令：
+
+* ` * sfdisk -us -f -L -q /dev/_device_name_*`
+* ` * kpartx -a -p p /dev/mapper/ _device_name_*`
+
+
+
+
+ a| 
+*
+
+对于非 MPIO 环境，输入以下命令： ` * fdisk /dev/_device_name_*`
+
+对于 MPIO 环境，输入以下命令：
+
+* ` * fdisk /dev/mapper/_device_name_*`
+* ` * kpartx -a -p p /dev/mapper/_device_name_*`
+
+
+
+
+ a| 
+\***
+
+不适用。
+
+
+
+ a| 
+\'\'\'\'\
+
+对于 MPIO 环境，输入以下命令：
+
+* ` * kpartx -a -p /dev/$kernel*`
+
+
+|===
+* 一般注意事项 *
+
+在 SnapDrive for UNIX 4.2 中创建的 Snapshot 副本基于分区设备。这些 Snapshot 副本可以在 SnapDrive for UNIX 5.0 及更高版本中进行还原，连接并受支持。

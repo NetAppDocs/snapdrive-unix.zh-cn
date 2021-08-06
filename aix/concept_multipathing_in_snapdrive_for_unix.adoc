@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_multipathing_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, multipathing 
+summary: SnapDrive for UNIX 支持多路径。SnapDrive for UNIX 不支持对使用 mnod 和 / 或 rendev 命令创建的设备使用别名。 
+---
+= SnapDrive for UNIX 中的多路径
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持多路径。SnapDrive for UNIX 不支持对使用 `m节` 和 / 或 `rendev` 命令创建的设备使用别名。

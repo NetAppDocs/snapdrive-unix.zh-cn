@@ -1,0 +1,61 @@
+---
+permalink: linux-administration/concept_snap_connect_operation_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, fail, error, operation, reboot, reload 
+summary: 重新启动主机后， Snap 连接操作失败，并且原始卷组不会加载。 
+---
+= Snap 连接操作失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+重新启动主机后， Snap 连接操作失败，并且原始卷组不会加载。
+
+在 Linux 主机上，如果 SnapDrive for UNIX 因重新启动主机或使用 `Ctrl-C` 而中断，则在发起主机上执行 Snapshot 连接操作将失败。中断会导致向 ` /etc/lvm/lvm.conf` 文件添加 ` #sdupm` 标记；任何后续的 SnapDrive for UNIX 操作均会失败，并显示以下错误消息：
+
+[listing]
+----
+0001-945 Admin error: Volume Manager's configuration file contains
+tags from previous SDU operation. Please cleanup the cloned lun(s),
+if any, existing from a previous unsuccessful operation and cleanup
+the configuration file before proceeding.
+----
+
+
+== 临时解决策
+
+. 从存储系统中删除先前失败或中断的 Snapshot 连接操作可能存在的任何克隆 LUN 。
++
+
+NOTE: 您可以使用带有 -alloption 的 SnapDrive storage show` 命令进行验证。
+
+. 输入以下命令，检查是否已从主机中删除 LUN ：
++
+** 对于 iSCSI ，输入命令 ` /etc/init.d/iscsi` reload
++
+
+NOTE: ` /etc/init.d/iscsi reload` 选项适用于 RHEL 4 update 6 及更早版本。
+
+** 对于 RHEL 5 及更高版本，如果使用的是 iSCSI ，则必须手动删除 LUN 。此外，您还必须手动执行主机重新扫描。
++
+如果您使用的是多路径解决方案，则也可以手动对多路径执行重新扫描。您可以通过运行命令 `multipath` 来执行此操作
+
++
+
+NOTE: 如果您使用的是 FC ，则上述过程将对 RHEL 4 update 6 和 RHEL 5 及更高版本之前的所有版本进行适用场景处理。
+
+
+
+. 从 ` /etc/lvm/lvm.conf` 文件中删除卷组。
++
+从 ` /etc/lvm/lvm.conf` 文件中删除克隆的 LUN 后，该文件可能如下所示：
+
++
+` #SDUEXISTING volume_list = [ "vgx" ， "vgY" ] volume_list = [ vgx" ] #SDUTEMP`
+
+. 删除末尾包含 ` #SDUTEMP` 标记的整行如果存在以 ` #SDUEXISTING` 标记开头的行，请仅删除此标记并保留此行。
+. 运行 `vgscan` 命令以保留在配置文件中所做的更改。
+. 输入 `vgchange -a y` 命令以保留原始卷组。
+. 在主机中查看 ` /etc/fstab` 文件以重新挂载文件系统后，执行相应的 mount 命令挂载逻辑卷组。
+

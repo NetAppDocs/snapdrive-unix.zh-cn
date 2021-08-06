@@ -1,0 +1,15 @@
+---
+permalink: aix/concept_connecting_existingluns_with_sharedresources.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, lun, shared, resources 
+summary: 如果向使用共享磁盘组或文件系统的主机集群配置添加了新节点，则需要遵循其他语法。 
+---
+= 使用共享资源连接现有 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果向使用共享磁盘组或文件系统的主机集群配置添加了新节点，则需要遵循其他语法。
+
+` * SnapDrive storage connect -fs _file_spec_ -lun _lon_lun_name_ LUN_name...] [-mntets options]*`

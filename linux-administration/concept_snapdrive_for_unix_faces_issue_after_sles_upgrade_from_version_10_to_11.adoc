@@ -1,0 +1,42 @@
+---
+permalink: linux-administration/concept_snapdrive_for_unix_faces_issue_after_sles_upgrade_from_version_10_to_11.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, suse, upgrade, file, base, device 
+summary: 将 SUSE Linux Enterprise Server \ （ sles\ ）从 10 升级到 11 后，适用于 UNIX 的 SnapDrive 显示错误。您必须创建基本设备名称并挂载文件系统。 
+---
+= 在将 SUSE Linux Enterprise Server 从版本 10 升级到 11 之后， SnapDrive for UNIX 将显示一条错误消息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+将 SUSE Linux Enterprise Server （ SLES ）从 10 升级到 11 后，适用于 UNIX 的 SnapDrive 显示错误。您必须创建基本设备名称并挂载文件系统。
+
+执行存储操作时， SnapDrive for UNIX 会报告以下错误： `0001-791 Admin error ： device /dev/sdc does not have a partition.要支持文件系统 /mnt/testfs 的持久挂载，需要一个分区。使用 "-noperator" 选项` 重试命令
+
+
+
+== 临时解决策
+
+. 使用选项 ` -fs` 和 ` -noperit` 来记录基本设备名称，如以下示例所示：
++
+` * IBMX336-250-111 ： /etc/udev/rules.d# SnapDrive storage connect -fs /mnt/testfs -lun f3020-207-11 ： /vol/san1/lun200_0 -nolvm -noperate*``
+
++
+未按预期创建文件系统，但会记录基本设备名称（在此示例中为 ` /dev/sdc` ）。
+
+. 在基本设备名称中创建 `mkdir -p /mnt/testfs` 目录。
+. 运行 `blkid` 。
+. 指定以下内容：
++
+` * UUID = 239ae9a1-75fd-4faf-b9f4-a0b80bf7b62c /mnt/testfs ext3*`
+
+. 挂载文件系统：
++
+` * # 挂载 /mnt/testfs*``
+
+. 显示存储选项：
++
+` * # SnapDrive storage show -fs /mnt/testfs3*`
+
+

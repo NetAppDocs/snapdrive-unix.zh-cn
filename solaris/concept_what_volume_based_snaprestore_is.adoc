@@ -1,0 +1,25 @@
+---
+permalink: solaris/concept_what_volume_based_snaprestore_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snaprestore, volume 
+summary: 基于卷的 SnapRestore \ （ VBSR\ ）将还原卷及其所有存储对象。基于卷的还原速度快于单独还原的每个存储对象。VBSR 还可与 FlexClone 卷和 vFiler 配置配合使用。适用于 vFiler 的 VBSR 适用于 Data ONTAP 7.3 及更高版本。 
+---
+= 什么是基于卷的 SnapRestore
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+基于卷的 SnapRestore （ VBSR ）可还原卷及其所有存储对象。基于卷的还原速度快于单独还原的每个存储对象。VBSR 还可与 FlexClone 卷和 vFiler 配置配合使用。适用于 vFiler 的 VBSR 适用于 Data ONTAP 7.3 及更高版本。
+
+SnapDrive 3.0 for UNIX 及更早版本可以从应用程序一致的快照还原主机端实体（例如文件系统，磁盘组和主机卷）的 LUN ，或者通过 NFS 创建的正常文件。SnapDrive for UNIX 使用在 Data ONTAP 中实施的单文件快照还原 SFSR 。SFSR 的工作原理如下：
+
+* 对于正常文件，在 SFSR 进行期间，尝试更改此文件的任何操作都会暂停，直到 SFSR 完成为止。
+* 对于 LUN ，当 SFSR 继续运行时， LUN 可用，并且允许 I/O （读取和写入）。正常文件和 LUN 的 SFSR 可能需要很长时间，具体取决于 LUN 的大小或要还原的文件。
+
+
+因此，对于某些环境， SFSR 是一种障碍。
+
+SnapDrive 4.0 for UNIX 及更高版本可用于创建基于卷的 Snapshot 副本。VBSR 速度更快，所需的 CPU 和存储资源更少。它会还原活动文件系统上的所有数据。如果用户希望从同一 Snapshot 副本还原卷上的所有 LUN 或正常文件，则可以使用此功能。
+
+应谨慎使用基于卷的 Snapshot 副本，因为在用于还原操作的卷 Snapshot 副本之后创建的所有 Snapshot 副本都将被删除。必须删除在此卷上创建的所有新文件和新 LUN 。

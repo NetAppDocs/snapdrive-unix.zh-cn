@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/concept_considerations_for_using_volume_based_snaprestore.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snaprestore, volume 
+summary: 您可以在使用基于卷的 SnapRestore \ （ VBSR\ ）时牢记几点。牢记这些要点有助于您安全地使用 VBSR 功能。 
+---
+= 使用基于卷的 SnapRestore 的注意事项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在使用基于卷的 SnapRestore （ VBSR ）时牢记几点。牢记这些要点有助于您安全地使用 VBSR 功能。
+
+您必须牢记以下几点：
+
+* VBSR 会将整个卷还原到创建 Snapshot 副本时的状态，此状态用于 VBSR 。VBSR 包括以下内容：
++
+** 在 `snap create` 操作期间，指定主机文件规范的所有文件和 LUN 。
+** 在 `snap create` 操作期间，应用程序一致的 Snapshot 副本中的所有文件和 LUN 。
+
+
+* VBSR 将删除在用于还原的 Snapshot 副本之后在当前卷上创建的所有较新文件和 LUN 。
+* VBSR 将删除在用于还原的 Snapshot 副本之后创建的所有较新 Snapshot 副本。
+* 建议在使用 ` -vbsr execute` 命令之前运行 ` -vbsr preview` 命令。
+

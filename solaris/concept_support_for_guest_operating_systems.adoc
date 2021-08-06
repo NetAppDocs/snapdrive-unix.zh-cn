@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_support_for_guest_operating_systems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, guest, operating, system 
+summary: 通过对子操作系统的 SnapDrive for UNIX 支持，您可以创建存储并管理 LUN ，文件系统，逻辑卷和磁盘组的 Snapshot 副本。要配置 RDM LUN ，您需要在 SnapDrive.conf 文件中指定光纤通道 \ （ FC\ ）协议。 
+---
+= 支持子操作系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过对子操作系统的 SnapDrive for UNIX 支持，您可以创建存储并管理 LUN ，文件系统，逻辑卷和磁盘组的 Snapshot 副本。要配置 RDM LUN ，您需要在 SnapDrive.conf 文件中指定光纤通道（ FC ）协议。
+
+* 创建包含 LUN ， RDM LUN ，文件系统，逻辑卷和磁盘组的存储。
++
+创建存储后，您可以增加或减少存储容量，将存储连接到主机或断开连接，以及显示有关存储的配置信息。
+
+* 为存储系统上的一个或多个卷组创建 Snapshot 副本。
++
+Snapshot 副本可以包含文件系统，逻辑卷，磁盘组， LUN ， RDM LUN ， 和 NFS 目录树。创建 Snapshot 副本后，您可以重命名，还原或删除此 Snapshot 副本。您也可以将 Snapshot 副本连接到同一主机或不同主机上的其他位置。连接 Snapshot 副本后，您可以查看和修改内容，也可以断开连接。您还可以显示有关 Snapshot 副本的信息。
+
+

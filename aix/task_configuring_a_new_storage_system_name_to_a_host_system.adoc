@@ -1,0 +1,37 @@
+---
+permalink: aix/task_configuring_a_new_storage_system_name_to_a_host_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configure, storage, system, name, host 
+summary: 您必须在主机系统中配置新的存储系统名称，才能使用新的存储系统执行 SnapDrive 操作。 
+---
+= 在主机系统中配置新的存储系统名称
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须在主机系统中配置新的存储系统名称，才能使用新的存储系统执行 SnapDrive 操作。
+
+* 此名称必须注册到网络中的域名系统（ Domain Name System ， DNS ）服务器或 ` /etc/hosts` 文件中。
+* 必须使用 SnapDrive config delete` 命令从主机系统中删除旧存储系统名称。
+
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置集 _username storage_system_name_*`
+
++
+如果不输入实际的存储系统名称，适用于 Oracle 的 SnapManager POST 脚本可能无法建立 SnapMirror 和 SnapVault 关系。例如，如果存储系统的实际名称是 "hostname-3" ，而您输入了联盟名称 "hostname-3-mgmt" ，则可能无法建立 SnapMirror 和 SnapVault 关系。
+
++
+[listing]
+----
+snapdrive config set jsmith roaster
+Password for jsmith:
+Retype password:
+----
++
+新存储系统已准备好在主机系统中执行 SnapDrive 操作。
+
+

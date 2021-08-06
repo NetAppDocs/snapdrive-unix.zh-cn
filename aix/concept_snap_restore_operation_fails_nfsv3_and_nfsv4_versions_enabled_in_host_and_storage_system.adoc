@@ -1,0 +1,21 @@
+---
+permalink: aix/concept_snap_restore_operation_fails_nfsv3_and_nfsv4_versions_enabled_in_host_and_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, nfsv3, nfsv4, host, storage, system 
+summary: 如果主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败。 
+---
+= 如果在主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败。
+
+如果在主机和存储系统中启用了 NFSv3 和 NFSv4 版本，并在主机上挂载卷而不使用 ` -o vers` 选项，则会为文件和目录设置 `nobody ： nobody` ownership 。
+
+
+
+== 临时解决策
+
+建议在挂载 NFS 卷时使用 ` -o vers` 选项，或者将 NFS 默认选项检查为主机上的相应值。

@@ -1,0 +1,29 @@
+---
+permalink: linux-installation-7mode/task_preparing_for_deployment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, deployment, prepare, hosts 
+summary: 安装 SnapDrive for UNIX 的主机必须满足特定的软件，硬件，浏览器，数据库和操作系统要求。有关这些要求的详细信息，请参见互操作性表工具。 
+---
+= 准备部署
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装 SnapDrive for UNIX 的主机必须满足特定的软件，硬件，浏览器，数据库和操作系统要求。有关这些要求的详细信息，请参见互操作性表工具。
+
+.步骤
+. 验证您是否具有所需的许可证。
+. 验证您的配置是否支持 SnapDrive 。
+. 验证 Linux 主机是否满足 SnapDrive 要求。
+
+
+* 相关信息 *
+
+xref:reference_snapdrive_licensing.adoc[SnapDrive for UNIX 许可证要求]
+
+xref:reference_supported_configurations.adoc[支持的配置]
+
+xref:reference_linux_host_requirements.adoc[Linux 主机要求]
+
+http://mysupport.netapp.com/matrix["NetApp 互操作性表工具"]

@@ -1,0 +1,54 @@
+---
+permalink: aix/task_connecting_to_asnapshot_copy_thatcontains_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, snapshot, copy, connect 
+summary: 您可以使用 SnapDrive snap connect 命令连接到包含 LUN 的 Snapshot 副本。 
+---
+= 连接到包含 LUN 的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap connect` 命令连接到包含 LUN 的 Snapshot 副本。
+
+.步骤
+. 输入以下命令语法以连接到包含 LUN 的 Snapshot 副本：
++
+` * SnapDrive snap connect -lun _s_lun_name d_lun_name_ [-lun] _s_lun_name d_lun_name_... -snapname _long_snap_name_ "-igroup _ig_name_ [_ig_name_...]] 【拆分】 *`
+
++
+
+NOTE: _s_lun_name_ 和 _d_lun_name_ 的格式应为 lun_name 或 qtree_name/lun_name 。
+
+
+
+SnapDrive for UNIX 会克隆您指定的 LUN 并将其连接到新位置。
+
+以下示例将 hornet/vol/vol1/tuesdaysnapshot 中的 LUN mylun1 连接到 mylun1copy ：
+
+[listing]
+----
+# ./snapdrive snap connect -lun mylun1 mylun1copy -snapname
+hornet:/vol/vol1:tuesdaysnapshot
+connecting hornet:/vol/vol1/mylun1:
+LUN copy mylun1copy ... created
+(original: hornet:/vol/vol1/mylun1) mapping new lun(s) ... done
+discovering new lun(s) ... done
+----
+以下示例将两个 LUN （ mylun1 和 mylun2 ）分别连接到 mylun1copy 和 mylun2copy ：
+
+[listing]
+----
+# ./snapdrive snap connect -lun mylun1 mylun1copy -lun mylun2
+mylun2copy -snapname hornet:/vol/vol1:tuesdaysnapshot
+connecting hornet:/vol/vol1/mylun1:
+LUN copy mylun1copy ... created
+(original: hornet:/vol/vol1/mylun1)
+mapping new lun(s) ... done
+connecting hornet:/vol/vol1/mylun2:
+LUN copy mylun2copy ... created
+(original: hornet:/vol/vol1/mylun2)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+----

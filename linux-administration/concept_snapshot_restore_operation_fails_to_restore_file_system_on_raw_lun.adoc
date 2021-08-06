@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/concept_snapshot_restore_operation_fails_to_restore_file_system_on_raw_lun.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, fail, lun, snapshot, host 
+summary: 在非源主机上执行 Snapshot 连接操作后，对原始 LUN 上的文件系统执行 Snapshot 还原操作将失败。 
+---
+= Snapshot 还原操作无法还原原始 LUN 上的文件系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在非源主机上执行 Snapshot 连接操作后，对原始 LUN 上的文件系统执行 Snapshot 还原操作将失败。
+
+如果克隆的 LUN 连接到 Snapshot 副本中的同一文件规范，然后您尝试执行 SnapDrive snap restore 命令，则会显示以下错误消息。
+
+[listing]
+----
+"0001-034 Command error: mount failed: mount: <device name> is not
+a valid block device"
+----
+命令失败，因为在删除克隆的 LUN 时， iSCSI 守护进程会重新映射已还原的 LUN 的设备条目。
+
+
+
+== 临时解决策
+
+您可以执行以下任一操作：
+
+* 再次执行 SnapDrive snap restore` 命令。
+* 在尝试还原原始 LUN 的 Snapshot 副本之前，请删除已连接的 LUN （如果它挂载在 Snapshot 副本中的同一文件规范上）。
+

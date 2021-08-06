@@ -1,0 +1,32 @@
+---
+permalink: solaris/task_deleting_a_user_for_a_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, user, vserver 
+summary: 您可以通过执行 SnapDrive config delete 命令从 SVM 中删除登录信息。 
+---
+= 从 SVM 中删除用户
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过执行 SnapDrive config delete` 命令从 SVM 中删除登录信息。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置 delete _appliation_name_*`
+
++
+` 设备名称 _` 是要删除登录信息的 SVM 的名称。
+
++
+[listing]
+----
+# snapdrive config delete clstr-vs2
+Deleted configuration for appliance: clstr-vs2
+----
++
+SnapDrive for UNIX 将删除您指定的 SVM 的登录信息。
+
+

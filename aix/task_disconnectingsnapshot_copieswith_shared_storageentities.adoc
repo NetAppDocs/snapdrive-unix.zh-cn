@@ -1,0 +1,27 @@
+---
+permalink: aix/task_disconnectingsnapshot_copieswith_shared_storageentities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, shared, storage, copy 
+summary: 您可以使用 SnapDrive snap disconnect 命令断开包含共享存储实体的 Snapshot 副本的连接。 
+---
+= 断开 Snapshot 副本与共享存储实体的连接
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap disconnect` 命令断开包含共享存储实体的 Snapshot 副本的连接。
+
+.步骤
+. 输入以下命令语法：
++
+` * SnapDrive snap disconnect ｛ -dg _ -fs ｝ _file_spec_ [_file_spec..._] ｛ -dg _ -fs ｝ _file_spec_ [_file_spec..._]...] _long_snap_name_ [-full] [-fstype _type_] [-vmtype _type_] [-split]*`
+
+
+
+此示例将断开共享文件系统的连接：
+
+[listing]
+----
+# snapdrive snap disconnect -fs /mnt/oracle
+----

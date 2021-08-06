@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/concept_what_flexclone_volumes_are.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, flexcone, volume, parent, clone 
+summary: 灵活卷克隆 FlexClone 是父灵活卷的时间点副本。创建克隆后， FlexClone 卷不会继承对父灵活卷所做的更改。 
+---
+= 什么是 FlexClone 卷
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+灵活卷克隆 FlexClone 是父灵活卷的时间点副本。创建克隆后， FlexClone 卷不会继承对父灵活卷所做的更改。
+
+Data ONTAP FlexClone 技术支持即时复制数据卷，而在创建时不需要额外的存储空间。每个克隆卷都是一个透明的虚拟副本，可用于各种操作，例如产品或系统开发测试，错误修复，升级检查等。
+
+FlexClone 技术可节省大量空间，并将开销降至最低。使用此技术，您可以在更短的时间内以更低的风险管理更多的数据集组合。默认情况下， FlexClone 卷没有写入预留。适用于 UNIX 的 SnapDrive 4.1 在 NFS 和 SAN 环境中使用 FlexClone 技术。
+
+
+NOTE: Data ONTAP 7.0.x 及更高版本支持 FlexClone 卷，但运行 Data ONTAP 7.2 或更早版本的存储系统上的 vFiler 单元不支持这些卷。

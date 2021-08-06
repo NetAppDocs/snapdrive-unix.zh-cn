@@ -1,0 +1,37 @@
+---
+permalink: linux-installation-7mode/task_connecting_linux_host_to_the_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, linux, host, storage, system 
+summary: 要成功执行 SnapDrive for UNIX 操作，必须先设置存储系统，然后再将其连接到 Linux 主机。 
+---
+= 将 Linux 主机连接到存储系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要成功执行 SnapDrive for UNIX 操作，必须先设置存储系统，然后再将其连接到 Linux 主机。
+
+存储系统名称必须注册到网络中的域名服务（ Domain Name Service ， DNS ）服务器或 ` /etc/hosts` 文件中。
+
+.步骤
+. 在存储系统上创建用户：
++
+` * SnapDrive 配置集 _user_name storage_system_name_*`
+
+. 查看与存储系统关联的用户并获取用户名或存储系统对详细信息：
++
+` * SnapDrive 配置列表 *`
+
++
+命令将显示在 SnapDrive for UNIX 中指定了用户的所有系统的用户名或存储系统对。
+
+. 如果存储系统具有多个数据接口，请为新管理接口配置数据接口：
++
+` * SnapDrive 配置集 -mgmtpath _management_interface_path data_interface_path_*`
+
+. 验证是否已正确配置所有数据和管理接口：
++
+` * SnapDrive 配置列表 -mgmtpath*`
+
+

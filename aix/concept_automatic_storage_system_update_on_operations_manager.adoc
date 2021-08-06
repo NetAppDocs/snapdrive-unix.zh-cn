@@ -1,0 +1,26 @@
+---
+permalink: aix/concept_automatic_storage_system_update_on_operations_manager.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, automatic, storage, update, operations, manager, console 
+summary: Operations Manager 控制台可发现您的网络支持的存储系统。它会定期监控从发现的存储系统收集的数据。数据将按设置的间隔刷新。Operations Manager 控制台管理员可以配置刷新间隔。 
+---
+= Operations Manager 控制台上的存储系统自动更新
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Operations Manager 控制台可发现您的网络支持的存储系统。它会定期监控从发现的存储系统收集的数据。数据将按设置的间隔刷新。Operations Manager 控制台管理员可以配置刷新间隔。
+
+LUN 监控间隔， qtree 监控间隔和 vFiler 监控间隔是决定 LUN ， qtree 和 vFiler 更新频率的重要字段。例如，如果在存储系统上创建了新的 LUN ，则新的 LUN 不会立即在 Operations Manager 控制台上更新。因此，向 Operations Manager 控制台发出的对该 LUN 的访问检查将失败。为了避免这种情况，您可以根据需要修改 LUN 监控间隔。
+
+. 在 Operations Manager 控制台中选择 * 设置 * > * 选项 * 以更改监控间隔。
+. Operations Manager 控制台管理员还可以通过在命令行界面中执行 `dfm host discovery filername` 来强制刷新 Operations Manager 控制台。
+. Operations Manager 控制台管理员还可以将全局组上的 `Dfm.Database.Write` 功能授予 SD-admin ，以使 SnapDrive for UNIX 能够刷新 Operations Manager 控制台上的存储系统实体。
++
+[listing]
+----
+# dfm role add sd-admin-role DFM.Database.Write Global
+Added 1 capability to role sd-admin-role.
+----
+

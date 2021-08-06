@@ -1,0 +1,33 @@
+---
+permalink: linux-installation-7mode/task_installing_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, install, linux 
+summary: 您可以从命令行界面在 Linux 主机上安装 SnapDrive for UNIX 。 
+---
+= 安装适用于 UNIX 的 SnapDrive
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从命令行界面在 Linux 主机上安装 SnapDrive for UNIX 。
+
+.步骤
+. 从 NetApp 支持站点下载适用于 UNIX 的 SnapDrive for Linux 安装程序 http://mysupport.netapp.com/NOW/cgi-bin/software["NetApp 下载：软件"] 并将文件复制到 Linux 主机。
+. 以 root 用户身份登录到主机系统。
++
+如果您远程运行安装程序文件，并且系统配置不允许以 root 用户身份登录，请使用 `su` 命令以 root 用户身份登录。
+
+. 导航到 Linux 主机上已将安装程序复制到的目录。
+. 安装 SnapDrive for UNIX ：
++
+` * rpm-ivh _installer_file_name_*`
+
+
+
+SnapDrive 守护进程会在安装后自动启动。
+
+[listing]
+----
+Starting snapdrive daemon: Successfully started daemon
+----

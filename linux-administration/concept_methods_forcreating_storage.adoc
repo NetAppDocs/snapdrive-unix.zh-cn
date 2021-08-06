@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_methods_forcreating_storage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, storage, command, lun 
+summary: SnapDrive for UNIX 为 SnapDrive storage create 命令提供了一些基本格式，以便于创建所需的存储。存储创建操作分为多个常规类别。 
+---
+= 创建存储的方法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 为 SnapDrive storage create` 命令提供了一些基本格式，以便于创建所需的存储。存储创建操作分为多个常规类别。
+
+* 创建 LUNs--lun storage create` 命令会自动在存储系统上创建 SnapDrive ，但不会创建任何其他存储实体。SnapDrive for UNIX 将执行与主机准备和为每个 LUN 创建存储发现以及映射和连接相关的所有任务。
+* 直接在 LUN 上创建文件系统并自动设置 LUN — SnapDrive for UNIX 将执行设置文件系统所需的所有操作。您无需指定任何 LUN 即可创建它。
+* 直接在 LUN 上创建文件系统并指定要与其关联的 LUN —在这种情况下，您可以使用 SnapDrive storage create` 命令指定要设置的文件系统以及要与文件系统关联的 LUN 。
+* 创建 LVM 并自动设置 LUN —使用 SnapDrive storage create` 命令可以在主机上创建文件系统，逻辑卷或磁盘组。SnapDrive for UNIX 会执行设置实体所需的所有操作，包括自动创建所需的磁盘组和 LUN 。您无需指定任何 LUN 即可创建它。
+* 在主机上创建 LVM 实体并指定要与其关联的 LUN — 在这种情况下，您可以使用 SnapDrive storage create` 命令指定要设置的实体（文件系统，逻辑卷或磁盘组）以及要与该实体关联的 LUN 。
+* 在主机集群环境中的共享主机上创建文件系统—在这种情况下，您可以在共享主机上创建文件系统，逻辑卷或磁盘组。
+

@@ -1,0 +1,33 @@
+---
+permalink: solaris/concept_executing_the_data_collection_utility.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, collection, utility 
+summary: 要运行数据收集实用程序，您需要完成几个步骤。 
+---
+= 正在执行数据收集实用程序
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要运行数据收集实用程序，您需要完成几个步骤。
+
+确保以 root 用户身份登录。
+
+.步骤
+. 更改为 SnapDrive for UNIX 诊断目录。路径为： `install_directory/diag`
++
+`install_directory` 是主机操作系统的 SnapDrive for UNIX 安装目录。此目录可能因主机操作系统而异。
+
+. 在命令提示符处，输入以下命令：
++
+` * SnapDrive.dc （ -d 目录） [-n file_name] （ -f） *`
+
++
+` -d directory` 指定此实用程序创建的压缩文件的位置。默认位置为 ` /tmp/netapp` 。
+
++
+` -n file_name` 指定要包含在目录和压缩输出文件的名称中的字符串。如果您为此参数提供了一个值，则 `snapdrive.dc` 实用程序将创建一个名为 `ntap_SnapDrive_name` 的目录和一个名为 `ntap_SnapDrive_name.tar.Z` 的文件名，默认路径名称为 ` /tmp/netapp/ntap_SnapDrive_info.tar.Z`
+
+. 将 `diDirectory /ntap_SnapDrive_name.tar.Z` 文件发送给 NetApp 技术支持进行分析。
+

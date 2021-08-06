@@ -1,0 +1,32 @@
+---
+permalink: solaris/task_deleting_a_userlogin_for_a_storagesystem.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, user, login, storage, system, command 
+summary: 您可以通过执行 SnapDrive config delete 命令来删除一个或多个存储系统的用户登录名。 
+---
+= 删除存储系统的用户登录名
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过执行 SnapDrive config delete` 命令来删除一个或多个存储系统的用户登录名。
+
+确保以 root 用户身份登录。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置 delete _appliation_name_ [_appliation_name_]*`
+
++
+` 设备名称 _` 是要删除其用户登录信息的存储系统的名称。
+
++
+SnapDrive for UNIX 会删除您指定的存储系统的用户名或密码登录信息。
+
++
+
+NOTE: 要使适用于 UNIX 的 SnapDrive 能够访问存储系统，必须指定新的用户登录名。
+
+

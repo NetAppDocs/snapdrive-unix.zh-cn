@@ -1,0 +1,19 @@
+---
+permalink: aix/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fail, subnet, configuration, multiple 
+summary: 如果禁用了 Internet 控制消息协议 \ （ ICMP ）访问，或者主机和存储系统网络之间的 ICMP 数据包丢失，则 SnapDrive 操作在多个子网配置中失败。 
+---
+= 在多个子网配置中， SnapDrive 操作失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果禁用了互联网控制消息协议（ Internet Control Message Protocol ， ICMP ）访问，或者在主机和存储系统网络之间丢弃了 ICMP 数据包，则 SnapDrive 操作在多个子网配置中失败。
+
+
+
+== 临时解决策
+
+确保将 ` enable-ping-to_check-filer-reachaity_` 设置为 `off` 。

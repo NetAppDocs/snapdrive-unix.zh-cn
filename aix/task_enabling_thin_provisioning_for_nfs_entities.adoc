@@ -1,0 +1,17 @@
+---
+permalink: aix/task_enabling_thin_provisioning_for_nfs_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, enable, thin, provisioning, nfs 
+summary: 您可以使用 SnapDrive for UNIX 对存储系统上的 NFS 实体执行精简配置。精简配置称为空间预留。 
+---
+= 为 NFS 实体启用精简配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive for UNIX 对存储系统上的 NFS 实体执行精简配置。精简配置称为空间预留。
+
+.步骤
+. 要为快照连接操作启用空间预留，您可以对涉及 NFS 实体的命令使用 ` -reserve` 参数来为卷启用空间预留。对于 NFS 实体，如果未在命令中指定 ` -reserve` 或 ` -noreserve` 参数，则 SnapDrive for UNIX 将使用 Snapshot 副本中提供的空间预留。
+

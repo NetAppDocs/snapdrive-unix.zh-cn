@@ -1,0 +1,35 @@
+---
+permalink: linux-administration/task_setting_up_http.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, http, configure, host 
+summary: 您可以将适用于 UNIX 的 SnapDrive 配置为对主机平台使用 HTTP 。 
+---
+= 设置 HTTP
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将适用于 UNIX 的 SnapDrive 配置为对主机平台使用 HTTP 。
+
+确保以 root 用户身份登录。
+
+.步骤
+. 备份 `snapdrive.conf` 文件。
+. 在文本编辑器中打开 `snapdrive.conf` 文件。
+. 将 ` use-https-to_filer_` 变量的值更改为 off 。
++
+修改 `snapdrive.conf` 文件时，最好执行以下步骤：
+
++
+.. 注释掉要修改的行。
+.. 复制已注释掉的行。
+.. 删除井号（ # ），取消对复制的文本的注释。
+.. 修改此值。
+
+
+. 更改后保存文件。
++
+SnapDrive for UNIX 会在每次启动此文件时自动对其进行检查。要使更改生效，必须重新启动 SnapDrive for UNIX 守护进程。
+
+

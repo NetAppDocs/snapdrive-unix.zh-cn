@@ -1,0 +1,35 @@
+---
+permalink: solaris/concept_verify_that_the_hosts_are_ready.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, verify 
+summary: 您必须验证主机是否已准备就绪。要启动验证操作，您应首先输入 ping filername 命令来测试主机是否已连接到存储系统。 
+---
+= 验证主机是否已准备就绪
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须验证主机是否已准备就绪。要启动验证操作，您应首先输入 `ping filername` 命令，以测试主机是否已连接到存储系统。
+
+此外，还必须确认主机和存储系统可以彼此通信。要确认此问题，请执行 SnapDrive storage show -all` 命令并检查主机和存储系统是否正在通信。通过执行某些操作验证主机是否已准备就绪：
+
+* 确认您已按照主机的 Host Utilities 文档中的说明正确设置主机和存储系统。
+* 确认您的配置使用 NFS ，并配置导出文件。
+* 确认主机满足 SnapDrive for UNIX 的最低要求，包括所需的操作系统修补程序。
+* 在主机上安装 Veritas 堆栈之前，请先安装 NTAPasl 库。
++
+
+NOTE: 如果您在安装 Veritas 堆栈时未安装 NTAPasl 库，则应安装 NTAPasl 库并执行 `vxinstall` 命令以使 LUN 和磁盘组联机。
+
+
+
+* 相关信息 *
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html["《 ONTAP 9 NFS 参考》"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["《 Data ONTAP 8.2 7- 模式文件访问和协议管理指南》"]
+
+http://mysupport.netapp.com["NetApp 支持"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148981["《 Solaris Host Utilities 6.1 安装和设置指南》"]

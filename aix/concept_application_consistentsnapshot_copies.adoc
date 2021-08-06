@@ -1,0 +1,22 @@
+---
+permalink: aix/concept_application_consistentsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, application, consistent, snapshot, copy 
+summary: 要创建应用程序一致的 Snapshot 副本，应在执行 Snapshot 操作之前暂停应用程序。 
+---
+= 应用程序一致的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要创建应用程序一致的 Snapshot 副本，应在执行 Snapshot 操作之前暂停应用程序。
+
+要确保 Snapshot 副本与应用程序一致，您可能需要在创建 Snapshot 副本之前停止应用程序或执行必要的步骤以使其暂停。请注意，数据库热备份工具取决于 DBMS 使用的方法，并不总是暂停数据库文件的 I/O 。
+
+如果应用程序尚未完成其事务并将数据写入存储系统，则生成的 Snapshot 副本可能与应用程序不一致。
+
+
+NOTE: 如果应用程序可以从崩溃状态一致的 Snapshot 副本中恢复，则无需停止它。请参考适用于您的应用程序的文档。有关创建应用程序一致的 Snapshot 副本的详细信息，请参见。
+
+无论何时添加或删除主机卷， LUN 或 NFS 目录树，或者调整主机卷或文件系统的大小，都应创建新的 Snapshot 副本。这样可以确保新配置的磁盘组具有一致的副本，您可以在需要还原磁盘组时使用该副本。

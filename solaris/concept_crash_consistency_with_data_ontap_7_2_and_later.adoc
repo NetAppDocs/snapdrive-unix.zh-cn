@@ -1,0 +1,27 @@
+---
+permalink: solaris/concept_crash_consistency_with_data_ontap_7_2_and_later.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, crash, consistency, ontap 
+summary: SnapDrive for UNIX 会使用 Data ONTAP 7.2 及更高版本提供的一致性组支持，以便跨多个卷的所有 Snapshot 副本都保持崩溃状态一致。 
+---
+= 与 Data ONTAP 7.2 及更高版本的崩溃一致性
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 会使用 Data ONTAP 7.2 及更高版本提供的一致性组支持，以便跨多个卷的所有 Snapshot 副本都保持崩溃状态一致。
+
+Data ONTAP 7.2 及更高版本支持一致性组和存储系统隔离。SnapDrive for UNIX 使用这些功能来确保跨多个卷的所有 Snapshot 副本都保持崩溃状态一致。
+
+要在多个卷之间创建崩溃状态一致的 Snapshot 副本， SnapDrive for UNIX 将执行以下操作：
+
+* 将 I/O 隔离（冻结）到包含存储实体的每个卷。
+* 为每个卷创建一个 Snapshot 副本。
+
+
+隔离卷和创建 Snapshot 副本所需的时间有限，并且由 Data ONTAP 控制。
+
+在 `snapdrive.conf` 文件中的 ` * snapcreate-cg-timeout*` 参数指定在 Data ONTAP 限制范围内您希望允许存储系统隔离的时间量。您可以指定紧急，中等或宽松的间隔。如果存储系统所需时间超过完成隔离操作所允许的时间，则 SnapDrive for UNIX 将使用先前 Data ONTAP 7.2 版本的一致性方法创建 Snapshot 副本。您也可以在创建 Snapshot 副本时使用 ` -nodfilerfence` 选项来指定此方法。
+
+如果您请求的存储实体跨 Data ONTAP 7.2 及先前 Data ONTAP 版本的存储系统创建 Snapshot 副本，则 SnapDrive for UNIX 还会对 7.2 之前的 Data ONTAP 版本使用一致性方法创建 Snapshot 副本。

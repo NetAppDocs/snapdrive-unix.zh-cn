@@ -1,0 +1,18 @@
+---
+permalink: linux-administration/concept_checking_host_information.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, check 
+summary: 某些主机系统要求您在创建新 LUN 之前对其进行准备。SnapDrive for UNIX 提供了一些命令来完成这些步骤，以便使主机做好创建新 LUN 的准备。 
+---
+= 正在检查主机信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+某些主机系统要求您在创建新 LUN 之前对其进行准备。SnapDrive for UNIX 提供了一些命令来完成这些步骤，以便使主机做好创建新 LUN 的准备。
+
+如果您的操作系统要求您在创建新 LUN 之前对其进行准备，则可以使用 SnapDrive config` 命令。使用 SnapDrive config` 命令可以检查有关在映射到主机的存储系统上创建的 LUN 数量的信息。
+
+
+NOTE: 并非所有主机平台操作系统都要求您准备主机。目前，这些命令仅在 Linux 主机上是必需的。

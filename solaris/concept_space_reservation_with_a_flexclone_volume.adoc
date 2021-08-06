@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_space_reservation_with_a_flexclone_volume.html 
+sidebar: sidebar 
+keywords: snapdrive, snap, space, flexclone, volume, reservation 
+summary: 您可以对受限和不受限类型的 FlexClone 卷执行空间预留操作。默认情况下， FlexClone 卷没有写入预留。 
+---
+= FlexClone 卷的空间预留
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以对受限和不受限类型的 FlexClone 卷执行空间预留操作。默认情况下， FlexClone 卷没有写入预留。
+
+以下是适用于无限制和受限 FlexClone 卷的 FlexClone 的空间预留设置：
+
+* 不受限制的 FlexClone 卷： * 如果在命令行界面中提供了 ` -reserve` 选项，或者在 `snapdrive.conf` 中提供了 `flexclon-writeereserve-enabled = on` ，则空间预留将设置为 FlexClone 上的卷，否则为 none 。如果聚合上的可用空间不足以遵循此设置，则 SnapDrive for UNIX 将显示一条错误消息。
+
+* 受限 FlexClone 卷： *
+
+* 卷级别的空间预留设置始终处于禁用状态，即空间预留设置为 none 。
+* 如果在命令行界面中提供了 ` -reserve` 或 ` -noreserve` 选项，则属于主机文件规范的 LUN 会分别启用或禁用空间预留。否则， FlexClone 中与主机文件规范相关的 LUN 将从父卷 LUN 继承空间预留。
+

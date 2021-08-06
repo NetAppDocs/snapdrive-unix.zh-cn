@@ -1,0 +1,57 @@
+---
+permalink: solaris/task_setting_up_an_sfrac_i_o_fencing_environment_on_a_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, sfrac, fencing, environment, storage 
+summary: SnapDrive for UNIX 提供了存储配置和 Snapshot 管理选项，用于在 SFRAC 环境中管理主机集群范围的共享磁盘组和节点本地磁盘组以及文件系统。 
+---
+= 在存储系统上设置 SFRAC I/O 隔离环境
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 提供了存储配置和 Snapshot 管理选项，用于在 SFRAC 环境中管理主机集群范围的共享磁盘组和节点本地磁盘组以及文件系统。
+
+.步骤
+. 手动设置 `rsh` 或 `ssh` 以对所有主机集群节点上的 root 用户使用 access-without password-prop 。
++
+有关设置说明，请参见 _Veritas Cluster Server Installation Guide for Solaris_ 。
+
+. 在主机集群中的所有节点上安装 SnapDrive for UNIX 。
++
+如果在不同节点上安装了不同版本的 SnapDrive for UNIX ，则 SnapDrive for UNIX 操作将失败。
+
+. 检查存储系统之间的 FC 连接。
++
+要了解主机的硬件要求，请参见 SFRAC _Release Notes_。
+
++
+
+NOTE: 所有节点上的 ` /opt/NTAPsnapdrive/SnapDrive.conf` 文件必须将 `default-transport` 配置变量设置为 fcp 。
+
+. 为 ` _secure communication-amongst cluster-nodes_` 配置变量设置一个值，以确保已为集群中的所有节点配置 root 用户的 `rsh` 或 `ssh` access-without password-Prompt 。
++
+此值是必需的，因为如果从主机集群中的任何节点（主节点或非主节点）启动 SnapDrive for UNIX 命令，则 SnapDrive for UNIX 将在主机集群中的其他节点上执行操作。
+
+. 在主机集群中的每个节点上执行以下命令，以检查主机集群节点上的设备发现情况：
++
+` * SnapDrive storage create -lun _long_lun_name_ [_lun_name..._] -lunsize 大小 [ ｛ _-reserve__ _ _ _ -noreserv_ ｝ ] （ _igroup ig_name _ _ig_name ..._]*`
+
++
+[listing]
+----
+
+	# snapdrive storage create -lun f270-197-109:/vol/vol2/luntest -lunsize 20m
+
+		LUN f270-197-109:/vol/vol2/luntest ... created
+
+		mapping new lun(s) ... done
+		discovering new lun(s) ... done
+
+		LUN to device file mappings:
+	-f270-197-109:/vol/vol2/luntest => /dev/vx/dmp/c5t0d6s2
+
+	# snapdrive storage delete -lun f270-197-109:/vol/vol2/luntest -lunsize 20m
+	- LUN f270-197-109:/vol/vol2/luntest ... deleted
+----
+

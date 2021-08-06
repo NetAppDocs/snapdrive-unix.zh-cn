@@ -1,0 +1,19 @@
+---
+permalink: linux-administration/concept_autodetection_does_not_work_with_mpio_setup_for_an_fs_created_over_a_raw_lun.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, autodetection, lun, mpio 
+summary: 在使用 SnapDrive for UNIX 的 Linux MPIO 设置中，自动检测不适用于原始 LUN 上的文件系统。 
+---
+= 对于通过原始 LUN 创建的 FS ，自动检测不适用于 MPIO 设置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 SnapDrive for UNIX 的 Linux MPIO 设置中，自动检测不适用于原始 LUN 上的文件系统。
+
+
+
+== 临时解决策
+
+对所有 SnapDrive 操作使用选项 ` -FS` 。

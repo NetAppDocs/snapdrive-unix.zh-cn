@@ -1,0 +1,29 @@
+---
+permalink: aix/concept_command_syntax_to_increase_the_sizeof_the_storage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, syntax, increase, size, storage 
+summary: 要增加存储的大小，您应了解要使用的正确语法。 
+---
+= 用于增加存储大小的命令语法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要增加存储的大小，您应了解要使用的正确语法。
+
+` * SnapDrive storage resize -dg _file_spec_ ｛ -growby | -growto ｝ 大小为 "-addlun （ -igroup _ig_name_ ） _[_ig_name_ ...]] [ ｛ -reserve | - noreserve ｝ ]] "-fstype _type_] "-vmtype _type_]*`
+
+[NOTE]
+====
+您不能使用 SnapDrive storage resize` 命令减小实体的大小。您只能使用此命令增加大小。
+
+SnapDrive storage resize` 命令不直接支持逻辑卷或文件系统。例如，您不能使用 lun storage resize` 命令调整 SnapDrive 上文件系统的大小。
+
+* 结果 * ：此命令将存储实体（逻辑卷或磁盘组）的大小增加以下值之一：
+
+* 向存储添加字节（` -growby` ）。
+* 将大小增加到您指定的字节大小（` -growto` ）。
+
+
+====

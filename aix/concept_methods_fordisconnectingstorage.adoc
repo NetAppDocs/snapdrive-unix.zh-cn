@@ -1,0 +1,26 @@
+---
+permalink: aix/concept_methods_fordisconnectingstorage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, method, disconnect, storage 
+summary: 为了便于断开存储连接， SnapDrive for UNIX 为 SnapDrive storage disconnect 命令提供了多种格式。 
+---
+= 断开存储连接的方法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+为了便于断开存储连接， SnapDrive for UNIX 为 SnapDrive storage disconnect` 命令提供了多种格式。
+
+这是因为断开连接操作属于以下常规类别：
+
+* 指定要与主机断开连接的 LUN 。
+* 指定直接在要与主机断开连接的 LUN 上创建的文件系统。
++
+SnapDrive for UNIX 会断开文件系统和 LUN 的连接。
+
+* 指定位于要与主机断开连接的 LUN 上的磁盘组，主机卷或文件系统。
++
+SnapDrive for UNIX 会断开与该实体关联的所有 LUN ，并删除包含已断开连接的实体的文件系统，主机卷和磁盘组的映射。
+
+

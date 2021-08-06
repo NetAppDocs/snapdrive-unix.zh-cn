@@ -1,0 +1,23 @@
+---
+permalink: solaris/reference_examples_of_using_snapdrive_dc.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, example, data, collection, command 
+summary: 以下是数据收集命令的示例。 
+---
+= 使用 SnapDrive.dc 的示例
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是数据收集命令的示例。
+
+此示例使用命令行选项为生成的文件指定目录和名称。
+
+[listing]
+----
+# snapdrive.dc -d . -n mysystem
+...
+     Compressed file is ./ntap_snapdrive_mysystem.tar.Z.
+     Please send this file to technical support for analysis.
+----

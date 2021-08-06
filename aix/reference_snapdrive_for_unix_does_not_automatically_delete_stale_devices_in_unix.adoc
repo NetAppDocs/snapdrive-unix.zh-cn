@@ -1,0 +1,19 @@
+---
+permalink: aix/reference_snapdrive_for_unix_does_not_automatically_delete_stale_devices_in_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, stale, device 
+summary: 如果 SnapDrive for UNIX 操作因配置问题而失败，则以太网光纤通道 \ （ FCoE\ ）环境中可能会遗留陈旧设备。这些陈旧设备不会自动删除，因此您需要了解临时解决策。 
+---
+= SnapDrive for UNIX 不会自动删除 UNIX 中陈旧的设备
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 SnapDrive for UNIX 操作因配置问题而失败，则以太网光纤通道（ FCoE ）环境中可能会遗留陈旧设备。这些陈旧设备不会自动删除，因此您需要了解临时解决策。
+
+
+
+== 临时解决策
+
+运行供应商提供的原生重新扫描脚本以删除所有旧条目，或者使用 `sg3` 软件包附带的 `rescan-scsibus.sh -r` 命令运行重新扫描脚本。

@@ -1,0 +1,91 @@
+---
+permalink: aix/concept_using_selective_lun_map_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, selective, lun, map 
+summary: 从集群模式 Data ONTAP 8.3 开始，默认情况下，所有新 LUN 映射都会启用选择性 LUN 映射（ SLM\ ）。创建新的 LUN 映射时，只能通过 LUN 所属节点及其 HA 配对节点上的路径来访问此 LUN 。 
+---
+= 在 SnapDrive for UNIX 中使用选择性 LUN 映射
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从集群模式 Data ONTAP 8.3 开始，默认情况下，所有新的 LUN 映射都会启用选择性 LUN 映射（ SLM ）。创建新的 LUN 映射时，只能通过 LUN 所属节点及其 HA 配对节点上的路径来访问此 LUN 。
+
+默认情况下， LUN 可通过 Storage Virtual Machine （ SVM ）的所有 LIF 进行访问。您应将 LIF 分配给网络中每个集群节点上的 SVM 。随着集群中节点数量的增加，潜在路径数量也会成倍增加。这可能会导致 LUN 的路径过多，每个主机多个 igroup 以及发生中断移动事件。SLM 通过将 LUN 的可访问性限制为拥有 LUN 的节点和 HA 配对节点来解决这些问题。此外，它还可以为每个主机创建一个 igroup ，并支持无中断的 LUN 移动操作，而这些操作不需要操作端口集或重新映射 LUN 。
+
+
+NOTE: SLM 不会自动应用于在集群模式 Data ONTAP 8.3 之前创建的 LUN 映射。
+
+如果您要通过 LUN 所属节点访问 LUN ，则此路径称为 " 活动优化 " 。 但是，如果您通过 HA 配对节点访问该 LUN ，则该路径称为 " 活动非优化 " 。
+
+|===
+| SnapDrive 命令 | Description 
+
+
+ a| 
+SnapDrive LUN showpaths _lon_lun_name_`
+ a| 
+SnapDrive lun showpaths` 命令可列出指向 lun 的所有路径。它还会显示哪个路径处于活动优化状态，哪个路径处于活动非优化状态。
+
+` lun_name_` 是 LUN 的名称。如果未指定 LUN ，则会对所有 LUN 执行此操作。
+
+[listing]
+----
+snapdrive lun showpaths
+lun path            device filename                   asymmetric access state
+------------------------------------------------------------------------------
+vs1:/vol/vol2/lun10  /dev/mapper/3600a09807746505a4e24455450473655   Non-optimized
+vs1:/vol/vol2/lun2  /dev/mapper/3600a09807746505a4d3f455432474b30    Optimized
+vs1:/vol/vol2/lun1  /dev/mapper/3600a09807746505a4e24455450473656    Optimized
+----
+
+
+ a| 
+SnapDrive LUN fixpaths_lon_lun_name_`
+ a| 
+SnapDrive lun fixpaths` 命令会尝试修复至少没有一个活动优化路径的 LUN 的路径。
+
+` lun_name_` 是 LUN 的名称。如果未指定 LUN ，则会对至少没有一个活动优化路径的所有 LUN 执行此操作。
+
+[listing]
+----
+snapdrive lun fixpaths
+The following LUNs are using Non-optimized paths
+-------------------------------------------------
+vs1:/vol/vol2/lun10
+
+Path correction successful for the following LUNs
+--------------------------------------------------
+vs1:/vol/vol2/lun10
+----
+
+NOTE: SnapDrive lun fixpaths` 命令在子操作系统中不起作用。
+
+|===
+使用 `lunpath-monitor-frequency` 参数可以指定 SnapDrive for UNIX 自动修复 LUN 路径的频率。默认值为 24 小时。
+
+如果 SnapDrive LUN fixpaths` 操作失败，则会为所有 LUN 生成 AutoSupport （ ASUP ）消息。ASUP 消息包含以下详细信息：
+
+* 计算机名称
+* 事件源
+* 应用程序版本
+* 事件 ID
+* 类别
+* 主题
+
+
+以下是 ASUP 消息的示例：
+
+[listing]
+----
+computerName="owhyee"
+       eventSource="snapdrive"
+       appVersion="5.2.2 for UNIX"
+       eventID="6"
+       category="lun path"
+       subject="Paths are misconfigured for the Luns /vol/June12v1/LUN2 in storage system sdu_100_101_60_62_vs1 on owhyee host."
+----
+* 相关信息 *
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sanag/home.html["《 ONTAP 9 SAN 管理指南》"]

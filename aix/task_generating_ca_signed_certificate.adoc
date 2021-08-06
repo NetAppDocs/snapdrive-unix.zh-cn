@@ -1,0 +1,118 @@
+---
+permalink: aix/task_generating_ca_signed_certificate.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, generate, ca, certificate 
+summary: SnapDrive for UNIX 守护进程服务要求您生成 CA 签名的证书，才能成功进行守护进程通信。您必须在 SnapDrive.conf 文件中指定的路径处提供 CA 签名的证书。 
+---
+= 生成 CA 签名的证书
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 守护进程服务要求您生成 CA 签名的证书，才能成功进行守护进程通信。您必须在 `snapdrive.conf` 文件中指定的路径处提供 CA 签名证书。
+
+* 您必须以 root 用户身份登录。
+* 您必须已在 `snapdrive.conf` 文件中设置以下参数，才能使用 HTTPS 进行通信：
++
+** use-https-to-sdU-daemon=on
+** contact-https-port-sdU-daemon = 4095
+** sdU-daemon-certificate-path=` /opt/NetApp/SnapDrive/SnapDrive.pem`
+
+
+
+
+.步骤
+. 以 pem 格式生成新的未加密 RSA 私钥：
++
+` * $ openssl genrsa -out privkey.pem 1024*`
+
++
+[listing]
+----
+Generating RSA private key, 1024 bit long modulus
+ ....................++++++ ....................................++++++
+e is 65537 (0x10001)
+----
+. 配置 ` /etc/ssl/openssl.cnf` 以创建 CA 私钥和证书 vi ` /etc/ssl/openssl.cnf` 。
+. 使用 RSA 私钥创建未签名的证书：
++
+` * $ openssl req -new -x509 -key privkey.pem -out cert.pem*`
+
++
+[listing]
+----
+You are about to be asked to enter information that will be
+incorporated into your certificate request.
+What you are about to enter is what is called a Distinguished Name or
+a DN.
+There are quite a few fields but you can leave some blank For some
+fields there will be a default value, If you enter '.', the field
+will be left blank.
+-----
+Country Name (2 letter code) [XX]:NY
+State or Province Name (full name) []:Nebraska Locality Name (eg,
+city) [Default City]:Omaha Organization Name (eg, company) [Default
+Company Ltd]:abc.com Organizational Unit Name (eg, section) []:
+Common Name (eg, your name or your server's hostname) []:localhost
+Email Address []:abc@example.org
+----
+. 使用私钥和证书创建 CSR ：
++
+` * cat cert.pem privkey.pem | openssl x509 -x509 tor均衡 器 -signkey privkey.pem -out certreq.csd*`
+
++
+[listing]
+----
+Getting request Private Key Generating certificate request
+----
+. 使用刚刚创建的 CSR 使用 CA 专用密钥对证书进行签名：
++
+` * $ openssl ca -in certreq.csr -out newcert.pem*`
+
++
+[listing]
+----
+Using configuration from /etc/pki/tls/openssl.cnf Check that the
+request matches the signature Signature ok Certificate Details:
+         Serial Number: 4096 (0x1000)
+         Validity
+            Not Before: May 17 06:02:51 2015 GMT
+             Not After : May 16 06:02:51 2016 GMT
+             Subject:
+             countryName               = NY
+             stateOrProvinceName       = Nebraska
+             organizationName          = abc.com
+             commonName                = localhost
+             emailAddress              = abc@example.org
+             X509v3 extensions:
+             X509v3 Basic Constraints:
+                 CA:FALSE
+             X509v3 Key Usage:
+                 Digital Signature, Non Repudiation, Key Encipherment
+             Netscape Comment:
+                 OpenSSL Generated Certificate
+             X509v3 Subject Key Identifier:
+                 FB:B0:F6:A0:9B:F2:C2:BC:50:BF:45:B2:9D:DB:AA:3B:C5:07:5B:7F
+             X509v3 Authority Key Identifier:
+
+ keyid:FB:B0:F6:A0:9B:F2:C2:BC:50:BF:45:B2:9D:DB:AA:3B:C5:07:5B:7F
+
+ Certificate is to be certified until May 16 06:02:51 2016 GMT (365
+ days) Sign the certificate? [y/n]:y
+
+
+ 1 out of 1 certificate requests certified, commit? [y/n]y Write out
+ database with 1 new entries Data Base Updated
+----
+. 安装 SSL 服务器要使用的签名证书和专用密钥。
++
+[listing]
+----
+The newcert.pem is the certificate signed by your local CA that you can then use in an
+ssl server:
+( openssl x509 -in newcert.pem; cat privkey.pem ) > server.pem
+ln -s server.pem `openssl x509 -hash -noout -in server.pem`.0 # dot-zero
+( server.pem refers to location of https server certificate)
+----
+

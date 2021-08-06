@@ -1,0 +1,18 @@
+---
+permalink: solaris/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, stop, start, command, hang 
+summary: 在某些情况下， snapdrived stop 或 snapdrived start 命令可能会挂起。 
+---
+= snapdrived stop 或 snapdrived start 命令挂起
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情况下， `snapdrived stop` 或 `snapdrived start` 命令可能会挂起。
+
+要解决此问题，请运行 `snapdrived status` 以检查正在执行的命令数量以及这些命令在何时启动。`snapdrived stop` 命令等待执行中的所有命令完成。如果您认为任何命令挂起，请执行问题描述 `snapdrived -force stop` 或 `snapdrived -force restart` 命令。
+
+
+IMPORTANT: ` -force` 选项将终止所有正在运行的命令，守护进程将停止。这可能会对系统状态产生负面影响，例如过时的设备条目以及未来的守护进程启动。

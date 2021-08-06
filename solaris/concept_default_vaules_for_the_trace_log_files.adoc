@@ -1,0 +1,24 @@
+---
+permalink: solaris/concept_default_vaules_for_the_trace_log_files.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, default, value, trace, log 
+summary: 跟踪日志文件允许您设置各种参数，也可以更改这些参数。必须在 SnapDrive.conf 文件中设置这些参数。 
+---
+= 跟踪日志文件的默认值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+跟踪日志文件允许您设置各种参数，也可以更改这些参数。必须在 `snapdrive.conf` 文件中设置这些参数。
+
+必须在 `snapdrive.conf` 文件中设置以下值：
+
+* 包含跟踪日志的文件的名称。
+* 跟踪日志文件的最大大小。默认大小为 "0" 字节。此值可确保每个跟踪日志文件仅包含一个 SnapDrive for UNIX 命令。
++
+如果将默认大小重置为 0 以外的值，则在文件达到您指定的大小时， SnapDrive for UNIX 将通过在名称中添加任意数字来重命名当前跟踪日志文件。然后，它将使用 `trace-log-file` 值指定的名称启动一个新的跟踪日志文件。
+
+* SnapDrive for UNIX 保存的最大旧跟踪文件数。默认值为 100. 。
+* SnapDrive for UNIX 写入跟踪日志文件的消息类型。默认情况下，跟踪日志文件包含致命错误，管理员错误，命令错误，警告和信息消息。
+

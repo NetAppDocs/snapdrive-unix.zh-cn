@@ -1,0 +1,33 @@
+---
+permalink: linux-installation-cmode/task_performing_post_installation_tasks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, installation, task, perform, configure, install 
+summary: 安装完成后，您必须配置其他特性和功能。您必须安装服务器证书并将 SnapDrive for UNIX 配置为使用与存储系统和守护进程服务的安全连接。 
+---
+= 执行安装后任务
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装完成后，您必须配置其他特性和功能。您必须安装服务器证书并将 SnapDrive for UNIX 配置为使用与存储系统和守护进程服务的安全连接。
+
+.步骤
+. 如果您使用的是与存储系统和守护进程服务的安全连接，请将 SnapDrive for UNIX 使用的服务器证书安装在 `sdu-unemoncertificate -path=/opt/NetApp/SnapDrive/SnapDrive.pem` 位置。
++
+证书路径在 `snapdrive.conf` 文件中的 `sdu-demoncertificate-path` 配置变量中定义。
+
+. 在 `snapdrive.conf` 文件中设置 ` use-https-to_sdU-daemon=on_` ，以使用 HTTPS 与存储系统和守护进程服务建立安全连接。
++
+
+NOTE: SnapDrive 5.0 for UNIX 及更高版本支持 HTTPS 用于守护进程通信。默认情况下，此可选参数处于禁用状态。
+
+. 重新启动 SnapDrive 守护进程服务：
++
+` * 快照启动 *`
+
++
+
+NOTE: 每次手动更改配置文件时，都必须重新启动 SnapDrive 守护进程。
+
+

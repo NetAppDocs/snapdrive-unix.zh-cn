@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_displayingsnapshot_copies_of_a_storage_system_volume.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, storage, colume, display 
+summary: 您可以使用 SnapDrive 命令显示存储系统卷上的 Snapshot 副本。 
+---
+= 显示存储系统卷的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive 命令显示存储系统卷上的 Snapshot 副本。
+
+要显示有关存储系统卷的 Snapshot 副本的信息，请使用以下语法：
+
+SnapDrive snap show -filervol filervol [filervol...] 【 -verbose 】`

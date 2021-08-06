@@ -1,0 +1,15 @@
+---
+permalink: solaris/concept_connectingsnapshot_copies_onmirrored_storagesystems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, snapshot, copy, mirrored, storage 
+summary: 如果在镜像存储系统上创建了 Snapshot 副本，则可以将源存储系统上的 Snapshot 副本连接到目标系统。 
+---
+= 在镜像存储系统上连接 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果在镜像存储系统上创建了 Snapshot 副本，则可以将源存储系统上的 Snapshot 副本连接到目标系统。
+
+在镜像存储系统上创建 Snapshot 副本时， Snapshot 副本会自动从创建该副本的源系统复制到目标（镜像）存储系统。SnapDrive for UNIX 允许您在源存储系统上连接 Snapshot 副本。您还可以在目标存储系统上连接 Snapshot 副本。

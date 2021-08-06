@@ -1,0 +1,52 @@
+---
+permalink: linux-installation-cmode/task_connecting_linux_host_to_the_storage_system.html 
+sidebar: sidebar 
+keywords: snapdrive, snap, connect, hosts, storage, system 
+summary: 要成功执行 SnapDrive for UNIX 操作，您必须设置 Storage Virtual Machine （ SVM ，以前称为 Vservers\ ） 
+---
+= 将 Linux 主机连接到存储系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要成功执行 SnapDrive for UNIX 操作，您必须设置 Storage Virtual Machine （ SVM ，以前称为 Vserver ）
+
+* 您必须已将包含卷的聚合分配给 SVM 聚合列表，才能执行适用于 UNIX 的 SnapDrive 操作。
+* 您必须创建一个或多个 SVM 才能从集群提供数据。
++
+SVM 管理逻辑接口（ LIF ）的 IP 地址必须与 SVM 名称进行映射，可以在域名服务（ DNS ）或 ` /etc/hosts` 文件中进行映射。
+
+
+
+.步骤
+. 如果您运行的是 ONTAP 8.2.2 或更早版本，请在集群管理服务器上创建一个用户，也称为 adminSVM ： +
++
+` * SnapDrive 配置集 -cserver _csadmin_name cserver_name_*`
+
++
+如果您运行的是 ONTAP 8.2.3 或更高版本，请跳过此步骤。
+
+. 在数据 SVM 上创建用户：
++
+` * SnapDrive 配置集 *`
+
++
+` vsadmin_name vserver_name_`
+
+. 验证是否已在适用于 UNIX 的 SnapDrive 中配置 SVM ：
++
+` * SnapDrive 配置列表 *`
+
++
+命令可列出集群管理服务器和数据 SVM 的用户名和 IP 地址。
+
+. 修改 SVM 数据接口路径的管理接口路径：
++
+` * SnapDrive 配置集 -mgmtpath _management_interface_path data_interface_path_*`
+
+. 验证是否已正确配置所有数据和管理接口：
++
+` * SnapDrive 配置列表 -mgmtpath*`
+
+

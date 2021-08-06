@@ -1,0 +1,25 @@
+---
+permalink: linux-administration/concept_error_loading_the_usr_lib_libqlsdm_so_in_hba_loadlibrary.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, update, unloading, library 
+summary: 在使用 iSCSI 设置的 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机的所有更新上，所有 SnapDrive for UNIX 命令均会出错。 
+---
+= 在 HBA_LoadLibrary 中加载 /usr/lib/libqlsdm.so 时出错
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 iSCSI 设置的 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机的所有更新上，所有 SnapDrive for UNIX 命令均会出错。
+
+在卸载或卸载 QLogic 驱动程序期间， `libHBAAPI` 库仍会保留在 ` /usr/lib` 文件中，并且不会被 `QLogic ./install` 脚本删除。以下错误消息显示为
+
+[listing]
+----
+HBA_LoadLibrary: Encountered and error loading: /usr/lib/libqlsdm.so
+----
+
+
+== 临时解决策
+
+重命名或移动（ mv ） ` _libqlsdm.so_` 库。例如， `mv /usr/lib/libqlsdm.so /usr/lib/libqlsdm.so.old` 。

@@ -1,0 +1,17 @@
+---
+permalink: aix/concept_files_installed_by_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, files, installed, unix 
+summary: SnapDrive for UNIX 会安装多个文件，例如可执行文件，配置文件，卸载文件，诊断文件和手册页， 在主机上。通过这些文件，您可以在 SnapDrive for UNIX 中检测问题，存储产品当前版本的配置信息等。 
+---
+= SnapDrive for UNIX 安装的文件
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 会安装多个文件，例如可执行文件，配置文件，卸载文件，诊断文件和手册页， 在主机上。通过这些文件，您可以在 SnapDrive for UNIX 中检测问题，存储产品当前版本的配置信息等。
+
+* 相关信息 *
+
+xref:concept_types_of_logs.adoc[日志类型]

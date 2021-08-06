@@ -1,0 +1,26 @@
+---
+permalink: linux-installation-7mode/task_verifying_the_installation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verify, install, check 
+summary: 安装 SnapDrive for UNIX 后，您必须验证安装是否成功。SnapDrive for UNIX 会在主机上安装多个文件，例如可执行文件，配置文件，卸载文件，诊断文件， 和手册页。 
+---
+= 验证安装
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装 SnapDrive for UNIX 后，您必须验证安装是否成功。SnapDrive for UNIX 会在主机上安装多个文件，例如可执行文件，配置文件，卸载文件，诊断文件， 和手册页。
+
+.步骤
+. 验证 `snapdrive.conf` 文件是否位于 ` /opt/NetApp/SnapDrive/` 文件夹中。
+. 验证 Linux 操作系统的 SnapDrive for UNIX 可执行文件是否已安装在以下位置：
++
+** ` /opt/NetApp/SnapDrive/bin/SnapDrive`
+** ` /opt/NetApp/SnapDrive/bin/snapdrived`
+
+
+. 验证 SnapDrive for UNIX 诊断文件是否已安装在 ` /opt/NetApp/SnapDrive/diag` 文件夹中。
+. 验证 SnapDrive for UNIX 手册页是否已安装在 ` /opt/NetApp/SnapDrive/docs` 文件夹中。
+. 在 ` /var/log/sdconfcheck.out` 文件中验证已安装配置组件的详细信息。
+

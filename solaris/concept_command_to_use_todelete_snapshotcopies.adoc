@@ -1,0 +1,15 @@
+---
+permalink: solaris/concept_command_to_use_todelete_snapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, delete, snapshot, copy 
+summary: 使用 SnapDrive snap delete 命令删除 Snapshot 副本。 
+---
+= 用于删除 Snapshot 副本的命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive snap delete 命令删除 Snapshot 副本。
+
+SnapDrive snap delete 命令可从存储系统中删除您指定的 Snapshot 副本。此命令不会对主机执行任何操作。只有当您有权从存储系统中删除 Snapshot 副本时，它才会删除此副本。（如果要保留 LUN 和映射。）

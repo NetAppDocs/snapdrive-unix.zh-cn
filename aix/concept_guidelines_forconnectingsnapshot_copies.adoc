@@ -1,0 +1,22 @@
+---
+permalink: aix/concept_guidelines_forconnectingsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guidelines, connect, snapshot, copy 
+summary: 连接到 Snapshot 副本时，请遵循相关准则。 
+---
+= 连接 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+连接到 Snapshot 副本时，请遵循相关准则。
+
+* SnapDrive snap connect` 命令仅适用于在适用于 UNIX 的 SnapDrive 4.2 中创建的 Snapshot 副本。
+* 在源主机上， SnapDrive for UNIX 支持连接和还原由先前版本的 SnapDrive for UNIX 创建的 Snapshot 副本。
+* 要对 NFS 目录树进行读写访问， SnapDrive snap connect` 命令使用 Data ONTAP FlexVol 卷功能，因此需要 Data ONTAP 7.3 或更高版本。使用 Data ONTAP 7.1 的配置可以连接 NFS 文件或目录树，但提供只读访问权限。
+* 如果您在 Snapshot 连接操作期间将 ` 启用拆分克隆 _` 配置变量值设置为 "`on` " 或 " `sync` " ，并在 Snapshot 断开连接操作期间将 "`off` " ，则 SnapDrive for UNIX 不会删除 Snapshot 副本中的原始卷或 LUN 。
+* 您必须设置 Data ONTAP 7.2.2 配置选项 vFiler 的值。`vol_clone_zapi_allow` to "`on` " 以连接到 vFiler 单元中卷或 LUN 的 Snapshot 副本。
+* 具有不同主机配置的主机不支持 Snapshot 连接操作。
+* 用于连接到物理存储系统或 vFiler 单元的根卷的 SnapDrive snap connect` 命令失败，因为 Data ONTAP 不允许克隆根卷。
+

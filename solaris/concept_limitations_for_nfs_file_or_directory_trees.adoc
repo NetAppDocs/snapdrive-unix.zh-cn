@@ -1,0 +1,15 @@
+---
+permalink: solaris/concept_limitations_for_nfs_file_or_directory_trees.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, nfs, directory, tree, limitations 
+summary: SnapDrive 不会为 NFS 文件或目录树提供存储配置命令。只有在使用 Data ONTAP 7.3.5 及更高版本时， SnapDrive 才支持 SnapDrive snap create 和 SnapDrive snap restore 命令。 
+---
+= NFS 文件或目录树的限制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive 不会为 NFS 文件或目录树提供存储配置命令。只有在使用 Data ONTAP 7.3.5 及更高版本时， SnapDrive 才支持 SnapDrive snap create` 和 SnapDrive snap restore` 命令。
+
+SnapDrive snap connect` 和 SnapDrive snap disconnect` 命令涉及 NFS 并使用 Data ONTAP FlexVol 卷功能进行读写访问。因此，只有在使用 Data ONTAP 7.3.5 或更高版本时，才能运行这些命令。使用 Data ONTAP 7.3.5 或更高版本以及传统卷的配置，您可以创建和还原 Snapshot 副本，但 Snapshot 连接操作仅限于只读访问。

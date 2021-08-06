@@ -1,0 +1,15 @@
+---
+permalink: aix/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, syntax, disconnect, file, system, host, lun 
+summary: 要使用 SnapDrive storage disconnect 命令删除直接在 LUN 上创建的文件系统，请使用以下语法。 
+---
+= 用于将 LUN 上创建的文件系统与主机断开连接的命令语法
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要使用 SnapDrive storage disconnect` 命令删除直接在 LUN 上创建的文件系统，请使用以下语法：
+
+SnapDrive storage disconnect -fs file_spec. -fstype type] -vmtype type.`

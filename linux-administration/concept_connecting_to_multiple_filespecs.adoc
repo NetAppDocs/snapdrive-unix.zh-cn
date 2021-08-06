@@ -1,0 +1,73 @@
+---
+permalink: linux-administration/concept_connecting_to_multiple_filespecs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, filespec, multiple 
+summary: 您可以连接到驻留在一个卷中的多个文件系统。以下示例介绍了如何完成此操作。 
+---
+= 连接到多个文件系统
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以连接到驻留在一个卷中的多个文件系统。以下示例介绍了如何完成此操作。
+
+要创建受限的 FlexClone ，您需要在 `snapdrive.conf` 文件中设置 `san-clone-method = unrestricted` ，或者在连接到多个文件规范之前设置 `` -clone unrestricted` 。此示例显示了要连接到卷 vol1 中 snap1 中的多个 filSpec ` /mnt/fs_1` 和 ` /mnt/fs_2` 时的结果。
+
+/mnt/fs_1 和 /mnt/fs_2 的布局如下所示：
+
+[listing]
+----
+ # snapdrive storage show -fs /mnt/fs_1 /mnt/fs_2 -capabilities
+raw device: /dev/sdc1   mount point: /mnt/fs_1 (persistent) fstype ext3
+allowed operations: all
+
+device filename      adapter     path     size    proto   state     clone     lun path           backing snapshot
+----------------     -------     ----    ------   -----   -----    -------  ----------------     ----------------
+/dev/sdc                -         P       100m    iscsi   online      No    homer:/vol/vol1/lun1        -
+
+raw device: /dev/sdo1   mount point: /mnt/fs_2 (persistent) fstype ext3
+allowed operations: all
+
+device filename     adapter path    size     proto   state   clone    lun path               backing snapshot
+----------------    ------- ----    ----    -------  -----   -----    --------               ----------------
+/dev/sdo               -     P      100m     iscsi   online   No      homer:/vol/vol1/lun2        -
+----
+在此，用户使用了 Snapshot snap2 ，其中包含用于 snap connect 的应用程序一致 Snapshot ` /mnt/fs1` 和 ` /mnt/fs2` 。
+
+[listing]
+----
+ # snapdrive snap connect -fs /mnt/fs_1 -fs /mnt/fs_2 -snapname homer:/vol/vol1:snap2 -autorename -clone unrestricted
+
+ connecting /mnt/fs_1:
+        creating unrestricted volume clone homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot ... success
+
+        mapping new lun(s) ... done
+
+ connecting /mnt/fs_2:
+
+        mapping new lun(s) ... done
+        discovering new lun(s) ... done
+Successfully connected to snapshot homer:/vol/vol1:snap2
+        file system: /mnt/fs_1_0
+        file system: /mnt/fs_2_0
+----
+在这种情况下， SnapDrive for UNIX 已从 Snapshot snap2 创建了一个不受限制的 FlexClone `Snapdrive_vol1_0_volume_clone_from_snap2_Snapshot` 。然后，该虚拟机将连接到 LUN testlun1 和 testlun2 ，分别创建克隆的主机文件系统 ` /mnt/fs1_0 和 /mnt/fs2_0` 。
+
+[listing]
+----
+# snapdrive storage show -fs /mnt/fs_1_0 /mnt/fs_2_0 -capabilities
+raw device: /dev/sde1   mount point: /mnt/fs_1_0 (persistent) fstype ext3
+allowed operations: all
+
+device filename      adapter   path  size    proto   state   clone      lun path                                                         backing snapshot
+----------------      -------  ----  ----    -----   -----   -----       --------                                                        ----------------
+/dev/sde                 -      P    100m    iscsi   online  flex-clone  homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot/lun1   vol1:snap2
+
+raw device: /dev/sdac1  mount point: /mnt/fs_2_0 (persistent) fstype ext3
+allowed operations: all
+
+device filename      adapter  path    size    proto   state   clone      lun path                                                            backing snapshot
+----------------      -------  ----    ----    -----   -----   -----      --------                                                           ----------------
+/dev/sdac                 -     P      100m    iscsi   online  flex-clone homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot/lun2     vol1:snap2
+----

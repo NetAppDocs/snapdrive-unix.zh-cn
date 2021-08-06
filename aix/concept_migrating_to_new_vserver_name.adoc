@@ -1,0 +1,47 @@
+---
+permalink: aix/concept_migrating_to_new_vserver_name.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, vserver, migrating, name, new 
+summary: 如果已从旧 Vserver 迁移到新 Vserver ，则必须确保在主机系统上配置新的 Vserver 名称，以便在 Vserver 上执行任何 SnapDrive 操作。 
+---
+= 迁移到新的 SVM 名称
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果已从旧 Vserver 迁移到新 Vserver ，则必须确保在主机系统上配置新的 Vserver 名称，以便在 Vserver 上执行任何 SnapDrive 操作。
+
+每当迁移到新的 SVM 名称时，必须在主机系统上执行以下步骤：
+
+.步骤
+. 删除使用以下命令配置的旧 Vserver 名称：
++
+` * SnapDrive 配置 delete _appliation_name_*`
+
++
+旧配置的 Vserver 名称将从主机系统中删除。
+
+. 使用以下命令删除分配给已配置的旧 SVM 的端口集：
++
+` * SnapDrive 端口集 delete _filername_ [_filername..._]*`
+
+. 使用以下命令配置新的 SVM 名称：
++
+` * SnapDrive 配置集 _vsadmin 文件名 [filername...]_*`
+
+. 使用以下命令分配端口集：
++
+` * SnapDrive 端口集 add _portset_name_ filername [_filername..._]*`
+
+. 使用以下命令迁移新的 SVM 名称：
++
+` * SnapDrive config migrate set _old_entry new_entry_*`
+
+
+
+迁移到新的 Vserver 后，您便可在主机系统中对此新 Vserver 名称执行 SnapDrive 操作了。
+
+* 相关信息 *
+
+xref:task_migrating_from_old_host_name_to_new_host_name.adoc[从旧存储系统迁移到新存储系统]

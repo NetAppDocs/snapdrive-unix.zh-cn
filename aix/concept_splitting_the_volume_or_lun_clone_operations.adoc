@@ -1,0 +1,32 @@
+---
+permalink: aix/concept_splitting_the_volume_or_lun_clone_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, split, volume, lun, clone 
+summary: 通过 SnapDrive for UNIX ，您可以拆分卷克隆或 LUN 克隆。克隆拆分完成后，父卷与克隆之间的关系将被销毁，两个实体彼此独立，并具有各自的存储空间。 
+---
+= 拆分卷克隆或 LUN 克隆
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以拆分卷克隆或 LUN 克隆。克隆拆分完成后，父卷与克隆之间的关系将被销毁，两个实体彼此独立，并具有各自的存储空间。
+
+以下是克隆拆分操作：
+
+* 估算卷克隆或 LUN 克隆的磁盘空间（以 MB 为单位）。
+* 拆分卷克隆或 LUN 克隆。
+* 停止卷克隆或 LUN 克隆拆分。
+* 查看正在进行，已完成或失败的克隆拆分的状态。
+
+
+[NOTE]
+====
+* 如果拆分卷克隆，则克隆卷中的所有 Snapshot 副本都将被删除。
+* 在拆分文件规范之前，必须运行 clone split estimate 命令，以确定克隆的卷中是否已创建任何 Snapshot 副本。
+* 对于所有克隆拆分命令，只能使用 ` -lun` 选项指定长 LUN 名称。您不能在同一命令行上指定 ` -lun` 选项以及其他存储实体（ -vg ， -dg ， -fs ， - lvol 或 -hostvol 选项）。
+* 在 clone split 命令中，始终必须使用文件规范的绝对路径名。
+* 只有从适用于 UNIX 的 SnapDrive 4.2 及更高版本创建的 Snapshot 副本才可以使用 Snapshot 进行 LUN 克隆拆分评估。
+
+
+====

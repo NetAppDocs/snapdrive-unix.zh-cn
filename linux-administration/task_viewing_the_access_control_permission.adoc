@@ -1,0 +1,75 @@
+---
+permalink: linux-administration/task_viewing_the_access_control_permission.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, permission, config, command 
+summary: 您可以运行 SnapDrive config access show 命令来查看访问控制权限。 
+---
+= 查看访问控制权限
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以运行 SnapDrive config access show` 命令来查看访问控制权限。
+
+.步骤
+. 运行 SnapDrive config access show` 命令。
++
+此命令的格式如下： SnapDrive config access ｛ show | list ｝ filername`
+
++
+无论输入的是 `show` 还是 `list` version 命令，都可以使用相同的参数。
+
++
+此命令行会检查存储系统面面面包机，以确定主机具有哪些权限。根据输出，此存储系统上主机的权限为 snap all 。
+
++
+[listing]
+----
+# snapdrive config access show toaster
+This host has the following access permission to filer, toaster:
+SNAP ALL
+Commands allowed:
+snap create
+snap restore
+snap delete
+snap rename
+#
+----
++
+在此示例中，权限文件不在存储系统上，因此 SnapDrive for UNIX 会检查 `snapdrive.conf` 文件中的变量 ` _all-access-if-rbac unspecified _` 以确定主机具有哪些权限。此变量设置为 `on` ，相当于创建一个权限文件，并将访问级别设置为 all access 。
+
++
+[listing]
+----
+# snapdrive config access list toaster
+This host has the following access permission to filer, toaster:
+ALL ACCESS
+Commands allowed:
+snap create
+snap restore
+snap delete
+snap rename
+storage create
+storage resize
+snap connect
+storage connect
+storage delete
+snap disconnect
+storage disconnect
+clone split estimate
+clone split start
+#
+----
++
+此示例显示了存储系统面板上没有权限文件时您会收到的消息类型，并且 `snapdrive.conf` 文件中的变量 ` _all-access-if-rbac unspecified _` 设置为 `off` 。
+
++
+[listing]
+----
+# snapdrive config access list toaster
+Unable to read the access permission file on filer, toaster. Verify that the
+file is present.
+Granting no permissions to filer, toaster.
+----
+

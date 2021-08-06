@@ -1,0 +1,19 @@
+---
+permalink: linux-administration/concept_restoring_a_file_system_from_a_restoring_a_file_system_from_a_snapshot_copy_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, file, snapshot, copy, fail, error 
+summary: 从 Red Hat Enterprise Linux 3 更新迁移到 Red Hat Enterprise Linux 4 更新（即从 LVM1 迁移到 LVM2 ）后，从 Snapshot 副本还原文件系统失败。 
+---
+= 从 Snapshot 副本还原文件系统失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从 Red Hat Enterprise Linux 3 更新迁移到 Red Hat Enterprise Linux 4 更新（即从 LVM1 迁移到 LVM2 ）后，从 Snapshot 副本还原文件系统失败。
+
+在使用 LVM2 从 Snapshot 副本还原文件系统（在 LVM1 上创建）期间， SnapDrive snap restore -fs` 命令不会挂载文件系统。但是，它会成功还原与其关联的磁盘组和主机卷。
+
+例如， LVM1 创建的主机卷的设备文件位于 ` /dev/Mydg_sddg/Mydg_sdhv` 中； LVM2 创建的主机卷的设备文件位于 ` /dev/mapper/Mydg_SdDG-Mydg_sdhv` 中
+
+之所以出现这种情况，是因为 Red Hat Enterprise Linux 4 Update 3 主机使用 LVM2 ，而 LVM2 使用设备映射程序与内核进行接口，而 Red Hat Enterprise Linux 3 Update 5 主机使用 LVM1 ，而 LVM1 不使用设备映射程序。

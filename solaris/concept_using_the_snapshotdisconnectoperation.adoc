@@ -1,0 +1,31 @@
+---
+permalink: solaris/concept_using_the_snapshotdisconnectoperation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, disconnect, operation 
+summary: 使用 SnapDrive snap disconnect 命令断开多个存储系统或存储系统卷上的 Snapshot 副本的连接。 
+---
+= 使用 Snapshot 断开连接操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive snap disconnect` 命令断开多个存储系统或存储系统卷上的 Snapshot 副本的连接。
+
+您可以使用 SnapDrive snap disconnect` 命令删除 副本中 LUN ，存储实体和底层 LUN 或 NFS 目录的映射。
+
+您可以使用此命令断开跨多个存储系统卷或多个存储系统的 Snapshot 副本的连接。存储实体和卷可以位于同一存储系统或不同存储系统上。
+
+使用此命令可断开以下任何连接：
+
+* LUN
+* 直接在 LUN 上创建的文件系统
+* 在 LUN 上创建的磁盘组，主机卷和文件系统
+* NFS 目录树
+* 在 LUN 上创建的共享磁盘组，主机卷和文件系统
+
+
+断开连接操作不会修改已连接的 Snapshot 副本。但是，默认情况下，此操作会删除由相应连接操作创建的任何临时 LUN 或克隆。
+
+
+NOTE: 对于 LUN ， LUN 上的文件系统和 LVM 实体，此命令相当于 SnapDrive storage delete` 。

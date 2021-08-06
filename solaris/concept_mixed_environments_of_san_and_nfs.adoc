@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_mixed_environments_of_san_and_nfs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, mixed, san, nfs, environment 
+summary: 在混合 SAN 和 NFS 环境中，必须映射管理和数据接口，以便第一个数据接口与管理接口相同。 
+---
+= 混合 SAN 和 NFS 环境
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在混合 SAN 和 NFS 环境中，必须映射管理和数据接口，以便第一个数据接口与管理接口相同。
+
+在以下示例中，管理接口为 `10.72.197.91` ，数据接口为 `10.72.220.91` 。
+
+[listing]
+----
+
+#snapdrive config set -mgmtpath f3050-197-91 f3050-197-91 f3050-197-91 f3050-220-91
+
+#snapdrive config list -mgmtpath
+ system name        management interface   datapath interface
+ --------------------------------------------------------------------
+ bart               10.72.197.91           10.72.197.91|10.72.220.91
+----

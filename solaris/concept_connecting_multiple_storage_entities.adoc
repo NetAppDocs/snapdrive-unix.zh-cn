@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_connecting_multiple_storage_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrve, storage, entity, connect, multiple 
+summary: 您可以连接包含多个存储实体的 Snapshot 副本。 
+---
+= 连接多个存储实体
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以连接包含多个存储实体的 Snapshot 副本。
+
+要连接包含驻留在多个目标存储系统上的存储实体的 Snapshot 副本，必须满足以下要求：
+
+* 在命令提示符处指定的存储实体必须位于单个存储系统或 HA 对上。
+* 源存储系统的卷名称必须与目标存储系统的卷名称匹配。
+* 您必须将 `snapdrive.conf` 文件中的 ` snapmirror-dest-multily-filervolums-enabled_` 变量设置为 "`on` " 。
+
+
+您可以使用一个命令来连接驻留在单个存储系统或 HA 对上的存储实体。

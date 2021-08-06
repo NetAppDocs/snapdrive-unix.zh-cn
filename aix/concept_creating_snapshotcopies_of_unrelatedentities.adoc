@@ -1,0 +1,29 @@
+---
+permalink: aix/concept_creating_snapshotcopies_of_unrelatedentities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, snapshot, copy, unrelated, entity 
+summary: SnapDrive for UNIX 通过维护各个崩溃状态一致的 Snapshot 副本来创建不相关实体的 Snapshot 副本。 
+---
+= 创建不相关实体的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 通过维护各个崩溃状态一致的 Snapshot 副本来创建不相关实体的 Snapshot 副本。
+
+除非您另有指定，否则 SnapDrive for UNIX 会假定您在特定 SnapDrive snap create 命令行上指定的所有实体都是相关的；换言之，对一个实体的更新是否有效取决于对指定的其他实体的更新。如果存储实体以这种方式进行依赖写入，则 SnapDrive for UNIX 将采取步骤为所有存储实体创建一个组中崩溃状态一致的 Snapshot 副本。
+
+以下示例显示了 SnapDrive for UNIX 如何为可能具有依赖写入的存储实体创建 Snapshot 副本。在以下示例中， SnapDrive snap create 命令用于指定 LUN 上的文件系统以及磁盘组。磁盘组由驻留在单个存储系统上的 LUN 组成（请参见创建 Snapshot 副本）。LUN 上的文件系统位于不同的存储系统和存储系统卷上。作为一个组，文件系统和磁盘组跨越多个存储系统卷，而每个卷不会跨越多个存储系统卷。
+
+以下命令指定同时包含文件系统 /mnt/fs1 和磁盘组 dg1 的 Snapshot 副本： SnapDrive snap create -fs /mnt/fs1 -dg dg1 -snapname fs1_dg1`
+
+由于这些存储实体可能具有依赖写入，因此 SnapDrive for UNIX 会尝试创建崩溃状态一致的 Snapshot 副本，并将文件系统 /mnt/fs1 和磁盘组 dg1 视为一个组。这意味着，在创建 Snapshot 副本之前，需要使用 SnapDrive for UNIX 冻结对存储系统卷的 I/O 操作。
+
+为卷中的多个存储实体创建崩溃状态一致的 Snapshot 副本需要额外的时间，如果 SnapDrive for UNIX 无法冻结 I/O 操作，则此操作并非始终可行。因此， SnapDrive for UNIX 允许您为不相关的存储实体创建 Snapshot 副本。不相关的存储实体是指在创建 Snapshot 副本时您可以指定的不具有依赖写入的实体。由于这些实体没有依赖写入，因此 SnapDrive for UNIX 不会采取措施使这些实体作为一个组保持一致。相反， SnapDrive for UNIX 会创建一个 Snapshot 副本，其中每个存储实体的崩溃状态一致。
+
+以下命令用于指定 LUN 上文件系统的 Snapshot 副本以及前面所述的磁盘组。由于指定了 -unrelated 选项，因此 SnapDrive for UNIX 会创建一个 Snapshot 副本，其中文件系统 /mnt/fs1 和磁盘组 dg1 作为单个存储实体崩溃状态一致，但不会被视为组。以下命令不要求 SnapDrive for UNIX 冻结存储系统卷上的 I/O 操作： SnapDrive snap create -fs /mnt/fs1 -dg dg1 -unrelated -snapname fs1_dg1`
+
+* 相关信息 *
+
+xref:task_creating_asnapshot_copy.adoc[创建 Snapshot 副本]

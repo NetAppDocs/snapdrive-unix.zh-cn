@@ -1,0 +1,253 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_snapconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, command, required, information 
+summary: 要连接到 Snapshot 副本，请确定存储实体的类型，将具有 NFS 目录树的 Snapshot 副本连接到 Data ONTAP 7.3 配置等。 
+---
+= 使用 SnapDrive snap connect 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要连接到 Snapshot 副本，请确定存储实体的类型，将具有 NFS 目录树的 Snapshot 副本连接到 Data ONTAP 7.3 配置等。
+
+下表提供了使用 SnapDrive snap connect` 命令时需要提供的信息。
+
+
+NOTE: `snap connect` 操作要求在 AIX 上使用 Veritas 为 vximport 提供 Storage Foundation Enterprise 许可证。
+
+|===
+| 要求 / 选项 | 参数 
+
+
+ a| 
+确定要用于附加 Snapshot 副本的存储实体的类型，并使用相应的参数提供此实体的名称。这是 ` src_fspec_` 参数的值。
+
+* 如果连接 LUN 的 Snapshot 副本，则 SnapDrive for UNIX 将连接您指定的 LUN 。您不能在同一命令行上使用 ` -lun` 选项和 ` -vg` ， ` -dg` ， ` -fs` ， ` -lvol` 或 ` -hostvol` 选项。您可以使用 lun_name 或 qtree_name/lun_name 格式指定 LUN 的短名称。
+* 如果您连接的是直接在 LUN 上创建的文件系统的 Snapshot 副本，则 SnapDrive for UNIX 将连接具有该文件系统的 LUN 。
+* 如果连接的磁盘组的 Snapshot 副本具有主机卷或文件规范，则参数将转换为存储系统上的一组磁盘组。SnapDrive for UNIX 将连接包含此实体的整个磁盘组，即使此实体是主机卷或文件系统也是如此。
+* 如果连接 NFS 文件系统的 Snapshot 副本，则参数将转换为 NFS 目录树。SnapDrive for UNIX 将创建卷的 FlexClone ，删除 Snapshot 副本中未指定的目录树，然后连接并挂载 NFS 目录树。如果指定 NFS 挂载点，则不能在同一命令行上指定非 NFS 实体（` -vg` ， ` -DG` ， ` -FS` ， ` -lvol` 或 ` -hostvol` ）。
++
+
+NOTE: SnapDrive for UNIX 在挂载点级别不支持符号链接。
+
+
+
+
+
+ a| 
+LUN （` -lun _file_spec_` ）
+ a| 
+LUN 的缩写名称。 _
+
+
+
+ a| 
+` _s_lun_name_` 指定存在于 ` -snapname _long_snap_name_` 中的 LUN 。lun_name 短称为必填项。不能包含存储系统或存储系统卷名称。` d_d_lun_name_` 指定 LUN 的连接名称。短 ` lun_name_` 为必填项。不能包含存储系统或存储系统卷名称。您必须指定 ` _d_lun_name_`
+
+
+
+ a| 
+磁盘组（` -dg _file_spec_` ）或卷组（` -vg _file_spec_` ）
+ a| 
+磁盘或卷组的名称 _
+
+
+
+ a| 
+文件系统（` -fs _file_spec_` ）
+ a| 
+文件系统的名称
+
+
+
+ a| 
+主机卷（` -hostvol _file_spec_` ）或逻辑卷（` -lvol _file_spec_` ）
+ a| 
+主机或逻辑卷的名称 _
+
+
+
+ a| 
+将具有 NFS 目录树的 Snapshot 副本连接到 Data ONTAP 7.3 配置。
+
+* 如果您的配置使用 Data ONTAP 7.3 或更高版本的 Data ONTAP 与传统（而不是 FlexVol ）卷，则必须指定此选项来连接具有只读访问权限的 Snapshot 副本（必需）。
+* 如果您的配置使用 Data ONTAP 7.3 及更高版本以及 FlexVol 卷，则 SnapDrive for UNIX 会自动提供读写访问。仅当要将访问限制为只读（可选）时，才指定此选项。
+
+
+
+
+ a| 
+-readonly
+ a| 
+设置只读权限 _
+
+
+
+ a| 
+可选：提供在连接存储实体后可访问目标实体的名称。SnapDrive for UNIX 使用此名称连接目标实体。这是 ` dest_file_spec_` 参数。
+
+如果省略此名称，则 `snap connect` 命令将使用您为 ` src_fspec_` 提供的值。
+
+
+
+ a| 
+目标实体的名称
+ a| 
+` dest_file_spec_`
+
+
+
+ a| 
+可选：指定目标存储实体的名称。如果您在 ` dest_fspec/src_fspec_` 对中包含此信息，则无需在此处输入。
+
+如果目标存储实体的名称不是 ` destination_fspec/src_fspec_` 对的一部分，则可以使用 ` -destxx` 选项来指定此信息。例如， ` -fs` 选项仅命名目标挂载点，因此您可以使用 ` -destdg` 选项指定目标磁盘组。
+
+如果未指定连接目标磁盘组中的实体所需的名称，则 SnapDrive snap connect` 命令将从源磁盘组中获取该名称。
+
+如果未指定连接目标磁盘组中的实体所需的名称，则 `snap connect` 命令将从源磁盘组中获取该名称。如果不能使用该名称，则操作将失败，除非您在命令提示符处包含 ` -autorename` 。
+
+
+
+ a| 
+目标磁盘组（` destdg` ）或目标卷组（` -destvg` ）
+ a| 
+` _dgname_`
+
+
+
+ a| 
+目标逻辑卷（` -destlv` ）或目标主机卷（` -desthv` ）
+ a| 
+` lvname_`
+
+
+
+ a| 
+指定 Snapshot 副本的名称。请使用名称的长格式输入存储系统名称，卷和 Snapshot 副本名称。
+
+
+
+ a| 
+Snapshot 副本名称（` -snapname` ）
+ a| 
+` lor_snap_name_`
+
+
+
+ a| 
+` - noperit`
+ a| 
+~
+
+
+
+ a| 
+可选：将 Snapshot 副本连接到新位置，而不在主机文件系统表中创建条目。
+
+* 使用 ` -noperit` 选项，您可以将 Snapshot 副本连接到新位置，而无需在主机文件系统表中创建条目。默认情况下， SnapDrive for UNIX 会创建永久性挂载。这意味着：
++
+** 在 AIX 主机上连接 Snapshot 副本时， SnapDrive for UNIX 会挂载文件系统，然后在主机的文件系统表中为构成文件系统的 LUN 放置一个条目。
+** 您不能使用 ` -noperit` 连接包含 NFS 目录树的 Snapshot 副本。
+
+
+
+
+
+
+ a| 
+` 预留 | -noreserve`
+ a| 
+~
+
+
+
+ a| 
+可选：无论是否创建空间预留，都将 Snapshot 副本连接到新位置。
+
+
+
+ a| 
+igroup 名称（` -igroup` ）
+ a| 
+` ig_name_`
+
+
+
+ a| 
+可选： NetApp 建议您使用主机的默认 igroup ，而不是提供 igroup 名称。
+
+
+
+ a| 
+` 自动扩展`
+ a| 
+~
+
+
+
+ a| 
+要缩短连接到卷组时必须提供的信息量，请在命令提示符处包括 ` -AutoExpand` 选项。使用此选项，您只能为卷组中的一部分逻辑卷或文件系统命名。然后，它会扩展与磁盘组中其余逻辑卷或文件系统的连接。通过这种方式，您无需指定每个逻辑卷或文件系统。SnapDrive for UNIX 使用此信息生成目标实体的名称。
+
+此选项用于对命令提示符处指定的每个磁盘组以及组中的所有主机 LVM 实体执行适用场景操作。如果不使用 ` -AutoExpand` 选项（默认），则必须指定该磁盘组中包含的所有受影响主机卷和文件系统来连接整个磁盘组。
+
+
+NOTE: 如果输入的值是磁盘组，则无需输入所有主机卷或文件系统，因为 SnapDrive for UNIX 知道磁盘组连接到的内容。
+
+NetApp 建议，如果包括此选项，则还应包括 ` -autorename` 选项。如果需要使用 ` -AutoExpand` 选项连接 LVM 实体的目标副本，但此名称已在使用中，则命令将失败，除非 ` -autosename` 选项位于命令提示符处。
+
+
+
+ a| 
+如果您不包括 -AutoExpand ，也不指定在命令提示符处引用的所有磁盘组中的所有 LVM 主机卷（通过指定主机卷本身或文件系统），则此命令将失败。
+
+
+
+ a| 
+` 自动名称`
+ a| 
+~
+
+
+
+ a| 
+如果在不使用 ` -autosename` 选项的情况下使用 ` -AutoExpand` 选项，则在使用 LVM 实体的目标副本的默认名称时， `snap connect` 命令将失败。如果包含 ` -autorename` 选项，则 SnapDrive for UNIX 会在使用默认名称时重命名实体。这意味着，在命令提示符处使用 -autorename 选项时，无论所有必要名称是否可用， Snapshot 连接操作都会继续进行。
+
+此选项用于适用场景命令提示符处指定的所有主机端实体。
+
+如果在命令提示符处包括 ` -autosename` 选项，则表示 -AutoExpand 选项，即使不包含该选项也是如此。
+
+
+
+ a| 
+` 拆分`
+ a| 
+~
+
+
+
+ a| 
+用于在 Snapshot 连接和 Snapshot 断开操作期间拆分克隆的卷或 LUN 。
+
+
+
+ a| 
+`mntopts`
+ a| 
+~
+
+
+
+ a| 
+* 可选： * 如果要创建文件系统，可以指定以下选项：
+
+* 使用 ` -mntopts` 指定要传递到主机挂载命令的选项（例如，指定主机系统日志记录行为）。指定的选项存储在主机文件系统表文件中。允许的选项取决于主机文件系统类型。
+* ` -mntopts_` 参数是使用 mount 命令 ` -o` 标志指定的文件系统 ` 类型` 选项。请勿在 ` _-mntopts_` 参数中包含 ` -o` 标志。例如，序列 -mntopts tmplog 会将字符串 ` -o tmplog` 传递到 `mount` 命令，并在新命令行中插入文本 tmplog 。
++
+
+NOTE: 如果为存储和快照操作传递任何无效的 ` _-mntopts_` 选项，则 SnapDrive for UNIX 不会验证这些无效的挂载选项。
+
+
+
+|===

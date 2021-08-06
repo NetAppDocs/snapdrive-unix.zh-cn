@@ -1,0 +1,13 @@
+---
+permalink: aix/concept_snapdrive_for_unix_installation_and_upgrade.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, install, upgrade, unix 
+summary: 要在主机系统上安装 SnapDrive for UNIX ，您必须执行某些任务。开始安装之前，您应了解各种系统要求和配置注意事项。 
+---
+= 安装或升级 SnapDrive for UNIX
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要在主机系统上安装 SnapDrive for UNIX ，您必须执行某些任务。开始安装之前，您应了解各种系统要求和配置注意事项。

@@ -1,0 +1,60 @@
+---
+permalink: aix/concept_default_values_for_the_recovery_logs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, default, value, recovery, log 
+summary: 您可以更改恢复日志文件的名称以及 SnapDrive for UNIX 保存的最大旧恢复日志文件数。 
+---
+= 恢复日志的默认值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以更改恢复日志文件的名称以及 SnapDrive for UNIX 保存的最大旧恢复日志文件数。
+
+使用 `snapdrive.conf` 文件可以为恢复日志记录设置以下值：
+
+* 包含恢复日志的文件的名称，例如 `recovery.log` 。
+* SnapDrive for UNIX 保存的最大旧恢复文件数。默认值为 20. 。如果未立即发现此过程的问题， SnapDrive for UNIX 将保留此数量的恢复日志。SnapDrive for UNIX 会在每次完成操作时启动一个新的恢复日志文件。然后，通过在名称中添加任意数字来重命名前一个，例如 `recovery.log.0` ， `recovery.log.1` 等。
+
+
+
+NOTE: 恢复日志文件的大小取决于所执行的操作。每个恢复日志都包含有关单个操作的信息。此操作完成后，无论先前的文件大小如何， SnapDrive for UNIX 都会启动一个新的恢复日志。因此，恢复日志文件没有最大大小。
+
+以下恢复日志示例显示， SnapDrive for UNIX 已在操作暂停之前还原两个 Snapshot 副本。您可以将此恢复日志文件发送给技术支持，以协助还原其余 Snapshot 副本。
+
+[listing]
+----
+6719: BEGIN 15:52:21 03/09/04 snapdrive snap restore -dg jssdg -
+snapname natasha:/vol/vol1:abort_snap_restore
+6719: BEGIN 15:52:27 03/09/04 create rollback snapshot:
+natasha:/vol/vol1:abort_snap_restore.RESTORE_ROLLBACK_03092004_155
+225
+6719: END 15:52:29 03/09/04 create rollback snapshot:
+natasha:/vol/vol1:abort_snap_restore.RESTORE_ROLLBACK_03092004_155
+225 successful
+6719: BEGIN 15:52:29 03/09/04 deactivate disk group: jssdg
+6719: BEGIN 15:52:29 03/09/04 stop host volume:
+/dev/vx/dsk/jssdg/jvol_1
+6719: END 15:52:30 03/09/04 stop host volume:
+/dev/vx/dsk/jssdg/jvol_1 successful
+6719: BEGIN 15:52:30 03/09/04 unmount file system: /mnt/demo_fs
+6719: END 15:52:30 03/09/04 unmount file system: /mnt/demo_fs
+successful
+6719: BEGIN 15:52:30 03/09/04 stop host volume:
+/dev/vx/dsk/jssdg/jvol_2
+6719: END 15:52:30 03/09/04 stop host volume:
+/dev/vx/dsk/jssdg/jvol_2 successful
+6719: BEGIN 15:52:30 03/09/04 deport disk group: jssdg
+6719: END 15:52:30 03/09/04 deport disk group: jssdg successful
+6719: END 15:52:30 03/09/04 deactivate disk group: jssdg
+successful
+6719: BEGIN 15:52:31 03/09/04 SFSR of LUN: /vol/vol1/lun1 from
+snapshot: abort_snap_restore
+6719: END 15:52:31 03/09/04 SFSR of LUN: /vol/vol1/lun1 from
+snapshot: abort_snap_restore successful
+6719: BEGIN 15:52:47 03/09/04 SFSR of LUN: /vol/vol1/lun2 from
+snapshot: abort_snap_restore
+6719: END 15:52:47 03/09/04 SFSR of LUN: /vol/vol1/lun2 from
+snapshot: abort_snap_restore successful
+----

@@ -1,0 +1,40 @@
+---
+permalink: solaris/task_adding_a_port_set_in_snapdrive.html 
+sidebar: sidebar 
+keywords: port, set, add, snap, snapdrive 
+summary: 您可以在存储系统中添加端口集，以便与 SVM 进行通信。这是一次性活动，必须在使用存储系统之前完成。 
+---
+= 在 SnapDrive 中添加端口集
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在存储系统中添加端口集，以便与 SVM 进行通信。这是一次性活动，必须在使用存储系统之前完成。
+
+
+NOTE: 如果要升级到 SnapDrive 5.2 for UNIX ，请确保早期版本的 SnapDrive for UNIX igroup 已手动与存储管理员设置的端口关联。
+
+在以下示例中，存储管理员使用 Vserver 名称而不是 IP 地址，并验证 Vserver 名称是否已在 DNS 服务器上注册。
+
+.步骤
+. 在主机上输入以下命令：
++
+` * SnapDrive 端口集 add _portset_name filername_ [_filername..._]*`
+
++
+` _portset_name_` 是端口集的名称。
+
++
+` _filername_` 是 SVM 的名称。
+
++
+[listing]
+----
+snapdrive portset add ps2 vs91
+Added portset configuration for appliance: vs91
+----
++
+已成功在 SnapDrive 中添加端口集 ps2 。
+
+

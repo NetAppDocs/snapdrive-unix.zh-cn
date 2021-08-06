@@ -1,0 +1,92 @@
+---
+permalink: linux-administration/task_disconnectingsnapshot_copy_withstorage_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, command 
+summary: 您可以使用 SnapDrive snap disconnect 命令断开包含存储实体的 Snapshot 副本的连接。 
+---
+= 断开 Snapshot 副本与存储实体的连接
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap disconnect` 命令断开包含存储实体的 Snapshot 副本的连接。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive snap disconnect ｛ -dg _ -fs _ -hostvol ｝ _file_spec_ [_file_spec..._] ｛ -dg _ -fs _ -hostvol ｝ _file_spec_ [file_spec...]] 【 -full】 【 -fstype type】 【 -vmtype 类型】【 -ssplit 】
+
++
+此命令必须始终以存储实体开头，例如， ` -lun` ， ` -dg` ， ` -hostvol` ， 或 ` -FS` 。
+
++
+** 如果指定 LUN （` -lun` ），则必须输入长 LUN 名称。您不能在与其他存储实体（` -vg` ，` -dg` ，` -fs` ，` -lvol` 或 ` -hostvol` options ）相同的命令行上使用 ` -lun` 选项指定 LUN 。
+** 如果指定 RDM LUN （` -lun` ），则必须输入长 RDM LUN 名称。您不能在与其他存储实体（` -vg` ，` -dg` ，` -fs` ，` -lvol` 或 ` -hostvol` options ）相同的命令行上使用 ` -lun` 选项指定 RDM LUN 。
+** 如果指定 NFS 挂载点，则不能在同一命令行上指定非 NFS 实体（` -vg` ， ` -DG` ， ` -FS` ， ` -lvol` 或 ` -hostvol` ）。您必须使用单独的命令来指定 NFS 挂载点。
+
+
+
+
+
+NOTE: 如果主机实体使用的 LUN 不属于 Snapshot 副本，则会出现错误消息。如果指定每个目标磁盘组中包含的一个子集主机卷和 / 或文件系统，则也会发生错误。
+
+SnapDrive for UNIX 将删除命令行中指定的存储实体的映射。
+
+此命令行会删除与主机卷 dg5/myvolume 下的所有 LUN 的映射。它会删除通过 Snapshot 连接操作创建的任何临时 LUN ：
+
+[listing]
+----
+# snapdrive snap disconnect -hostvol dg5/myvolume
+----
+此命令行会删除与主机卷 dg5/myvolume 下的所有 LUN 的映射。它会删除通过 Snapshot 连接操作创建的任何临时 LUN ：
+
+[listing]
+----
+# snapdrive snap disconnect -hostvol dg5/myvolume
+----
+此命令将断开与磁盘组 1 （ dg1 ）和底层 LUN 的映射。它还会删除通过 Snapshot 连接操作创建的任何临时 LUN ：
+
+[listing]
+----
+# snapdrive snap disconnect -lun toaster:/vol/vol1/luna -dg dg1
+----
+此命令行将删除与文件系统 fs1 及其下的 RDM LUN 的映射。它还会删除通过 Snapshot 连接操作创建的任何临时 RDM LUN ：
+
+[listing]
+----
+# snapdrive snap disconnect -fs mnt/RDMNew
+----
+此命令行将删除与文件系统 fs1 及其所在 LUN 的映射。它还会删除通过 Snapshot 连接操作创建的任何临时 LUN ：
+
+[listing]
+----
+# snapdrive snap disconnect -fs mnt/fs1
+----
+此命令行将删除磁盘组 dg1 ， dG2 和 dg3 的映射。它会删除通过 Snapshot 连接操作创建的任何临时 LUN ：
+
+[listing]
+----
+# snapdrive snap disconnect -dg dg1 dg2 dg3
+----
+以下示例将断开 LVM 堆栈上文件系统磁盘组的 Snapshot 副本的连接：
+
+[listing]
+----
+# snapdrive snap disconnect -fs /mnt/fs1_clone -fstype ext3
+
+delete file system /mnt/fs1_clone
+- fs /mnt/fs1_clone ... deleted
+- hostvol lvm1_0/fs1_SdHv_0 ... deleted
+- dg lvm1_0 ... deleted
+- LUN snoopy:/vol/vol1/lunLvm1_0 ... deleted
+----
+此示例将断开 Snapshot 副本与文件系统的连接：
+
+[listing]
+----
+# snapdrive snap disconnect -fs /mnt/fs1
+delete file system /mnt/fs1
+- fs /mnt/fs1 ... deleted
+- LUN lech:/vol/vol1/lun1_0 ... deleted
+----

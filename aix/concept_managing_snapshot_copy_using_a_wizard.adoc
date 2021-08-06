@@ -1,0 +1,73 @@
+---
+permalink: aix/concept_managing_snapshot_copy_using_a_wizard.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, wizard, manage 
+summary: 您可以使用向导管理 Snapshot 副本。此向导将引导您完成一系列问题，并帮助您执行 snap connect ， snap restore 和 snap disconnect 操作。 
+---
+= 使用向导管理 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用向导管理 Snapshot 副本。此向导将引导您完成一系列问题，并帮助您执行 snap connect ， snap restore 和 snap disconnect 操作。
+
+您可以使用 SnapDrive snap wizard` 命令运行此向导。
+
+下表列出了运行此向导所需的不同操作和相应命令。启动向导后，按照应用程序窗口中的步骤进行操作。
+
+|===
+| 操作 | 命令 
+
+
+ a| 
+Snapshot 还原
+ a| 
+SnapDrive 快照向导还原`
+
+
+
+ a| 
+Snapshot 连接
+ a| 
+SnapDrive Snap 向导连接`
+
+
+
+ a| 
+包含存储系统卷的文件系统的快照连接操作
+
+
+
+ a| 
+磁盘组的 Snapshot 连接
+
+
+
+ a| 
+LUN 的 Snapshot 断开连接
+ a| 
+SnapDrive 快照向导断开连接`
+
+
+
+ a| 
+磁盘组的 Snapshot 断开连接
+
+
+
+ a| 
+主机卷的 Snapshot 断开连接
+
+
+
+ a| 
+文件系统的 Snapshot 断开连接
+
+|===
+* 限制： * 在 SnapDrive for UNIX 4.1 及更高版本中， SnapDrive snap wizard` 命令具有以下限制：
+
+* `snap wizard restore` 命令不支持基于卷的 SnapRestore 。
+* `snap wizard connect` 命令不支持 FlexClone ® 卷。
+* 不支持使用 `snap 向导` 命令对无响应的文件规范执行操作。
+

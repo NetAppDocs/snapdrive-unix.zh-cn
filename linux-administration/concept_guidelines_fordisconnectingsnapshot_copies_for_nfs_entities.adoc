@@ -1,0 +1,34 @@
+---
+permalink: linux-administration/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, nfs, disconnect, host, command 
+summary: 可以从主机集群环境中的任何节点执行 Snapshot 副本的断开连接操作。使用命令选项将存储实体与特定节点断开连接。 
+---
+= 断开 NFS 实体的 Snapshot 副本连接的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可以从主机集群环境中的任何节点执行 Snapshot 副本的断开连接操作。使用命令选项将存储实体与特定节点断开连接。
+
+断开包含 NFS 实体的 Snapshot 副本的连接时，请遵循以下准则：
+
+* 如果断开使用只读权限连接的 NFS 目录树的连接，则 SnapDrive for UNIX 将执行以下操作：
++
+** 卸载文件系统。
+** 删除文件系统表文件中的挂载条目。
+** 删除挂载点。
+** 不会删除 Snapshot 副本目录的导出规则，该目录是在从二级主机（对父卷没有导出权限的主机）连接 NFS 文件规范时创建的。
+
+
+* 如果断开使用读写权限连接的 NFS 目录树的连接，则 SnapDrive for UNIX 将执行以下操作：
++
+** 卸载文件系统。
+** 删除文件系统表文件中的挂载条目。
+** 删除与 FlexVol 卷克隆中的文件系统对应的 NFS 目录树。
+** 销毁底层 FlexVol 卷克隆（如果为空）。
+** 删除挂载点。
+
+
+

@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_stale_devices_in_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, lun, clone, stale, device 
+summary: 删除 LUN 和克隆可能会在 UNIX 中留下陈旧设备，并且 SnapDrive for UNIX 不会删除这些陈旧设备。 
+---
+= 删除 LUN 和克隆会使 UNIX 中的设备陈旧
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+删除 LUN 和克隆可能会在 UNIX 中留下陈旧设备，并且 SnapDrive for UNIX 不会删除这些陈旧设备。
+
+在手动或使用适用于 UNIX 的 SnapDrive 从 Snapshot 副本为 LUN 和 LUN 克隆创建设备时，系统会自动在 UNIX 中创建设备条目。使用 SnapDrive for UNIX 从 Snapshot 副本中删除 LUN 的设备和 LUN 克隆可能会导致 UNIX 中的设备陈旧。
+
+删除陈旧设备是最终用户的责任，必须由 UNIX 管理员执行。

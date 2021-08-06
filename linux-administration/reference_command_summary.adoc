@@ -1,0 +1,13 @@
+---
+permalink: linux-administration/reference_command_summary.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, summary, configuration, snapshot, host 
+summary: SnapDrive for UNIX 支持不同的命令行，例如配置，存储配置，主机端管理， 和 Snapshot 操作。 
+---
+= 命令摘要
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持不同的命令行，例如配置，存储配置，主机端管理， 和 Snapshot 操作。

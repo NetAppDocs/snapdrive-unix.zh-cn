@@ -1,0 +1,33 @@
+---
+permalink: aix/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, storage, volume 
+summary: 通过 SnapDrive for UNIX ，您可以创建驻留在相同或不同存储系统上的多个存储系统卷中的 Snapshot 副本。 
+---
+= 跨存储系统或卷的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 SnapDrive for UNIX ，您可以创建驻留在相同或不同存储系统上的多个存储系统卷中的 Snapshot 副本。
+
+SnapDrive for UNIX 允许您创建跨多个存储系统卷或多个存储系统的 Snapshot 副本。这些卷可以位于同一个存储系统或不同的存储系统上。尽管 SnapDrive snap create` 命令会为构成您请求的实体的所有卷创建一个 Snapshot 副本，但 SnapDrive for UNIX 仅会还原您在 SnapDrive snap create` 命令中指定的实体。
+
+使用 SnapDrive snap create` 命令创建跨多个卷的 Snapshot 副本时，无需在命令提示符处为卷命名。SnapDrive for UNIX 可从您指定的 `file_specs` 参数获取此信息。
+
+* 如果您输入的 `file_specs` 请求磁盘组，文件系统或主机卷驻留在磁盘组上，则 SnapDrive for UNIX 会自动创建一个 Snapshot 副本，其中包含您指定的磁盘组，卷或文件系统的所有存储系统卷。
+* 如果您输入的 `file_specs` 请求 LUN ，则 SnapDrive for UNIX 将为包含该 LUN 的存储系统卷创建一个 Snapshot 副本。
+* 如果您输入的 `file_specs` 请求的文件系统直接驻留在 LUN 上，则 SnapDrive for UNIX 将为包含您指定的 LUN 和文件系统的存储系统卷创建一个 Snapshot 副本。
+* 如果您输入的 `file_specs` 请求 NFS 目录，则 SnapDrive for UNIX 将为包含 NFS 目录树的卷创建一个 Snapshot 副本。
+
+
+除了使用基于多个存储系统和存储系统卷中的实体构建的 `file_specs` 参数之外，您还可以组合使用 `file_specs` 参数，其中每个值都基于单个存储系统或存储系统卷。例如，假设您设置了一个磁盘组 dg1 跨越存储系统存储系统 2 和存储系统 3 ， DG2 位于存储系统 2 上， dg3 位于存储系统 3 上。在这种情况下，以下任一命令行都是正确的：
+
+SnapDrive snap create -dg dg1 -snapname snapdg1`
+
+SnapDrive snap create -dg dg2 dg3 -snapname snapdg23`
+
+SnapDrive snap create -dg dg1 dg2 dg3 -snapname snapdg123`
+
+在创建跨存储系统和卷的 Snapshot 副本时，需要注意的一点是， SnapDrive for UNIX 会使用短名称在每个存储系统卷上创建 Snapshot 副本。它不会在名称中包含完整路径名称，即使卷位于不同的存储系统上也是如此。这意味着，如果稍后重命名 Snapshot 副本，则必须转到每个存储系统和卷并在其中重命名它。

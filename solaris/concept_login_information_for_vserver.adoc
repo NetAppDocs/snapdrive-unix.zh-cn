@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_login_information_for_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, vserver 
+summary: 用户名和密码允许 SnapDrive for UNIX 访问 SVM 。它还提供了安全性，因为除了以 vsadmin 身份登录之外，您还必须运行 SnapDrive for UNIX ，并在出现提示时提供正确的用户名和密码。 
+---
+= SVM 的登录信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+用户名和密码允许 SnapDrive for UNIX 访问 SVM 。它还提供了安全性，因为除了以 vsadmin 身份登录之外，您还必须运行 SnapDrive for UNIX ，并在出现提示时提供正确的用户名和密码。

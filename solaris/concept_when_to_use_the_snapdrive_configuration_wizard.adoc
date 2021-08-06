@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_when_to_use_the_snapdrive_configuration_wizard.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, wizard 
+summary: 使用 SnapDrive 配置向导更新向导中的配置变量。您可以随时运行配置向导，将配置更改修改为 SnapDrive 。 
+---
+= SnapDrive 配置向导
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 SnapDrive 配置向导更新向导中的配置变量。您可以随时运行配置向导，将配置更改修改为 SnapDrive 。
+
+您可以从 ` /opt/NTAPsnapdrive/setup/config_wizard` 运行配置向导
+
+输入 `exit` 以关闭配置向导，而不保存所做的更改。
+
+或者，您也可以直接在 `snapdrive.conf` 文件中修改配置变量值。
+
+* 相关信息 *
+
+xref:reference_stack_requirements.adoc[堆栈要求]

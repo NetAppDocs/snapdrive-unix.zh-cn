@@ -1,0 +1,37 @@
+---
+permalink: linux-administration/task_deleting_a_snapshotcopy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, snapshot, delelte, command 
+summary: 您可以使用 SnapDrive snap delete 命令删除 Snapshot 副本。 
+---
+= 删除 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap delete` 命令删除 Snapshot 副本。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive snap delete （ -snapname] _long_snap_name_ [_snap_name ..._] （ -verbose ） [-force （ -noprompt]]*`
+
++
+
+NOTE: 如果指定的 Snapshot 副本正在使用中，则此操作将失败。SnapDrive for UNIX 仅在删除所有 Snapshot 副本后才报告此操作已成功完成。
+
+
+
+SnapDrive for UNIX 会删除您在 `snap delete` 命令行中指定的 LUN 的现有内容，并将其替换为您指定的 Snapshot 副本中的 LUN 内容。
+
+此示例显示了要删除的内容的列表：
+
+[listing]
+----
+# snapdrive snap delete -v filer1:/vol/vol1/snap1 snap2 snap3
+snapdrive: deleting
+filer1:/vol/vol1/snap1
+filer1:/vol/vol1/snap2
+filer1:/vol/vol1/snap3
+----

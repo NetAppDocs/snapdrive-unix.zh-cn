@@ -1,0 +1,33 @@
+---
+permalink: linux-administration/concept_multiple_operations_manager_servers.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, console, servers, operations, manager, multiple 
+summary: SnapDrive for UNIX 支持多个 Operations Manager 控制台服务器。如果一组存储系统由多个 Operations Manager 控制台服务器管理，则需要此功能。SnapDrive for UNIX 按照在 SnapDrive for UNIX 中配置 Operations Manager 控制台服务器的相同顺序联系 Operations Manager 控制台服务器。您可以运行 SnapDrive config list 命令来获取配置顺序。 
+---
+= 多个 Operations Manager 控制台服务器
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 支持多个 Operations Manager 控制台服务器。如果一组存储系统由多个 Operations Manager 控制台服务器管理，则需要此功能。SnapDrive for UNIX 按照在 SnapDrive for UNIX 中配置 Operations Manager 控制台服务器的相同顺序联系 Operations Manager 控制台服务器。您可以运行 SnapDrive config list` 命令来获取配置顺序。
+
+以下示例显示了多个 Operations Manager 控制台服务器的输出：
+
+[listing]
+----
+# snapdrive config list
+username    appliance name     appliance type
+---------------------------------------------
+root        storage_array1     StorageSystem
+root        storage_array2     StorageSystem
+sd-admin    ops_mngr_server1   DFM
+sd-admin    ops_mngr_server2   DFM
+----
+在上面的示例中， storage_array1 由 ops_mngr_server1 管理， storage_array2 由 ops_mngr_server2 管理。在此示例中， SnapDrive for UNIX 会首先联系 ops_mngr_server1 。如果 ops_mngr_server1 无法确定访问权限，则 SnapDrive for UNIX 将联系 ops_mngr_server2 。
+
+只有在以下情况下， SnapDrive for UNIX 才会联系第二个 Operations Manager 控制台：
+
+* 第一个 Operations Manager 控制台无法确定访问权限时。之所以出现这种情况，可能是因为第一个 Operations Manager 控制台不管理存储系统。
+* 第一个 Operations Manager 控制台关闭时。
+

@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_collecting_information_needed_by_snapdrive_for_unix_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, information, command, unix 
+summary: 本章提供有关 SnapDrive for UNIX 命令，格式，选项，关键字和示例的信息。 
+---
+= 收集 SnapDrive for UNIX 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本章提供有关 SnapDrive for UNIX 命令，格式，选项，关键字和示例的信息。

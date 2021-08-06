@@ -1,0 +1,61 @@
+---
+permalink: solaris/task_estimating_the_storage_space_to_split_a_volume_clone.html 
+sidebar: sidebar 
+keywords: clone, split, estimate, snap, snapdrive, volume 
+summary: 克隆拆分估计有助于估算拆分卷克隆所需的存储空间 \ （以 MB 为单位）。根据 SnapDrive for UNIX 提供的克隆拆分估计值，您可以确定用于拆分卷克隆的空间可用性。 
+---
+= 估算用于拆分卷克隆的存储空间
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+克隆拆分估计有助于估算拆分卷克隆所需的存储空间（以 MB 为单位）。根据 SnapDrive for UNIX 提供的克隆拆分估计值，您可以确定用于拆分卷克隆的空间可用性。
+
+.步骤
+. 输入以下命令以估计拆分卷克隆所需的存储空间。
++
+` * SnapDrive 克隆拆分估计值（ -lun ） _lun_name_ 【 lon_lun_name_...】 | [ ｛ -DG _ -vg _ -fs _ -hostvol _ -lvol ｝ _file_spec_ [_file_spec..._]] | [-snapname _lon_snap_name_] ｛ -volclonerone|-lunclone ｝ ] （ -v _ verbose ） ] （ -dump _ -dump _ -dumpall]* ）`
+
++
+此操作将显示以下信息：
+
++
+** 资源名称
+** Container — FlexClone 的聚合
+** Required Space —拆分卷克隆所需的空间
+** Available space —容器上的可用空间
+** 存储状态—指示卷克隆拆分的可用空间
+** 自有空间—卷克隆占用的空间
+** 共享空间—卷克隆与父卷一起占用的空间
+
+
++
+使用 ` -verbose` 选项时，将显示 `自有空间` 和 `S共享空间` 。
+
+
+
+以下示例估计了用于拆分卷克隆的存储空间。
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/my_mnt1 -fs /mnt/my_mnt2
+Resource     Container  Required Available  Storage
+                        Space(MB) Space(MB) Status
+/mnt/my_mnt1  f3050-220  400      61500    AVAILABLE
+              -111:aggr0
+/mnt/my_mnt2  f3050-220  3292     1129     NOT AVAILABLE
+              -112:aggr1
+----
+对于每个文件规范， SnapDrive for UNIX 将确定在存储系统中拆分卷克隆所需的可用空间。此处， ` /mnt/my_mnt1` 文件规范具有所需的拆分空间，因此存储状态显示为可用。` ，` /mnt/my_mnt2 文件规范没有所需的拆分空间，因此存储状态显示为不可用。
+
+以下是使用 ` -verbose` 选项的示例。或者，您也可以使用 ` -v` 选项。
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/my_mnt1 -verbose
+Resource    Container Owned    Shared   Required Available Storage
+                      Space(MB)Space(MB)Space(MB)Space(MB) Status
+/mnt/my_mnt1 f3050-220 32365  403      403     55875 AVAILABLE
+             -111:aggr0
+----

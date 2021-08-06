@@ -1,0 +1,28 @@
+---
+permalink: aix/concept_lun_names_in_san_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, san, environment 
+summary: 在所有 SAN 操作中，无论 LUN 名称是否解析为 IP 地址，其格式都应始终采用主机名。在纯 SAN 环境中，没有数据路径的概念。管理接口映射必须与数据路径接口相同。 
+---
+= SAN 环境中的 LUN 名称
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在所有 SAN 操作中，无论 LUN 名称是否解析为 IP 地址，其格式都应始终采用主机名。在纯 SAN 环境中，没有数据路径的概念。管理接口映射必须与数据路径接口相同。
+
+
+
+== SAN 多子网环境中的配置列表输出
+
+[listing]
+----
+
+#snapdrive config set -mgmtpath f3050-197-91 f3050-197-91
+
+#snapdrive config list -mgmtpath
+system name        management interface   datapath interface
+------------------------------------------------------------
+bart               10.72.197.91           10.72.197.91
+----

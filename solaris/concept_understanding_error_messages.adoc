@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_understanding_error_messages.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, message 
+summary: SnapDrive for UNIX 提供了有关错误消息的信息，这些错误消息显示在不同的位置并采用各种格式。 
+---
+= 了解错误消息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 提供了有关错误消息的信息，这些错误消息显示在不同的位置并采用各种格式。

@@ -1,0 +1,57 @@
+---
+permalink: solaris/task_estimating_the_storage_space_to_split_a_lun_clone.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, estimate, storage, split, lun, clone 
+summary: 克隆拆分估计有助于估算拆分 LUN 克隆所需的存储空间 \ （以 MB 为单位）。根据 SnapDrive for UNIX 提供的克隆拆分估计值，您可以确定用于拆分 LUN 克隆的空间可用性。 
+---
+= 估算用于拆分 LUN 克隆的存储空间
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+克隆拆分估计有助于估算拆分 LUN 克隆所需的存储空间（以 MB 为单位）。根据 SnapDrive for UNIX 提供的克隆拆分估计值，您可以确定用于拆分 LUN 克隆的空间可用性。
+
+.步骤
+. 输入以下命令以估计拆分 LUN 克隆所需的存储空间。
++
+` * SnapDrive 克隆拆分估计值（ -lun ） _lun_name_ [_lon_lun_name..._] _ （ ｛ -dg _ -vg _ -fs _ hostvol _ -lvol ｝ _file_spec_ [_file_spec..._]] ） _ （ -snapname _lon_lun_name_] ｛ -volsnap_snap_snap_name_]_lunclone`
+
++
+此操作将显示以下信息：
+
++
+** 资源名称
+** 容器— LUN 克隆的卷
+** Required Space —拆分 LUN 克隆所需的空间
+** Available space —容器上的可用空间
+** 存储状态—指示 LUN 克隆拆分的可用空间
+** 已拥有空间— LUN 克隆占用的空间
+** 共享空间— LUN 克隆与父级一起占用的空间
+
+
++
+使用 ` -verbose` 选项时，将显示 `自有空间` 和 `S共享空间` 。
+
+
+
+以下示例估计了用于拆分 LUN 克隆的存储空间。
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/my_mnt1
+Resource     Container Required Available Storage
+                       Space(MB)Space(MB) Status
+/mnt/my_mnt1 f3050-220  5120    9986    AVAILABLE
+             -112:/vol/vol_1
+----
+以下是使用 ` -verbose` 选项的示例。或者，您也可以使用 ` -v` 选项。
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/my_mnt1 -verbose
+Resource    Container  Owned    Shared   Required Available Storage
+                       Space(MB)Space(MB)Space(MB)Space(MB) Status
+/mnt/my_mnt1 f3050-220  365   403      5120     9986 AVAILABLE
+             -112:/vol/vol_1
+----

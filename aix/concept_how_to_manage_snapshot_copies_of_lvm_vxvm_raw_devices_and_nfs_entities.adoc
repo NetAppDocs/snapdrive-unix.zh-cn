@@ -1,0 +1,31 @@
+---
+permalink: aix/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lvm, raw, device, nfs, entities, copy, snapshot 
+summary: 您可以使用 SnapDrive 命令创建，还原和管理 LVM ，原始设备和 NFS 实体的 Snapshot 副本。 
+---
+= 如何管理 LVM ，原始设备和 NFS 实体的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive 命令创建，还原和管理 LVM ，原始设备和 NFS 实体的 Snapshot 副本。
+
+您必须在主机上运行命令来创建，还原和管理存储实体的 Snapshot 副本。
+
+* 卷管理器实体
++
+卷管理器实体是包含使用主机卷管理器创建的主机卷和文件系统的磁盘组。
+
+* 原始实体
++
+原始实体是指包含文件系统而不创建任何卷或磁盘组的 LUN 或 LUN ，它们会直接映射到主机。
+
+* NFS 实体
++
+NFS 实体是 NFS 文件和目录树。
+
+
+
+您创建的 Snapshot 副本可以位于多个存储系统和存储系统卷上。SnapDrive 会检查 Snapshot 副本中存储实体的读取或写入权限，以确保所有 Snapshot 副本数据崩溃状态一致。除非数据崩溃状态一致，否则 SnapDrive 不会创建 Snapshot 副本。

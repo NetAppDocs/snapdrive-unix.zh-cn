@@ -1,0 +1,39 @@
+---
+permalink: solaris/concept_san_filespec_created_with_solaris_volume_manager_svm_using_iscsi_does_not_automount.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, filespec, iscsi, volume, solaris, manager, network, mount 
+summary: 重新启动主机系统后，使用 iSCSI 的 Solaris Volume Manager （ SVM\ ）创建的存储区域网络文件规范不会自动挂载，主机也不会启动。 
+---
+= 不会自动挂载使用 iSCSI 的 Solaris Volume Manager 创建的存储区域网络文件规范
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+重新启动主机系统后，使用 iSCSI 的 Solaris Volume Manager （ SVM ）创建的存储区域网络文件规范不会自动挂载，并且主机不会启动。
+
+如果主机启动，则可以使用上述步骤挂载文件规范。
+
+
+
+== 临时解决策
+
+. 输入元集
++
+` *-s dgname -t*`
+
++
+用于手动更改磁盘集所有权的命令。
+
++
+
+NOTE: 确保已定义 metadb 。
+
+. 输入
++
+` * 挂载 -A*`
+
++
+用于挂载文件规范的命令。
+
+

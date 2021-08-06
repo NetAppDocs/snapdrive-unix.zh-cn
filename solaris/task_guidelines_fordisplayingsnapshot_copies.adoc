@@ -1,0 +1,31 @@
+---
+permalink: solaris/task_guidelines_fordisplayingsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, display, snapshot, copy, guidelines 
+summary: 您可以使用通配符显示 Snapshot 副本。您可以显示特定对象中的所有 Snapshot 副本。 
+---
+= 显示 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用通配符显示 Snapshot 副本。您可以显示特定对象中的所有 Snapshot 副本。
+
+在使用 Snapshot 副本之前，请记住以下几点：
+
+* 您可以在 Snapshot 副本名称中使用通配符（ * ）。使用 Snapshot show 操作可以使用通配符显示与特定模式匹配的所有 Snapshot 副本名称或特定卷上的所有 Snapshot 副本名称。在 Snapshot 副本名称中使用通配符时，以下规则适用：
++
+** 您只能在名称末尾使用通配符。不能在 Snapshot 副本名称的开头或中间使用通配符。
+** 您不能在 Snapshot 副本名称的存储系统或存储系统卷字段中使用通配符。
+
+
+* 您也可以使用此命令列出特定对象上的所有 Snapshot 副本，包括存储系统及其卷，磁盘组，主机卷组，文件系统，主机卷， 和逻辑卷。
+* 如果输入 SnapDrive snap show` 命令，而 SnapDrive for UNIX 未找到任何 Snapshot 副本，则会显示消息 "`no matching Snapshot copies 。` " 如果您在命令行上指定了参数，但其中某些部分不存在，则 SnapDrive for UNIX 将返回部分 Snapshot 副本列表。它还会列出无效的参数。
+* 如果 SnapDrive snap create` 命令突然中止，则存储系统上的卷会存储一个不完整的 ` .stoc.xml` 文件。因此，存储系统创建的所有计划 Snapshot 副本都将具有一个不完整的 .stoc.xml 文件副本。要使 SnapDrive snap list` 命令成功运行，请完成以下步骤：
+
+
+.步骤
+. 删除卷中不完整的 ` .stoc.xml` 文件。
+. 删除存储系统创建的计划 Snapshot 副本，其中包含不完整的 ` .stoc.xml` 文件。
+

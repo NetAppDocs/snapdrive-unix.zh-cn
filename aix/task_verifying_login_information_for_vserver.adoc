@@ -1,0 +1,31 @@
+---
+permalink: aix/task_verifying_login_information_for_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verify, login, information, vserver 
+summary: 您可以使用 SnapDrive config list 命令验证是否在适用于 UNIX 的 SnapDrive 中配置了 。 
+---
+= 验证 SVM 的登录信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive config list` 命令验证是否在适用于 UNIX 的 SnapDrive 中配置了 。
+
+.步骤
+. 输入以下命令： SnapDrive config list`
++
+此命令显示在适用于 UNIX 的 SnapDrive 中指定的用户名或 Vserver ，而不显示 Vserver 的密码。
+
++
+以下示例将 ` _vsadmin_` 显示为 ` _StorageSystem_` 。
+
++
+[listing]
+----
+# snapdrive config list
+username    appliance name   appliance type
+-------------------------------------------
+vsadmin     clstr-vs2        StorageSystem
+----
+

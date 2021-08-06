@@ -1,0 +1,42 @@
+---
+permalink: solaris/task_creating_an_lvm_a_vxvmentity_andspecifying_the_lun.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, vxvm, lun 
+summary: 您可以创建主机实体，例如文件系统，逻辑卷或磁盘组，并指定作为其一部分创建的 LUN 。 
+---
+= 创建 VxVM 实体并指定 LUN
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以创建主机实体，例如文件系统，逻辑卷或磁盘组，并指定作为其一部分创建的 LUN 。
+
+.步骤
+. 在命令行中，输入以下命令：
++
+` * SnapDrive storage create _-host_lvm_fspec_ -lun _long_lun_name_ [_lun_name..._] -lunsize _size_ [-igroup _ig_name_ [_ig_name..._]] （ ｛ -reserve | -noreserve ｝ ） *`
+
++
+在 Solaris 主机上，此示例将在三个 LUN 上创建文件系统访问集，并明确命名卷组及其下的主机卷。每个 LUN 均为 10 GB ：
+
++
+` # SnapDrive lun storage create -fs /mnt/Acctfs -hostvol Acctfsdg/Acctfshv -lun Acctfiler ： /vol/vol1/luna lunb lunc -lunsize 10g`
+
++
+[listing]
+----
+LUN acctfiler:/vol/vol1/lunA ... created
+LUN acctfiler:/vol/vol1/lunB ... created
+LUN acctfiler:/vol/vol1/lunC ... created
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+LUN to device file mappings:
+- acctfiler:/vol/vol1/lunA => /dev/vx/rdmp/c4t0d3s2
+- acctfiler:/vol/vol1/lunB => /dev/vx/rdmp/c4t0d7s2
+- acctfiler:/vol/vol1/lunC => /dev/vx/rdmp/c4t0d8s2
+disk group acctfsvg created
+host volume acctfshv created
+file system /mnt/acctfs created
+----
+

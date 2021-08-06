@@ -1,0 +1,26 @@
+---
+permalink: solaris/reference_understanding_exit_status_values_of_error_messages.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, exit, status, value, error, message 
+summary: 每个 SnapDrive for UNIX 错误消息都与一个退出状态值相关联。退出状态值包含错误的发生原因及其类型 - 警告，命令，管理员或致命。 
+---
+= 了解错误消息的退出状态值
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+每个 SnapDrive for UNIX 错误消息都与一个退出状态值相关联。退出状态值包含错误的发生原因及其类型 - 警告，命令，管理员或致命。
+
+每个 SnapDrive 错误消息 ID 都链接到一个退出状态值。退出状态值包含以下信息：
+
+* exit status value —表示错误情况的基本发生原因。
+* type —表示错误类型。严重性级别取决于消息，而不是值。可能值如下：
++
+** 警告— SnapDrive for UNIX 已执行此命令，但发出了有关可能需要您注意的情况的警告。
+** Command-SnapDrive for UNIX 由于命令行错误而无法执行命令。检查命令行格式以确保其正确无误。
+** admin-SnapDrive for UNIX 由于系统配置不兼容而无法执行命令。请联系您的系统管理员以查看您的配置参数。
+** 由于出现意外情况， faily--SnapDrive for UNIX 无法执行命令。极少发生致命错误。如果发生致命错误且您在解决该错误时遇到问题，请联系 NetApp 技术支持以帮助确定正确恢复和修复任何错误情况所需的步骤。
+
+
+

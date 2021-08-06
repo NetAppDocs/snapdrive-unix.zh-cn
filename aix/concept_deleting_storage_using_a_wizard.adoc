@@ -1,0 +1,23 @@
+---
+permalink: aix/concept_deleting_storage_using_a_wizard.html 
+sidebar: sidebar 
+keywords: delete, storage, wizard, snap, snapdrive 
+summary: 您可以使用存储删除向导执行某些删除操作。 
+---
+= 使用向导删除存储
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用存储删除向导执行某些删除操作。
+
+您可以使用 SnapDrive storage wizard delete` 命令启动此向导。
+
+您可以删除以下实体：
+
+* LUN
+* 磁盘组
+* 一个逻辑卷
+* 一种文件系统
+

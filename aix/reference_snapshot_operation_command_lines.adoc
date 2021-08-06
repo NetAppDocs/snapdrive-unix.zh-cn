@@ -1,0 +1,103 @@
+---
+permalink: aix/reference_snapshot_operation_command_lines.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, command, operation, line 
+summary: SnapDrive for UNIX 命令用于执行 Snapshot 操作。 
+---
+= Snapshot 操作命令行
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 命令用于执行 Snapshot 操作。
+
+下表为 Snapshot 操作提供了各种命令行选项。
+
+|===
+| 操作 | 命令行选项 
+
+
+ a| 
+创建
+ a| 
+SnapDrive snap create （ -lun ） _ dg _ -vg _ -hostvol _ -lvol _ -fs] _file_spec_ （ file_spec... ） [ ｛ -lun | -dg _ -vg _ -hostvol _ -lvol _ -fs ｝ _file_spec_ [file_spec...] …… ] -snapname _snap_name_ "-force "-noprompt]] -unrelated ] -fstype type] （ -vmtype 类型）`
+
+
+
+ a| 
+显示 / 列表
+ a| 
+SnapDrive snap ｛ show | list ｝ -filervol _filervol_ [_filervol..._]-verbose`
+
+
+
+ a| 
+SnapDrive snap ｛ show | list ｝ ｛ -verbose ｝ ｛ -vg | -dg | -fs | -lvol | -hostvol ｝ _file_spec_ [_file_spec_...] 【 -fstype type】 【 -vmtype 】`
+
+
+
+ a| 
+SnapDrive snap （ 快照）（ -verbose ）（ -snapname ） _long_snap_name_ （快照名称 ... ）`
+
+
+
+ a| 
+SnapDrive snap ｛ show-list ｝ ｛ -verbose ｝ ｛ -lun _ -vg _ -dg _ -fs _ -lvol _ -hostvol] _file_spec_ [file_spec...]`
+
+
+
+ a| 
+连接
+ a| 
+SnapDrive snap connect -lun _s_lun_name d_lun_name_ [-lun] _s_lun_name d_lun_name_ ...] -snapname _long_snap_name_ -sparate] （ -clone ｛ lunclone _ optimal _ unrestricted ｝ ）（ -prefixfvprefixstr] （ -verbose ）`
+
+
+NOTE: 在 SnapDrive snap connect 命令中， LUN 名称的格式应为 `lun_name` 或 `qtree_name/lun_name` 。
+
+
+
+ a| 
+SnapDrive snap connect _fspec_set_ [_fspec_set..._] -snapname _lor_snap_name_ -autodes] （ -autosename] ）（ -ntopts 选项）（ ｛ -reserve | -noreserve ｝ ）（ -readonly ）（ -split ））（ -clone ｛ clone _ optimal _ verbose` -fixf ｝ ）
+
+[NOTE]
+====
+fspec_set 参数的格式如下：
+
+` （ -vg _ -dg_ -fs _ -lvol _ -hostvol] _src_file_spec_[_dest_file_spec_] （ ｛ -destdg _ -destvg ｝ dgname ） [ ｛ -destlv _ -desthv ｝ lvname]`
+
+====
+
+
+ a| 
+重命名
+ a| 
+SnapDrive snap rename -[snapname ]_old_long_snap_namenew_snap_name_ [-force [-noprompt]]`
+
+
+
+ a| 
+还原
+ a| 
+SnapDrive snap restore （ 快照还原） "-lun | -dg | -vg | -hostvol | -lvol | -fs | -file] _file_spec_ （ file_spec... ） [ ｛ -lun | -dg _ -vg _ -hostvol _ -lvol _ -fs _ -file ｝ _file_spec_ [file_spec...] …… ] -snapname _snap_name_ [-force [-noprompt]] [-mntopts options][ ｛ -reserve | -noreserve ｝ ] [-vbsr [ 预览 | 执行 ]]`
+
+
+
+ a| 
+断开连接
+ a| 
+SnapDrive snap disconnect -lun _long_lun_name_ [_lun_name..._] 【 -fstype 类型】【 -vmtype 类型】【 -ssplit 】`
+
+
+
+ a| 
+SnapDrive snap disconnect ｛ -dg| -vg | -hostvol | -lvol | -fs ｝ _file_spec_ [file_spec...] [ ｛ -DG _ -vg _ -hostvol _ -lvol _ -fs ｝ _file_spec_ [file_spec...] …… ] 【 -full】 【 -fstype type】 【 -vmtype 类型】【 -ssplit 】`
+
+
+
+ a| 
+删除
+ a| 
+SnapDrive snap delete （ -snapname] _long_snap_name_ [_snap_name ..._] （ -verbose ）【 -force （ -noprompt]]`
+
+|===

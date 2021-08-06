@@ -1,0 +1,55 @@
+---
+permalink: aix/concept_contents_of_an_audit_log_file.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, contents, aufit, log, file 
+summary: 审核日志显示有关您使用 SnapDrive for UNIX 发出的命令的信息。 
+---
+= 审核日志文件的内容
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+审核日志显示有关您使用 SnapDrive for UNIX 发出的命令的信息。
+
+审核日志文件会保留以下信息的历史记录：
+
+* 发出的命令。
+* 这些命令的返回值。
+* 调用命令的用户的用户 ID 。
+* 指示命令启动时间的时间戳（无返回代码）和指示命令完成时间的另一个时间戳（含返回代码）。审核日志记录仅显示有关 SnapDrive` 使用的信息（发出的命令）。
+
+
+审核日志文件包含以下信息。
+
+|===
+| 字段 | Description 
+
+
+ a| 
+UID
+ a| 
+用户 ID
+
+
+
+ a| 
+GID
+ a| 
+组 ID
+
+
+
+ a| 
+msgText
+ a| 
+消息文本
+
+
+
+ a| 
+返回代码
+ a| 
+从命令返回代码
+
+|===

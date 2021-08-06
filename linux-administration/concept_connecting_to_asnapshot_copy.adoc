@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/concept_connecting_to_asnapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, copy, snapshot, host 
+summary: 您可以将 Snapshot 副本从一台主机连接到另一台主机。 
+---
+= 连接到 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将 Snapshot 副本从一台主机连接到另一台主机。
+
+通过 SnapDrive for UNIX ，您可以将主机从主机上的其他位置连接到 Snapshot 副本。此新位置可以位于创建 Snapshot 副本的主机（发起主机）上，也可以位于其他主机（非发起主机）上。
+
+能够在新位置设置 Snapshot 副本意味着您可以将 Snapshot 副本备份到另一个介质，对磁盘组执行维护或访问 Snapshot 副本数据，而不会中断数据的原始副本。
+
+使用此命令，您可以将主机连接到包含以下任一内容的 Snapshot 副本：
+
+* LUN
+* 直接在 LUN 上创建的文件系统
+* 在 LUN 上创建的磁盘组，主机卷和文件系统
+* NFS 目录树
+* 共享存储系统上的磁盘组，主机卷和文件系统
+

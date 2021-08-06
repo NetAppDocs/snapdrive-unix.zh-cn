@@ -1,0 +1,45 @@
+---
+permalink: aix/concept_volume_managers_on_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, manager 
+summary: 在 AIX 上，卷管理器称为原生 LVM 和 Veritas 卷管理器（ VxVM ）。 
+---
+= SnapDrive for UNIX 上的卷管理器
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 AIX 上，卷管理器称为原生 LVM 和 Veritas 卷管理器（ VxVM ）。
+
+下表介绍了主机平台上的卷管理器：
+
+|===
+| 主机 | 卷管理器 | 卷或磁盘组 | 逻辑卷的位置 | 多路径设备的位置 
+
+
+ a| 
+AIX
+ a| 
+原生 LVM
+ a| 
+卷组 `vg`
+ a| 
+`dev/lvol`
+
+所有逻辑卷都共享同一命名空间
+ a| 
+iSCSI 不支持 ` /dev/hdisk` （仅 FC ）多路径
+
+
+
+ a| 
+Veritas Volume Manager （ VxVM ）
+ a| 
+卷组 `vg`
+ a| 
+` dev/vx/dsk/ dG/lvol`
+ a| 
+` /dev/vx/dmp/Disk_1`
+
+|===

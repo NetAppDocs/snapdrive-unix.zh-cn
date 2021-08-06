@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_error_message_format.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, message 
+summary: 此错误消息的格式可帮助您确定此错误的发生原因。 
+---
+= 错误消息格式
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此错误消息的格式可帮助您确定此错误的发生原因。
+
+SnapDrive for UNIX 将返回标准错误代码信息，从而提供导致初始错误情况的更具体的问题描述。SnapDrive for UNIX 错误消息遵循以下格式：
+
+`reTurn code message-ID 错误类型： message text`
+
+* ` 返回代码 _` - SnapDrive for UNIX 错误消息 ID ，链接到指示错误情况的基本发生原因的退出状态值。
+* ` _message-ID_` - NetApp 技术支持用来查找生成错误的特定代码的唯一标识符。如果您需要致电 NetApp 技术支持， NetApp 建议您记录随错误消息一起提供的消息 ID 。
+* ` _error type_` - 指定 SnapDrive for UNIX 遇到的错误类型。返回值包括以下内容：
++
+** ` _Warning_` - SnapDrive for UNIX 已执行命令，但发出警告，指出可能需要您注意的情况。
+** ` _Command_` - 由于命令行中的错误， SnapDrive for UNIX 无法执行命令。检查命令行格式和变量以确保其正确无误。
+** ` _Admin_` - 由于系统配置不兼容， SnapDrive for UNIX 无法执行命令。请联系您的系统管理员以查看您的配置参数。
+** ` _fatal_` - 由于出现意外情况， SnapDrive for UNIX 无法执行命令。极少发生致命错误。如果发生致命错误且您在解决该错误时遇到问题，请联系 NetApp 技术支持以获得帮助。
+
+
+* ` _message text_` —用于解释错误的信息。此文本可能包含来自另一个组件的信息，以提供有关错误的更多详细信息。例如，如果缺少命令行参数，例如磁盘组，则错误消息会告知您缺少哪些内容。或者， SnapDrive for UNIX 用于控制存储系统的管理 ONTAP API 可能会提供其他文本来帮助解释此错误。在这种情况下，文本将显示基本的 SnapDrive for UNIX 错误消息。
+

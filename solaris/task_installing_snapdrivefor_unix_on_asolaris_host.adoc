@@ -1,0 +1,52 @@
+---
+permalink: solaris/task_installing_snapdrivefor_unix_on_asolaris_host.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, install, solaris, host, unix 
+summary: 要在 Solaris 主机上安装 SnapDrive for UNIX ，您必须确认已以 root 用户身份登录。如果您远程执行此文件，并且系统配置不允许以 root 用户身份登录，则可以使用 su 命令成为 root 用户。安装文件是一个标准 Solaris.pkg 文件。 
+---
+= 在 Solaris 主机上安装 SnapDrive for UNIX
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要在 Solaris 主机上安装 SnapDrive for UNIX ，您必须确认已以 root 用户身份登录。如果您要远程执行此文件，并且系统配置不允许以 root 用户身份登录，则可以使用 `su` 命令成为 root 用户。安装文件是一个标准 Solaris.pkg 文件。
+
+请确保不要删除安装 SnapDrive for UNIX 的目录。如果删除目录，则启动和停止守护进程可能会出现问题。在安装适用于 UNIX 的 SnapDrive 之前，您还应安装 Solaris Host Utilities 。
+
+在稀疏根区域中， SnapDrive for UNIX 安装只能部分成功，因为某些文件系统在稀疏根区域中具有只读访问权限。为了避免这种情况，您可以在全局区域中创建一些符号链接，以便这些链接可供稀疏根区域使用。
+
+`ln -s /opt/NTAPsnapdrive/bin/SnapDrive /usr/bin/SnapDrive`
+
+`ln -s /opt/NTAPsnapdrive/bin/SnapDrive /usr/sbin/SnapDrive`
+
+`ln -s /opt/NTAPsnapdrive/bin/snapdrived /usr/sbin/snapdrived`
+
+.步骤
+. 转到 Solaris 主机上存放从 NetApp 支持站点下载的软件的目录。
+. 输入以下命令以安装 SnapDrive for UNIX ：
++
+` * 。 /install*`
+
++
+此脚本可毫无问题地安装 SnapDrive for UNIX 软件。它会将安装信息写入日志文件。
+
++
+[listing]
+----
+# ./install
+		Installing NTAPsnapdrive now ...
+		NTAPsnapdrive install completed successfully.
+		snapdrive Installation complete. Log is in
+		/tmp/snapdrive_install_log.23752.
+----
+. 通过为系统配置 SnapDrive for UNIX 来完成设置。
++
+默认情况下，大多数信息都已设置；但是，您需要指定以下信息：
+
++
+** 存储系统的登录信息。
+** AutoSupport 设置（ AutoSupport 是一项可选功能，但建议您启用它）。
+
+
+

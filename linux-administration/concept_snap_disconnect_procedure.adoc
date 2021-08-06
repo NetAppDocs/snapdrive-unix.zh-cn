@@ -1,0 +1,34 @@
+---
+permalink: linux-administration/concept_snap_disconnect_procedure.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, procedure, steps 
+summary: 本节将介绍 Snap disconnect 所遵循的操作步骤。 
+---
+= Snap disconnect 操作步骤
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本节将介绍 Snap disconnect 所遵循的操作步骤。
+
+以下步骤说明了 `snap disconnect 操作步骤` ：
+
+. SnapDrive for UNIX 从 `snap disconnect` 命令行界面获取主机文件规格，并找出存储系统卷。
+. 删除主机文件规范并取消 LUN 映射后， SnapDrive for UNIX 将检查当前卷是否为 SnapDrive 创建的克隆。
+. 如果 FlexClone 是由 SnapDrive 创建的，则 SnapDrive for UNIX 将检查以下项是否：
++
+.. 克隆卷中存在任何映射的 LUN
+.. 克隆的卷中存在任何新的 LUN
+.. 存在任何新的 Snapshot 副本
+
+
+
+
+如果满足所有条件， SnapDrive for UNIX 将删除克隆的卷。对于不受限制的 FlexClone ，如果配置了 RBAC ，则 SnapDrive for UNIX 不会执行子步骤 1 和子步骤 2 检查。
+
+在 Data ONTAP 7.2 之前的存储系统上， SnapDrive for UNIX 不会删除受限的 FlexClone 卷。应使用存储系统命令删除它们。但是，在为用户提供适当的 RBAC 功能时，不受限制的 FlexClone 卷将被删除。
+
+* 相关信息 *
+
+xref:concept_role_based_access_control_in_snapdrive_for_unix.adoc[SnapDrive for UNIX 中基于角色的访问控制]

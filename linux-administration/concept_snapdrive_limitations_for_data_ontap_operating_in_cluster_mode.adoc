@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/concept_snapdrive_limitations_for_data_ontap_operating_in_cluster_mode.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, clustered, ontap, limitations, operations 
+summary: 集群模式 Data ONTAP 不支持某些 SnapDrive 功能和操作。 
+---
+= 集群模式 Data ONTAP 的 SnapDrive 限制
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+集群模式 Data ONTAP 不支持某些 SnapDrive 功能和操作。
+
+* SVM 的根卷不支持存储配置和 Snapshot 管理操作。
+* 不支持对跨 7- 模式 Data ONTAP 和集群模式 Data ONTAP 上运行的存储系统的文件规范或 LUN 执行操作。
+* 不支持挂载点内的符号链接。
+* 必须将包含 Vserver 卷的聚合分配给 Vserver 的聚合列表，才能配置 Vserver 并执行 SnapDrive 操作。
+* SnapDrive for UNIX 不支持迁移 SVM ，因为集群模式 Data ONTAP 不支持此迁移。
+* 使用 ` readonly` 选项执行快照连接操作时，仅会在主机上挂载 ` 。 snapshot` 目录，而不会创建克隆卷。
++
+在集群模式 Data ONTAP 中，导出策略仅在卷级别定义，而不是在目录级别定义。因此，无法将 ` .snapshot` 目录导出到二级主机（即对父卷没有导出权限的主机）。
+
+* 如果卷采用 SnapMirror 或 SnapVault 操作，则 SnapDrive for UNIX 不支持从在基本 Snapshot 副本之前创建的 Snapshot 副本执行基于卷的 SnapRestore （ VBSR ）操作。
+* 当卷处于 SnapVault （ XDP ）关系时， SnapDrive for UNIX 不支持对在 SnapVault 更新之前创建的 Snapshot 副本执行 `snapdelete` 操作。
+

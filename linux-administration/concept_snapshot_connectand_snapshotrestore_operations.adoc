@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_snapshot_connectand_snapshotrestore_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, restore, clones, copy, snapshot 
+summary: 连接到 Snapshot 副本时， Snapshot 副本会克隆信息。 
+---
+= Snapshot 连接和 Snapshot 还原操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+连接到 Snapshot 副本时， Snapshot 副本会克隆信息。
+
+与 Snapshot 还原操作不同， Snapshot 连接操作不会将构成主机实体的 LUN 的现有内容替换为 Snapshot 副本内容。它会克隆信息。
+
+建立连接后， Snapshot 连接和 Snapshot 还原操作都会执行类似的活动：
+
+* Snapshot 连接操作会激活存储实体的逻辑卷，挂载文件系统，并可选择向主机文件系统表添加一个条目。
+* Snapshot 还原操作会激活存储实体的逻辑卷，挂载文件系统并应用 Snapshot 副本中保留的主机文件系统挂载条目。
+

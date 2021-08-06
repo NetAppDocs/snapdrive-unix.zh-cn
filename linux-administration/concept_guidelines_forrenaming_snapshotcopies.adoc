@@ -1,0 +1,19 @@
+---
+permalink: linux-administration/concept_guidelines_forrenaming_snapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rename, snapshot, copy, command 
+summary: 重命名 Snapshot 副本时，请确保两个 Snapshot 副本的名称不相同。 
+---
+= 重命名 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+重命名 Snapshot 副本时，请确保两个 Snapshot 副本的名称不相同。
+
+使用 SnapDrive snap rename` 命令时，请遵循以下准则：
+
+* 如果您尝试将 Snapshot 副本重命名为其他存储系统卷，则会出现一条错误消息。
+* 如果 Snapshot 副本的新名称已存在，则会出现错误消息。您可以使用 ` -force` 选项强制 SnapDrive for UNIX 更改名称而不生成错误消息。
+

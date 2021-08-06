@@ -1,0 +1,24 @@
+---
+permalink: linux-administration/concept_snapdrive_storage_show_command_returns_incorrect_path_if_volume_deleted_without_unmount.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, delete, vserver, unmounting, host, storage, incorrect, show, command 
+summary: 如果在未将卷卸载到主机系统的情况下在 SVM 上删除卷，并且在执行 SnapDrive storage show -v 命令时，实际路径不正确。 
+---
+= 如果在未将卷卸载到主机系统的情况下删除了 SVM 上的卷，则 SnapDrive storage show 命令会显示不正确的实际路径
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果在未将卷卸载到主机系统的情况下在 SVM 上删除卷，并且在执行 SnapDrive storage show -v` 命令时，实际路径不正确。
+
+如果卷未在 SVM 上接合，则也可能会遇到相同的情况。以下示例显示的实际路径不正确：
+
+[listing]
+----
+# snapdrive storage show -fs /mnt /file1 -v
+NFS device: vs1:/vol_test1 mount point: /mnt
+(non-persistent)
+Protocol: NFS Actual Path:
+vs1:/vol/roovol1/vol_test1
+----

@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/reference_general_notes_about_the_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, general, commands, dg, vg, lvol, hostvol, unix 
+summary: SnapDrive for UNIX 命令具有 -dg ， -vg ， -lvol 和 -hostvol 等选项。 
+---
+= 有关命令的一般注意事项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 命令具有 ` -DG` ， ` -vg` ， ` -lvol` 和 ` -hostvol` 等选项。
+
+下面是有关该命令的一些常规注释：
+
+* ` -dg` 和 ` -vg` 选项是同义词，反映了以下事实：某些操作系统引用磁盘组，而其他操作系统引用卷组。本指南使用 -dg 来指代磁盘组和卷组。
+* ` -lvol` 和 ` -hostvol` 选项是同义词，反映了以下事实：某些操作系统引用逻辑卷，而其他操作系统引用主机卷。本指南使用 ` -hostvol` 来指代逻辑卷和主机卷。
+* 最好使用默认的 igroup ，而不要通过包含 ` -igroup` 选项来明确指定 igroup 。
+

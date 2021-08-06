@@ -1,0 +1,33 @@
+---
+permalink: aix/concept_snap_connect_procedure.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, procedure 
+summary: snap connect 操作步骤适用于 Data ONTAP 7.2 或更高版本，并说明了 snap connect 操作的步骤。 
+---
+= Snap Connect 操作步骤
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+snap connect 操作步骤适用于 Data ONTAP 7.2 或更高版本，并说明了 snap connect 操作的步骤。
+
+以下步骤说明了 Snap Connect 操作步骤：
+
+.步骤
+. SnapDrive for UNIX 从 snap connect 命令行界面获取文件规范名称和 Snapshot 名称。然后，它会查找快照所在的原始存储系统卷。
+. SnapDrive for UNIX 会根据命令行界面配置选项为存储系统实体选择适当的克隆方法。
++
+
+NOTE: 如果指定了 CLI 选项，则它始终会覆盖 `snapdrive.conf` file 选项。
+
++
+.. 如果在 CLI 中指定了 ` -clone lunclone` 选项或在 `snapdrive.conf` 文件中指定了 `san-clone-method = lunclone` 选项，则 SnapDrive for UNIX 将从给定快照在同一卷中创建一个 LUN 克隆。
+.. 如果在命令行界面中指定了 ` -clone unrestricted` 选项或在 `snapdrive.conf` 文件中指定了 `san-clone-method = unrestricted` 选项，则 SnapDrive for UNIX 将从给定的 Snapshot 创建或重新使用通用 FlexClone 。
+.. 如果在命令行界面中指定了 ` -clone optimal` 选项或在 `snapdrive.conf` 文件中指定了 `san-clone-method = optimal` 选项，则 SnapDrive for UNIX 会根据存储系统配置自动在受限的 FlexClone 和 LUN 克隆之间进行选择。
+
+
+
+
+
+NOTE: 默认情况下， SnapDrive for UNIX 创建的克隆是备份克隆。

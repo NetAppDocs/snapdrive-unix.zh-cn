@@ -1,0 +1,15 @@
+---
+permalink: linux-administration/concept_what_the_trace_log_file_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, trace, log, file, troubelshoot, problem, issue 
+summary: 技术支持使用跟踪日志文件对问题进行故障排除。 
+---
+= 什么是跟踪日志文件
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+技术支持使用跟踪日志文件对问题进行故障排除。
+
+启用跟踪日志文件不会影响系统性能。默认情况下，此文件处于启用状态。您可以通过将 `snapdrive.conftrace-enabled` 变量设置为 `off` 来禁用。

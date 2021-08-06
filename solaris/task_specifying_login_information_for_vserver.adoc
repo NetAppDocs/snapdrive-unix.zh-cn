@@ -1,0 +1,32 @@
+---
+permalink: solaris/task_specifying_login_information_for_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, information, vserver, specify 
+summary: 您必须指定 SVM 的用户登录信息。根据您在设置 Vserver 时指定的内容，每个 Vserver 都必须使用配置的 Vserver 用户名。如果您的 Vserver 名称发生更改，则必须确保已在适用于 UNIX 的 SnapDrive 中配置新的 Vserver 名称。 
+---
+= 指定 SVM 的登录信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须指定 SVM 的用户登录信息。根据您在设置 Vserver 时指定的内容，每个 Vserver 都必须使用配置的 Vserver 用户名。如果您的 Vserver 名称发生更改，则必须确保已在适用于 UNIX 的 SnapDrive 中配置新的 Vserver 名称。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置集 _user_name filername_ [_filername..._]*`
+
++
+** ` _user_name_` 是首次设置 SVM 时为 SVM 指定的用户名。默认用户为 vsadmin 。filername 是 SVM 名称。
+** ` filer_name_` 允许您在一个命令行中输入多个 SVM ，前提是它们都具有相同的用户登录名或密码。必须至少输入一个 Vserver 名称。
++
+[listing]
+----
+# snapdrive config set vsadmin clstr-vs2
+Password for vsadmin:
+Retype password:
+----
+
+
+

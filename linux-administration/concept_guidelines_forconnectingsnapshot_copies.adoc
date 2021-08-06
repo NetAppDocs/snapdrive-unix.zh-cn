@@ -1,0 +1,31 @@
+---
+permalink: linux-administration/concept_guidelines_forconnectingsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, snapshot, copy, guidelines 
+summary: 连接到 Snapshot 副本时，请遵循相关准则。 
+---
+= 连接 Snapshot 副本的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+连接到 Snapshot 副本时，请遵循相关准则。
+
+* SnapDrive snap connect` 命令仅适用于在适用于 UNIX 的 SnapDrive 4.2 中创建的 Snapshot 副本。
+* 在非源主机上， SnapDrive 4.1 for UNIX 支持使用 Linux LVM1 或 LVM2 执行 Snapshot 连接操作。但是，如果 LUN 是 Linux LVM1 卷管理器的一部分，则不支持在发起主机上执行 Snapshot 连接操作。
+* 在源主机上， SnapDrive for UNIX 支持连接和还原由先前版本的 SnapDrive for UNIX 创建的 Snapshot 副本。
++
+
+NOTE: 在 Linux 发起主机上， Snapshot 连接操作仅适用于 Linux LVM2 以及 SnapDrive for UNIX 创建的 Snapshot 副本。
+
+* 在 Linux 主机上，如果所连接的 SnapDrive 副本包含 LUN 或具有文件系统的 LUN ，则支持 lun snap connect` 命令，该文件系统是在未激活 Linux LVM1 的情况下创建的。SnapDrive for UNIX 不支持对使用 Linux LVM1 创建的 SnapDrive 实体使用 snap connect` 命令。
++
+SnapDrive snap connect` 命令不允许重命名 Linux 主机上的磁盘组。例如，不支持以下命令： SnapDrive snap connect -dg dg1 dg1copy -snapname daster: /vol/vol1 ： dg1snapshot`
+
+* 要对 NFS 目录树进行读写访问， SnapDrive snap connect` 命令使用 Data ONTAP FlexVol 卷功能，因此需要 Data ONTAP 7.3 或更高版本。使用 Data ONTAP 7.1 的配置可以连接 NFS 文件或目录树，但提供只读访问权限。
+* 如果在 Snapshot 连接操作期间将 `enable-split-clone` 配置变量值设置为 "`on` " 或 " `sync` " ，并在 Snapshot 断开操作期间将 "`off` " ，则 SnapDrive for UNIX 不会删除 Snapshot 副本中的原始卷或 LUN 。
+* 您必须将 Data ONTAP 7.2.2 配置选项 `vfiler.vol_clone_zapi_allow` 的值设置为 "`on` " ，才能连接到 vFiler 单元中卷或 LUN 的 Snapshot 副本。
+* 具有不同主机配置的主机不支持 Snapshot 连接操作。
+* 用于连接到物理存储系统或 vFiler 单元的根卷的 SnapDrive snap connect` 命令失败，因为 Data ONTAP 不允许克隆根卷。
+

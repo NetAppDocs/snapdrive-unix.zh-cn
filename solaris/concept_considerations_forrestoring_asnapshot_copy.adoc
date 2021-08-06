@@ -1,0 +1,20 @@
+---
+permalink: solaris/concept_considerations_forrestoring_asnapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy 
+summary: 在还原 Snapshot 副本之前，请确保您未使用文件系统，并且不会中断还原过程。 
+---
+= 还原 Snapshot 副本的注意事项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在还原 Snapshot 副本之前，请确保您未使用文件系统，并且不会中断还原过程。
+
+在还原 Snapshot 副本之前，请考虑以下重要信息：
+
+* 确保您不在要还原的文件系统上的任何目录中。您可以从任何目录执行 SnapDrive snap restore` 命令，但要将信息还原到的文件系统上的目录除外。
+* 请勿输入 Ctrl-C 中断还原操作这样做可能会使系统处于不可用的配置中。如果发生这种情况，您可能需要联系 NetApp 技术支持才能恢复。
+* 将 NFS 实体导出到卷时，请将匿名用户 ID 选项设置为 "`0` " ，以便 SnapDrive snap restore` 命令能够成功运行。
+

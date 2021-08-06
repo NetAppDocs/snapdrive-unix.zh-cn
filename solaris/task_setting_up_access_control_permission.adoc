@@ -1,0 +1,64 @@
+---
+permalink: solaris/task_setting_up_access_control_permission.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, permission 
+summary: 您可以通过在存储系统的根卷中创建特殊目录和文件来在 SnapDrive for UNIX 中设置访问控制权限。 
+---
+= 设置访问控制权限
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以通过在存储系统的根卷中创建特殊目录和文件来在 SnapDrive for UNIX 中设置访问控制权限。
+
+确保以 root 用户身份登录。
+
+.步骤
+. 在目标存储系统的根卷中创建目录 `sdprbac` 。
++
+要使根卷可访问，一种方法是使用 NFS 挂载此卷。
+
+. 在 `sdprbac` 目录中创建权限文件。确保以下陈述正确无误：
++
+** 此文件必须名为 `sDHost-name.prbac` ，其中 host-name 是要为其指定访问权限的主机的名称。
+** 此文件必须为只读文件，以确保 SnapDrive for UNIX 可以读取它，但无法修改它。
+
+
++
+要为名为 dev-sund1 的主机授予访问权限，您应在存储系统上创建以下文件： ` /vol/vol1/sdprbac/sddev-sund1.prbac`
+
+. 在文件中设置该主机的权限。
++
+您必须对文件使用以下格式：
+
++
+** 您只能指定一个权限级别。要为主机授予对所有操作的完全访问权限，请输入字符串 all access 。
+** 权限字符串必须是文件中的第一项。如果权限字符串不在第一行中，则文件格式无效。
+** 权限字符串不区分大小写。
+** 权限字符串前面不能有空格。
+** 不允许添加任何注释。
++
+这些有效权限字符串允许以下访问级别：
+
+** 无—主机无法访问存储系统。
+** snap create —主机可以创建 Snapshot 副本。
+** snap use —主机可以删除和重命名 Snapshot 副本。
+** snap all —主机可以创建，还原，删除和重命名 Snapshot 副本。
+** storage create delete —主机可以创建存储，调整存储大小和删除存储。
+** 存储使用—主机可以连接和断开存储连接，还可以在存储上执行克隆拆分估计和克隆拆分开始。
+** 存储全部—主机可以创建，删除，连接和断开存储连接，还可以在存储上执行克隆拆分估计和克隆拆分启动。
+** 所有访问—主机可以访问上述所有 SnapDrive for UNIX 操作。
++
+其中每个权限字符串都是离散的。如果指定快照使用，则主机可以删除或重命名 Snapshot 副本，但不能创建 Snapshot 副本，还原或执行任何存储配置操作。
+
++
+无论您设置的权限如何，主机都可以执行 show 和 list 操作。
+
+
+
+. 输入以下命令以验证访问权限：
++
+` * SnapDrive 配置访问 show _filer_name_*`
+
+

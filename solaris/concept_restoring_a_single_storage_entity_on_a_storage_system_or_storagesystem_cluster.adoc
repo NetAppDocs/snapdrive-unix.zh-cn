@@ -1,0 +1,15 @@
+---
+permalink: solaris/concept_restoring_a_single_storage_entity_on_a_storage_system_or_storagesystem_cluster.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy, ha, storage, pair 
+summary: 您可以还原包含单个存储实体的 Snapshot 副本。 
+---
+= 还原存储系统或存储系统 HA 对上的单个存储实体
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以还原包含单个存储实体的 Snapshot 副本。
+
+您可以还原包含驻留在存储系统或存储系统 HA 对上的单个存储实体的 Snapshot 副本。目标存储系统上的卷名称必须与源存储系统上的卷名称匹配。

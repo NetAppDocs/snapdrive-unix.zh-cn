@@ -1,0 +1,35 @@
+---
+permalink: linux-administration/concept_connecting_to_a_snapshot_copy_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, fails 
+summary: 在 SnapDrive for UNIX 操作期间，当 Linux 主机重新启动时， SnapDrive for UNIX 无法连接到 Snapshot 副本。 
+---
+= 连接到 Snapshot 副本失败
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 SnapDrive for UNIX 操作期间，当 Linux 主机重新启动时， SnapDrive for UNIX 无法连接到 Snapshot 副本。
+
+在 SnapDrive for UNIX 操作期间重新启动的源主机上执行快照连接操作期间， Linux LVM2 会发生这种情况。
+
+[listing]
+----
+Volume manager configuration file has tags that are added by SnapDrive for UNIX. Clean the file manually.
+----
+
+
+== 临时解决策
+
+. 确保与磁盘组关联的设备的 LUN 克隆未映射到主机。如果它们已映射到主机，则取消映射并删除它们。它们可能是由于先前失败的 SnapDrive 操作而出现的。
+. 按以下方式编辑 `lvm.configfile` （位于 ` /etc/lvm/` ）：
++
+.. 删除后缀为 ` ###SDUTEMP` 的所有行。
+.. 还原注释标记 ` #SDUEXISTING` 前面的所有行。
++
+如果上述任何一项不起作用，请联系 NetApp 技术支持。
+
+
+
+

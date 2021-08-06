@@ -1,0 +1,25 @@
+---
+permalink: solaris/task_forcing_daemon_restart.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, force, daemon, restart, command 
+summary: 您可以强制此守护进程重新启动。强制重新启动守护进程将停止执行所有正在运行的命令。 
+---
+= 强制守护进程重新启动
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以强制此守护进程重新启动。强制重新启动守护进程将停止执行所有正在运行的命令。
+
+确保以 root 用户身份登录。
+
+.步骤
+. 输入以下命令强制重新启动守护进程：
++
+` * snapdrived -force restart*`
+
++
+收到强制重新启动请求后，守护进程将停止所有正在执行和正在排队的命令。只有在取消执行所有正在运行的命令后，守护进程才会重新启动。
+
+

@@ -1,0 +1,13 @@
+---
+permalink: linux-administration/concept_management_of_lvm_and_raw_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lvm, raw, entity, management, volume, logical 
+summary: 通过适用于 UNIX 的 SnapDrive ，您可以管理 LVM （逻辑卷管理器）和原始实体。SnapDrive for UNIX 还提供了一些命令，可帮助您在创建存储实体时配置和管理存储。 
+---
+= LVM 和原始实体的管理
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过适用于 UNIX 的 SnapDrive ，您可以管理 LVM （逻辑卷管理器）和原始实体。SnapDrive for UNIX 还提供了一些命令，可帮助您在创建存储实体时配置和管理存储。

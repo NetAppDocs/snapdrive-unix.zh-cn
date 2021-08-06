@@ -1,0 +1,23 @@
+---
+permalink: aix/concept_multiple_subnet_configuration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, multiple, subnet, configuration 
+summary: 在要将管理流量和数据流量分开的环境中，多个子网非常有用。这种隔离为管理网络流量创建了一个更安全的环境。在此类环境中，在服务器上运行的 SnapDrive 4.1.1 for UNIX 及更高版本支持在独立环境以及主机和 HA 对环境中可用的所有 SnapDrive 操作。 
+---
+= 多子网配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在要将管理流量和数据流量分开的环境中，多个子网非常有用。这种隔离为管理网络流量创建了一个更安全的环境。在此类环境中，在服务器上运行的 SnapDrive 4.1.1 for UNIX 及更高版本支持在独立环境以及主机和 HA 对环境中可用的所有 SnapDrive 操作。
+
+与存储系统管理相关的数据通过管理界面传输。DataFabric Manager ， Protection Manager 和 SnapDrive for UNIX 可以是管理界面的一部分。数据接口用于存储系统之间的数据流量。
+
+要在环境中配置多个子网，应将 `mgmtpath` 选项与 SnapDrive config set` 命令结合使用。
+
+SnapDrive for UNIX 不支持在存储系统的主机名与公有名称不同但这两个名称解析为同一 IP 地址的 SAN 环境中执行操作。要解决此情况，您可以执行以下操作之一：
+
+* 为系统名称分配不同的 IP 地址。
+* 配置系统，使其在您尝试连接时不会回复。
+

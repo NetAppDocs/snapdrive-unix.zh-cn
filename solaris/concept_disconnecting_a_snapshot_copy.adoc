@@ -1,0 +1,16 @@
+---
+permalink: solaris/concept_disconnecting_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, copy 
+summary: 您可以将 Snapshot 副本与 LUN ， LUN 上的文件系统，磁盘组， NFS 目录或 LUN 上的共享磁盘组，主机卷和文件系统断开连接。 
+---
+= 断开 Snapshot 副本的连接
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以将 Snapshot 副本与 LUN ， LUN 上的文件系统，磁盘组， NFS 目录或 LUN 上的共享磁盘组，主机卷和文件系统断开连接。
+
+
+NOTE: 您可以将拆分的克隆卷与 SnapDrive for UNIX 4.2 及更高版本断开连接。

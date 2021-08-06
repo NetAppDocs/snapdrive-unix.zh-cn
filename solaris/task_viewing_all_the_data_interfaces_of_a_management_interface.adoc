@@ -1,0 +1,27 @@
+---
+permalink: solaris/task_viewing_all_the_data_interfaces_of_a_management_interface.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, view, data, interface, management 
+summary: 您可以在 NFS 环境中使用 SnapDrive config list 命令查看管理接口的所有数据接口。 
+---
+= 查看管理接口的所有数据接口
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在 NFS 环境中使用 SnapDrive config list` 命令查看管理接口的所有数据接口。
+
+. 在 CLI 中，输入以下命令：
++
+` * SnapDrive 配置列表 -mgmtpath*`
+
++
+[listing]
+----
+#snapdrive config list -mgmtpath
+system name        management interface   datapath interface
+-------------------------------------------------------------------------------
+f3050-197-91        10.72.197.91           10.72.220.91|10.72.168.91
+----
+

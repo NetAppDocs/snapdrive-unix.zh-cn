@@ -1,0 +1,15 @@
+---
+permalink: linux-installation-cmode/index.html 
+sidebar: sidebar 
+keywords: guide, documentation, installation, setup, linux, clustered, data, ontap 
+summary: 介绍在 Linux 环境中使用集群模式 Data ONTAP 部署 SnapDrive for UNIX 所需执行的初始任务。 
+---
+= 《适用于集群模式 Data ONTAP 的 Linux ® 安装和设置指南》
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本指南介绍在 Linux 环境中使用集群模式 Data ONTAP 部署 SnapDrive 5.3.2 for UNIX 时需要执行的初始任务。
+
+主题包括如何安装和配置产品以及如何备份数据库。

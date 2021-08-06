@@ -1,0 +1,96 @@
+---
+permalink: linux-administration/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, resize, command, storage 
+summary: 在使用 SnapDrive storage resize 命令之前，您需要提供一些信息。此信息有助于您正确使用命令。 
+---
+= 使用 SnapDrive storage resize 命令所需的信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 SnapDrive storage resize` 命令之前，您需要提供一些信息。此信息有助于您正确使用命令。
+
+|===
+| 要求 | 参数 
+
+
+ a| 
+确定是否要增加磁盘或卷组的大小，并使用相应的参数输入此实体的名称。
+
+
+
+ a| 
+磁盘组（ -dg file_specs ）或卷组（ -vg file_specs ）
+ a| 
+磁盘或卷组的名称 _
+
+
+
+ a| 
+确定要如何增加存储大小。使用此命令时，请记住以下几点：
+
+* 使用 ` -growby` 选项将实体大小增加在 size 参数中指定的字节。
+* 使用 ` -growto` 选项增加实体大小，使新的总大小为 ` size_` 参数中指定的字节数。
+* 使用 ` -addlun` 选项向底层磁盘组添加内部生成的新 LUN ，以增加实体大小。如果不使用此参数，则 SnapDrive for UNIX 会增加磁盘组中最后一个 LUN 的大小，以满足在 ` -growby` 选项或 ` -growto` 选项中指定的字节大小。
+
+
+
+
+ a| 
+指定要增加存储的字节数（` -growby _size_` ）
+ a| 
+` 字节数 _ 字节 _`
+
+
+
+ a| 
+以字节为单位指定存储要达到的大小（` -growto _size_` ）
+ a| 
+` 字节数 _ 字节 _`
+
+
+
+ a| 
+告诉 SnapDrive for UNIX 通过向磁盘组添加新 LUN 来增加大小（` -addlun` ）
+ a| 
+
+
+
+ a| 
+告诉 SnapDrive for UNIX 增加大小，无论是否创建空间预留 ` -reserve | -noreserve`
+ a| 
+
+
+
+ a| 
+* 可选： * 建议对主机使用默认 igroup ，而不是提供 igroup 名称。
+
+
+
+ a| 
+igroup 名称（` -igroup` ）
+ a| 
+` ig_name_`
+
+
+
+ a| 
+` - fstype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+` -vmtype`
+ a| 
+` _ 类型 _`
+
+
+
+ a| 
+* 可选： * 指定用于 SnapDrive for UNIX 操作的文件系统和卷管理器的类型。
+
+|===

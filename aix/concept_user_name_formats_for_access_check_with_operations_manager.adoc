@@ -1,0 +1,20 @@
+---
+permalink: aix/concept_user_name_formats_for_access_check_with_operations_manager.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, user, name, access, check, operation, manager, console 
+summary: SnapDrive for UNIX 使用用户名格式通过 Operations Manager 控制台执行访问检查。这些格式取决于您是网络信息系统 \ （ NIS\ ）还是本地用户。 
+---
+= 用于使用 Operations Manager 控制台执行访问检查的用户名格式
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 使用用户名格式通过 Operations Manager 控制台执行访问检查。这些格式取决于您是网络信息系统（ Network Information System ， NIS ）还是本地用户。
+
+SnapDrive for UNIX 使用以下格式检查用户是否有权执行某些任务：
+
+* 如果您是运行 SnapDrive` 命令的 NIS 用户，则 SnapDrive for UNIX 将使用格式 ` <nisdomain><username>` （例如， `netapp.com\marc` ）
+* 如果您是 lnx197-141 等 UNIX 主机的本地用户，则 SnapDrive for UNIX 将使用格式 ` < 主机名 >\< 用户名 >` 格式（例如， `lnx197-141\john` ）
+* 如果您是 UNIX 主机的管理员（ root ），则 SnapDrive for UNIX 会始终将此管理员视为本地用户，并使用格式 `lnx197-141\root` 。
+

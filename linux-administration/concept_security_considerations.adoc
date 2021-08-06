@@ -1,0 +1,17 @@
+---
+permalink: linux-administration/concept_security_considerations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, security, access, storage, host, configure, password, login 
+summary: 您可以启用 SnapDrive for UNIX 来访问连接到主机的存储系统，并且必须将主机配置为使用分配给存储系统的登录名和密码。如果不提供此信息，则 SnapDrive for UNIX 将无法与存储系统进行通信。 
+---
+= 安全注意事项
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以启用 SnapDrive for UNIX 来访问连接到主机的存储系统，并且必须将主机配置为使用分配给存储系统的登录名和密码。如果不提供此信息，则 SnapDrive for UNIX 将无法与存储系统进行通信。
+
+根用户可以允许其他用户运行特定命令，具体取决于为其分配的角色。您不必是 root 用户即可执行存储和快照管理操作。
+
+SnapDrive for UNIX 会将有关主机的用户身份验证信息存储在一个加密文件中。默认情况下，在 Linux 主机上， SnapDrive 会对密码信息进行加密并通过网络发送。SnapDrive for UNIX 通过标准 IP 连接使用 HTTPS 进行通信。

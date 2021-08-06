@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_operations_manager_unavailable.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, console, error, manager, operations 
+summary: SnapDrive for UNIX 需要 Operations Manager 控制台来执行访问检查。有时， Operations Manager 控制台服务器可能由于各种原因而不可用。 
+---
+= Operations Manager 控制台不可用
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 需要 Operations Manager 控制台来执行访问检查。有时， Operations Manager 控制台服务器可能由于各种原因而不可用。
+
+如果设置了 RBAC 方法 ` RBAC 方法 = dfm_` 且 Operations Manager 控制台不可用，则 SnapDrive for UNIX 将显示以下错误消息：
+
+[listing]
+----
+[root]# snapdrive storage delete -lun storage_array1:/vol/vol2/qtree1/lun1
+0002-333 Admin error: Unable to connect to the DFM ops_mngr_server
+----
+SnapDrive for UNIX 还可以为 Operations Manager 控制台返回的用户访问检查结果保留一个缓存。此缓存有效期为 24 小时，不可配置。如果 Operations Manager 控制台不可用，则 SnapDrive for UNIX 将使用缓存来确定访问权限。只有在所有已配置的 Operations Manager 控制台服务器均无响应时，才会使用此缓存。
+
+要使 SnapDrive for UNIX 使用缓存进行访问检查，您必须打开 ` RBAC cache_` 配置变量，以保持访问结果的缓存。默认情况下， ` RBAC 缓存 _` 配置变量处于关闭状态。
+
+要在 Operations Manager 控制台不可用的情况下使用 SnapDrive for UNIX ，服务器管理员必须在 `snapdrive.conf` 文件中将基于角色的访问控制（ Role-Based Access Control ， RBAC ）方法重置为 ` RBAC 方法 = 原生` 。更改 `snapdrive.conf` 文件后，必须重新启动 SnapDrive for UNIX 守护进程。如果设置了 ` RBAC 方法 = UNIX_` ，则只有 root 用户可以使用 SnapDrive for 原生。

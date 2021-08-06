@@ -1,0 +1,17 @@
+---
+permalink: linux-installation-7mode/task_provisioning_volumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, provision, storage 
+summary: 通过 Data ONTAP ，您可以通过在存储系统上创建卷并将卷挂载到启用了 NFS 协议的主机来配置存储。 
+---
+= 配置卷
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过 Data ONTAP ，您可以通过在存储系统上创建卷并将卷挂载到启用了 NFS 协议的主机来配置存储。
+
+* 相关信息 *
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1368859["《 Data ONTAP 8.2 7- 模式存储管理指南》"]

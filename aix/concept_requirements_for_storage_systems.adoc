@@ -1,0 +1,68 @@
+---
+permalink: aix/concept_requirements_for_storage_systems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, system, requirement 
+summary: 在设置存储系统之前，您必须考虑其要求。 
+---
+= 存储系统的要求
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在设置存储系统之前，您必须考虑其要求。
+
+|===
+| 组件 | 要求 
+
+
+ a| 
+操作系统
+ a| 
+Data ONTAP 7.3.5 或更高版本。
+
+* SnapDrive for UNIX 支持 FlexVol 卷，但不使用所有 FlexVol 卷功能。
+* 使用 NFS 的配置必须使用 Data ONTAP 7.3.5 或更高版本，而 FlexVol 卷必须使用 SnapDrive snap connect` 来读写连接的 NFS 文件或目录树。
++
+使用传统卷的配置可以对 NFS 文件和目录树进行只读访问。
+
+
+
+
+
+ a| 
+存储系统设置
+ a| 
+您必须指定 HA 对中的配对 IP 地址，以便在发生存储系统故障转移时使用。
+
+
+NOTE: 您可以在存储系统上运行设置程序时指定 IP 地址。
+
+
+
+ a| 
+licenses
+ a| 
+* FC ， iSCSI 或 NFS ，具体取决于主机平台
+* FlexClone 许可证
++
+
+NOTE: 要执行 SnapDrive for UNIX ，存储系统上必须运行相应的协议。
+
+* SnapRestore 软件
+* MultiStore 软件
++
+您应在设置存储系统时设置 SnapRestore 和 MultiStore 许可证。如果要设置 vFiler 环境，您需要 MultiStore 许可证。
+
+* 对存储系统的安全 HTTP 访问。
+
+
+|===
+SnapDrive for UNIX 操作对于存储系统主机名不区分大小写，您必须确保在配置存储系统时 IP 地址是唯一的。
+
+
+NOTE: 有关最新的 SnapDrive 要求，请参见互操作性表。
+
+* 相关信息 *
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp 互操作性"]

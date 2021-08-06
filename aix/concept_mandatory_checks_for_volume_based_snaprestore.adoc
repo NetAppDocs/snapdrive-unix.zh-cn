@@ -1,0 +1,29 @@
+---
+permalink: aix/concept_mandatory_checks_for_volume_based_snaprestore.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, check, colume, snaprestore, mandatory 
+summary: 在执行基于卷的 SnapRestore 之前， SnapDrive for UNIX 会对系统执行一些强制检查。要安全地使用基于卷的 SnapRestore ，必须执行这些检查。用户不能覆盖强制检查。 
+---
+= 基于卷的 SnapRestore 的强制检查
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在执行基于卷的 SnapRestore 之前， SnapDrive for UNIX 会对系统执行一些强制检查。要安全地使用基于卷的 SnapRestore ，必须执行这些检查。用户不能覆盖强制检查。
+
+以下是在实施基于卷的 SnapRestore 之前 SnapDrive for UNIX 进行的强制检查：
+
+* 基于卷的 SnapRestore 仅适用于使用 SnapDrive for UNIX 创建的快照。
+* 基于卷的 SnapRestore 中的卷不应是存储系统的根卷。
+* SnapDrive for UNIX 会检查卷克隆。如果新 Snapshot 副本中存在任何卷克隆，则不允许执行卷还原操作。这是 Data ONTAP 施加的一项限制。
+* 基于卷的 SnapRestore 中的卷不应具有除指定 LUN （文件系统，磁盘组或主机卷中存在的原始 LUN 或 LUN ）以外的任何映射 LUN 进行还原。
+* SnapDrive for UNIX 会检查卷是否位于 SnapMirror 关系中。
+* SnapDrive for UNIX 会检查卷是否位于 SnapVault 关系中。
+
+
+如果 SnapDrive for UNIX 正在使用 Operations Manager for RBAC 且用户在卷上具有 sd.snapshot.DisruptionBaseline 功能，则可以覆盖 SnapMirror 和 SnapVault 检查。有关用户覆盖这些检查的特定 RBAC 功能的详细信息，请参见 SnapDrive for UNIX 中的基于角色的访问控制。
+
+* 相关信息 *
+
+xref:concept_role_based_access_control_in_snapdrive_for_unix.adoc[SnapDrive for UNIX 中基于角色的访问控制]

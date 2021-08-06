@@ -1,0 +1,42 @@
+---
+permalink: aix/concept_error_message_locations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, message, location 
+summary: SnapDrive for UNIX 在命令输出和各种日志文件中提供了有关错误消息的信息。 
+---
+= 错误消息位置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 在命令输出和各种日志文件中提供了有关错误消息的信息。
+
+SnapDrive for UNIX 可在以下位置提供有关错误消息的信息：
+
+* 命令输出
++
+它会显示 SnapDrive for UNIX 命令的标准错误输出的所有消息。
+
+* 系统日志
++
+SnapDrive for UNIX 会使用 syslog（ 3 ）机制将严重性级别为 " 致命 " 和 " 管理员 " 错误的所有错误记录到系统日志中。
+
+* 审核日志文件
++
+审核日志会记录每个 SnapDrive for UNIX 命令的以下信息：
+
++
+** 发布者
+** 发布时间
+** 其退出状态是什么。
++
+这对于确定系统上实际发生的情况非常有用。
+
+
+
+* 跟踪日志文件
++
+跟踪日志可记录有关发生的任何错误的更详细信息。NetApp 技术支持在诊断问题时使用此日志。
+
+

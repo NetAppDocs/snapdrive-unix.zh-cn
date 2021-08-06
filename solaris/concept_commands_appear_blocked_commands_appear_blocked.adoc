@@ -1,0 +1,25 @@
+---
+permalink: solaris/concept_commands_appear_blocked_commands_appear_blocked.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, blocked 
+summary: 您无法运行 SnapDrive for UNIX 命令，因为这些命令似乎被阻止超过 10 分钟。您可能需要等待命令完成。 
+---
+= 命令显示为已阻止
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您无法运行 SnapDrive for UNIX 命令，因为这些命令似乎被阻止超过 10 分钟。您可能需要等待命令完成。
+
+在 VxV/DMP 需要时间管理卷配置守护进程的极少数情况下会发生此行为。此行为的触发因素包括：
+
+* 已从崩溃中恢复的存储系统
+* 已从脱机过渡到联机的存储系统目标适配器
+
+
+
+
+== 临时解决策
+
+等待命令完成。Veritas 配置守护进程需要几分钟的时间来运行并发现设备的当前状态。

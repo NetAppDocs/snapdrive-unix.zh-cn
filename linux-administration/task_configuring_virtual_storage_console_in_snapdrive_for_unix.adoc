@@ -1,0 +1,41 @@
+---
+permalink: linux-administration/task_configuring_virtual_storage_console_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configure, storage, virtual, console 
+summary: 您必须将 Virtual Storage Console 配置为访问存储系统，并使用分配给存储系统的登录名和密码。 
+---
+= 配置适用于 UNIX 的 SnapDrive 的虚拟存储控制台
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须将 Virtual Storage Console 配置为访问存储系统，并使用分配给存储系统的登录名和密码。
+
+确保 Virtual Storage Console 安装在 VMware vCenter 所在的 Windows 系统中。
+
+. 在 * vCenter 主页 * 视图中的 * 解决方案和应用程序 * 下，单击 * NetApp 虚拟控制台 * 屏幕中的 * NetApp * 。
+. 单击 * 备份和恢复 * ，然后单击 * 设置 * 以查看存储系统条目。
+. 如果没有存储系统条目，请单击 * 添加 * 以在 Virtual Storage Console 中添加所需的存储系统。
++
+此时将显示 * 添加存储系统 * 对话框。
+
+. 在 * 添加存储系统 * 窗口中，输入存储系统的 IP 地址，用户名和密码。然后单击 * 确定 * 。
++
+存储系统现在已准备好与虚拟存储控制台进行通信。
+
+
+
+* 相关信息 *
+
+xref:task_verifying_virtual_storage_console.adoc[验证 Virtual Storage Console 的登录信息]
+
+xref:task_deleting_a_user_login_for_a_virtual_storage_console.adoc[删除 Virtual Storage Console 的用户登录名]
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[SnapDrive for UNIX 中支持 VMware VMotion]
+
+xref:concept_configuration_options_and_their_default_values.adoc[配置选项及其默认值]
+
+xref:task_considerations_for_provisioning_rdm_luns.adoc[配置 RDM LUN 的注意事项]
+
+xref:concept_limitations_of_rdm_luns_managed_by_snapdrive.adoc[由 SnapDrive 管理的 RDM LUN 的限制]

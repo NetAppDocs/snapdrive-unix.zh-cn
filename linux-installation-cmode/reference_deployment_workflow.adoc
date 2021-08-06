@@ -1,0 +1,15 @@
+---
+permalink: linux-installation-cmode/reference_deployment_workflow.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, deployment, workflow, install, provision 
+summary: 在使用 SnapDrive 创建 Snapshot 副本之前，您必须先安装 Linux 主机实用程序 \ （如果使用 FC 或 iSCSI 协议 \ ），安装 SnapDrive for UNIX ，检查支持的 SnapDrive 配置，配置存储，然后设置从 Linux 主机到 NetApp 存储系统的连接。 
+---
+= 部署工作流
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 SnapDrive 创建 Snapshot 副本之前，您必须先安装 Linux Host Utilities （如果使用的是 FC 或 iSCSI 协议），安装 SnapDrive for UNIX ，检查支持的 SnapDrive 配置，配置存储，然后设置从 Linux 主机到 NetApp 存储系统的连接。
+
+image::../media/sdu_deployment_workflow_cmode.gif[SDU 部署工作流 cmode]

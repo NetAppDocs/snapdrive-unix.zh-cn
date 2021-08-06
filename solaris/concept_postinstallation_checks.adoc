@@ -1,0 +1,42 @@
+---
+permalink: solaris/concept_postinstallation_checks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, post, install, check 
+summary: 安装完成后，您必须执行一些任务以确保 SnapDrive for UNIX 安装成功。 
+---
+= 执行安装后检查
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安装完成后，您必须执行一些任务以确保 SnapDrive for UNIX 安装成功。
+
+. 验证安装程序是否已在主机上安装所有必要的文件。
+. 确认 `snapdrive.conf` 文件中的配置变量设置正确。
++
+对于大多数这些变量，应使用默认值。
+
+. 为 SnapDrive for UNIX 提供当前存储系统登录信息。
++
+设置存储系统时，您提供了该系统的用户登录名。SnapDrive for UNIX 需要使用此登录信息才能与存储系统配合使用。
+
+. 要使用基于角色的访问控制（ Role-Based Access Control ， RBAC ），请在 `snapdrive.conf` 文件中设置 ` _rbac 方法 =dfm_` 变量。
++
+默认情况下， SnapDrive 4.0 for UNIX 及更高版本使用根凭据访问存储系统。未打开 RBAC 功能。
+
+. 要使用 HTTPS 与存储系统和守护进程服务建立安全连接，请在 `snapdrive.conf` 文件中设置 ` _use-https-to_sdU-daemon=on_` 。
++
+
+NOTE: SnapDrive 5.0 for UNIX 及更高版本支持 HTTPS 用于守护进程通信。默认情况下，此选项设置为 `off` 。
+
+. 在中安装 SnapDrive for UNIX 使用的服务器证书
++
+`sdu-daemon-certificate-path=/opt/NTAPsnapdrive/SnapDrive.pem` 在 `snapdrive.conf` 文件中指定的路径。
+
+. 运行以下命令，更改 SnapDrive for UNIX 守护进程服务的默认密码：
++
+` * 快照密码 *`
+
+. 在 ` /var/log/sdconfcheck.out` 中检查已安装配置组件的详细信息。
+

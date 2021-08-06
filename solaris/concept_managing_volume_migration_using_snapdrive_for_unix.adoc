@@ -1,0 +1,27 @@
+---
+permalink: solaris/concept_managing_volume_migration_using_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, migration 
+summary: 您可以在卷迁移期间执行 SnapDrive 操作。 
+---
+= SnapDrive for UNIX 中的卷迁移
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在卷迁移期间执行 SnapDrive 操作。
+
+卷迁移包括以下三个阶段：
+
+* 设置
+* 移动
+* 转换
+
+
+SnapDrive for UNIX 操作可在设置和移动阶段平稳运行。
+
+在转换阶段执行任何 SnapDrive 命令时， SnapDrive for UNIX 可以重试 `snapdrive.conf` 文件中变量 ` _volmove-cutover-retry_` 和 ` volmove-cutover-retry-leep_` 中定义的操作。
+
+
+NOTE: 如果在卷迁移期间 SnapDrive for UNIX 操作失败，则必须在卷迁移操作完成后执行 SnapDrive for UNIX 操作。

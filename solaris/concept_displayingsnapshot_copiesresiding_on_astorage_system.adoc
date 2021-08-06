@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_displayingsnapshot_copiesresiding_on_astorage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, display, snapshot, copy, storage 
+summary: 您可以使用 SnapDrive 命令显示存储系统上的 Snapshot 副本。 
+---
+= 显示存储系统上的 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive 命令显示存储系统上的 Snapshot 副本。
+
+要显示有关驻留在存储系统上的 Snapshot 副本的信息，请使用以下语法：
+
+SnapDrive snap show -filer filername [filername...] 【 -verbose 】`

@@ -1,0 +1,19 @@
+---
+permalink: linux-installation-7mode/concept_creating_snapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, create 
+summary: 作为独立产品部署的 SnapDrive for UNIX 使用 NetApp Snapshot 技术，可用于创建和管理主机数据的 Snapshot 副本。您可以使用 Snapshot 副本还原数据。 
+---
+= 正在创建 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+作为独立产品部署的 SnapDrive for UNIX 使用 NetApp Snapshot 技术，可用于创建和管理主机数据的 Snapshot 副本。您可以使用 Snapshot 副本还原数据。
+
+* 相关信息 *
+
+xref:task_creating_a_snapshot_copy.adoc[创建 Snapshot 副本]
+
+xref:task_verifying_the_snapshot_copy.adoc[验证 Snapshot 副本]

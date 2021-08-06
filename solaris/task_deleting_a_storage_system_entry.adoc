@@ -1,0 +1,31 @@
+---
+permalink: solaris/task_deleting_a_storage_system_entry.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, storage, mapping, host, information 
+summary: 您可以从主机系统中删除存储系统映射信息。 
+---
+= 从主机系统中删除存储系统映射信息
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以从主机系统中删除存储系统映射信息。
+
+.步骤
+. 输入以下命令：
++
+` * SnapDrive 配置迁移 delete _new_storage_system_name_ ___new_storage_system_name ..._]*`
+
++
+** ` _new_storage_system_name_` 是新存储系统的名称。
+** ` _[new_storage_system_name...]_` 定义了可以在一个命令行上删除多个存储系统名称。
++
+[listing]
+----
+snapdrive config migrate delete roaster
+Deleted entry for appliance: roaster
+----
+
+
+

@@ -1,0 +1,33 @@
+---
+permalink: solaris/concept_what_the_web_service_and_daemon_are.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, web, service, daemon 
+summary: SnapDrive for UNIX Web 服务为所有 NetApp SnapManager 和第三方产品提供了一个统一的界面，可与 SnapDrive for UNIX 无缝集成。要在适用于 UNIX 的 SnapDrive 中使用命令行界面 \ （ cli\ ）命令，您需要启动守护进程。 
+---
+= 什么是 Web 服务和守护进程
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX Web 服务为所有 NetApp SnapManager 和第三方产品提供了一个统一的界面，可与 SnapDrive for UNIX 无缝集成。要在适用于 UNIX 的 SnapDrive 中使用命令行界面（ CLI ）命令，您需要启动守护进程。
+
+各种 NetApp SnapManager 产品都使用命令行界面（ CLI ）与 SnapDrive for UNIX 进行通信。使用命令行界面会限制 SnapManager 和 SnapDrive for UNIX 的性能和易管理性。使用 SnapDrive for UNIX 守护进程时，所有命令都是一个唯一的过程。守护进程服务不会影响 SnapDrive for UNIX 命令的使用方式。
+
+SnapDrive for UNIX Web 服务允许第三方应用程序与 SnapDrive for UNIX 无缝集成。它们使用 API 与 SnapDrive for UNIX 进行交互。
+
+启动守护进程时， SnapDrive for UNIX 守护进程会首先检查该守护进程是否正在运行。如果守护进程未运行，则启动守护进程。如果守护进程已在运行，而您尝试启动它，则 SnapDrive for UNIX 将显示以下消息：
+
+SnapDrive 守护进程已在运行`
+
+您可以检查守护进程的状态以查看 SnapDrive for UNIX 是否正在运行。在决定启动守护进程之前，应先检查状态。如果非 root 用户尝试检查状态，则 SnapDrive for UNIX 将检查该用户的凭据并显示消息：
+
+只有 root 用户` 才能查看 SnapDrive 守护进程状态
+
+当您尝试停止守护进程时， SnapDrive for UNIX 会检查您的凭据。如果您不是 root 用户，则 SnapDrive for UNIX 将显示此消息
+
+SnapDrive 守护进程只能由 root 用户` 停止
+
+停止守护进程后，必须重新启动 SnapDrive for UNIX 守护进程，对配置文件或任何模块所做的任何更改才能生效。如果非 root 用户尝试重新启动 SnapDrive for UNIX 守护进程，则 SnapDrive for UNIX 将检查该用户的凭据并显示消息
+
+SnapDrive 守护进程只能由 root 用户` 重新启动

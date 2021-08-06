@@ -1,0 +1,17 @@
+---
+permalink: aix/task_verifying_supported_configurations_using_configuration_checker_tool.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verify, supported, configuration 
+summary: SnapDrive for UNIX 配置检查程序工具可帮助您确定和验证运行 SnapDrive for UNIX 所支持的配置。 
+---
+= 验证支持的配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 配置检查程序工具可帮助您确定和验证运行 SnapDrive for UNIX 所支持的配置。
+
+包含更新数据文件的配置检查程序工具可检查 SnapDrive for UNIX 支持的配置，并列出系统中所有受支持和不受支持的组件。
+
+该工具有助于在使用 SnapDrive for UNIX 之前确认主机中是否提供了所有必要的组件和正确的版本。

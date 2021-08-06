@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_snapshot_copy_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, operation 
+summary: 您可以使用 SnapDrive snap create 命令创建 Snapshot 副本。 
+---
+= Snapshot 副本操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive snap create` 命令创建 Snapshot 副本。

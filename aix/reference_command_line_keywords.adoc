@@ -1,0 +1,143 @@
+---
+permalink: aix/reference_command_line_keywords.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, line, keyword 
+summary: SnapDrive for UNIX 使用关键字指定主机磁盘组，目标组，卷或 FlexClone 的名称， NFS 文件， 存储系统等。 
+---
+= 命令行关键字
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX 使用关键字指定主机磁盘组，目标组，卷或 FlexClone 的名称， NFS 文件， 存储系统等。
+
+以下是可用于 SnapDrive for UNIX 命令的关键字。您可以使用它们指定 SnapDrive for UNIX 操作的目标。这些关键字可以使用一个或多个参数。
+
+
+NOTE: 某些 LVM 指的是磁盘组，而另一些 LVM 则指的是卷组。在 SnapDrive for UNIX 中，这些术语被视为同义词。此外，某些 LVM 指的是逻辑卷，而某些 LVM 指的是卷。SnapDrive for UNIX 将术语主机卷（创建此术语是为了避免将主机逻辑卷与存储系统卷混淆）和术语逻辑卷视为同义词。
+
+|===
+| 关键字 | 与此关键字结合使用的参数 
+
+
+ a| 
+` -dg` （与 ` -vg` 同义）
+ a| 
+主机磁盘组的名称。您可以使用此选项输入磁盘组或卷组的名称。
+
+
+
+ a| 
+` - destdg`
+
+` -desthv`
+
+` destlv`
+
+` destvg`
+ a| 
+目标组或卷。
+
+
+
+ a| 
+` destfv`
+ a| 
+在 NFS Snapshot 连接操作期间由 SnapDrive for UNIX 创建的卷克隆的命令行上指定的 FlexClone 卷的名称。
+
+
+NOTE: 此参数仅支持 NFS 卷，而不支持 NFS 目录。
+
+
+
+ a| 
+` 文件`
+ a| 
+NFS 文件的名称。
+
+
+
+ a| 
+` 存储器`
+ a| 
+存储系统的名称。
+
+
+
+ a| 
+` -filervol`
+ a| 
+存储系统及其卷的名称。
+
+
+
+ a| 
+` -FS`
+ a| 
+主机上文件系统的名称。使用的名称是文件系统当前挂载或要挂载的目录（挂载点）。
+
+
+
+ a| 
+` -hostvol` 或 ` -lvol`
+ a| 
+主机卷名称，包括其中的磁盘组。例如，您可以输入 `large_vg/Accounting _lvol` 。
+
+
+
+ a| 
+` -igroup`
+ a| 
+启动程序组（ igroup ）的名称。
+
+NetApp 强烈建议您使用 SnapDrive for UNIX 创建的默认 igroup ，而不是在目标存储系统上指定 igroup 。默认 igroup 为 hostname_protocol_SdIg 。
+
+* ` 主机名 _` 是当前主机的本地（非域限定）名称。
+* ` _protocol_` 是 `FCP` 或 `iSCSI` ，具体取决于主机使用的协议。
+
+
+如果 igroup hostname_protocol_SdIg 不存在，则 SnapDrive for UNIX 将创建它并将主机的所有启动程序放置在其中。
+
+如果 SnapDrive for UNIX 存在且启动程序正确，则它将使用现有的 igroup 。
+
+如果 igroup 已存在，但不包含此主机的启动程序，则 SnapDrive for UNIX 将使用其他名称创建一个新的 igroup ，并在当前操作中使用该 igroup 。为了避免使用相同的名称， SnapDrive for UNIX 会在创建新名称时包含一个唯一的数字。在这种情况下，名称格式为 hostname-number_protocol_SdIg 。
+
+如果您提供自己的 igroup 名称，则 SnapDrive for UNIX 不会验证 igroup 的内容。这是因为它无法始终确定存储系统上存在与主机对应的 igroup 。
+
+使用此选项指定启动程序组的所有命令在共享磁盘组和文件系统中都不能接受此选项。只有本地资源才允许使用此选项。
+
+如果命令行中涉及任何外部 igroup ，则 SnapDrive for UNIX 命令将失败。确保命令行中指定的所有 igroup 都包含本地主机中的启动程序。
+
+
+
+ a| 
+` LUN`
+ a| 
+存储系统上 LUN 的名称。对于随此关键字提供的第一个 LUN 名称，必须提供完整路径名称（存储系统名称，卷名称和 LUN 名称）。对于其他 LUN 名称，您可以仅指定其卷中的名称（如果卷保持不变），也可以指定一个路径来指示新的存储系统名称或新的卷名称（如果只想切换卷）。
+
+
+NOTE: 在 SnapDrive snap connect` 命令中， ` lun_name_` 的格式应为 `lun_name` 或 `tree_name/lun_name` 。
+
+
+
+ a| 
+` lvol` 或 ` - hostvol`
+ a| 
+逻辑卷名称，包括其中的卷组。例如，您可以输入 `large_vg/Accounting _lvol` 作为逻辑卷名称。
+
+
+
+ a| 
+` -snapname`
+ a| 
+Snapshot 副本的名称。
+
+
+
+ a| 
+` -vg` 或 ` -DG`
+ a| 
+卷组的名称。您可以使用此选项输入磁盘组或卷组的名称。
+
+|===

@@ -1,0 +1,29 @@
+---
+permalink: solaris/concept_guest_os_preparation_for_installing_sdu.html 
+sidebar: sidebar 
+keywords: snap, snapdrve, guest, os, install, prepare 
+summary: 您必须先准备子系统，然后才能在系统上安装 SnapDrive for UNIX 。在准备子系统时，您必须安装 Solaris Host Utilities 。 
+---
+= 安装 SnapDrive for UNIX 的子操作系统准备工作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须先准备子系统，然后才能在系统上安装 SnapDrive for UNIX 。在准备子系统时，您必须安装 Solaris Host Utilities 。
+
+* 相关信息 *
+
+xref:task_configuring_virtual_storage_console_in_snapdrive_for_unix.adoc[配置适用于 UNIX 的 SnapDrive 的虚拟存储控制台]
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[SnapDrive for UNIX 中支持 VMware VMotion]
+
+xref:concept_limitations_of_rdm_luns_managed_by_snapdrive.adoc[由 SnapDrive 管理的 RDM LUN 的限制]
+
+xref:task_verifying_virtual_storage_console.adoc[验证 Virtual Storage Console 的登录信息]
+
+xref:concept_configuration_options_and_their_default_values.adoc[配置选项及其默认值]
+
+xref:task_hosts_preparation_for_adding_luns.adoc[主机准备添加 LUN]
+
+xref:task_considerations_for_provisioning_rdm_luns.adoc[配置 RDM LUN 的注意事项]

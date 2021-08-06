@@ -1,0 +1,13 @@
+---
+permalink: solaris/concept_storage_provisioning_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, provisioning 
+summary: 在使用存储配置时，您可以使用 SnapDrive for UNIX 。SnapDrive for UNIX 可帮助您创建存储并连接到现有存储系统或实体。 
+---
+= SnapDrive for UNIX 中的存储配置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用存储配置时，您可以使用 SnapDrive for UNIX 。SnapDrive for UNIX 可帮助您创建存储并连接到现有存储系统或实体。

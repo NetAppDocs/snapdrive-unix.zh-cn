@@ -1,0 +1,132 @@
+---
+permalink: linux-administration/task_displaying_asnapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, shot, list, command 
+summary: 命令 SnapDrive snap show 或 list 可显示创建 Snapshot 副本的存储系统的名称，主机名，日期和时间等。 
+---
+= 显示 Snapshot 副本
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+命令 SnapDrive snap show` 或 `list` 可显示创建 Snapshot 副本的存储系统的名称，主机名，日期和时间等。
+
+.步骤
+. 输入以下命令语法以显示 Snapshot 副本：
++
+` * SnapDrive snap show （ -snapname] lor_snap_name ） 【 -verbose 】 *`
+
+
+
+此操作至少会显示有关 Snapshot 副本的以下信息：
+
+* 创建 Snapshot 副本的存储系统的名称
+* 创建 Snapshot 副本的主机的名称
+* 存储系统上 LUN 的路径
+* 创建 Snapshot 副本的日期和时间
+* Snapshot 副本的名称
+* Snapshot 副本中包含的磁盘组的名称
+
+
+* 示例 * ：以下是 SnapDrive snap show` 命令的示例：
+
+[listing]
+----
+# snapdrive snap show -snapname toaster:/vol/vol2:snapA snapX snapY
+
+# snapdrive snap show -verbose toaster:/vol/vol2:snapA /vol/vol3:snapB snapC
+
+# snapdrive snap show toaster:/vol/vol2:snapA
+
+# snapdrive snap list -dg dg1 dg2
+----
+* 示例 * ：此示例使用通配符显示有关特定卷上可用 Snapshot 副本的信息：
+
+[listing]
+----
+# snapdrive snap show toaster:/vol/vol1:*
+snap name host date
+snapped
+------------------------------------------------------------------
+-------------
+toaster:/vol/vol1:sss1 DBserver Mar 12
+16:19 dg1
+toaster:/vol/vol1:testdg DBserver Mar 12
+15:35 dg1
+toaster:/vol/vol1:t1 DBserver Mar 10
+18:06 dg1
+toaster:/vol/vol1:hp_1 HPserver Mar 8
+19:01 vg01
+toaster:/vol/vol1:r3 DBserver Mar 8
+13:39 rdg1
+toaster:/vol/vol1:r1 DBserver Mar 8
+13:20 rdg1
+toaster:/vol/vol1:snap2 DBserver Mar 8
+11:51 rdg1toaster:/vol/vol1:snap_p1 DBserver
+Mar 8 10:18 rdg1
+----
+* 示例 * ：此示例显示了使用带有 ` - verbose` 选项的 SnapDrive snap list 命令在 Linux 主机上为 NFS 挂载的目录树创建的 Snapshot 副本：
+
+[listing]
+----
+# snapdrive snap list -fs /mnt/acctfs1 -v
+snap name host date
+snapped
+------------------------------------------------------------------
+----------
+besser:/vol/vol1:acctfs-s1 childs Aug 8 18:58
+/mnt/acctfs1
+host OS: Linux 2.4.21-9.ELsmp #1 SMP Thu Jan 8 17:08:56 EST 2004
+snapshot name: acctfs-s1 file system: type: nfs mountpoint:
+/mnt/acctfs1
+filer dir: besser:/vol/vol1
+----
+* 示例 * ：此示例将在 Linux 主机上执行 SnapDrive snap show 命令：
+
+[listing]
+----
+# snapdrive snap show -snapname surf:/vol/vol1:swzldg5snapped
+snap name host date
+snapped
+------------------------------------------------------------------
+-------------
+surf:/vol/vol1:bagel5snapped pons Aug 18
+20:06 dg5
+#
+# ./linux/ix86/snapdrive snap show -v -snapname
+surf:/vol/vol1:bagel5snapped >
+snap name host date
+snapped
+------------------------------------------------------------------
+-------------
+surf:/vol/vol1:bagel5snapped pons Aug 18
+20:06 dg5
+host OS: Linux 2.4.21-9.ELsmp #1 SMP Thu Jan 8 17:08:56 EST 2004
+snapshot name: bagel5snapped
+Volume Manager: linuxlvm 1.0.3
+disk group: dg5
+host volume: vol1
+host volume: vol2
+host volume: vol3
+lun path dev paths
+-------------------------------------------------------
+surf:/vol/vol1/glk19 /dev/sdu
+----
+* 示例 * ：以下示例使用通配符：
+
+[listing]
+----
+# snapdrive snap show toaster:/vol/volX:*
+# snapdrive snap show -v toaster:/vol/volX:DB1*
+filer1:/vol/volY:DB2*
+# snapdrive snap show toaster:/vol/vol2:mysnap* /vol/vol2:yoursnap*
+hersnap*
+# snapdrive snap show toaster:/vol/volX:*
+----
+* 示例 * ：在此示例中，使用通配符无效，因为通配符位于名称中间，而不是置于末尾：
+
+[listing]
+----
+# snap show toaster:/vol/vol1:my*snap
+----

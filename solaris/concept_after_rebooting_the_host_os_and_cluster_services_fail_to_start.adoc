@@ -1,0 +1,102 @@
+---
+permalink: solaris/concept_after_rebooting_the_host_os_and_cluster_services_fail_to_start.html 
+sidebar: sidebar 
+keywords: reboot, host, os, cluster, fail, start 
+summary: 在 Solaris 10 主机上，如果文件系统在重新启动后无法挂载，则操作系统和集群将无法启动。 
+---
+= 重新启动主机后，操作系统和集群服务无法启动
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 Solaris 10 主机上，如果文件系统在重新启动后无法挂载，则操作系统和集群将无法启动。
+
+重新启动 Solaris 10 主机后，如果服务 `svc ： /system/filesystems/local` 无法挂载以下任何文件系统，则相关操作系统或集群服务不会启动。
+
+* 本地文件系统
+* 共享文件系统
+
+
+
+NOTE: 上述文件系统必须由适用于 UNIX 的 SnapDrive 创建。
+
+
+
+== 临时解决策
+
+. 使用以下命令查找重新启动后无法启动的服务：
++
+`svcs -vx /network/inetd`
+
++
+* 示例： *
+
++
+[listing]
+----
+# svcs -vx /network/inetd
+svc:/network/inetd:default (inetd)
+State: offline since Fri 25 May 2008 04:06:59 PM IST
+Reason: Service svc:/system/filesystem/local:default
+is not running because a method failed.
+----
+. 如果 `s服务 / 系统 / 文件系统 / 本地： default` 失败，请使用以下命令查找无法挂载的永久性文件系统：
++
+`tail /var/svt/log/system-filesysteme-local ： default.log`
+
++
+* 示例： *
+
++
+[listing]
+----
+# tail /var/svc/log/system-filesystem-local:default.log
+[ May 25 15:58:35 Method "start" exited with status 95 ]
+[ May 25 16:07:17 Executing start method
+("/lib/svc/method/fs-local") ]
+UX:vxfs fsck: ERROR: V-3-20693: cannot access device
+/dev/vx/rdsk/dg2/fs1_SdHv:
+UX:vxfs mount: ERROR: V-3-20003: Cannot open
+/dev/vx/dsk/dg2/fs1_SdHv: No such device or address
+UX:vxfs mount: ERROR: V-3-24996: Unable to get disk
+layout version
+WARNING: /sbin/mountall -l failed: exit status 1
+[ May 25 16:07:18 Method "start" exited with status 95 ]
+----
+. 对重新启动主机后无法挂载的文件系统的 ` /etc/vfstab` 中的条目进行注释。
+. 执行以下命令，重新启动操作系统服务： `svc ： /system/filesystey/local ： default` ：
++
+.. `svcadm disable`
++
+`svc ： /system/filesystems/local ： default`
+
+.. `svcadm enable`
++
+`svc ： /system/filesystems/local ： default`
+
+
+
++
+操作系统和集群服务将启动。
+
+. 对于无法挂载的本地文件系统，请完成以下步骤：
++
+.. 手动挂载文件系统。
+.. 取消注释 ` /etc/vfstab` 条目。
+
+
+. 对于集群服务，请完成以下步骤：
++
+.. 使用 `cfsmount` 命令检查共享文件系统是否已正确挂载。
+.. 在该文件系统的所有集群节点上取消注释 ` /etc/vfstab` 条目。
++
+`svcadm enable`
+
++
+`svc ： /system/filesystems/local ： default`
+
+
+
+. 如果在完成上述步骤后本地或集群文件系统仍无法挂载，请联系 NetApp 技术支持。
+

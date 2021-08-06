@@ -1,0 +1,24 @@
+---
+permalink: aix/task_restarting_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restart, daemon 
+summary: 您必须在停止守护进程后重新启动它，以便对配置文件或其他模块所做的更改生效。只有在完成正在执行且处于队列中的所有命令后， SnapDrive for UNIX 守护进程才会重新启动。收到重新启动请求后，不会执行任何新命令。 
+---
+= 正在重新启动守护进程
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必须在停止守护进程后重新启动它，以便对配置文件或其他模块所做的更改生效。只有在完成正在执行且处于队列中的所有命令后， SnapDrive for UNIX 守护进程才会重新启动。收到重新启动请求后，不会执行任何新命令。
+
+* 确保以 root 用户身份登录。
+* 确保同一主机上未并行运行任何其他会话。在这种情况下， `snapdrived restart` 命令将挂起系统。
+
+
+.步骤
+. 输入以下命令重新启动守护进程：
++
+` * 快照重新启动 *`
+
+

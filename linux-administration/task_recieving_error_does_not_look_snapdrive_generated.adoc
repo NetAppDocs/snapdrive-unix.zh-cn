@@ -1,0 +1,15 @@
+---
+permalink: linux-administration/task_recieving_error_does_not_look_snapdrive_generated.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, delete, clone, fail, error 
+summary: 在某些情况下， SnapDrive 快照断开操作无法删除克隆的卷，并且会显示错误消息 Does not look SnapDrive-generated 。 
+---
+= 快照断开操作无法删除克隆的卷
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情况下， SnapDrive snap disconnect` 操作无法删除克隆的卷，并且会显示错误消息 `dOES not look SnapDrive-generated` 。
+
+此问题的临时解决策是还原到 Snapshot 副本的原始名称，并确保在 `snapdrive.conf` 文件中将 ` bypass-SnapDrive-clone-generated_check_` 设置为 on 。

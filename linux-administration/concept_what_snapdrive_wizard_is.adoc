@@ -1,0 +1,13 @@
+---
+permalink: linux-administration/concept_what_snapdrive_wizard_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, wizards, operation 
+summary: SnapDrive 提供了不同的向导，可帮助您以交互方式执行特定的 SnapDrive 操作。 
+---
+= 什么是 SnapDrive 向导
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive 提供了不同的向导，可帮助您以交互方式执行特定的 SnapDrive 操作。

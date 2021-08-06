@@ -1,0 +1,15 @@
+---
+permalink: linux-installation-7mode/index.html 
+sidebar: sidebar 
+keywords: guide, documentation, installation, setup, linux, ontap, 7-mode 
+summary: 介绍在 Linux 环境中使用 7- 模式 Data ONTAP 部署 SnapDrive for UNIX 所需执行的初始任务。 
+---
+= 《 7- 模式 Linux ® for Data ONTAP 安装和设置指南》
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本指南介绍在 Linux 环境中使用 7- 模式 Data ONTAP 部署适用于 UNIX 的 SnapDrive 5.3.2 的初始任务。
+
+主题包括如何安装和配置产品以及如何备份数据库。

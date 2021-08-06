@@ -1,0 +1,16 @@
+---
+permalink: aix/concept_the_storagedeletecommand.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, delete, command 
+summary: SnapDrive storage delete 命令除了删除主机上的所有底层主机端实体及其支持这些实体的存储系统 LUN 之外，还会删除主机上的存储实体。 
+---
+= storage delete 命令
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive storage delete` 命令除了删除主机上的所有底层主机端实体及其后备存储系统 LUN 之外，还会删除主机上的存储实体。
+
+
+IMPORTANT: 此命令将删除数据。

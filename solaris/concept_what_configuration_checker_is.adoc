@@ -1,0 +1,21 @@
+---
+permalink: solaris/concept_what_configuration_checker_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, checker 
+summary: SnapDrive 配置检查程序工具可帮助您确定和验证 SnapDrive for UNIX 支持的配置。 
+---
+= 什么是配置检查程序
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive 配置检查程序工具可帮助您确定和验证 SnapDrive for UNIX 支持的配置。
+
+配置检查程序工具可通过验证 NAS 和 SAN 环境中的用户配置来解决多种支持配置的问题。
+
+SnapDrive 配置检查程序工具支持在 SnapDrive for UNIX 中执行以下配置检查：
+
+* 检查在 `snapdrive.conf` 文件中指定的配置，该文件位于默认位置。
+* 使用命令行界面检查指定的配置。
+

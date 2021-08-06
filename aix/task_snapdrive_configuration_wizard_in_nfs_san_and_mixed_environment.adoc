@@ -1,0 +1,167 @@
+---
+permalink: aix/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, wizard 
+summary: 通过配置向导，您可以在 NFS ， SAN 或混合环境中进行配置。 
+---
+= 使用 SnapDrive 配置向导
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+通过配置向导，您可以在 NFS ， SAN 或混合环境中进行配置。
+
+
+
+== 在 NFS 环境中配置的步骤
+
+以下是在 NFS 环境中配置的步骤。
+
+.步骤
+. 选择 * NFS * 配置文件。
+. 启用 Protection Manager 集成。
++
+** 选择 `Yes` 以使用 DataFabric Manager 启用访问权限检查。
++
+*** 输入 DataFabric Manager 服务器名称或 IP 地址，后跟用户名和密码。
+*** 输入 `http/https` 端口以与 DataFabric Manager 进行通信。默认值为 `8088` 。
+*** 输入 SSL 服务器端口以访问 DataFabric Manager 。默认值为 `8488` 。
+*** 启用 HTTPS 以与 DataFabric Manager 进行通信。
+
+
+** 选择 `No` 可使用 RBAC 启用访问权限检查。
+
+
+. 指定基于角色的访问控制方法。可能值为 `原生` 和 `dFM` 。
++
+** 选择 `原生` 以使用存储在 ` /vol/vol0/sdprbac/sdhost-name.prbac` 或 ` /vol/vol0/sdprbac/sdgenergicname.prbac` 中的控制文件检查主机的访问权限。
+** 选择 `dFM` 可使用 Operations Manager 控制台检查访问权限。
+
+
++
+
+NOTE: 如果在未配置 DataFabric Manager 的情况下选择 `dFM` as `RBAC 方法` ，则会显示一条警告消息，指出在未启用 Protection Manager 集成的情况下， RBAC 方法已选择为 `dFM` 。
+
+. 指定 `https` 或 `http` 以与存储系统进行通信。
+. 最后一步是将配置更改保存在 `snapdrive.conf` 文件中，然后重新启动守护进程。
++
+** 如果选择 `是` ，则 SnapDrive 守护进程将重新启动，并反映配置更改。
+** 如果选择 `No` ，则 `snapdrive.conf` 文件中的变量值会发生更改，但不会反映这些更改。
+
+
+
+
+
+
+== 在 SAN 环境中配置的步骤
+
+以下是在 SAN 环境中配置的步骤。
+
+.步骤
+. 选择 SAN 配置文件。
+. 选择所需的传输协议。
++
+** 选择 `FCP` 以设置 default-transport 。
+** 选择 `iscsi` 以设置 default-transport 。
+
+
+. 选择 SAN 存储堆栈（ MPIO 解决方案，卷管理器和文件系统的组合）。选项包括 `原生` ， `veritas` 和 `none` 。
++
+SnapDrive 不支持 Veritas for iSCSI 传输协议。
+
+. 启用 Protection Manager 集成。
++
+** 选择 `Yes` 以使用 DataFabric Manager 启用访问权限检查。
++
+*** 输入 DataFabric Manager 服务器名称或 IP 地址，后跟用户名和密码。
+*** 输入 `http/https` 端口以与 DataFabric Manager 进行通信。默认值为 `8088` 。
+*** 输入 SSL 服务器端口以访问 DataFabric Manager 。默认值为 `8488` 。
+*** 启用 HTTPS 以与 DataFabric Manager 进行通信
+
+
+** 选择 `No` 可使用 RBAC 启用访问权限检查。
+
+
+. 指定基于角色的访问控制方法。可能值为 `原生` 和 `dFM` 。
++
+** 选择 `原生` 以使用存储在 ` /vol/vol0/sdprbac/sdhost-name.prbac 或 /vol/vol0/sdprbac/sdgenergicname.prbac` 中的控制文件检查主机的访问权限。
+** 选择 `dFM` 可使用 Operations Manager 检查访问权限。
+
+
++
+
+NOTE: 如果在未配置 DataFabric Manager 的情况下选择 `dFM` as `RBAC 方法` ，则会显示一条警告消息，指出在未启用 Protection Manager 集成的情况下， RBAC 方法已选择为 `dFM` 。
+
+. 指定 `https` 或 `http` 以与存储系统进行通信。
+. 最后一步是将配置更改保存在 `snapdrive.conf` 文件中，然后重新启动守护进程。
++
+** 如果选择 `是` ，则 SnapDrive 守护进程将重新启动，并反映配置更改。
+** 如果选择 `No` ，则 `snapdrive.conf` 文件中的变量值会发生更改，但不会反映这些更改。
+
+
+
+
+
+
+== 在混合 SAN 和 NFS 环境中配置的步骤
+
+以下是在混合 SAN 和 NFS 环境中配置的步骤。
+
+.步骤
+. 选择混合配置文件。
+. 选择所需的传输协议。
++
+** 选择 `FCP` 以设置 default-transport 。
+** 选择 `iscsi` 以设置 default-transport 。
+
+
+. 选择 SAN 存储堆栈（ MPIO 解决方案，卷管理器，文件系统的组合）。选项包括 `原生` ， `veritas` 和 `none` 。
++
+SnapDrive 不支持 Veritas for iSCSI 传输协议。
+
+. 启用 Protection Manager 集成。
++
+** 选择 `Yes` 以使用 DataFabric Manager 启用访问权限检查
++
+*** 输入 DataFabric Manager 服务器名称或 IP 地址，后跟用户名和密码。
+*** 输入 `http/https` 端口以与 DataFabric Manager 进行通信。默认值为 `8088` 。
+*** 输入 SSL 服务器端口以访问 DataFabric Manager 。默认值为 8488. 。
+*** 启用 HTTPS 以与 DataFabric Manager 进行通信。
+
+
+** 选择 `No` 可使用 RBAC 启用访问权限检查。
+
+
+. 指定基于角色的访问控制方法。可能值为 `原生` 和 `dFM` 。
++
+** 选择 `原生` 以使用存储在 ` /vol/vol0/sdprbac/sdhost-name.prbac` 或 ` /vol/vol0/sdprbac/sdgenergicname.prbac` 中的控制文件检查主机的访问权限
+** 选择 `dFM` 可使用 Operations Manager 控制台检查访问权限。
+
+
++
+
+NOTE: 如果在未配置 DataFabric Manager 的情况下选择 `dFM` as `RBAC 方法` ，则会显示一条警告消息，指出在未启用 Protection Manager 集成的情况下， RBAC 方法已选择为 `dFM` 。
+
+. 指定 `https` 或 `http` 以与存储系统进行通信。
+. 最后一步是将配置更改保存在 `snapdrive.conf` 文件中，然后重新启动守护进程。
++
+** 如果选择 `是` ，则 SnapDrive 守护进程将重新启动，并反映配置更改。
+** 如果选择 `No` ，则 `snapdrive.conf` 文件中的变量值会发生更改，但不会反映这些更改。
+
+
+
+
+SnapDrive 会修改 `snapdrive.conf` 文件中的以下变量。
+
+* ` contact-http-dfm_port_`
+* ` 联系人 -ssl-dfm_port_`
+* ` 使用 https 到 dfm_`
+* `` default-transport_
+* ` 使用 https 到存储器 _`
+* ` fsttype_`
+* ` 多路径类型 _`
+* ` vmtype_`
+* ` RBAC 方法 _`
+* ` RBAC 缓存 _`
+

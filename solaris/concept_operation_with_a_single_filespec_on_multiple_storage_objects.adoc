@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_operation_with_a_single_filespec_on_multiple_storage_objects.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, single, multiple, object, storage, filespec 
+summary: 如果管理员对多个存储对象没有执行存储操作所需的权限，则 SnapDrive for UNIX 将显示一条错误消息。 
+---
+= 对多个存储对象执行单个文件规范操作
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果管理员对多个存储对象没有执行存储操作所需的权限，则 SnapDrive for UNIX 将显示一条错误消息。
+
+_filesSpec ： filesSpec 可以是文件系统，主机卷，磁盘组或 LUN_ 的任何人
+
+[listing]
+----
+[root]# snapdrive storage create -fs /mnt/testfs -lun storage_array1:/vol/vol1/lun2 -lun storage_array1:/vol/vol2/lun2  -lunsize 100m
+0002-332 Admin error:SD.Storage.Write access denied on volume storage_array1:/vol/vol1 for user unix_host\root on Operations Manager server ops_mngr_server
+SD.Storage.Write access denied on volume storage_array1:/vol/vol2 for user unix_host\root on Operations Manager server ops_mngr_server
+----
+在此示例中，文件规范跨越两个存储系统卷 vol1 和 vol2 。unix_host 的管理员（ root ）不对这两个卷都具有 `s D Storage.Write` 访问权限。因此， SnapDrive for UNIX 会为每个卷显示一条错误消息。要继续创建存储，管理员（ root ）必须要求 Operations Manager 控制台管理员对这两个卷授予 `s .D 存储写入` 访问权限。

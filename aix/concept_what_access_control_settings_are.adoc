@@ -1,0 +1,39 @@
+---
+permalink: aix/concept_what_access_control_settings_are.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, settings 
+summary: 为了确定用户访问权限， SnapDrive for UNIX 会检查存储系统根卷中的两个权限文件之一。您必须检查这些文件中设置的规则，以评估访问控制。 
+---
+= 什么是访问控制设置
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+为了确定用户访问权限， SnapDrive for UNIX 会检查存储系统根卷中的两个权限文件之一。您必须检查这些文件中设置的规则，以评估访问控制。
+
+* `sDHOST-name.prbac` file is in the directory ` /vol/vol0/sdprbac` （ SnapDrive permissions rols-based access control ） .
++
+文件名称为 `sDHOST-name.prbac` ，其中 ` host-name_` 是权限适用的主机的名称。您可以为连接到存储系统的每个主机创建一个权限文件。您可以使用 SnapDrive config access` 命令显示有关特定存储系统上主机可用权限的信息。
+
++
+如果 `sDHHOST-name.prbac` 不存在，请使用 `sdgenic.prbac` 文件检查访问权限。
+
+* `sdgenergic.prbac` file is also in the directory ` /vol/vol0/sdprbac`
++
+文件名 `sdgenic.prbac` 用作无法访问存储系统上的 `sDHHOST-name.prbac` 文件的多个主机的默认访问设置。
+
+
+
+如果在 ` /vol/vol0/sdprbac` 路径中同时存在 `sDHOST-name.prbac` 和 `sdgenic.prbac` 文件，则使用 `sDHOST-name.prbac` 检查访问权限，因为这会覆盖为 `sdgenic.prbac` 文件提供的值。
+
+如果您没有 `sDHOST-name.prbac` 和 `sdgeneric.prbac` 文件，请检查在 `snapdrive.conf` 文件中定义的配置变量 ` all-access-if-rbac-unspecified _` 。
+
+手动设置从给定主机到给定 vFiler 单元的访问控制。给定主机的访问由位于受影响 vFiler 单元根卷中的文件控制。该文件包含 ` /vol/<vFiler 根卷 >/sdprbac/sdhost-name.prbac` ，其中 ` host-name_` 是受影响主机的名称，由 `gethostname （ 3 ）` 返回。您应确保此文件可从可访问它的主机读取，但不可写入。
+
+
+NOTE: 要确定主机的名称，请运行 `hostname` 命令。
+
+如果文件为空，不可读或格式无效，则 SnapDrive for UNIX 不会授予主机对任何操作的访问权限。
+
+如果缺少此文件， SnapDrive for UNIX 将检查 `snapdrive.conf` 文件中的配置变量 ` 全部访问 -if-rbac 未指定 _` 。如果将变量设置为 `on` （默认值），则允许主机完全访问该存储系统上的所有这些操作。如果将变量设置为 `off` ，则 SnapDrive for UNIX 将拒绝主机对该存储系统执行由访问控制管理的任何操作。

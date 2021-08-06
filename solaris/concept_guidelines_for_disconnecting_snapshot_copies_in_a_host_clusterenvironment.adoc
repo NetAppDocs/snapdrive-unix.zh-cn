@@ -1,0 +1,25 @@
+---
+permalink: solaris/concept_guidelines_for_disconnecting_snapshot_copies_in_a_host_clusterenvironment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, copy, host, cluster 
+summary: 断开 NFS 实体的 Snapshot 副本连接时， SnapDrive for UNIX 会卸载文件系统，删除文件系统中的挂载条目，删除挂载点等。 
+---
+= 在主机集群环境中断开 Snapshot 副本连接的准则
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+断开 NFS 实体的 Snapshot 副本连接时， SnapDrive for UNIX 会卸载文件系统，删除文件系统中的挂载条目，删除挂载点等。
+
+* 可以从主机集群中的任何节点执行 SnapDrive snap disconnect` 命令。
+* 要成功执行 Snapshot 断开连接操作，以下任一项均应为 true ：
++
+** 存储实体应在主机集群中的所有节点之间共享。
+** LUN 应映射到主机集群中的所有节点。
+
+
+* 您可以使用 ` -DeviceType dedicated` 或 `shared` 选项断开存储实体与特定节点的连接。如果要断开处于专用模式的存储实体的连接，则可以在命令行语法中省略 ` 设备类型` 选项，因为默认值为专用。
+* 如果共享存储实体或 LUN 与 `d指定` 的选项断开连接，或者专用存储实体或 LUN 与共享选项断开连接，则 SnapDrive snap disconnect` 命令将显示错误。
+* SnapDrive for UNIX 会在主节点上执行 SnapDrive snap disconnect` 命令。它会销毁存储实体，断开所有非主节点上的 LUN ，然后断开 LUN 与主机集群中主节点的连接。如果遇到任何错误， Snapshot 断开操作将失败。
+

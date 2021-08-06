@@ -1,0 +1,28 @@
+---
+permalink: linux-administration/task_viewing_the_list_of_port_set.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, port, set, portset, configure 
+summary: 您可以使用 SnapDrive portset list 命令查看主机上在 SnapDrive 中配置的所有端口集。 
+---
+= 查看端口集列表
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SnapDrive portset list` 命令查看主机上在 SnapDrive 中配置的所有端口集。
+
+.步骤
+. 在主机系统上输入以下命令：
++
+` * SnapDrive 端口集列表 *`
+
++
+[listing]
+----
+snapdrive portset list
+appliance name   Portset name
+-----------------------------
+vs91        ps2
+----
+
