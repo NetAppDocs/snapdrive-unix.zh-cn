@@ -5604,7 +5604,7 @@
   <block id="f6b15d917118b4046e9a3d81d94f2c04" category="paragraph">`0001-218`</block>
   <block id="d76dc20d65a67ad1f9b2452fe526ffc2" category="paragraph">`device /dev/mapper — SCSI 查询失败。LUN 无响应。请检查存储系统上的 LUN 状态，并根据需要使 LUN 联机。`</block>
   <block id="4b97f010b5c3665dd0aa7583ffdef619" category="paragraph">如果在 SLES10 SP2 中设备上的 SCSI 查询失败，则会发生此问题。lvm2-2.02.17-7.27.8 和 ` filter_` 设置在 SLES10 SP2 的 `lvm.conf` 文件中分配为 ` =[A]/dev/mapper/.\*" ， "a"&gt;/dev/cciss/.*" ， "r/.*/"]` 。</block>
-  <block id="90a6ba430a1c97a9153c034be4e11f80" category="paragraph">在 `lvm.conf` 文件中，将 ` filter_` 设置为 ` ["r|/dev/.\*/by-path/.*|" ， "r//dev/.\*/by-id/.*"" ， "r|/dev/cciss/.\*"" ， "a/.*/"]` 。</block>
+  <block id="90a6ba430a1c97a9153c034be4e11f80" category="paragraph">在 `lvm.conf` 文件中，将 ` filter_` 设置为 `["r\|/dev/.\*/by-path/.*\|", "r\|/dev/.\*/by-id/.*\|", "r\|/dev/cciss/.\*\|", "a/.*/"]` 。</block>
   <block id="9ca324fab654fe137ab720d73063f146" category="paragraph">`无法获取 HBA 助手 solarisfcp 的 HBA 类型`</block>
   <block id="4ea5a770abd5529ba77169fe915fd647" category="paragraph">0002-268</block>
   <block id="6a73967d8aa714e69b76e68e014c4fdf" category="paragraph">` -dg 和 -v 不能组合使用`</block>
