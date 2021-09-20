@@ -1,0 +1,2559 @@
+sidebar:
+  
+  entries:
+  - title: 主页
+    url: "/index.html"
+  - title: 发行说明
+    url: "/releasenotes.html"
+  - title: 安装和设置适用于集群模式 Data ONTAP 的 Linux
+    url: "/linux-installation-cmode/index.html"
+    entries:
+    - title: 产品概述
+      url: "/linux-installation-cmode/reference_product_overview.html"
+    - title: 部署工作流
+      url: "/linux-installation-cmode/reference_deployment_workflow.html"
+    - title: 准备部署
+      url: "/linux-installation-cmode/task_preparing_for_deployment.html"
+      entries:
+      - title: SnapDrive for UNIX 许可证要求
+        url: "/linux-installation-cmode/reference_snapdrive_licensing.html"
+      - title: 支持的配置
+        url: "/linux-installation-cmode/reference_supported_configurations.html"
+      - title: Linux 主机要求
+        url: "/linux-installation-cmode/reference_linux_host_requirements.html"
+    - title: 安装适用于 UNIX 的 SnapDrive
+      url: "/linux-installation-cmode/task_installing_snapdrive_for_unix.html"
+      entries:
+      - title: 验证安装
+        url: "/linux-installation-cmode/task_verifying_the_installation.html"
+      - title: 执行安装后任务
+        url: "/linux-installation-cmode/task_performing_post_installation_tasks.html"
+    - title: 使用配置检查程序工具验证 Linux 主机配置
+      url: "/linux-installation-cmode/concept_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: 导入数据文件
+        url: "/linux-installation-cmode/task_importing_data_files.html"
+      - title: 验证支持的配置
+        url: "/linux-installation-cmode/task_verifying_the_supported_configurations.html"
+    - title: 配置存储
+      url: "/linux-installation-cmode/concept_provisioning_storage.html"
+      entries:
+      - title: 配置卷
+        url: "/linux-installation-cmode/task_provisioning_volumes.html"
+      - title: 配置 RDM LUN
+        url: "/linux-installation-cmode/task_provisioning_rdm_luns.html"
+    - title: 将 Linux 主机连接到存储系统
+      url: "/linux-installation-cmode/task_connecting_linux_host_to_the_storage_system.html"
+    - title: 正在创建 Snapshot 副本
+      url: "/linux-installation-cmode/concept_creating_snapshot_copies.html"
+      entries:
+      - title: 创建 Snapshot 副本
+        url: "/linux-installation-cmode/task_creating_a_snapshot_copy.html"
+      - title: 验证 Snapshot 副本
+        url: "/linux-installation-cmode/task_verifying_the_snapshot_copy.html"
+    - title: 下一步行动
+      url: "/linux-installation-cmode/reference_where_to_go_next.html"
+  - title: 适用于在 7- 模式下运行的 Data ONTAP 的 Linux 安装和设置
+    url: "/linux-installation-7mode/index.html"
+    entries:
+    - title: 产品概述
+      url: "/linux-installation-7mode/reference_product_overview.html"
+    - title: 部署工作流
+      url: "/linux-installation-7mode/reference_deployment_workflow.html"
+    - title: 准备部署
+      url: "/linux-installation-7mode/task_preparing_for_deployment.html"
+      entries:
+      - title: SnapDrive for UNIX 许可证要求
+        url: "/linux-installation-7mode/reference_snapdrive_licensing.html"
+      - title: 支持的配置
+        url: "/linux-installation-7mode/reference_supported_configurations.html"
+      - title: Linux 主机要求
+        url: "/linux-installation-7mode/reference_linux_host_requirements.html"
+    - title: 安装适用于 UNIX 的 SnapDrive
+      url: "/linux-installation-7mode/task_installing_snapdrive_for_unix.html"
+      entries:
+      - title: 验证安装
+        url: "/linux-installation-7mode/task_verifying_the_installation.html"
+      - title: 执行安装后任务
+        url: "/linux-installation-7mode/task_performing_post_installation_tasks.html"
+    - title: 使用配置检查程序工具验证 Linux 主机配置
+      url: "/linux-installation-7mode/concept_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: 导入数据文件
+        url: "/linux-installation-7mode/task_importing_data_files.html"
+      - title: 验证支持的配置
+        url: "/linux-installation-7mode/task_verifying_the_supported_configurations.html"
+    - title: 配置存储
+      url: "/linux-installation-7mode/concept_provisioning_storage.html"
+      entries:
+      - title: 配置卷
+        url: "/linux-installation-7mode/task_provisioning_volumes.html"
+      - title: 配置 RDM LUN
+        url: "/linux-installation-7mode/task_provisioning_rdm_luns.html"
+    - title: 将 Linux 主机连接到存储系统
+      url: "/linux-installation-7mode/task_connecting_linux_host_to_the_storage_system.html"
+    - title: 正在创建 Snapshot 副本
+      url: "/linux-installation-7mode/concept_creating_snapshot_copies.html"
+      entries:
+      - title: 创建 Snapshot 副本
+        url: "/linux-installation-7mode/task_creating_a_snapshot_copy.html"
+      - title: 验证 Snapshot 副本
+        url: "/linux-installation-7mode/task_verifying_the_snapshot_copy.html"
+    - title: 下一步行动
+      url: "/linux-installation-7mode/reference_where_to_go_next.html"
+  - title: 适用于 Linux 的管理
+    url: "/linux-administration/index.html"
+    entries:
+    - title: 产品概述
+      url: "/linux-administration/reference_product_overview.html"
+      entries:
+      - title: SnapDrive for UNIX 中提供的集群模式 Data ONTAP 功能
+        url: "/linux-administration/concept_clustered_data_ontap_features_available_in_snapdrive_for_unix.html"
+      - title: 支持 SVM
+        url: "/linux-administration/concept_support_for_vserver.html"
+      - title: 支持 NetAppDataMotion for vFiler
+        url: "/linux-administration/concept_support_for_datamotion_for_vfiler.html"
+      - title: 支持卷迁移
+        url: "/linux-administration/concept_support_for_volume_migration.html"
+        entries:
+        - title: SnapDrive for UNIX 中的卷迁移
+          url: "/linux-administration/concept_managing_volume_migration_using_snapdrive_for_unix.html"
+      - title: vFiler 单元支持问题
+        url: "/linux-administration/concept_considerations_for_supporting_vfiler_unit.html"
+      - title: 使用 SnapDrive for UNIX 的注意事项
+        url: "/linux-administration/concept_considerations_for_using_snapdrive_for_unix.html"
+      - title: LVM 和原始实体的管理
+        url: "/linux-administration/concept_management_of_lvm_and_raw_entities.html"
+        entries:
+        - title: LVM 环境中的 SnapDrive for UNIX 配置
+          url: "/linux-administration/concept_snapdrive_for_unix_provisioning_in_an_lvma_vxvm_environment.html"
+        - title: 适用于 UNIX 和原始实体的 SnapDrive
+          url: "/linux-administration/concept_snapdrive_for_unix_and_raw_entities.html"
+      - title: 如何管理 LVM ，原始设备和 NFS 实体的 Snapshot 副本
+        url: "/linux-administration/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html"
+      - title: 安全注意事项
+        url: "/linux-administration/concept_security_considerations.html"
+      - title: 对存储系统的访问权限
+        url: "/linux-administration/concept_access_permissions_on_a_storage_system.html"
+      - title: 堆栈要求
+        url: "/linux-administration/reference_stack_requirements.html"
+      - title: 支持的 FC ， iSCSI 或 NFS 配置
+        url: "/linux-administration/concept_supported_fc_iscsi_or_nfs_configurations.html"
+      - title: 限制
+        url: "/linux-administration/reference_limitations.html"
+      - title: 由 SnapDrive 管理的 LUN 的限制
+        url: "/linux-administration/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html"
+      - title: 由 SnapDrive 管理的 RDM LUN 的限制
+        url: "/linux-administration/concept_limitations_of_rdm_luns_managed_by_snapdrive.html"
+      - title: 集群模式 Data ONTAP 的 SnapDrive 限制
+        url: "/linux-administration/concept_snapdrive_limitations_for_data_ontap_operating_in_cluster_mode.html"
+      - title: NFS 文件或目录树的限制
+        url: "/linux-administration/concept_limitations_for_nfs_file_or_directory_trees.html"
+      - title: SnapDrive for UNIX 中的精简配置
+        url: "/linux-administration/concept_thin_provisioning_in_snapdrive_for_unix_overview.html"
+      - title: SnapDrive for UNIX 上的卷管理器
+        url: "/linux-administration/concept_volume_managers_on_snapdrive_for_unix.html"
+    - title: 此版本中的新增功能
+      url: "/linux-administration/reference_new_in_this_release.html"
+    - title: 了解 SnapDrive for UNIX 守护进程
+      url: "/linux-administration/concept_the_snapdrive_for_unix_daemon.html"
+      entries:
+      - title: 什么是 Web 服务和守护进程
+        url: "/linux-administration/concept_what_the_web_service_and_daemon_are.html"
+      - title: 正在检查守护进程的状态
+        url: "/linux-administration/task_checking_the_status_of_the_daemon.html"
+      - title: 启动 SnapDrive for UNIX 守护进程
+        url: "/linux-administration/task_starting_the_snapdrive_for_unix_daemon.html"
+      - title: 更改默认守护进程密码
+        url: "/linux-administration/task_changing_the_default_daemon_password.html"
+      - title: 正在停止守护进程
+        url: "/linux-administration/task_stopping_the_daemon.html"
+        entries:
+        - title: 不强制停止守护进程
+          url: "/linux-administration/task_nonforcibly_stopping_the_daemon.html"
+        - title: 强制停止守护进程
+          url: "/linux-administration/task_forcibly_stopping_the_daemon.html"
+      - title: 正在重新启动守护进程
+        url: "/linux-administration/task_restarting_the_daemon.html"
+      - title: 强制守护进程重新启动
+        url: "/linux-administration/task_forcing_daemon_restart.html"
+      - title: 使用 HTTPS 安全守护进程通信
+        url: "/linux-administration/concept_secure_daemon_communication_using_https.html"
+      - title: 生成自签名证书
+        url: "/linux-administration/task_generating_self_signed_certificates.html"
+      - title: 生成 CA 签名的证书
+        url: "/linux-administration/task_generating_ca_signed_certificate.html"
+    - title: 支持存储系统重命名
+      url: "/linux-administration/concept_support_for_storage_system_rename.html"
+      entries:
+      - title: 在主机系统中配置新的存储系统名称
+        url: "/linux-administration/task_configuring_a_new_storage_system_name_to_a_host_system.html"
+      - title: 查看存储系统列表
+        url: "/linux-administration/task_viewing_the_list_of_storage_system.html"
+      - title: 从旧存储系统迁移到新存储系统
+        url: "/linux-administration/task_migrating_from_old_host_name_to_new_host_name.html"
+      - title: 查看迁移的新存储系统
+        url: "/linux-administration/task_viewing_the_migrated_new_storage_system.html"
+      - title: 从主机系统中删除存储系统映射信息
+        url: "/linux-administration/task_deleting_a_storage_system_entry.html"
+    - title: 适用于 UNIX 的 SnapDrive 配置
+      url: "/linux-administration/concept_snapdrive_for_unix_configuration.html"
+      entries:
+      - title: 配置适用于 UNIX 的 SnapDrive
+        url: "/linux-administration/concept_how_to_configure_snapdrive_for_unix.html"
+        entries:
+        - title: 什么是 SnapDrive.conf 文件
+          url: "/linux-administration/concept_what_the_snapdrive_conf_file_is.html"
+        - title: 配置选项及其默认值
+          url: "/linux-administration/concept_configuration_options_and_their_default_values.html"
+        - title: SnapDrive 配置向导的功能
+          url: "/linux-administration/concept_what_the_configuration_wizard_does.html"
+        - title: SnapDrive 配置向导
+          url: "/linux-administration/concept_when_to_use_the_snapdrive_configuration_wizard.html"
+        - title: 一些配置命令
+          url: "/linux-administration/reference_some_configuration_commands.html"
+        - title: 使用 SnapDrive 配置向导
+          url: "/linux-administration/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html"
+        - title: 设置 SnapDrive.conf 文件中的值
+          url: "/linux-administration/task_setting_values_in_the_snapdrive_conf_file.html"
+        - title: 检查适用于 UNIX 的 SnapDrive 版本
+          url: "/linux-administration/task_checking_version_of_snapdrive_for_unix.html"
+      - title: 子操作系统的 SnapDrive for UNIX 中的配置信息
+        url: "/linux-administration/concept_configuration_information_in_snapdrive_for_unix_for_guest_os.html"
+        entries:
+        - title: 配置适用于 UNIX 的 SnapDrive 的虚拟存储控制台
+          url: "/linux-administration/task_configuring_virtual_storage_console_in_snapdrive_for_unix.html"
+        - title: 指定 Virtual Storage Console 的登录信息
+          url: "/linux-administration/task_specifying_login_information_for_virtual_storage_console.html"
+        - title: 验证 Virtual Storage Console 的登录信息
+          url: "/linux-administration/task_verifying_virtual_storage_console.html"
+        - title: 删除 Virtual Storage Console 的用户登录名
+          url: "/linux-administration/task_deleting_a_user_login_for_a_virtual_storage_console.html"
+      - title: SVM 的配置信息
+        url: "/linux-administration/concept_configuration_information_for_vserver_environment.html"
+        entries:
+        - title: SVM 的登录信息
+          url: "/linux-administration/concept_login_information_for_vserver.html"
+        - title: 指定 SVM 的登录信息
+          url: "/linux-administration/task_specifying_login_information_for_vserver.html"
+        - title: 验证 SVM 的登录信息
+          url: "/linux-administration/task_verifying_login_information_for_vserver.html"
+        - title: 从 SVM 中删除用户
+          url: "/linux-administration/task_deleting_a_user_for_a_vserver.html"
+      - title: 主机准备添加 LUN
+        url: "/linux-administration/task_hosts_preparation_for_adding_luns.html"
+        entries:
+        - title: 正在检查主机信息
+          url: "/linux-administration/concept_checking_host_information.html"
+        - title: 确定可以创建的 LUN 数量
+          url: "/linux-administration/concept_determining_howmany_luns_can_becreated.html"
+        - title: 为新 LUN 添加主机条目
+          url: "/linux-administration/task_adding_host_entries_for_new_luns.html"
+      - title: SnapDrive for UNIX 中的审核，恢复和跟踪日志记录
+        url: "/linux-administration/concept_audit_recovery_and_trace_logging_in_snapdrive_for_unix.html"
+        entries:
+        - title: 日志类型
+          url: "/linux-administration/concept_types_of_logs.html"
+        - title: 启用和禁用日志文件
+          url: "/linux-administration/task_enabling_and_disabling_log_files.html"
+        - title: 日志文件轮换设置
+          url: "/linux-administration/concept_log_file_rotation_settings.html"
+        - title: 审核日志文件的内容
+          url: "/linux-administration/concept_contents_of_an_audit_log_file.html"
+        - title: 更改审核日志的默认值
+          url: "/linux-administration/concept_changing_the_defaults_for_the_audit_logs.html"
+        - title: 恢复日志的内容
+          url: "/linux-administration/concept_contents_of_the_recovery_log.html"
+        - title: 恢复日志的默认值
+          url: "/linux-administration/concept_default_values_for_the_recovery_logs.html"
+        - title: 什么是跟踪日志文件
+          url: "/linux-administration/concept_what_the_trace_log_file_is.html"
+          entries:
+          - title: 跟踪日志文件的默认值
+            url: "/linux-administration/concept_default_vaules_for_the_trace_log_files.html"
+      - title: 什么是 AutoSupport
+        url: "/linux-administration/concept_what_autosupport_is.html"
+        entries:
+        - title: SnapDrive for UNIX 如何使用 AutoSupport
+          url: "/linux-administration/concept_how_snapdrive_forunix_usesautosupport.html"
+        - title: AutoSupport 消息的内容
+          url: "/linux-administration/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html"
+        - title: AutoSupport 消息示例
+          url: "/linux-administration/concept_example_of_an_autosupport_message.html"
+      - title: 在 SnapDrive for UNIX 中支持多路径访问
+        url: "/linux-administration/concept_multipath_access_in_snapdrive_for_unix.html"
+        entries:
+        - title: 启用多路径
+          url: "/linux-administration/task_enabling_multipathing.html"
+        - title: 多路径设置
+          url: "/linux-administration/concept_multipath_setup.html"
+          entries:
+          - title: HBA 设置
+            url: "/linux-administration/concept_hba_setup.html"
+          - title: 设置 HBA 驱动程序参数
+            url: "/linux-administration/task_setting_up_hba_driver_parameter.html"
+          - title: 多路径配置变量
+            url: "/linux-administration/concept_multipath_configuration_variables.html"
+          - title: 设置多路径
+            url: "/linux-administration/task_setting_up_multipathing.html"
+      - title: SnapDrive for UNIX 中的精简配置
+        url: "/linux-administration/concept_thin_provisioning_in_snapdrive_for_unix.html"
+        entries:
+        - title: 为 LUN 启用精简配置
+          url: "/linux-administration/task_enabling_thin_provisioning_for_luns.html"
+        - title: 为 NFS 实体启用精简配置
+          url: "/linux-administration/task_enabling_thin_provisioning_for_nfs_entities.html"
+      - title: 多子网配置
+        url: "/linux-administration/concept_multiple_subnet_configuration.html"
+        entries:
+        - title: 为存储系统配置管理和数据接口
+          url: "/linux-administration/task_configuring_management_and_data_interfaces_for_a_storage_system.html"
+        - title: 查看管理接口的所有数据接口
+          url: "/linux-administration/task_viewing_all_the_data_interfaces_of_a_management_interface.html"
+        - title: 删除管理接口的数据接口条目
+          url: "/linux-administration/task_deleting_a_data_interface_entry_of_a_management_interface.html"
+        - title: SAN 环境中的 LUN 名称
+          url: "/linux-administration/concept_lun_names_in_san_environment.html"
+        - title: 纯 NFS 环境
+          url: "/linux-administration/concept_pure_nfs_environment.html"
+        - title: 混合 SAN 和 NFS 环境
+          url: "/linux-administration/concept_mixed_environments_of_san_and_nfs.html"
+      - title: 自动检测主机实体
+        url: "/linux-administration/concept_automatic_detection_of_host_entities.html"
+      - title: 什么是 SnapDrive 向导
+        url: "/linux-administration/concept_what_snapdrive_wizard_is.html"
+        entries:
+        - title: 使用向导执行的操作
+          url: "/linux-administration/concept_operations_performed_using_wizards.html"
+        - title: 使用向导管理存储
+          url: "/linux-administration/concept_managing_storage_using_a_wizard.html"
+        - title: 使用向导管理 Snapshot 副本
+          url: "/linux-administration/concept_managing_snapshot_copy_using_a_wizard.html"
+        - title: 使用向导删除存储
+          url: "/linux-administration/concept_deleting_storage_using_a_wizard.html"
+      - title: 使用 SnapDrive for UNIX 中的端口集
+        url: "/linux-administration/concept_using_port_set_in_snapdrive_for_unix.html"
+        entries:
+        - title: 在 SnapDrive 中添加端口集
+          url: "/linux-administration/task_adding_a_port_set_in_snapdrive.html"
+        - title: 查看端口集列表
+          url: "/linux-administration/task_viewing_the_list_of_port_set.html"
+        - title: 从 SnapDrive 中删除端口集
+          url: "/linux-administration/task_removing_a_port_set_from_snapdrive.html"
+        - title: 迁移到新的 SVM 名称
+          url: "/linux-administration/concept_migrating_to_new_vserver_name.html"
+      - title: 配置 igroup
+        url: "/linux-administration/concept_configuring_igroups.html"
+        entries:
+        - title: 添加 igroup
+          url: "/linux-administration/task_adding_igroup.html"
+        - title: 删除 igroup
+          url: "/linux-administration/task_deleting_igroup.html"
+        - title: 查看 igroup 列表
+          url: "/linux-administration/task_viewing_the_list_of_igroups.html"
+      - title: 在 SnapDrive for UNIX 中使用选择性 LUN 映射
+        url: "/linux-administration/concept_using_selective_lun_map_in_snapdrive_for_unix.html"
+      - title: SnapDrive for UNIX 中的 FlexClone 卷
+        url: "/linux-administration/concept_flexclone_volumes_in_snapdrive_for_unix.html"
+        entries:
+        - title: 什么是 FlexClone 卷
+          url: "/linux-administration/concept_what_flexclone_volumes_are.html"
+        - title: FlexClone 卷的优势
+          url: "/linux-administration/concept_benefits_of_flexclone_volumes.html"
+        - title: FlexClone 卷的类型
+          url: "/linux-administration/concept_types_of_flexclone_volumes.html"
+        - title: FlexClone 卷上的 SnapDrive for UNIX 操作
+          url: "/linux-administration/concept_snapdrive_for_unix_operations_on_flexclone_volumes.html"
+          entries:
+          - title: 对 FlexClone 卷操作进行基于角色的访问控制
+            url: "/linux-administration/concept_role_based_access_control_for_flexclone_volume_operations.html"
+          - title: Snap Connect 操作步骤
+            url: "/linux-administration/concept_snap_connect_procedure.html"
+          - title: Snap disconnect 操作步骤
+            url: "/linux-administration/concept_snap_disconnect_procedure.html"
+          - title: 连接到 LUN 中的单个文件规范
+            url: "/linux-administration/concept_connecting_to_a_single_filespec_in_a_lun.html"
+          - title: 连接到多个文件系统
+            url: "/linux-administration/concept_connecting_to_multiple_filespecs.html"
+          - title: 正在断开文件规范的连接
+            url: "/linux-administration/concept_disconnecting_a_filespec.html"
+          - title: 拆分 FlexClone 卷
+            url: "/linux-administration/concept_splitting_the_flexclone_volume.html"
+          - title: FlexClone 卷的空间预留
+            url: "/linux-administration/concept_space_reservation_with_a_flexclone_volume.html"
+    - title: SnapDrive for UNIX 中的安全功能
+      url: "/linux-administration/concept_snapdrive_for_unix_security.html"
+      entries:
+      - title: 什么是安全功能
+        url: "/linux-administration/concept_security_featuresprovided_bysnapdrive_for_unix.html"
+      - title: SnapDrive for UNIX 中的访问控制
+        url: "/linux-administration/concept_access_control_in_snapdrive_for_unix.html"
+        entries:
+        - title: 什么是访问控制设置
+          url: "/linux-administration/concept_what_access_control_settings_are.html"
+        - title: 可用的访问控制级别
+          url: "/linux-administration/concept_available_access_control_levels.html"
+        - title: 设置访问控制权限
+          url: "/linux-administration/task_setting_up_access_control_permission.html"
+        - title: 查看访问控制权限
+          url: "/linux-administration/task_viewing_the_access_control_permission.html"
+      - title: 存储系统的登录信息
+        url: "/linux-administration/concept_login_information_for_storage_systems.html"
+        entries:
+        - title: 指定登录信息
+          url: "/linux-administration/task_specifying_login_information.html"
+        - title: 验证与 SnapDrive for UNIX 关联的存储系统用户名
+          url: "/linux-administration/task_verifying_storagesystem_user_namesassociated_withsnapdrive_for_unix.html"
+        - title: 删除存储系统的用户登录名
+          url: "/linux-administration/task_deleting_a_userlogin_for_a_storagesystem.html"
+      - title: 设置 HTTP
+        url: "/linux-administration/task_setting_up_http.html"
+    - title: SnapDrive for UNIX 中基于角色的访问控制
+      url: "/linux-administration/concept_role_based_access_control_in_snapdrive_for_unix.html"
+      entries:
+      - title: 什么是 SnapDrive for UNIX 中基于角色的访问控制（ RBAC ）
+        url: "/linux-administration/concept_what_rbac_in_snapdrive_for_unix_is.html"
+      - title: SnapDrive for UNIX 和 Operations Manager 控制台交互
+        url: "/linux-administration/concept_snapdrive_for_unix_and_operations_manager_interaction.html"
+      - title: 在 SnapDrive for UNIX 中配置基于角色的访问控制
+        url: "/linux-administration/concept_role_based_access_control_configuration_on_snapdrive_for_unix.html"
+        entries:
+        - title: 在 Operations Manager 控制台中配置 SD-admin
+          url: "/linux-administration/concept_configuring_sd_admin_in_operations_manager.html"
+          entries:
+          - title: 使用命令行界面配置 SD-admin
+            url: "/linux-administration/task_configuring_sd_admin_using_cli.html"
+        - title: 将 SD 主机名添加到存储系统
+          url: "/linux-administration/task_adding_sd_hostname_to_the_storage_system.html"
+          entries:
+          - title: 使用 CLI 将 SD- 主机名添加到存储系统
+            url: "/linux-administration/task_adding_sd_hostname_to_storage_system_using_cli.html"
+        - title: 在 SnapDrive for UNIX 上配置用户凭据
+          url: "/linux-administration/task_configuring_user_credentials_on_snapdrive_for_unix.html"
+        - title: 用于使用 Operations Manager 控制台执行访问检查的用户名格式
+          url: "/linux-administration/concept_user_name_formats_for_access_check_with_operations_manager.html"
+        - title: 基于角色的访问控制的配置变量
+          url: "/linux-administration/reference_configuration_parameters_for_role_based_access_control.html"
+      - title: SnapDrive 命令和功能
+        url: "/linux-administration/concept_snapdrive_commands_and_capabilities.html"
+      - title: 预配置的角色，便于配置用户角色
+        url: "/linux-administration/reference_preconfigured_roles_for_ease_of_user_role_configuration.html"
+      - title: Operations Manager 控制台上的存储系统自动更新
+        url: "/linux-administration/concept_automatic_storage_system_update_on_operations_manager.html"
+      - title: 多个 Operations Manager 控制台服务器
+        url: "/linux-administration/concept_multiple_operations_manager_servers.html"
+      - title: Operations Manager 控制台不可用
+        url: "/linux-administration/concept_operations_manager_unavailable.html"
+      - title: RBAC 和存储操作示例
+        url: "/linux-administration/concept_rbac_and_storage_operation_examples.html"
+        entries:
+        - title: 对单个存储对象执行单个文件规范操作
+          url: "/linux-administration/concept_operation_with_a_single_filespec_on_a_single_storage_object.html"
+        - title: 对多个存储对象执行单个文件规范操作
+          url: "/linux-administration/concept_operation_with_a_single_filespec_on_multiple_storage_objects.html"
+        - title: 对多个文件规范和存储对象执行的操作
+          url: "/linux-administration/concept_operation_with_multiple_filespec_and_storage_objects.html"
+        - title: 对多个存储对象执行的操作
+          url: "/linux-administration/concept_operation_with_multiple_storage_objects.html"
+        - title: 使用多个 Operations Manager 控制台服务器管理存储系统的操作
+          url: "/linux-administration/concept_operation_with_multiple_operations_manager_servers_managing_storage_systems.html"
+    - title: SnapDrive for UNIX 中的存储配置
+      url: "/linux-administration/concept_storage_provisioning_in_snapdrive_for_unix.html"
+      entries:
+      - title: SnapDrive for UNIX 中的存储操作
+        url: "/linux-administration/concept_storageprovisioning_withsnapdrive_for_unix.html"
+        entries:
+        - title: 跨多个存储系统卷的存储操作
+          url: "/linux-administration/concept_storageoperations_acrossmultiple_storagesystem_volumes.html"
+        - title: 存储操作注意事项
+          url: "/linux-administration/concept_considerations_forstorage_operations.html"
+        - title: 配置 RDM LUN 的注意事项
+          url: "/linux-administration/task_considerations_for_provisioning_rdm_luns.html"
+        - title: SnapDrive for UNIX 中支持 VMware VMotion
+          url: "/linux-administration/concept_storage_provisioning_for_rdm_luns.html"
+      - title: 使用 SnapDrive for UNIX 创建存储
+        url: "/linux-administration/concept_storagecreation_with_snapdrive_forunix.html"
+        entries:
+        - title: 创建存储的方法
+          url: "/linux-administration/concept_methods_forcreating_storage.html"
+        - title: 存储创建操作的准则
+          url: "/linux-administration/concept_guidelines_for_thestorage_createoperation.html"
+        - title: 存储创建操作所需的信息
+          url: "/linux-administration/reference_informationrequired_for_the_storagecreate_operation.html"
+        - title: 为 LVM 实体创建存储
+          url: "/linux-administration/concept_storage_creation_for_lvm_vxvm_entities.html"
+        - title: 为 LUN 上的文件系统创建存储
+          url: "/linux-administration/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html"
+        - title: Red Hat Enterprise Linux （ RHEL ）和 SUSE Linux Enterprise Server （ SLES
+            ）中的存储分区方案
+          url: "/linux-administration/concept_support_for_partitioned_or_non_partitioned_devices_in_rhel_and_suse.html"
+          entries:
+          - title: 支持的分区设备
+            url: "/linux-administration/concept_supported_partition_devices.html"
+        - title: 创建不具有主机实体的 LUN
+          url: "/linux-administration/task_creating_lunswithout_hostentities.html"
+        - title: 在 LUN 上创建文件系统并自动设置 LUN
+          url: "/linux-administration/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html"
+        - title: 在 LUN 上创建文件系统并指定 LUN
+          url: "/linux-administration/task_creating_a_filesystem_on_a_lunand_specifying_thelun.html"
+        - title: 创建 LVM 实体并自动设置 LUN
+          url: "/linux-administration/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html"
+        - title: 创建 LVM 实体并指定 LUN
+          url: "/linux-administration/task_creating_an_lvm_a_vxvmentity_andspecifying_the_lun.html"
+      - title: 用于显示可用存储的命令
+        url: "/linux-administration/concept_command_to_use_todisplay_availablestorage.html"
+        entries:
+        - title: 显示存储信息的方法
+          url: "/linux-administration/concept_methods_fordisplaying_storageinformation.html"
+      - title: 使用 SnapDrive for UNIX 增加存储大小
+        url: "/linux-administration/concept_increase_in_storage_size_using_snapdrive_for_unix.html"
+        entries:
+        - title: storage resize 命令的准则
+          url: "/linux-administration/concept_guidelines_for_the_storage_resize_command.html"
+        - title: 使用 SnapDrive storage resize 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html"
+        - title: 用于增加存储大小的命令语法
+          url: "/linux-administration/concept_command_syntax_to_increase_the_sizeof_the_storage.html"
+        - title: 主机卷和文件系统大小调整操作
+          url: "/linux-administration/concept_hostvolumes_and_filesystem_resize_operation.html"
+      - title: storage connect 命令
+        url: "/linux-administration/concept_the_storageconnect_command.html"
+        entries:
+        - title: storage connect 命令的准则
+          url: "/linux-administration/concept_guidelines_for_thestorage_connectcommand.html"
+        - title: 使用 SnapDrive storage connect 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html"
+        - title: 连接具有磁盘组，主机卷和文件系统的 LUN
+          url: "/linux-administration/concept_connecting_lunswith_disk_groups_host_volumes_andfile_systems.html"
+        - title: 使用共享资源连接现有 LUN
+          url: "/linux-administration/concept_connecting_existingluns_with_sharedresources.html"
+      - title: storage disconnect 命令
+        url: "/linux-administration/concept_the_storagedisconnect_command.html"
+        entries:
+        - title: 断开存储连接的方法
+          url: "/linux-administration/concept_methods_fordisconnectingstorage.html"
+        - title: SnapDrive storage disconnect 命令的准则
+          url: "/linux-administration/concept_guidelines_for_thesnapdrive_storagedisconnectcommand.html"
+        - title: 有关使用 storage disconnect 命令的提示
+          url: "/linux-administration/task_tips_for_usingthe_storage_disconnect_command.html"
+        - title: 使用 SnapDrive storage disconnect 命令所需的信息
+          url: "/linux-administration/reference_informationrequired_forusing_the_snapdrive_storagedisconnect_command.html"
+        - title: 用于从主机断开 LUN 连接的命令语法
+          url: "/linux-administration/concept_command_syntax_for_disconnectingluns_from_the_host.html"
+        - title: 用于将 LUN 上创建的文件系统与主机断开连接的命令语法
+          url: "/linux-administration/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html"
+        - title: 用于从主机断开 LUN 和存储实体连接的命令语法
+          url: "/linux-administration/concept_command_syntax_for_disconnectingluns_and_storageentities_from_thehost.html"
+      - title: storage delete 命令
+        url: "/linux-administration/concept_the_storagedeletecommand.html"
+        entries:
+        - title: 使用 storage delete 命令的准则
+          url: "/linux-administration/concept_guidelines_for_usingthe_storage_deletecommand.html"
+        - title: 使用 SnapDrive storage delete 命令所需的信息
+          url: "/linux-administration/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html"
+    - title: 在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
+      url: "/linux-administration/concept_snapshot_copies_in_snapdrive_for_unix.html"
+      entries:
+      - title: SnapDrive for UNIX 中的 Snapshot 操作是什么
+        url: "/linux-administration/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html"
+        entries:
+        - title: 使用 Snapshot 副本时的注意事项
+          url: "/linux-administration/concept_considerations_when_working_with_snapshot_copies.html"
+      - title: Snapshot 副本操作
+        url: "/linux-administration/concept_snapshot_copy_operations.html"
+        entries:
+        - title: 崩溃状态一致的 Snapshot 副本
+          url: "/linux-administration/concept_crash_consistent_snapshot_copies.html"
+          entries:
+          - title: 与 Data ONTAP 7.2 及更高版本的崩溃一致性
+            url: "/linux-administration/concept_crash_consistency_with_data_ontap_7_2_and_later.html"
+          - title: SnapDrive for UNIX 中的一致性组 Snapshot 副本
+            url: "/linux-administration/concept_using_consistency_group_snapshots_in_snapdrive_for_unix.html"
+          - title: 创建一致性组 Snapshot 副本
+            url: "/linux-administration/task_capturing_a_consistency_group_snapshot.html"
+          - title: 禁用一致性组 Snapshot 副本
+            url: "/linux-administration/task_disabling_consistency_group_snapshots.html"
+        - title: 应用程序一致的 Snapshot 副本
+          url: "/linux-administration/concept_application_consistentsnapshot_copies.html"
+        - title: 跨存储系统或卷的 Snapshot 副本
+          url: "/linux-administration/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html"
+        - title: 创建不相关实体的 Snapshot 副本
+          url: "/linux-administration/concept_creating_snapshotcopies_of_unrelatedentities.html"
+        - title: 创建 Snapshot 副本的准则
+          url: "/linux-administration/concept_guidelines_forsnapshot_copycreation.html"
+        - title: 使用 SnapDrive snap create 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html"
+        - title: 创建 Snapshot 副本
+          url: "/linux-administration/task_creating_asnapshot_copy.html"
+      - title: 此时将显示 Snapshot 副本信息
+        url: "/linux-administration/concept_snapshot_copies_information_display.html"
+        entries:
+        - title: 用于显示 Snapshot 副本信息的命令
+          url: "/linux-administration/concept_command_to_use_todisplay_snapshotcopy_information.html"
+        - title: 显示 Snapshot 副本的准则
+          url: "/linux-administration/task_guidelines_fordisplayingsnapshot_copies.html"
+        - title: 使用 SnapDrive snap show 或 list 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapshow_or_list_commands.html"
+        - title: 显示存储系统上的 Snapshot 副本
+          url: "/linux-administration/concept_displayingsnapshot_copiesresiding_on_astorage_system.html"
+        - title: 显示存储系统卷的 Snapshot 副本
+          url: "/linux-administration/concept_displayingsnapshot_copies_of_a_storage_system_volume.html"
+        - title: 显示 Snapshot 副本
+          url: "/linux-administration/task_displaying_asnapshot_copy.html"
+        - title: 获取 Snapshot 副本名称的其他方法
+          url: "/linux-administration/concept_other_ways_to_getsnapshot_copynames.html"
+      - title: Snapshot 副本重命名
+        url: "/linux-administration/concept_snapshot_copy_rename.html"
+        entries:
+        - title: 用于重命名 Snapshot 副本的命令
+          url: "/linux-administration/concept_command_to_use_torename_a_snapshotcopy.html"
+        - title: 重命名跨存储系统或卷的 Snapshot 副本
+          url: "/linux-administration/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html"
+        - title: 重命名 Snapshot 副本的准则
+          url: "/linux-administration/concept_guidelines_forrenaming_snapshotcopies.html"
+        - title: 更改 Snapshot 副本名称
+          url: "/linux-administration/task_changing_asnapshot_copyname.html"
+      - title: 还原 Snapshot 副本
+        url: "/linux-administration/concept_restoring_a_snapshot_copy.html"
+        entries:
+        - title: 用于还原 Snapshot 副本的命令
+          url: "/linux-administration/concept_command_to_use_torestore_snapshotcopies.html"
+        - title: 在目标存储系统上还原 Snapshot 副本
+          url: "/linux-administration/concept_restoring_snapshotcopies_ona_destination_storagesystem.html"
+          entries:
+          - title: 还原多个存储实体
+            url: "/linux-administration/concept_restoring_multiple_storage_entities.html"
+        - title: 还原 Snapshot 副本的注意事项
+          url: "/linux-administration/concept_considerations_forrestoring_asnapshot_copy.html"
+        - title: 使用 SnapDrive snap restore 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html"
+        - title: 还原 Snapshot 副本
+          url: "/linux-administration/task_restoring_asnapshot_copy.html"
+        - title: 从其他主机还原 Snapshot 副本
+          url: "/linux-administration/concept_restoring_asnapshot_copy_froma_different_host.html"
+        - title: 基于卷的 SnapRestore
+          url: "/linux-administration/concept_volume_based_snaprestore.html"
+          entries:
+          - title: 什么是基于卷的 SnapRestore
+            url: "/linux-administration/concept_what_volume_based_snaprestore_is.html"
+          - title: 使用基于卷的 SnapRestore 的注意事项
+            url: "/linux-administration/concept_considerations_for_using_volume_based_snaprestore.html"
+          - title: 基于卷的 SnapRestore 的强制检查
+            url: "/linux-administration/concept_mandatory_checks_for_volume_based_snaprestore.html"
+          - title: 可由用户覆盖的检查
+            url: "/linux-administration/concept_checks_that_can_be_overridden_by_the_user.html"
+          - title: 基于卷的 SnapRestore 命令
+            url: "/linux-administration/concept_volume_based_snaprestore_command.html"
+          - title: 有关映射到本地或远程主机的 LUN 的信息
+            url: "/linux-administration/concept_information_about_luns_mapped_to_local_or_remote_hosts.html"
+          - title: 特定卷的主机文件规范信息
+            url: "/linux-administration/concept_host_filespec_information_for_a_particular_volume.html"
+          - title: 用于空间预留的基于卷的 SnapRestore
+            url: "/linux-administration/concept_volume_based_snaprestore_for_space_reservation.html"
+      - title: 连接到 Snapshot 副本
+        url: "/linux-administration/concept_connecting_to_asnapshot_copy.html"
+        entries:
+        - title: SnapDrive snap connect 命令的工作原理
+          url: "/linux-administration/concept_how_the_snapdrivesnap_connect_command_works.html"
+        - title: 在镜像存储系统上连接 Snapshot 副本
+          url: "/linux-administration/concept_connectingsnapshot_copies_onmirrored_storagesystems.html"
+          entries:
+          - title: 连接多个存储实体
+            url: "/linux-administration/concept_connecting_multiple_storage_entities.html"
+        - title: Snapshot 连接和 Snapshot 还原操作
+          url: "/linux-administration/concept_snapshot_connectand_snapshotrestore_operations.html"
+        - title: 连接 Snapshot 副本的准则
+          url: "/linux-administration/concept_guidelines_forconnectingsnapshot_copies.html"
+        - title: 使用 SnapDrive snap connect 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapconnect_command.html"
+        - title: 连接到包含 LUN 的 Snapshot 副本
+          url: "/linux-administration/task_connecting_to_asnapshot_copy_thatcontains_luns.html"
+        - title: 连接到 LUN 以外存储实体的 Snapshot 副本
+          url: "/linux-administration/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html"
+        - title: 连接到 LUN 以外的共享存储实体的 Snapshot 副本
+          url: "/linux-administration/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html"
+      - title: 拆分卷克隆或 LUN 克隆
+        url: "/linux-administration/concept_splitting_the_volume_or_lun_clone_operations.html"
+        entries:
+        - title: 估算用于拆分卷克隆的存储空间
+          url: "/linux-administration/task_estimating_the_storage_space_to_split_a_volume_clone.html"
+        - title: 估算用于拆分 LUN 克隆的存储空间
+          url: "/linux-administration/task_estimating_the_storage_space_to_split_a_lun_clone.html"
+        - title: 使用 Snapshot 副本估算存储空间
+          url: "/linux-administration/task_estimating_the_storage_space_using_a_snapshot_copy.html"
+        - title: 启动卷克隆或 LUN 克隆拆分
+          url: "/linux-administration/task_starting_the_volume_or_lun_clone_split_start.html"
+        - title: 查看卷克隆或 LUN 克隆拆分的状态
+          url: "/linux-administration/task_verifying_the_status_of_clone_split.html"
+        - title: 停止卷克隆或 LUN 克隆拆分操作
+          url: "/linux-administration/task_stopping_the_clone_and_lun_clone_split.html"
+        - title: 使用作业 ID 或文件规范查看克隆拆分操作的结果
+          url: "/linux-administration/task_viewing_the_result_of_a_clone_split_using_filespec.html"
+      - title: 删除 Snapshot 副本
+        url: "/linux-administration/concept_deleting_a_snapshot_copy.html"
+        entries:
+        - title: 用于删除 Snapshot 副本的命令
+          url: "/linux-administration/concept_command_to_use_todelete_snapshotcopies.html"
+        - title: 删除 Snapshot 副本的原因
+          url: "/linux-administration/concept_reasons_to_deletesnapshotcopies.html"
+        - title: 删除 Snapshot 副本的准则
+          url: "/linux-administration/concept_guidelines_fordeleting_snapshotcopies.html"
+        - title: 使用 SnapDrive snap delete 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html"
+        - title: 删除 Snapshot 副本
+          url: "/linux-administration/task_deleting_a_snapshotcopy.html"
+      - title: 断开 Snapshot 副本的连接
+        url: "/linux-administration/concept_disconnecting_a_snapshot_copy.html"
+        entries:
+        - title: 使用 Snapshot 断开连接操作
+          url: "/linux-administration/concept_using_the_snapshotdisconnectoperation.html"
+        - title: 断开 Snapshot 副本连接的准则
+          url: "/linux-administration/concept_guidelines_fordisconnectingsnapshot_copies.html"
+          entries:
+          - title: 断开 NFS 实体的 Snapshot 副本连接的准则
+            url: "/linux-administration/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html"
+        - title: 使用 SnapDrive snap disconnect 命令所需的信息
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapdisconnect_command.html"
+        - title: 断开 Snapshot 副本与 LUN 的连接，而不断开存储实体的连接
+          url: "/linux-administration/task_disconnectingsnapshot_copy_withluns_and_nostorage_entities.html"
+        - title: 断开 Snapshot 副本与存储实体的连接
+          url: "/linux-administration/task_disconnectingsnapshot_copy_withstorage_entities.html"
+        - title: 断开 Snapshot 副本与共享存储实体的连接
+          url: "/linux-administration/task_disconnectingsnapshot_copieswith_shared_storageentities.html"
+    - title: 数据收集实用程序
+      url: "/linux-administration/concept_data_collection_utility.html"
+      entries:
+      - title: 关于数据收集实用程序
+        url: "/linux-administration/concept_about_the_data_collection_utility.html"
+      - title: 由 SnapDrive.dc 执行的任务
+        url: "/linux-administration/concept_tasks_performed_by_snapdrive_dc.html"
+      - title: 正在执行数据收集实用程序
+        url: "/linux-administration/concept_executing_the_data_collection_utility.html"
+      - title: 使用 SnapDrive.dc 的示例
+        url: "/linux-administration/reference_examples_of_using_snapdrive_dc.html"
+    - title: 故障排除
+      url: "/linux-administration/concept_troubleshooting.html"
+      entries:
+      - title: 了解错误消息
+        url: "/linux-administration/concept_understanding_error_messages.html"
+        entries:
+        - title: 错误消息位置
+          url: "/linux-administration/concept_error_message_locations.html"
+        - title: 错误消息格式
+          url: "/linux-administration/concept_error_message_format.html"
+          entries:
+          - title: 错误消息示例
+            url: "/linux-administration/reference_sample_error_message.html"
+      - title: 常见错误消息
+        url: "/linux-administration/concept_common_error_messages.html"
+        entries:
+        - title: 操作系统对打开的文件的限制
+          url: "/linux-administration/concept_operating_system_limits_on_open_files.html"
+        - title: 删除 LUN 和克隆会使 UNIX 中的设备陈旧
+          url: "/linux-administration/concept_stale_devices_in_unix.html"
+        - title: 错误消息值
+          url: "/linux-administration/reference_error_message_values.html"
+      - title: 如果存在多个 SAN 路径，但禁用了多路径，则 SnapDrive storage create 命令将失败
+        url: "/linux-administration/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html"
+      - title: 如果在未将卷卸载到主机系统的情况下删除了 SVM 上的卷，则 SnapDrive storage show 命令会显示不正确的实际路径
+        url: "/linux-administration/concept_snapdrive_storage_show_command_returns_incorrect_path_if_volume_deleted_without_unmount.html"
+      - title: 由于使用了 umount 命令的问题描述， RHEL/OEL 5.x 中的快照管理操作失败
+        url: "/linux-administration/concept_snap_management_operation_fails_in_rhel_or_oel_5.x_due_to_an_issue_with_umount_command.html"
+      - title: 如果在主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败
+        url: "/linux-administration/concept_snap_restore_operation_fails_nfsv3_and_nfsv4_versions_enabled_in_host_and_storage_system.html"
+      - title: 快照断开操作无法删除克隆的卷
+        url: "/linux-administration/task_recieving_error_does_not_look_snapdrive_generated.html"
+      - title: 迁移多路径类型后， SnapRestore 和 Snapconnect 操作在 Linux 中不起作用
+        url: "/linux-administration/concept_snaprestore_and_snapconnect_operations_do_not_work_in_linux_after_multipathing_migration.html"
+      - title: 如果 iSCSI 未运行，则 SnapDrive for UNIX 报告错误
+        url: "/linux-administration/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html"
+      - title: 错误代码消息存在差异
+        url: "/linux-administration/concept_discrepancy_in_the_error_code_message.html"
+      - title: 将 LUN 添加到卷组时，数据将消失
+        url: "/linux-administration/concept_data_disappears_when_you_add_luns_to_a_volume_group.html"
+      - title: 传输协议连接失败时， SnapDrive 命令失败
+        url: "/linux-administration/concept_snapdrive_commands_fails_when_the_transport_protocol_connectivity_fails.html"
+      - title: 对于通过原始 LUN 创建的 FS ，自动检测不适用于 MPIO 设置
+        url: "/linux-administration/concept_autodetection_does_not_work_with_mpio_setup_for_an_fs_created_over_a_raw_lun.html"
+      - title: 连接到 Snapshot 副本失败
+        url: "/linux-administration/concept_connecting_to_a_snapshot_copy_fails.html"
+      - title: 在 Linux LVM2 上删除具有导出磁盘组的 LUN 失败
+        url: "/linux-administration/concept_deleting_luns_with_exported_disk_groups_on_linux_lvm_2_fails.html"
+      - title: 由于 iSCSI 守护进程限制， LUN 发现失败
+        url: "/linux-administration/concept_lun_discovery_fails_because_of_iscsi_daemon_limitation.html"
+      - title: 命令显示为已阻止
+        url: "/linux-administration/concept_commands_appear_blocked_commands_appear_blocked.html"
+      - title: 每次重新启动后， snap 连接都会生成 "0001-680 Admin error ： Host OS requires an update
+          to internal data"
+        url: "/linux-administration/concept_0001_680_admin_error_host_os_requires_an_update_to_internal_data_after_each_reboot.html"
+      - title: 如果未安装 libgcc_s.so.1 ，则 SnapDrive 会出错
+        url: "/linux-administration/concept_snapdrive_errors_out_if_libgcc_s_so_1_is_not_properly_installed.html"
+      - title: 在 HBA_LoadLibrary 中加载 /usr/lib/libqlsdm.so 时出错
+        url: "/linux-administration/concept_error_loading_the_usr_lib_libqlsdm_so_in_hba_loadlibrary.html"
+      - title: 从 Snapshot 副本还原文件系统失败
+        url: "/linux-administration/concept_restoring_a_file_system_from_a_restoring_a_file_system_from_a_snapshot_copy_fails.html"
+      - title: Snapshot 还原操作无法还原原始 LUN 上的文件系统
+        url: "/linux-administration/concept_snapshot_restore_operation_fails_to_restore_file_system_on_raw_lun.html"
+      - title: Snap 连接操作失败
+        url: "/linux-administration/concept_snap_connect_operation_fails.html"
+      - title: 标准退出状态值
+        url: "/linux-administration/concept_standard_exit_status_values.html"
+        entries:
+        - title: 了解错误消息的退出状态值
+          url: "/linux-administration/reference_understanding_exit_status_values_of_error_messages.html"
+        - title: 使用退出状态值
+          url: "/linux-administration/reference_using_exit_status_values.html"
+        - title: 脚本示例
+          url: "/linux-administration/reference_script_example.html"
+        - title: 退出状态值
+          url: "/linux-administration/reference_exit_status_values.html"
+      - title: 清理子操作系统和 ESX 服务器中映射的 RDM LUN
+        url: "/linux-administration/task_steps_to_cleanup_the_mapped_rdm_luns_in_the_guest_os_or_esx_server.html"
+      - title: 基于卷的 SnapRestore 检查失败
+        url: "/linux-administration/concept_volume_based_snaprestore_check_fails.html"
+      - title: Snapshot 创建和删除操作失败
+        url: "/linux-administration/concept_snapshot_create_and_delete_operation_fails.html"
+      - title: 无法创建 Snapshot 副本
+        url: "/linux-administration/concept_unable_to_create_a_snapshot_copy.html"
+      - title: 无法还原 Snapshot 副本
+        url: "/linux-administration/concept_unable_to_restore_a_snapshot_copy.html"
+      - title: 当主机无法与存储系统通信时，无法重新启动守护进程
+        url: "/linux-administration/concept_unable_to_start_daemon.html"
+      - title: 无法启动守护进程
+        url: "/linux-administration/concept_unable_to_start_the_daemon.html"
+      - title: snapdrived start 命令失败
+        url: "/linux-administration/concept_snapdrived_start_command_fails.html"
+      - title: SnapDrive 命令有时会导致挂载或卸载文件系统以及修改系统文件
+        url: "/linux-administration/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html"
+      - title: 无法选择存储堆栈
+        url: "/linux-administration/concept_unable_to_select_a_storage_stack.html"
+      - title: snapdrived stop 或 snapdrived start 命令挂起
+        url: "/linux-administration/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html"
+      - title: SnapDrive for UNIX 命令显示 Could not check access error
+        url: "/linux-administration/concept_snapdrive_for_unix_command_displays_could_not_check_access_error.html"
+      - title: 在 NFS 环境中挂载 FlexVol 卷失败
+        url: "/linux-administration/task_mounting_a_flexvol_volume_fails_in_nfs_environment.html"
+      - title: 收到错误 iscsi64 SnapDrive ： 0001-666 致命错误
+        url: "/linux-administration/task_receiving_error_iscsi64_snapdrive_0001_666_fatal_error.html"
+      - title: SnapDrive for UNIX 对美元符号的解释不正确
+        url: "/linux-administration/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html"
+      - title: 在将 SUSE Linux Enterprise Server 从版本 10 升级到 11 之后， SnapDrive for UNIX
+          将显示一条错误消息
+        url: "/linux-administration/concept_snapdrive_for_unix_faces_issue_after_sles_upgrade_from_version_10_to_11.html"
+      - title: 发现某些映射设备时， SnapDrive for UNIX storage create 命令失败
+        url: "/linux-administration/concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.html"
+      - title: 使用自定义的 LD_library_path 时， SnapDrive for UNIX 命令失败
+        url: "/linux-administration/concept_snapdrive_for_unix_commands_fail_when_there_is_a_customized_ld_library_path.html"
+      - title: 在多个子网配置中， SnapDrive 操作失败
+        url: "/linux-administration/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html"
+      - title: 使用命令 Shell 设置环境变量时， SnapDrive for UNIX 命令失败
+        url: "/linux-administration/reference_snapdrive_for_unix_does_not_accept_environment_variables_set_using_command_shells.html"
+      - title: SnapDrive for UNIX 不会自动删除 UNIX 中陈旧的设备
+        url: "/linux-administration/reference_snapdrive_for_unix_does_not_automatically_delete_stale_devices_in_unix.html"
+      - title: SnapDrive 无法在 RHEL 6.6 及更高版本中添加新映射的 LUN
+        url: "/linux-administration/concept_snapdrive_fails_to_add_newly_mapped_luns_in_rhel_6_6_and_rhel_7.html"
+      - title: 由于使用别名设备时多路径设置不正确， SnapDrive for UNIX 操作失败。
+        url: "/linux-administration/reference_snapdrive_for_unix_operations_fails_improper_multipath_settings_aliased_devices_used.html"
+    - title: 命令参考
+      url: "/linux-administration/concept_command_reference.html"
+      entries:
+      - title: 收集 SnapDrive for UNIX 命令所需的信息
+        url: "/linux-administration/concept_collecting_information_needed_by_snapdrive_for_unix_commands.html"
+        entries:
+        - title: 收集命令所需的信息
+          url: "/linux-administration/reference_collecting_information_needed_by_commands.html"
+        - title: 有关命令的一般注意事项
+          url: "/linux-administration/reference_general_notes_about_the_commands.html"
+      - title: SnapDrive for UNIX 命令摘要
+        url: "/linux-administration/concept_summary_of_the_snapdrive_for_unix_commands.html"
+        entries:
+        - title: 命令摘要
+          url: "/linux-administration/reference_command_summary.html"
+          entries:
+          - title: 配置命令行
+            url: "/linux-administration/reference_configuration_command_lines.html"
+          - title: 存储配置命令行
+            url: "/linux-administration/reference_storage_provisioning_command_lines.html"
+          - title: 主机端命令行
+            url: "/linux-administration/reference_host_side_command_lines.html"
+          - title: Snapshot 操作命令行
+            url: "/linux-administration/reference_snapshot_operation_command_lines.html"
+        - title: SnapDrive for UNIX 选项，关键字和参数
+          url: "/linux-administration/concept_snapdrive_for_unix_options_keywords_and_arguments.html"
+          entries:
+          - title: 命令行选项
+            url: "/linux-administration/reference_command_line_options.html"
+          - title: 关键字规则
+            url: "/linux-administration/reference_rules_for_keywords.html"
+          - title: 命令行关键字
+            url: "/linux-administration/reference_command_line_keywords.html"
+          - title: 命令行参数
+            url: "/linux-administration/reference_command_line_arguments.html"
+  - title: 适用于 Solaris 的安装和管理
+    url: "/solaris/index.html"
+    entries:
+    - title: SnapDrive for UNIX 概述
+      url: "/solaris/concept_snapdrive_for_unix_overview.html"
+      entries:
+      - title: SnapDrive for UNIX 的功能
+        url: "/solaris/concept_what_snapdrive_for_unix_is.html"
+      - title: SnapDrive for UNIX 中支持的功能
+        url: "/solaris/concept_features_supported_in_snapdrive_for_unix.html"
+      - title: 在独立 UNIX 系统上执行的操作
+        url: "/solaris/concept_operations_performed_on_stand_alone_unix_systems.html"
+      - title: 支持子操作系统
+        url: "/solaris/concept_support_for_guest_operating_systems.html"
+      - title: 主机集群模式 UNIX 系统支持的操作
+        url: "/solaris/concept_operations_supported_on_host_clustered_unix_systems.html"
+      - title: SnapDrive for UNIX 如何在主机集群模式 UNIX 系统上运行
+        url: "/solaris/concept_how_snapdrive_for_unix_works_on_host_clustered_unix_systems.html"
+      - title: 支持 SVM
+        url: "/solaris/concept_support_for_vserver.html"
+      - title: vFiler 单元支持问题
+        url: "/solaris/concept_considerations_for_supporting_vfiler_unit.html"
+      - title: 使用 SnapDrive for UNIX 的注意事项
+        url: "/solaris/concept_considerations_for_using_snapdrive_for_unix.html"
+      - title: 管理 VxVM 和原始实体
+        url: "/solaris/concept_management_of_lvm_and_raw_entities.html"
+        entries:
+        - title: VxVM 环境中的 SnapDrive for UNIX 配置
+          url: "/solaris/concept_snapdrive_for_unix_provisioning_in_an_lvma_vxvm_environment.html"
+        - title: 适用于 UNIX 和原始实体的 SnapDrive
+          url: "/solaris/concept_snapdrive_for_unix_and_raw_entities.html"
+      - title: 如何管理 VxVM ，原始设备和 NFS 实体的 Snapshot 副本
+        url: "/solaris/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html"
+      - title: 安全注意事项
+        url: "/solaris/concept_security_considerations.html"
+      - title: 对存储系统的访问权限
+        url: "/solaris/concept_access_permissions_on_a_storage_system.html"
+      - title: 存储系统的要求
+        url: "/solaris/concept_requirements_for_storage_systems.html"
+      - title: 堆栈要求
+        url: "/solaris/reference_stack_requirements.html"
+      - title: 支持的 FC ， iSCSI 或 NFS 配置
+        url: "/solaris/concept_supported_fc_iscsi_or_nfs_configurations.html"
+      - title: 限制
+        url: "/solaris/reference_limitations.html"
+      - title: 由 SnapDrive 管理的 LUN 的限制
+        url: "/solaris/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html"
+      - title: 由 SnapDrive 管理的 RDM LUN 的限制
+        url: "/solaris/concept_limitations_of_rdm_luns_managed_by_snapdrive.html"
+      - title: 支持 NetAppDataMotion for vFiler
+        url: "/solaris/concept_support_for_datamotion_for_vfiler.html"
+      - title: 支持卷迁移
+        url: "/solaris/concept_support_for_volume_migration.html"
+        entries:
+        - title: SnapDrive for UNIX 中的卷迁移
+          url: "/solaris/concept_managing_volume_migration_using_snapdrive_for_unix.html"
+      - title: 什么是配置检查程序
+        url: "/solaris/concept_what_configuration_checker_is.html"
+      - title: NFS 文件或目录树的限制
+        url: "/solaris/concept_limitations_for_nfs_file_or_directory_trees.html"
+      - title: SnapDrive for UNIX 中的精简配置
+        url: "/solaris/concept_thin_provisioning_in_snapdrive_for_unix_overview.html"
+      - title: SnapDrive for UNIX 上的卷管理器
+        url: "/solaris/concept_volume_managers_on_snapdrive_for_unix.html"
+      - title: 适用于 UNIX 的 SnapDrive 的主机集群环境
+        url: "/solaris/concept_host_cluster_environment_for_snapdrive_for_unix.html"
+    - title: 准备安装 SnapDrive for UNIX
+      url: "/solaris/concept_preparation_for_installing_snapdrive_for_unix.html"
+      entries:
+      - title: 硬件和软件配置
+        url: "/solaris/concept_prerequisites_for_using_snapdrive_for_unix.html"
+        entries:
+        - title: FC 或 iSCSI 配置检查
+          url: "/solaris/concept_fc_or_iscsi_configuration_checks.html"
+        - title: NFS 配置检查
+          url: "/solaris/concept_nfs_configuration_checks.html"
+      - title: 正在准备存储系统
+        url: "/solaris/concept_storage_system_checks.html"
+        entries:
+        - title: 验证存储系统就绪情况和许可证
+          url: "/solaris/concept_verification_of_storage_system_readiness_and_licenses.html"
+        - title: 确认存储系统配对节点 IP 地址或接口名称
+          url: "/solaris/concept_storage_system_partner_ip_address_or_interface_name_confirmation.html"
+        - title: NFS 配置准则
+          url: "/solaris/concept_considerations_for_network_file_system.html"
+        - title: 存储系统卷准备
+          url: "/solaris/concept_storage_system_volume_preparation.html"
+        - title: 在 FC 或 iSCSI 环境中进行卷优化
+          url: "/solaris/concept_volume_optimization_in_an_fc_or_iscsi_environment.html"
+        - title: 重置快照预留选项
+          url: "/solaris/concept_reset_the_snap_reserve_option.html"
+          entries:
+          - title: 在存储系统上重置 snap reserve 选项
+            url: "/solaris/task_resetting_the_snap_reserve_option_on_the_storage_system.html"
+          - title: 使用 FilerView 重置快照预留选项
+            url: "/solaris/task_resetting_the_snap_reserve_option_by_using_filerview.html"
+      - title: 主机准备安装 SnapDrive for UNIX
+        url: "/solaris/concept_host_preparation_for_installing_snapdrive_for_unix.html"
+        entries:
+        - title: 安装 Solaris Host Utilities
+          url: "/solaris/concept_fc_and_iscsi_host_utilities.html"
+        - title: 验证主机是否已准备就绪
+          url: "/solaris/concept_verify_that_the_hosts_are_ready.html"
+      - title: 安装 SnapDrive for UNIX 的子操作系统准备工作
+        url: "/solaris/concept_guest_os_preparation_for_installing_sdu.html"
+        entries:
+        - title: 安装 Solaris Host Utilities
+          url: "/solaris/task_installing_iscsi_host_utilities.html"
+        - title: 验证子系统是否已准备就绪
+          url: "/solaris/task_verifying_that_the_guest_is_ready.html"
+    - title: 安装或升级 SnapDrive for UNIX
+      url: "/solaris/concept_snapdrive_for_unix_installation_and_upgrade.html"
+      entries:
+      - title: 下载并解压缩软件包
+        url: "/solaris/task_decompressing_the_software_package_you_downloaded.html"
+      - title: 在 Solaris 主机上安装 SnapDrive for UNIX
+        url: "/solaris/task_installing_snapdrivefor_unix_on_asolaris_host.html"
+      - title: 在存储系统上设置 SFRAC I/O 隔离环境
+        url: "/solaris/task_setting_up_an_sfrac_i_o_fencing_environment_on_a_storage_system.html"
+      - title: 将节点添加到主机集群
+        url: "/solaris/task_adding_a_node_to_a_host_cluster.html"
+      - title: 从主机集群中删除节点
+        url: "/solaris/concept_removing_a_node_from_a_host_cluster.html"
+      - title: 从 Solaris 主机卸载 SnapDrive for UNIX
+        url: "/solaris/task_uninstalling_snapdrive_for_unix_from_a_solaris_host.html"
+      - title: 验证 Veritas 堆栈配置
+        url: "/solaris/task_verifying_the_veritas_stack_configuration.html"
+      - title: 执行安装后检查
+        url: "/solaris/concept_postinstallation_checks.html"
+      - title: SnapDrive for UNIX 安装的文件
+        url: "/solaris/concept_files_installed_by_snapdrive_for_unix.html"
+        entries:
+        - title: SnapDrive for UNIX 安装的可执行文件
+          url: "/solaris/concept_executables_installed_by_snapdrive_for_unix.html"
+        - title: SnapDrive for UNIX 安装的配置文件
+          url: "/solaris/concept_configuration_files_installed_by_snapdrive_for_unix.html"
+        - title: 卸载 SnapDrive for UNIX 安装的文件
+          url: "/solaris/concept_uninstall_files_installed_by_snapdrive_for_unix.html"
+        - title: SnapDrive for UNIX 安装的诊断文件
+          url: "/solaris/concept_diagnostic_files_installed_by_snapdrive_for_unix.html"
+        - title: SnapDrive for UNIX 安装的手册页
+          url: "/solaris/concept_manual_pages_installed_by_snapdrive_for_unix.html"
+      - title: 将适用于 UNIX 的 SnapDrive 升级到最新版本
+        url: "/solaris/concept_what_snapdrive_for_unix_does_when_you_upgrade_your_current_version.html"
+    - title: 了解 SnapDrive for UNIX 守护进程
+      url: "/solaris/concept_the_snapdrive_for_unix_daemon.html"
+      entries:
+      - title: 什么是 Web 服务和守护进程
+        url: "/solaris/concept_what_the_web_service_and_daemon_are.html"
+      - title: 正在检查守护进程的状态
+        url: "/solaris/task_checking_the_status_of_the_daemon.html"
+      - title: 启动 SnapDrive for UNIX 守护进程
+        url: "/solaris/task_starting_the_snapdrive_for_unix_daemon.html"
+      - title: 更改默认守护进程密码
+        url: "/solaris/task_changing_the_default_daemon_password.html"
+      - title: 正在停止守护进程
+        url: "/solaris/task_stopping_the_daemon.html"
+        entries:
+        - title: 不强制停止守护进程
+          url: "/solaris/task_nonforcibly_stopping_the_daemon.html"
+        - title: 强制停止守护进程
+          url: "/solaris/task_forcibly_stopping_the_daemon.html"
+      - title: 正在重新启动守护进程
+        url: "/solaris/task_restarting_the_daemon.html"
+      - title: 强制守护进程重新启动
+        url: "/solaris/task_forcing_daemon_restart.html"
+      - title: 使用 HTTPS 安全守护进程通信
+        url: "/solaris/concept_secure_daemon_communication_using_https.html"
+      - title: 生成自签名证书
+        url: "/solaris/task_generating_self_signed_certificates.html"
+      - title: 生成 CA 签名的证书
+        url: "/solaris/task_generating_ca_signed_certificate.html"
+    - title: 验证支持的配置
+      url: "/solaris/task_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: 导入数据文件
+        url: "/solaris/task_importing_data_files.html"
+      - title: 确定已安装的组件
+        url: "/solaris/task_identifying_the_installed_components.html"
+      - title: 验证支持的配置
+        url: "/solaris/task_verifying_the_supported_configurations.html"
+    - title: 支持存储系统重命名
+      url: "/solaris/concept_support_for_storage_system_rename.html"
+      entries:
+      - title: 在主机系统中配置新的存储系统名称
+        url: "/solaris/task_configuring_a_new_storage_system_name_to_a_host_system.html"
+      - title: 查看存储系统列表
+        url: "/solaris/task_viewing_the_list_of_storage_system.html"
+      - title: 从旧存储系统迁移到新存储系统
+        url: "/solaris/task_migrating_from_old_host_name_to_new_host_name.html"
+      - title: 查看迁移的新存储系统
+        url: "/solaris/task_viewing_the_migrated_new_storage_system.html"
+      - title: 从主机系统中删除存储系统映射信息
+        url: "/solaris/task_deleting_a_storage_system_entry.html"
+    - title: 使用 SnapDrive for UNIX 中的端口集
+      url: "/solaris/concept_using_port_set_in_snapdrive_for_unix.html"
+      entries:
+      - title: 在 SnapDrive 中添加端口集
+        url: "/solaris/task_adding_a_port_set_in_snapdrive.html"
+      - title: 查看端口集列表
+        url: "/solaris/task_viewing_the_list_of_port_set.html"
+      - title: 从 SnapDrive 中删除端口集
+        url: "/solaris/task_removing_a_port_set_from_snapdrive.html"
+      - title: 迁移到新的 SVM 名称
+        url: "/solaris/concept_migrating_to_new_vserver_name.html"
+    - title: 配置 igroup
+      url: "/solaris/concept_configuring_igroups.html"
+      entries:
+      - title: 添加 igroup
+        url: "/solaris/task_adding_igroup.html"
+      - title: 删除 igroup
+        url: "/solaris/task_deleting_igroup.html"
+      - title: 查看 igroup 列表
+        url: "/solaris/task_viewing_the_list_of_igroups.html"
+    - title: 在 SnapDrive for UNIX 中使用选择性 LUN 映射
+      url: "/solaris/concept_using_selective_lun_map_in_snapdrive_for_unix.html"
+    - title: 适用于 UNIX 的 SnapDrive 配置
+      url: "/solaris/concept_snapdrive_for_unix_configuration.html"
+      entries:
+      - title: 配置适用于 UNIX 的 SnapDrive
+        url: "/solaris/concept_how_to_configure_snapdrive_for_unix.html"
+        entries:
+        - title: 什么是 SnapDrive.conf 文件
+          url: "/solaris/concept_what_the_snapdrive_conf_file_is.html"
+        - title: 配置选项及其默认值
+          url: "/solaris/concept_configuration_options_and_their_default_values.html"
+        - title: SnapDrive 配置向导的功能
+          url: "/solaris/concept_what_the_configuration_wizard_does.html"
+        - title: SnapDrive 配置向导
+          url: "/solaris/concept_when_to_use_the_snapdrive_configuration_wizard.html"
+        - title: 一些配置命令
+          url: "/solaris/reference_some_configuration_commands.html"
+        - title: 使用 SnapDrive 配置向导
+          url: "/solaris/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html"
+        - title: 设置 SnapDrive.conf 文件中的值
+          url: "/solaris/task_setting_values_in_the_snapdrive_conf_file.html"
+        - title: 检查适用于 UNIX 的 SnapDrive 版本
+          url: "/solaris/task_checking_version_of_snapdrive_for_unix.html"
+      - title: 子操作系统的 SnapDrive for UNIX 中的配置信息
+        url: "/solaris/concept_configuration_information_in_snapdrive_for_unix_for_guest_os.html"
+        entries:
+        - title: 配置适用于 UNIX 的 SnapDrive 的虚拟存储控制台
+          url: "/solaris/task_configuring_virtual_storage_console_in_snapdrive_for_unix.html"
+        - title: 指定 Virtual Storage Console 的登录信息
+          url: "/solaris/task_specifying_login_information_for_virtual_storage_console.html"
+        - title: 验证 Virtual Storage Console 的登录信息
+          url: "/solaris/task_verifying_virtual_storage_console.html"
+        - title: 删除 Virtual Storage Console 的用户登录名
+          url: "/solaris/task_deleting_a_user_login_for_a_virtual_storage_console.html"
+      - title: SVM 的配置信息
+        url: "/solaris/concept_configuration_information_for_vserver_environment.html"
+        entries:
+        - title: SVM 的登录信息
+          url: "/solaris/concept_login_information_for_vserver.html"
+        - title: 指定 SVM 的登录信息
+          url: "/solaris/task_specifying_login_information_for_vserver.html"
+        - title: 验证 SVM 的登录信息
+          url: "/solaris/task_verifying_login_information_for_vserver.html"
+        - title: 从 SVM 中删除用户
+          url: "/solaris/task_deleting_a_user_for_a_vserver.html"
+      - title: 主机准备添加 LUN
+        url: "/solaris/task_hosts_preparation_for_adding_luns.html"
+        entries:
+        - title: 确定可以创建的 LUN 数量
+          url: "/solaris/concept_determining_howmany_luns_can_becreated.html"
+        - title: 为新 LUN 添加主机条目
+          url: "/solaris/task_adding_host_entries_for_new_luns.html"
+      - title: SnapDrive for UNIX 中的审核，恢复和跟踪日志记录
+        url: "/solaris/concept_audit_recovery_and_trace_logging_in_snapdrive_for_unix.html"
+        entries:
+        - title: 日志类型
+          url: "/solaris/concept_types_of_logs.html"
+        - title: 启用和禁用日志文件
+          url: "/solaris/task_enabling_and_disabling_log_files.html"
+        - title: 日志文件轮换设置
+          url: "/solaris/concept_log_file_rotation_settings.html"
+        - title: 审核日志文件的内容
+          url: "/solaris/concept_contents_of_an_audit_log_file.html"
+        - title: 更改审核日志的默认值
+          url: "/solaris/concept_changing_the_defaults_for_the_audit_logs.html"
+        - title: 恢复日志的内容
+          url: "/solaris/concept_contents_of_the_recovery_log.html"
+        - title: 恢复日志的默认值
+          url: "/solaris/concept_default_values_for_the_recovery_logs.html"
+        - title: 什么是跟踪日志文件
+          url: "/solaris/concept_what_the_trace_log_file_is.html"
+          entries:
+          - title: 跟踪日志文件的默认值
+            url: "/solaris/concept_default_vaules_for_the_trace_log_files.html"
+      - title: 什么是 AutoSupport
+        url: "/solaris/concept_what_autosupport_is.html"
+        entries:
+        - title: SnapDrive for UNIX 如何使用 AutoSupport
+          url: "/solaris/concept_how_snapdrive_forunix_usesautosupport.html"
+        - title: AutoSupport 消息的内容
+          url: "/solaris/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html"
+        - title: AutoSupport 消息示例
+          url: "/solaris/concept_example_of_an_autosupport_message.html"
+      - title: 在 SnapDrive for UNIX 中支持多路径访问
+        url: "/solaris/concept_multipath_access_in_snapdrive_for_unix.html"
+        entries:
+        - title: 启用多路径
+          url: "/solaris/task_enabling_multipathing.html"
+        - title: 刷新 DMP 路径的原因
+          url: "/solaris/concept_reason_to_refresh_the_dmp_paths.html"
+      - title: SnapDrive for UNIX 中的精简配置
+        url: "/solaris/concept_thin_provisioning_in_snapdrive_for_unix.html"
+        entries:
+        - title: 为 LUN 启用精简配置
+          url: "/solaris/task_enabling_thin_provisioning_for_luns.html"
+        - title: 为 NFS 实体启用精简配置
+          url: "/solaris/task_enabling_thin_provisioning_for_nfs_entities.html"
+      - title: 多子网配置
+        url: "/solaris/concept_multiple_subnet_configuration.html"
+        entries:
+        - title: 为存储系统配置管理和数据接口
+          url: "/solaris/task_configuring_management_and_data_interfaces_for_a_storage_system.html"
+        - title: 查看管理接口的所有数据接口
+          url: "/solaris/task_viewing_all_the_data_interfaces_of_a_management_interface.html"
+        - title: 删除管理接口的数据接口条目
+          url: "/solaris/task_deleting_a_data_interface_entry_of_a_management_interface.html"
+        - title: SAN 环境中的 LUN 名称
+          url: "/solaris/concept_lun_names_in_san_environment.html"
+        - title: 纯 NFS 环境
+          url: "/solaris/concept_pure_nfs_environment.html"
+        - title: 混合 SAN 和 NFS 环境
+          url: "/solaris/concept_mixed_environments_of_san_and_nfs.html"
+      - title: 自动检测主机实体
+        url: "/solaris/concept_automatic_detection_of_host_entities.html"
+      - title: 什么是 SnapDrive 向导
+        url: "/solaris/concept_what_snapdrive_wizard_is.html"
+        entries:
+        - title: 使用向导执行的操作
+          url: "/solaris/concept_operations_performed_using_wizards.html"
+        - title: 使用向导管理存储
+          url: "/solaris/concept_managing_storage_using_a_wizard.html"
+        - title: 使用向导管理 Snapshot 副本
+          url: "/solaris/concept_managing_snapshot_copy_using_a_wizard.html"
+        - title: 使用向导删除存储
+          url: "/solaris/concept_deleting_storage_using_a_wizard.html"
+    - title: SnapDrive for UNIX 中的安全功能
+      url: "/solaris/concept_snapdrive_for_unix_security.html"
+      entries:
+      - title: 什么是安全功能
+        url: "/solaris/concept_security_featuresprovided_bysnapdrive_for_unix.html"
+      - title: SnapDrive for UNIX 中的访问控制
+        url: "/solaris/concept_access_control_in_snapdrive_for_unix.html"
+        entries:
+        - title: 什么是访问控制设置
+          url: "/solaris/concept_what_access_control_settings_are.html"
+        - title: 可用的访问控制级别
+          url: "/solaris/concept_available_access_control_levels.html"
+        - title: 设置访问控制权限
+          url: "/solaris/task_setting_up_access_control_permission.html"
+        - title: 查看访问控制权限
+          url: "/solaris/task_viewing_the_access_control_permission.html"
+      - title: 存储系统的登录信息
+        url: "/solaris/concept_login_information_for_storage_systems.html"
+        entries:
+        - title: 指定登录信息
+          url: "/solaris/task_specifying_login_information.html"
+        - title: 验证与 SnapDrive for UNIX 关联的存储系统用户名
+          url: "/solaris/task_verifying_storagesystem_user_namesassociated_withsnapdrive_for_unix.html"
+        - title: 删除存储系统的用户登录名
+          url: "/solaris/task_deleting_a_userlogin_for_a_storagesystem.html"
+      - title: 设置 HTTP
+        url: "/solaris/task_setting_up_http.html"
+    - title: SnapDrive for UNIX 中基于角色的访问控制
+      url: "/solaris/concept_role_based_access_control_in_snapdrive_for_unix.html"
+      entries:
+      - title: 什么是 SnapDrive for UNIX 中基于角色的访问控制（ RBAC ）
+        url: "/solaris/concept_what_rbac_in_snapdrive_for_unix_is.html"
+      - title: SnapDrive for UNIX 和 Operations Manager 控制台交互
+        url: "/solaris/concept_snapdrive_for_unix_and_operations_manager_interaction.html"
+      - title: 在 SnapDrive for UNIX 中配置基于角色的访问控制
+        url: "/solaris/concept_role_based_access_control_configuration_on_snapdrive_for_unix.html"
+        entries:
+        - title: 在 Operations Manager 控制台中配置 SD-admin
+          url: "/solaris/concept_configuring_sd_admin_in_operations_manager.html"
+          entries:
+          - title: 使用命令行界面配置 SD-admin
+            url: "/solaris/task_configuring_sd_admin_using_cli.html"
+        - title: 将 SD 主机名添加到存储系统
+          url: "/solaris/task_adding_sd_hostname_to_the_storage_system.html"
+          entries:
+          - title: 使用 CLI 将 SD- 主机名添加到存储系统
+            url: "/solaris/task_adding_sd_hostname_to_storage_system_using_cli.html"
+        - title: 在 SnapDrive for UNIX 上配置用户凭据
+          url: "/solaris/task_configuring_user_credentials_on_snapdrive_for_unix.html"
+        - title: 用于使用 Operations Manager 控制台执行访问检查的用户名格式
+          url: "/solaris/concept_user_name_formats_for_access_check_with_operations_manager.html"
+        - title: 基于角色的访问控制的配置变量
+          url: "/solaris/reference_configuration_parameters_for_role_based_access_control.html"
+      - title: SnapDrive 命令和功能
+        url: "/solaris/concept_snapdrive_commands_and_capabilities.html"
+      - title: 预配置的角色，便于配置用户角色
+        url: "/solaris/reference_preconfigured_roles_for_ease_of_user_role_configuration.html"
+      - title: Operations Manager 控制台上的存储系统自动更新
+        url: "/solaris/concept_automatic_storage_system_update_on_operations_manager.html"
+      - title: 多个 Operations Manager 控制台服务器
+        url: "/solaris/concept_multiple_operations_manager_servers.html"
+      - title: Operations Manager 控制台不可用
+        url: "/solaris/concept_operations_manager_unavailable.html"
+      - title: RBAC 和存储操作示例
+        url: "/solaris/concept_rbac_and_storage_operation_examples.html"
+        entries:
+        - title: 对单个存储对象执行单个文件规范操作
+          url: "/solaris/concept_operation_with_a_single_filespec_on_a_single_storage_object.html"
+        - title: 对多个存储对象执行单个文件规范操作
+          url: "/solaris/concept_operation_with_a_single_filespec_on_multiple_storage_objects.html"
+        - title: 对多个文件规范和存储对象执行的操作
+          url: "/solaris/concept_operation_with_multiple_filespec_and_storage_objects.html"
+        - title: 对多个存储对象执行的操作
+          url: "/solaris/concept_operation_with_multiple_storage_objects.html"
+        - title: 使用多个 Operations Manager 控制台服务器管理存储系统的操作
+          url: "/solaris/concept_operation_with_multiple_operations_manager_servers_managing_storage_systems.html"
+    - title: SnapDrive for UNIX 中的 FlexClone 卷
+      url: "/solaris/concept_flexclone_volumes_in_snapdrive_for_unix.html"
+      entries:
+      - title: 什么是 FlexClone 卷
+        url: "/solaris/concept_what_flexclone_volumes_are.html"
+      - title: FlexClone 卷的优势
+        url: "/solaris/concept_benefits_of_flexclone_volumes.html"
+      - title: FlexClone 卷的类型
+        url: "/solaris/concept_types_of_flexclone_volumes.html"
+      - title: FlexClone 卷上的 SnapDrive for UNIX 操作
+        url: "/solaris/concept_snapdrive_for_unix_operations_on_flexclone_volumes.html"
+        entries:
+        - title: 对 FlexClone 卷操作进行基于角色的访问控制
+          url: "/solaris/concept_role_based_access_control_for_flexclone_volume_operations.html"
+        - title: Snap Connect 操作步骤
+          url: "/solaris/concept_snap_connect_procedure.html"
+        - title: Snap disconnect 操作步骤
+          url: "/solaris/concept_snap_disconnect_procedure.html"
+        - title: 连接到 LUN 中的单个文件规范
+          url: "/solaris/concept_connecting_to_a_single_filespec_in_a_lun.html"
+        - title: 连接到多个文件系统
+          url: "/solaris/concept_connecting_to_multiple_filespecs.html"
+        - title: 正在断开文件规范的连接
+          url: "/solaris/concept_disconnecting_a_filespec.html"
+        - title: 拆分 FlexClone 卷
+          url: "/solaris/concept_splitting_the_flexclone_volume.html"
+        - title: FlexClone 卷的空间预留
+          url: "/solaris/concept_space_reservation_with_a_flexclone_volume.html"
+    - title: SnapDrive for UNIX 中的存储配置
+      url: "/solaris/concept_storage_provisioning_in_snapdrive_for_unix.html"
+      entries:
+      - title: SnapDrive for UNIX 中的存储操作
+        url: "/solaris/concept_storageprovisioning_withsnapdrive_for_unix.html"
+        entries:
+        - title: 跨多个存储系统卷的存储操作
+          url: "/solaris/concept_storageoperations_acrossmultiple_storagesystem_volumes.html"
+        - title: 存储操作注意事项
+          url: "/solaris/concept_considerations_forstorage_operations.html"
+        - title: 配置 RDM LUN 的注意事项
+          url: "/solaris/task_considerations_for_provisioning_rdm_luns.html"
+        - title: SnapDrive for UNIX 中支持 VMware VMotion
+          url: "/solaris/concept_storage_provisioning_for_rdm_luns.html"
+      - title: 使用 SnapDrive for UNIX 创建存储
+        url: "/solaris/concept_storagecreation_with_snapdrive_forunix.html"
+        entries:
+        - title: 创建存储的方法
+          url: "/solaris/concept_methods_forcreating_storage.html"
+        - title: 存储创建操作的准则
+          url: "/solaris/concept_guidelines_for_thestorage_createoperation.html"
+          entries:
+          - title: 在主机集群环境中执行存储创建操作的准则
+            url: "/solaris/concept_guidelines_for_storage_create_operation_in_a_host_cluster_environment.html"
+        - title: 存储创建操作所需的信息
+          url: "/solaris/reference_informationrequired_for_the_storagecreate_operation.html"
+        - title: 为 VxVM 实体创建存储
+          url: "/solaris/concept_storage_creation_for_lvm_vxvm_entities.html"
+        - title: 为 LUN 上的文件系统创建存储
+          url: "/solaris/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html"
+        - title: 创建不具有主机实体的 LUN
+          url: "/solaris/task_creating_lunswithout_hostentities.html"
+        - title: 在 LUN 上创建文件系统并自动设置 LUN
+          url: "/solaris/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html"
+        - title: 在 LUN 上创建文件系统并指定 LUN
+          url: "/solaris/task_creating_a_filesystem_on_a_lunand_specifying_thelun.html"
+        - title: 创建 VxVM 实体并自动设置 LUN
+          url: "/solaris/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html"
+        - title: 创建 VxVM 实体并指定 LUN
+          url: "/solaris/task_creating_an_lvm_a_vxvmentity_andspecifying_the_lun.html"
+      - title: 用于显示可用存储的命令
+        url: "/solaris/concept_command_to_use_todisplay_availablestorage.html"
+        entries:
+        - title: 显示存储信息的方法
+          url: "/solaris/concept_methods_fordisplaying_storageinformation.html"
+      - title: 使用 SnapDrive for UNIX 增加存储大小
+        url: "/solaris/concept_increase_in_storage_size_using_snapdrive_for_unix.html"
+        entries:
+        - title: storage resize 命令的准则
+          url: "/solaris/concept_guidelines_for_the_storage_resize_command.html"
+        - title: 使用 SnapDrive storage resize 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html"
+        - title: 用于增加存储大小的命令语法
+          url: "/solaris/concept_command_syntax_to_increase_the_sizeof_the_storage.html"
+        - title: 主机卷和文件系统大小调整操作
+          url: "/solaris/concept_hostvolumes_and_filesystem_resize_operation.html"
+      - title: storage connect 命令
+        url: "/solaris/concept_the_storageconnect_command.html"
+        entries:
+        - title: storage connect 命令的准则
+          url: "/solaris/concept_guidelines_for_thestorage_connectcommand.html"
+        - title: 主机集群环境中的存储连接准则
+          url: "/solaris/concept_guidelines_for_storage_connection_in_a_host_cluster_environment.html"
+        - title: 使用 SnapDrive storage connect 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html"
+        - title: 连接具有磁盘组，主机卷和文件系统的 LUN
+          url: "/solaris/concept_connecting_lunswith_disk_groups_host_volumes_andfile_systems.html"
+        - title: 使用共享资源连接现有 LUN
+          url: "/solaris/concept_connecting_existingluns_with_sharedresources.html"
+      - title: storage disconnect 命令
+        url: "/solaris/concept_the_storagedisconnect_command.html"
+        entries:
+        - title: 断开存储连接的方法
+          url: "/solaris/concept_methods_fordisconnectingstorage.html"
+        - title: SnapDrive storage disconnect 命令的准则
+          url: "/solaris/concept_guidelines_for_thesnapdrive_storagedisconnectcommand.html"
+          entries:
+          - title: 在主机集群环境中使用 disconnect 命令的准则
+            url: "/solaris/concept_guidelines_for_using_the_disconnect_command_in_a_host_cluster_environment.html"
+        - title: 有关使用 storage disconnect 命令的提示
+          url: "/solaris/task_tips_for_usingthe_storage_disconnect_command.html"
+        - title: 使用 SnapDrive storage disconnect 命令所需的信息
+          url: "/solaris/reference_informationrequired_forusing_the_snapdrive_storagedisconnect_command.html"
+        - title: 用于从主机断开 LUN 连接的命令语法
+          url: "/solaris/concept_command_syntax_for_disconnectingluns_from_the_host.html"
+        - title: 用于将 LUN 上创建的文件系统与主机断开连接的命令语法
+          url: "/solaris/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html"
+        - title: 用于从主机断开 LUN 和存储实体连接的命令语法
+          url: "/solaris/concept_command_syntax_for_disconnectingluns_and_storageentities_from_thehost.html"
+        - title: 禁止节点或集群使用共享资源
+          url: "/solaris/concept_disable_a_node_ora_cluster_from_usingshared_resources.html"
+      - title: storage delete 命令
+        url: "/solaris/concept_the_storagedeletecommand.html"
+        entries:
+        - title: 使用 storage delete 命令的准则
+          url: "/solaris/concept_guidelines_for_usingthe_storage_deletecommand.html"
+          entries:
+          - title: 在主机集群环境中删除存储的准则
+            url: "/solaris/concept_guidelines_for_storage_deletion_in_a_host_cluster_environment.html"
+        - title: 使用 SnapDrive storage delete 命令所需的信息
+          url: "/solaris/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html"
+    - title: 在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
+      url: "/solaris/concept_snapshot_copies_in_snapdrive_for_unix.html"
+      entries:
+      - title: SnapDrive for UNIX 中的 Snapshot 操作是什么
+        url: "/solaris/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html"
+        entries:
+        - title: 使用 Snapshot 副本时的注意事项
+          url: "/solaris/concept_considerations_when_working_with_snapshot_copies.html"
+      - title: Snapshot 副本操作
+        url: "/solaris/concept_snapshot_copy_operations.html"
+        entries:
+        - title: 崩溃状态一致的 Snapshot 副本
+          url: "/solaris/concept_crash_consistent_snapshot_copies.html"
+          entries:
+          - title: 与 Data ONTAP 7.2 及更高版本的崩溃一致性
+            url: "/solaris/concept_crash_consistency_with_data_ontap_7_2_and_later.html"
+          - title: SnapDrive for UNIX 中的一致性组 Snapshot 副本
+            url: "/solaris/concept_using_consistency_group_snapshots_in_snapdrive_for_unix.html"
+          - title: 创建一致性组 Snapshot 副本
+            url: "/solaris/task_capturing_a_consistency_group_snapshot.html"
+          - title: 禁用一致性组 Snapshot 副本
+            url: "/solaris/task_disabling_consistency_group_snapshots.html"
+        - title: 应用程序一致的 Snapshot 副本
+          url: "/solaris/concept_application_consistentsnapshot_copies.html"
+        - title: 跨存储系统或卷的 Snapshot 副本
+          url: "/solaris/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html"
+        - title: 创建不相关实体的 Snapshot 副本
+          url: "/solaris/concept_creating_snapshotcopies_of_unrelatedentities.html"
+        - title: 创建 Snapshot 副本的准则
+          url: "/solaris/concept_guidelines_forsnapshot_copycreation.html"
+          entries:
+          - title: 在主机集群环境中创建 Snapshot 副本的准则
+            url: "/solaris/concept_guidelines_for_snapshot_copy_creation_in_a_host_cluster_environment.html"
+        - title: 使用 SnapDrive snap create 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html"
+        - title: 创建 Snapshot 副本
+          url: "/solaris/task_creating_asnapshot_copy.html"
+      - title: 此时将显示 Snapshot 副本信息
+        url: "/solaris/concept_snapshot_copies_information_display.html"
+        entries:
+        - title: 用于显示 Snapshot 副本信息的命令
+          url: "/solaris/concept_command_to_use_todisplay_snapshotcopy_information.html"
+        - title: 显示 Snapshot 副本的准则
+          url: "/solaris/task_guidelines_fordisplayingsnapshot_copies.html"
+        - title: 使用 SnapDrive snap show 或 list 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapshow_or_list_commands.html"
+        - title: 显示存储系统上的 Snapshot 副本
+          url: "/solaris/concept_displayingsnapshot_copiesresiding_on_astorage_system.html"
+        - title: 显示存储系统卷的 Snapshot 副本
+          url: "/solaris/concept_displayingsnapshot_copies_of_a_storage_system_volume.html"
+        - title: 显示 Snapshot 副本
+          url: "/solaris/task_displaying_asnapshot_copy.html"
+        - title: 获取 Snapshot 副本名称的其他方法
+          url: "/solaris/concept_other_ways_to_getsnapshot_copynames.html"
+      - title: Snapshot 副本重命名
+        url: "/solaris/concept_snapshot_copy_rename.html"
+        entries:
+        - title: 用于重命名 Snapshot 副本的命令
+          url: "/solaris/concept_command_to_use_torename_a_snapshotcopy.html"
+        - title: 重命名跨存储系统或卷的 Snapshot 副本
+          url: "/solaris/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html"
+        - title: 重命名 Snapshot 副本的准则
+          url: "/solaris/concept_guidelines_forrenaming_snapshotcopies.html"
+        - title: 更改 Snapshot 副本名称
+          url: "/solaris/task_changing_asnapshot_copyname.html"
+      - title: 还原 Snapshot 副本
+        url: "/solaris/concept_restoring_a_snapshot_copy.html"
+        entries:
+        - title: 用于还原 Snapshot 副本的命令
+          url: "/solaris/concept_command_to_use_torestore_snapshotcopies.html"
+        - title: 在目标存储系统上还原 Snapshot 副本
+          url: "/solaris/concept_restoring_snapshotcopies_ona_destination_storagesystem.html"
+          entries:
+          - title: 还原存储系统或存储系统 HA 对上的单个存储实体
+            url: "/solaris/concept_restoring_a_single_storage_entity_on_a_storage_system_or_storagesystem_cluster.html"
+          - title: 还原多个存储实体
+            url: "/solaris/concept_restoring_multiple_storage_entities.html"
+          - title: 在主机集群环境中还原 Snapshot 副本的准则
+            url: "/solaris/concept_guidelines_for_restoring_a_snapshot_copy_in_a_host_cluster_environment.html"
+        - title: 还原 Snapshot 副本的注意事项
+          url: "/solaris/concept_considerations_forrestoring_asnapshot_copy.html"
+        - title: 使用 SnapDrive snap restore 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html"
+        - title: 还原 Snapshot 副本
+          url: "/solaris/task_restoring_asnapshot_copy.html"
+        - title: 从其他主机还原 Snapshot 副本
+          url: "/solaris/concept_restoring_asnapshot_copy_froma_different_host.html"
+        - title: 基于卷的 SnapRestore
+          url: "/solaris/concept_volume_based_snaprestore.html"
+          entries:
+          - title: 什么是基于卷的 SnapRestore
+            url: "/solaris/concept_what_volume_based_snaprestore_is.html"
+          - title: 使用基于卷的 SnapRestore 的注意事项
+            url: "/solaris/concept_considerations_for_using_volume_based_snaprestore.html"
+          - title: 基于卷的 SnapRestore 的强制检查
+            url: "/solaris/concept_mandatory_checks_for_volume_based_snaprestore.html"
+          - title: 可由用户覆盖的检查
+            url: "/solaris/concept_checks_that_can_be_overridden_by_the_user.html"
+          - title: 基于卷的 SnapRestore 命令
+            url: "/solaris/concept_volume_based_snaprestore_command.html"
+          - title: 有关映射到本地或远程主机的 LUN 的信息
+            url: "/solaris/concept_information_about_luns_mapped_to_local_or_remote_hosts.html"
+          - title: 特定卷的主机文件规范信息
+            url: "/solaris/concept_host_filespec_information_for_a_particular_volume.html"
+          - title: 用于空间预留的基于卷的 SnapRestore
+            url: "/solaris/concept_volume_based_snaprestore_for_space_reservation.html"
+      - title: 连接到 Snapshot 副本
+        url: "/solaris/concept_connecting_to_asnapshot_copy.html"
+        entries:
+        - title: SnapDrive snap connect 命令的工作原理
+          url: "/solaris/concept_how_the_snapdrivesnap_connect_command_works.html"
+        - title: 在镜像存储系统上连接 Snapshot 副本
+          url: "/solaris/concept_connectingsnapshot_copies_onmirrored_storagesystems.html"
+          entries:
+          - title: 连接存储系统或存储系统 HA 对上的单个存储实体
+            url: "/solaris/concept_connecting_a_single_storage_entity_on_a_storage_system_or_storage_system_ha_pair.html"
+          - title: 连接多个存储实体
+            url: "/solaris/concept_connecting_multiple_storage_entities.html"
+        - title: Snapshot 连接和 Snapshot 还原操作
+          url: "/solaris/concept_snapshot_connectand_snapshotrestore_operations.html"
+        - title: 连接 Snapshot 副本的准则
+          url: "/solaris/concept_guidelines_forconnectingsnapshot_copies.html"
+          entries:
+          - title: 在主机集群环境中连接 Snapshot 副本的准则
+            url: "/solaris/concept_guidelines_for_connecting_snapshot_copies_in_a_host_cluster_environment.html"
+        - title: 使用 SnapDrive snap connect 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapconnect_command.html"
+        - title: 连接到包含 LUN 的 Snapshot 副本
+          url: "/solaris/task_connecting_to_asnapshot_copy_thatcontains_luns.html"
+        - title: 连接到 LUN 以外存储实体的 Snapshot 副本
+          url: "/solaris/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html"
+        - title: 连接到 LUN 以外的共享存储实体的 Snapshot 副本
+          url: "/solaris/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html"
+      - title: 拆分卷克隆或 LUN 克隆
+        url: "/solaris/concept_splitting_the_volume_or_lun_clone_operations.html"
+        entries:
+        - title: 估算用于拆分卷克隆的存储空间
+          url: "/solaris/task_estimating_the_storage_space_to_split_a_volume_clone.html"
+        - title: 估算用于拆分 LUN 克隆的存储空间
+          url: "/solaris/task_estimating_the_storage_space_to_split_a_lun_clone.html"
+        - title: 使用 Snapshot 副本估算存储空间
+          url: "/solaris/task_estimating_the_storage_space_using_a_snapshot_copy.html"
+        - title: 启动卷克隆或 LUN 克隆拆分
+          url: "/solaris/task_starting_the_volume_or_lun_clone_split_start.html"
+        - title: 查看卷克隆或 LUN 克隆拆分的状态
+          url: "/solaris/task_verifying_the_status_of_clone_split.html"
+        - title: 停止卷克隆或 LUN 克隆拆分操作
+          url: "/solaris/task_stopping_the_clone_and_lun_clone_split.html"
+        - title: 使用作业 ID 或文件规范查看克隆拆分操作的结果
+          url: "/solaris/task_viewing_the_result_of_a_clone_split_using_filespec.html"
+      - title: 删除 Snapshot 副本
+        url: "/solaris/concept_deleting_a_snapshot_copy.html"
+        entries:
+        - title: 用于删除 Snapshot 副本的命令
+          url: "/solaris/concept_command_to_use_todelete_snapshotcopies.html"
+        - title: 删除 Snapshot 副本的原因
+          url: "/solaris/concept_reasons_to_deletesnapshotcopies.html"
+        - title: 删除 Snapshot 副本的准则
+          url: "/solaris/concept_guidelines_fordeleting_snapshotcopies.html"
+        - title: 使用 SnapDrive snap delete 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html"
+        - title: 删除 Snapshot 副本
+          url: "/solaris/task_deleting_a_snapshotcopy.html"
+      - title: 断开 Snapshot 副本的连接
+        url: "/solaris/concept_disconnecting_a_snapshot_copy.html"
+        entries:
+        - title: 使用 Snapshot 断开连接操作
+          url: "/solaris/concept_using_the_snapshotdisconnectoperation.html"
+        - title: 断开 Snapshot 副本连接的准则
+          url: "/solaris/concept_guidelines_fordisconnectingsnapshot_copies.html"
+          entries:
+          - title: 断开 NFS 实体的 Snapshot 副本连接的准则
+            url: "/solaris/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html"
+          - title: 在主机集群环境中断开 Snapshot 副本连接的准则
+            url: "/solaris/concept_guidelines_for_disconnecting_snapshot_copies_in_a_host_clusterenvironment.html"
+        - title: 使用 SnapDrive snap disconnect 命令所需的信息
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapdisconnect_command.html"
+        - title: 断开 Snapshot 副本与 LUN 的连接，而不断开存储实体的连接
+          url: "/solaris/task_disconnectingsnapshot_copy_withluns_and_nostorage_entities.html"
+        - title: 断开 Snapshot 副本与存储实体的连接
+          url: "/solaris/task_disconnectingsnapshot_copy_withstorage_entities.html"
+        - title: 断开 Snapshot 副本与共享存储实体的连接
+          url: "/solaris/task_disconnectingsnapshot_copieswith_shared_storageentities.html"
+    - title: 数据收集实用程序
+      url: "/solaris/concept_data_collection_utility.html"
+      entries:
+      - title: 关于数据收集实用程序
+        url: "/solaris/concept_about_the_data_collection_utility.html"
+      - title: 由 SnapDrive.dc 执行的任务
+        url: "/solaris/concept_tasks_performed_by_snapdrive_dc.html"
+      - title: 正在执行数据收集实用程序
+        url: "/solaris/concept_executing_the_data_collection_utility.html"
+      - title: 使用 SnapDrive.dc 的示例
+        url: "/solaris/reference_examples_of_using_snapdrive_dc.html"
+    - title: 故障排除
+      url: "/solaris/concept_troubleshooting.html"
+      entries:
+      - title: 了解错误消息
+        url: "/solaris/concept_understanding_error_messages.html"
+        entries:
+        - title: 错误消息位置
+          url: "/solaris/concept_error_message_locations.html"
+        - title: 错误消息格式
+          url: "/solaris/concept_error_message_format.html"
+          entries:
+          - title: 错误消息示例
+            url: "/solaris/reference_sample_error_message.html"
+      - title: 常见错误消息
+        url: "/solaris/concept_common_error_messages.html"
+        entries:
+        - title: 操作系统对打开的文件的限制
+          url: "/solaris/concept_operating_system_limits_on_open_files.html"
+        - title: 删除 LUN 和克隆会使 UNIX 中的设备陈旧
+          url: "/solaris/concept_stale_devices_in_unix.html"
+        - title: 错误消息值
+          url: "/solaris/reference_error_message_values.html"
+      - title: 如果存在多个 SAN 路径，但禁用了多路径，则 SnapDrive storage create 命令将失败
+        url: "/solaris/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html"
+      - title: 如果在主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败
+        url: "/solaris/concept_snap_restore_operation_fails_nfsv3_and_nfsv4_versions_enabled_in_host_and_storage_system.html"
+      - title: 快照断开操作无法删除克隆的卷
+        url: "/solaris/task_recieving_error_does_not_look_snapdrive_generated.html"
+      - title: 如果 iSCSI 未运行，则 SnapDrive for UNIX 报告错误
+        url: "/solaris/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html"
+      - title: 错误代码消息存在差异
+        url: "/solaris/concept_discrepancy_in_the_error_code_message.html"
+      - title: 命令显示为已阻止
+        url: "/solaris/concept_commands_appear_blocked_commands_appear_blocked.html"
+      - title: 从节点中基于卷的快照还原操作失败
+        url: "/solaris/concept_volume_based_snap_restore_operation_fails_in_slave_node.html"
+      - title: snap restore 命令无法挂载文件系统
+        url: "/solaris/concept_snap_restore_command_fails_to_mount_the_file_system.html"
+      - title: 存储连接操作无法连接到使用 lun create 命令在存储系统上创建的 LUN
+        url: "/solaris/concept_storage_connect_operation_fails_lun_created_on_storage_system_using_lun_create.html"
+      - title: SnapDrive for UNIX 不会显示存储创建操作支持的文件系统类型
+        url: "/solaris/concept_snapdrive_for_unix_does_not_show_supported_file_system_types_for_storage_create_operation.html"
+      - title: 直接在 LUN 上创建文件系统失败
+        url: "/solaris/concept_creating_a_file_system_directly_on_a_lun_fails.html"
+      - title: 重新启动主机后，操作系统和集群服务无法启动
+        url: "/solaris/concept_after_rebooting_the_host_os_and_cluster_services_fail_to_start.html"
+      - title: 标准退出状态值
+        url: "/solaris/concept_standard_exit_status_values.html"
+        entries:
+        - title: 了解错误消息的退出状态值
+          url: "/solaris/reference_understanding_exit_status_values_of_error_messages.html"
+        - title: 使用退出状态值
+          url: "/solaris/reference_using_exit_status_values.html"
+        - title: 脚本示例
+          url: "/solaris/reference_script_example.html"
+        - title: 退出状态值
+          url: "/solaris/reference_exit_status_values.html"
+      - title: 清理子操作系统和 ESX 服务器中映射的 RDM LUN
+        url: "/solaris/task_steps_to_cleanup_the_mapped_rdm_luns_in_the_guest_os_or_esx_server.html"
+      - title: 基于卷的 SnapRestore 检查失败
+        url: "/solaris/concept_volume_based_snaprestore_check_fails.html"
+      - title: Snapshot 创建和删除操作失败
+        url: "/solaris/concept_snapshot_create_and_delete_operation_fails.html"
+      - title: 无法创建 Snapshot 副本
+        url: "/solaris/concept_unable_to_create_a_snapshot_copy.html"
+      - title: 无法还原 Snapshot 副本
+        url: "/solaris/concept_unable_to_restore_a_snapshot_copy.html"
+      - title: 当主机无法与存储系统通信时，无法重新启动守护进程
+        url: "/solaris/concept_unable_to_start_daemon.html"
+      - title: 无法启动守护进程
+        url: "/solaris/concept_unable_to_start_the_daemon.html"
+      - title: snapdrived start 命令失败
+        url: "/solaris/concept_snapdrived_start_command_fails.html"
+      - title: SnapDrive 命令有时会导致挂载或卸载文件系统以及修改系统文件
+        url: "/solaris/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html"
+      - title: 当存储集群处于故障转移模式时，某些命令会延迟
+        url: "/solaris/concept_some_commands_are_delayed_when_the_storage_cluster_is_in_failover_mode.html"
+      - title: 无法选择存储堆栈
+        url: "/solaris/concept_unable_to_select_a_storage_stack.html"
+      - title: snapdrived stop 或 snapdrived start 命令挂起
+        url: "/solaris/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html"
+      - title: SnapDrive for UNIX 命令显示 Could not check access error
+        url: "/solaris/concept_snapdrive_for_unix_command_displays_could_not_check_access_error.html"
+      - title: 在 NFS 环境中挂载 FlexVol 卷失败
+        url: "/solaris/task_mounting_a_flexvol_volume_fails_in_nfs_environment.html"
+      - title: SnapDrive for UNIX 对美元符号的解释不正确
+        url: "/solaris/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html"
+      - title: 发现某些映射设备时， SnapDrive for UNIX storage create 命令失败
+        url: "/solaris/concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.html"
+      - title: 使用自定义的 LD_library_path 时， SnapDrive for UNIX 命令失败
+        url: "/solaris/concept_snapdrive_for_unix_commands_fail_when_there_is_a_customized_ld_library_path.html"
+      - title: 不会自动挂载使用 iSCSI 的 Solaris Volume Manager 创建的存储区域网络文件规范
+        url: "/solaris/concept_san_filespec_created_with_solaris_volume_manager_svm_using_iscsi_does_not_automount.html"
+      - title: 在多个子网配置中， SnapDrive 操作失败
+        url: "/solaris/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html"
+      - title: 使用命令 Shell 设置环境变量时， SnapDrive for UNIX 命令失败
+        url: "/solaris/reference_snapdrive_for_unix_does_not_accept_environment_variables_set_using_command_shells.html"
+      - title: SnapDrive for UNIX 不会自动删除 UNIX 中陈旧的设备
+        url: "/solaris/reference_snapdrive_for_unix_does_not_automatically_delete_stale_devices_in_unix.html"
+      - title: 断开磁盘组的存储连接失败
+        url: "/solaris/reference_storage_disconnect_of_disk_group_fails.html"
+    - title: 命令参考
+      url: "/solaris/concept_command_reference.html"
+      entries:
+      - title: 收集 SnapDrive for UNIX 命令所需的信息
+        url: "/solaris/concept_collecting_information_needed_by_snapdrive_for_unix_commands.html"
+        entries:
+        - title: 收集命令所需的信息
+          url: "/solaris/reference_collecting_information_needed_by_commands.html"
+        - title: 有关命令的一般注意事项
+          url: "/solaris/reference_general_notes_about_the_commands.html"
+      - title: SnapDrive for UNIX 命令摘要
+        url: "/solaris/concept_summary_of_the_snapdrive_for_unix_commands.html"
+        entries:
+        - title: 命令摘要
+          url: "/solaris/reference_command_summary.html"
+          entries:
+          - title: 配置命令行
+            url: "/solaris/reference_configuration_command_lines.html"
+          - title: 存储配置命令行
+            url: "/solaris/reference_storage_provisioning_command_lines.html"
+          - title: 主机端命令行
+            url: "/solaris/reference_host_side_command_lines.html"
+          - title: Snapshot 操作命令行
+            url: "/solaris/reference_snapshot_operation_command_lines.html"
+        - title: SnapDrive for UNIX 选项，关键字和参数
+          url: "/solaris/concept_snapdrive_for_unix_options_keywords_and_arguments.html"
+          entries:
+          - title: 命令行选项
+            url: "/solaris/reference_command_line_options.html"
+          - title: 关键字规则
+            url: "/solaris/reference_rules_for_keywords.html"
+          - title: 命令行关键字
+            url: "/solaris/reference_command_line_keywords.html"
+          - title: 命令行参数
+            url: "/solaris/reference_command_line_arguments.html"
+  - title: 适用于 IBM AIX 的安装和管理
+    url: "/aix/index.html"
+    entries:
+    - title: SnapDrive for UNIX 概述
+      url: "/aix/concept_snapdrive_for_unix_overview.html"
+      entries:
+      - title: SnapDrive for UNIX 的功能
+        url: "/aix/concept_what_snapdrive_for_unix_is.html"
+      - title: SnapDrive for UNIX 中支持的功能
+        url: "/aix/concept_features_supported_in_snapdrive_for_unix.html"
+      - title: 在独立 UNIX 系统上执行的操作
+        url: "/aix/concept_operations_performed_on_stand_alone_unix_systems.html"
+      - title: 支持 SVM
+        url: "/aix/concept_support_for_vserver.html"
+      - title: vFiler 单元支持问题
+        url: "/aix/concept_considerations_for_supporting_vfiler_unit.html"
+      - title: 使用 SnapDrive for UNIX 的注意事项
+        url: "/aix/concept_considerations_for_using_snapdrive_for_unix.html"
+      - title: LVM 和原始实体的管理
+        url: "/aix/concept_management_of_lvm_and_raw_entities.html"
+        entries:
+        - title: LVM 环境中的 SnapDrive for UNIX 配置
+          url: "/aix/concept_snapdrive_for_unix_provisioning_in_an_lvma_vxvm_environment.html"
+        - title: 适用于 UNIX 和原始实体的 SnapDrive
+          url: "/aix/concept_snapdrive_for_unix_and_raw_entities.html"
+      - title: 如何管理 LVM ，原始设备和 NFS 实体的 Snapshot 副本
+        url: "/aix/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html"
+      - title: 安全注意事项
+        url: "/aix/concept_security_considerations.html"
+      - title: 对存储系统的访问权限
+        url: "/aix/concept_access_permissions_on_a_storage_system.html"
+      - title: 存储系统的要求
+        url: "/aix/concept_requirements_for_storage_systems.html"
+      - title: 堆栈要求
+        url: "/aix/reference_stack_requirements.html"
+      - title: 支持的 FC ， iSCSI 或 NFS 配置
+        url: "/aix/concept_supported_fc_iscsi_or_nfs_configurations.html"
+      - title: 限制
+        url: "/aix/reference_limitations.html"
+      - title: 由 SnapDrive 管理的 LUN 的限制
+        url: "/aix/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html"
+      - title: 支持 NetAppDataMotion for vFiler
+        url: "/aix/concept_support_for_datamotion_for_vfiler.html"
+      - title: 支持卷迁移
+        url: "/aix/concept_support_for_volume_migration.html"
+        entries:
+        - title: SnapDrive for UNIX 中的卷迁移
+          url: "/aix/concept_managing_volume_migration_using_snapdrive_for_unix.html"
+      - title: 什么是配置检查程序
+        url: "/aix/concept_what_configuration_checker_is.html"
+      - title: NFS 文件或目录树的限制
+        url: "/aix/concept_limitations_for_nfs_file_or_directory_trees.html"
+      - title: SnapDrive for UNIX 中的多路径
+        url: "/aix/concept_multipathing_in_snapdrive_for_unix.html"
+      - title: SnapDrive for UNIX 中的精简配置
+        url: "/aix/concept_thin_provisioning_in_snapdrive_for_unix_overview.html"
+      - title: SnapDrive for UNIX 上的卷管理器
+        url: "/aix/concept_volume_managers_on_snapdrive_for_unix.html"
+    - title: 准备安装 SnapDrive for UNIX
+      url: "/aix/concept_preparation_for_installing_snapdrive_for_unix.html"
+      entries:
+      - title: 硬件和软件配置
+        url: "/aix/concept_prerequisites_for_using_snapdrive_for_unix.html"
+        entries:
+        - title: FC 或 iSCSI 配置检查
+          url: "/aix/concept_fc_or_iscsi_configuration_checks.html"
+        - title: NFS 配置检查
+          url: "/aix/concept_nfs_configuration_checks.html"
+      - title: 正在准备存储系统
+        url: "/aix/concept_storage_system_checks.html"
+        entries:
+        - title: 验证存储系统就绪情况和许可证
+          url: "/aix/concept_verification_of_storage_system_readiness_and_licenses.html"
+        - title: 确认存储系统配对节点 IP 地址或接口名称
+          url: "/aix/concept_storage_system_partner_ip_address_or_interface_name_confirmation.html"
+        - title: NFS 配置准则
+          url: "/aix/concept_considerations_for_network_file_system.html"
+        - title: 存储系统卷准备
+          url: "/aix/concept_storage_system_volume_preparation.html"
+        - title: 在 FC 或 iSCSI 环境中进行卷优化
+          url: "/aix/concept_volume_optimization_in_an_fc_or_iscsi_environment.html"
+        - title: 重置快照预留选项
+          url: "/aix/concept_reset_the_snap_reserve_option.html"
+          entries:
+          - title: 在存储系统上重置 snap reserve 选项
+            url: "/aix/task_resetting_the_snap_reserve_option_on_the_storage_system.html"
+          - title: 使用 FilerView 重置快照预留选项
+            url: "/aix/task_resetting_the_snap_reserve_option_by_using_filerview.html"
+      - title: 主机准备安装 SnapDrive for UNIX
+        url: "/aix/concept_host_preparation_for_installing_snapdrive_for_unix.html"
+        entries:
+        - title: 安装 AIX Host Utilities
+          url: "/aix/concept_fc_and_iscsi_host_utilities.html"
+        - title: 验证主机是否已准备就绪
+          url: "/aix/concept_verify_that_the_hosts_are_ready.html"
+    - title: 安装或升级 SnapDrive for UNIX
+      url: "/aix/concept_snapdrive_for_unix_installation_and_upgrade.html"
+      entries:
+      - title: 解压缩下载的软件
+        url: "/aix/task_decompressing_the_downloaded_software.html"
+      - title: 在 AIX 主机上安装 SnapDrive for UNIX
+        url: "/aix/task_installing_snapdrive_for_unix_on_an_aix_host.html"
+      - title: 从 AIX 主机卸载 SnapDrive for UNIX
+        url: "/aix/task_uninstalling_snapdrive_for_unix_from_an_aix_host.html"
+      - title: 执行安装后检查
+        url: "/aix/concept_postinstallation_checks.html"
+      - title: SnapDrive for UNIX 安装的文件
+        url: "/aix/concept_files_installed_by_snapdrive_for_unix.html"
+        entries:
+        - title: SnapDrive for UNIX 安装的可执行文件
+          url: "/aix/concept_executables_installed_by_snapdrive_for_unix.html"
+        - title: SnapDrive for UNIX 安装的配置文件
+          url: "/aix/concept_configuration_files_installed_by_snapdrive_for_unix.html"
+        - title: SnapDrive for UNIX 安装的诊断文件
+          url: "/aix/concept_diagnostic_files_installed_by_snapdrive_for_unix.html"
+        - title: SnapDrive for UNIX 安装的手册页
+          url: "/aix/concept_manual_pages_installed_by_snapdrive_for_unix.html"
+      - title: 将适用于 UNIX 的 SnapDrive 升级到最新版本
+        url: "/aix/concept_what_snapdrive_for_unix_does_when_you_upgrade_your_current_version.html"
+    - title: 了解 SnapDrive for UNIX 守护进程
+      url: "/aix/concept_the_snapdrive_for_unix_daemon.html"
+      entries:
+      - title: 什么是 Web 服务和守护进程
+        url: "/aix/concept_what_the_web_service_and_daemon_are.html"
+      - title: 正在检查守护进程的状态
+        url: "/aix/task_checking_the_status_of_the_daemon.html"
+      - title: 启动 SnapDrive for UNIX 守护进程
+        url: "/aix/task_starting_the_snapdrive_for_unix_daemon.html"
+      - title: 更改默认守护进程密码
+        url: "/aix/task_changing_the_default_daemon_password.html"
+      - title: 正在停止守护进程
+        url: "/aix/task_stopping_the_daemon.html"
+        entries:
+        - title: 不强制停止守护进程
+          url: "/aix/task_nonforcibly_stopping_the_daemon.html"
+        - title: 强制停止守护进程
+          url: "/aix/task_forcibly_stopping_the_daemon.html"
+      - title: 正在重新启动守护进程
+        url: "/aix/task_restarting_the_daemon.html"
+      - title: 强制守护进程重新启动
+        url: "/aix/task_forcing_daemon_restart.html"
+      - title: 使用 HTTPS 安全守护进程通信
+        url: "/aix/concept_secure_daemon_communication_using_https.html"
+      - title: 生成自签名证书
+        url: "/aix/task_generating_self_signed_certificates.html"
+      - title: 生成 CA 签名的证书
+        url: "/aix/task_generating_ca_signed_certificate.html"
+    - title: 验证支持的配置
+      url: "/aix/task_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: 导入数据文件
+        url: "/aix/task_importing_data_files.html"
+      - title: 确定已安装的组件
+        url: "/aix/task_identifying_the_installed_components.html"
+      - title: 验证支持的配置
+        url: "/aix/task_verifying_the_supported_configurations.html"
+    - title: 支持存储系统重命名
+      url: "/aix/concept_support_for_storage_system_rename.html"
+      entries:
+      - title: 在主机系统中配置新的存储系统名称
+        url: "/aix/task_configuring_a_new_storage_system_name_to_a_host_system.html"
+      - title: 查看存储系统列表
+        url: "/aix/task_viewing_the_list_of_storage_system.html"
+      - title: 从旧存储系统迁移到新存储系统
+        url: "/aix/task_migrating_from_old_host_name_to_new_host_name.html"
+      - title: 查看迁移的新存储系统
+        url: "/aix/task_viewing_the_migrated_new_storage_system.html"
+      - title: 从主机系统中删除存储系统映射信息
+        url: "/aix/task_deleting_a_storage_system_entry.html"
+    - title: 使用 SnapDrive for UNIX 中的端口集
+      url: "/aix/concept_using_port_set_in_snapdrive_for_unix.html"
+      entries:
+      - title: 在 SnapDrive 中添加端口集
+        url: "/aix/task_adding_a_port_set_in_snapdrive.html"
+      - title: 查看端口集列表
+        url: "/aix/task_viewing_the_list_of_port_set.html"
+      - title: 从 SnapDrive 中删除端口集
+        url: "/aix/task_removing_a_port_set_from_snapdrive.html"
+      - title: 迁移到新的 SVM 名称
+        url: "/aix/concept_migrating_to_new_vserver_name.html"
+    - title: 配置 igroup
+      url: "/aix/concept_configuring_igroups.html"
+      entries:
+      - title: 添加 igroup
+        url: "/aix/task_adding_igroup.html"
+      - title: 删除 igroup
+        url: "/aix/task_deleting_igroup.html"
+      - title: 查看 igroup 列表
+        url: "/aix/task_viewing_the_list_of_igroups.html"
+    - title: 在 SnapDrive for UNIX 中使用选择性 LUN 映射
+      url: "/aix/concept_using_selective_lun_map_in_snapdrive_for_unix.html"
+    - title: 适用于 UNIX 的 SnapDrive 配置
+      url: "/aix/concept_snapdrive_for_unix_configuration.html"
+      entries:
+      - title: 配置适用于 UNIX 的 SnapDrive
+        url: "/aix/concept_how_to_configure_snapdrive_for_unix.html"
+        entries:
+        - title: 什么是 SnapDrive.conf 文件
+          url: "/aix/concept_what_the_snapdrive_conf_file_is.html"
+        - title: 配置选项及其默认值
+          url: "/aix/concept_configuration_options_and_their_default_values.html"
+        - title: SnapDrive 配置向导的功能
+          url: "/aix/concept_what_the_configuration_wizard_does.html"
+        - title: SnapDrive 配置向导
+          url: "/aix/concept_when_to_use_the_snapdrive_configuration_wizard.html"
+        - title: 一些配置命令
+          url: "/aix/reference_some_configuration_commands.html"
+        - title: 使用 SnapDrive 配置向导
+          url: "/aix/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html"
+        - title: 设置 SnapDrive.conf 文件中的值
+          url: "/aix/task_setting_values_in_the_snapdrive_conf_file.html"
+        - title: 检查适用于 UNIX 的 SnapDrive 版本
+          url: "/aix/task_checking_version_of_snapdrive_for_unix.html"
+      - title: SVM 的配置信息
+        url: "/aix/concept_configuration_information_for_vserver_environment.html"
+        entries:
+        - title: SVM 的登录信息
+          url: "/aix/concept_login_information_for_vserver.html"
+        - title: 指定 SVM 的登录信息
+          url: "/aix/task_specifying_login_information_for_vserver.html"
+        - title: 验证 SVM 的登录信息
+          url: "/aix/task_verifying_login_information_for_vserver.html"
+        - title: 从 SVM 中删除用户
+          url: "/aix/task_deleting_a_user_for_a_vserver.html"
+      - title: SnapDrive for UNIX 中的审核，恢复和跟踪日志记录
+        url: "/aix/concept_audit_recovery_and_trace_logging_in_snapdrive_for_unix.html"
+        entries:
+        - title: 日志类型
+          url: "/aix/concept_types_of_logs.html"
+        - title: 启用和禁用日志文件
+          url: "/aix/task_enabling_and_disabling_log_files.html"
+        - title: 日志文件轮换设置
+          url: "/aix/concept_log_file_rotation_settings.html"
+        - title: 审核日志文件的内容
+          url: "/aix/concept_contents_of_an_audit_log_file.html"
+        - title: 更改审核日志的默认值
+          url: "/aix/concept_changing_the_defaults_for_the_audit_logs.html"
+        - title: 恢复日志的内容
+          url: "/aix/concept_contents_of_the_recovery_log.html"
+        - title: 恢复日志的默认值
+          url: "/aix/concept_default_values_for_the_recovery_logs.html"
+        - title: 什么是跟踪日志文件
+          url: "/aix/concept_what_the_trace_log_file_is.html"
+          entries:
+          - title: 跟踪日志文件的默认值
+            url: "/aix/concept_default_vaules_for_the_trace_log_files.html"
+      - title: 什么是 AutoSupport
+        url: "/aix/concept_what_autosupport_is.html"
+        entries:
+        - title: SnapDrive for UNIX 如何使用 AutoSupport
+          url: "/aix/concept_how_snapdrive_forunix_usesautosupport.html"
+        - title: AutoSupport 消息的内容
+          url: "/aix/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html"
+        - title: AutoSupport 消息示例
+          url: "/aix/concept_example_of_an_autosupport_message.html"
+      - title: 在 SnapDrive for UNIX 中支持多路径访问
+        url: "/aix/concept_multipath_access_in_snapdrive_for_unix.html"
+        entries:
+        - title: 启用多路径
+          url: "/aix/task_enabling_multipathing.html"
+        - title: 刷新 DMP 路径的原因
+          url: "/aix/concept_reason_to_refresh_the_dmp_paths.html"
+      - title: SnapDrive for UNIX 中的精简配置
+        url: "/aix/concept_thin_provisioning_in_snapdrive_for_unix.html"
+        entries:
+        - title: 为 LUN 启用精简配置
+          url: "/aix/task_enabling_thin_provisioning_for_luns.html"
+        - title: 为 NFS 实体启用精简配置
+          url: "/aix/task_enabling_thin_provisioning_for_nfs_entities.html"
+      - title: 多子网配置
+        url: "/aix/concept_multiple_subnet_configuration.html"
+        entries:
+        - title: 为存储系统配置管理和数据接口
+          url: "/aix/task_configuring_management_and_data_interfaces_for_a_storage_system.html"
+        - title: 查看管理接口的所有数据接口
+          url: "/aix/task_viewing_all_the_data_interfaces_of_a_management_interface.html"
+        - title: 删除管理接口的数据接口条目
+          url: "/aix/task_deleting_a_data_interface_entry_of_a_management_interface.html"
+        - title: SAN 环境中的 LUN 名称
+          url: "/aix/concept_lun_names_in_san_environment.html"
+        - title: 纯 NFS 环境
+          url: "/aix/concept_pure_nfs_environment.html"
+        - title: 混合 SAN 和 NFS 环境
+          url: "/aix/concept_mixed_environments_of_san_and_nfs.html"
+      - title: 自动检测主机实体
+        url: "/aix/concept_automatic_detection_of_host_entities.html"
+      - title: 什么是 SnapDrive 向导
+        url: "/aix/concept_what_snapdrive_wizard_is.html"
+        entries:
+        - title: 使用向导执行的操作
+          url: "/aix/concept_operations_performed_using_wizards.html"
+        - title: 使用向导管理存储
+          url: "/aix/concept_managing_storage_using_a_wizard.html"
+        - title: 使用向导管理 Snapshot 副本
+          url: "/aix/concept_managing_snapshot_copy_using_a_wizard.html"
+        - title: 使用向导删除存储
+          url: "/aix/concept_deleting_storage_using_a_wizard.html"
+    - title: SnapDrive for UNIX 中的安全功能
+      url: "/aix/concept_snapdrive_for_unix_security.html"
+      entries:
+      - title: 什么是安全功能
+        url: "/aix/concept_security_featuresprovided_bysnapdrive_for_unix.html"
+      - title: SnapDrive for UNIX 中的访问控制
+        url: "/aix/concept_access_control_in_snapdrive_for_unix.html"
+        entries:
+        - title: 什么是访问控制设置
+          url: "/aix/concept_what_access_control_settings_are.html"
+        - title: 可用的访问控制级别
+          url: "/aix/concept_available_access_control_levels.html"
+        - title: 设置访问控制权限
+          url: "/aix/task_setting_up_access_control_permission.html"
+        - title: 查看访问控制权限
+          url: "/aix/task_viewing_the_access_control_permission.html"
+      - title: 存储系统的登录信息
+        url: "/aix/concept_login_information_for_storage_systems.html"
+        entries:
+        - title: 指定登录信息
+          url: "/aix/task_specifying_login_information.html"
+        - title: 验证与 SnapDrive for UNIX 关联的存储系统用户名
+          url: "/aix/task_verifying_storagesystem_user_namesassociated_withsnapdrive_for_unix.html"
+        - title: 删除存储系统的用户登录名
+          url: "/aix/task_deleting_a_userlogin_for_a_storagesystem.html"
+      - title: 设置 HTTP
+        url: "/aix/task_setting_up_http.html"
+    - title: SnapDrive for UNIX 中基于角色的访问控制
+      url: "/aix/concept_role_based_access_control_in_snapdrive_for_unix.html"
+      entries:
+      - title: 什么是 SnapDrive for UNIX 中基于角色的访问控制（ RBAC ）
+        url: "/aix/concept_what_rbac_in_snapdrive_for_unix_is.html"
+      - title: SnapDrive for UNIX 和 Operations Manager 控制台交互
+        url: "/aix/concept_snapdrive_for_unix_and_operations_manager_interaction.html"
+      - title: 在 SnapDrive for UNIX 中配置基于角色的访问控制
+        url: "/aix/concept_role_based_access_control_configuration_on_snapdrive_for_unix.html"
+        entries:
+        - title: 在 Operations Manager 控制台中配置 SD-admin
+          url: "/aix/concept_configuring_sd_admin_in_operations_manager.html"
+          entries:
+          - title: 使用命令行界面配置 SD-admin
+            url: "/aix/task_configuring_sd_admin_using_cli.html"
+        - title: 将 SD 主机名添加到存储系统
+          url: "/aix/task_adding_sd_hostname_to_the_storage_system.html"
+          entries:
+          - title: 使用 CLI 将 SD- 主机名添加到存储系统
+            url: "/aix/task_adding_sd_hostname_to_storage_system_using_cli.html"
+        - title: 在 SnapDrive for UNIX 上配置用户凭据
+          url: "/aix/task_configuring_user_credentials_on_snapdrive_for_unix.html"
+        - title: 用于使用 Operations Manager 控制台执行访问检查的用户名格式
+          url: "/aix/concept_user_name_formats_for_access_check_with_operations_manager.html"
+        - title: 基于角色的访问控制的配置变量
+          url: "/aix/reference_configuration_parameters_for_role_based_access_control.html"
+      - title: SnapDrive 命令和功能
+        url: "/aix/concept_snapdrive_commands_and_capabilities.html"
+      - title: 预配置的角色，便于配置用户角色
+        url: "/aix/reference_preconfigured_roles_for_ease_of_user_role_configuration.html"
+      - title: Operations Manager 控制台上的存储系统自动更新
+        url: "/aix/concept_automatic_storage_system_update_on_operations_manager.html"
+      - title: 多个 Operations Manager 控制台服务器
+        url: "/aix/concept_multiple_operations_manager_servers.html"
+      - title: Operations Manager 控制台不可用
+        url: "/aix/concept_operations_manager_unavailable.html"
+      - title: RBAC 和存储操作示例
+        url: "/aix/concept_rbac_and_storage_operation_examples.html"
+        entries:
+        - title: 对单个存储对象执行单个文件规范操作
+          url: "/aix/concept_operation_with_a_single_filespec_on_a_single_storage_object.html"
+        - title: 对多个存储对象执行单个文件规范操作
+          url: "/aix/concept_operation_with_a_single_filespec_on_multiple_storage_objects.html"
+        - title: 对多个文件规范和存储对象执行的操作
+          url: "/aix/concept_operation_with_multiple_filespec_and_storage_objects.html"
+        - title: 对多个存储对象执行的操作
+          url: "/aix/concept_operation_with_multiple_storage_objects.html"
+        - title: 使用多个 Operations Manager 控制台服务器管理存储系统的操作
+          url: "/aix/concept_operation_with_multiple_operations_manager_servers_managing_storage_systems.html"
+    - title: SnapDrive for UNIX 中的 FlexClone 卷
+      url: "/aix/concept_flexclone_volumes_in_snapdrive_for_unix.html"
+      entries:
+      - title: 什么是 FlexClone 卷
+        url: "/aix/concept_what_flexclone_volumes_are.html"
+      - title: FlexClone 卷的优势
+        url: "/aix/concept_benefits_of_flexclone_volumes.html"
+      - title: FlexClone 卷的类型
+        url: "/aix/concept_types_of_flexclone_volumes.html"
+      - title: FlexClone 卷上的 SnapDrive for UNIX 操作
+        url: "/aix/concept_snapdrive_for_unix_operations_on_flexclone_volumes.html"
+        entries:
+        - title: 对 FlexClone 卷操作进行基于角色的访问控制
+          url: "/aix/concept_role_based_access_control_for_flexclone_volume_operations.html"
+        - title: Snap Connect 操作步骤
+          url: "/aix/concept_snap_connect_procedure.html"
+        - title: Snap disconnect 操作步骤
+          url: "/aix/concept_snap_disconnect_procedure.html"
+        - title: 连接到 LUN 中的单个文件规范
+          url: "/aix/concept_connecting_to_a_single_filespec_in_a_lun.html"
+        - title: 连接到多个文件系统
+          url: "/aix/concept_connecting_to_multiple_filespecs.html"
+        - title: 正在断开文件规范的连接
+          url: "/aix/concept_disconnecting_a_filespec.html"
+        - title: 拆分 FlexClone 卷
+          url: "/aix/concept_splitting_the_flexclone_volume.html"
+        - title: FlexClone 卷的空间预留
+          url: "/aix/concept_space_reservation_with_a_flexclone_volume.html"
+    - title: SnapDrive for UNIX 中的存储配置
+      url: "/aix/concept_storage_provisioning_in_snapdrive_for_unix.html"
+      entries:
+      - title: SnapDrive for UNIX 中的存储操作
+        url: "/aix/concept_storageprovisioning_withsnapdrive_for_unix.html"
+        entries:
+        - title: 跨多个存储系统卷的存储操作
+          url: "/aix/concept_storageoperations_acrossmultiple_storagesystem_volumes.html"
+        - title: 存储操作注意事项
+          url: "/aix/concept_considerations_forstorage_operations.html"
+      - title: 使用 SnapDrive for UNIX 创建存储
+        url: "/aix/concept_storagecreation_with_snapdrive_forunix.html"
+        entries:
+        - title: 创建存储的方法
+          url: "/aix/concept_methods_forcreating_storage.html"
+        - title: 存储创建操作的准则
+          url: "/aix/concept_guidelines_for_thestorage_createoperation.html"
+        - title: 存储创建操作所需的信息
+          url: "/aix/reference_informationrequired_for_the_storagecreate_operation.html"
+        - title: 为 LVM 实体创建存储
+          url: "/aix/concept_storage_creation_for_lvm_vxvm_entities.html"
+        - title: 为 LUN 上的文件系统创建存储
+          url: "/aix/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html"
+        - title: 创建不具有主机实体的 LUN
+          url: "/aix/task_creating_lunswithout_hostentities.html"
+        - title: 在 LUN 上创建文件系统并自动设置 LUN
+          url: "/aix/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html"
+        - title: 在 LUN 上创建文件系统并指定 LUN
+          url: "/aix/task_creating_a_filesystem_on_a_lunand_specifying_thelun.html"
+        - title: 创建 LVM 实体并自动设置 LUN
+          url: "/aix/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html"
+        - title: 创建 LVM 实体并指定 LUN
+          url: "/aix/task_creating_an_lvm_a_vxvmentity_andspecifying_the_lun.html"
+      - title: 用于显示可用存储的命令
+        url: "/aix/concept_command_to_use_todisplay_availablestorage.html"
+        entries:
+        - title: 显示存储信息的方法
+          url: "/aix/concept_methods_fordisplaying_storageinformation.html"
+      - title: 使用 SnapDrive for UNIX 增加存储大小
+        url: "/aix/concept_increase_in_storage_size_using_snapdrive_for_unix.html"
+        entries:
+        - title: storage resize 命令的准则
+          url: "/aix/concept_guidelines_for_the_storage_resize_command.html"
+        - title: 使用 SnapDrive storage resize 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html"
+        - title: 用于增加存储大小的命令语法
+          url: "/aix/concept_command_syntax_to_increase_the_sizeof_the_storage.html"
+        - title: 主机卷和文件系统大小调整操作
+          url: "/aix/concept_hostvolumes_and_filesystem_resize_operation.html"
+      - title: storage connect 命令
+        url: "/aix/concept_the_storageconnect_command.html"
+        entries:
+        - title: storage connect 命令的准则
+          url: "/aix/concept_guidelines_for_thestorage_connectcommand.html"
+        - title: 使用 SnapDrive storage connect 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html"
+        - title: 连接具有磁盘组，主机卷和文件系统的 LUN
+          url: "/aix/concept_connecting_lunswith_disk_groups_host_volumes_andfile_systems.html"
+        - title: 使用共享资源连接现有 LUN
+          url: "/aix/concept_connecting_existingluns_with_sharedresources.html"
+      - title: storage disconnect 命令
+        url: "/aix/concept_the_storagedisconnect_command.html"
+        entries:
+        - title: 断开存储连接的方法
+          url: "/aix/concept_methods_fordisconnectingstorage.html"
+        - title: SnapDrive storage disconnect 命令的准则
+          url: "/aix/concept_guidelines_for_thesnapdrive_storagedisconnectcommand.html"
+        - title: 有关使用 storage disconnect 命令的提示
+          url: "/aix/task_tips_for_usingthe_storage_disconnect_command.html"
+        - title: 使用 SnapDrive storage disconnect 命令所需的信息
+          url: "/aix/reference_informationrequired_forusing_the_snapdrive_storagedisconnect_command.html"
+        - title: 用于从主机断开 LUN 连接的命令语法
+          url: "/aix/concept_command_syntax_for_disconnectingluns_from_the_host.html"
+        - title: 用于将 LUN 上创建的文件系统与主机断开连接的命令语法
+          url: "/aix/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html"
+        - title: 用于从主机断开 LUN 和存储实体连接的命令语法
+          url: "/aix/concept_command_syntax_for_disconnectingluns_and_storageentities_from_thehost.html"
+      - title: storage delete 命令
+        url: "/aix/concept_the_storagedeletecommand.html"
+        entries:
+        - title: 使用 storage delete 命令的准则
+          url: "/aix/concept_guidelines_for_usingthe_storage_deletecommand.html"
+        - title: 使用 SnapDrive storage delete 命令所需的信息
+          url: "/aix/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html"
+    - title: 在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
+      url: "/aix/concept_snapshot_copies_in_snapdrive_for_unix.html"
+      entries:
+      - title: SnapDrive for UNIX 中的 Snapshot 操作是什么
+        url: "/aix/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html"
+        entries:
+        - title: 使用 Snapshot 副本时的注意事项
+          url: "/aix/concept_considerations_when_working_with_snapshot_copies.html"
+      - title: Snapshot 副本操作
+        url: "/aix/concept_snapshot_copy_operations.html"
+        entries:
+        - title: 崩溃状态一致的 Snapshot 副本
+          url: "/aix/concept_crash_consistent_snapshot_copies.html"
+          entries:
+          - title: 与 Data ONTAP 7.2 及更高版本的崩溃一致性
+            url: "/aix/concept_crash_consistency_with_data_ontap_7_2_and_later.html"
+          - title: SnapDrive for UNIX 中的一致性组 Snapshot 副本
+            url: "/aix/concept_using_consistency_group_snapshots_in_snapdrive_for_unix.html"
+          - title: 创建一致性组 Snapshot 副本
+            url: "/aix/task_capturing_a_consistency_group_snapshot.html"
+          - title: 禁用一致性组 Snapshot 副本
+            url: "/aix/task_disabling_consistency_group_snapshots.html"
+        - title: 应用程序一致的 Snapshot 副本
+          url: "/aix/concept_application_consistentsnapshot_copies.html"
+        - title: 跨存储系统或卷的 Snapshot 副本
+          url: "/aix/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html"
+        - title: 创建不相关实体的 Snapshot 副本
+          url: "/aix/concept_creating_snapshotcopies_of_unrelatedentities.html"
+        - title: 创建 Snapshot 副本的准则
+          url: "/aix/concept_guidelines_forsnapshot_copycreation.html"
+        - title: 使用 SnapDrive snap create 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html"
+        - title: 创建 Snapshot 副本
+          url: "/aix/task_creating_asnapshot_copy.html"
+      - title: 此时将显示 Snapshot 副本信息
+        url: "/aix/concept_snapshot_copies_information_display.html"
+        entries:
+        - title: 用于显示 Snapshot 副本信息的命令
+          url: "/aix/concept_command_to_use_todisplay_snapshotcopy_information.html"
+        - title: 显示 Snapshot 副本的准则
+          url: "/aix/task_guidelines_fordisplayingsnapshot_copies.html"
+        - title: 使用 SnapDrive snap show 或 list 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapshow_or_list_commands.html"
+        - title: 显示存储系统上的 Snapshot 副本
+          url: "/aix/concept_displayingsnapshot_copiesresiding_on_astorage_system.html"
+        - title: 显示存储系统卷的 Snapshot 副本
+          url: "/aix/concept_displayingsnapshot_copies_of_a_storage_system_volume.html"
+        - title: 显示 Snapshot 副本
+          url: "/aix/task_displaying_asnapshot_copy.html"
+        - title: 获取 Snapshot 副本名称的其他方法
+          url: "/aix/concept_other_ways_to_getsnapshot_copynames.html"
+      - title: Snapshot 副本重命名
+        url: "/aix/concept_snapshot_copy_rename.html"
+        entries:
+        - title: 用于重命名 Snapshot 副本的命令
+          url: "/aix/concept_command_to_use_torename_a_snapshotcopy.html"
+        - title: 重命名跨存储系统或卷的 Snapshot 副本
+          url: "/aix/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html"
+        - title: 重命名 Snapshot 副本的准则
+          url: "/aix/concept_guidelines_forrenaming_snapshotcopies.html"
+        - title: 更改 Snapshot 副本名称
+          url: "/aix/task_changing_asnapshot_copyname.html"
+      - title: 还原 Snapshot 副本
+        url: "/aix/concept_restoring_a_snapshot_copy.html"
+        entries:
+        - title: 用于还原 Snapshot 副本的命令
+          url: "/aix/concept_command_to_use_torestore_snapshotcopies.html"
+        - title: 在目标存储系统上还原 Snapshot 副本
+          url: "/aix/concept_restoring_snapshotcopies_ona_destination_storagesystem.html"
+          entries:
+          - title: 还原多个存储实体
+            url: "/aix/concept_restoring_multiple_storage_entities.html"
+        - title: 还原 Snapshot 副本的注意事项
+          url: "/aix/concept_considerations_forrestoring_asnapshot_copy.html"
+        - title: 使用 SnapDrive snap restore 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html"
+        - title: 还原 Snapshot 副本
+          url: "/aix/task_restoring_asnapshot_copy.html"
+        - title: 从其他主机还原 Snapshot 副本
+          url: "/aix/concept_restoring_asnapshot_copy_froma_different_host.html"
+        - title: 基于卷的 SnapRestore
+          url: "/aix/concept_volume_based_snaprestore.html"
+          entries:
+          - title: 什么是基于卷的 SnapRestore
+            url: "/aix/concept_what_volume_based_snaprestore_is.html"
+          - title: 使用基于卷的 SnapRestore 的注意事项
+            url: "/aix/concept_considerations_for_using_volume_based_snaprestore.html"
+          - title: 基于卷的 SnapRestore 的强制检查
+            url: "/aix/concept_mandatory_checks_for_volume_based_snaprestore.html"
+          - title: 可由用户覆盖的检查
+            url: "/aix/concept_checks_that_can_be_overridden_by_the_user.html"
+          - title: 基于卷的 SnapRestore 命令
+            url: "/aix/concept_volume_based_snaprestore_command.html"
+          - title: 有关映射到本地或远程主机的 LUN 的信息
+            url: "/aix/concept_information_about_luns_mapped_to_local_or_remote_hosts.html"
+          - title: 特定卷的主机文件规范信息
+            url: "/aix/concept_host_filespec_information_for_a_particular_volume.html"
+          - title: 用于空间预留的基于卷的 SnapRestore
+            url: "/aix/concept_volume_based_snaprestore_for_space_reservation.html"
+      - title: 连接到 Snapshot 副本
+        url: "/aix/concept_connecting_to_asnapshot_copy.html"
+        entries:
+        - title: SnapDrive snap connect 命令的工作原理
+          url: "/aix/concept_how_the_snapdrivesnap_connect_command_works.html"
+        - title: 在镜像存储系统上连接 Snapshot 副本
+          url: "/aix/concept_connectingsnapshot_copies_onmirrored_storagesystems.html"
+          entries:
+          - title: 连接多个存储实体
+            url: "/aix/concept_connecting_multiple_storage_entities.html"
+        - title: Snapshot 连接和 Snapshot 还原操作
+          url: "/aix/concept_snapshot_connectand_snapshotrestore_operations.html"
+        - title: 连接 Snapshot 副本的准则
+          url: "/aix/concept_guidelines_forconnectingsnapshot_copies.html"
+        - title: 使用 SnapDrive snap connect 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapconnect_command.html"
+        - title: 连接到包含 LUN 的 Snapshot 副本
+          url: "/aix/task_connecting_to_asnapshot_copy_thatcontains_luns.html"
+        - title: 连接到 LUN 以外存储实体的 Snapshot 副本
+          url: "/aix/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html"
+        - title: 连接到 LUN 以外的共享存储实体的 Snapshot 副本
+          url: "/aix/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html"
+      - title: 拆分卷克隆或 LUN 克隆
+        url: "/aix/concept_splitting_the_volume_or_lun_clone_operations.html"
+        entries:
+        - title: 估算用于拆分卷克隆的存储空间
+          url: "/aix/task_estimating_the_storage_space_to_split_a_volume_clone.html"
+        - title: 估算用于拆分 LUN 克隆的存储空间
+          url: "/aix/task_estimating_the_storage_space_to_split_a_lun_clone.html"
+        - title: 使用 Snapshot 副本估算存储空间
+          url: "/aix/task_estimating_the_storage_space_using_a_snapshot_copy.html"
+        - title: 启动卷克隆或 LUN 克隆拆分
+          url: "/aix/task_starting_the_volume_or_lun_clone_split_start.html"
+        - title: 查看卷克隆或 LUN 克隆拆分的状态
+          url: "/aix/task_verifying_the_status_of_clone_split.html"
+        - title: 停止卷克隆或 LUN 克隆拆分操作
+          url: "/aix/task_stopping_the_clone_and_lun_clone_split.html"
+        - title: 使用作业 ID 或文件规范查看克隆拆分操作的结果
+          url: "/aix/task_viewing_the_result_of_a_clone_split_using_filespec.html"
+      - title: 删除 Snapshot 副本
+        url: "/aix/concept_deleting_a_snapshot_copy.html"
+        entries:
+        - title: 用于删除 Snapshot 副本的命令
+          url: "/aix/concept_command_to_use_todelete_snapshotcopies.html"
+        - title: 删除 Snapshot 副本的原因
+          url: "/aix/concept_reasons_to_deletesnapshotcopies.html"
+        - title: 删除 Snapshot 副本的准则
+          url: "/aix/concept_guidelines_fordeleting_snapshotcopies.html"
+        - title: 使用 SnapDrive snap delete 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html"
+        - title: 删除 Snapshot 副本
+          url: "/aix/task_deleting_a_snapshotcopy.html"
+      - title: 断开 Snapshot 副本的连接
+        url: "/aix/concept_disconnecting_a_snapshot_copy.html"
+        entries:
+        - title: 使用 Snapshot 断开连接操作
+          url: "/aix/concept_using_the_snapshotdisconnectoperation.html"
+        - title: 断开 Snapshot 副本连接的准则
+          url: "/aix/concept_guidelines_fordisconnectingsnapshot_copies.html"
+          entries:
+          - title: 断开 NFS 实体的 Snapshot 副本连接的准则
+            url: "/aix/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html"
+        - title: 使用 SnapDrive snap disconnect 命令所需的信息
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapdisconnect_command.html"
+        - title: 断开 Snapshot 副本与 LUN 的连接，而不断开存储实体的连接
+          url: "/aix/task_disconnectingsnapshot_copy_withluns_and_nostorage_entities.html"
+        - title: 断开 Snapshot 副本与存储实体的连接
+          url: "/aix/task_disconnectingsnapshot_copy_withstorage_entities.html"
+        - title: 断开 Snapshot 副本与共享存储实体的连接
+          url: "/aix/task_disconnectingsnapshot_copieswith_shared_storageentities.html"
+    - title: 数据收集实用程序
+      url: "/aix/concept_data_collection_utility.html"
+      entries:
+      - title: 关于数据收集实用程序
+        url: "/aix/concept_about_the_data_collection_utility.html"
+      - title: 由 SnapDrive.dc 执行的任务
+        url: "/aix/concept_tasks_performed_by_snapdrive_dc.html"
+      - title: 正在执行数据收集实用程序
+        url: "/aix/concept_executing_the_data_collection_utility.html"
+      - title: 使用 SnapDrive.dc 的示例
+        url: "/aix/reference_examples_of_using_snapdrive_dc.html"
+    - title: 故障排除
+      url: "/aix/concept_troubleshooting.html"
+      entries:
+      - title: 了解错误消息
+        url: "/aix/concept_understanding_error_messages.html"
+        entries:
+        - title: 错误消息位置
+          url: "/aix/concept_error_message_locations.html"
+        - title: 错误消息格式
+          url: "/aix/concept_error_message_format.html"
+          entries:
+          - title: 错误消息示例
+            url: "/aix/reference_sample_error_message.html"
+      - title: 常见错误消息
+        url: "/aix/concept_common_error_messages.html"
+        entries:
+        - title: 操作系统对打开的文件的限制
+          url: "/aix/concept_operating_system_limits_on_open_files.html"
+        - title: 删除 LUN 和克隆会使 UNIX 中的设备陈旧
+          url: "/aix/concept_stale_devices_in_unix.html"
+        - title: 错误消息值
+          url: "/aix/reference_error_message_values.html"
+      - title: 如果存在多个 SAN 路径，但禁用了多路径，则 SnapDrive storage create 命令将失败
+        url: "/aix/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html"
+      - title: 如果在未将卷卸载到主机系统的情况下删除了 SVM 上的卷，则 SnapDrive storage show 命令会显示不正确的实际路径
+        url: "/aix/concept_snapdrive_storage_show_command_returns_incorrect_path_if_volume_deleted_without_unmount.html"
+      - title: 如果在主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败
+        url: "/aix/concept_snap_restore_operation_fails_nfsv3_and_nfsv4_versions_enabled_in_host_and_storage_system.html"
+      - title: 快照断开操作无法删除克隆的卷
+        url: "/aix/task_recieving_error_does_not_look_snapdrive_generated.html"
+      - title: 如果 iSCSI 未运行，则 SnapDrive for UNIX 报告错误
+        url: "/aix/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html"
+      - title: 错误代码消息存在差异
+        url: "/aix/concept_discrepancy_in_the_error_code_message.html"
+      - title: 命令显示为已阻止
+        url: "/aix/concept_commands_appear_blocked_commands_appear_blocked.html"
+      - title: 在 SnapRestore 期间会显示集群消息
+        url: "/aix/concept_clustering_message_appears_during_snap.html"
+      - title: 标准退出状态值
+        url: "/aix/concept_standard_exit_status_values.html"
+        entries:
+        - title: 了解错误消息的退出状态值
+          url: "/aix/reference_understanding_exit_status_values_of_error_messages.html"
+        - title: 使用退出状态值
+          url: "/aix/reference_using_exit_status_values.html"
+        - title: 脚本示例
+          url: "/aix/reference_script_example.html"
+        - title: 退出状态值
+          url: "/aix/reference_exit_status_values.html"
+      - title: 基于卷的 SnapRestore 检查失败
+        url: "/aix/concept_volume_based_snaprestore_check_fails.html"
+      - title: Snapshot 创建和删除操作失败
+        url: "/aix/concept_snapshot_create_and_delete_operation_fails.html"
+      - title: 无法创建 Snapshot 副本
+        url: "/aix/concept_unable_to_create_a_snapshot_copy.html"
+      - title: 无法还原 Snapshot 副本
+        url: "/aix/concept_unable_to_restore_a_snapshot_copy.html"
+      - title: 当主机无法与存储系统通信时，无法重新启动守护进程
+        url: "/aix/concept_unable_to_start_daemon.html"
+      - title: "（ AIX ） MPIO cfmode 支持受限"
+        url: "/aix/concept_aix_mpio_cfmode_support_limited_sdu.html"
+      - title: 无法启动守护进程
+        url: "/aix/concept_unable_to_start_the_daemon.html"
+      - title: AIX 发生原因中的虚影设备句柄在 iSCSI 命令上的返回时间较长
+        url: "/aix/concept_ghost_device_handles_in_aix_cause_longer_return_time_on_iscsi_commands.html"
+      - title: snapdrived start 命令失败
+        url: "/aix/concept_snapdrived_start_command_fails.html"
+      - title: SnapDrive 命令有时会导致挂载或卸载文件系统以及修改系统文件
+        url: "/aix/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html"
+      - title: 无法选择存储堆栈
+        url: "/aix/concept_unable_to_select_a_storage_stack.html"
+      - title: snapdrived stop 或 snapdrived start 命令挂起
+        url: "/aix/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html"
+      - title: SnapDrive for UNIX 命令显示 Could not check access error
+        url: "/aix/concept_snapdrive_for_unix_command_displays_could_not_check_access_error.html"
+      - title: 在 NFS 环境中挂载 FlexVol 卷失败
+        url: "/aix/task_mounting_a_flexvol_volume_fails_in_nfs_environment.html"
+      - title: SnapDrive for UNIX 对美元符号的解释不正确
+        url: "/aix/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html"
+      - title: 发现某些映射设备时， SnapDrive for UNIX storage create 命令失败
+        url: "/aix/concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.html"
+      - title: 使用自定义的 LD_library_path 时， SnapDrive for UNIX 命令失败
+        url: "/aix/concept_snapdrive_for_unix_commands_fail_when_there_is_a_customized_ld_library_path.html"
+      - title: 在多个子网配置中， SnapDrive 操作失败
+        url: "/aix/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html"
+      - title: 使用命令 Shell 设置环境变量时， SnapDrive for UNIX 命令失败
+        url: "/aix/reference_snapdrive_for_unix_does_not_accept_environment_variables_set_using_command_shells.html"
+      - title: 默认情况下，无法在 AIX 上安装 SnapDrive for UNIX 修补程序
+        url: "/aix/reference_unable_to_install_snapdrive_for_unix_patches_on_aix_by_default.html"
+      - title: SnapDrive for UNIX 不会自动删除 UNIX 中陈旧的设备
+        url: "/aix/reference_snapdrive_for_unix_does_not_automatically_delete_stale_devices_in_unix.html"
+    - title: 命令参考
+      url: "/aix/concept_command_reference.html"
+      entries:
+      - title: 收集 SnapDrive for UNIX 命令所需的信息
+        url: "/aix/concept_collecting_information_needed_by_snapdrive_for_unix_commands.html"
+        entries:
+        - title: 收集命令所需的信息
+          url: "/aix/reference_collecting_information_needed_by_commands.html"
+        - title: 有关命令的一般注意事项
+          url: "/aix/reference_general_notes_about_the_commands.html"
+      - title: SnapDrive for UNIX 命令摘要
+        url: "/aix/concept_summary_of_the_snapdrive_for_unix_commands.html"
+        entries:
+        - title: 命令摘要
+          url: "/aix/reference_command_summary.html"
+          entries:
+          - title: 配置命令行
+            url: "/aix/reference_configuration_command_lines.html"
+          - title: 存储配置命令行
+            url: "/aix/reference_storage_provisioning_command_lines.html"
+          - title: 主机端命令行
+            url: "/aix/reference_host_side_command_lines.html"
+          - title: Snapshot 操作命令行
+            url: "/aix/reference_snapshot_operation_command_lines.html"
+        - title: SnapDrive for UNIX 选项，关键字和参数
+          url: "/aix/concept_snapdrive_for_unix_options_keywords_and_arguments.html"
+          entries:
+          - title: 命令行选项
+            url: "/aix/reference_command_line_options.html"
+          - title: 关键字规则
+            url: "/aix/reference_rules_for_keywords.html"
+          - title: 命令行关键字
+            url: "/aix/reference_command_line_keywords.html"
+          - title: 命令行参数
+            url: "/aix/reference_command_line_arguments.html"
+  - title: 法律声明
+    url: "/reference_legal_notices.html"
