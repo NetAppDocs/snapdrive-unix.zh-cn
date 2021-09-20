@@ -319,9 +319,7 @@ FlexClone 未在存储系统上获得许可。在存储系统上添加 FlexClone
  a| 
 . `无法将存储系统 <storage_name> 上的 LUN <LUN_name> 导出到子操作系统。`
 +
-....
-or
-....
+ or
 
  a| 
 * 检查 ESX 服务器（或） ESX 服务器中陈旧的 RDM 条目中是否存在任何 RDM LUN 映射。

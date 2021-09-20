@@ -1,5 +1,5 @@
+---
 sidebar:
-  
   entries:
   - title: 主页
     url: "/index.html"
@@ -484,8 +484,8 @@ sidebar:
           url: "/linux-administration/concept_storage_creation_for_lvm_vxvm_entities.html"
         - title: 为 LUN 上的文件系统创建存储
           url: "/linux-administration/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html"
-        - title: Red Hat Enterprise Linux （ RHEL ）和 SUSE Linux Enterprise Server （ SLES
-            ）中的存储分区方案
+        - title: Red Hat Enterprise Linux （ RHEL ）和 SUSE Linux Enterprise Server （
+            SLES ）中的存储分区方案
           url: "/linux-administration/concept_support_for_partitioned_or_non_partitioned_devices_in_rhel_and_suse.html"
           entries:
           - title: 支持的分区设备

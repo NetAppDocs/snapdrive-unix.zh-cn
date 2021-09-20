@@ -25,9 +25,7 @@ summary: 如果要启用日志文件，请在要启用的日志文件的名称 -
  a| 
 * 启用日志文件 *
  a| 
-....
-Specify a file name as the value in the name-value pair of the log file you want to enable. SnapDrive for UNIX only writes log files if it has the name of a file to write to. The default names for the log files are as follows:
-....
+ Specify a file name as the value in the name-value pair of the log file you want to enable. SnapDrive for UNIX only writes log files if it has the name of a file to write to. The default names for the log files are as follows:
 ** 审核日志： `sd-audit.log`
 ** 恢复日志： `sd-recovery.log`
 ** 跟踪日志： `sd-trace.log`
@@ -41,9 +39,7 @@ NOTE: 这些文件的路径可能因主机操作系统而异。
  a| 
 * 禁用日志文件 *
  a| 
-....
-Do not enter a value for the log file name parameter. If you do not supply a value, there is no file name to which SnapDrive for UNIX can write the log information.
-....
+ Do not enter a value for the log file name parameter. If you do not supply a value, there is no file name to which SnapDrive for UNIX can write the log information.
 * 示例 * 此示例将禁用审核日志文件。`audit-log-file=""`
 
 |===

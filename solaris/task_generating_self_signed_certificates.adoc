@@ -55,9 +55,7 @@ NOTE: `Common Name` 值必须为 _localhost_ 。
 
 . 提取元数据（可选）。
 +
-....
-$ openssl x509 -noout -fingerprint -text < host.cert > host.info
-....
+ $ openssl x509 -noout -fingerprint -text < host.cert > host.info
 +
 您可以保存证书元数据以供日后快速参考。
 
