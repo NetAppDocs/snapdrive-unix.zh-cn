@@ -2,7 +2,7 @@
 permalink: solaris/concept_reset_the_snap_reserve_option.html 
 sidebar: sidebar 
 keywords: snap, snapdrive, reset, reserve, option 
-summary: 在光纤通道 \ （ FC\ ）或 Internet 小型计算机系统接口 \ （ iSCSI\ ）环境中使用 Data ONTAP 时，应将包含 SnapDrive for UNIX LUN 的所有存储系统卷上的快照预留选项重置为 0% 。 
+summary: '在光纤通道 \ （ FC\ ）或 Internet 小型计算机系统接口 \ （ iSCSI\ ）环境中使用 Data ONTAP 时，应将包含 SnapDrive for UNIX LUN 的所有存储系统卷上的快照预留选项重置为 0% 。' 
 ---
 = 重置快照预留选项
 :icons: font
