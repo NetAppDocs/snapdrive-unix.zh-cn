@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, syntax, size, storage, increase
 summary: 要增加存储的大小，您应了解要使用的正确语法。 
 ---
 = 用于增加存储大小的命令语法
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

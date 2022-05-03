@@ -5,6 +5,7 @@ keywords: snap, snapdrive, support, storage, partitioning, multipathing
 summary: SnapDrive for UNIX 5.0 或更高版本可在 Linux 中为多路径和非多路径环境提供存储分区功能。 
 ---
 = 支持的分区设备
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, benefits, flexcone, volumes
 summary: FlexClone 卷可提供数据管理和性能优势。 
 ---
 = FlexClone 卷的优势
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

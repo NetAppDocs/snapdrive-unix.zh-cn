@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, filespec, information, volume
 summary: 在卷还原预览报告中， SnapDrive for UNIX 会显示 LUN 映射信息。显示的信息与检查相关，正常文件将还原。查找基于特定卷上的 LUN 的所有主机文件名非常耗时，并且会减慢卷还原过程的速度。 
 ---
 = 特定卷的主机文件规范信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, fail, subnet, configuration, multiple
 summary: 如果禁用了 Internet 控制消息协议 \ （ ICMP ）访问，或者主机和存储系统网络之间的 ICMP 数据包丢失，则 SnapDrive 操作在多个子网配置中失败。 
 ---
 = 在多个子网配置中， SnapDrive 操作失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

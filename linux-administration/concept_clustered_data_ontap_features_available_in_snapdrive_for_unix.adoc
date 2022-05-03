@@ -5,6 +5,7 @@ keywords: snap, snapdrive, data, ontap, clustered
 summary: SnapDrive for UNIX 5.0 及更高版本支持集群模式 Data ONTAP 的某些功能。 
 ---
 = SnapDrive for UNIX 中提供的集群模式 Data ONTAP 功能
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, disconenct, command, information, required
 summary: 下表提供了使用 SnapDrive storage disconnect 命令时需要提供的信息。 
 ---
 = 使用 SnapDrive storage disconnect 命令所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

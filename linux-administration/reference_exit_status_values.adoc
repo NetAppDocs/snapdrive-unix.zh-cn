@@ -5,6 +5,7 @@ keywords: snap, snapdrive, exit, status, error, value
 summary: 每个退出状态值都有一个错误名称以及与其关联的类型。查看此表以了解退出状态值，错误名称，类型和问题描述。 
 ---
 = 退出状态值
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

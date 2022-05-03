@@ -5,6 +5,7 @@ keywords: snap, snapdrive, install, aix, host, utilities
 summary: 如果您的配置需要 AIX Host Utilities ，则必须安装它们并确保系统设置正确。 
 ---
 = 安装 AIX Host Utilities
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

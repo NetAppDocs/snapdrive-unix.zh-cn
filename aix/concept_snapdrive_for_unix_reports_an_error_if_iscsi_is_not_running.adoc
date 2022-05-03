@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, iscsi, hba
 summary: '在 Linux 主机上运行的 SnapDrive for UNIX 返回错误消息 "HBA assistant not found" 。' 
 ---
 = 如果 iSCSI 未运行，则 SnapDrive for UNIX 报告错误
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, support, volume, migration
 summary: SnapDrive for UNIX 支持卷迁移，通过此迁移，您可以无中断地将卷从同一控制器中的一个聚合移动到另一个聚合，以提高容量利用率，提高性能并满足服务级别协议的要求。在 SAN 环境中， FlexVol 卷和卷中的 LUN 会无中断地从一个聚合移动到另一个聚合。 
 ---
 = 支持卷迁移
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

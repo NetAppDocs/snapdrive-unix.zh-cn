@@ -5,6 +5,7 @@ keywords: snap, snapdrive, console, error, manager, operations
 summary: SnapDrive for UNIX 需要 Operations Manager 控制台来执行访问检查。有时， Operations Manager 控制台服务器可能由于各种原因而不可用。 
 ---
 = Operations Manager 控制台不可用
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

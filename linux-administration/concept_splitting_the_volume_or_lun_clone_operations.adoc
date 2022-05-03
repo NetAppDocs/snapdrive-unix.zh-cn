@@ -5,6 +5,7 @@ keywords: snap, snapdrive, clone, lun, volume, split, parent
 summary: 通过 SnapDrive for UNIX ，您可以拆分卷克隆或 LUN 克隆。克隆拆分完成后，父卷与克隆之间的关系将被销毁，两个实体彼此独立，并具有各自的存储空间。 
 ---
 = 拆分卷克隆或 LUN 克隆
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

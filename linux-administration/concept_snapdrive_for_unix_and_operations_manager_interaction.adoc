@@ -5,6 +5,7 @@ keywords: snap, snapdrive, console, interaction, manager, storage, console, user
 summary: 使用基于角色的访问控制（ RBAC ）取决于 Operations Manager 控制台基础架构。Operations Manager 控制台管理员必须创建用于 UNIX 的 SnapDrive 的用户名。所有存储操作请求都会首先发送到 Operations Manager 控制台以进行访问检查。在 Operations Manager 控制台验证特定 SnapDrive 用户的存储操作后，此操作将完成。 
 ---
 = SnapDrive for UNIX 和 Operations Manager 控制台交互
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

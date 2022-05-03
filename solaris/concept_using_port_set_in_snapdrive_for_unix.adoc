@@ -5,6 +5,7 @@ keywords: snap, snapdrive, port, set
 summary: 端口集是一组 SAN 数据端口或接口，用于通过对 SAN 数据端口或接口集进行分组来控制可供主机使用的路径。 
 ---
 = 使用 SnapDrive for UNIX 中的端口集
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, system, ip, interface, name, address
 summary: 在存储系统上运行设置程序时，系统会提示您提供配对存储系统的 IP 地址或接口名称，以便在发生故障转移时使用。如果不提供此信息，则 SnapDrive for UNIX 将无法在接管的存储系统上搜索存储实体。 
 ---
 = 确认存储系统配对节点 IP 地址或接口名称
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

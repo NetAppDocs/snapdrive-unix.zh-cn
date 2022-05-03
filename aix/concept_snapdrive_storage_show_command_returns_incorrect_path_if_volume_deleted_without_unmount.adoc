@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, vserver, storage, show, incorrect, unmount
 summary: 如果在未将卷卸载到主机系统的情况下在 SVM 上删除卷，并且在执行 SnapDrive storage show -v 命令时，实际路径不正确。 
 ---
 = 如果在未将卷卸载到主机系统的情况下删除了 SVM 上的卷，则 SnapDrive storage show 命令会显示不正确的实际路径
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, executables, install, unix
 summary: SnapDrive for UNIX 将安装适用于 AIX 操作系统的可执行文件。 
 ---
 = SnapDrive for UNIX 安装的可执行文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

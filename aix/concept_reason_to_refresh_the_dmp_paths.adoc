@@ -5,6 +5,7 @@ keywords: snap, snapdrive, dmp, path, refresh
 summary: 在具有 FC 和 DMP 配置的主机上， SnapDrive storage delete - lun 命令可能会挂起。 
 ---
 = 刷新 DMP 路径的原因
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

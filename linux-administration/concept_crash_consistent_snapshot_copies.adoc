@@ -5,6 +5,7 @@ keywords: snap, snapdrive, copy, snapshot, crash, consistent
 summary: 您可能需要为文件系统或磁盘组创建崩溃状态一致的 Snapshot 副本。SnapDrive for UNIX 会创建 Snapshot 副本，其中包含实体中指定的所有存储系统卷的映像。 
 ---
 = 崩溃状态一致的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

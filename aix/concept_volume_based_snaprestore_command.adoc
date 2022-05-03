@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snaprestore, command, volume
 summary: 本节介绍使用基于卷的 SnapRestore 的命令和选项。 
 ---
 = 基于卷的 SnapRestore 命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

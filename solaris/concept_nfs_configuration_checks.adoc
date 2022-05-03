@@ -5,6 +5,7 @@ keywords: snap, snapdrive, nfs, configuration, check
 summary: 对于使用网络文件系统（ NFS\ ）的配置，在设置主机和存储系统之前，您必须检查 NFS 客户端是否运行正常。 
 ---
 = NFS 配置检查
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -16,7 +17,7 @@ summary: 对于使用网络文件系统（ NFS\ ）的配置，在设置主机�
 
 * 确保 NFS 客户端正常运行。
 +
-有关管理 NFS 协议的详细信息，请参见 link:https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["《 7- 模式文件访问和协议管理指南》"] 如果您使用的是 Data ONTAP 7- 模式；请参见  如果使用的是集群模式 Data ONTAP 。
+有关管理 NFS 协议的详细信息，请参见 link:https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["《 7- 模式文件访问和协议管理指南》"] 如果您使用的是 Data ONTAP 7- 模式；请参见 link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html["NFS 文件访问管理指南"] 如果使用的是集群模式 Data ONTAP 。
 
 * 设置主机和存储系统。
 +

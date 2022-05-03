@@ -5,6 +5,7 @@ keywords: snap, snapdrive, support, multipath, access
 summary: SnapDrive for UNIX 支持使用标准多路径软件解决方案对存储系统进行 FC 多路径访问。通过使用多路径，您可以在主机和存储系统之间配置多个网络路径。 
 ---
 = 在 SnapDrive for UNIX 中支持多路径访问
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

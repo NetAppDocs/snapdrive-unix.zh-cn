@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disable, node, cluster, resource
 summary: 您必须修改 /etc/vRTSvcs/conf/config/main.cf 文件，以禁止节点使用共享资源。有关 main.cf 文件的详细信息，请参见《适用于 Solaris 的 Veritas 集群服务器安装指南》。 
 ---
 = 禁止节点或集群使用共享资源
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

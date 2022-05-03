@@ -5,6 +5,7 @@ keywords: snap, snapdrive, volume, snaprestore, vbsr, storage, object, flexcone,
 summary: 基于卷的 SnapRestore \ （ VBSR\ ）将还原卷及其所有存储对象。基于卷的还原速度快于单独还原的每个存储对象。VBSR 还可与 FlexClone 卷和 vFiler 配置配合使用。适用于 vFiler 的 VBSR 适用于 Data ONTAP 7.3 及更高版本。 
 ---
 = 什么是基于卷的 SnapRestore
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

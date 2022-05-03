@@ -5,6 +5,7 @@ keywords: snap, snapdrive, install, components, identify
 summary: 您可以使用 SnapDrive for UNIX 配置检查程序工具来确定主机平台上安装的组件。 
 ---
 = 确定已安装的组件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

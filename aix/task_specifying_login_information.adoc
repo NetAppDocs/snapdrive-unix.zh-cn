@@ -5,6 +5,7 @@ keywords: snap, snapdrive, specify, login, information
 summary: 您必须指定存储系统的用户登录信息。根据您在设置存储系统时指定的内容，每个存储系统可以使用相同的用户名或密码，也可以使用唯一的用户名或密码。如果所有存储系统都使用相同的用户名或密码信息，则必须执行以下步骤一次。如果存储系统使用唯一的用户名或密码，则必须对每个存储系统重复以下步骤。 
 ---
 = 指定登录信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

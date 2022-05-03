@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, configuration, config
 summary: 有几个命令可以帮助您配置适用于 UNIX 的 SnapDrive 。 
 ---
 = 一些配置命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, delete, operation, fail
 summary: 由于 LUN 繁忙， Snapshot 创建和删除操作无法删除存储系统上的 Snapshot 副本。 
 ---
 = Snapshot 创建和删除操作失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

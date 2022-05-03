@@ -5,6 +5,7 @@ keywords: snap, snapdrive, view, data, interface, management
 summary: 您可以在 NFS 环境中使用 SnapDrive config list 命令查看管理接口的所有数据接口。 
 ---
 = 查看管理接口的所有数据接口
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

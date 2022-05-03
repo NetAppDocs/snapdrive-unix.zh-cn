@@ -5,6 +5,7 @@ keywords: snap, snapdrive, aix, mpio, support, limited
 summary: FC IBM AIX Host Utilities 的 MPIO 环境对 cfmodes 的支持有限。如果您运行的是 Data ONTAP 7.1.x ，则仅支持单个映像或 cfmode 。在 Data ONTAP 7.2.4 或更高版本中，支持单映像 cfmode 和配对 cfmode 。 
 ---
 = （ AIX ） MPIO cfmode 支持受限
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

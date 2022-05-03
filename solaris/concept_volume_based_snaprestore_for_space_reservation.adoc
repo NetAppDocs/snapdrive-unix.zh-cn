@@ -5,6 +5,7 @@ keywords: snap, snapdrive, colume, snaprestore, space, reservation
 summary: 对于使用基于卷的快照预留空间的空间预留，您需要在 SnapDrive.conf 文件中设置 space-reservations-volume-enabled 选项。 
 ---
 = 用于空间预留的基于卷的 SnapRestore
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

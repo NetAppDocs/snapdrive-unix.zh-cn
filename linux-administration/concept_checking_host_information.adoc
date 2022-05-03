@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, check
 summary: 某些主机系统要求您在创建新 LUN 之前对其进行准备。SnapDrive for UNIX 提供了一些命令来完成这些步骤，以便使主机做好创建新 LUN 的准备。 
 ---
 = 正在检查主机信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, space, reservation, flexclone, volume
 summary: 您可以对受限和不受限类型的 FlexClone 卷执行空间预留操作。默认情况下， FlexClone 卷没有写入预留。 
 ---
 = FlexClone 卷的空间预留
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, flexcone, volume, parent, clone
 summary: 灵活卷克隆 FlexClone 是父灵活卷的时间点副本。创建克隆后， FlexClone 卷不会继承对父灵活卷所做的更改。 
 ---
 = 什么是 FlexClone 卷
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

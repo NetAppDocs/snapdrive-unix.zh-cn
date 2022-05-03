@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, delay, failover, storage, cluster
 summary: 当某个集群模式存储系统关闭时，用于在 Solaris 主机上创建，连接，删除或断开 LUN 的 SnapDrive for UNIX 命令需要几分钟才能完成。 
 ---
 = 当存储集群处于故障转移模式时，某些命令会延迟
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapshot, select, storage, stack, unable
 summary: 由于 SnapDrive.conf 文件中指定的值不适当，您无法选择存储堆栈。 
 ---
 = 无法选择存储堆栈
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

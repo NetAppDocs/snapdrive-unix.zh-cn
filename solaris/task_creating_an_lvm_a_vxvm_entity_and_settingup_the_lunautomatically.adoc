@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, vxvm, lun
 summary: 您可以在主机上创建文件系统，逻辑卷或磁盘组等实体，并让 SnapDrive for UNIX 自动创建关联的 LUN 。 
 ---
 = 创建 VxVM 实体并自动设置 LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, command, resize, guidelines
 summary: 使用 SnapDrive storage resize 命令时，需要遵循一些准则。 
 ---
 = storage resize 命令的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

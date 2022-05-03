@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configure, storage, virtual, console
 summary: 您必须将 Virtual Storage Console 配置为访问存储系统，并使用分配给存储系统的登录名和密码。 
 ---
 = 配置适用于 UNIX 的 SnapDrive 的虚拟存储控制台
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

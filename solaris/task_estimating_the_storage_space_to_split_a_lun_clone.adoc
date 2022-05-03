@@ -5,6 +5,7 @@ keywords: snap, snapdrive, estimate, storage, split, lun, clone
 summary: 克隆拆分估计有助于估算拆分 LUN 克隆所需的存储空间 \ （以 MB 为单位）。根据 SnapDrive for UNIX 提供的克隆拆分估计值，您可以确定用于拆分 LUN 克隆的空间可用性。 
 ---
 = 估算用于拆分 LUN 克隆的存储空间
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, suse, server, sles, partitioning, scheme, rhel, red, 
 summary: 在 RHEL 上， SnapDrive for UNIX 会对磁盘进行分区，以配置主机存储实体。但是， SnapDrive for UNIX 允许为 SLES 11 上的分区和非分区设备以及仅为 SLES 10 上的非分区设备配置和管理 SnapDrive 操作。 
 ---
 = Red Hat Enterprise Linux （ RHEL ）和 SUSE Linux Enterprise Server （ SLES ）中的存储分区方案
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

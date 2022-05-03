@@ -5,6 +5,7 @@ keywords: snap, snapdrive, unix, host, cluster
 summary: SnapDrive for UNIX 支持存储配置和 Snapshot 管理选项来管理主机集群范围的存储。主机集群范围的共享存储包括 Solaris 主机上 SFRAC 环境中的磁盘组和文件系统。允许从主机集群中的任何节点执行所有操作。 
 ---
 = SnapDrive for UNIX 如何在主机集群模式 UNIX 系统上运行
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, preparation, install, snapdrive
 summary: 在系统上安装 SnapDrive for UNIX 之前，您必须准备主机。在主机准备过程中，您必须安装 AIX Host Utilities 。 
 ---
 = 主机准备安装 SnapDrive for UNIX
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

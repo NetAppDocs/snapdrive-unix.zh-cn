@@ -5,6 +5,7 @@ keywords: snap, snapdrive, volume, manager
 summary: 在 AIX 上，卷管理器称为原生 LVM 和 Veritas 卷管理器（ VxVM ）。 
 ---
 = SnapDrive for UNIX 上的卷管理器
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

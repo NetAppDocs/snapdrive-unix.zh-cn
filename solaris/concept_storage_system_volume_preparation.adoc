@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, system, volume, prepare
 summary: 您可以在存储系统上使用命令提示符，也可以使用 FilerView 选项创建存储系统卷以专用于 SnapDrive for UNIX 。 
 ---
 = 存储系统卷准备
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

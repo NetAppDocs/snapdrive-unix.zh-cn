@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, message
 summary: 这是 SnapDrive for UNIX 中的一条错误消息。 
 ---
 = 错误消息示例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

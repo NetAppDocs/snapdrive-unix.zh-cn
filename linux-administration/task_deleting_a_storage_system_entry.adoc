@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, storage, host, map
 summary: 您可以从主机系统中删除存储系统映射信息。 
 ---
 = 从主机系统中删除存储系统映射信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

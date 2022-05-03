@@ -5,6 +5,7 @@ keywords: snap, snapdrive, verify, install, check
 summary: 安装 SnapDrive for UNIX 后，您必须验证安装是否成功。SnapDrive for UNIX 会在主机上安装多个文件，例如可执行文件，配置文件，卸载文件，诊断文件， 和手册页。 
 ---
 = 验证安装
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

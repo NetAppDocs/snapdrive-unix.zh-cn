@@ -5,6 +5,7 @@ keywords: snap, snapdrive, sd, hostname, storage, cli, useradmin, command, admin
 summary: 存储系统管理员可以使用 useradmin 命令创建和配置 sd-hostname 用户。 
 ---
 = 使用 CLI 将 SD- 主机名添加到存储系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

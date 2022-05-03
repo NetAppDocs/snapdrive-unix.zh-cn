@@ -5,6 +5,7 @@ keywords: snap, snapdrive, import, data, file, configuration, check
 summary: 您可以在运行此工具之前下载最新的支持列表数据并更新配置检查程序工具，以便此工具列出 SnapDrive for UNIX 支持的最新配置。包含更新数据文件的配置检查程序工具可检查 SnapDrive for UNIX 支持的配置，并列出系统中所有受支持的组件。 
 ---
 = 导入数据文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

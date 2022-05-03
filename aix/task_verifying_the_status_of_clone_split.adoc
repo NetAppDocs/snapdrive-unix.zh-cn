@@ -5,6 +5,7 @@ keywords: snap, snapdrive, view, status, volume, lun, clone, split
 summary: 您可以使用作业 ID 或文件规范查询克隆拆分状态。SnapDrive for UNIX 将克隆拆分的当前状态指示为 in-progress ， failed 或 complete 。 
 ---
 = 查看卷克隆或 LUN 克隆拆分的状态
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

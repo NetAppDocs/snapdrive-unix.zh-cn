@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, cluster, unix
 summary: 只有 Solaris 主机上的 Veritas SFRAC 才能对主机集群系统执行 SnapDrive 操作。 
 ---
 = 适用于 UNIX 的 SnapDrive 的主机集群环境
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

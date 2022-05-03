@@ -5,6 +5,7 @@ keywords: snap, snapdrive, guidelines, delete, snapshot, copy
 summary: 如果 Snapshot 副本位于多个存储系统卷上，则不能删除正在使用的 Snapshot 副本。 
 ---
 = 删除 Snapshot 副本的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

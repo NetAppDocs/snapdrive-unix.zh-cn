@@ -5,6 +5,7 @@ keywords: snap, snapdrive, flexcone, volume, operation
 summary: 您可以使用适用于 UNIX 的 SnapDrive 对 FlexClone 卷执行各种操作。 
 ---
 = FlexClone 卷上的 SnapDrive for UNIX 操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

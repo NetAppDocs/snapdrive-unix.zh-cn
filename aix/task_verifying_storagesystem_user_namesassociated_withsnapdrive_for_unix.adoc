@@ -5,6 +5,7 @@ keywords: snap, snapdrive, verify, storage, name, user
 summary: 您可以执行 SnapDrive config list 命令来验证哪个用户名 SnapDrive for UNIX 与存储系统相关联。 
 ---
 = 验证与 SnapDrive for UNIX 关联的存储系统用户名
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, vfiler, unit, support, issue
 summary: SnapDrive for UNIX 支持对在 FlexVol 卷上创建的 vFiler 单元执行 SnapDrive 操作。但是，如果您使用的是光纤通道 \ （ FC\ ），则 SnapDrive for UNIX 不支持 vFiler 单元。 
 ---
 = vFiler 单元支持问题
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

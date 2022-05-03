@@ -5,6 +5,7 @@ keywords: snap, snapdrive, operation, single, filespec, storage, object
 summary: 如果您不是在指定卷上创建文件规范的授权用户，则 SnapDrive for UNIX 将显示一条错误消息。 
 ---
 = 对单个存储对象执行单个文件规范操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

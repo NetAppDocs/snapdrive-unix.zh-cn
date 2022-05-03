@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, snapshot, copy, host, data
 summary: 通过 SnapDrive for UNIX ，您可以为主机数据创建 Snapshot 副本。 
 ---
 = 在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

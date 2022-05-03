@@ -5,6 +5,7 @@ keywords: snap, snapdrive, http, configure, host
 summary: 您可以将适用于 UNIX 的 SnapDrive 配置为对主机平台使用 HTTP 。 
 ---
 = 设置 HTTP
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

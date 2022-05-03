@@ -5,6 +5,7 @@ keywords: snapdrive, snap, connect, lun, disk group, host, volume, file, system
 summary: 要使用 SnapDrive storage connect 命令连接具有磁盘组，主机卷和文件系统的 LUN ，您需要遵循以下语法。 
 ---
 = 连接具有磁盘组，主机卷和文件系统的 LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, install, unix, host, command, interface
 summary: 您可以从命令行界面在 Linux 主机上安装 SnapDrive for UNIX 。 
 ---
 = 安装适用于 UNIX 的 SnapDrive
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

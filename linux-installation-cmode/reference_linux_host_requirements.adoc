@@ -5,6 +5,7 @@ keywords: snapdrive, snap, linux, host, requirements
 summary: 必须先准备 Linux 主机，然后才能安装适用于 UNIX 的 SnapDrive 。 
 ---
 = Linux 主机要求
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

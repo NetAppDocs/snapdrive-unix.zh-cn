@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, create, command
 summary: 要创建 Snapshot 副本，请运行 SnapDrive snap create 命令。 
 ---
 = 创建 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

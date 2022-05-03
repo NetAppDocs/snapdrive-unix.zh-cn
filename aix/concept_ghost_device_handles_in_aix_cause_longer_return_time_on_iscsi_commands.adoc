@@ -5,6 +5,7 @@ keywords: snap, snapdrive, ghost, device, aix, handle, iscsi, command, return
 summary: 通过 iSCSI 或 FC 查询具有虚影设备句柄的 AIX 设备（处于已定义或故障状态的设备句柄）可以使用发生原因 SCSI 命令等待 AIX 默认超时时间，即大约 30 秒。 
 ---
 = AIX 发生原因中的虚影设备句柄在 iSCSI 命令上的返回时间较长
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

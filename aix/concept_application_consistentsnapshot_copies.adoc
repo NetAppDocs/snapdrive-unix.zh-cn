@@ -5,6 +5,7 @@ keywords: snap, snapdrive, application, consistent, snapshot, copy
 summary: 要创建应用程序一致的 Snapshot 副本，应在执行 Snapshot 操作之前暂停应用程序。 
 ---
 = 应用程序一致的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disconnect, snapshot, copy
 summary: 您可以将 Snapshot 副本与 LUN ， LUN 上的文件系统，磁盘组， NFS 目录或 LUN 上的共享磁盘组，主机卷和文件系统断开连接。 
 ---
 = 断开 Snapshot 副本的连接
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

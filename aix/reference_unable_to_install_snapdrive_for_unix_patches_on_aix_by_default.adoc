@@ -5,6 +5,7 @@ keywords: snap, snapdrive, install, aix, patch, default
 summary: 默认情况下，不能使用系统管理界面工具（ SMIT\ ）在 AIX 上安装 SnapDrive for UNIX 修补程序版本。 
 ---
 = 默认情况下，无法在 AIX 上安装 SnapDrive for UNIX 修补程序
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

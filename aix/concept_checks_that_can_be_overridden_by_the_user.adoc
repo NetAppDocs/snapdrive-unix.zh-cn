@@ -5,6 +5,7 @@ keywords: snap, snapdrive, check, override, user
 summary: 在执行基于卷的 SnapRestore 之前， SnapDrive for UNIX 会执行一些检查，用户可以使用 -force 选项覆盖这些检查。要安全地使用基于卷的 SnapRestore ，必须执行这些检查。 
 ---
 = 可由用户覆盖的检查
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

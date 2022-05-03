@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disconnect, procedure, steps
 summary: 本节将介绍 Snap disconnect 所遵循的操作步骤。 
 ---
 = Snap disconnect 操作步骤
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

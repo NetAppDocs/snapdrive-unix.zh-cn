@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, group, consistency
 summary: 一致性组 Snapshot 是一组卷的 Snapshot 副本，该卷跨越集群中的不同 Vserver 或节点，并作为一个实体进行管理。 
 ---
 = SnapDrive for UNIX 中的一致性组 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

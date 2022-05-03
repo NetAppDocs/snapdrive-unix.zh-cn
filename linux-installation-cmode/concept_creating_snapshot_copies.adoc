@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, snapshot, copy
 summary: 作为独立产品部署的 SnapDrive for UNIX 使用 NetApp Snapshot 技术，可用于创建和管理主机数据的 Snapshot 副本。您可以使用 Snapshot 副本还原数据。 
 ---
 = 正在创建 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

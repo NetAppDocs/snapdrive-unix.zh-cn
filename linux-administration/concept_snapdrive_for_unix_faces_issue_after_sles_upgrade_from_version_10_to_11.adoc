@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, suse, upgrade, file, base, device
 summary: 将 SUSE Linux Enterprise Server \ （ sles\ ）从 10 升级到 11 后，适用于 UNIX 的 SnapDrive 显示错误。您必须创建基本设备名称并挂载文件系统。 
 ---
 = 在将 SUSE Linux Enterprise Server 从版本 10 升级到 11 之后， SnapDrive for UNIX 将显示一条错误消息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

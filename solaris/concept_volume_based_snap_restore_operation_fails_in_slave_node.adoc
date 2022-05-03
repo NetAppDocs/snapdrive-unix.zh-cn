@@ -5,6 +5,7 @@ keywords: snap, snapdrive, volume, snaprestore, fail, slave, mode
 summary: 在 Solaris 上使用 SFRAC 时，从节点上基于卷的快照还原 \ （ vbsr ）操作失败。 
 ---
 = 从节点中基于卷的快照还原操作失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: enable, snap, snapdrive, lun, provision
 summary: 您可以使用 SnapDrive for UNIX 在存储系统上执行精简配置。精简配置也称为空间预留。 
 ---
 = 为 LUN 启用精简配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

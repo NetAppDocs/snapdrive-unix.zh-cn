@@ -5,6 +5,7 @@ keywords: snap, snapdrive, login, infromation, vserver, specify
 summary: 您必须指定 SVM 的用户登录信息。根据您在设置 Vserver 时指定的内容，每个 Vserver 都必须使用配置的 Vserver 用户名。如果您的 Vserver 名称发生更改，则必须确保已在适用于 UNIX 的 SnapDrive 中配置新的 Vserver 名称。 
 ---
 = 指定 SVM 的登录信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

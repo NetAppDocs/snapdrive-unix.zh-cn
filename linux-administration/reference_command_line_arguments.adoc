@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, argument, format, copy, snapshot
 summary: 适用于 UNIX 的 SnapDrive 采用特定格式进行参数设置。 
 ---
 = 命令行参数
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

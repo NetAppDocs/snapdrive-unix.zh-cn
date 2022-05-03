@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, host, restore
 summary: 还原 Snapshot 副本时，请遵循相关准则。 
 ---
 = 在主机集群环境中还原 Snapshot 副本的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

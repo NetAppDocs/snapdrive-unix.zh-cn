@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, vxvm, raw, nfs, device, copy
 summary: 您可以使用 SnapDrive 命令创建，还原和管理 VxVM ，原始设备和 NFS 实体的 Snapshot 副本。 
 ---
 = 如何管理 VxVM ，原始设备和 NFS 实体的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

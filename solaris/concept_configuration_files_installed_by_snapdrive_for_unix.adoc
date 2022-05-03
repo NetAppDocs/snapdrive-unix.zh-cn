@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configuraiton, install, file
 summary: SnapDrive for UNIX 将安装 SnapDrive.conf 文件，该文件用于存储当前版本产品的配置信息。 
 ---
 = SnapDrive for UNIX 安装的配置文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

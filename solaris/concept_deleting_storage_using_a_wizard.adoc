@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, storage, wizard
 summary: 您可以使用存储删除向导执行某些删除操作。 
 ---
 = 使用向导删除存储
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

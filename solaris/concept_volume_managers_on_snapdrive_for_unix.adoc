@@ -5,6 +5,7 @@ keywords: snap, snapdrive, volume, manager, unix
 summary: 在 Solaris 平台上，您可以使用 VxVM 或 Solaris 卷管理器 \ （ SVM\ ）。SVM 作为 Solaris 操作系统的一部分捆绑在一起。 
 ---
 = SnapDrive for UNIX 上的卷管理器
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, data, collection, utility, troubleshooting
 summary: SnapDrive 数据收集实用程序是一个故障排除工具，用于收集信息以诊断问题。 
 ---
 = 数据收集实用程序
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

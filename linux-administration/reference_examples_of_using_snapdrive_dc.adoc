@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, example, data, collection
 summary: 以下是数据收集命令的示例。 
 ---
 = 使用 SnapDrive.dc 的示例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

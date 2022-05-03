@@ -5,6 +5,7 @@ keywords: snap, snapdrive, access, control
 summary: 通过 SnapDrive for UNIX ，您可以控制每个主机对主机所连接的每个存储系统的访问级别。 
 ---
 = SnapDrive for UNIX 中的访问控制
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

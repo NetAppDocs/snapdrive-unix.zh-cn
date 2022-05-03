@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, create, lvm, entity
 summary: 如果使用 SnapDrive for UNIX 使用 LVM 创建逻辑卷或文件系统，则 SnapDrive for UNIX 会自动创建所需的磁盘组。SnapDrive for UNIX 会根据主机卷管理器支持的类型创建文件系统。对于 AIX ，它包括 JFS2 ， JFS 和 VxFS 。 
 ---
 = 为 LVM 实体创建存储
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, unix, fail, multipath, settings, device, error, sdu, 
 summary: 在 RHEL 5.11 中运行 storage show 或 snap create 命令时，该命令会显示以下错误消息。对 SDU 守护进程的状态调用失败，并且在 SLES11SP3 主机中使用– nolvm 选项调用，而不涉及主机 LVM 。 
 ---
 = 由于使用别名设备时多路径设置不正确， SnapDrive for UNIX 操作失败。
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

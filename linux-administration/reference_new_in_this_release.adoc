@@ -5,6 +5,7 @@ keywords: snap, snapdrive, release, update, bug, fix
 summary: SnapDrive 5.3.2 for UNIX 仅包含错误修复。此版本没有新功能。 
 ---
 = 此版本中的新增功能
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, enable, multipathing
 summary: 要在 SnapDrive for UNIX 中使用多路径，必须完成包括安装和启动 HBA 在内的步骤。如果您使用的是非 NetApp 多路径解决方案，则必须从 HBA 供应商的网站下载软件和应用程序包。 
 ---
 = 启用多路径
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

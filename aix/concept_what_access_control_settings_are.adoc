@@ -5,6 +5,7 @@ keywords: snap, snapdrive, access, control, settings
 summary: 为了确定用户访问权限， SnapDrive for UNIX 会检查存储系统根卷中的两个权限文件之一。您必须检查这些文件中设置的规则，以评估访问控制。 
 ---
 = 什么是访问控制设置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, unrelated, create
 summary: SnapDrive for UNIX 通过维护各个崩溃状态一致的 Snapshot 副本来创建不相关实体的 Snapshot 副本。 
 ---
 = 创建不相关实体的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

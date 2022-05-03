@@ -5,6 +5,7 @@ keywords: snap, snapdrive, ca, certificate, daemon, communication
 summary: SnapDrive for UNIX 守护进程服务要求您生成 CA 签名的证书，才能成功进行守护进程通信。您必须在 SnapDrive.conf 文件中指定的路径处提供 CA 签名的证书。 
 ---
 = 生成 CA 签名的证书
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

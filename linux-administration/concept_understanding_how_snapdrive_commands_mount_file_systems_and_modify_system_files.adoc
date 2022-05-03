@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, mount, file, modify, unmount, name
 summary: 某些 SnapDrive for UNIX 命令可以挂载或卸载发生原因文件系统。当命令执行挂载文件系统的操作时， SnapDrive for UNIX 会将文件系统的名称添加到主机平台的标准系统文件中。如果卸载文件系统的操作， SnapDrive for UNIX 将从系统文件中删除此名称。这不会造成问题；但是，了解系统文件何时修改会很有用。 
 ---
 = SnapDrive 命令有时会导致挂载或卸载文件系统以及修改系统文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

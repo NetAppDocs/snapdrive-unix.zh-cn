@@ -5,6 +5,7 @@ keywords: snap, snapdrive, volume, snaprestore, check, fail, nfs, vbsr, host, ex
 summary: 基于卷的 SnapRestore \ （ Vbsr\ ）检查失败， \ （当 NFS 尝试导出没有外部主机的列表时 \ ）位于客户端计算机 \ （ SLES 11\ ）中，该客户端计算机在 /etc/hosts 文件中具有两个不同的主机名 IP 。 
 ---
 = 基于卷的 SnapRestore 检查失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

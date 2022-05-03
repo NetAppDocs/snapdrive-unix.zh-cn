@@ -5,6 +5,7 @@ keywords: snap, snapdrive, recovery, log
 summary: 恢复日志可帮助您跟踪系统状态不一致的原因。当某些操作停止工作时， SnapDrive for UNIX 将生成此文件。 
 ---
 = 恢复日志的内容
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

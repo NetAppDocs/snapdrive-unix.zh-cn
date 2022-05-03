@@ -5,6 +5,7 @@ keywords: snap, snapdrive, ha, storage, entity, system, connect
 summary: 您可以连接包含单个存储实体的 Snapshot 副本。 
 ---
 = 连接存储系统或存储系统 HA 对上的单个存储实体
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, system, requirements
 summary: 在设置存储系统之前，您必须考虑其要求。 
 ---
 = 存储系统的要求
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

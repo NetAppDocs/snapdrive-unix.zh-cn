@@ -5,6 +5,7 @@ keywords: snap, snapdrive, data, collection, utility
 summary: 要运行数据收集实用程序，您需要完成几个步骤。 
 ---
 = 正在执行数据收集实用程序
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

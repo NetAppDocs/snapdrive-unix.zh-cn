@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, version, check
 summary: 您可以输入 SnapDrive version 命令来验证 SnapDrive for UNIX 的版本。 
 ---
 = 检查适用于 UNIX 的 SnapDrive 版本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

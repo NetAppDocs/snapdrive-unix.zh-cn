@@ -5,6 +5,7 @@ keywords: snap, snapdrive,  snapshot, copy, storage
 summary: 在使用 Snapshot 副本时，应牢记一些注意事项，例如 SnapDrive for UNIX 仅适用于其创建的 Snapshot 副本，或者 Snapshot 副本自动从存储系统复制到主机等。 
 ---
 = 使用 Snapshot 副本时的注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

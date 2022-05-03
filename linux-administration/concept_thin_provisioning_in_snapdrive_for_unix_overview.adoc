@@ -5,6 +5,7 @@ keywords: snap, snapdrive, thin, provisioning, fractional, reserve, value, ontap
 summary: 您不能设置预留百分比值，也不能与 SnapDrive for UNIX 中的自动删除和自动调整等 Data ONTAP 功能集成。虽然您可以在 SnapDrive for UNIX 中安全地使用 Data ONTAP 功能，但 SnapDrive for UNIX 不会注册自动删除或自动调整事件大小。 
 ---
 = SnapDrive for UNIX 中的精简配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, post, install, configure, task
 summary: 安装完成后，您必须配置其他特性和功能。您必须安装服务器证书并将 SnapDrive for UNIX 配置为使用与存储系统和守护进程服务的安全连接。 
 ---
 = 执行安装后任务
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

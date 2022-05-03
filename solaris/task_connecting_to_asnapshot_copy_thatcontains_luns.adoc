@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, snapshot, copy, lun
 summary: 您可以使用 SnapDrive snap connect 命令连接到包含 LUN 的 Snapshot 副本。 
 ---
 = 连接到包含 LUN 的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: reboot, host, os, cluster, fail, start
 summary: 在 Solaris 10 主机上，如果文件系统在重新启动后无法挂载，则操作系统和集群将无法启动。 
 ---
 = 重新启动主机后，操作系统和集群服务无法启动
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

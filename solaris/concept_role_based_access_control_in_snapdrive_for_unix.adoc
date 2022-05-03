@@ -5,6 +5,7 @@ keywords: snap, snapdrive, rbac, access, control
 summary: 基于角色的访问控制 \ （ RBAC ）用于用户登录和角色权限。管理员可以通过 RBAC 定义角色来管理用户组。如果需要将数据库的访问权限限制为特定管理员，则必须为其设置管理员帐户。此外，如果要限制这些信息，这些管理员可以查看这些信息以及可以执行的操作，则必须将角色应用于您创建的管理员帐户。 
 ---
 = SnapDrive for UNIX 中基于角色的访问控制
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

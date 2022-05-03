@@ -5,6 +5,7 @@ keywords: snap, snapdrive, wizards, operation
 summary: SnapDrive 提供了不同的向导，可帮助您以交互方式执行特定的 SnapDrive 操作。 
 ---
 = 什么是 SnapDrive 向导
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, volume, migration
 summary: 您可以在卷迁移期间执行 SnapDrive 操作。 
 ---
 = SnapDrive for UNIX 中的卷迁移
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

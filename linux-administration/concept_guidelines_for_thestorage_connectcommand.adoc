@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, connect, command, guidelines, lvm
 summary: 要使用 SnapDrive storage connect 命令，您需要遵循一些准则。 
 ---
 = storage connect 命令的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

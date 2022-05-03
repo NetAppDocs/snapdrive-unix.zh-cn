@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, snapshot, copy
 summary: 在还原 Snapshot 副本之前，请确保您未使用文件系统，并且不会中断还原过程。 
 ---
 = 还原 Snapshot 副本的注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

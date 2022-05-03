@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, install, red, enterprise, oracle
 summary: 如果 64 位 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机上未安装 /lib/libgcc_s.so.1 路径，则 SnapDrive for UNIX 将出错。 
 ---
 = 如果未安装 libgcc_s.so.1 ，则 SnapDrive 会出错
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

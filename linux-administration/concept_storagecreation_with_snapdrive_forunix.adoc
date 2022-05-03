@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, create, lun, host, volume, file
 summary: 您可以使用适用于 UNIX 的 SnapDrive 创建 LUN ， LUN 上直接创建的文件系统，磁盘组，主机卷以及 LUN 上创建的文件系统。 
 ---
 = 使用 SnapDrive for UNIX 创建存储
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

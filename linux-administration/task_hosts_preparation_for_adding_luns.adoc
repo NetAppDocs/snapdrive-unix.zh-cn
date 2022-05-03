@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, preparation, lun, add
 summary: 您需要准备主机以添加 LUN 。 
 ---
 = 主机准备添加 LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

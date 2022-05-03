@@ -5,6 +5,7 @@ keywords: snap, snapdrive, admin, command, line, interface
 summary: 存储系统管理员可以使用命令行界面配置 SD-admin 用户。 
 ---
 = 使用命令行界面配置 SD-admin
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

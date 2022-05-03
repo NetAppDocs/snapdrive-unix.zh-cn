@@ -5,6 +5,7 @@ keywords: snap, snapdrive, verfiy, supported, configurations, host
 summary: 您可以通过检查主机系统中的组件（例如，操作系统，主机上安装的软件版本，协议，主机上的文件系统等）以及为 SnapDrive.conf 文件中的每个配置参数指定的值来验证 SnapDrive for UNIX 中支持的配置。 
 ---
 = 验证支持的配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

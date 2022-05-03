@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, provision, connect
 summary: 通过 SnapDrive for UNIX ，您可以使用主机中的命令行选项配置存储并连接到现有存储系统。您也可以使用 Data ONTAP 配置存储。 
 ---
 = 配置存储
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

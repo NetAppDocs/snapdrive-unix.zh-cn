@@ -5,6 +5,7 @@ keywords: snap, snapdrive, support, guest, operating, system
 summary: 通过对子操作系统的 SnapDrive for UNIX 支持，您可以创建存储并管理 LUN ，文件系统，逻辑卷和磁盘组的 Snapshot 副本。要配置 RDM LUN ，您需要在 SnapDrive.conf 文件中指定光纤通道 \ （ FC\ ）协议。 
 ---
 = 支持子操作系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disable, group, snapshot, consistency, configure
 summary: 您可以将 SnapDrive for UNIX 配置为禁用一致性组 Snapshot 副本。 
 ---
 = 禁用一致性组 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

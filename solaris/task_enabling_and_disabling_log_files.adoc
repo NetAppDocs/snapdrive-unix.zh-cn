@@ -5,6 +5,7 @@ keywords: snap, snapshot, enable, disable, log, file
 summary: 如果要启用日志文件，请在要启用的日志文件的名称 - 值对中指定一个文件名作为值。如果要禁用某个文件，请勿为日志文件名参数输入一个值。 
 ---
 = 启用和禁用日志文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

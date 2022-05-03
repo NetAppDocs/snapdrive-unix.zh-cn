@@ -5,6 +5,7 @@ keywords: snap, snapdrive, start, volume, clone, lun, split
 summary: 您可以启动卷克隆或 LUN 克隆拆分操作。 
 ---
 = 启动卷克隆或 LUN 克隆拆分
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

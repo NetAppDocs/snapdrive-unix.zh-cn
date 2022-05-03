@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, interface, management, config, nfs, command
 summary: 您可以使用 nfs config delete -mgmtpath 命令删除与 SnapDrive 环境中特定管理接口关联的数据接口条目。 
 ---
 = 删除管理接口的数据接口条目
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

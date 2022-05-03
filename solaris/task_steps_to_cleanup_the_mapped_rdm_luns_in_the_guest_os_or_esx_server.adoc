@@ -5,6 +5,7 @@ keywords: snap, snapdrive, mapped, rdm, lun, guest, esx, server, system
 summary: 您必须清理子操作系统以及 ESX 服务器中的 RDM LUN 。 
 ---
 = 清理子操作系统和 ESX 服务器中映射的 RDM LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, exported, disk, group, lvm2, fail, lun
 summary: SnapDrive for UNIX 不会删除 Linux LVM2 上具有导出磁盘组的 LUN 。 
 ---
 = 在 Linux LVM2 上删除具有导出磁盘组的 LUN 失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

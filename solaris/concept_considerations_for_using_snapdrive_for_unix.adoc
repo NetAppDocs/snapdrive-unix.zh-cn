@@ -5,6 +5,7 @@ keywords: snap, snapdrive, unix, considerations
 summary: 您必须了解使用 SnapDrive for UNIX 的各种注意事项。 
 ---
 = 使用 SnapDrive for UNIX 的注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

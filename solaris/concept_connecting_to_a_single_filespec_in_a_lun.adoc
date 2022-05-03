@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, filespec, lun
 summary: 您可以连接到 LUN 中的单个文件规范。以下示例介绍了如何完成此操作。 
 ---
 = 连接到 LUN 中的单个文件规范
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

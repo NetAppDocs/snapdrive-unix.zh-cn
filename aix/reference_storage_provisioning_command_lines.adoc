@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, provisioning, command, line
 summary: 某些 SnapDrive for UNIX 命令用于存储配置。 
 ---
 = 存储配置命令行
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

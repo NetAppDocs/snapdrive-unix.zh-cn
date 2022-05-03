@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configuration, command, line
 summary: SnapDrive for UNIX 命令用于配置操作。 
 ---
 = 配置命令行
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

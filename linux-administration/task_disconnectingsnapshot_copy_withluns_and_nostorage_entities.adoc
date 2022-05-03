@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disconnect, lun, snapshot, command
 summary: 您可以使用 SnapDrive snap disconnect 命令断开包含无存储实体的 LUN 的 Snapshot 副本的连接。 
 ---
 = 断开 Snapshot 副本与 LUN 的连接，而不断开存储实体的连接
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

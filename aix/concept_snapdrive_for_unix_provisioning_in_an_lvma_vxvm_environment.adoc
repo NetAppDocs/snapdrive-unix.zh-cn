@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lvm, provisioning, environment
 summary: SnapDrive for UNIX 存储命令通过创建 LVM 对象来配置 LVM 实体。 
 ---
 = LVM 环境中的 SnapDrive for UNIX 配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

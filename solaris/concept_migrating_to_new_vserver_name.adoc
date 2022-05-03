@@ -5,6 +5,7 @@ keywords: snap, snapdrive, vserver, migrate, name
 summary: 如果已从旧 Vserver 迁移到新 Vserver ，则必须确保在主机系统上配置新的 Vserver 名称，以便在 Vserver 上执行任何 SnapDrive 操作。 
 ---
 = 迁移到新的 SVM 名称
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

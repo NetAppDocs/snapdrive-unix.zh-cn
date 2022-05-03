@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snaprestore, snapconnect, migration, multipathing, op
 summary: 如果迁移了多路径类型，则 SnapRestore 和 SnapConnect 操作将不起作用。 
 ---
 = 迁移多路径类型后， SnapRestore 和 Snapconnect 操作在 Linux 中不起作用
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

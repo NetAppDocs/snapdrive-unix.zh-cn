@@ -5,6 +5,7 @@ keywords: snap, snapdrive, multipathing, enable, hba
 summary: 要在 SnapDrive for UNIX 中使用多路径，必须完成包括安装和启动 HBA 在内的步骤。如果您使用的是非 NetApp 多路径解决方案，则必须从 HBA 供应商的网站下载软件和应用程序包。 
 ---
 = 启用多路径
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
@@ -92,7 +93,7 @@ filer:        lun-pathname device filename adapter protocol lun size lun state
 f960-221-167: /vol/vol1/lun1 /dev/sdd host5 FCP 100m (104857600)      GOOD
 f960-221-167: /vol/vol1/lun1 /dev/sdc host6 FCP 100m (104857600)      GOOD
 ----
-. 如果 SnapDrive for UNIX 或 Host Utilities 支持第三方多路径解决方案，请从 HBA 供应商的网站下载 HBA 驱动程序软件包和应用程序包。 * QLogic * ：对于 QLogic HBA ，请转至 http://support.qlogic.com/[]。在 OEM 型号中，选择 NetApp 。找到支持表中列出的驱动程序版本并下载。* Emulex ： * 对于 Emulex HBA ，请转至。从 "Downloads" 中选择 "NetApp" 。找到支持表中列出的驱动程序版本并下载。同时，从同一位置下载 Emulex 应用程序软件包。
+. 如果 SnapDrive for UNIX 或 Host Utilities 支持第三方多路径解决方案，请从 HBA 供应商的网站下载 HBA 驱动程序软件包和应用程序包。 * QLogic * ：对于 QLogic HBA ，请转至 http://support.qlogic.com/[]。在 OEM 型号中，选择 NetApp 。找到支持表中列出的驱动程序版本并下载。* Emulex ： * 对于 Emulex HBA ，请转至 http://www.emulex.com/ts/index.html[]。从 "Downloads" 中选择 "NetApp" 。找到支持表中列出的驱动程序版本并下载。同时，从同一位置下载 Emulex 应用程序软件包。
 +
 如果您使用的是具有 FC 连接的 QLogic 适配器，请从 QLogic 网站下载 QLogic 重新扫描脚本并将其复制到 ` 或 root` 路径（例如， ` /root/dynamic-lun-rescan` ）。QLogic 重新扫描脚本会要求用户确认； SnapDrive for UNIX 可能会在此确认阶段无限期挂起。您可以通过在脚本中将变量 ` QL_disable_warning_` 设置为 `1` 来避免此确认。
 

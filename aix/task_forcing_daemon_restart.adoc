@@ -5,6 +5,7 @@ keywords: snap, snapdrive, force, daemon, restart, command
 summary: 您可以强制此守护进程重新启动。强制重新启动守护进程将停止执行所有正在运行的命令。 
 ---
 = 强制守护进程重新启动
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, multipathing
 summary: SnapDrive for UNIX 支持多路径。SnapDrive for UNIX 不支持对使用 mnod 和 / 或 rendev 命令创建的设备使用别名。 
 ---
 = SnapDrive for UNIX 中的多路径
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

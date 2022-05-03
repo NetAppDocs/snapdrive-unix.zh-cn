@@ -5,6 +5,7 @@ keywords: snap, snapdrive, colume, fc, iscsi, optimization
 summary: 您可以在 FC 和 Internet 小型计算机系统接口 \ （ iSCSI\ ）环境中优化卷的使用情况，方法是在同一个卷上放置主机专用逻辑单元号 \ （ lun\ ）。 
 ---
 = 在 FC 或 iSCSI 环境中进行卷优化
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

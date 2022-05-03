@@ -5,6 +5,7 @@ keywords: snap, snapdrive, add, host, lun, entry
 summary: 您可以使用适用于 UNIX 的 SnapDrive 创建特定数量的新 LUN 。SnapDrive for UNIX 为此提供了特定的命令。 
 ---
 = 为新 LUN 添加主机条目
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

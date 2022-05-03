@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, restore, command, issuelun, scsi
 summary: 影响 SnapDrive snap restore 命令还原 Snapshot 副本的功能的条件很少。 
 ---
 = 无法还原 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

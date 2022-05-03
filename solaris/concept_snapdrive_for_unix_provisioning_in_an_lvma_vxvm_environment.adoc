@@ -5,6 +5,7 @@ keywords: snapdrive, unix, storage, commands, provision, provisioning, vxvm, ent
 summary: SnapDrive for UNIX 存储命令通过创建 VxVM 对象来配置 VxVM 实体。 
 ---
 = VxVM 环境中的 SnapDrive for UNIX 配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

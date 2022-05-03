@@ -5,6 +5,7 @@ keywords: snap, snapdrive, display, snapshot, copy
 summary: 您可以使用通配符显示 Snapshot 副本。您可以显示特定对象中的所有 Snapshot 副本。 
 ---
 = 显示 Snapshot 副本的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

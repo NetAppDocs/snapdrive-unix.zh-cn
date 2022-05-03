@@ -5,6 +5,7 @@ keywords: snap, snapdrive, autosupport, support
 summary: 如果在 SnapDrive.conf 文件中将 autosupport-enabled 选项设置为 on ，则 AutoSupport 消息将记录在存储系统的 EMS 日志视图中。默认情况下，此选项在 SnapDrive.conf 文件中设置为 on 。SnapDrive for UNIX 会将 AutoSupport 消息发送到存储系统，而这些消息会记录在事件管理系统（ EMS\ ）中。 
 ---
 = SnapDrive for UNIX 如何使用 AutoSupport
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

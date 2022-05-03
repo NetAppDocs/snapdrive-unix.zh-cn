@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, connect, host, cluster
 summary: 在主机集群环境中使用 SnapDrive storage connect 命令之前，必须遵循一些准则。 
 ---
 = 主机集群环境中的存储连接准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

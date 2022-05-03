@@ -5,6 +5,7 @@ keywords: snap, snapdrive, reset, reserve, option, storage, system
 summary: '在光纤通道或 Internet 小型计算机系统接口 \ （ iSCSI\ ）环境中使用 Data ONTAP 时，应将存储系统上的快照预留选项重置为 0% ，以便进行卷优化。' 
 ---
 = 在存储系统上重置 snap reserve 选项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

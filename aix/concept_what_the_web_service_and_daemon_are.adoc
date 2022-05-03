@@ -5,6 +5,7 @@ keywords: snap snapdrive, daemon, web, service
 summary: SnapDrive for UNIX Web 服务为所有 NetApp SnapManager 和第三方产品提供了一个统一的界面，可与 SnapDrive for UNIX 无缝集成。要在适用于 UNIX 的 SnapDrive 中使用命令行界面 \ （ cli\ ）命令，您需要启动守护进程。 
 ---
 = 什么是 Web 服务和守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

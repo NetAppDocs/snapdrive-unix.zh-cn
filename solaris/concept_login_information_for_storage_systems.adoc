@@ -5,6 +5,7 @@ keywords: snap, snapdrive, login, storage, system
 summary: 通过用户名或密码， SnapDrive for UNIX 可以访问每个存储系统。它还提供了安全性，因为除了以 root 身份登录之外，运行 SnapDrive for UNIX 的用户还必须在系统提示时提供正确的用户名或密码。如果登录受到影响，您可以将其删除并设置新的用户登录。 
 ---
 = 存储系统的登录信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, view, result, clone, split, job, id, filespec
 summary: 您可以使用作业 ID 或文件规范查看已完成克隆拆分操作的结果。 
 ---
 = 使用作业 ID 或文件规范查看克隆拆分操作的结果
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

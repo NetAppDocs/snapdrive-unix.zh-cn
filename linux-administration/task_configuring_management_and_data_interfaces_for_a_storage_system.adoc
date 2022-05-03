@@ -5,6 +5,7 @@ keywords: snap, snapdrive, management, configure, data, interface, nfs, traffic
 summary: 您可以在 NFS 环境中为单个管理接口配置多个数据接口，以便将管理流量与存储系统上的数据流量分开。 
 ---
 = 为存储系统配置管理和数据接口
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

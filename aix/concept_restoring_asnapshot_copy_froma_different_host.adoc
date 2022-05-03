@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, snapshot, copy, different, host
 summary: 使用 SnapDrive snap restore 命令从其他主机还原 Snapshot 副本。 
 ---
 = 从其他主机还原 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

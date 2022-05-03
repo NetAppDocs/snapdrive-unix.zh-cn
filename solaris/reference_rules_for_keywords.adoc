@@ -5,6 +5,7 @@ keywords: snap, snapdrive, keywords, rules
 summary: SnapDrive for UNIX 使用关键字指定 SnapDrive for UNIX 操作的目标。 
 ---
 = 关键字规则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

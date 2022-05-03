@@ -5,6 +5,7 @@ keywords: snap, snpadrive, log, file, rotation, setting
 summary: 为 SnapDrive.conf 文件中的变量指定的值会影响日志文件的轮换。 
 ---
 = 日志文件轮换设置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

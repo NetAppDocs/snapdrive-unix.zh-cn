@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configuration, wizard
 summary: 使用 SnapDrive 配置向导更新向导中的配置变量。您可以随时运行配置向导，将配置更改修改为 SnapDrive 。 
 ---
 = SnapDrive 配置向导
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

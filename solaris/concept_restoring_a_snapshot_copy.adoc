@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, snapshot copy
 summary: 您可以还原单个存储实体或多个存储实体的 Snapshot 副本。 
 ---
 = 还原 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

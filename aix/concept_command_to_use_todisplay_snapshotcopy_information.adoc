@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, display, snapshot, copy, information
 summary: 使用 SnapDrive snap show \ （或 list\ ）命令显示有关 Snapshot 副本的信息。 
 ---
 = 用于显示 Snapshot 副本信息的命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

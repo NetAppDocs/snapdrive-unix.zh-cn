@@ -5,6 +5,7 @@ keywords: snap, snapdrive, clone, split, lun, volume, specification
 summary: 您可以使用作业 ID 或文件规范停止卷克隆或 LUN 克隆的克隆拆分。 
 ---
 = 停止卷克隆或 LUN 克隆拆分操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

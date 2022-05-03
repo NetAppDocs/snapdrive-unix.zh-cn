@@ -5,6 +5,7 @@ keywords: snap, snapdrive, view, access, control, permission
 summary: 您可以运行 SnapDrive config access show 命令来查看访问控制权限。 
 ---
 = 查看访问控制权限
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

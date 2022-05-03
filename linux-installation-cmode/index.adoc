@@ -5,6 +5,7 @@ keywords: guide, documentation, installation, setup, linux, clustered, data, ont
 summary: 介绍在 Linux 环境中使用集群模式 Data ONTAP 部署 SnapDrive for UNIX 所需执行的初始任务。 
 ---
 = 《适用于集群模式 Data ONTAP 的 Linux ® 安装和设置指南》
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

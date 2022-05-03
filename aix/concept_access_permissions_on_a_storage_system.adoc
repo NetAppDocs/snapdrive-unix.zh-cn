@@ -5,6 +5,7 @@ keywords: snap, snapdrive, access, permissions, storage, system
 summary: 访问权限用于指示主机是否可以执行某些 Snapshot 副本和存储操作。访问权限不会影响任何 SnapDrive storage show 或 storage list 操作。通过 SnapDrive ，您可以为存储系统上的文件中的每个主机指定访问权限。 
 ---
 = 对存储系统的访问权限
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

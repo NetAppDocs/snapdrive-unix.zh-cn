@@ -5,6 +5,7 @@ keywords: snap, snapdrive, access, control, level
 summary: SnapDrive for UNIX 可为用户提供各种访问控制级别。这些访问级别与 Snapshot 副本和存储系统操作相关。 
 ---
 = 可用的访问控制级别
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, access, control, permission
 summary: 您可以通过在存储系统的根卷中创建特殊目录和文件来在 SnapDrive for UNIX 中设置访问控制权限。 
 ---
 = 设置访问控制权限
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

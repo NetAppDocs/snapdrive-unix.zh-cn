@@ -5,6 +5,7 @@ keywords: snap, snapdrive, verify, veritas, stack, configuration
 summary: 要验证 Veritas 堆栈配置，必须运行 SnapDrive storage connect 和 vxdisk list 命令。 
 ---
 = 验证 Veritas 堆栈配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

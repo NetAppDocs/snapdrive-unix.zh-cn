@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, clone, estimate
 summary: 如果存储系统中没有可用于 Snapshot 副本的克隆，则克隆拆分估计有助于使用 Snapshot 副本估算所需存储空间 \ （以 MB 为单位）。 
 ---
 = 使用 Snapshot 副本估算存储空间
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, fail, error, operation, reboot, reload
 summary: 重新启动主机后， Snap 连接操作失败，并且原始卷组不会加载。 
 ---
 = Snap 连接操作失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

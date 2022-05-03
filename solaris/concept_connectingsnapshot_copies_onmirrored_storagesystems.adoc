@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, snapshot, copy, mirrored, storage
 summary: 如果在镜像存储系统上创建了 Snapshot 副本，则可以将源存储系统上的 Snapshot 副本连接到目标系统。 
 ---
 = 在镜像存储系统上连接 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

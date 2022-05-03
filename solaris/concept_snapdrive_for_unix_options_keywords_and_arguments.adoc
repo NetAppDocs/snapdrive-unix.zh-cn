@@ -5,6 +5,7 @@ keywords: snap, snapdrive, options, keyword, argument
 summary: SnapDrive for UNIX 命令具有相关的选项，关键字和参数。 
 ---
 = SnapDrive for UNIX 选项，关键字和参数
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

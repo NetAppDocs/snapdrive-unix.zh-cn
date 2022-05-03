@@ -5,6 +5,7 @@ keywords: snap, snapdrive, vmware, vmotion, connect, lun, rdm, storage
 summary: 通过适用于 UNIX 的 SnapDrive ，您可以在 VMware VMotion 前后断开并连接 RDM LUN 。完成 VMotion 操作后，您可以执行存储系统所需的存储操作。 
 ---
 = SnapDrive for UNIX 中支持 VMware VMotion
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

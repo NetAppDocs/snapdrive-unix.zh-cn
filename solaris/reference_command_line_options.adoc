@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, line, options
 summary: SnapDrive for UNIX 命令可使用多种选项。 
 ---
 = 命令行选项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

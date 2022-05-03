@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, command, line, operation
 summary: SnapDrive for UNIX 命令用于执行 Snapshot 操作。 
 ---
 = Snapshot 操作命令行
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

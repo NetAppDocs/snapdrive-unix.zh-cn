@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, snapshot, copy, ha, storage, pair
 summary: 您可以还原包含单个存储实体的 Snapshot 副本。 
 ---
 = 还原存储系统或存储系统 HA 对上的单个存储实体
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

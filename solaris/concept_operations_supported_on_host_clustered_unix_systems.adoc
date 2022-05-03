@@ -5,6 +5,7 @@ keywords: snap, snpadrive, support, host, cluster
 summary: 通过主机集群模式 UNIX 系统上的 SnapDrive for UNIX ，您可以在主机集群范围的共享存储上创建存储并执行 Snapshot 操作。 
 ---
 = 主机集群模式 UNIX 系统支持的操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

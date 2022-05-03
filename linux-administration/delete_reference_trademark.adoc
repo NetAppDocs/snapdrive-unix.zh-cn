@@ -5,6 +5,7 @@ keywords: trademark, netapp, logo, owner, company
 summary:  
 ---
 = 商标
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, data, collection, utility
 summary: 数据收集实用程序可运行 NetApp 诊断实用程序，复制 SnapDrive for UNIX 日志文件，并创建一个用于分析的压缩文件。 
 ---
 = 由 SnapDrive.dc 执行的任务
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

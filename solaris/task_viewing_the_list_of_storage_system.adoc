@@ -5,6 +5,7 @@ keywords: snap, snapdrive, view, list, storage, system
 summary: 您可以在主机系统中使用 SnapDrive config list 命令查看所有存储系统。 
 ---
 = 查看存储系统列表
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

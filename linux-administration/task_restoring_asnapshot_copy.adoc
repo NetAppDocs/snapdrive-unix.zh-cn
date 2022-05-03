@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, snapshot, command
 summary: 您可以使用 SnapDrive snap restore 命令还原 Snapshot 副本。还原操作可能需要几分钟时间，具体取决于还原的类型和数据量。 
 ---
 = 还原 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, multipath, configuration, variables, file, mpio
 summary: 您需要更改 SnapDrive.conf 文件中的几个配置变量，才能使 MPIO 与 Linux 配合使用。 
 ---
 = 多路径配置变量
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

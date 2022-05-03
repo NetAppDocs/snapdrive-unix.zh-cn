@@ -5,6 +5,7 @@ keywords: snap, snapdrive, install, solaris, host, unix
 summary: 要在 Solaris 主机上安装 SnapDrive for UNIX ，您必须确认已以 root 用户身份登录。如果您远程执行此文件，并且系统配置不允许以 root 用户身份登录，则可以使用 su 命令成为 root 用户。安装文件是一个标准 Solaris.pkg 文件。 
 ---
 = 在 Solaris 主机上安装 SnapDrive for UNIX
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

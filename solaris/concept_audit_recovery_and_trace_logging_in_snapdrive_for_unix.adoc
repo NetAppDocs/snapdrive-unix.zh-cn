@@ -5,6 +5,7 @@ keywords: snap, snapdrive, audit, recovery, trace, log
 summary: SnapDrive for UNIX 可帮助您维护各种类型的日志文件，例如审核，恢复和跟踪日志文件。这些日志文件稍后将用于故障排除。 
 ---
 = SnapDrive for UNIX 中的审核，恢复和跟踪日志记录
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

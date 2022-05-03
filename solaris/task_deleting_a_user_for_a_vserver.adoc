@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, user, vserver
 summary: 您可以通过执行 SnapDrive config delete 命令从 SVM 中删除登录信息。 
 ---
 = 从 SVM 中删除用户
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

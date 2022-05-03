@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, multiple, storage, entities
 summary: 您可以连接包含多个存储实体的 Snapshot 副本。 
 ---
 = 连接多个存储实体
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

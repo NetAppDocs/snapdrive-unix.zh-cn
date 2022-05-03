@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, display, storage
 summary: SnapDrive storage show 或 SnapDrive NFS 存储列表显示了一个或多个存储实体的底层 LUN 或 NFS 目录树。您可以使用 SnapDrive storage show 命令了解并了解磁盘组，主机卷，文件系统或 NFS 目录树的 Snapshot 副本中的内容。 
 ---
 = 用于显示可用存储的命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

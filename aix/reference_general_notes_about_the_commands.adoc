@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, dg, vg, lvol, hostvol
 summary: SnapDrive for UNIX 命令具有 -dg ， -vg ， -lvol 和 -hostvol 等选项。 
 ---
 = 有关命令的一般注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

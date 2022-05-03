@@ -5,6 +5,7 @@ keywords: snap, snapdrive, rbac, access, control, flexclone, volume
 summary: 如果为 Operations Manager 配置了系统，则 Operations Manager 管理员必须授予您在 FlexClone 卷上执行存储操作所需的权限。 
 ---
 = 对 FlexClone 卷操作进行基于角色的访问控制
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

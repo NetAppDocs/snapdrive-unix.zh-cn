@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, create, operation
 summary: 完成存储创建操作后，您必须提供一些信息。 
 ---
 = 存储创建操作所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

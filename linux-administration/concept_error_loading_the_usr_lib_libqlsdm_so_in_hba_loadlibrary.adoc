@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, update, unloading, library
 summary: 在使用 iSCSI 设置的 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机的所有更新上，所有 SnapDrive for UNIX 命令均会出错。 
 ---
 = 在 HBA_LoadLibrary 中加载 /usr/lib/libqlsdm.so 时出错
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

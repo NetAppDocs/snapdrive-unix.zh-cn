@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lun, selective, map, path, ha, data, clustered, slm
 summary: 从集群模式 Data ONTAP 8.3 开始，默认情况下，所有新 LUN 映射都会启用选择性 LUN 映射（ SLM\ ）。创建新的 LUN 映射时，只能通过 LUN 所属节点及其 HA 配对节点上的路径来访问此 LUN 。 
 ---
 = 在 SnapDrive for UNIX 中使用选择性 LUN 映射
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

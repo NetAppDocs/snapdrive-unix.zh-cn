@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, lun, clone, stale, device
 summary: 删除 LUN 和克隆可能会在 UNIX 中留下陈旧设备，并且 SnapDrive for UNIX 不会删除这些陈旧设备。 
 ---
 = 删除 LUN 和克隆会使 UNIX 中的设备陈旧
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

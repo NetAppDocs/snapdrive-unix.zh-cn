@@ -5,6 +5,7 @@ keywords: snap, snapdrive, consistency, group, snapshot, copy, configuration
 summary: 您可以将 SnapDrive for UNIX 配置为创建一致性组 Snapshot 副本。 
 ---
 = 创建一致性组 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

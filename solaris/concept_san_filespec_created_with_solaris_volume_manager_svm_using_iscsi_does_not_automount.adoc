@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, filespec, iscsi, volume, solaris, manager, n
 summary: 重新启动主机系统后，使用 iSCSI 的 Solaris Volume Manager （ SVM\ ）创建的存储区域网络文件规范不会自动挂载，主机也不会启动。 
 ---
 = 不会自动挂载使用 iSCSI 的 Solaris Volume Manager 创建的存储区域网络文件规范
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

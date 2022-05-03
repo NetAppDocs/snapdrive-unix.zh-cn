@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lun, local, remote, host, snaprestore, initiator
 summary: 在基于卷的 SnapRestore 期间，从卷到 SnapDrive for UNIX 的唯一映射信息是 LUN 的启动程序组信息。如果您使用的启动程序组始终由适用于 UNIX 的 SnapDrive 创建，则主机的完全限定域名属于启动程序组名称。 
 ---
 = 有关映射到本地或远程主机的 LUN 的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, create, lvm, file, ext4, ext3
 summary: 如果使用 SnapDrive for UNIX 使用 LVM 创建逻辑卷或文件系统，则 SnapDrive for UNIX 会自动创建所需的磁盘组。SnapDrive for UNIX 会根据主机卷管理器支持的类型创建文件系统。对于 Linux ，它包括 ext4 或 Ext3 。 
 ---
 = 为 LVM 实体创建存储
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

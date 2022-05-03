@@ -5,6 +5,7 @@ keywords: snap, snapshot, storage, create, host cluster
 summary: 在主机集群环境中创建存储时，应遵循特定准则。 
 ---
 = 在主机集群环境中执行存储创建操作的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

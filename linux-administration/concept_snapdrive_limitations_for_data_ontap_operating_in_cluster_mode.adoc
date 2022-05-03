@@ -5,6 +5,7 @@ keywords: snap, snapdrive, clustered, ontap, limitations, operations
 summary: 集群模式 Data ONTAP 不支持某些 SnapDrive 功能和操作。 
 ---
 = 集群模式 Data ONTAP 的 SnapDrive 限制
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

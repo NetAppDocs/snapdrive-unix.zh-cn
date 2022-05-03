@@ -5,6 +5,7 @@ keywords: snap, snapdrive, exit, status, value, error, message
 summary: 每个 SnapDrive for UNIX 错误消息都与一个退出状态值相关联。退出状态值包含错误的发生原因及其类型 - 警告，命令，管理员或致命。 
 ---
 = 了解错误消息的退出状态值
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

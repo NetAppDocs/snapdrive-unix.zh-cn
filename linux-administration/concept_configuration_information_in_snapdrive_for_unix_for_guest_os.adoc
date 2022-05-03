@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configuration, guest, lun, operating
 summary: 您必须在子操作系统中配置存储系统和 Virtual Storage Console 以配置 RDM LUN 。 
 ---
 = 子操作系统的 SnapDrive for UNIX 中的配置信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

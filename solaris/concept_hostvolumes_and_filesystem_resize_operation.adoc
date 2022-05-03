@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, volume, resize, file
 summary: SnapDrive storage resize 命令仅适用于存储系统磁盘组和卷组。如果要增加主机卷或文件系统的大小，必须使用 LVM 命令。 
 ---
 = 主机卷和文件系统大小调整操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

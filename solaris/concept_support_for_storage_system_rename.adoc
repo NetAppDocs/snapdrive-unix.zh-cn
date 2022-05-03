@@ -5,6 +5,7 @@ keywords: snap, snapdrive, support, storage, rename
 summary: SnapDrive 允许重命名存储系统。如果创建了 Snapshot 副本，并且在创建该副本后对存储系统进行了重命名，则只要重新对所有客户端（主机）进行身份验证， SnapDrive 就允许您执行 Snapshot 操作。 
 ---
 = 支持存储系统重命名
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

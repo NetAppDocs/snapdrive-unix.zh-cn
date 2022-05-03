@@ -5,6 +5,7 @@ keywords: documentation, guide, installation, administration, solaris
 summary: 介绍如何在 Solaris 平台上安装，配置和使用适用于 UNIX 的 SnapDrive 。 
 ---
 = 《适用于 Solaris 的安装和管理指南》
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

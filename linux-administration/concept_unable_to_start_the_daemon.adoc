@@ -5,6 +5,7 @@ keywords: snap, snapdrive, daemon, start, problem, stale, entry
 summary: 如果守护进程在 SnapDrive 进程中发现少量陈旧条目，则无法启动此守护进程。 
 ---
 = 无法启动守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

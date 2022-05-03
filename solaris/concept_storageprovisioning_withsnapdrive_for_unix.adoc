@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, operation
 summary: SnapDrive for UNIX 可提供端到端存储管理。您可以使用主机逻辑卷管理器（ Logical Volume Manager ， LVM ）或不使用主机逻辑卷管理器（ Logical Volume Manager ， LVM ）来配置主机到存储系统的存储，并对该存储进行管理。 
 ---
 = SnapDrive for UNIX 中的存储操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

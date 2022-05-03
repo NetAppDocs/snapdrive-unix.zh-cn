@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lun, names, san, host
 summary: 在所有 SAN 操作中，无论 LUN 名称是否解析为 IP 地址，其格式都应始终采用主机名。在纯 SAN 环境中，没有数据路径的概念。管理接口映射必须与数据路径接口相同。 
 ---
 = SAN 环境中的 LUN 名称
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, rbac, access, control, role, storage, limited, user
 summary: RBAC 允许 SnapDrive 管理员在执行各种 SnapDrive 操作时限制对存储系统的访问。存储操作的这种有限或完全访问权限取决于分配给用户的角色。 
 ---
 = 什么是 SnapDrive for UNIX 中基于角色的访问控制（ RBAC ）
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

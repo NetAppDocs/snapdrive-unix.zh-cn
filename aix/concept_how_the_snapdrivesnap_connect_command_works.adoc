@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, command
 summary: 使用 SnapDrive snap connect 命令时，它会克隆指定实体的存储并将其导入到主机中。 
 ---
 = SnapDrive snap connect 命令的工作原理
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

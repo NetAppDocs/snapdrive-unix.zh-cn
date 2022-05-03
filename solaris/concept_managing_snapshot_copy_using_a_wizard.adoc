@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, wizard
 summary: 您可以使用向导管理 Snapshot 副本。此向导将引导您完成一系列问题，并帮助您执行 snap connect ， snap restore 和 snap disconnect 操作。 
 ---
 = 使用向导管理 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, supported, configurations, interoperability
 summary: 在安装 SnapDrive for SnapDrive 之前，您应使用 NetApp 互操作性表工具 \ （ UNIX\ ）验证 IMT 是否支持您的配置。 
 ---
 = 支持的配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, volume, snaprestore
 summary: SnapDrive 4.0 for UNIX 及更高版本可在卷级别提供 Snapshot 还原功能。本节介绍了可使用基于卷的 Snapshot 还原执行的各种存储操作。 
 ---
 = 基于卷的 SnapRestore
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

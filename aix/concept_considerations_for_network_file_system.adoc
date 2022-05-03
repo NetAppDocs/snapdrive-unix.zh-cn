@@ -5,6 +5,7 @@ keywords: snap, snapdrive, guidelines, nfs, configuration
 summary: 在安装 SnapDrive for UNIX 之前，您应考虑网络文件系统（ NFS\ ）服务的运行位置以及存储系统目录的导出位置。您应检查 NFS 客户端权限和接口读写权限。 
 ---
 = NFS 配置准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

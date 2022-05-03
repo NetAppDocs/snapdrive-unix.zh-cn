@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, file, lun, system
 summary: 您可以使用适用于 UNIX 的 SnapDrive 在 LUN 上创建文件系统。SnapDrive for UNIX 会自动创建关联的 LUN 。 
 ---
 = 在 LUN 上创建文件系统并自动设置 LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configuration, vserver
 summary: 要执行 SnapDrive 操作，您必须在 SnapDrive for UNIX 中配置 Vserver 。 
 ---
 = SVM 的配置信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

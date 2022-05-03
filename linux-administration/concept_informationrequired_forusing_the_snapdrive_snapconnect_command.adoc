@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, command
 summary: 要连接到 Snapshot 副本，请确定存储实体的类型，将具有 NFS 目录树的 Snapshot 副本连接到 Data ONTAP 7.3 配置等。 
 ---
 = 使用 SnapDrive snap connect 命令所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

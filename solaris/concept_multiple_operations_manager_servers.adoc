@@ -5,6 +5,7 @@ keywords: manager, console, server, operations,configuration
 summary: SnapDrive for UNIX 支持多个 Operations Manager 控制台服务器。如果一组存储系统由多个 Operations Manager 控制台服务器管理，则需要此功能。SnapDrive for UNIX 按照在 SnapDrive for UNIX 中配置 Operations Manager 控制台服务器的相同顺序联系 Operations Manager 控制台服务器。您可以运行 SnapDrive config list 命令来获取配置顺序。 
 ---
 = 多个 Operations Manager 控制台服务器
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

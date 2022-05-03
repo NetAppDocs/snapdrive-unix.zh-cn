@@ -5,6 +5,7 @@ keywords: snap, snapdrive, login, information, virtual, console, storage, specif
 summary: 必须在适用于 UNIX 的 SnapDrive 中配置虚拟存储控制台，以便在子操作系统中配置 RDM LUN 。但是，有一个用户名和密码允许 SnapDrive for UNIX 访问虚拟存储控制台。Virtual Storage Console 不会对这些登录凭据进行身份验证。 
 ---
 = 指定 Virtual Storage Console 的登录信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

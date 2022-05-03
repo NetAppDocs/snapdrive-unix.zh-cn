@@ -5,6 +5,7 @@ keywords: snap, snapdrive, fc, iscsi, configuration
 summary: 虽然光纤通道协议（ FCP ）和 Internet 小型计算机系统接口（ iSCSI ）曾经作为单独的实用程序分发，但您可以在 Solaris Host Utilities 中找到 FCP 和 iSCSI 配置支持。 
 ---
 = FC 或 iSCSI 配置检查
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

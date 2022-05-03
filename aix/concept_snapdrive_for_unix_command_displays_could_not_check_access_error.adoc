@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, display, access, error, check
 summary: 如果 SnapDrive for UNIX 对存储对象具有正确的写入访问权限，则它可能会显示错误。 
 ---
 = SnapDrive for UNIX 命令显示 Could not check access error
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

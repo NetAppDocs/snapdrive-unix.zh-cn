@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, operation
 summary: 您必须牢记与各种存储命令相关的一些注意事项。 
 ---
 = 存储操作注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

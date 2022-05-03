@@ -5,6 +5,7 @@ keywords: snap, snapdrive, license, requirements, unix
 summary: 在安装 SnapDrive for UNIX 之前，您必须确保已为所需软件和协议获得适当的许可证。 
 ---
 = SnapDrive for UNIX 许可证要求
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

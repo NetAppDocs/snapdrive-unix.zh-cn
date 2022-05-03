@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, command, fail, discover, create, mapped, rej
 summary: 在 SnapDrive for UNIX 中运行 storage create 命令时，在发现阶段，某些映射设备的发现将被拒绝，并且此命令将失败。 
 ---
 = 发现某些映射设备时， SnapDrive for UNIX storage create 命令失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

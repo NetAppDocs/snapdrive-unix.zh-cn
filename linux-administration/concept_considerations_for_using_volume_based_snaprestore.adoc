@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snaprestore, volume
 summary: 您可以在使用基于卷的 SnapRestore \ （ VBSR\ ）时牢记几点。牢记这些要点有助于您安全地使用 VBSR 功能。 
 ---
 = 使用基于卷的 SnapRestore 的注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, syntax, disconnect, file, system, host, lun
 summary: 要使用 SnapDrive storage disconnect 命令删除直接在 LUN 上创建的文件系统，请使用以下语法。 
 ---
 = 用于将 LUN 上创建的文件系统与主机断开连接的命令语法
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

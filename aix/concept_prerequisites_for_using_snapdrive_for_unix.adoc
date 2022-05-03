@@ -5,6 +5,7 @@ keywords: snap, snapdrive, hardware, software, configuration
 summary: 根据您的存储系统，您可以配置光纤通道 \ （ FC\ ）， Internet 小型计算机系统接口 \ （ iSCSI\ ）或使用 NFS 目录树的网络文件系统 \ （ nfs\ ）配置。 
 ---
 = 硬件和软件配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

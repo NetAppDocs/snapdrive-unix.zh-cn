@@ -5,6 +5,7 @@ keywords: snap, snapdrive, verify, supported, configuration
 summary: SnapDrive for UNIX 配置检查程序工具可帮助您确定和验证运行 SnapDrive for UNIX 所支持的配置。 
 ---
 = 验证支持的配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

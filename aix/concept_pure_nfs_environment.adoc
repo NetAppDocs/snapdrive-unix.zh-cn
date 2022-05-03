@@ -5,6 +5,7 @@ keywords: snap, snapdrive, pure, nfs, environment
 summary: 如果您为一个系统配置了多个子网，并且通过管理界面挂载了一个或多个 NFS 卷，则应始终将第一个数据接口配置为管理接口。 
 ---
 = 纯 NFS 环境
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, name, change
 summary: 您可以使用 SnapDrive snap rename 命令更改 Snapshot 副本的名称。Snapshot 重命名操作会将源 Snapshot 副本的名称更改为目标参数指定的名称。 
 ---
 = 更改 Snapshot 副本名称
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

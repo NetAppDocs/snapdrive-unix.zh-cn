@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, command, storage, fails, san, multipathing
 summary: 如果存在多个 SnapDrive 路径，但禁用了多路径，则 storage create 命令将失败。 
 ---
 = 如果存在多个 SAN 路径，但禁用了多路径，则 SnapDrive storage create 命令将失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

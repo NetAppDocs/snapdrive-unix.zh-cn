@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configure, wizard, nfs, san, mixed
 summary: 通过配置向导，您可以在 NFS ， SAN 或混合环境中进行配置。 
 ---
 = 使用 SnapDrive 配置向导
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, disconnect, disk, group, fail
 summary: 在使用 Solaris 10 Update 10 或更高版本的存储系统上，如果没有 -full 选项，则用于删除和断开磁盘组连接的 SnapDrive for UNIX 命令将失败。delete and disconnect 命令失败，因为主机卷未完全断开连接或删除。 
 ---
 = 断开磁盘组的存储连接失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

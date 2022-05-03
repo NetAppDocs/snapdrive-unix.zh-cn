@@ -5,6 +5,7 @@ keywords: snap, snapdrive, flexclone, splitting, volume
 summary: 您可以使用 SnapDrive for UNIX 命令拆分现有的 FlexClone 卷。 
 ---
 = 拆分 FlexClone 卷
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

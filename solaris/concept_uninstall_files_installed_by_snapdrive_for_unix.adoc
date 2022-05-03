@@ -5,6 +5,7 @@ keywords: snap, snapdrive, uninstall, install
 summary: SnapDrive for UNIX 使用卸载文件删除 SnapDrive for UNIX 。 
 ---
 = 卸载 SnapDrive for UNIX 安装的文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

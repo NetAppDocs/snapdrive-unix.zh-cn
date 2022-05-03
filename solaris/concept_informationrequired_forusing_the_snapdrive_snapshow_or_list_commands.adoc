@@ -5,6 +5,7 @@ keywords: snap, snapdrive, show, list, command
 summary: 您可以使用命令 SnapDrive snap show 或 list 显示有关存储系统，存储系统卷，磁盘或卷组，文件系统， Snapshot 副本等。 
 ---
 = 使用 SnapDrive snap show 或 list 命令所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

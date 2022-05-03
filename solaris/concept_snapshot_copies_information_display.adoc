@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, display
 summary: 您可以显示存储系统，存储系统卷， LUN 和其他存储实体的 Snapshot 副本。使用命令 SnapDrive snap show \ （或 list\ ）显示 Snapshot 副本。 
 ---
 = 此时将显示 Snapshot 副本信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

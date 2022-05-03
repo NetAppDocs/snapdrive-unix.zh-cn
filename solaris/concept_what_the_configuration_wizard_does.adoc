@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configuration, wizard
 summary: 通过 SnapDrive 配置向导，您可以根据环境配置适用于 UNIX 的 SnapDrive 以及 NFS 或 SAN 设置。或者，您也可以打开 SnapDrive.conf 文件并编辑配置变量。 
 ---
 = SnapDrive 配置向导的功能
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

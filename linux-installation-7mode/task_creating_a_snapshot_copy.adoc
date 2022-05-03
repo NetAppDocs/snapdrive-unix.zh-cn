@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, copy
 summary: 在网络连接存储 \ （ NAS\ ）中使用存储区域网络 \ （ SAN\ ）和 NFS 卷时，您可以使用一个命令创建多个文件系统，主机卷， LUN 或磁盘组的 Snapshot 副本。 
 ---
 = 创建 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, create, file, supported
 summary: SnapDrive for UNIX 不会显示存储创建操作支持的文件系统类型。 
 ---
 = SnapDrive for UNIX 不会显示存储创建操作支持的文件系统类型
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

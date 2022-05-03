@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, vxvm, lun
 summary: 您可以创建主机实体，例如文件系统，逻辑卷或磁盘组，并指定作为其一部分创建的 LUN 。 
 ---
 = 创建 VxVM 实体并指定 LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

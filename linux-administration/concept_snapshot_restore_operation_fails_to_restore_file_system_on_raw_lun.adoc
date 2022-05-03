@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, fail, lun, snapshot, host
 summary: 在非源主机上执行 Snapshot 连接操作后，对原始 LUN 上的文件系统执行 Snapshot 还原操作将失败。 
 ---
 = Snapshot 还原操作无法还原原始 LUN 上的文件系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

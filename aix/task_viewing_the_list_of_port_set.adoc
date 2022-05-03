@@ -5,6 +5,7 @@ keywords: snap, snapdrive, view, list, port, set
 summary: 您可以使用 SnapDrive portset list 命令查看主机上在 SnapDrive 中配置的所有端口集。 
 ---
 = 查看端口集列表
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

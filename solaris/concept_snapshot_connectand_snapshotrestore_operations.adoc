@@ -5,6 +5,7 @@ keywords: snap, snapshot, restore, connect, operation
 summary: 连接到 Snapshot 副本时， Snapshot 副本会克隆信息。 
 ---
 = Snapshot 连接和 Snapshot 还原操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

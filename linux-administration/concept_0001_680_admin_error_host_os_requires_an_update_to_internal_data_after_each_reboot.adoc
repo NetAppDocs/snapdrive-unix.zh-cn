@@ -5,6 +5,7 @@ keywords: snap, snapdrive, reboot, error, update, connect, admin, administration
 summary: 在 Red Hat Enterprise Linux 4 和 Oracle Enterprise Linux 4 主机上，每次重新启动后， Snapshot 连接和存储创建操作都会遇到错误消息。 
 ---
 = 每次重新启动后， snap 连接都会生成 "0001-680 Admin error ： Host OS requires an update to internal data"
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

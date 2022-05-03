@@ -5,6 +5,7 @@ keywords: snap, snapdrive, daemon, stop, force, cancel, undefined
 summary: 如果您不想等待所有命令完成执行，则可以强制停止守护进程。收到强制停止守护进程的请求后， SnapDrive for UNIX 守护进程将取消正在执行或正在排队的所有命令。强制停止守护进程时，系统的状态可能未定义。不建议使用此方法。 
 ---
 = 强制停止守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

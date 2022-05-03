@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lun, host, command, storage
 summary: 您可以使用 SnapDrive for UNIX 命令通过在存储系统上创建 LUN 来配置存储。 
 ---
 = 创建不具有主机实体的 LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

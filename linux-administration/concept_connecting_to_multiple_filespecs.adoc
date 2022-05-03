@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, filespec, multiple
 summary: 您可以连接到驻留在一个卷中的多个文件系统。以下示例介绍了如何完成此操作。 
 ---
 = 连接到多个文件系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

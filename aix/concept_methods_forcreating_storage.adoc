@@ -5,6 +5,7 @@ keywords: snap, snapdrive, create, storage, method
 summary: SnapDrive for UNIX 为 SnapDrive storage create 命令提供了一些基本格式，以便于创建所需的存储。存储创建操作分为多个常规类别。 
 ---
 = 创建存储的方法
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

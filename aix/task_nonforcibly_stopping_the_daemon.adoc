@@ -5,6 +5,7 @@ keywords: snap, snapdrive, daemon, stop, nonforcibly
 summary: 如果 SnapDrive for UNIX 配置文件发生更改，则必须停止守护进程，配置文件更改才能生效。停止并重新启动守护进程后，配置文件中的更改将生效。如果不强制停止守护进程，则所有排队的命令都可以完成执行。收到停止请求后，不会执行任何新命令。 
 ---
 = 不强制停止守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

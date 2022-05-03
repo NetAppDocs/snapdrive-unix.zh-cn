@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, disconnect, command, lun
 summary: 在某些操作系统上使用 SnapDrive storage disconnect 命令时，会丢失主机卷名称，文件系统挂载点，存储系统卷名称以及 LUN 名称等信息。如果没有此信息，您将难以在稍后的某个时间点重新连接到存储。 
 ---
 = 有关使用 storage disconnect 命令的提示
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, crash, consistency, ontap
 summary: SnapDrive for UNIX 会使用 Data ONTAP 7.2 及更高版本提供的一致性组支持，以便跨多个卷的所有 Snapshot 副本都保持崩溃状态一致。 
 ---
 = 与 Data ONTAP 7.2 及更高版本的崩溃一致性
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

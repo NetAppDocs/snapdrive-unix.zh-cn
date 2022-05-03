@@ -5,6 +5,7 @@ keywords: snap, snapdrive, igroups, configure, host
 summary: 您可以查看主机上配置的所有 igroup 。 
 ---
 = 查看 igroup 列表
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

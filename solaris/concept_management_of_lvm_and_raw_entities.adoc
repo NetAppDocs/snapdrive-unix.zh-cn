@@ -5,6 +5,7 @@ keywords: snap, snapdrive, vxvm, raw, entity, manage
 summary: 通过 SnapDrive for UNIX ，您可以管理 VxVM （ Veritas 卷管理器）和原始实体。SnapDrive for UNIX 还提供了一些命令，可帮助您在创建存储实体时配置和管理存储。 
 ---
 = 管理 VxVM 和原始实体
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

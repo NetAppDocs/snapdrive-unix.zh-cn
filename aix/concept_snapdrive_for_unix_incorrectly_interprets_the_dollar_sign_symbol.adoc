@@ -5,6 +5,7 @@ keywords: snap, snapdrive, dollar, sign, incorrect, interpret
 summary: 如果在配置值中指定了特殊字符，则 SnapDrive for UNIX 会错误地对美元符号（ $\ ）和所有特殊字符进行不同的解释。 
 ---
 = SnapDrive for UNIX 对美元符号的解释不正确
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

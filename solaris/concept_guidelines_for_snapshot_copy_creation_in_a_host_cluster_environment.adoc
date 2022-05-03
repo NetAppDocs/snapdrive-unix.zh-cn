@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, create, host, cluster
 summary: 某些环境支持使用 SnapDrive for UNIX 创建 Snapshot 副本，但某些环境则不支持。请参见准则了解更多信息。 
 ---
 = 在主机集群环境中创建 Snapshot 副本的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

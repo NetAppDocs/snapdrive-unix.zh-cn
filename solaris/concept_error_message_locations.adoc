@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, message, location
 summary: SnapDrive for UNIX 在命令输出和各种日志文件中提供了有关错误消息的信息。 
 ---
 = 错误消息位置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

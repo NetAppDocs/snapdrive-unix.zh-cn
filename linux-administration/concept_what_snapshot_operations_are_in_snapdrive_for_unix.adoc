@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, ontap, image, host, storage, data, unix
 summary: 通过 SnapDrive for UNIX ，您可以使用 Data ONTAP Snapshot 技术为存储系统上存储的主机数据创建映像（ Snapshot 副本）。 
 ---
 = SnapDrive for UNIX 中的 Snapshot 操作是什么
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

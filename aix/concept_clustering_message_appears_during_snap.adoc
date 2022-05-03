@@ -5,6 +5,7 @@ keywords: snap, snapdrive, cluster, message, snaprestore, restore
 summary: 出现一条通用消息，指出适用场景 any SnapDrive for UNIX 主机操作系统具有主机集群监控功能。即使您的系统不提供主机集群监控或您已关闭此功能，也会显示此消息。 
 ---
 = 在 SnapRestore 期间会显示集群消息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

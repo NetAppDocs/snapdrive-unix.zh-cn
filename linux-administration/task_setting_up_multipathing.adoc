@@ -5,6 +5,7 @@ keywords: snap, snapdrive, multipathing, configure
 summary: 您可以通过设置多路径在主机和存储系统之间配置多个网络路径。SnapDrive for UNIX 支持在多路径环境中使用别名。您需要确保在 /etc/multipath.conf 文件中为映射器设备配置了正确的别名。 
 ---
 = 设置多路径
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, vserver, port, storage, set
 summary: 您可以在存储系统中添加端口集，以便与 SVM 进行通信。这是一次性活动，必须在使用存储系统之前完成。 
 ---
 = 在 SnapDrive 中添加端口集
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

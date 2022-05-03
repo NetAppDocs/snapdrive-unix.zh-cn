@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, linux, host, storage, system
 summary: 要成功执行 SnapDrive for UNIX 操作，必须先设置存储系统，然后再将其连接到 Linux 主机。 
 ---
 = 将 Linux 主机连接到存储系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, guidelines, storage, delete, command
 summary: SnapDrive storage delete 命令在 SnapDrive for UNIX 中具有一些限制。 
 ---
 = 使用 storage delete 命令的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

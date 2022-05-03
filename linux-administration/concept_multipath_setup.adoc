@@ -5,6 +5,7 @@ keywords: snap, snapdrive, multipath, steup, host, hba, driver, lvm, multipath
 summary: 如果主机设置完成，则 Linux MPIO 可以正常工作。主机设置大致分为 HBA 设置， HBA 驱动程序参数设置，多路径设置， LVM 设置和适用于 UNIX 的 SnapDrive 设置。 
 ---
 = 多路径设置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

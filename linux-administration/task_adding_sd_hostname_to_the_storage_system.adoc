@@ -5,6 +5,7 @@ keywords: snap, snapdrive, sd, hostname, storage, manager, operations, administr
 summary: Operations Manager 控制台管理员可以使用 Operations Manager 控制台在存储系统上创建 SD 主机名用户。完成这些步骤后， Operations Manager 控制台管理员必须手动将凭据发送给 SnapDrive for UNIX 管理员。您可以使用任何名称来替代 sd-hostname ；但最好使用 sd-hostname 。 
 ---
 = 将 SD 主机名添加到存储系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

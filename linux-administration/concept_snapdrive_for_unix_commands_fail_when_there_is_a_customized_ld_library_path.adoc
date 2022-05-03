@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, fail, customized
 summary: 如果存在自定义的 LD_library_path 以及 snapcreate-check-nonpersistent-nfs 设置为 off ，则 SnapDrive for UNIX 命令将失败。 
 ---
 = 使用自定义的 LD_library_path 时， SnapDrive for UNIX 命令失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

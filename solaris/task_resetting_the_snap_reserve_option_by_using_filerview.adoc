@@ -5,6 +5,7 @@ keywords: snap, snapdrive, reset, snap, reserve, option, filerview
 summary: '在 FC 或 iSCSI 环境中使用 Data ONTAP 时，应使用 FilerView 将快照预留选项重置为 0% 。' 
 ---
 = 使用 FilerView 重置快照预留选项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

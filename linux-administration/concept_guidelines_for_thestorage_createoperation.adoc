@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, create, operation, lun, guidelines
 summary: 在使用 SnapDrive storage create 命令执行存储创建操作时，应遵循特定准则。 
 ---
 = 存储创建操作的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

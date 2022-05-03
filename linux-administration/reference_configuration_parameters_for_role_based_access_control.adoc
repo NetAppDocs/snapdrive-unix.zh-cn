@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configuration, role, access, control, rbac
 summary: 您必须在 SnapDrive.conf 文件中设置与基于角色的访问控制相关的各种配置变量。 
 ---
 = 基于角色的访问控制的配置变量
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

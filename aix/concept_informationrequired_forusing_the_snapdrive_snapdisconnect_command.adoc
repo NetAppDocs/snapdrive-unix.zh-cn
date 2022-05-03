@@ -5,6 +5,7 @@ keywords: snap, snapdrive, information, required, disconect, command
 summary: 要断开 Snapshot 副本的连接，请指定要使用的存储实体类型，例如 LUN ，磁盘组，文件系统， 或主机卷。 
 ---
 = 使用 SnapDrive snap disconnect 命令所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

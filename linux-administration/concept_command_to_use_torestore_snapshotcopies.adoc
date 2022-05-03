@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, snapshot, copy, restore
 summary: 使用命令 SnapDrive snap restore 还原 Snapshot 副本。 
 ---
 = 用于还原 Snapshot 副本的命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

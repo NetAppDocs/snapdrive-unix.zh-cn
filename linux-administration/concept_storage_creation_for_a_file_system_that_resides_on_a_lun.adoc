@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, create, file, lun, host, lvm
 summary: 如果使用 SnapDrive for UNIX 创建直接驻留在 LUN 上的文件系统，则 SnapDrive for UNIX 将创建并映射 LUN ，然后创建并挂载文件系统，而不涉及主机 LVM 。 
 ---
 = 为 LUN 上的文件系统创建存储
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

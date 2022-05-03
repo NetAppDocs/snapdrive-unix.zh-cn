@@ -5,6 +5,7 @@ keywords: snap, snapdrive, guidelines, storage, disconnect, command
 summary: 使用 SnapDrive storage disconnect 命令时，请遵循以下准则。 
 ---
 = SnapDrive storage disconnect 命令的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restart, daemon, host, communivation, storage
 summary: 如果主机无法与任何已配置的存储系统进行通信，则无法启动守护进程。 
 ---
 = 当主机无法与存储系统通信时，无法重新启动守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

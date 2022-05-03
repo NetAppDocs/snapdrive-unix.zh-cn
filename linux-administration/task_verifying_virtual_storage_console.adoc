@@ -5,6 +5,7 @@ keywords: snap, snapdrive, login, verify, virtual, console, storage
 summary: 您可以使用 SnapDrive config list 命令验证是否已在适用于 UNIX 的 SnapDrive 中配置虚拟接口。 
 ---
 = 验证 Virtual Storage Console 的登录信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lun, discovery, fail, iscsi, daemon, limitation
 summary: 连续多次迭代后， SnapDrive for UNIX 命令无法发现 LUN 。 
 ---
 = 由于 iSCSI 守护进程限制， LUN 发现失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

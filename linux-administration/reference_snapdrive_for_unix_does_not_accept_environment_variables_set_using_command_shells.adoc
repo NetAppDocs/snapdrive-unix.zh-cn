@@ -5,6 +5,7 @@ keywords: snap, snapdrive, commands, fail, shell, snapcreate
 summary: 您无法执行 SnapDrive for UNIX 命令，因为 SnapDrive for UNIX 不接受通过命令 Shell 设置的环境变量，并且 $LD_library_path 和 snapcreate-check-nonpersistent-nfs 参数设置为 off 。 
 ---
 = 使用命令 Shell 设置环境变量时， SnapDrive for UNIX 命令失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

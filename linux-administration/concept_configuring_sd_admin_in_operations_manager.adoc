@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configure, admin, operations, console, manager
 summary: Operations Manager 控制台管理员可以创建 SD-admin 用户。 
 ---
 = 在 Operations Manager 控制台中配置 SD-admin
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, raw, entity
 summary: SnapDrive for UNIX 可为 LUN 等原始实体或可直接在 LUN 上创建的文件系统启用存储操作，并在不使用主机系统 VxVM 的情况下执行存储操作。 
 ---
 = 适用于 UNIX 和原始实体的 SnapDrive
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

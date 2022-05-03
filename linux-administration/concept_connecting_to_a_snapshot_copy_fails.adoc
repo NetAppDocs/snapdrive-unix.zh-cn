@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, fails
 summary: 在 SnapDrive for UNIX 操作期间，当 Linux 主机重新启动时， SnapDrive for UNIX 无法连接到 Snapshot 副本。 
 ---
 = 连接到 Snapshot 副本失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

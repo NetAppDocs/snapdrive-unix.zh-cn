@@ -3,6 +3,7 @@ permalink: index.html
 sidebar: sidebar 
 ---
 = SnapDrive for UNIX 5.3.2 文档
+:allow-uri-read: 
 
 
 欢迎使用 SnapDrive for UNIX 信息库。您可以在此处找到有关 SnapDrive for UNIX 软件 5.3.2 的文档，其中包括如何安装，配置，使用和管理适用于 Linux ， Solaris 和 AIX 的 SnapDrive 。

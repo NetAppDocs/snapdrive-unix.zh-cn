@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, collect
 summary: 本章提供有关 SnapDrive for UNIX 命令，格式，选项，关键字和示例的信息。 
 ---
 = 收集 SnapDrive for UNIX 命令所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

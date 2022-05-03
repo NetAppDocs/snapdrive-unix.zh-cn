@@ -5,6 +5,7 @@ keywords: snap, snapdrive, data, lun, volume, group, disappear
 summary: 将现有 LUN 添加到卷组时， LUN 上的数据将消失。 
 ---
 = 将 LUN 添加到卷组时，数据将消失
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

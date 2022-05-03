@@ -5,6 +5,7 @@ keywords: snap, snapdrive, file, configuraiton, variable
 summary: SnapDrive.conf 文件为 SnapDrive for UNIX 用于运行的每个可配置变量提供了一个名称 - 值对。SnapDrive for UNIX 会在每次启动时自动检查此文件中的信息。您可以使用文本编辑器修改此文件。 
 ---
 = 什么是 SnapDrive.conf 文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

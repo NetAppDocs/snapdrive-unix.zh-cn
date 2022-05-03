@@ -5,6 +5,7 @@ keywords: snap, snapdrive, start, daemon
 summary: 您必须先启动并运行 SnapDrive for UNIX 守护进程，然后才能使用任何 SnapDrive for UNIX 命令。 
 ---
 = 启动 SnapDrive for UNIX 守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

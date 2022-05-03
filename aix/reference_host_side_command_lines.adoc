@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, side, command, line
 summary: SnapDrive for UNIX 命令用于主机端操作。 
 ---
 = 主机端命令行
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, multiple, subnet, configuration
 summary: 在要将管理流量和数据流量分开的环境中，多个子网非常有用。这种隔离为管理网络流量创建了一个更安全的环境。在此类环境中，在服务器上运行的 SnapDrive 4.1.1 for UNIX 及更高版本支持在独立环境以及主机和 HA 对环境中可用的所有 SnapDrive 操作。 
 ---
 = 多子网配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

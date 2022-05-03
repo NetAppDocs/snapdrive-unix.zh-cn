@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, keywords, host, destination, flexcone, nfs, 
 summary: SnapDrive for UNIX 使用关键字指定主机磁盘组，目标组，卷或 FlexClone 的名称， NFS 文件， 存储系统等。 
 ---
 = 命令行关键字
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

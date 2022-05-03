@@ -5,6 +5,7 @@ keywords: snap, snapdrive, commands, blocked
 summary: 您无法运行 SnapDrive for UNIX 命令，因为这些命令似乎被阻止超过 10 分钟。您可能需要等待命令完成。 
 ---
 = 命令显示为已阻止
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

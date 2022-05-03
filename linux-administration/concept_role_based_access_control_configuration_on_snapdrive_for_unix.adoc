@@ -5,6 +5,7 @@ keywords: snap, snapdrive, configure, role, access, rbac, control, manager, comm
 summary: 要为 SnapDrive for UNIX 配置基于角色的访问控制 \ （ RBAC ），您必须完成各种任务。您可以使用 Operations Manager 控制台或命令行界面来执行这些任务。 
 ---
 = 在 SnapDrive for UNIX 中配置基于角色的访问控制
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

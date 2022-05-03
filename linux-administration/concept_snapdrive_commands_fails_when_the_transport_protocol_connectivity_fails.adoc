@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, fail, transport, fc, iscsi, storage
 summary: 如果主机和存储系统之间的 iSCSI 或 FC 连接失败，或者存储系统上的 iSCSI 或 FC 出现故障，则 SnapDrive 命令将失败。 
 ---
 = 传输协议连接失败时， SnapDrive 命令失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

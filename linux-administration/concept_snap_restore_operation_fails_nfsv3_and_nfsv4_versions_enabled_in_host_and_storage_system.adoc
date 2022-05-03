@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, fail, nfsv3, nfsv4, host, storage, operation
 summary: 如果主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败。 
 ---
 = 如果在主机和存储系统中启用了 NFSv3 和 NFSv4 版本，则快照还原操作将失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

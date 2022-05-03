@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, rename, snapshot, copy
 summary: 使用 snapshot snap rename 命令重命名 Snapshot 副本。 
 ---
 = 用于重命名 Snapshot 副本的命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

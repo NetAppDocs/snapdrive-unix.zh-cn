@@ -5,6 +5,7 @@ keywords: snap, snapdrive, log, file, troubleshoot, audit, recovery, trace
 summary: SnapDrive for UNIX 支持各种类型的日志文件，这些日志文件有助于您在 SnapDrive for UNIX 未按预期工作时进行故障排除。 
 ---
 = 日志类型
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

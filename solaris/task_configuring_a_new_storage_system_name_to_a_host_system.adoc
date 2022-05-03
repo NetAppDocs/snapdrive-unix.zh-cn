@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, system, name, host, configure
 summary: 您必须在主机系统中配置新的存储系统名称，才能使用新的存储系统执行 SnapDrive 操作。 
 ---
 = 在主机系统中配置新的存储系统名称
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

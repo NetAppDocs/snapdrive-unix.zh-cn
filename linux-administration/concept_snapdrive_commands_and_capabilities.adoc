@@ -5,6 +5,7 @@ keywords: snap, snapdrive, commands, rbac, role, access, control
 summary: 在基于角色的访问控制 \ （ RBAC ）中，要成功执行每个操作，需要具有特定的功能。用户必须具有一组正确的功能来执行存储操作。 
 ---
 = SnapDrive 命令和功能
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

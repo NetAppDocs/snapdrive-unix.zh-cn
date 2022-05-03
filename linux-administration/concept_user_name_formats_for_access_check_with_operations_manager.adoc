@@ -5,6 +5,7 @@ keywords: snap, snapdrive, user, name, manger, access, check, operations, nis, n
 summary: SnapDrive for UNIX 使用用户名格式通过 Operations Manager 控制台执行访问检查。这些格式取决于您是网络信息系统 \ （ NIS\ ）还是本地用户。 
 ---
 = 用于使用 Operations Manager 控制台执行访问检查的用户名格式
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

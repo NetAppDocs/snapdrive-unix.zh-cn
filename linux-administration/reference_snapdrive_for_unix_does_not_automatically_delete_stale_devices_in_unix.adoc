@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, stale, device
 summary: 如果 SnapDrive for UNIX 操作因配置问题而失败，则以太网光纤通道 \ （ FCoE\ ）环境中可能会遗留陈旧设备。这些陈旧设备不会自动删除，因此您需要了解临时解决策。 
 ---
 = SnapDrive for UNIX 不会自动删除 UNIX 中陈旧的设备
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

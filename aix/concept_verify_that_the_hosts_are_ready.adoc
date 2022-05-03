@@ -5,6 +5,7 @@ keywords: snap, snapdrive, verify, host, ready
 summary: 您必须验证主机是否已准备就绪。要启动验证操作，您应首先输入 ping filername 命令来测试主机是否已连接到存储系统。 
 ---
 = 验证主机是否已准备就绪
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, mount, flexvol, fail, nfs, volume
 summary: 挂载 FlexVol 卷时， /etc/exports 文件中会添加一个条目。在 NFS 环境中， SnapDrive for UNIX 失败，并生成错误消息。 
 ---
 = 在 NFS 环境中挂载 FlexVol 卷失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, connect, command, fatal, iscsi64
 summary: 如果 SnapDrive snap connect 命令失败，并显示 iscsi64 SnapDrive 0001-666 致命错误，请参见下面的临时解决策。 
 ---
 = 收到错误 iscsi64 SnapDrive ： 0001-666 致命错误
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

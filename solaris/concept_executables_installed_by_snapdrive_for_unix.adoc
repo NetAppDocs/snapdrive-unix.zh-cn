@@ -5,6 +5,7 @@ keywords: snap, snapdrive, executable, install, unix
 summary: SnapDrive for UNIX 会为 Solaris 操作系统安装可执行文件。 
 ---
 = SnapDrive for UNIX 安装的可执行文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

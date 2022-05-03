@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disconnect, storage, command
 summary: 为了便于断开存储连接， SnapDrive for UNIX 为 SnapDrive storage disconnect 命令提供了多种格式。 
 ---
 = 断开存储连接的方法
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

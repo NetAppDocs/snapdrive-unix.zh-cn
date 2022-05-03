@@ -5,6 +5,7 @@ keywords: snap, snapdrive, decompress, download, software
 summary: 从 NetApp 支持站点下载适用于 UNIX 的 SnapDrive 软件包后，您应解压缩该文件以提取要安装的软件。 
 ---
 = 解压缩下载的软件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

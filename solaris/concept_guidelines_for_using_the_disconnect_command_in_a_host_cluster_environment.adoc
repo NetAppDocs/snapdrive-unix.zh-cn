@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disconnect, command, host, cluster
 summary: 以下是在主机集群环境中使用 SnapDrive storage disconnect 命令的准则。 
 ---
 = 在主机集群环境中使用 disconnect 命令的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

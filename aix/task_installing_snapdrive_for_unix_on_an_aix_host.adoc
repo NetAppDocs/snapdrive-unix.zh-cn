@@ -5,6 +5,7 @@ keywords: snap, snapdrive, install, aix, host, unix
 summary: 您可以使用系统管理接口工具（ SMIT\ ）在 AIX 主机上安装 SnapDrive for UNIX 。 
 ---
 = 在 AIX 主机上安装 SnapDrive for UNIX
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

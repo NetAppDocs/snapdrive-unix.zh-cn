@@ -5,6 +5,7 @@ keywords: snap, snapdrive, summary, command, management, storage
 summary: SnapDrive for UNIX 命令用于配置，存储配置，主机端管理和 Snapshot 操作。 
 ---
 = SnapDrive for UNIX 命令摘要
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

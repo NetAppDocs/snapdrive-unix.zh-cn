@@ -5,6 +5,7 @@ keywords: snap, snapdrive, host, verify, configuration, check, tool, linux
 summary: 使用 SnapDrive for UNIX 之前，配置检查程序工具可帮助您确认 Linux 主机中是否提供了所有必要的组件和正确的版本。 
 ---
 = 使用配置检查程序工具验证 Linux 主机配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

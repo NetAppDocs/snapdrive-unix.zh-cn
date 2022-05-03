@@ -5,6 +5,7 @@ keywords: snap, snapdrive, thin, provisioning
 summary: SnapDrive for UNIX 中的精简配置功能使用户可以为主机提供比存储系统上实际可用的存储空间更多的存储空间。 
 ---
 = SnapDrive for UNIX 中的精简配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

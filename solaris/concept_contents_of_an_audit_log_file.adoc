@@ -5,6 +5,7 @@ keywords: snap, snapdrive, audit, log, file
 summary: 审核日志显示有关您使用 SnapDrive for UNIX 发出的命令的信息。 
 ---
 = 审核日志文件的内容
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

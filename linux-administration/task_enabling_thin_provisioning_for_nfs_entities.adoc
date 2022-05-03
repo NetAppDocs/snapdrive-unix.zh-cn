@@ -5,6 +5,7 @@ keywords: snap, snapdrive, enable, thin, provisioning, nfs, space, reservation
 summary: 您可以使用 SnapDrive for UNIX 对存储系统上的 NFS 实体执行精简配置。精简配置称为空间预留。 
 ---
 = 为 NFS 实体启用精简配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

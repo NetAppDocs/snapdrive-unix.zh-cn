@@ -5,6 +5,7 @@ keywords: snap, snapdrive, automatic, detection, host
 summary: SnapDrive for UNIX 会自动检测某些命令的主机实体配置。一些 snap storage 命令只需要主机实体的名称。在这些情况下，您无需指定主机实体的类型。 
 ---
 = 自动检测主机实体
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, unix, stand, alone
 summary: 通过独立 UNIX 系统上的 SnapDrive for UNIX ，您可以创建存储并管理 LUN ，文件系统，逻辑卷和磁盘组的 Snapshot 副本。 
 ---
 = 在独立 UNIX 系统上执行的操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

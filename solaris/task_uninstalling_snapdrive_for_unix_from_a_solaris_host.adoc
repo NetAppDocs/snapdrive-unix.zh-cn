@@ -5,6 +5,7 @@ keywords: snap, snapdrive, solaris, host, uninstall
 summary: 要从 Solaris 系统卸载 SnapDrive for UNIX ，必须使用 uninstall 命令。 
 ---
 = 从 Solaris 主机卸载 SnapDrive for UNIX
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

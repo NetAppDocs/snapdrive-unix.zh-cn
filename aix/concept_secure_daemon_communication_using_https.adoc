@@ -5,6 +5,7 @@ keywords: snap, snapdrive, secure, daemon, https
 summary: 您可以使用 HTTPS 进行安全的 Web 服务和守护进程通信。可以通过在 SnapDrive.conf 文件中设置一些配置变量，并生成和安装自签名证书或 CA 签名证书来启用安全通信。 
 ---
 = 使用 HTTPS 安全守护进程通信
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

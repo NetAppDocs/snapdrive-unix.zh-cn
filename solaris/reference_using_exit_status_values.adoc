@@ -5,6 +5,7 @@ keywords: snap, snapdrive, exit, status, value
 summary: 在脚本中使用退出状态值来确定 SnapDrive for UNIX 命令是否成功。 
 ---
 = 使用退出状态值
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

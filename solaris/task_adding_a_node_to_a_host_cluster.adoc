@@ -5,6 +5,7 @@ keywords: snap, snapdrive, node, host, cluster
 summary: 要将新节点添加到主机集群，请按照适用于 Solaris 的 Veritas Cluster Server 安装指南中的说明进行操作。配置低延迟传输 \ （ LLT\ ）和全局原子广播 \ （ GAB\ ）后，您必须完成一些额外步骤。要确保主机集群设置正确，您应在使用任何 SnapDrive for UNIX 命令之前使用 SnapDrive config check cluster 选项。 
 ---
 = 将节点添加到主机集群
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

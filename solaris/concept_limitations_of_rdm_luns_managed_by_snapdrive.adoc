@@ -5,6 +5,7 @@ keywords: snap, snapdrive, limitations, rdm, lun
 summary: SnapDrive 在配置 RDM LUN 方面有一些限制。您必须了解可能影响环境的限制。 
 ---
 = 由 SnapDrive 管理的 RDM LUN 的限制
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

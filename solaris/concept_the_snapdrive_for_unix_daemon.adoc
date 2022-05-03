@@ -5,6 +5,7 @@ keywords: snap, snapdrive, daemon
 summary: 在运行任何 SnapDrive for UNIX 命令之前，您必须了解 Web 服务和守护进程以及如何使用它们。所有 SnapDrive for UNIX 命令均使用守护进程服务运行。在 Solaris 主机上使用 SnapDrive for UNIX 之前，必须启动守护进程，以便 SnapDrive for UNIX 能够与其他 NetApp 和非 NetApp 产品无缝安全地集成。 
 ---
 = 了解 SnapDrive for UNIX 守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

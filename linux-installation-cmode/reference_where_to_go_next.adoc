@@ -5,6 +5,7 @@ keywords: snap, snapdrive, after, configure, create, copy
 summary: 配置 SnapDrive for UNIX 并创建 Snapshot 副本后，您可以执行还原操作，连接 Snapshot 副本并创建克隆。您还可以了解其他重要的 SnapDrive 功能，例如基于角色的访问控制 \ （ RBAC ），增强型克隆拆分和基于卷的 SnapRestore 。 
 ---
 = 下一步行动
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

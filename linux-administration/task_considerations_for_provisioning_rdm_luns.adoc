@@ -5,6 +5,7 @@ keywords: snap, snapdrive, rdm, lun, provisioning
 summary: SnapDrive for UNIX 在配置 RDM LUN 时有一些注意事项。 
 ---
 = 配置 RDM LUN 的注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

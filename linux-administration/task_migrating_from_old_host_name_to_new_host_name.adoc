@@ -5,6 +5,7 @@ keywords: migrate, snap, snapdrive, storage, config, command
 summary: 您可以使用 SnapDrive config migrate set 命令从旧存储系统迁移到新存储系统。迁移完成后，您可以使用新的存储系统在主机系统中执行所有 SnapDrive 操作。 
 ---
 = 从旧存储系统迁移到新存储系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

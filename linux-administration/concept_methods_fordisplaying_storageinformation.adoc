@@ -5,6 +5,7 @@ keywords: snap, snapdrive, display, storage, show, command
 summary: 为了便于显示有关存储的信息， SnapDrive for UNIX 为 SnapDrive storage show 命令提供了多种格式。 
 ---
 = 显示存储信息的方法
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

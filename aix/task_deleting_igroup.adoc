@@ -5,6 +5,7 @@ keywords: snap, snapdrive, igroup, delete
 summary: 您可以删除为存储系统配置但不再需要的任何 igroup 。 
 ---
 = 删除 igroup
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

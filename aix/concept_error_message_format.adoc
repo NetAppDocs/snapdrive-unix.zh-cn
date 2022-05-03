@@ -5,6 +5,7 @@ keywords: snap, snapdrive, error, message, format
 summary: 此错误消息的格式可帮助您确定此错误的发生原因。 
 ---
 = 错误消息格式
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

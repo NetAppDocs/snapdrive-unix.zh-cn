@@ -5,6 +5,7 @@ keywords: snap, snapdrive, security, considerations, login
 summary: 您可以启用 SnapDrive for UNIX 来访问连接到主机的存储系统，并且必须将主机配置为使用分配给存储系统的登录名和密码。如果不提供此信息，则 SnapDrive for UNIX 将无法与存储系统进行通信。 
 ---
 = 安全注意事项
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

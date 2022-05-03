@@ -5,6 +5,7 @@ keywords: guide, documentation, installation, administration
 summary: 介绍如何在 AIX 平台上安装，配置和使用 SnapDrive for UNIX 。 
 ---
 = 《 IBM AIX 安装和管理指南》
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

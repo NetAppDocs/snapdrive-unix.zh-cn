@@ -5,6 +5,7 @@ keywords: snap, snapdrive, snapshot, copy, create, command
 summary: 影响 SnapDrive snap create 命令创建 Snapshot 副本的功能的条件很少。 
 ---
 = 无法创建 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

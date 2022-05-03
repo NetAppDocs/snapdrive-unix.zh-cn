@@ -5,6 +5,7 @@ keywords: snap, snapdrive, troubleshoot
 summary: SnapDrive for UNIX 中的故障排除工具不仅可以帮助您解决问题，还可以帮助您查找相关信息。 
 ---
 = 故障排除
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

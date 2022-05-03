@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, delete, command
 summary: SnapDrive storage delete 命令除了删除主机上的所有底层主机端实体及其支持这些实体的存储系统 LUN 之外，还会删除主机上的存储实体。 
 ---
 = storage delete 命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, provision, volume, storage
 summary: 通过 Data ONTAP ，您可以通过在存储系统上创建卷并将卷挂载到启用了 NFS 协议的主机来配置存储。 
 ---
 = 配置卷
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

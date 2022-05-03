@@ -5,6 +5,7 @@ keywords: snap, snapdrive, disconnect, operation, fail, delete, clone, volume
 summary: 在某些情况下， SnapDrive 快照断开操作无法删除克隆的卷，并且会显示错误消息 Does not look SnapDrive-generated 。 
 ---
 = 快照断开操作无法删除克隆的卷
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

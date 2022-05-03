@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, disconnect, command
 summary: 存储断开操作会使用 lun SnapDrive storage create 或 lun SnapDrive storage connect 命令删除已映射到主机的 LUN 或存储实体。 
 ---
 = storage disconnect 命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, login, user, virtual, console, storage
 summary: 您可以通过执行 SnapDrive config delete 命令来删除虚拟接口的用户登录名。 
 ---
 = 删除 Virtual Storage Console 的用户登录名
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

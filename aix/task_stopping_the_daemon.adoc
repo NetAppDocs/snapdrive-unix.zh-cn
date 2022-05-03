@@ -5,6 +5,7 @@ keywords: snap, snapdrive, daemon, stop
 summary: 如果更改 SnapDrive for UNIX 配置文件，则必须停止并重新启动守护进程。您可以非强制或强制停止守护进程。 
 ---
 = 正在停止守护进程
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

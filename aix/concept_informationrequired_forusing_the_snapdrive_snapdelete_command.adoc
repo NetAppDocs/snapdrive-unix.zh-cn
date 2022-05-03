@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, command, information, required
 summary: 要删除 Snapshot 副本，请指定要删除的 Snapshot 副本的名称。使用 SnapDrive snap delete 命令，您可以查看已删除的 Snapshot 副本列表。 
 ---
 = 使用 SnapDrive snap delete 命令所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

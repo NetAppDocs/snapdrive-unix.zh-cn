@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, size, increase
 summary: 通过适用于 UNIX 的 SnapDrive ，您可以增加存储系统卷组或磁盘组的大小。您可以使用 SnapDrive storage resize 命令执行此操作。 
 ---
 = 使用 SnapDrive for UNIX 增加存储大小
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

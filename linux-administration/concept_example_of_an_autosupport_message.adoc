@@ -5,6 +5,7 @@ keywords: snap, snapdrive, autosupport, message, example
 summary: SnapDrive for UNIX 提供了适用于不同情形的示例。无论您的操作系统如何，所有示例中的 AutoSupport 消息内容都基本相同。 
 ---
 = AutoSupport 消息示例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

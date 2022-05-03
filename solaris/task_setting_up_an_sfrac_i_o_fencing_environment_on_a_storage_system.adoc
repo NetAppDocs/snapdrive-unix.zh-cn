@@ -5,6 +5,7 @@ keywords: snap, snapdrive, sfrac, fencing, environment, storage
 summary: SnapDrive for UNIX 提供了存储配置和 Snapshot 管理选项，用于在 SFRAC 环境中管理主机集群范围的共享磁盘组和节点本地磁盘组以及文件系统。 
 ---
 = 在存储系统上设置 SFRAC I/O 隔离环境
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, connect, command, host, lun
 summary: SnapDrive storage connect 命令可将存储实体连接到主机。使用此命令可以将 LUN 和存储实体连接到主机 
 ---
 = storage connect 命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

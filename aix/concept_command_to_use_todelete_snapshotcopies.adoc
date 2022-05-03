@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, delete, snapshot, copy
 summary: 使用 SnapDrive snap delete 命令删除 Snapshot 副本。 
 ---
 = 用于删除 Snapshot 副本的命令
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

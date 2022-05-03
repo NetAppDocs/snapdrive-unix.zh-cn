@@ -5,6 +5,7 @@ keywords: snap, snapdrive, filespec, storage, objects, operation, multiple
 summary: 以下示例显示了当您不是执行特定操作的授权用户时可能会收到的错误消息。 
 ---
 = 对多个文件规范和存储对象执行的操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

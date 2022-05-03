@@ -5,6 +5,7 @@ keywords: snap, snapdrive, single, multiple, object, storage, filespec
 summary: 如果管理员对多个存储对象没有执行存储操作所需的权限，则 SnapDrive for UNIX 将显示一条错误消息。 
 ---
 = 对多个存储对象执行单个文件规范操作
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

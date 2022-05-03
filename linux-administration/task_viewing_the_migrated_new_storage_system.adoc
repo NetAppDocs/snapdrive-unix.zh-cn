@@ -5,6 +5,7 @@ keywords: snap, snapdrive, migrate, config, list, command, storage
 summary: 您可以运行 SnapDrive config migrate list 命令来验证迁移后的存储系统是否包含在主机系统中。 
 ---
 = 查看迁移的新存储系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

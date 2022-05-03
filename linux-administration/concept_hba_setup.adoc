@@ -5,6 +5,7 @@ keywords: snap, snapdrive, hba, setup, install
 summary: HBA 设置是指在 Linux 主机上安装适当 HBA 卡和支持的驱动程序的过程。 
 ---
 = HBA 设置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

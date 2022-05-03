@@ -5,6 +5,7 @@ keywords: snapdrive, snap, connect, hosts, storage, system
 summary: 要成功执行 SnapDrive for UNIX 操作，您必须设置 Storage Virtual Machine （ SVM ，以前称为 Vservers\ ） 
 ---
 = 将 Linux 主机连接到存储系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

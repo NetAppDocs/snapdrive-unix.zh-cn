@@ -5,6 +5,7 @@ keywords: snap, snapdrive, connect, snapshot, copy, lun, storage, entities
 summary: 您可以使用 SnapDrive snap connect 命令连接到包含 LUN 以外存储实体的 Snapshot 副本。如果您提供的目标名称当前正在使用中，或者存在用作挂载点的文件系统名称，则无法使用此命令。 
 ---
 = 连接到 LUN 以外存储实体的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

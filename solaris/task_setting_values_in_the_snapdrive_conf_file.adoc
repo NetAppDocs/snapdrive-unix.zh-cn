@@ -5,6 +5,7 @@ keywords: snap, snapdrive, value, file
 summary: 您可以更改 SnapDrive.conf 文件中的值或添加新的名称 - 值对。 
 ---
 = 设置 SnapDrive.conf 文件中的值
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

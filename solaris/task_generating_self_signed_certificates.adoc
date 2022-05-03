@@ -5,6 +5,7 @@ keywords: snap, snapdrive, certificate, generate, self, signed
 summary: SnapDrive for UNIX 守护进程服务要求您生成用于身份验证的自签名证书。与命令行界面通信时需要进行此身份验证。 
 ---
 = 生成自签名证书
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, fc, iscsi, nfs, configuration
 summary: SnapDrive for UNIX 支持主机集群和 HA 对拓扑。FC 或 iSCSI 配置支持与 FC Host Utilities 或 iSCSI Host Utilities 支持的相同主机集群和 HA 对配置。 
 ---
 = 支持的 FC ， iSCSI 或 NFS 配置
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

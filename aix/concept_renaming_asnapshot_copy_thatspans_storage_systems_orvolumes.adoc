@@ -5,6 +5,7 @@ keywords: snap, snapdrive, rename, snapshot, copy, storage, system, volume, mult
 summary: 对于跨多个存储系统或存储系统卷的 Snapshot 副本，请重命名所有相关的 Snapshot 副本。 
 ---
 = 重命名跨存储系统或卷的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, fails, lun, rhel, rescan, red, hat, enterprise
 summary: 与 SG3_utils 软件包捆绑的重新扫描脚本 /usr/bin/rescan-scsi-bus.sh 无法在运行 Red Hat Enterprise Linux 6.6 及更高版本的 SnapDrive for UNIX 中添加新映射的 LUN 。 
 ---
 = SnapDrive 无法在 RHEL 6.6 及更高版本中添加新映射的 LUN
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

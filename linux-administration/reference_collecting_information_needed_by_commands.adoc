@@ -5,6 +5,7 @@ keywords: snap, snapdrive, command, information, keywords, arguments, values, op
 summary: SnapDrive for UNIX 命令采用一种格式，并具有关联的关键字。这些命令具有选项和参数，需要用户输入值。 
 ---
 = 收集命令所需的信息
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, delete, why, snapshot, copy, old, space
 summary: 删除旧的 Snapshot 副本以释放存储系统卷上的空间，或者保留较少的 Snapshot 副本。 
 ---
 = 删除 Snapshot 副本的原因
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

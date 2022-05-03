@@ -5,6 +5,7 @@ keywords: snap, snapdrive, script
 summary: 以下是使用退出状态值的脚本示例。 
 ---
 = 脚本示例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, storage, multiple
 summary: 您可以还原包含多个存储实体的 Snapshot 副本。 
 ---
 = 还原多个存储实体
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

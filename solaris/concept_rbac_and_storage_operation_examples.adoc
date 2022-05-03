@@ -5,6 +5,7 @@ keywords: snap, snapdrive, rbac, storage, example, operation
 summary: 基于角色的访问控制允许根据分配给您的功能执行存储操作。如果您没有执行存储操作的适当功能，则会收到一条错误消息。 
 ---
 = RBAC 和存储操作示例
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

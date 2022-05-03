@@ -5,6 +5,7 @@ keywords: snap, snapdrive, discrepancy, error, message
 summary: 如果在 FC 和 iSCSI 服务均已启动或关闭时执行 SnapDrive storage delete 命令，则 SnapDrive for UNIX 将显示错误消息。 
 ---
 = 错误代码消息存在差异
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

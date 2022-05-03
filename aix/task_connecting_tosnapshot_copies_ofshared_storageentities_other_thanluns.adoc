@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lun, shared, storage, snapshot, copy
 summary: 您可以使用 SnapDrive snap connect 命令连接到 LUN 以外的共享存储实体的 Snapshot 副本。 
 ---
 = 连接到 LUN 以外的共享存储实体的 Snapshot 副本
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

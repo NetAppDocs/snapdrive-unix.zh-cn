@@ -5,6 +5,7 @@ keywords: snap, snapdrive, default, recovery, log, value
 summary: 您可以更改恢复日志文件的名称以及 SnapDrive for UNIX 保存的最大旧恢复日志文件数。 
 ---
 = 恢复日志的默认值
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

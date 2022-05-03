@@ -5,6 +5,7 @@ keywords: snap, snapdrive, user, role, configuration
 summary: 预配置的角色可简化向用户分配角色的任务。 
 ---
 = 预配置的角色，便于配置用户角色
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

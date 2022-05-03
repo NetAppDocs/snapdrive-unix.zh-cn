@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, command, fail, mount, file
 summary: 在 Solaris 上使用 SFRAC 5.0 时， snap restore 和 snap connect 命令无法挂载文件系统。 
 ---
 = snap restore 命令无法挂载文件系统
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

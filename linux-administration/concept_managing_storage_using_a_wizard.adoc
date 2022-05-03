@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, wizard, command, create
 summary: 您可以使用适用于 UNIX 的 SnapDrive 向导以交互方式高效地创建存储。该向导将引导您完成一系列问题，以帮助您创建存储。 
 ---
 = 使用向导管理存储
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

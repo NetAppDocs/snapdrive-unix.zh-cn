@@ -5,6 +5,7 @@ keywords: snap, snapdrive, flexclone, volume
 summary: 根据 SnapDrive for UNIX 使用 FlexClone 卷的方式， FlexClone 卷可以分为临时卷或通用卷。 
 ---
 = FlexClone 卷的类型
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

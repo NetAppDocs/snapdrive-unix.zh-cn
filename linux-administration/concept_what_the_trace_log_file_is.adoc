@@ -5,6 +5,7 @@ keywords: snap, snapdrive, trace, log, file, troubelshoot, problem, issue
 summary: 技术支持使用跟踪日志文件对问题进行故障排除。 
 ---
 = 什么是跟踪日志文件
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

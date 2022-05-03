@@ -5,6 +5,7 @@ keywords: snap, snapdrive, rename, snapshot, copy, command
 summary: 重命名 Snapshot 副本时，请确保两个 Snapshot 副本的名称不相同。 
 ---
 = 重命名 Snapshot 副本的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

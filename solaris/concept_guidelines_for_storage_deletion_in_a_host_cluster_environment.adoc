@@ -5,6 +5,7 @@ keywords: snap, snapdrive, storage, delete, host, cluster
 summary: 您必须了解在主机集群环境中使用 snapdrive storage delete 命令的一些准则。 
 ---
 = 在主机集群环境中删除存储的准则
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

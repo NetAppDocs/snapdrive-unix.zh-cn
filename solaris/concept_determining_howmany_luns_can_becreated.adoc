@@ -5,6 +5,7 @@ keywords: snap, snapdrive, lun, create
 summary: 通过 SnapDrive for UNIX ，您可以在不超过限制的情况下确定可以在主机上创建多少个 LUN 。 
 ---
 = 确定可以创建的 LUN 数量
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

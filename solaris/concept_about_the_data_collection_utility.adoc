@@ -5,6 +5,7 @@ keywords: snap, snapdrive, data, collection, utility, dc
 summary: SnapDrive for UNIX 提供了一个数据收集实用程序（ SnapDrive.dc\ ），用于收集有关 SnapDrive for UNIX ， SnapDrive 配置检查程序和系统设置的诊断信息。 
 ---
 = 关于数据收集实用程序
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

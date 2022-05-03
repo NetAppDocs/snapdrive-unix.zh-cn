@@ -5,6 +5,7 @@ keywords: snap, snapdrive, stack, requirement
 summary: SnapDrive for UNIX 需要主机操作系统，主机文件系统， NFS ，卷管理器， FC 或 iSCSI 主机实用程序，存储系统许可证， ONTAP 软件， MultiStore 软件和 Internet 协议 \ （ IP\ ）访问。SnapDrive for UNIX 还具有某些堆栈要求，必须满足这些要求。 
 ---
 = 堆栈要求
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

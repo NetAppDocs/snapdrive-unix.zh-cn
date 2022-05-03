@@ -5,6 +5,7 @@ keywords: snap, snapdrive, restore, file, snapshot, copy, fail, error
 summary: 从 Red Hat Enterprise Linux 3 更新迁移到 Red Hat Enterprise Linux 4 更新（即从 LVM1 迁移到 LVM2 ）后，从 Snapshot 副本还原文件系统失败。 
 ---
 = 从 Snapshot 副本还原文件系统失败
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
