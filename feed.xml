@@ -2,14 +2,14 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>snapdrive-unix</title>
+    <title>snapdrive-unix | NetApp Documentation</title>
     <atom:link href="https://docs.netapp.com/zh-cn/snapdrive-unix/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://docs.netapp.com/zh-cn/snapdrive-unix</link>
-    <description>The latest updates from NetApp Cloud Docs</description>
+    <description>The latest updates from NetApp Documentation</description>
     <language>zh-cn</language>
     <ttl>60</ttl>
-    <pubDate>Mon, 31 Jan 2022 13:38:33 +0000</pubDate>
-    <lastBuildDate>Mon, 31 Jan 2022 13:38:33 +0000</lastBuildDate>
+    <pubDate>Tue, 19 Jul 2022 15:11:21 +0000</pubDate>
+    <lastBuildDate>Tue, 19 Jul 2022 15:11:21 +0000</lastBuildDate>
     
   </channel>
 </rss>

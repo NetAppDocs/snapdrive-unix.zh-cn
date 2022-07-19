@@ -16,20 +16,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/>
-  
-  <meta name="description" content="在使用 Snapshot 副本时，应牢记一些注意事项，例如 SnapDrive for UNIX 仅适用于其创建的 Snapshot 副本，或者 Snapshot 副本自动从存储系统复制到主机等。">
-  <meta name="keywords" content=" snap, snapdrive,  snapshot, copy, storage">
-  
-  
-
-  <!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="在使用 Snapshot 副本时，应牢记一些注意事项，例如 SnapDrive for UNIX 仅适用于其创建的 Snapshot 副本，或者 Snapshot 副本自动从存储系统复制到主机等。">
+  <meta name="keywords" content=" snap, snapdrive,  snapshot, copy, storage"><!-- Icons -->
   <link rel="icon" href="/zh-cn/snapdrive-unix/images/favicon.ico" type="image/x-icon">
 
-  <!-- RSS Feed -->
-  
-
-  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
@@ -54,52 +45,65 @@
   <link rel="stylesheet" href='/zh-cn/snapdrive-unix/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/zh-cn/snapdrive-unix/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/zh-cn/snapdrive-unix/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/zh-cn/snapdrive-unix/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/zh-cn/snapdrive-unix/css/product-family.css' type="text/css">
-  
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
 
-  
-  <link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/na-feature.css' type='text/css'>
-  
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
 
+    function OptanonWrapper() { }
 
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
-  
-    <script src='/zh-cn/snapdrive-unix/js/na-search.js'></script>
-  
 
-  
-  <script src='/zh-cn/snapdrive-unix/js/na-pagenav.js'></script>
-  
-
-  <link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/prism.css' type='text/css'>
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-cn/snapdrive-unix/js/na-search.js'></script><script src='/zh-cn/snapdrive-unix/js/na-pagenav.js'></script><link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/zh-cn/snapdrive-unix/css/prism-netapp.css' type='text/css'>
 
 
   <script src='/zh-cn/snapdrive-unix/js/na-utility.js'></script>
   <script src='/zh-cn/snapdrive-unix/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/zh-cn/snapdrive-unix/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/zh-cn/snapdrive-unix/js/toc.js'></script>
-  <script src='/zh-cn/snapdrive-unix/js/customscripts.js'></script>
-
-  <script>
+  <script src='/zh-cn/snapdrive-unix/js/customscripts.js'></script><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -148,17 +152,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/zh-cn/snapdrive-unix/js/version-dropdown.js'></script>
-  <script src='/zh-cn/snapdrive-unix/js/product-family.js'></script>
+  <script src='/zh-cn/snapdrive-unix/js/custom-dropdown.js'></script>
   <script src='/zh-cn/snapdrive-unix/js/FileSaver.min.js'></script>
   <script src='/zh-cn/snapdrive-unix/js/jszip-utils.min.js'></script>
   <script src='/zh-cn/snapdrive-unix/js/jszip.min.js'></script>
@@ -166,11 +161,26 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/snapdrive-unix/issues/new?body=Page%3A%20[使用 Snapshot 副本时的注意事项](https://docs.netapp.com/zh-cn/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/snapdrive-unix/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/snapdrive-unix/blob/main/linux-administration/concept_considerations_when_working_with_snapshot_copies.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/snapdrive-unix/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/snapdrive-unix/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">在此页面上</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -248,12 +258,15 @@
           <div id="react-search" 
           data-search-html="/zh-cn/snapdrive-unix/search.html"
           data-type="widget" 
-          data-placeholder="搜索文档" 
-          data-no-results-found="未找到与 {query} 匹配的结果。" 
-          data-did-you-mean="搜索 {suggestion}。" 
-          data-no-results-found-did-you-mean="未找到与 {query} 匹配的结果。您是否要搜索 {suggestion}?" 
-          data-results-found="找到 {hitCount} 个结果"  
-          data-sk-es-pf-indexes=""></div>
+          data-placeholder="搜索文档"
+          data-no-results-found="未找到与 {query} 匹配的结果。"
+          data-did-you-mean="搜索 {suggestion}。"
+          data-no-results-found-did-you-mean="未找到与 {query} 匹配的结果。您是否要搜索 {suggestion}?"
+          data-results-found="找到 {hitCount} 个结果"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -266,33 +279,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">简体中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">简体中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-cn/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -336,14 +343,17 @@
   <div class="col-md-3" id="sidebar-height">
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
-    <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>可用的 PDF<span>
+    <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>可用的 PDF<span>
     </span>
   </a>
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/zh-cn/snapdrive-unix/pdfs/fullsite-sidebar/SnapDrive_for_UNIX_5_3_2_文档.pdf" >
-          <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>此文档站点的 PDF</a>
+          <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>此文档站点的 PDF</a>
 
 
 
@@ -352,12 +362,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/安装和设置适用于集群模式_Data_ONTAP_的_Linux.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             安装和设置适用于集群模式 Data ONTAP 的 Linux
           </a>
           
@@ -369,12 +382,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/准备部署.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             准备部署
           </a>
           
@@ -384,8 +400,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -397,12 +411,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/安装适用于_UNIX_的_SnapDrive.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             安装适用于 UNIX 的 SnapDrive
           </a>
           
@@ -410,8 +427,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -423,12 +438,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用配置检查程序工具验证_Linux_主机配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用配置检查程序工具验证 Linux 主机配置
           </a>
           
@@ -436,8 +454,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -449,12 +465,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置存储.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置存储
           </a>
           
@@ -462,8 +481,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -477,12 +494,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/正在创建_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             正在创建 Snapshot 副本
           </a>
           
@@ -490,8 +510,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -501,8 +519,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -514,12 +530,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/适用于在_7__模式下运行的_Data_ONTAP_的_Linux_安装和设置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             适用于在 7- 模式下运行的 Data ONTAP 的 Linux 安装和设置
           </a>
           
@@ -531,12 +550,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/准备部署.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             准备部署
           </a>
           
@@ -546,8 +568,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -559,12 +579,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/安装适用于_UNIX_的_SnapDrive.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             安装适用于 UNIX 的 SnapDrive
           </a>
           
@@ -572,8 +595,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -585,12 +606,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用配置检查程序工具验证_Linux_主机配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用配置检查程序工具验证 Linux 主机配置
           </a>
           
@@ -598,8 +622,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -611,12 +633,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置存储.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置存储
           </a>
           
@@ -624,8 +649,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -639,12 +662,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/正在创建_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             正在创建 Snapshot 副本
           </a>
           
@@ -652,8 +678,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -663,8 +687,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -676,12 +698,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/适用于_Linux_的管理.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             适用于 Linux 的管理
           </a>
           
@@ -689,12 +714,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/产品概述.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             产品概述
           </a>
           
@@ -708,19 +736,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/支持卷迁移.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             支持卷迁移
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -736,12 +765,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/LVM_和原始实体的管理.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             LVM 和原始实体的管理
           </a>
           
@@ -749,8 +781,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -782,8 +812,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -797,12 +825,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/了解_SnapDrive_for_UNIX_守护进程.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             了解 SnapDrive for UNIX 守护进程
           </a>
           
@@ -818,12 +849,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/正在停止守护进程.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             正在停止守护进程
           </a>
           
@@ -831,8 +865,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -850,8 +882,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -863,12 +893,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/支持存储系统重命名.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             支持存储系统重命名
           </a>
           
@@ -882,8 +915,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -895,12 +926,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/适用于_UNIX_的_SnapDrive_配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             适用于 UNIX 的 SnapDrive 配置
           </a>
           
@@ -908,12 +942,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置适用于_UNIX_的_SnapDrive.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置适用于 UNIX 的 SnapDrive
           </a>
           
@@ -933,8 +970,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -946,12 +981,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/子操作系统的_SnapDrive_for_UNIX_中的配置信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             子操作系统的 SnapDrive for UNIX 中的配置信息
           </a>
           
@@ -963,8 +1001,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -976,12 +1012,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SVM_的配置信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SVM 的配置信息
           </a>
           
@@ -993,8 +1032,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1006,12 +1043,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/主机准备添加_LUN.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             主机准备添加 LUN
           </a>
           
@@ -1021,8 +1061,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1034,12 +1072,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的审核_恢复和跟踪日志记录.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的审核，恢复和跟踪日志记录
           </a>
           
@@ -1061,19 +1102,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是跟踪日志文件.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是跟踪日志文件
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1081,8 +1123,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1094,12 +1134,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是_AutoSupport.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是 AutoSupport
           </a>
           
@@ -1109,8 +1152,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1122,12 +1163,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中支持多路径访问.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中支持多路径访问
           </a>
           
@@ -1137,12 +1181,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/多路径设置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             多路径设置
           </a>
           
@@ -1154,8 +1201,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1163,8 +1208,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1176,12 +1219,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的精简配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的精简配置
           </a>
           
@@ -1189,8 +1235,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1202,12 +1246,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/多子网配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             多子网配置
           </a>
           
@@ -1223,8 +1270,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1238,12 +1283,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是_SnapDrive_向导.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是 SnapDrive 向导
           </a>
           
@@ -1255,8 +1303,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1268,12 +1314,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_中的端口集.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 中的端口集
           </a>
           
@@ -1285,8 +1334,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1298,12 +1345,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置_igroup.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置 igroup
           </a>
           
@@ -1313,8 +1363,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1328,12 +1376,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的_FlexClone_卷.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的 FlexClone 卷
           </a>
           
@@ -1347,12 +1398,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/FlexClone_卷上的_SnapDrive_for_UNIX_操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             FlexClone 卷上的 SnapDrive for UNIX 操作
           </a>
           
@@ -1372,8 +1426,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1381,8 +1433,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1390,8 +1440,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1403,12 +1451,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的安全功能.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的安全功能
           </a>
           
@@ -1418,12 +1469,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的访问控制
           </a>
           
@@ -1435,8 +1489,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1448,12 +1500,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/存储系统的登录信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             存储系统的登录信息
           </a>
           
@@ -1463,8 +1518,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1474,8 +1527,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1487,12 +1538,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中基于角色的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中基于角色的访问控制
           </a>
           
@@ -1504,12 +1558,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中配置基于角色的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中配置基于角色的访问控制
           </a>
           
@@ -1517,19 +1574,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_Operations_Manager_控制台中配置_SD_admin.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 Operations Manager 控制台中配置 SD-admin
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1541,19 +1599,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/将_SD_主机名添加到存储系统.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             将 SD 主机名添加到存储系统
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1567,8 +1626,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1590,12 +1647,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/RBAC_和存储操作示例.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             RBAC 和存储操作示例
           </a>
           
@@ -1609,8 +1669,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1618,8 +1676,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1631,12 +1687,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的存储配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的存储配置
           </a>
           
@@ -1644,12 +1703,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的存储操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的存储操作
           </a>
           
@@ -1661,8 +1723,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1674,12 +1734,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_创建存储.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 创建存储
           </a>
           
@@ -1697,19 +1760,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/Red_Hat_Enterprise_Linux___RHEL__和_SUSE_Linux_Enterprise_Server___SLES__中的存储分区方案.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             Red Hat Enterprise Linux （ RHEL ）和 SUSE Linux Enterprise Server （ SLES ）中的存储分区方案
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1727,8 +1791,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1740,19 +1802,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/用于显示可用存储的命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             用于显示可用存储的命令
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -1764,12 +1827,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_增加存储大小.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 增加存储大小
           </a>
           
@@ -1781,8 +1847,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1794,12 +1858,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_connect_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage connect 命令
           </a>
           
@@ -1811,8 +1878,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1824,12 +1889,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_disconnect_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage disconnect 命令
           </a>
           
@@ -1847,8 +1915,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1860,12 +1926,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_delete_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage delete 命令
           </a>
           
@@ -1873,8 +1942,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1882,8 +1949,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1895,12 +1960,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中创建和使用_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
           </a>
           
@@ -1908,28 +1976,22 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的_Snapshot_操作是什么.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的 Snapshot 操作是什么
           </a>
           
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/zh-cn/snapdrive-unix/pdfs/pages/linux-administration/concept_considerations_when_working_with_snapshot_copies.pdf" >
-    <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
 
-
-          
         </li>
       </ul>
     
@@ -1941,12 +2003,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/Snapshot_副本操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             Snapshot 副本操作
           </a>
           
@@ -1954,12 +2019,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/崩溃状态一致的_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             崩溃状态一致的 Snapshot 副本
           </a>
           
@@ -1971,8 +2039,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -1992,8 +2058,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2005,12 +2069,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/此时将显示_Snapshot_副本信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             此时将显示 Snapshot 副本信息
           </a>
           
@@ -2028,8 +2095,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2041,12 +2106,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/Snapshot_副本重命名.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             Snapshot 副本重命名
           </a>
           
@@ -2058,8 +2126,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2071,12 +2137,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/还原_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             还原 Snapshot 副本
           </a>
           
@@ -2086,19 +2155,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在目标存储系统上还原_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在目标存储系统上还原 Snapshot 副本
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2118,12 +2188,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/基于卷的_SnapRestore.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             基于卷的 SnapRestore
           </a>
           
@@ -2143,8 +2216,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2152,8 +2223,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2165,12 +2234,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/连接到_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             连接到 Snapshot 副本
           </a>
           
@@ -2180,19 +2252,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在镜像存储系统上连接_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在镜像存储系统上连接 Snapshot 副本
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2212,8 +2285,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2225,12 +2296,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/拆分卷克隆或_LUN_克隆.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             拆分卷克隆或 LUN 克隆
           </a>
           
@@ -2248,8 +2322,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2261,12 +2333,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/删除_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             删除 Snapshot 副本
           </a>
           
@@ -2280,8 +2355,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2293,12 +2366,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/断开_Snapshot_副本的连接.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             断开 Snapshot 副本的连接
           </a>
           
@@ -2308,19 +2384,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/断开_Snapshot_副本连接的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             断开 Snapshot 副本连接的准则
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2336,8 +2413,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2345,8 +2420,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2358,12 +2431,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/数据收集实用程序.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             数据收集实用程序
           </a>
           
@@ -2375,8 +2451,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2388,12 +2462,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/故障排除.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             故障排除
           </a>
           
@@ -2401,12 +2478,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/了解错误消息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             了解错误消息
           </a>
           
@@ -2416,19 +2496,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/错误消息格式.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             错误消息格式
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2436,8 +2517,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2449,12 +2528,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/常见错误消息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             常见错误消息
           </a>
           
@@ -2464,8 +2546,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2519,12 +2599,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/标准退出状态值.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             标准退出状态值
           </a>
           
@@ -2536,8 +2619,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2591,8 +2672,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2604,12 +2683,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/命令参考.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             命令参考
           </a>
           
@@ -2617,12 +2699,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/收集_SnapDrive_for_UNIX_命令所需的信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             收集 SnapDrive for UNIX 命令所需的信息
           </a>
           
@@ -2630,8 +2715,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2643,12 +2726,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_命令摘要.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 命令摘要
           </a>
           
@@ -2656,12 +2742,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/命令摘要.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             命令摘要
           </a>
           
@@ -2673,8 +2762,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2686,12 +2773,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_选项_关键字和参数.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 选项，关键字和参数
           </a>
           
@@ -2703,8 +2793,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2712,8 +2800,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2721,8 +2807,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2730,8 +2814,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2743,12 +2825,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/适用于_Solaris_的安装和管理.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             适用于 Solaris 的安装和管理
           </a>
           
@@ -2756,12 +2841,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_概述.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 概述
           </a>
           
@@ -2787,12 +2875,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/管理_VxVM_和原始实体.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             管理 VxVM 和原始实体
           </a>
           
@@ -2800,8 +2891,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2833,19 +2922,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/支持卷迁移.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             支持卷迁移
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -2863,8 +2953,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2876,12 +2964,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/准备安装_SnapDrive_for_UNIX.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             准备安装 SnapDrive for UNIX
           </a>
           
@@ -2889,12 +2980,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/硬件和软件配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             硬件和软件配置
           </a>
           
@@ -2902,8 +2996,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2915,12 +3007,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/正在准备存储系统.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             正在准备存储系统
           </a>
           
@@ -2938,12 +3033,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/重置快照预留选项.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             重置快照预留选项
           </a>
           
@@ -2951,8 +3049,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2960,8 +3056,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -2973,12 +3067,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/主机准备安装_SnapDrive_for_UNIX.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             主机准备安装 SnapDrive for UNIX
           </a>
           
@@ -2986,8 +3083,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -2999,12 +3094,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/安装_SnapDrive_for_UNIX_的子操作系统准备工作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             安装 SnapDrive for UNIX 的子操作系统准备工作
           </a>
           
@@ -3012,8 +3110,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3021,8 +3117,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -3034,12 +3128,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/安装或升级_SnapDrive_for_UNIX.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             安装或升级 SnapDrive for UNIX
           </a>
           
@@ -3063,12 +3160,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_安装的文件.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 安装的文件
           </a>
           
@@ -3082,8 +3182,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3093,8 +3191,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3106,12 +3202,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/了解_SnapDrive_for_UNIX_守护进程.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             了解 SnapDrive for UNIX 守护进程
           </a>
           
@@ -3127,12 +3226,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/正在停止守护进程.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             正在停止守护进程
           </a>
           
@@ -3140,8 +3242,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3159,8 +3259,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3172,12 +3270,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/验证支持的配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             验证支持的配置
           </a>
           
@@ -3187,8 +3288,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3200,12 +3299,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/支持存储系统重命名.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             支持存储系统重命名
           </a>
           
@@ -3219,8 +3321,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3232,12 +3332,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_中的端口集.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 中的端口集
           </a>
           
@@ -3249,8 +3352,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3262,12 +3363,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置_igroup.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置 igroup
           </a>
           
@@ -3277,8 +3381,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3292,12 +3394,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/适用于_UNIX_的_SnapDrive_配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             适用于 UNIX 的 SnapDrive 配置
           </a>
           
@@ -3305,12 +3410,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置适用于_UNIX_的_SnapDrive.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置适用于 UNIX 的 SnapDrive
           </a>
           
@@ -3330,8 +3438,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3343,12 +3449,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/子操作系统的_SnapDrive_for_UNIX_中的配置信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             子操作系统的 SnapDrive for UNIX 中的配置信息
           </a>
           
@@ -3360,8 +3469,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3373,12 +3480,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SVM_的配置信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SVM 的配置信息
           </a>
           
@@ -3390,8 +3500,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3403,12 +3511,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/主机准备添加_LUN.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             主机准备添加 LUN
           </a>
           
@@ -3416,8 +3527,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3429,12 +3538,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的审核_恢复和跟踪日志记录.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的审核，恢复和跟踪日志记录
           </a>
           
@@ -3456,19 +3568,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是跟踪日志文件.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是跟踪日志文件
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -3476,8 +3589,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -3489,12 +3600,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是_AutoSupport.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是 AutoSupport
           </a>
           
@@ -3504,8 +3618,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3517,12 +3629,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中支持多路径访问.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中支持多路径访问
           </a>
           
@@ -3530,8 +3645,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3543,12 +3656,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的精简配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的精简配置
           </a>
           
@@ -3556,8 +3672,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3569,12 +3683,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/多子网配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             多子网配置
           </a>
           
@@ -3590,8 +3707,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3605,12 +3720,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是_SnapDrive_向导.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是 SnapDrive 向导
           </a>
           
@@ -3622,8 +3740,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3631,8 +3747,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -3644,12 +3758,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的安全功能.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的安全功能
           </a>
           
@@ -3659,12 +3776,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的访问控制
           </a>
           
@@ -3676,8 +3796,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3689,12 +3807,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/存储系统的登录信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             存储系统的登录信息
           </a>
           
@@ -3704,8 +3825,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3715,8 +3834,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3728,12 +3845,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中基于角色的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中基于角色的访问控制
           </a>
           
@@ -3745,12 +3865,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中配置基于角色的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中配置基于角色的访问控制
           </a>
           
@@ -3758,19 +3881,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_Operations_Manager_控制台中配置_SD_admin.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 Operations Manager 控制台中配置 SD-admin
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -3782,19 +3906,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/将_SD_主机名添加到存储系统.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             将 SD 主机名添加到存储系统
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -3808,8 +3933,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3831,12 +3954,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/RBAC_和存储操作示例.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             RBAC 和存储操作示例
           </a>
           
@@ -3850,8 +3976,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3859,8 +3983,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -3872,12 +3994,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的_FlexClone_卷.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的 FlexClone 卷
           </a>
           
@@ -3891,12 +4016,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/FlexClone_卷上的_SnapDrive_for_UNIX_操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             FlexClone 卷上的 SnapDrive for UNIX 操作
           </a>
           
@@ -3916,8 +4044,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3925,8 +4051,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -3938,12 +4062,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的存储配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的存储配置
           </a>
           
@@ -3951,12 +4078,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的存储操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的存储操作
           </a>
           
@@ -3968,8 +4098,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -3981,12 +4109,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_创建存储.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 创建存储
           </a>
           
@@ -3996,19 +4127,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/存储创建操作的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             存储创建操作的准则
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4032,8 +4164,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4045,19 +4175,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/用于显示可用存储的命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             用于显示可用存储的命令
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4069,12 +4200,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_增加存储大小.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 增加存储大小
           </a>
           
@@ -4086,8 +4220,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4099,12 +4231,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_connect_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage connect 命令
           </a>
           
@@ -4118,8 +4253,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4131,12 +4264,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_disconnect_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage disconnect 命令
           </a>
           
@@ -4146,19 +4282,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_storage_disconnect_命令的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive storage disconnect 命令的准则
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4178,8 +4315,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4191,12 +4326,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_delete_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage delete 命令
           </a>
           
@@ -4204,19 +4342,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_storage_delete_命令的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 storage delete 命令的准则
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4226,8 +4365,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4235,8 +4372,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -4248,12 +4383,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中创建和使用_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
           </a>
           
@@ -4261,19 +4399,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的_Snapshot_操作是什么.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的 Snapshot 操作是什么
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4285,12 +4424,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/Snapshot_副本操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             Snapshot 副本操作
           </a>
           
@@ -4298,12 +4440,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/崩溃状态一致的_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             崩溃状态一致的 Snapshot 副本
           </a>
           
@@ -4315,8 +4460,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4334,19 +4477,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/创建_Snapshot_副本的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             创建 Snapshot 副本的准则
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4358,8 +4502,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4371,12 +4513,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/此时将显示_Snapshot_副本信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             此时将显示 Snapshot 副本信息
           </a>
           
@@ -4394,8 +4539,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4407,12 +4550,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/Snapshot_副本重命名.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             Snapshot 副本重命名
           </a>
           
@@ -4424,8 +4570,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4437,12 +4581,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/还原_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             还原 Snapshot 副本
           </a>
           
@@ -4452,12 +4599,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在目标存储系统上还原_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在目标存储系统上还原 Snapshot 副本
           </a>
           
@@ -4467,8 +4617,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4488,12 +4636,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/基于卷的_SnapRestore.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             基于卷的 SnapRestore
           </a>
           
@@ -4513,8 +4664,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4522,8 +4671,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -4535,12 +4682,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/连接到_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             连接到 Snapshot 副本
           </a>
           
@@ -4550,12 +4700,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在镜像存储系统上连接_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在镜像存储系统上连接 Snapshot 副本
           </a>
           
@@ -4563,8 +4716,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4578,19 +4729,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/连接_Snapshot_副本的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             连接 Snapshot 副本的准则
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4606,8 +4758,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4619,12 +4769,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/拆分卷克隆或_LUN_克隆.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             拆分卷克隆或 LUN 克隆
           </a>
           
@@ -4642,8 +4795,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4655,12 +4806,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/删除_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             删除 Snapshot 副本
           </a>
           
@@ -4674,8 +4828,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4687,12 +4839,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/断开_Snapshot_副本的连接.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             断开 Snapshot 副本的连接
           </a>
           
@@ -4702,12 +4857,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/断开_Snapshot_副本连接的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             断开 Snapshot 副本连接的准则
           </a>
           
@@ -4715,8 +4873,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4732,8 +4888,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4741,8 +4895,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -4754,12 +4906,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/数据收集实用程序.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             数据收集实用程序
           </a>
           
@@ -4771,8 +4926,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4784,12 +4937,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/故障排除.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             故障排除
           </a>
           
@@ -4797,12 +4953,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/了解错误消息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             了解错误消息
           </a>
           
@@ -4812,19 +4971,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/错误消息格式.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             错误消息格式
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -4832,8 +4992,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -4845,12 +5003,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/常见错误消息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             常见错误消息
           </a>
           
@@ -4860,8 +5021,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4897,12 +5056,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/标准退出状态值.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             标准退出状态值
           </a>
           
@@ -4914,8 +5076,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4967,8 +5127,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -4980,12 +5138,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/命令参考.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             命令参考
           </a>
           
@@ -4993,12 +5154,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/收集_SnapDrive_for_UNIX_命令所需的信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             收集 SnapDrive for UNIX 命令所需的信息
           </a>
           
@@ -5006,8 +5170,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5019,12 +5181,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_命令摘要.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 命令摘要
           </a>
           
@@ -5032,12 +5197,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/命令摘要.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             命令摘要
           </a>
           
@@ -5049,8 +5217,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5062,12 +5228,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_选项_关键字和参数.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 选项，关键字和参数
           </a>
           
@@ -5079,8 +5248,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5088,8 +5255,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -5097,8 +5262,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -5106,8 +5269,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -5119,12 +5280,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/适用于_IBM_AIX_的安装和管理.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             适用于 IBM AIX 的安装和管理
           </a>
           
@@ -5132,12 +5296,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_概述.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 概述
           </a>
           
@@ -5157,12 +5324,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/LVM_和原始实体的管理.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             LVM 和原始实体的管理
           </a>
           
@@ -5170,8 +5340,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5201,19 +5369,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/支持卷迁移.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             支持卷迁移
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -5231,8 +5400,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5244,12 +5411,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/准备安装_SnapDrive_for_UNIX.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             准备安装 SnapDrive for UNIX
           </a>
           
@@ -5257,12 +5427,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/硬件和软件配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             硬件和软件配置
           </a>
           
@@ -5270,8 +5443,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5283,12 +5454,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/正在准备存储系统.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             正在准备存储系统
           </a>
           
@@ -5306,12 +5480,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/重置快照预留选项.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             重置快照预留选项
           </a>
           
@@ -5319,8 +5496,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5328,8 +5503,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -5341,12 +5514,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/主机准备安装_SnapDrive_for_UNIX.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             主机准备安装 SnapDrive for UNIX
           </a>
           
@@ -5354,8 +5530,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5363,8 +5537,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -5376,12 +5548,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/安装或升级_SnapDrive_for_UNIX.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             安装或升级 SnapDrive for UNIX
           </a>
           
@@ -5397,12 +5572,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_安装的文件.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 安装的文件
           </a>
           
@@ -5414,8 +5592,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5425,8 +5601,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5438,12 +5612,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/了解_SnapDrive_for_UNIX_守护进程.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             了解 SnapDrive for UNIX 守护进程
           </a>
           
@@ -5459,12 +5636,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/正在停止守护进程.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             正在停止守护进程
           </a>
           
@@ -5472,8 +5652,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5491,8 +5669,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5504,12 +5680,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/验证支持的配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             验证支持的配置
           </a>
           
@@ -5519,8 +5698,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5532,12 +5709,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/支持存储系统重命名.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             支持存储系统重命名
           </a>
           
@@ -5551,8 +5731,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5564,12 +5742,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_中的端口集.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 中的端口集
           </a>
           
@@ -5581,8 +5762,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5594,12 +5773,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置_igroup.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置 igroup
           </a>
           
@@ -5609,8 +5791,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5624,12 +5804,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/适用于_UNIX_的_SnapDrive_配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             适用于 UNIX 的 SnapDrive 配置
           </a>
           
@@ -5637,12 +5820,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/配置适用于_UNIX_的_SnapDrive.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             配置适用于 UNIX 的 SnapDrive
           </a>
           
@@ -5662,8 +5848,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5675,12 +5859,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SVM_的配置信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SVM 的配置信息
           </a>
           
@@ -5692,8 +5879,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5705,12 +5890,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的审核_恢复和跟踪日志记录.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的审核，恢复和跟踪日志记录
           </a>
           
@@ -5732,19 +5920,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是跟踪日志文件.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是跟踪日志文件
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -5752,8 +5941,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -5765,12 +5952,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是_AutoSupport.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是 AutoSupport
           </a>
           
@@ -5780,8 +5970,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5793,12 +5981,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中支持多路径访问.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中支持多路径访问
           </a>
           
@@ -5806,8 +5997,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5819,12 +6008,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的精简配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的精简配置
           </a>
           
@@ -5832,8 +6024,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5845,12 +6035,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/多子网配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             多子网配置
           </a>
           
@@ -5866,8 +6059,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5881,12 +6072,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/什么是_SnapDrive_向导.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             什么是 SnapDrive 向导
           </a>
           
@@ -5898,8 +6092,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5907,8 +6099,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -5920,12 +6110,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的安全功能.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的安全功能
           </a>
           
@@ -5935,12 +6128,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的访问控制
           </a>
           
@@ -5952,8 +6148,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5965,12 +6159,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/存储系统的登录信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             存储系统的登录信息
           </a>
           
@@ -5980,8 +6177,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -5991,8 +6186,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6004,12 +6197,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中基于角色的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中基于角色的访问控制
           </a>
           
@@ -6021,12 +6217,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中配置基于角色的访问控制.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中配置基于角色的访问控制
           </a>
           
@@ -6034,19 +6233,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_Operations_Manager_控制台中配置_SD_admin.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 Operations Manager 控制台中配置 SD-admin
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6058,19 +6258,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/将_SD_主机名添加到存储系统.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             将 SD 主机名添加到存储系统
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6084,8 +6285,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6107,12 +6306,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/RBAC_和存储操作示例.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             RBAC 和存储操作示例
           </a>
           
@@ -6126,8 +6328,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6135,8 +6335,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -6148,12 +6346,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的_FlexClone_卷.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的 FlexClone 卷
           </a>
           
@@ -6167,12 +6368,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/FlexClone_卷上的_SnapDrive_for_UNIX_操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             FlexClone 卷上的 SnapDrive for UNIX 操作
           </a>
           
@@ -6192,8 +6396,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6201,8 +6403,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -6214,12 +6414,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的存储配置.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的存储配置
           </a>
           
@@ -6227,12 +6430,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的存储操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的存储操作
           </a>
           
@@ -6240,8 +6446,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6253,12 +6457,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_创建存储.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 创建存储
           </a>
           
@@ -6282,8 +6489,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6295,19 +6500,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/用于显示可用存储的命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             用于显示可用存储的命令
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6319,12 +6525,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/使用_SnapDrive_for_UNIX_增加存储大小.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             使用 SnapDrive for UNIX 增加存储大小
           </a>
           
@@ -6336,8 +6545,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6349,12 +6556,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_connect_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage connect 命令
           </a>
           
@@ -6366,8 +6576,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6379,12 +6587,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_disconnect_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage disconnect 命令
           </a>
           
@@ -6402,8 +6613,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6415,12 +6624,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/storage_delete_命令.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             storage delete 命令
           </a>
           
@@ -6428,8 +6640,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6437,8 +6647,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -6450,12 +6658,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在_SnapDrive_for_UNIX_中创建和使用_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在 SnapDrive for UNIX 中创建和使用 Snapshot 副本
           </a>
           
@@ -6463,19 +6674,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_中的_Snapshot_操作是什么.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 中的 Snapshot 操作是什么
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6487,12 +6699,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/Snapshot_副本操作.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             Snapshot 副本操作
           </a>
           
@@ -6500,12 +6715,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/崩溃状态一致的_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             崩溃状态一致的 Snapshot 副本
           </a>
           
@@ -6517,8 +6735,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6538,8 +6754,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6551,12 +6765,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/此时将显示_Snapshot_副本信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             此时将显示 Snapshot 副本信息
           </a>
           
@@ -6574,8 +6791,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6587,12 +6802,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/Snapshot_副本重命名.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             Snapshot 副本重命名
           </a>
           
@@ -6604,8 +6822,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6617,12 +6833,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/还原_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             还原 Snapshot 副本
           </a>
           
@@ -6632,19 +6851,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在目标存储系统上还原_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在目标存储系统上还原 Snapshot 副本
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6664,12 +6884,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/基于卷的_SnapRestore.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             基于卷的 SnapRestore
           </a>
           
@@ -6689,8 +6912,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6698,8 +6919,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -6711,12 +6930,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/连接到_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             连接到 Snapshot 副本
           </a>
           
@@ -6726,19 +6948,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/在镜像存储系统上连接_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             在镜像存储系统上连接 Snapshot 副本
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6758,8 +6981,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6771,12 +6992,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/拆分卷克隆或_LUN_克隆.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             拆分卷克隆或 LUN 克隆
           </a>
           
@@ -6794,8 +7018,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6807,12 +7029,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/删除_Snapshot_副本.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             删除 Snapshot 副本
           </a>
           
@@ -6826,8 +7051,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6839,12 +7062,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/断开_Snapshot_副本的连接.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             断开 Snapshot 副本的连接
           </a>
           
@@ -6854,19 +7080,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/断开_Snapshot_副本连接的准则.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             断开 Snapshot 副本连接的准则
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6882,8 +7109,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6891,8 +7116,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -6904,12 +7127,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/数据收集实用程序.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             数据收集实用程序
           </a>
           
@@ -6921,8 +7147,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -6934,12 +7158,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/故障排除.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             故障排除
           </a>
           
@@ -6947,12 +7174,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/了解错误消息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             了解错误消息
           </a>
           
@@ -6962,19 +7192,20 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/错误消息格式.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             错误消息格式
           </a>
           
 
 
-
-          
         </li>
       </ul>
     
@@ -6982,8 +7213,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -6995,12 +7224,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/常见错误消息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             常见错误消息
           </a>
           
@@ -7010,8 +7242,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -7039,12 +7269,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/标准退出状态值.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             标准退出状态值
           </a>
           
@@ -7056,8 +7289,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -7107,8 +7338,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -7120,12 +7349,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/命令参考.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             命令参考
           </a>
           
@@ -7133,12 +7365,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/收集_SnapDrive_for_UNIX_命令所需的信息.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             收集 SnapDrive for UNIX 命令所需的信息
           </a>
           
@@ -7146,8 +7381,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -7159,12 +7392,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_命令摘要.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 命令摘要
           </a>
           
@@ -7172,12 +7408,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/命令摘要.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             命令摘要
           </a>
           
@@ -7189,8 +7428,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -7202,12 +7439,15 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/snapdrive-unix/pdfs/sidebar/SnapDrive_for_UNIX_选项_关键字和参数.pdf" 
             
           >
-            <img src="/zh-cn/snapdrive-unix/images/pdf.png" width="16" height="16"/>
+            <img src="/zh-cn/snapdrive-unix/images/pdf.png" alt="" width="16" height="16"/>
             SnapDrive for UNIX 选项，关键字和参数
           </a>
           
@@ -7219,8 +7459,6 @@
 
 
 
-
-          
         </li>
       </ul>
     
@@ -7228,8 +7466,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -7237,8 +7473,6 @@
   
 
 
-
-          
         </li>
       </ul>
     
@@ -7246,21 +7480,18 @@
   
 
 
-
-          
         </li>
       </ul>
     
 
   
-
 
 
 
 </li></ul>
   <div class="zip-pdf-link-container" style="display: none;">   
     <a href="#" id="zipPdf">
-      <img src="/zh-cn/snapdrive-unix/images/pdf-zip.png" width="16" height="16"/>
+      <img src="/zh-cn/snapdrive-unix/images/pdf-zip.png" alt="" width="16" height="16"/>
       <pre>收集单独的 PDF 文档<span class="zip-size"></span></pre>
     </a><div id="zip-link-popup" class="hide">
     <div class="inner-modal">
@@ -7293,7 +7524,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-cn/snapdrive-unix/index.html">
         主页
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/snapdrive-unix/releasenotes.html">
@@ -9859,30 +10090,27 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
+
   </div>
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container -->
-    <article class="page-content">
+    <!-- Begin of page container --><article class="page-content">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">主页</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">文档</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/zh-cn/snapdrive-unix/">Snapdrive&nbsp;for&nbsp;Unix</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          使用 Snapshot 副本时的注意事项
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -9911,24 +10139,15 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 13:36:34 +0000">01/31/2022</time>
+    <time datetime="2022-05-03 11:01:26 +0000">05/03/2022</time>
     
   
 
 <span>提供者
-  <a target="_blank" href="https://github.com/netapp-ivanad">
-    <img  class="avatar avatar-small"
-          alt="netapp-ivanad"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/76115643?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
 </p>
-
 
 <div class="paragraph lead">
 <p>在使用 Snapshot 副本时，应牢记一些注意事项，例如 SnapDrive for UNIX 仅适用于其创建的 Snapshot 副本，或者 Snapshot 副本自动从存储系统复制到主机等。</p>
@@ -9978,27 +10197,7 @@
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/snapdrive-unix/issues/new?body=Page%3A%20[使用 Snapshot 副本时的注意事项](https://docs.netapp.com/zh-cn/snapdrive-unix/linux-administration/concept_considerations_when_working_with_snapshot_copies.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/snapdrive-unix/images/discuss-sm.svg" class="github-icon" />请求文档变更</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/snapdrive-unix/blob/main/linux-administration/concept_considerations_when_working_with_snapshot_copies.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/snapdrive-unix/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/snapdrive-unix/images/article-sm.svg" class="github-icon" />提供者指南</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">在此页面上</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
-  <div style="clear: both"></div><!-- Main needs to have height -->
-</div>
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
 
@@ -10006,103 +10205,125 @@
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">想就我们的网站提供反馈?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">请告诉我们</a>
-  <a href="https://docs.netapp.com/zh-cn/announcements/" class="n-footer__copyright">通知</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">条款和条件</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">隐私政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie 政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie 设置</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">想就我们的网站提供反馈?</span>
+              <a target="_self" href="javascript:netapp_mailto()">请告诉我们</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/zh-cn/announcements/">通知</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/snapdrive-unix/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
-      </div>
-
-      <!-- Elasticsearch JS -->
+      </div><!-- Elasticsearch JS -->
       <script type="text/javascript" src='/zh-cn/snapdrive-unix/js/bundle.js'></script>
 
       <!-- Syntax Highlighting -->
@@ -10117,7 +10338,5 @@
     </script>
     <script src='/zh-cn/snapdrive-unix/js/www-ntap.js'></script>
     <script src='/zh-cn/snapdrive-unix/js/tabbed-blocks.js'></script>
-  </body>
-
-  
-</html>
+    <script src='/zh-cn/snapdrive-unix/js/sidebar.js'></script>
+  </body></html>
