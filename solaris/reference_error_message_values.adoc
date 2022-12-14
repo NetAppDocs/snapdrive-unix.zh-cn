@@ -1092,6 +1092,7 @@ SnapDrive for UNIX 使用根存储系统（存储器）卷上的 `sdhostname.prb
 * 注： *
 
 +
+[]
 ====
 *** 如果您没有 `sd-hostname.prbac` 文件，请修改存储系统中的 `sdgenic.prbac` 文件。
 *** 如果您同时具有 `sd-hostname.prbac` 和 `sdgenergic.prbac` 文件，则只能修改存储系统中 `sdhostname.prbac` 文件中的设置。
