@@ -4598,7 +4598,6 @@
   <block id="587c070f4a6be8ece006e6df17b2059a" category="list-text">使用 `snapdrived restart` 命令重新启动 SnapDrive for UNIX 守护进程。</block>
   <block id="508ffc830920939bde635b80cbcffccd" category="paragraph">要使 `snapdrive.conf` 文件更改生效，必须重新启动守护进程。</block>
   <block id="61e0e72bb0fbf4da3b5a5aed31611da7" category="summary">要成功执行 SnapDrive for UNIX 操作，您必须设置 Storage Virtual Machine （ SVM ，以前称为 Vservers\ ）</block>
-  <block id="d74dad33e2cb07d06b1b4554532c02ea" category="paragraph">要成功执行 SnapDrive for UNIX 操作，您必须设置 Storage Virtual Machine （ SVM ，以前称为 Vserver ）</block>
   <block id="9c3bfbb4258153b74c0020a62e4cd796" category="list-text">您必须已将包含卷的聚合分配给 SVM 聚合列表，才能执行适用于 UNIX 的 SnapDrive 操作。</block>
   <block id="eb384912c3be9db5d6660d46264838ed" category="list-text">您必须创建一个或多个 SVM 才能从集群提供数据。</block>
   <block id="57aec4ff903084462b15d55ca74af37d" category="paragraph">SVM 管理逻辑接口（ LIF ）的 IP 地址必须与 SVM 名称进行映射，可以在域名服务（ DNS ）或 ` /etc/hosts` 文件中进行映射。</block>
@@ -4606,7 +4605,6 @@
   <block id="3bcf8c1a64b0bb423c747574ad73fa3c" category="paragraph">` * SnapDrive 配置集 -cserver _csadmin_name cserver_name_*`</block>
   <block id="dfdb2046a90a16a55d367932ee482619" category="paragraph">如果您运行的是 ONTAP 8.2.3 或更高版本，请跳过此步骤。</block>
   <block id="624dd461537c07029c019223bd1ea847" category="list-text">在数据 SVM 上创建用户：</block>
-  <block id="da65dcd12ae47b1bf7ffe137ca8e3c26" category="paragraph">` vsadmin_name vserver_name_`</block>
   <block id="6c36362c418d90842a961aeae5857ea5" category="list-text">验证是否已在适用于 UNIX 的 SnapDrive 中配置 SVM ：</block>
   <block id="651306054b05d1f189f40b4e67b7b862" category="paragraph">命令可列出集群管理服务器和数据 SVM 的用户名和 IP 地址。</block>
   <block id="df778a34ed8a84341d0f871565fc04eb" category="list-text">修改 SVM 数据接口路径的管理接口路径：</block>
@@ -6000,4 +5998,7 @@
   <block id="f8627092c31ff43a006814ef7cf773a5" category="sidebar">适用于 Linux 的管理</block>
   <block id="42bd37a4c5629f76f268e0de7f45570f" category="sidebar">适用于 Solaris 的安装和管理</block>
   <block id="80dd8a6d27a4c1b305d26c223c52a9a7" category="sidebar">适用于 IBM AIX 的安装和管理</block>
+  <block id="45f4423b7c470ea0d04be6d812ad5996" category="paragraph">要成功执行SnapDrive for UNIX操作、您必须设置Storage Virtual Machine (SVM、以前称为Vserver)。</block>
+  <block id="00930ba81ea27b6c62845d08e0500327" category="paragraph"><block ref="7affedb2caa000166a46aed3d9bd1a06" prefix="" category="inline-code"></block></block>
+  <block id="1483ad74a09b4a3124c82e285d93ae63" category="admonition"><block ref="992dacfc30bbe144d7e60d29d7bbd430" prefix="" category="inline-code"></block> 是SVM的名称、必须将其映射到管理LIF IP地址。</block>
 </blocks>

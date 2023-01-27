@@ -11,7 +11,7 @@ summary: 要成功执行 SnapDrive for UNIX 操作，您必须设置 Storage Vir
 
 
 [role="lead"]
-要成功执行 SnapDrive for UNIX 操作，您必须设置 Storage Virtual Machine （ SVM ，以前称为 Vserver ）
+要成功执行SnapDrive for UNIX操作、您必须设置Storage Virtual Machine (SVM、以前称为Vserver)。
 
 * 您必须已将包含卷的聚合分配给 SVM 聚合列表，才能执行适用于 UNIX 的 SnapDrive 操作。
 * 您必须创建一个或多个 SVM 才能从集群提供数据。
@@ -30,10 +30,11 @@ SVM 管理逻辑接口（ LIF ）的 IP 地址必须与 SVM 名称进行映射�
 
 . 在数据 SVM 上创建用户：
 +
-` * SnapDrive 配置集 *`
+`*snapdrive config set vsadmin_name _Vserver_name_*`
 
 +
-` vsadmin_name vserver_name_`
+
+NOTE: `_Vserver_name_` 是SVM的名称、必须将其映射到管理LIF IP地址。
 
 . 验证是否已在适用于 UNIX 的 SnapDrive 中配置 SVM ：
 +
