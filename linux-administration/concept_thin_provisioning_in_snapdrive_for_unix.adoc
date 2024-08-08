@@ -17,4 +17,4 @@ SnapDrive for UNIX 中的精简配置功能使用户可以为主机提供比存�
 
 * 相关信息 *
 
-http://www.netapp.com/us/media/tr-3483.pdf["NetApp 技术报告 3483 ：《 NetApp SAN 或 IP SAN 企业环境中的精简配置》"]
+https://www.netapp.com/pdf.html?item=/media/19670-tr-3483.pdf["NetApp 技术报告 3483 ：《 NetApp SAN 或 IP SAN 企业环境中的精简配置》"^]

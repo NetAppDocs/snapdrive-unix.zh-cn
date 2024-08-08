@@ -1735,7 +1735,6 @@
   <block id="627a2cec3863a60ee1eb9fe78d73c96f" category="doc">SnapDrive for UNIX 中的精简配置</block>
   <block id="b5e25c86b8fc4729491227e86c44097c" category="paragraph">在 SnapDrive for UNIX 中，您无法设置预留百分比值，也无法与自动删除和自动调整等 Data ONTAP 功能集成。这些 Data ONTAP 功能可以安全地与 SnapDrive for UNIX 结合使用；但是，如果发生自动删除或自动调整大小事件， SnapDrive for UNIX 无法识别这些功能。</block>
   <block id="0fbd8971220ee7d0340edcc5aa07a5c0" category="inline-link">NetApp 技术报告 3483 ：《 NetApp SAN 或 IP SAN 企业环境中的精简配置》</block>
-  <block id="d067ada9dffcf5d06f760689bd642d06" category="paragraph"><block ref="d067ada9dffcf5d06f760689bd642d06" category="inline-link-rx"></block></block>
   <block id="5c14df6684585f43d0dae983427f4e62" category="summary">您可以通过执行 SnapDrive config delete 命令来删除虚拟接口的用户登录名。</block>
   <block id="815e2d991bcf1ef9ea5cf0acf00f0d13" category="doc">删除 Virtual Storage Console 的用户登录名</block>
   <block id="28cb7e0163a7b694c3a4ecf8b3a9fcdd" category="paragraph">您可以通过执行 SnapDrive config delete` 命令来删除虚拟接口的用户登录名。</block>
@@ -6001,4 +6000,5 @@
   <block id="45f4423b7c470ea0d04be6d812ad5996" category="paragraph">要成功执行SnapDrive for UNIX操作、您必须设置Storage Virtual Machine (SVM、以前称为Vserver)。</block>
   <block id="00930ba81ea27b6c62845d08e0500327" category="paragraph"><block ref="7affedb2caa000166a46aed3d9bd1a06" prefix="" category="inline-code"></block></block>
   <block id="1483ad74a09b4a3124c82e285d93ae63" category="admonition"><block ref="992dacfc30bbe144d7e60d29d7bbd430" prefix="" category="inline-code"></block> 是SVM的名称、必须将其映射到管理LIF IP地址。</block>
+  <block id="2a7e0c5b8e814e03c21799cbb69f2d18" category="paragraph"><block ref="2a7e0c5b8e814e03c21799cbb69f2d18" category="inline-link-rx"></block></block>
 </blocks>
